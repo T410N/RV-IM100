@@ -11,6 +11,20 @@ This repository is about benchmarking and analyzing the results of RISC-V Proces
   Based on basic_RV32s' microarchitecture, expands the design with M, A RISC-V standard extension and improve performance by operating speed optimization and adopting Advanced Computer architectural theorys.
 
 ## Benchmarks
+### Environment
+- Vivado 2025.2
+- Synthesis: Flow_PerfOptimized_high
+- Implmentation: Performance_ExplorePostRoutePhysOpt
+  - opt_design-ExploreWithRemap
+  - place_design-ExtraNetDelay_low
+  - phys_opt_design-AggressiveFanoutOpt
+  - route_design-NoTimingRelaxation
+  - Post-Route Phys Opt Design - AggressiveExplore
+ 
+- FPGA
+  - Digilent Nexys Video  
+    (AMD Xilinx Artix-7 XC7A200T-1SBG484C : speed grade = -1)
+
 ### Programs
 Used 2 benchmark programs.
 - Dhrystone 2.1
