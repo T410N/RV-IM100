@@ -1,0 +1,2136 @@
+
+*** Running vivado
+    with args -log RV64I59F5SPSoCTOP.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source RV64I59F5SPSoCTOP.tcl -notrace
+
+
+****** Vivado v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Mon Feb 23 18:41:01 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source RV64I59F5SPSoCTOP.tcl -notrace
+Command: link_design -top RV64I59F5SPSoCTOP -part xc7a200tsbg484-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7a200tsbg484-1
+Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.06 . Memory (MB): peak = 1785.922 ; gain = 0.000 ; free physical = 1221 ; free virtual = 4542
+INFO: [Netlist 29-17] Analyzing 3684 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/khwl/Desktop/RV-IM100/FPGAs/RV64I59F_5SP/RV64I59F_5SP_FPGA.srcs/constrs_1/imports/RV64I59F_5SP/RV32I46F_5SP_Debug_XDC.xdc]
+Finished Parsing XDC File [/home/khwl/Desktop/RV-IM100/FPGAs/RV64I59F_5SP/RV64I59F_5SP_FPGA.srcs/constrs_1/imports/RV64I59F_5SP/RV32I46F_5SP_Debug_XDC.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1960.469 ; gain = 0.000 ; free physical = 291 ; free virtual = 3607
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2070 instances were transformed.
+  RAM256X1S => RAM256X1S (MUXF7(x2), MUXF8, RAMS64E(x4)): 2048 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 22 instances
+
+7 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1960.504 ; gain = 390.293 ; free physical = 294 ; free virtual = 3610
+Command: opt_design -directive ExploreWithRemap
+INFO: [Vivado_Tcl 4-136] Directive used for opt_design is: ExploreWithRemap
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a200t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a200t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:00.71 ; elapsed = 00:00:00.28 . Memory (MB): peak = 2039.609 ; gain = 79.105 ; free physical = 186 ; free virtual = 3504
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+Phase 1.1 Core Generation And Design Setup | Checksum: 18bbfb113
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2346.422 ; gain = 0.000 ; free physical = 183 ; free virtual = 2962
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 18bbfb113
+
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2346.422 ; gain = 0.000 ; free physical = 183 ; free virtual = 2962
+Phase 1 Initialization | Checksum: 18bbfb113
+
+Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2346.422 ; gain = 0.000 ; free physical = 183 ; free virtual = 2962
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Detect if minReqCache needed
+Phase 2.1 Detect if minReqCache needed | Checksum: 18bbfb113
+
+Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2346.422 ; gain = 0.000 ; free physical = 175 ; free virtual = 2954
+
+Phase 2.2 Timer Update
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 2.2 Timer Update | Checksum: 18bbfb113
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 2866.414 ; gain = 519.992 ; free physical = 155 ; free virtual = 2647
+
+Phase 2.3 Timing Data Collection
+Phase 2.3 Timing Data Collection | Checksum: 18bbfb113
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 2866.414 ; gain = 519.992 ; free physical = 152 ; free virtual = 2643
+Phase 2 Timer Update And Timing Data Collection | Checksum: 18bbfb113
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 2866.414 ; gain = 519.992 ; free physical = 152 ; free virtual = 2643
+
+Phase 3 Retarget
+INFO: [Opt 31-1851] Number of loadless carry chains removed were: 0
+INFO: [Opt 31-1834] Total Chains To Be Transformed Were: 0 AND Number of Transformed insts Created are: 0
+INFO: [Opt 31-1566] Pulled 3 inverters resulting in an inversion of 13 pins
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 3 Retarget | Checksum: 20afab80f
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 2866.414 ; gain = 519.992 ; free physical = 152 ; free virtual = 2645
+Retarget | Checksum: 20afab80f
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 4 cells
+
+Phase 4 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 4 Constant propagation | Checksum: 27b483430
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 2866.414 ; gain = 519.992 ; free physical = 154 ; free virtual = 2647
+Constant propagation | Checksum: 27b483430
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 5 Sweep
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2866.414 ; gain = 0.000 ; free physical = 151 ; free virtual = 2645
+Phase 5 Sweep | Checksum: 2c39d5c81
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 2866.414 ; gain = 519.992 ; free physical = 162 ; free virtual = 2651
+Sweep | Checksum: 2c39d5c81
+INFO: [Opt 31-389] Phase Sweep created 7 cells and removed 0 cells
+
+Phase 6 BUFG optimization
+Phase 6 BUFG optimization | Checksum: 2c39d5c81
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 2898.430 ; gain = 552.008 ; free physical = 164 ; free virtual = 2634
+BUFG optimization | Checksum: 2c39d5c81
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 7 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 7 Shift Register Optimization | Checksum: 2c39d5c81
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 2898.430 ; gain = 552.008 ; free physical = 164 ; free virtual = 2634
+Shift Register Optimization | Checksum: 2c39d5c81
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+INFO: [Opt 31-1555] control_set_opt supports Versal devices only, and device 7a200t is unsupported
+
+Phase 8 Remap
+Phase 8 Remap | Checksum: 1e47b6eb9
+
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:49 . Memory (MB): peak = 3277.797 ; gain = 931.375 ; free physical = 164 ; free virtual = 2222
+Remap | Checksum: 1e47b6eb9
+INFO: [Opt 31-389] Phase Remap created 2475 cells and removed 2487 cells
+
+Phase 9 Post Processing Netlist
+Phase 9 Post Processing Netlist | Checksum: 28951f4a0
+
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:49 . Memory (MB): peak = 3277.797 ; gain = 931.375 ; free physical = 163 ; free virtual = 2221
+Post Processing Netlist | Checksum: 28951f4a0
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+
+Phase 10 Finalization
+
+Phase 10.1 Finalizing Design Cores and Updating Shapes
+Phase 10.1 Finalizing Design Cores and Updating Shapes | Checksum: 250e387a6
+
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:49 . Memory (MB): peak = 3277.797 ; gain = 931.375 ; free physical = 163 ; free virtual = 2221
+
+Phase 10.2 Verifying Netlist Connectivity
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3277.797 ; gain = 0.000 ; free physical = 163 ; free virtual = 2221
+Phase 10.2 Verifying Netlist Connectivity | Checksum: 250e387a6
+
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 3277.797 ; gain = 931.375 ; free physical = 163 ; free virtual = 2221
+Phase 10 Finalization | Checksum: 250e387a6
+
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 3277.797 ; gain = 931.375 ; free physical = 163 ; free virtual = 2221
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               0  |               4  |                                              0  |
+|  Constant propagation         |               0  |               0  |                                              0  |
+|  Sweep                        |               7  |               0  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Remap                        |            2475  |            2487  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: 250e387a6
+
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 3277.797 ; gain = 931.375 ; free physical = 163 ; free virtual = 2221
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3277.797 ; gain = 0.000 ; free physical = 164 ; free virtual = 2221
+INFO: [Common 17-83] Releasing license: Implementation
+30 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 3277.797 ; gain = 1317.293 ; free physical = 164 ; free virtual = 2221
+INFO: [Vivado 12-24828] Executing command : report_drc -file RV64I59F5SPSoCTOP_drc_opted.rpt -pb RV64I59F5SPSoCTOP_drc_opted.pb -rpx RV64I59F5SPSoCTOP_drc_opted.rpx
+Command: report_drc -file RV64I59F5SPSoCTOP_drc_opted.rpt -pb RV64I59F5SPSoCTOP_drc_opted.pb -rpx RV64I59F5SPSoCTOP_drc_opted.rpx
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/2025.2/data/ip'.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/khwl/Desktop/RV-IM100/FPGAs/RV64I59F_5SP/RV64I59F_5SP_FPGA.runs/impl_1/RV64I59F5SPSoCTOP_drc_opted.rpt.
+report_drc completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3277.797 ; gain = 0.000 ; free physical = 163 ; free virtual = 2223
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3277.797 ; gain = 0.000 ; free physical = 163 ; free virtual = 2223
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3277.797 ; gain = 0.000 ; free physical = 163 ; free virtual = 2224
+Wrote PlaceStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3277.797 ; gain = 0.000 ; free physical = 163 ; free virtual = 2224
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3277.797 ; gain = 0.000 ; free physical = 163 ; free virtual = 2224
+Wrote Device Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3277.797 ; gain = 0.000 ; free physical = 162 ; free virtual = 2223
+Write Physdb Complete: Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3277.797 ; gain = 0.000 ; free physical = 162 ; free virtual = 2223
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.2 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3277.797 ; gain = 0.000 ; free physical = 161 ; free virtual = 2225
+INFO: [Common 17-1381] The checkpoint '/home/khwl/Desktop/RV-IM100/FPGAs/RV64I59F_5SP/RV64I59F_5SP_FPGA.runs/impl_1/RV64I59F5SPSoCTOP_opt.dcp' has been generated.
+Command: place_design -directive ExtraNetDelay_low
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a200t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a200t'
+INFO: [Common 17-83] Releasing license: Implementation
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Vivado_Tcl 4-2302] The placer was invoked with the 'ExtraNetDelay_low' directive.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Starting Placer Task
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3277.797 ; gain = 0.000 ; free physical = 166 ; free virtual = 2230
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 19e5818c0
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3277.797 ; gain = 0.000 ; free physical = 166 ; free virtual = 2230
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3277.797 ; gain = 0.000 ; free physical = 166 ; free virtual = 2230
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: ed017409
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.69 . Memory (MB): peak = 3333.824 ; gain = 56.027 ; free physical = 161 ; free virtual = 2225
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 1ebe0799d
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 3372.867 ; gain = 95.070 ; free physical = 156 ; free virtual = 2217
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 1ebe0799d
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 3372.867 ; gain = 95.070 ; free physical = 163 ; free virtual = 2223
+Phase 1 Placer Initialization | Checksum: 1ebe0799d
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 3372.867 ; gain = 95.070 ; free physical = 163 ; free virtual = 2223
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 1c86cce66
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:08 . Memory (MB): peak = 3448.867 ; gain = 171.070 ; free physical = 186 ; free virtual = 2163
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 1c9458430
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:09 . Memory (MB): peak = 3472.867 ; gain = 195.070 ; free physical = 171 ; free virtual = 2143
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 1c9458430
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:09 . Memory (MB): peak = 3472.867 ; gain = 195.070 ; free physical = 171 ; free virtual = 2143
+
+Phase 2.4 Global Place Phase1
+Phase 2.4 Global Place Phase1 | Checksum: 1e56f395c
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:23 . Memory (MB): peak = 3542.867 ; gain = 265.070 ; free physical = 167 ; free virtual = 2096
+
+Phase 2.5 Global Place Phase2
+
+Phase 2.5.1 UpdateTiming Before Physical Synthesis
+Phase 2.5.1 UpdateTiming Before Physical Synthesis | Checksum: 19233cfce
+
+Time (s): cpu = 00:01:07 ; elapsed = 00:00:25 . Memory (MB): peak = 3599.867 ; gain = 322.070 ; free physical = 168 ; free virtual = 2039
+
+Phase 2.5.2 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 686 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 0, two critical 0, total 0, new lutff created 0
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 273 nets or LUTs. Breaked 0 LUT, combined 273 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-1408] Pass 1. Identified 9 candidate nets for high-fanout optimization.
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[3]. Replicated 16 times.
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[8]. Replicated 26 times.
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]. Replicated 25 times.
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[6]. Replicated 27 times.
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[9]. Replicated 21 times.
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[5]. Replicated 24 times.
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[7]. Replicated 26 times.
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[10]. Replicated 17 times.
+INFO: [Physopt 32-232] Optimized 8 nets. Created 182 new instances.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 8 nets or cells. Created 182 new cells, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.07 . Memory (MB): peak = 3599.867 ; gain = 0.000 ; free physical = 167 ; free virtual = 2044
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1123] No candidate cells found for Shift Register to Pipeline optimization
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1401] No candidate cells found for Shift Register optimization.
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3599.867 ; gain = 0.000 ; free physical = 172 ; free virtual = 2049
+INFO: [Physopt 32-68] No nets found for critical-cell optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3599.867 ; gain = 0.000 ; free physical = 173 ; free virtual = 2050
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |            0  |            273  |                   273  |           0  |           1  |  00:00:00  |
+|  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Very High Fanout                                 |          182  |              0  |                     8  |           0  |           1  |  00:00:10  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Critical Cell                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |          182  |            273  |                   281  |           0  |          10  |  00:00:11  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.5.2 Physical Synthesis In Placer | Checksum: 10d239101
+
+Time (s): cpu = 00:01:22 ; elapsed = 00:00:38 . Memory (MB): peak = 3608.773 ; gain = 330.977 ; free physical = 170 ; free virtual = 2050
+Phase 2.5 Global Place Phase2 | Checksum: d6e2453c
+
+Time (s): cpu = 00:01:33 ; elapsed = 00:00:43 . Memory (MB): peak = 3608.773 ; gain = 330.977 ; free physical = 176 ; free virtual = 2051
+Phase 2 Global Placement | Checksum: d6e2453c
+
+Time (s): cpu = 00:01:33 ; elapsed = 00:00:43 . Memory (MB): peak = 3608.773 ; gain = 330.977 ; free physical = 176 ; free virtual = 2051
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 10c3c0a6c
+
+Time (s): cpu = 00:01:38 ; elapsed = 00:00:45 . Memory (MB): peak = 3608.773 ; gain = 330.977 ; free physical = 175 ; free virtual = 2052
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 203b9b576
+
+Time (s): cpu = 00:01:51 ; elapsed = 00:00:52 . Memory (MB): peak = 3608.773 ; gain = 330.977 ; free physical = 178 ; free virtual = 2058
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 15ba352f5
+
+Time (s): cpu = 00:01:52 ; elapsed = 00:00:52 . Memory (MB): peak = 3608.773 ; gain = 330.977 ; free physical = 181 ; free virtual = 2061
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 1f435e36c
+
+Time (s): cpu = 00:01:52 ; elapsed = 00:00:52 . Memory (MB): peak = 3608.773 ; gain = 330.977 ; free physical = 181 ; free virtual = 2061
+
+Phase 3.5 Fast Optimization
+Phase 3.5 Fast Optimization | Checksum: 24e8d9867
+
+Time (s): cpu = 00:02:12 ; elapsed = 00:01:03 . Memory (MB): peak = 3608.773 ; gain = 330.977 ; free physical = 175 ; free virtual = 2045
+
+Phase 3.6 Small Shape Detail Placement
+Phase 3.6 Small Shape Detail Placement | Checksum: 21a25f8f7
+
+Time (s): cpu = 00:02:18 ; elapsed = 00:01:09 . Memory (MB): peak = 3608.773 ; gain = 330.977 ; free physical = 151 ; free virtual = 2020
+
+Phase 3.7 Re-assign LUT pins
+Phase 3.7 Re-assign LUT pins | Checksum: 18ab882ae
+
+Time (s): cpu = 00:02:19 ; elapsed = 00:01:10 . Memory (MB): peak = 3608.773 ; gain = 330.977 ; free physical = 160 ; free virtual = 2022
+
+Phase 3.8 Pipeline Register Optimization
+Phase 3.8 Pipeline Register Optimization | Checksum: 169ef4ecc
+
+Time (s): cpu = 00:02:19 ; elapsed = 00:01:10 . Memory (MB): peak = 3608.773 ; gain = 330.977 ; free physical = 160 ; free virtual = 2021
+
+Phase 3.9 Fast Optimization
+Phase 3.9 Fast Optimization | Checksum: 212d3dee9
+
+Time (s): cpu = 00:02:40 ; elapsed = 00:01:20 . Memory (MB): peak = 3608.773 ; gain = 330.977 ; free physical = 174 ; free virtual = 2006
+Phase 3 Detail Placement | Checksum: 212d3dee9
+
+Time (s): cpu = 00:02:40 ; elapsed = 00:01:20 . Memory (MB): peak = 3608.773 ; gain = 330.977 ; free physical = 173 ; free virtual = 2005
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 1f6c462c5
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-9.330 | TNS=-11553.091 |
+Phase 1 Physical Synthesis Initialization | Checksum: a98f3bf2
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.44 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 177 ; free virtual = 2007
+INFO: [Place 46-33] Processed net internal_reset, BUFG insertion was skipped due to placement/routing conflicts.
+INFO: [Place 46-33] Processed net rv64i59f_5sp/exception_detector/E[0], BUFG insertion was skipped due to placement/routing conflicts.
+INFO: [Place 46-56] BUFG insertion identified 2 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 2, Skipped due to Timing Degradation: 0, Skipped due to netlist editing failed: 0.
+Ending Physical Synthesis Task | Checksum: 1b6135c78
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.74 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 177 ; free virtual = 2008
+Phase 4.1.1.1 BUFG Insertion | Checksum: 1f6c462c5
+
+Time (s): cpu = 00:02:52 ; elapsed = 00:01:24 . Memory (MB): peak = 3608.773 ; gain = 330.977 ; free physical = 182 ; free virtual = 2012
+
+Phase 4.1.1.2 Post Placement Timing Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-6.871. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 14ffd2cdb
+
+Time (s): cpu = 00:06:09 ; elapsed = 00:03:55 . Memory (MB): peak = 3608.773 ; gain = 330.977 ; free physical = 171 ; free virtual = 1796
+
+Time (s): cpu = 00:06:09 ; elapsed = 00:03:55 . Memory (MB): peak = 3608.773 ; gain = 330.977 ; free physical = 171 ; free virtual = 1796
+Phase 4.1 Post Commit Optimization | Checksum: 14ffd2cdb
+
+Time (s): cpu = 00:06:09 ; elapsed = 00:03:55 . Memory (MB): peak = 3608.773 ; gain = 330.977 ; free physical = 170 ; free virtual = 1795
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 14ffd2cdb
+
+Time (s): cpu = 00:06:09 ; elapsed = 00:03:55 . Memory (MB): peak = 3608.773 ; gain = 330.977 ; free physical = 166 ; free virtual = 1795
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ____________________________________________________
+|           | Global Congestion | Short Congestion  |
+| Direction | Region Size       | Region Size       |
+|___________|___________________|___________________|
+|      North|                4x4|                8x8|
+|___________|___________________|___________________|
+|      South|                1x1|                2x2|
+|___________|___________________|___________________|
+|       East|                2x2|                4x4|
+|___________|___________________|___________________|
+|       West|                1x1|                1x1|
+|___________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 14ffd2cdb
+
+Time (s): cpu = 00:06:09 ; elapsed = 00:03:55 . Memory (MB): peak = 3608.773 ; gain = 330.977 ; free physical = 166 ; free virtual = 1795
+Phase 4.3 Placer Reporting | Checksum: 14ffd2cdb
+
+Time (s): cpu = 00:06:09 ; elapsed = 00:03:55 . Memory (MB): peak = 3608.773 ; gain = 330.977 ; free physical = 166 ; free virtual = 1795
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 166 ; free virtual = 1795
+
+Time (s): cpu = 00:06:09 ; elapsed = 00:03:55 . Memory (MB): peak = 3608.773 ; gain = 330.977 ; free physical = 166 ; free virtual = 1795
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1c0b1754f
+
+Time (s): cpu = 00:06:09 ; elapsed = 00:03:55 . Memory (MB): peak = 3608.773 ; gain = 330.977 ; free physical = 166 ; free virtual = 1795
+Ending Placer Task | Checksum: 17fc1929c
+
+Time (s): cpu = 00:06:09 ; elapsed = 00:03:55 . Memory (MB): peak = 3608.773 ; gain = 330.977 ; free physical = 166 ; free virtual = 1795
+89 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:06:12 ; elapsed = 00:03:56 . Memory (MB): peak = 3608.773 ; gain = 330.977 ; free physical = 167 ; free virtual = 1796
+INFO: [Vivado 12-24838] Running report commands "report_control_sets, report_io, report_utilization" in parallel.
+Running report generation with 3 threads.
+INFO: [Vivado 12-24828] Executing command : report_control_sets -verbose -file RV64I59F5SPSoCTOP_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.17 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 162 ; free virtual = 1791
+INFO: [Vivado 12-24828] Executing command : report_io -file RV64I59F5SPSoCTOP_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00.26 ; elapsed = 00:00:00.24 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 160 ; free virtual = 1789
+INFO: [Vivado 12-24828] Executing command : report_utilization -file RV64I59F5SPSoCTOP_utilization_placed.rpt -pb RV64I59F5SPSoCTOP_utilization_placed.pb
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 167 ; free virtual = 1797
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 167 ; free virtual = 1797
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 167 ; free virtual = 1798
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.2 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 164 ; free virtual = 1799
+Wrote PlaceStorage: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.63 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 176 ; free virtual = 1800
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 175 ; free virtual = 1801
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 173 ; free virtual = 1799
+Write Physdb Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.69 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 173 ; free virtual = 1799
+INFO: [Common 17-1381] The checkpoint '/home/khwl/Desktop/RV-IM100/FPGAs/RV64I59F_5SP/RV64I59F_5SP_FPGA.runs/impl_1/RV64I59F5SPSoCTOP_placed.dcp' has been generated.
+Command: phys_opt_design -directive AggressiveFanoutOpt
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a200t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a200t'
+INFO: [Vivado_Tcl 4-137] Directive used for phys_opt_design is: AggressiveFanoutOpt
+
+Starting Initial Update Timing Task
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:03 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 208 ; free virtual = 1817
+INFO: [Vivado_Tcl 4-1435] PhysOpt_Tcl_Interface Runtime Before Starting Physical Synthesis Task | CPU: 10.01s |  WALL: 3.31s
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 209 ; free virtual = 1817
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.918 | TNS=-8460.218 |
+Phase 1 Physical Synthesis Initialization | Checksum: 1f6d9f93a
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 186 ; free virtual = 1815
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.918 | TNS=-8460.218 |
+
+Phase 2 DSP Register Optimization
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 2 DSP Register Optimization | Checksum: 1f6d9f93a
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 186 ; free virtual = 1815
+
+Phase 3 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.918 | TNS=-8460.218 |
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/program_counter/Q[61]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[3]_repN_6. Replicated 9 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[3]_repN_6. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.871 | TNS=-8436.686 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__13_n_0. Replicated 9 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__13_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.858 | TNS=-8444.692 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_16. Replicated 9 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_16. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.845 | TNS=-8459.854 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_11. Replicated 9 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_11. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.843 | TNS=-8459.509 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[6]_repN_19. Replicated 9 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[6]_repN_19. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.842 | TNS=-8493.842 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[6]_repN_10. Replicated 9 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[6]_repN_10. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.842 | TNS=-8504.476 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[6]_repN_12. Replicated 8 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[6]_repN_12. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.841 | TNS=-8564.341 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__0_n_0. Replicated 5 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__0_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.827 | TNS=-8562.679 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[11]_rep__10_n_0. Replicated 9 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[11]_rep__10_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.825 | TNS=-8585.716 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[6]_repN_11. Replicated 9 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[6]_repN_11. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.823 | TNS=-8625.329 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[3]_repN. Replicated 8 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[3]_repN. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.823 | TNS=-8642.460 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__16_n_0. Replicated 10 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__16_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.820 | TNS=-8666.467 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__12_n_0. Replicated 9 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__12_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.817 | TNS=-8691.482 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[6]_repN. Replicated 6 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[6]_repN. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.816 | TNS=-8713.778 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_18. Replicated 9 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_18. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.811 | TNS=-8771.818 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_10. Replicated 9 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_10. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.810 | TNS=-8812.602 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[11]_rep__14_n_0. Replicated 8 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[11]_rep__14_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.809 | TNS=-8838.026 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[8]_repN_1. Replicated 10 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[8]_repN_1. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.807 | TNS=-8876.585 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__11_n_0. Replicated 9 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__11_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.806 | TNS=-8905.166 |
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/program_counter/Q[61]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_9.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[4]_replica_9
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_9. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.805 | TNS=-8903.240 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__20_n_0.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__20
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__20_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.801 | TNS=-8898.035 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__15_n_0.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__15
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__15_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.795 | TNS=-8888.639 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[3]_repN_1.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[3]_replica_1
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[3]_repN_1. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.792 | TNS=-8882.833 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_13.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[4]_replica_13
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_13. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.790 | TNS=-8874.987 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_5.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[4]_replica_5
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_5. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.790 | TNS=-8875.231 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__10_n_0.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__10
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__10_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.784 | TNS=-8863.763 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[5]_repN_3.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[5]_replica_3
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[5]_repN_3. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.780 | TNS=-8858.425 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[11]_rep__7_n_0.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[11]_rep__7
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[11]_rep__7_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.778 | TNS=-8855.784 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_8.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[4]_replica_8
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_8. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.777 | TNS=-8854.737 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_24.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[4]_replica_24
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_24. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.773 | TNS=-8848.951 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[11]_rep__11_n_0.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[11]_rep__11
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[11]_rep__11_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.772 | TNS=-8846.598 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[11]_rep__12_n_0.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[11]_rep__12
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[11]_rep__12_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.765 | TNS=-8836.666 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[8]_repN.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[8]_replica
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[8]_repN. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.765 | TNS=-8836.713 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[3]_repN_1.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[3]_replica_1
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[3]_repN_1. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.759 | TNS=-8828.123 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[8]_repN_6.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[8]_replica_6
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[8]_repN_6. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.758 | TNS=-8827.213 |
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[11]_rep__7_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/program_counter/EX_branch_reg_1. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/EX_pc_reg[62]_0[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/pc[3]_i_9_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/id_ex_register/alu_zero.  Re-placed instance rv64i59f_5sp/id_ex_register/i_0_LOPT_REMAP_44
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/id_ex_register/alu_zero. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.728 | TNS=-8104.445 |
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/i_1/O_n_44. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/alu/alu_dword/alu_zero0_carry__4_i_2[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 23 pins.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__0_i_7_0[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.728 | TNS=-8100.248 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[7]_repN_5.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[7]_replica_5
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[7]_repN_5. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.236 | TNS=-8097.816 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[11]_rep__8_n_0.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[11]_rep__8
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[11]_rep__8_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.236 | TNS=-8092.378 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[11]_rep__15_n_0.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[11]_rep__15
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[11]_rep__15_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.235 | TNS=-8091.282 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_13.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[4]_replica_13
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_13. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.233 | TNS=-8086.953 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[5]_repN_13.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[5]_replica_13
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[5]_repN_13. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.230 | TNS=-8081.983 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_7.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[4]_replica_7
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_7. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.228 | TNS=-8078.592 |
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__1_i_7_0[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 22 pins.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/id_ex_register/i_5/O_n_19. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.228 | TNS=-8078.592 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_14.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[4]_replica_14
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_14. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.226 | TNS=-8074.646 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__17_n_0.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__17
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__17_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.226 | TNS=-8073.287 |
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.226 | TNS=-8073.287 |
+Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 1711 ; free virtual = 3681
+Phase 3 Critical Path Optimization | Checksum: 296b3c624
+
+Time (s): cpu = 00:06:20 ; elapsed = 00:02:55 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 1711 ; free virtual = 3681
+
+Phase 4 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.226 | TNS=-8073.287 |
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/program_counter/Q[61]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[6]_repN_22. Replicated 9 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[6]_repN_22. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.225 | TNS=-8083.268 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_23. Replicated 9 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_23. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.221 | TNS=-8098.567 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[3]_repN_2. Replicated 9 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[3]_repN_2. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.216 | TNS=-8132.975 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[11]_rep__7_n_0. Replicated 8 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[11]_rep__7_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.215 | TNS=-8155.022 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[10]_repN_3. Replicated 10 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[10]_repN_3. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.211 | TNS=-8172.079 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[11]_rep__13_n_0. Replicated 9 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[11]_rep__13_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.211 | TNS=-8194.032 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[3]_repN_5. Replicated 8 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[3]_repN_5. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.208 | TNS=-8226.884 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[9]_repN_5. Replicated 9 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[9]_repN_5. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.208 | TNS=-8257.974 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__18_n_0. Replicated 5 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__18_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.207 | TNS=-8272.036 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[5]_repN_17. Replicated 5 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[5]_repN_17. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.202 | TNS=-8293.468 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[5]_repN_17. Replicated 5 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[5]_repN_17. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.196 | TNS=-8306.701 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[6]_repN_14. Replicated 4 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[6]_repN_14. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.195 | TNS=-8344.022 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_13. Replicated 9 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_13. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.191 | TNS=-8360.731 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[11]. Replicated 10 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[11]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.182 | TNS=-8373.311 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[11]_rep__8_n_0. Replicated 7 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[11]_rep__8_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.182 | TNS=-8394.808 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__19_n_0. Replicated 9 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__19_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.180 | TNS=-8415.225 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_20. Replicated 7 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_20. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.179 | TNS=-8433.182 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__15_n_0. Replicated 9 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__15_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.179 | TNS=-8455.675 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result[12]. Replicated 7 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result[12]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.177 | TNS=-8469.540 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result[11]. Replicated 8 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result[11]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.176 | TNS=-8489.455 |
+INFO: [Physopt 32-81] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[11]_rep__13_n_0_repN. Replicated 1 times.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[11]_rep__13_n_0_repN. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.176 | TNS=-8483.355 |
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/program_counter/Q[61]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[9]_repN_8.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[9]_replica_8
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[9]_repN_8. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.175 | TNS=-8481.697 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[5]_repN_14.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[5]_replica_14
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[5]_repN_14. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.173 | TNS=-8478.827 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[7]_repN_7.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[7]_replica_7
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[7]_repN_7. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.167 | TNS=-8470.827 |
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[3]_repN_1. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/program_counter/EX_branch_reg_1. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/EX_pc_reg[62]_0[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/pc[3]_i_9_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/i_1/O_n_44. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/alu/alu_dword/alu_zero0_carry__4_i_2[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_7_0[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_13_n_0.  Re-placed instance rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_13
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_13_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.165 | TNS=-8468.020 |
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_12_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_52_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 22 pins.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_133_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.162 | TNS=-8463.834 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[7]_repN_10.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[7]_replica_10
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[7]_repN_10. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.156 | TNS=-8455.298 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[9]_repN_2.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[9]_replica_2
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[9]_repN_2. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.154 | TNS=-8452.399 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__9_n_0.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__9
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__9_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.144 | TNS=-8438.276 |
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_7_0[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 18 pins.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_14_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.144 | TNS=-8438.276 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[7]_repN_12.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[7]_replica_12
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[7]_repN_12. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.140 | TNS=-8432.201 |
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_7_0[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 22 pins.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_13_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.138 | TNS=-8429.405 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[6]_repN_8.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[6]_replica_8
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[6]_repN_8. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.136 | TNS=-8426.588 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[3]_repN_9.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[3]_replica_9
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[3]_repN_9. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.135 | TNS=-8425.145 |
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[5]_repN_3. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 23 pins.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__0_i_7_0[3]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.135 | TNS=-8425.145 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__10_n_0.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__10
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__10_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.134 | TNS=-8417.665 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 19 pins.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__1_i_7_0[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.129 | TNS=-8410.667 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[7]_repN_11.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[7]_replica_11
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[7]_repN_11. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.127 | TNS=-8402.611 |
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_7_0[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_7_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_27_n_0.  Re-placed instance rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_27
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_27_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.120 | TNS=-8392.832 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 21 pins.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_7_0[2]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.117 | TNS=-8388.635 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__14_n_0.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__14
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__14_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.116 | TNS=-8387.717 |
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_7_0[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_7_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 23 pins.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_29_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.113 | TNS=-8383.515 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 14 pins.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_7_0[2]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.107 | TNS=-8375.131 |
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[3]_repN_3.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[3]_replica_3
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[3]_repN_3. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.102 | TNS=-8368.161 |
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__0_i_7_0[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/i_4/O_n_17. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__0_i_23_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__0_i_74_n_0.  Re-placed instance rv64i59f_5sp/id_ex_register/alu_zero0_carry__0_i_74
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__0_i_74_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.099 | TNS=-8363.969 |
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/i_3/O_n_22. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 24 pins.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__0_i_21_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.096 | TNS=-8359.762 |
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[7]_repN_1. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_7_0[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_20_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 23 pins.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/id_ex_register/i_1/O_n_35. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.093 | TNS=-8355.531 |
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_11_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_44_n_0.  Re-placed instance rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_44
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_44_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.087 | TNS=-8347.138 |
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 24 pins.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__0_i_21_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-6.084 | TNS=-8342.950 |
+INFO: [Common 17-14] Message 'Physopt 32-619' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__0_i_21_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__0_i_72_n_0.  Re-placed instance rv64i59f_5sp/id_ex_register/alu_zero0_carry__0_i_72
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__0_i_72_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_14. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 21 pins.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_7_0[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_12_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_49_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_121_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu/alu_dword/data0[39]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_122_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/src_A[6]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 22 pins.
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/i_1/O_n_24. Optimization improves timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__0_i_7_0[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/id_ex_register/i_5/O_n_13.  Re-placed instance rv64i59f_5sp/id_ex_register/i_5_LOPT_REMAP_13
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/id_ex_register/i_5/O_n_13. Optimization improves timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__4_i_3_0[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__4_i_5_n_0.  Re-placed instance rv64i59f_5sp/id_ex_register/alu_zero0_carry__4_i_5
+INFO: [Physopt 32-735] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__4_i_5_n_0. Optimization improves timing on the net.
+INFO: [Common 17-14] Message 'Physopt 32-735' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[5]_repN_2.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[5]_replica_2
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_7_0[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/i_4/O_n_8. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 22 pins.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[5]_repN_5.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[5]_replica_5
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_7_0[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_14_n_0.  Re-placed instance rv64i59f_5sp/id_ex_register/i_0_LOPT_REMAP_33
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_7_0[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 23 pins.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[5]_repN_13.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[5]_replica_13
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__1_i_7_0[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/i_5/O_n_19. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__1_i_9_n_0.  Re-placed instance rv64i59f_5sp/id_ex_register/alu_zero0_carry__1_i_9
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[11]_rep__19_n_0.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[11]_rep__19
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[6]_repN_7.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[6]_replica_7
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 23 pins.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_133_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/alu/alu_dword/data1[51]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/i___0_carry__0_i_24_1[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/src_B[6]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 24 pins.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[12]_rep__17_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_13_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 19 pins.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_7_0[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_8_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 19 pins.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 19 pins.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 16 pins.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_9_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_34_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_31_n_0.  Re-placed instance rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_31
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__1_i_7_0[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/i_5/O_n_16. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 23 pins.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__0_i_7_0[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__0_i_8_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 18 pins.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 13 pins.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 15 pins.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/id_ex_register/i_3/O_n_20.  Re-placed instance rv64i59f_5sp/id_ex_register/i_3_LOPT_REMAP_20
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_7.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[4]_replica_7
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 20 pins.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[5]_repN_13.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[5]_replica_13
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 23 pins.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_51_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_110_n_0.  Re-placed instance rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_110
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 20 pins.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[5]_repN_16.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[5]_replica_16
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/id_ex_register/i_2/O_n_25.  Re-placed instance rv64i59f_5sp/id_ex_register/i_2_LOPT_REMAP_25
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 10 pins.
+INFO: [Physopt 32-702] Processed net rv64i59f_5sp/id_ex_register/i_5/O_n_14. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 23 pins.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_36_n_0.  Re-placed instance rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_36
+Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 2661 ; free virtual = 4859
+Phase 4 Critical Path Optimization | Checksum: 147f21ef5
+
+Time (s): cpu = 00:13:05 ; elapsed = 00:05:48 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 2661 ; free virtual = 4859
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 2653 ; free virtual = 4851
+INFO: [Physopt 32-603] Post Physical Optimization Timing Summary | WNS=-5.973 | TNS=-8163.094 |
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization   |  WNS Gain (ns)  |  TNS Gain (ns)  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  DSP Register   |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Critical Path  |          0.945  |        297.124  |          320  |              0  |                   132  |           0  |           2  |  00:05:46  |
+|  Total          |          0.945  |        297.124  |          320  |              0  |                   132  |           0  |           3  |  00:05:46  |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 2652 ; free virtual = 4850
+Ending Physical Synthesis Task | Checksum: 19031ef95
+
+Time (s): cpu = 00:13:05 ; elapsed = 00:05:48 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 2652 ; free virtual = 4850
+INFO: [Common 17-83] Releasing license: Implementation
+506 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+phys_opt_design: Time (s): cpu = 00:13:14 ; elapsed = 00:05:52 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 2652 ; free virtual = 4850
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 2652 ; free virtual = 4850
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 2652 ; free virtual = 4850
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 2649 ; free virtual = 4849
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.2 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 2647 ; free virtual = 4849
+Wrote PlaceStorage: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.61 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 2572 ; free virtual = 4798
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 2564 ; free virtual = 4792
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 2564 ; free virtual = 4793
+Write Physdb Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.66 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 2564 ; free virtual = 4793
+INFO: [Common 17-1381] The checkpoint '/home/khwl/Desktop/RV-IM100/FPGAs/RV64I59F_5SP/RV64I59F_5SP_FPGA.runs/impl_1/RV64I59F5SPSoCTOP_physopt.dcp' has been generated.
+Command: route_design -directive NoTimingRelaxation -tns_cleanup
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a200t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a200t'
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-270] Using Router directive 'NoTimingRelaxation'.
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: 894a966 ConstDB: 0 ShapeSum: e947c81d RouteDB: 981aeb64
+Post Restoration Checksum: NetGraph: 2256586 | NumContArr: 8c3b77 | Constraints: c2a8fa9d | Timing: c2a8fa9d
+Phase 1 Build RT Design | Checksum: 188039637
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:34 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 1344 ; free virtual = 3624
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 188039637
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:34 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 1333 ; free virtual = 3619
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 188039637
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:34 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 1332 ; free virtual = 3620
+ Number of Nodes with overlaps = 0
+
+Phase 2.3 Update Timing
+Phase 2.3 Update Timing | Checksum: 25e9bf117
+
+Time (s): cpu = 00:01:09 ; elapsed = 00:00:38 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 1072 ; free virtual = 3507
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-5.658 | TNS=-198364.247| WHS=-0.240 | THS=-2002.226|
+
+
+Phase 2.4 Soft Constraint Pins - Fast Budgeting
+Phase 2.4 Soft Constraint Pins - Fast Budgeting | Checksum: 2701d336c
+
+Time (s): cpu = 00:01:14 ; elapsed = 00:00:39 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 1081 ; free virtual = 3522
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 4.04899e-05 %
+  Global Horizontal Routing Utilization  = 3.30469e-05 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 15487
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 15486
+  Number of Partially Routed Nets     = 1
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: 29a5a0c31
+
+Time (s): cpu = 00:01:15 ; elapsed = 00:00:39 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 1073 ; free virtual = 3514
+
+Phase 3 Global Routing
+Phase 3 Global Routing | Checksum: 29a5a0c31
+
+Time (s): cpu = 00:01:15 ; elapsed = 00:00:39 . Memory (MB): peak = 3608.773 ; gain = 0.000 ; free physical = 1073 ; free virtual = 3514
+
+Phase 4 Initial Routing
+
+Phase 4.1 Initial Net Routing Pass
+Phase 4.1 Initial Net Routing Pass | Checksum: 1a9bb5e32
+
+Time (s): cpu = 00:01:57 ; elapsed = 00:00:50 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 1191 ; free virtual = 3635
+Phase 4 Initial Routing | Checksum: 1a9bb5e32
+
+Time (s): cpu = 00:01:57 ; elapsed = 00:00:50 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 1215 ; free virtual = 3659
+There are 27995 pins with tight setup and hold constraints. tight_setup_hold_pins.txt will contain only 10000 of them.
+INFO: [Route 35-580] Design has 27995 pins with tight setup and hold constraints.
+
+The top 5 pins with tight setup and hold constraints:
+
++====================+===================+====================================================================+
+| Launch Setup Clock | Launch Hold Clock | Pin                                                                |
++====================+===================+====================================================================+
+| clk_50mhz          | clk_50mhz         | rv64i59f_5sp/data_memory/memory_reg_3584_3839_36_36/RAMS64E_A/ADR0 |
+| clk_50mhz          | clk_50mhz         | rv64i59f_5sp/data_memory/memory_reg_3584_3839_36_36/RAMS64E_B/ADR0 |
+| clk_50mhz          | clk_50mhz         | rv64i59f_5sp/data_memory/memory_reg_5120_5375_14_14/RAMS64E_A/ADR0 |
+| clk_50mhz          | clk_50mhz         | rv64i59f_5sp/program_counter/pc_reg[61]/D                          |
+| clk_50mhz          | clk_50mhz         | rv64i59f_5sp/program_counter/pc_reg[62]/D                          |
++--------------------+-------------------+--------------------------------------------------------------------+
+
+File with complete list of pins: tight_setup_hold_pins.txt
+
+
+Phase 5 Rip-up And Reroute
+
+Phase 5.1 Global Iteration 0
+ Number of Nodes with overlaps = 8423
+ Number of Nodes with overlaps = 1376
+ Number of Nodes with overlaps = 270
+ Number of Nodes with overlaps = 38
+ Number of Nodes with overlaps = 8
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-9.168 | TNS=-316653.979| WHS=N/A    | THS=N/A    |
+
+Phase 5.1 Global Iteration 0 | Checksum: 300fbcea8
+
+Time (s): cpu = 00:03:14 ; elapsed = 00:01:35 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 998 ; free virtual = 3504
+
+Phase 5.2 Global Iteration 1
+ Number of Nodes with overlaps = 2496
+ Number of Nodes with overlaps = 1342
+ Number of Nodes with overlaps = 1026
+ Number of Nodes with overlaps = 794
+ Number of Nodes with overlaps = 602
+ Number of Nodes with overlaps = 442
+ Number of Nodes with overlaps = 235
+ Number of Nodes with overlaps = 150
+ Number of Nodes with overlaps = 65
+ Number of Nodes with overlaps = 28
+ Number of Nodes with overlaps = 13
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-7.187 | TNS=-264393.685| WHS=N/A    | THS=N/A    |
+
+Phase 5.2 Global Iteration 1 | Checksum: 205376097
+
+Time (s): cpu = 00:05:40 ; elapsed = 00:02:28 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 1032 ; free virtual = 3558
+
+Phase 5.3 Global Iteration 2
+ Number of Nodes with overlaps = 2508
+ Number of Nodes with overlaps = 1309
+ Number of Nodes with overlaps = 707
+ Number of Nodes with overlaps = 481
+ Number of Nodes with overlaps = 284
+ Number of Nodes with overlaps = 215
+ Number of Nodes with overlaps = 79
+ Number of Nodes with overlaps = 48
+ Number of Nodes with overlaps = 36
+ Number of Nodes with overlaps = 43
+ Number of Nodes with overlaps = 20
+ Number of Nodes with overlaps = 9
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-6.856 | TNS=-251071.159| WHS=N/A    | THS=N/A    |
+
+Phase 5.3 Global Iteration 2 | Checksum: 330dc930a
+
+Time (s): cpu = 00:08:00 ; elapsed = 00:03:24 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 1001 ; free virtual = 3532
+
+Phase 5.4 Global Iteration 3
+ Number of Nodes with overlaps = 4781
+ Number of Nodes with overlaps = 1644
+ Number of Nodes with overlaps = 836
+ Number of Nodes with overlaps = 519
+ Number of Nodes with overlaps = 262
+ Number of Nodes with overlaps = 227
+ Number of Nodes with overlaps = 125
+ Number of Nodes with overlaps = 48
+ Number of Nodes with overlaps = 40
+ Number of Nodes with overlaps = 22
+ Number of Nodes with overlaps = 14
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-6.597 | TNS=-233276.605| WHS=N/A    | THS=N/A    |
+
+Phase 5.4 Global Iteration 3 | Checksum: 1b1cc535e
+
+Time (s): cpu = 00:10:55 ; elapsed = 00:04:32 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 775 ; free virtual = 3516
+
+Phase 5.5 Global Iteration 4
+ Number of Nodes with overlaps = 2269
+ Number of Nodes with overlaps = 1024
+ Number of Nodes with overlaps = 592
+ Number of Nodes with overlaps = 283
+ Number of Nodes with overlaps = 182
+ Number of Nodes with overlaps = 79
+ Number of Nodes with overlaps = 58
+ Number of Nodes with overlaps = 34
+ Number of Nodes with overlaps = 21
+ Number of Nodes with overlaps = 8
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-6.634 | TNS=-234208.811| WHS=N/A    | THS=N/A    |
+
+Phase 5.5 Global Iteration 4 | Checksum: 1d17efd74
+
+Time (s): cpu = 00:13:08 ; elapsed = 00:05:21 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 578 ; free virtual = 3265
+Phase 5 Rip-up And Reroute | Checksum: 1d17efd74
+
+Time (s): cpu = 00:13:08 ; elapsed = 00:05:21 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 578 ; free virtual = 3265
+
+Phase 6 Delay and Skew Optimization
+
+Phase 6.1 TNS Cleanup
+
+Phase 6.1.1 Delay CleanUp
+
+Phase 6.1.1.1 Update Timing
+Phase 6.1.1.1 Update Timing | Checksum: 1e4476966
+
+Time (s): cpu = 00:13:11 ; elapsed = 00:05:21 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 578 ; free virtual = 3265
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-6.581 | TNS=-232438.178| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+
+Phase 6.1.1.2 Update Timing
+Phase 6.1.1.2 Update Timing | Checksum: 31f8be6a5
+
+Time (s): cpu = 00:13:12 ; elapsed = 00:05:22 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 578 ; free virtual = 3264
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-6.570 | TNS=-232414.212| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+
+Phase 6.1.1.3 Update Timing
+Phase 6.1.1.3 Update Timing | Checksum: 29635c709
+
+Time (s): cpu = 00:13:13 ; elapsed = 00:05:22 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 584 ; free virtual = 3271
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-6.570 | TNS=-232385.435| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+
+Phase 6.1.1.4 Update Timing
+Phase 6.1.1.4 Update Timing | Checksum: 1ad88f98a
+
+Time (s): cpu = 00:13:19 ; elapsed = 00:05:23 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 565 ; free virtual = 3266
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-6.570 | TNS=-232341.064| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+
+Phase 6.1.1.5 Update Timing
+Phase 6.1.1.5 Update Timing | Checksum: 222205769
+
+Time (s): cpu = 00:13:21 ; elapsed = 00:05:24 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 568 ; free virtual = 3260
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-6.570 | TNS=-232058.308| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+
+Phase 6.1.1.6 Update Timing
+Phase 6.1.1.6 Update Timing | Checksum: 12ece9772
+
+Time (s): cpu = 00:13:22 ; elapsed = 00:05:24 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 565 ; free virtual = 3257
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-6.570 | TNS=-232058.308| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+
+Phase 6.1.1.7 Update Timing
+Phase 6.1.1.7 Update Timing | Checksum: 1d651a106
+
+Time (s): cpu = 00:13:23 ; elapsed = 00:05:25 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 564 ; free virtual = 3256
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-6.570 | TNS=-232052.380| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+
+Phase 6.1.1.8 Update Timing
+Phase 6.1.1.8 Update Timing | Checksum: 32c23e3fb
+
+Time (s): cpu = 00:13:24 ; elapsed = 00:05:25 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 564 ; free virtual = 3257
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-6.570 | TNS=-232052.164| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+
+Phase 6.1.1.9 Update Timing
+Phase 6.1.1.9 Update Timing | Checksum: 2bc412ce7
+
+Time (s): cpu = 00:13:24 ; elapsed = 00:05:25 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 660 ; free virtual = 3352
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-6.570 | TNS=-232052.164| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+
+Phase 6.1.1.10 Update Timing
+Phase 6.1.1.10 Update Timing | Checksum: 2b8370fc6
+
+Time (s): cpu = 00:13:25 ; elapsed = 00:05:26 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 659 ; free virtual = 3351
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-6.570 | TNS=-232051.900| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+Phase 6.1.1 Delay CleanUp | Checksum: 277f3ee8b
+
+Time (s): cpu = 00:13:26 ; elapsed = 00:05:26 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 665 ; free virtual = 3356
+Phase 6.1 TNS Cleanup | Checksum: 277f3ee8b
+
+Time (s): cpu = 00:13:26 ; elapsed = 00:05:26 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 665 ; free virtual = 3356
+
+Phase 6.2 Clock Skew Optimization
+Phase 6.2 Clock Skew Optimization | Checksum: 277f3ee8b
+
+Time (s): cpu = 00:13:26 ; elapsed = 00:05:26 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 665 ; free virtual = 3356
+Phase 6 Delay and Skew Optimization | Checksum: 277f3ee8b
+
+Time (s): cpu = 00:13:26 ; elapsed = 00:05:26 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 665 ; free virtual = 3356
+
+Phase 7 Post Hold Fix
+
+Phase 7.1 Hold Fix Iter
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-6.570 | TNS=-232017.340| WHS=0.030  | THS=0.000  |
+
+Phase 7.1 Hold Fix Iter | Checksum: 28195d46f
+
+Time (s): cpu = 00:13:29 ; elapsed = 00:05:27 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 668 ; free virtual = 3356
+Phase 7 Post Hold Fix | Checksum: 28195d46f
+
+Time (s): cpu = 00:13:29 ; elapsed = 00:05:27 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 668 ; free virtual = 3356
+
+Phase 8 Timing Verification
+
+Phase 8.1 Update Timing
+Phase 8.1 Update Timing | Checksum: 2da2cfcbc
+
+Time (s): cpu = 00:13:33 ; elapsed = 00:05:28 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 655 ; free virtual = 3344
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-6.570 | TNS=-232018.084| WHS=0.030  | THS=0.000  |
+
+Phase 8 Timing Verification | Checksum: 2da2cfcbc
+
+Time (s): cpu = 00:13:33 ; elapsed = 00:05:28 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 653 ; free virtual = 3343
+
+Phase 9 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 5.77431 %
+  Global Horizontal Routing Utilization  = 6.78748 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+
+--GLOBAL Congestion:
+Utilization threshold used for congestion level computation: 0.85
+Congestion Report
+North Dir 1x1 Area, Max Cong = 96.3964%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+   INT_R_X77Y51 -> INT_R_X77Y51
+   INT_R_X75Y50 -> INT_R_X75Y50
+South Dir 1x1 Area, Max Cong = 83.7838%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 94.1176%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+   INT_L_X44Y59 -> INT_L_X44Y59
+   INT_L_X52Y58 -> INT_L_X52Y58
+   INT_R_X53Y58 -> INT_R_X53Y58
+   INT_R_X73Y58 -> INT_R_X73Y58
+   INT_L_X46Y57 -> INT_L_X46Y57
+West Dir 1x1 Area, Max Cong = 88.2353%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+   INT_R_X43Y58 -> INT_R_X43Y58
+   INT_R_X83Y57 -> INT_R_X83Y57
+   INT_R_X43Y56 -> INT_R_X43Y56
+   INT_R_X43Y55 -> INT_R_X43Y55
+   INT_L_X42Y54 -> INT_L_X42Y54
+
+------------------------------
+Reporting congestion hotspots
+------------------------------
+Direction: North
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 1
+Direction: South
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: East
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 1 Aspect Ratio: 1 Sparse Ratio: 1.25
+Direction: West
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 1 Aspect Ratio: 0.666667 Sparse Ratio: 1
+
+Phase 9 Route finalize | Checksum: 2da2cfcbc
+
+Time (s): cpu = 00:13:33 ; elapsed = 00:05:28 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 626 ; free virtual = 3316
+
+Phase 10 Verifying routed nets
+
+ Verification completed successfully
+Phase 10 Verifying routed nets | Checksum: 2da2cfcbc
+
+Time (s): cpu = 00:13:33 ; elapsed = 00:05:28 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 626 ; free virtual = 3316
+
+Phase 11 Depositing Routes
+Phase 11 Depositing Routes | Checksum: 2f5b70205
+
+Time (s): cpu = 00:13:35 ; elapsed = 00:05:29 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 639 ; free virtual = 3338
+
+Phase 12 Incr Placement Change
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3684.680 ; gain = 0.000 ; free physical = 637 ; free virtual = 3336
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-5.485. For the most accurate timing information please run report_timing.
+Ending IncrPlace Task | Checksum: 1061719ea
+
+Time (s): cpu = 00:00:55 ; elapsed = 00:00:38 . Memory (MB): peak = 3684.680 ; gain = 0.000 ; free physical = 713 ; free virtual = 3423
+Phase 12 Incr Placement Change | Checksum: 1061719ea
+
+Time (s): cpu = 00:14:30 ; elapsed = 00:06:07 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 713 ; free virtual = 3423
+
+Phase 13 Build RT Design
+Checksum: PlaceDB: 5277b003 ConstDB: 0 ShapeSum: 3295a41c RouteDB: 8109c5cb
+Post Restoration Checksum: NetGraph: 8042755f | NumContArr: 50505be1 | Constraints: c2a8fa9d | Timing: c2a8fa9d
+Phase 13 Build RT Design | Checksum: 255e4c67a
+
+Time (s): cpu = 00:14:44 ; elapsed = 00:06:10 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 727 ; free virtual = 3442
+
+Phase 14 Router Initialization
+
+Phase 14.1 Fix Topology Constraints
+Phase 14.1 Fix Topology Constraints | Checksum: 255e4c67a
+
+Time (s): cpu = 00:14:44 ; elapsed = 00:06:10 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 720 ; free virtual = 3435
+
+Phase 14.2 Pre Route Cleanup
+Phase 14.2 Pre Route Cleanup | Checksum: 244bcfbbe
+
+Time (s): cpu = 00:14:44 ; elapsed = 00:06:10 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 717 ; free virtual = 3432
+ Number of Nodes with overlaps = 0
+
+Phase 14.3 Update Timing
+Phase 14.3 Update Timing | Checksum: 180d7d0b4
+
+Time (s): cpu = 00:15:03 ; elapsed = 00:06:14 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 721 ; free virtual = 3445
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-5.426 | TNS=-202916.637| WHS=-0.240 | THS=-1954.699|
+
+
+Phase 14.4 Soft Constraint Pins - Fast Budgeting
+Phase 14.4 Soft Constraint Pins - Fast Budgeting | Checksum: 1c0496fc9
+
+Time (s): cpu = 00:15:08 ; elapsed = 00:06:15 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 698 ; free virtual = 3448
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 5.72291 %
+  Global Horizontal Routing Utilization  = 6.69782 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 681
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 295
+  Number of Partially Routed Nets     = 386
+  Number of Node Overlaps             = 0
+
+Phase 14 Router Initialization | Checksum: 1035cb73b
+
+Time (s): cpu = 00:15:09 ; elapsed = 00:06:15 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 696 ; free virtual = 3446
+
+Phase 15 Global Routing
+Phase 15 Global Routing | Checksum: 1035cb73b
+
+Time (s): cpu = 00:15:09 ; elapsed = 00:06:15 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 696 ; free virtual = 3446
+
+Phase 16 Initial Routing
+
+Phase 16.1 Initial Net Routing Pass
+Phase 16.1 Initial Net Routing Pass | Checksum: 1d3ed6a43
+
+Time (s): cpu = 00:15:12 ; elapsed = 00:06:17 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 695 ; free virtual = 3446
+Phase 16 Initial Routing | Checksum: 1d3ed6a43
+
+Time (s): cpu = 00:15:12 ; elapsed = 00:06:17 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 695 ; free virtual = 3446
+There are 27065 pins with tight setup and hold constraints. tight_setup_hold_pins.txt will contain only 10000 of them.
+INFO: [Route 35-580] Design has 27065 pins with tight setup and hold constraints.
+
+The top 5 pins with tight setup and hold constraints:
+
++====================+===================+====================================================================+
+| Launch Setup Clock | Launch Hold Clock | Pin                                                                |
++====================+===================+====================================================================+
+| clk_50mhz          | clk_50mhz         | rv64i59f_5sp/data_memory/memory_reg_5120_5375_39_39/RAMS64E_A/ADR0 |
+| clk_50mhz          | clk_50mhz         | rv64i59f_5sp/data_memory/memory_reg_6400_6655_10_10/RAMS64E_C/ADR0 |
+| clk_50mhz          | clk_50mhz         | rv64i59f_5sp/data_memory/memory_reg_5120_5375_39_39/RAMS64E_B/ADR0 |
+| clk_50mhz          | clk_50mhz         | rv64i59f_5sp/data_memory/memory_reg_6400_6655_10_10/RAMS64E_D/ADR0 |
+| clk_50mhz          | clk_50mhz         | rv64i59f_5sp/data_memory/memory_reg_7168_7423_1_1/RAMS64E_C/ADR0   |
++--------------------+-------------------+--------------------------------------------------------------------+
+
+File with complete list of pins: tight_setup_hold_pins.txt
+
+
+Phase 17 Rip-up And Reroute
+
+Phase 17.1 Global Iteration 0
+ Number of Nodes with overlaps = 3728
+ Number of Nodes with overlaps = 1837
+ Number of Nodes with overlaps = 933
+ Number of Nodes with overlaps = 476
+ Number of Nodes with overlaps = 238
+ Number of Nodes with overlaps = 124
+ Number of Nodes with overlaps = 54
+ Number of Nodes with overlaps = 29
+ Number of Nodes with overlaps = 8
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-6.256 | TNS=-226988.749| WHS=N/A    | THS=N/A    |
+
+Phase 17.1 Global Iteration 0 | Checksum: 19e98f74a
+
+Time (s): cpu = 00:16:22 ; elapsed = 00:07:08 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 526 ; free virtual = 3309
+
+Phase 17.2 Global Iteration 1
+ Number of Nodes with overlaps = 3658
+ Number of Nodes with overlaps = 2228
+ Number of Nodes with overlaps = 1687
+ Number of Nodes with overlaps = 1184
+ Number of Nodes with overlaps = 845
+ Number of Nodes with overlaps = 561
+ Number of Nodes with overlaps = 302
+ Number of Nodes with overlaps = 159
+ Number of Nodes with overlaps = 80
+ Number of Nodes with overlaps = 63
+ Number of Nodes with overlaps = 46
+ Number of Nodes with overlaps = 12
+ Number of Nodes with overlaps = 9
+ Number of Nodes with overlaps = 9
+ Number of Nodes with overlaps = 6
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-6.346 | TNS=-218330.943| WHS=N/A    | THS=N/A    |
+
+Phase 17.2 Global Iteration 1 | Checksum: 19f7f92e6
+
+Time (s): cpu = 00:19:36 ; elapsed = 00:08:14 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 393 ; free virtual = 3163
+Phase 17 Rip-up And Reroute | Checksum: 19f7f92e6
+
+Time (s): cpu = 00:19:36 ; elapsed = 00:08:14 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 393 ; free virtual = 3163
+
+Phase 18 Delay and Skew Optimization
+
+Phase 18.1 TNS Cleanup
+
+Phase 18.1.1 Delay CleanUp
+
+Phase 18.1.1.1 Update Timing
+Phase 18.1.1.1 Update Timing | Checksum: 19e5ac841
+
+Time (s): cpu = 00:19:39 ; elapsed = 00:08:15 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 403 ; free virtual = 3171
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-6.240 | TNS=-226160.022| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+
+Phase 18.1.1.2 Update Timing
+Phase 18.1.1.2 Update Timing | Checksum: 22249c04a
+
+Time (s): cpu = 00:19:41 ; elapsed = 00:08:15 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 396 ; free virtual = 3168
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-6.167 | TNS=-225841.298| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+
+Phase 18.1.1.3 Update Timing
+Phase 18.1.1.3 Update Timing | Checksum: 1e872388e
+
+Time (s): cpu = 00:19:41 ; elapsed = 00:08:16 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 392 ; free virtual = 3165
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-6.167 | TNS=-225822.126| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+
+Phase 18.1.1.4 Update Timing
+Phase 18.1.1.4 Update Timing | Checksum: 2cfabae86
+
+Time (s): cpu = 00:19:46 ; elapsed = 00:08:17 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 400 ; free virtual = 3173
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-6.167 | TNS=-225562.045| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+
+Phase 18.1.1.5 Update Timing
+Phase 18.1.1.5 Update Timing | Checksum: 1f64e24dd
+
+Time (s): cpu = 00:19:48 ; elapsed = 00:08:17 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 391 ; free virtual = 3163
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-6.167 | TNS=-225292.067| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+
+Phase 18.1.1.6 Update Timing
+Phase 18.1.1.6 Update Timing | Checksum: 29bc29c54
+
+Time (s): cpu = 00:19:49 ; elapsed = 00:08:18 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 377 ; free virtual = 3149
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-6.167 | TNS=-225288.779| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+
+Phase 18.1.1.7 Update Timing
+Phase 18.1.1.7 Update Timing | Checksum: 1e701ea5e
+
+Time (s): cpu = 00:19:50 ; elapsed = 00:08:18 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 377 ; free virtual = 3150
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-6.167 | TNS=-225287.651| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+
+Phase 18.1.1.8 Update Timing
+Phase 18.1.1.8 Update Timing | Checksum: 2289853f9
+
+Time (s): cpu = 00:19:51 ; elapsed = 00:08:18 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 378 ; free virtual = 3150
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-6.167 | TNS=-225287.651| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+
+Phase 18.1.1.9 Update Timing
+Phase 18.1.1.9 Update Timing | Checksum: 27a0aaae1
+
+Time (s): cpu = 00:19:52 ; elapsed = 00:08:19 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 378 ; free virtual = 3151
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-6.167 | TNS=-225287.651| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+
+Phase 18.1.1.10 Update Timing
+Phase 18.1.1.10 Update Timing | Checksum: 22e47b074
+
+Time (s): cpu = 00:19:53 ; elapsed = 00:08:19 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 383 ; free virtual = 3156
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-6.167 | TNS=-225239.653| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+Phase 18.1.1 Delay CleanUp | Checksum: 1db3e9561
+
+Time (s): cpu = 00:19:54 ; elapsed = 00:08:20 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 388 ; free virtual = 3161
+Phase 18.1 TNS Cleanup | Checksum: 1db3e9561
+
+Time (s): cpu = 00:19:54 ; elapsed = 00:08:20 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 388 ; free virtual = 3161
+
+Phase 18.2 Clock Skew Optimization
+Phase 18.2 Clock Skew Optimization | Checksum: 1db3e9561
+
+Time (s): cpu = 00:19:54 ; elapsed = 00:08:20 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 388 ; free virtual = 3161
+Phase 18 Delay and Skew Optimization | Checksum: 1db3e9561
+
+Time (s): cpu = 00:19:54 ; elapsed = 00:08:20 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 388 ; free virtual = 3161
+
+Phase 19 Post Hold Fix
+
+Phase 19.1 Hold Fix Iter
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-6.167 | TNS=-225239.653| WHS=0.030  | THS=0.000  |
+
+Phase 19.1 Hold Fix Iter | Checksum: 1bfe680fd
+
+Time (s): cpu = 00:19:57 ; elapsed = 00:08:20 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 392 ; free virtual = 3164
+Phase 19 Post Hold Fix | Checksum: 1bfe680fd
+
+Time (s): cpu = 00:19:57 ; elapsed = 00:08:20 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 392 ; free virtual = 3164
+
+Phase 20 Timing Verification
+
+Phase 20.1 Update Timing
+Phase 20.1 Update Timing | Checksum: 23bccf25b
+
+Time (s): cpu = 00:20:00 ; elapsed = 00:08:21 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 390 ; free virtual = 3163
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-6.167 | TNS=-225240.541| WHS=0.030  | THS=0.000  |
+
+Phase 20 Timing Verification | Checksum: 23bccf25b
+
+Time (s): cpu = 00:20:00 ; elapsed = 00:08:21 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 390 ; free virtual = 3163
+
+Phase 21 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 5.66608 %
+  Global Horizontal Routing Utilization  = 6.75625 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+
+--GLOBAL Congestion:
+Utilization threshold used for congestion level computation: 0.85
+Congestion Report
+North Dir 1x1 Area, Max Cong = 82.8829%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 86.4865%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+   INT_R_X85Y39 -> INT_R_X85Y39
+East Dir 1x1 Area, Max Cong = 95.5882%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+   INT_L_X76Y61 -> INT_L_X76Y61
+   INT_L_X44Y59 -> INT_L_X44Y59
+   INT_R_X55Y59 -> INT_R_X55Y59
+   INT_L_X52Y58 -> INT_L_X52Y58
+   INT_R_X73Y58 -> INT_R_X73Y58
+West Dir 1x1 Area, Max Cong = 89.7059%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+   INT_R_X83Y57 -> INT_R_X83Y57
+   INT_L_X40Y54 -> INT_L_X40Y54
+   INT_R_X43Y54 -> INT_R_X43Y54
+   INT_L_X40Y52 -> INT_L_X40Y52
+
+------------------------------
+Reporting congestion hotspots
+------------------------------
+Direction: North
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: South
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 1
+Direction: East
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 1 Aspect Ratio: 0.5 Sparse Ratio: 1.25
+Direction: West
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 1
+
+Phase 21 Route finalize | Checksum: 23bccf25b
+
+Time (s): cpu = 00:20:01 ; elapsed = 00:08:21 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 387 ; free virtual = 3159
+
+Phase 22 Verifying routed nets
+
+ Verification completed successfully
+Phase 22 Verifying routed nets | Checksum: 23bccf25b
+
+Time (s): cpu = 00:20:01 ; elapsed = 00:08:21 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 386 ; free virtual = 3159
+
+Phase 23 Depositing Routes
+Phase 23 Depositing Routes | Checksum: 292f56be4
+
+Time (s): cpu = 00:20:03 ; elapsed = 00:08:22 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 400 ; free virtual = 3172
+
+Phase 24 Post Process Routing
+Phase 24 Post Process Routing | Checksum: 292f56be4
+
+Time (s): cpu = 00:20:03 ; elapsed = 00:08:22 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 399 ; free virtual = 3172
+
+Phase 25 Post Router Timing
+INFO: [Route 35-20] Post Routing Timing Summary | WNS=-6.154 | TNS=-8649.655| WHS=0.033  | THS=0.000  |
+
+Phase 25 Post Router Timing | Checksum: 252f10e81
+
+Time (s): cpu = 00:20:21 ; elapsed = 00:08:26 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 295 ; free virtual = 3073
+WARNING: [Route 35-39] The design did not meet timing requirements. Please run report_timing_summary for detailed reports.
+Resolution: Verify that the timing was met or had small violations at all previous steps (synthesis, placement, power_opt, and phys_opt). Run report_timing_summary and analyze individual timing paths.
+INFO: [Route 35-253] TNS is the sum of the worst slack violation on every endpoint in the design. Review the paths with the biggest WNS violations in the timing reports and modify your constraints or your design to improve both WNS and TNS.
+Total Elapsed time in route_design: 506.23 secs
+
+Phase 26 Post-Route Event Processing
+Phase 26 Post-Route Event Processing | Checksum: 1b4c01e8e
+
+Time (s): cpu = 00:20:21 ; elapsed = 00:08:26 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 285 ; free virtual = 3064
+INFO: [Route 35-16] Router Completed Successfully
+Ending Routing Task | Checksum: 1b4c01e8e
+
+Time (s): cpu = 00:20:21 ; elapsed = 00:08:26 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 285 ; free virtual = 3064
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+554 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:20:22 ; elapsed = 00:08:27 . Memory (MB): peak = 3684.680 ; gain = 75.906 ; free physical = 265 ; free virtual = 3043
+INFO: [Vivado 12-24828] Executing command : report_drc -file RV64I59F5SPSoCTOP_drc_routed.rpt -pb RV64I59F5SPSoCTOP_drc_routed.pb -rpx RV64I59F5SPSoCTOP_drc_routed.rpx
+Command: report_drc -file RV64I59F5SPSoCTOP_drc_routed.rpt -pb RV64I59F5SPSoCTOP_drc_routed.pb -rpx RV64I59F5SPSoCTOP_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/khwl/Desktop/RV-IM100/FPGAs/RV64I59F_5SP/RV64I59F_5SP_FPGA.runs/impl_1/RV64I59F5SPSoCTOP_drc_routed.rpt.
+report_drc completed successfully
+INFO: [Vivado 12-24828] Executing command : report_methodology -file RV64I59F5SPSoCTOP_methodology_drc_routed.rpt -pb RV64I59F5SPSoCTOP_methodology_drc_routed.pb -rpx RV64I59F5SPSoCTOP_methodology_drc_routed.rpx
+Command: report_methodology -file RV64I59F5SPSoCTOP_methodology_drc_routed.rpt -pb RV64I59F5SPSoCTOP_methodology_drc_routed.pb -rpx RV64I59F5SPSoCTOP_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 8 threads
+INFO: [Vivado_Tcl 2-1520] The results of Report Methodology are in file /home/khwl/Desktop/RV-IM100/FPGAs/RV64I59F_5SP/RV64I59F_5SP_FPGA.runs/impl_1/RV64I59F5SPSoCTOP_methodology_drc_routed.rpt.
+report_methodology completed successfully
+report_methodology: Time (s): cpu = 00:00:32 ; elapsed = 00:00:06 . Memory (MB): peak = 3684.680 ; gain = 0.000 ; free physical = 244 ; free virtual = 3017
+INFO: [Vivado 12-24828] Executing command : report_timing_summary -max_paths 10 -routable_nets -report_unconstrained -file RV64I59F5SPSoCTOP_timing_summary_routed.rpt -pb RV64I59F5SPSoCTOP_timing_summary_routed.pb -rpx RV64I59F5SPSoCTOP_timing_summary_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Vivado 12-24838] Running report commands "report_bus_skew, report_incremental_reuse, report_route_status" in parallel.
+Running report generation with 3 threads.
+INFO: [Vivado 12-24828] Executing command : report_incremental_reuse -file RV64I59F5SPSoCTOP_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [Vivado 12-24828] Executing command : report_bus_skew -warn_on_violation -file RV64I59F5SPSoCTOP_bus_skew_routed.rpt -pb RV64I59F5SPSoCTOP_bus_skew_routed.pb -rpx RV64I59F5SPSoCTOP_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Vivado 12-24828] Executing command : report_route_status -file RV64I59F5SPSoCTOP_route_status.rpt -pb RV64I59F5SPSoCTOP_route_status.pb
+INFO: [Vivado 12-24828] Executing command : report_power -file RV64I59F5SPSoCTOP_power_routed.rpt -pb RV64I59F5SPSoCTOP_power_summary_routed.pb -rpx RV64I59F5SPSoCTOP_power_routed.rpx
+Command: report_power -file RV64I59F5SPSoCTOP_power_routed.rpt -pb RV64I59F5SPSoCTOP_power_summary_routed.pb -rpx RV64I59F5SPSoCTOP_power_routed.rpx
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+574 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [Vivado 12-24828] Executing command : report_clock_utilization -file RV64I59F5SPSoCTOP_clock_utilization_routed.rpt
+generate_parallel_reports: Time (s): cpu = 00:00:51 ; elapsed = 00:00:13 . Memory (MB): peak = 3789.781 ; gain = 105.102 ; free physical = 320 ; free virtual = 3130
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3789.781 ; gain = 0.000 ; free physical = 319 ; free virtual = 3128
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3789.781 ; gain = 0.000 ; free physical = 319 ; free virtual = 3128
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.25 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3789.781 ; gain = 0.000 ; free physical = 312 ; free virtual = 3126
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.75 ; elapsed = 00:00:00.15 . Memory (MB): peak = 3789.781 ; gain = 0.000 ; free physical = 304 ; free virtual = 3128
+Wrote PlaceStorage: Time (s): cpu = 00:00:00.95 ; elapsed = 00:00:00.58 . Memory (MB): peak = 3789.781 ; gain = 0.000 ; free physical = 279 ; free virtual = 3123
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3789.781 ; gain = 0.000 ; free physical = 279 ; free virtual = 3124
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3789.781 ; gain = 0.000 ; free physical = 279 ; free virtual = 3125
+Write Physdb Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.75 . Memory (MB): peak = 3789.781 ; gain = 0.000 ; free physical = 279 ; free virtual = 3125
+INFO: [Common 17-1381] The checkpoint '/home/khwl/Desktop/RV-IM100/FPGAs/RV64I59F_5SP/RV64I59F_5SP_FPGA.runs/impl_1/RV64I59F5SPSoCTOP_routed.dcp' has been generated.
+Command: phys_opt_design -directive AggressiveExplore
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a200t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a200t'
+INFO: [Vivado_Tcl 4-241] Physical synthesis in post route mode 
+INFO: [Vivado_Tcl 4-137] Directive used for phys_opt_design is: AggressiveExplore
+INFO: [Vivado_Tcl 4-1435] PhysOpt_Tcl_Interface Runtime Before Starting Physical Synthesis Task | CPU: 0.63s |  WALL: 0.64s
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3789.781 ; gain = 0.000 ; free physical = 323 ; free virtual = 3143
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-6.154 | TNS=-8649.656 | WHS=0.033 | THS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: 271acd53d
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:03 . Memory (MB): peak = 3789.781 ; gain = 0.000 ; free physical = 336 ; free virtual = 3161
+WARNING: [Physopt 32-745] Physical Optimization has determined that the magnitude of the negative slack is too large and it is highly unlikely that slack will be improved. Post-Route Physical Optimization is most effective when WNS is above -0.5ns
+
+Phase 2 Critical Path Optimization
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-6.154 | TNS=-8649.656 | WHS=0.033 | THS=0.000 |
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/program_counter/Q[61].
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[9]_repN_20.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[9]_replica_20
+INFO: [Physopt 32-952] Improved path group WNS = -6.121. Path group: clk_50mhz. Processed net: rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[9]_repN_20.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_5.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[4]_replica_5
+INFO: [Physopt 32-952] Improved path group WNS = -6.099. Path group: clk_50mhz. Processed net: rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_5.
+INFO: [Physopt 32-952] Improved path group WNS = -6.082. Path group: clk_50mhz. Processed net: rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[3]_repN_33.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_5.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[4]_replica_5
+INFO: [Physopt 32-952] Improved path group WNS = -6.075. Path group: clk_50mhz. Processed net: rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_5.
+INFO: [Physopt 32-952] Improved path group WNS = -6.046. Path group: clk_50mhz. Processed net: rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[3]_repN_26.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_8.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[4]_replica_8
+INFO: [Physopt 32-952] Improved path group WNS = -6.035. Path group: clk_50mhz. Processed net: rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_8.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[3]_repN_1.
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/id_ex_register/D[61]. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/id_ex_register/pc[61]_i_1_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -5.969. Path group: clk_50mhz. Processed net: rv64i59f_5sp/program_counter/EX_branch_reg_1.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/program_counter/Q[55].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/program_counter/EX_branch_reg_7.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/EX_pc_reg[55]_0[3].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/pc[3]_i_9_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero.
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/id_ex_register/alu_zero. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/id_ex_register/i_0_LOPT_REMAP_44_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -5.643. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/i_1/O_n_44.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/alu/alu_dword/alu_zero0_carry__4_i_2[0].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_7_0[3].
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_5_n_0.  Re-placed instance rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_5
+INFO: [Physopt 32-952] Improved path group WNS = -5.642. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_5_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[3]_repN_34.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_7_0[0].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_20_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/i_1/O_n_35.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 20 pins.
+INFO: [Physopt 32-952] Improved path group WNS = -5.567. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/i_2/O_n_35.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 14 pins.
+INFO: [Physopt 32-952] Improved path group WNS = -5.565. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_7_0[1].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_7_0[1].
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_7_0[1]. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_3_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -5.559. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_12_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_5_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_20_n_0.
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_20_n_0. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_20_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -5.557. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_73_n_0.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 23 pins.
+INFO: [Physopt 32-952] Improved path group WNS = -5.551. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__0_i_7_0[1].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/i_2/O_n_35.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/alu/alu_dword/i__carry__6_i_8__0[0].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_result2_carry_i_9_0[2].
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 18 pins.
+INFO: [Physopt 32-952] Improved path group WNS = -5.541. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_result2_carry_i_11_n_0.
+INFO: [Physopt 32-952] Improved path group WNS = -5.540. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_11_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_11_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_44_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_119_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu/alu_dword/data0[53].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_122_n_0.
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_122_n_0. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_122_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -5.530. Path group: clk_50mhz. Processed net: rv64i59f_5sp/src_A[6].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_7_0[1].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_15_n_0.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 21 pins.
+INFO: [Physopt 32-952] Improved path group WNS = -5.525. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_64_n_0.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[3]_repN_4.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[3]_replica_4
+INFO: [Physopt 32-952] Improved path group WNS = -5.516. Path group: clk_50mhz. Processed net: rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[3]_repN_4.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__0_i_7_0[1].
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__0_i_7_0[1]. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/id_ex_register/i_0_LOPT_REMAP_23_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -5.509. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/i_4/O_n_16.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_result2_carry_i_11_n_0.
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/id_ex_register/alu_result2_carry_i_11_n_0. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/id_ex_register/alu_result2_carry_i_11_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -5.502. Path group: clk_50mhz. Processed net: rv64i59f_5sp/src_A[4].
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_5_n_0. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_5_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -5.497. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_17_n_0.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[3]_repN_10.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[3]_replica_10
+INFO: [Physopt 32-952] Improved path group WNS = -5.494. Path group: clk_50mhz. Processed net: rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[3]_repN_10.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_7_0[3].
+INFO: [Physopt 32-952] Improved path group WNS = -5.492. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_5_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_5_n_0.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/id_ex_register/i_6/O_n_18.  Re-placed instance rv64i59f_5sp/id_ex_register/i_6_LOPT_REMAP_18
+INFO: [Physopt 32-952] Improved path group WNS = -5.481. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/i_6/O_n_18.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_5.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/alu/alu_dword/CO[0].
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 18 pins.
+INFO: [Physopt 32-952] Improved path group WNS = -5.480. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/i___0_carry__4_i_25_2[0].
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_22.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[4]_replica_22
+INFO: [Physopt 32-952] Improved path group WNS = -5.479. Path group: clk_50mhz. Processed net: rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_22.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_18_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_70_n_0.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_82_n_0.  Re-placed instance rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_82
+INFO: [Physopt 32-952] Improved path group WNS = -5.473. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_82_n_0.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[5]_repN_21.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[5]_replica_21
+INFO: [Physopt 32-952] Improved path group WNS = -5.468. Path group: clk_50mhz. Processed net: rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[5]_repN_21.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 21 pins.
+INFO: [Physopt 32-952] Improved path group WNS = -5.466. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_7_0[3].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__1_i_7_0[1].
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__1_i_7_0[1]. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/id_ex_register/alu_zero0_carry__1_i_3_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -5.453. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__1_i_13_n_0.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_17.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[4]_replica_17
+INFO: [Physopt 32-952] Improved path group WNS = -5.443. Path group: clk_50mhz. Processed net: rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_17.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[3]_repN_4.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[3]_replica_4
+INFO: [Physopt 32-952] Improved path group WNS = -5.432. Path group: clk_50mhz. Processed net: rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[3]_repN_4.
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_122_n_0. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_122_comp_1.
+INFO: [Physopt 32-952] Improved path group WNS = -5.432. Path group: clk_50mhz. Processed net: rv64i59f_5sp/i_1/O_n_24.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_64_n_0.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 19 pins.
+INFO: [Physopt 32-952] Improved path group WNS = -5.423. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_135_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_13_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_57_n_0.
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_57_n_0. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_57_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -5.423. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_136_n_0.
+INFO: [Physopt 32-952] Improved path group WNS = -5.422. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__0_i_13_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__1_i_7_0[0].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__1_i_16_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/i_8/O_n_1.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__1_i_135_n_0.
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__1_i_135_n_0. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/id_ex_register/alu_zero0_carry__1_i_135_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -5.421. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__1_i_171_n_0.
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/id_ex_register/alu_result2_carry_i_11_n_0. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/id_ex_register/alu_result2_carry_i_11_comp_1.
+INFO: [Physopt 32-952] Improved path group WNS = -5.421. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/EX_read_data2_reg[4]_0[2].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_7_0[1].
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_7_0[1]. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_3_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -5.411. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_11_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_12_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_58_n_0.
+INFO: [Physopt 32-952] Improved path group WNS = -5.410. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_129_n_0.
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__3_i_5_n_0. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/id_ex_register/i_0_LOPT_REMAP_41_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -5.405. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/i_6/O_n_18.
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__1_i_7_0[1]. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/id_ex_register/alu_zero0_carry__1_i_3_comp_1.
+INFO: [Physopt 32-952] Improved path group WNS = -5.403. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__1_i_12_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[5]_repN_21.
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_20_n_0. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/id_ex_register/i_0_LOPT_REMAP_35_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -5.401. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/i_4/O_n_25.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/src_B[6].
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/id_ex_register/src_B[6]. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/id_ex_register/i___0_carry__0_i_25_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -5.401. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_forward_source_data_b[6].
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 21 pins.
+INFO: [Physopt 32-952] Improved path group WNS = -5.400. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_129_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_7_0[3].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/i_2/O_n_15.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 22 pins.
+INFO: [Physopt 32-952] Improved path group WNS = -5.396. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_31_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__0_i_7_0[2].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/i_1/O_n_24.
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/id_ex_register/i_1/O_n_24. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/id_ex_register/i_1_LOPT_REMAP_24_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -5.391. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__0_i_37_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/i___0_carry__4_i_25_2[0].
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/id_ex_register/i___0_carry__4_i_25_2[0]. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/id_ex_register/alu_result2_carry__1_i_4_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -5.391. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_result2_carry__1_i_10_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/i_3/O_n_20.
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/id_ex_register/i_3/O_n_20. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/id_ex_register/i_3_LOPT_REMAP_20_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -5.386. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__0_i_45_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_6.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/i___0_carry_i_1_0[0].
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/id_ex_register/i___0_carry_i_1_0[0]. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_186_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -5.381. Path group: clk_50mhz. Processed net: rv64i59f_5sp/src_A[1].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_82_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__1_i_149_n_0.
+INFO: [Physopt 32-952] Improved path group WNS = -5.380. Path group: clk_50mhz. Processed net: rv64i59f_5sp/src_A[17].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[3]_repN_4.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/i___0_carry__2_i_25_0[0].
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/id_ex_register/i___0_carry__2_i_25_0[0]. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/id_ex_register/alu_result2_carry__0_i_4_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -5.376. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_result2_carry__0_i_10_n_0.
+INFO: [Physopt 32-952] Improved path group WNS = -5.376. Path group: clk_50mhz. Processed net: rv64i59f_5sp/src_A[6].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/src_A[6].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/i_1/O_n_24.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/ex_mem_register/MEM_forward_data_value[6].
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/ex_mem_register/MEM_forward_data_value[6]. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/ex_mem_register/i___0_carry__0_i_15_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -5.372. Path group: clk_50mhz. Processed net: rv64i59f_5sp/ex_mem_register/byte_enable_logic_register_file_write_data[6].
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_67_n_0.  Re-placed instance rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_67
+INFO: [Physopt 32-952] Improved path group WNS = -5.368. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_67_n_0.
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__1_i_135_n_0. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/id_ex_register/alu_zero0_carry__1_i_135_comp_1.
+INFO: [Physopt 32-952] Improved path group WNS = -5.368. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__1_i_171_n_0_repN.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_13_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_51_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_125_n_0.
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_125_n_0. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_125_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -5.367. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_178_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/i_3/O_n_27.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__1_i_59_n_0.
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__1_i_59_n_0. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/id_ex_register/alu_zero0_carry__1_i_59_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -5.364. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__1_i_129_n_0.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 21 pins.
+INFO: [Physopt 32-952] Improved path group WNS = -5.363. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/i_2/O_n_24.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/i_6/O_n_4.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_27_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_91_n_0.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 23 pins.
+INFO: [Physopt 32-952] Improved path group WNS = -5.350. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_93_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/i_6/O_n_15.
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/id_ex_register/i_6/O_n_15. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/id_ex_register/i_6_LOPT_REMAP_15_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -5.347. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_69_n_0.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 19 pins.
+INFO: [Physopt 32-952] Improved path group WNS = -5.345. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/i_3/O_n_12.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__0_i_37_n_0_repN.
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__0_i_37_n_0_repN. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/id_ex_register/alu_zero0_carry__0_i_37_comp_1.
+INFO: [Physopt 32-952] Improved path group WNS = -5.345. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__0_i_89_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/i___0_carry__2_i_25_1[0].
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/id_ex_register/i___0_carry__2_i_25_1[0]. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/id_ex_register/i__carry__0_i_4_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -5.343. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_result2_carry__0_i_10_n_0.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/id_ex_register/i_1/O_n_44.  Re-placed instance rv64i59f_5sp/id_ex_register/i_1_LOPT_REMAP_44_comp
+INFO: [Physopt 32-952] Improved path group WNS = -5.340. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/i_1/O_n_44.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_93_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_173_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/EX_read_data2_reg[4]_0[2].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/ex_mem_register/MEM_forward_data_value[4].
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 13 pins.
+INFO: [Physopt 32-952] Improved path group WNS = -5.336. Path group: clk_50mhz. Processed net: rv64i59f_5sp/ex_mem_register/i___0_carry__0_i_41_n_0.
+INFO: [Physopt 32-952] Improved path group WNS = -5.335. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_12_n_0.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 17 pins.
+INFO: [Physopt 32-952] Improved path group WNS = -5.320. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_12_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_12_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_46_n_0.
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_46_n_0. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_46_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -5.314. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_44_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__1_i_11_n_0.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 19 pins.
+INFO: [Physopt 32-952] Improved path group WNS = -5.308. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__1_i_44_n_0.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_167_n_0.  Re-placed instance rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_167
+INFO: [Physopt 32-952] Improved path group WNS = -5.303. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_167_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_22.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 18 pins.
+INFO: [Physopt 32-952] Improved path group WNS = -5.299. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/DI[1].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_92_n_0.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_170_n_0.  Re-placed instance rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_170
+INFO: [Physopt 32-952] Improved path group WNS = -5.299. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_170_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/ex_mem_register/i_10/O_n_40.
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/ex_mem_register/i_10/O_n_40. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/ex_mem_register/i_10_LOPT_REMAP_40_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -5.285. Path group: clk_50mhz. Processed net: rv64i59f_5sp/ex_mem_register/i_11/O_n_36.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_31_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_96_n_0.
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_96_n_0. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_96_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -5.277. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry_i_144_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/src_A[53].
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/src_A[53]. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/i_0_LOPT_REMAP_39_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -5.275. Path group: clk_50mhz. Processed net: rv64i59f_5sp/i_1/O_n_39.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__1_i_7_0[2].
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__1_i_7_0[2]. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/id_ex_register/i_0_LOPT_REMAP_34_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -5.271. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/i_5/O_n_19.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_8.  Re-placed instance rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[4]_replica_8
+INFO: [Physopt 32-952] Improved path group WNS = -5.269. Path group: clk_50mhz. Processed net: rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_8.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__0_i_44_n_0.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 20 pins.
+INFO: [Physopt 32-952] Improved path group WNS = -5.262. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__0_i_104_n_0.
+INFO: [Physopt 32-663] Processed net rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_11_n_0.  Re-placed instance rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_11_comp
+INFO: [Physopt 32-952] Improved path group WNS = -5.258. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_11_n_0.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 20 pins.
+INFO: [Physopt 32-952] Improved path group WNS = -5.255. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/i_4/O_n_8.
+INFO: [Physopt 32-608] Optimized 1 net.  Swapped 21 pins.
+INFO: [Physopt 32-952] Improved path group WNS = -5.249. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/i_3/O_n_21.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/ex_mem_register/MEM_alu_result_reg[63]_0[4]_repN_8.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/i___0_carry__6_i_20_2[1].
+INFO: [Physopt 32-710] Processed net rv64i59f_5sp/id_ex_register/i___0_carry__6_i_20_2[1]. Critical path length was reduced through logic transformation on cell rv64i59f_5sp/id_ex_register/alu_result2_carry__2_i_3_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -5.249. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_result2_carry__2_i_10_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/id_ex_register/alu_zero0_carry__2_i_165_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/src_A[9].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/i_1/O_n_8.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/ex_mem_register/MEM_forward_data_value[9].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/ex_mem_register/byte_enable_logic_register_file_write_data[9].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/ex_mem_register/WB_byte_enable_logic_register_file_write_data[9]_i_2_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/ex_mem_register/data_memory_read_data_muxed[9].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/ex_mem_register/i_16/O_n_6.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/data_memory/read_data0[9].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_50mhz. Processed net: rv64i59f_5sp/data_memory/memory_reg_0_255_9_9_i_5_n_0.
+INFO: [Common 17-14] Message 'Physopt 32-953' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-5.253 | TNS=-7404.105 | WHS=0.033 | THS=0.000 |
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3789.781 ; gain = 0.000 ; free physical = 273 ; free virtual = 2948
+Phase 2 Critical Path Optimization | Checksum: 271acd53d
+
+Time (s): cpu = 00:12:08 ; elapsed = 00:05:35 . Memory (MB): peak = 3789.781 ; gain = 0.000 ; free physical = 273 ; free virtual = 2948
+
+Phase 3 Hold Fix Optimization
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-5.253 | TNS=-7404.105 | WHS=0.033 | THS=0.000 |
+INFO: [Physopt 32-1493] The number of hold_fix net fail limit is 5.
+INFO: [Physopt 32-66] No high hold slack nets found for hold slack optimization.
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-5.253 | TNS=-7404.105 | WHS=0.033 | THS=0.000 |
+Phase 3 Hold Fix Optimization | Checksum: 271acd53d
+
+Time (s): cpu = 00:12:08 ; elapsed = 00:05:35 . Memory (MB): peak = 3789.781 ; gain = 0.000 ; free physical = 272 ; free virtual = 2948
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3789.781 ; gain = 0.000 ; free physical = 271 ; free virtual = 2947
+INFO: [Physopt 32-669] Post Physical Optimization Timing Summary | WNS=-5.253 | TNS=-7404.105 | WHS=0.033 | THS=0.000 |
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization   |  WNS Gain (ns)  |  TNS Gain (ns)  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Critical Path  |          0.900  |       1245.551  |            0  |              0  |                    84  |           0  |           1  |  00:05:32  |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Summary of Hold Fix Optimizations
+=================================
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization               |  WHS Gain (ns)  |  THS Gain (ns)  |  Added LUTs  |  Added FFs  |  Optimized Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT1 and ZHOLD Insertion   |          0.000  |          0.000  |           0  |          0  |               0  |           0  |           0  |  00:00:00  |
+|  Total                      |          0.000  |          0.000  |           0  |          0  |               0  |           0  |           0  |  00:00:00  |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3789.781 ; gain = 0.000 ; free physical = 274 ; free virtual = 2950
+Ending Physical Synthesis Task | Checksum: 11461be33
+
+Time (s): cpu = 00:12:08 ; elapsed = 00:05:35 . Memory (MB): peak = 3789.781 ; gain = 0.000 ; free physical = 274 ; free virtual = 2950
+INFO: [Common 17-83] Releasing license: Implementation
+854 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+phys_opt_design: Time (s): cpu = 00:12:09 ; elapsed = 00:05:36 . Memory (MB): peak = 3789.781 ; gain = 0.000 ; free physical = 271 ; free virtual = 2947
+INFO: [Vivado 12-24828] Executing command : report_timing_summary -max_paths 10 -report_unconstrained -warn_on_violation -file RV64I59F5SPSoCTOP_timing_summary_postroute_physopted.rpt -pb RV64I59F5SPSoCTOP_timing_summary_postroute_physopted.pb -rpx RV64I59F5SPSoCTOP_timing_summary_postroute_physopted.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+INFO: [Vivado 12-24828] Executing command : report_bus_skew -warn_on_violation -file RV64I59F5SPSoCTOP_bus_skew_postroute_physopted.rpt -pb RV64I59F5SPSoCTOP_bus_skew_postroute_physopted.pb -rpx RV64I59F5SPSoCTOP_bus_skew_postroute_physopted.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3794.773 ; gain = 0.000 ; free physical = 246 ; free virtual = 2923
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3794.773 ; gain = 0.000 ; free physical = 246 ; free virtual = 2923
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.24 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3794.773 ; gain = 0.000 ; free physical = 242 ; free virtual = 2922
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.79 ; elapsed = 00:00:00.16 . Memory (MB): peak = 3794.773 ; gain = 0.000 ; free physical = 229 ; free virtual = 2920
+Wrote PlaceStorage: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.62 . Memory (MB): peak = 3794.773 ; gain = 0.000 ; free physical = 206 ; free virtual = 2916
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3794.773 ; gain = 0.000 ; free physical = 206 ; free virtual = 2918
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3794.773 ; gain = 0.000 ; free physical = 206 ; free virtual = 2919
+Write Physdb Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.81 . Memory (MB): peak = 3794.773 ; gain = 0.000 ; free physical = 206 ; free virtual = 2919
+INFO: [Common 17-1381] The checkpoint '/home/khwl/Desktop/RV-IM100/FPGAs/RV64I59F_5SP/RV64I59F_5SP_FPGA.runs/impl_1/RV64I59F5SPSoCTOP_postroute_physopt.dcp' has been generated.
+INFO: [Common 17-206] Exiting Vivado at Mon Feb 23 19:06:17 2026...
