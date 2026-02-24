@@ -1,0 +1,108 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Tue Feb 24 17:42:25 2026
+| Host         : khwl-ThinkPad-X1-Carbon-Gen-13 running 64-bit Ubuntu 24.04.3 LTS
+| Command      : report_control_sets -verbose -file RV64IM72F6SP_CORE_control_sets_placed.rpt
+| Design       : RV64IM72F6SP_CORE
+| Device       : xc7a200t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    30 |
+|    Minimum number of control sets                        |    30 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    83 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    30 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     4 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    25 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               0 |            0 |
+| No           | No                    | Yes                    |              10 |            7 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |            3843 |         1536 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------+----------------------------------------------------+------------------+------------------+----------------+--------------+
+| Clock Signal |                    Enable Signal                   | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
++--------------+----------------------------------------------------+------------------+------------------+----------------+--------------+
+|  clk         | alu/divider_dword/FSM_onehot_state[3]_i_1__0_n_0   | reset            |                2 |              4 |         2.00 |
+|  clk         | alu/multiplier_dword/FSM_onehot_stage[3]_i_1_n_0   | reset            |                1 |              4 |         4.00 |
+|  clk         | alu/multiplier_word/FSM_onehot_stage[3]_i_1__0_n_0 | reset            |                1 |              4 |         4.00 |
+|  clk         | alu/divider_word/FSM_onehot_state[3]_i_1_n_0       | reset            |                1 |              4 |         4.00 |
+|  clk         |                                                    | reset            |                7 |             10 |         1.43 |
+|  clk         | alu/divider_word/quotient_sign4_out                | reset            |               11 |             34 |         3.09 |
+|  clk         | id_ex_register/clk_enable_1[0]                     | reset            |               22 |             34 |         1.55 |
+|  clk         | alu/multiplier_word/E[0]                           | reset            |               12 |             37 |         3.08 |
+|  clk         | alu/divider_word/quotient_reg[31]_i_1_n_0          | reset            |               22 |             64 |         2.91 |
+|  clk         | alu/multiplier_word/prod_low[31]_i_1__0_n_0        | reset            |               18 |             64 |         3.56 |
+|  clk         | csr_file/minstret[0]                               | reset            |               17 |             64 |         3.76 |
+|  clk         | exception_detector/E[0]                            | reset            |               32 |             64 |         2.00 |
+|  clk         | exception_detector/WB_csr_write_enable_reg[0]      | reset            |               33 |             64 |         1.94 |
+|  clk         | exception_detector/trapped_reg_rep_1[0]            | reset            |               32 |             64 |         2.00 |
+|  clk         | exception_detector/clk_enable_0[0]                 | reset            |               25 |             64 |         2.56 |
+|  clk         | id_ex_register/clk_enable_3[0]                     | reset            |               20 |             65 |         3.25 |
+|  clk         | alu/divider_dword/quotient_sign4_out               | reset            |               22 |             66 |         3.00 |
+|  clk         | id_ex_register/clk_enable_2[0]                     | reset            |               35 |             68 |         1.94 |
+|  clk         | alu/divider_word/bit_counter[5]_i_1_n_0            | reset            |               25 |             70 |         2.80 |
+|  clk         | alu/multiplier_dword/prod_high[63]_i_1_n_0         | reset            |               38 |            128 |         3.37 |
+|  clk         | alu/divider_dword/quotient_reg[63]_i_1_n_0         | reset            |               39 |            128 |         3.28 |
+|  clk         | id_ex_register/clk_enable_0[0]                     | reset            |               42 |            129 |         3.07 |
+|  clk         | alu/divider_dword/bit_counter[6]_i_1_n_0           | reset            |               48 |            135 |         2.81 |
+|  clk         | alu/multiplier_dword/E[0]                          | reset            |               47 |            145 |         3.09 |
+|  clk         | mem_wb_register/p_0_in2_out                        |                  |               22 |            176 |         8.00 |
+|  clk         | exception_detector/clk_enable_4[0]                 | reset            |              153 |            381 |         2.49 |
+|  clk         | exception_detector/clk_enable_3[0]                 | reset            |              198 |            391 |         1.97 |
+|  clk         | exception_detector/clk_enable_2[0]                 | reset            |              234 |            458 |         1.96 |
+|  clk         | clk_enable                                         | reset            |              159 |            479 |         3.01 |
+|  clk         | id_ex_register/E[0]                                | reset            |              247 |            631 |         2.55 |
++--------------+----------------------------------------------------+------------------+------------------+----------------+--------------+
+
+
