@@ -37,4 +37,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log RV64IM72F8SPSoCTOP.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source RV64IM72F8SPSoCTOP.tcl
+EAStep vivado -log RV64IM72F8SP_CORE.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source RV64IM72F8SP_CORE.tcl

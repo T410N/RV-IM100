@@ -21,7 +21,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/khwl/Desktop/100MHz_project/RV64IM72F_7SP_FPGA/RV64IM72F_7SP_FPGA.runs/synth_1'
+HD_PWD='/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_7SP/RV64IM72F_7SP_FPGA.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -37,4 +37,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log RV64IM72F5SPSoCTOP.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source RV64IM72F5SPSoCTOP.tcl
+EAStep vivado -log RV64IM72F6SP_CORE.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source RV64IM72F6SP_CORE.tcl

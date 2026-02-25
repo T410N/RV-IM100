@@ -2,14 +2,31 @@
 `include "./rf_wd_select.vh"
 `include "./alu_op.vh"
 
-module RV64IM72F8SP #(
+module RV64IM72F8SP_CORE #(
     parameter XLEN = 64
 )(
     input clk,
     input clk_enable,
     input reset,
     input UART_busy,
-    
+
+    // Instruction Memory Interface (external)
+    output wire [XLEN-1:0] im_pc,               // PC for instruction fetch
+    output wire im_pc_stall,                     // stall IM fetch
+    output wire im_read_stall,                   // stall IM ROM read (= EX_MEM_stall)
+    input wire [31:0] im_instruction,            // fetched instruction
+    output wire [XLEN-1:0] im_rom_address,       // ROM bypass address (= EX2_alu_result)
+
+    // Data Memory Interface (external)
+    output wire [XLEN-1:0] dm_address,           // priority-muxed address
+    output wire [XLEN-1:0] dm_write_data,
+    output wire dm_write_enable,
+    output wire [7:0] dm_write_mask,
+    output wire dm_read_stall,                   // = EX_MEM_stall
+    input wire [XLEN-1:0] dm_read_data,
+    input wire dm_write_done,
+
+    // SoC Interface
     output wire [31:0] retire_instruction,
     output wire [XLEN-1:0] MMIO_data_memory_write_data,
     output wire [XLEN-1:0] MMIO_data_memory_address,
@@ -22,14 +39,16 @@ module RV64IM72F8SP #(
     wire [XLEN-1:0] next_pc;
     
     // Instruction Memory and Debug Interface
-    wire [31:0] im_instruction;
     wire [31:0] dbg_instruction = 32'b00000001011110110000110000110011;
     reg [31:0] instruction;
     wire [XLEN-1:0] IF_imm;
     wire [6:0] IF_opcode;
 
-    // ROM bypass signals
-    wire [XLEN-1:0] rom_read_data;
+    // IM interface assignments
+    assign im_pc = pc;
+    assign im_pc_stall = pc_stall;
+    assign im_read_stall = EX_MEM_stall;
+    assign im_rom_address = EX2_alu_result;
 
     assign IF_imm = {{(XLEN-13){IO_instruction[31]}}, IO_instruction[31], IO_instruction[7], IO_instruction[30:25], IO_instruction[11:8], 1'b0};
     assign IF_opcode = (IO_instruction[6:0]);
@@ -95,6 +114,21 @@ module RV64IM72F8SP #(
     wire [XLEN-1:0] data_memory_write_data;
     wire [7:0] write_mask;
     wire write_done;
+
+    // DM interface assignments
+    assign data_memory_read_data = dm_read_data;
+    assign write_done = dm_write_done;
+
+    wire [XLEN-1:0] data_memory_address;
+    assign data_memory_address = (MEM_memory_write && !write_done) ? MEM_alu_result :
+                                EX2_memory_read ? EX2_alu_result :
+                                MEM_alu_result;
+
+    assign dm_address = data_memory_address;
+    assign dm_write_data = data_memory_write_data;
+    assign dm_write_enable = MEM_memory_write && !mmio_uart_status_hit_reg;
+    assign dm_write_mask = write_mask;
+    assign dm_read_stall = EX_MEM_stall;
 
     // CSR File
     wire csr_write_enable;
@@ -176,8 +210,8 @@ module RV64IM72F8SP #(
     // =========================================================================
     // EX stage wires (from EXR_EX Register - NEW)
     // =========================================================================
-    wire [XLEN-1:0] EX_src_A;      // resolved ALU operand A
-    wire [XLEN-1:0] EX_src_B;      // resolved ALU operand B
+    wire [XLEN-1:0] EX_src_A;
+    wire [XLEN-1:0] EX_src_B;
     wire [XLEN-1:0] EX_pc;
     wire [XLEN-1:0] EX_pc_plus_4;
     wire EX_branch_estimation;
@@ -303,18 +337,18 @@ module RV64IM72F8SP #(
     // =========================================================================
     wire IF_IO_flush;
     wire IO_ID_flush;
-    wire ID_EXR_flush;      // was ID_EX_flush
-    wire EXR_EX_flush;      // NEW
+    wire ID_EXR_flush;
+    wire EXR_EX_flush;
     wire EX_EX2_flush;
     wire EX_MEM_flush;
     wire IF_IO_stall;
     wire IO_ID_stall;
-    wire ID_EXR_stall;      // was ID_EX_stall
-    wire EXR_EX_stall;      // NEW
+    wire ID_EXR_stall;
+    wire EXR_EX_stall;
     wire EX_EX2_stall;
     wire EX_MEM_stall;
     wire MEM_WB_stall;
-    wire store_hazard_ex;    // NEW
+    wire store_hazard_ex;
     wire store_hazard_ex2;
     wire store_hazard_mem;
     wire store_hazard_wb;
@@ -326,7 +360,7 @@ module RV64IM72F8SP #(
     // =========================================================================
     // Forward Unit signals
     // =========================================================================
-    wire [1:0] hazard_ex;    // NEW: EX-EXR
+    wire [1:0] hazard_ex;
     wire [1:0] hazard_ex2;
     wire [1:0] hazard_mem;
     wire [1:0] hazard_wb;
@@ -379,14 +413,11 @@ module RV64IM72F8SP #(
 
     // =========================================================================
     // EXR stage combinational logic: ALU source selection + forwarding
-    // (Moved from old EX stage - this is the critical path split)
     // =========================================================================
 
-    // Normal ALU source selection (before forwarding)
     reg [XLEN-1:0] EXR_normal_source_a;
     reg [XLEN-1:0] EXR_normal_source_b;
 
-    // Resolved ALU operands (after forwarding)
     reg [XLEN-1:0] EXR_src_A;
     reg [XLEN-1:0] EXR_src_B;
 
@@ -408,7 +439,7 @@ module RV64IM72F8SP #(
             default:           EXR_normal_source_b = {XLEN{1'b0}};
         endcase
 
-        // Forwarding mux A (priority: EX > BR > MEM > WB > normal)
+        // Forwarding mux A
         case (alu_forward_source_select_a)
             3'b001:  EXR_src_A = alu_forward_source_data_a;
             3'b010:  EXR_src_A = alu_forward_source_data_a;
@@ -418,7 +449,7 @@ module RV64IM72F8SP #(
             default: EXR_src_A = EXR_normal_source_a;
         endcase
 
-        // Forwarding mux B (priority: EX > BR > MEM > WB > normal)
+        // Forwarding mux B
         case (alu_forward_source_select_b)
             3'b001:  EXR_src_B = alu_forward_source_data_b;
             3'b010:  EXR_src_B = alu_forward_source_data_b;
@@ -428,7 +459,7 @@ module RV64IM72F8SP #(
             default: EXR_src_B = EXR_normal_source_b;
         endcase
 
-        // CSR address and data selection (unchanged - WB/trap write, ID read)
+        // CSR address and data selection
         if (!standby_mode && trapped) begin
             csr_write_data   = csr_trap_write_data;
             csr_write_address = csr_trap_address;
@@ -440,7 +471,7 @@ module RV64IM72F8SP #(
             csr_read_address  = raw_imm[11:0];
         end
 
-        // Debug mode instruction selection (unchanged)
+        // Debug mode instruction selection
         if (debug_mode) instruction = dbg_instruction;
         else instruction = im_instruction;
     end
@@ -461,12 +492,12 @@ module RV64IM72F8SP #(
     // Module Instantiations
     // =========================================================================
 
-    ALU alu (
+    ALU alu_inst (
         .clk(clk),
         .clk_enable(clk_enable),
         .reset(reset),
-        .src_A(EX_src_A),              // CHANGED: registered from EXR_EX
-        .src_B(EX_src_B),              // CHANGED: registered from EXR_EX
+        .src_A(EX_src_A),
+        .src_B(EX_src_B),
         .alu_op(alu_op),
         .input_size_word(input_size_word),
         .div_start(div_start),
@@ -482,7 +513,7 @@ module RV64IM72F8SP #(
         .clk(clk),
         .clk_enable(clk_enable),
         .reset(reset),
-        .opcode(EX_opcode),             // from EXR_EX register
+        .opcode(EX_opcode),
         .funct3(EX_funct3),
         .funct7_5(EX_funct7[5]),
         .funct7_0(EX_funct7[0]),
@@ -490,7 +521,7 @@ module RV64IM72F8SP #(
         .div_busy(div_busy),
         .mul_busy(mul_busy),
         .load_use_hazard(load_use_hazard),
-        .ex_kill(ID_EXR_flush),          // CHANGED: was ID_EX_flush
+        .ex_kill(ID_EXR_flush),
 
         .input_size_word(input_size_word),
         .div_start(div_start),
@@ -575,24 +606,7 @@ module RV64IM72F8SP #(
         .csr_ready(csr_ready)
     );
 
-    wire [XLEN-1:0] data_memory_address;
-    assign data_memory_address = (MEM_memory_write && !write_done) ? MEM_alu_result :
-                                EX2_memory_read ? EX2_alu_result :
-                                MEM_alu_result;
-
-    DataMemory data_memory (
-        .clk(clk),
-        .clk_enable(clk_enable),
-        .read_stall(EX_MEM_stall),
-        .write_enable(MEM_memory_write && !mmio_uart_status_hit_reg),
-        .address(data_memory_address),
-        .write_data(data_memory_write_data),
-        .write_mask(write_mask),
-        .rom_read_data(rom_read_data),
-
-        .write_done(write_done),
-        .read_data(data_memory_read_data)
-    );
+    // InstructionMemory and DataMemory removed - externalized to SoC level
 
     ExceptionDetector exception_detector (
         .clk(clk),
@@ -602,18 +616,18 @@ module RV64IM72F8SP #(
         .ID_funct3(funct3),
         .EXR_opcode(EXR_opcode),
         .EXR_funct3(EXR_funct3),
-        .EX_opcode(EX_opcode),          // CHANGED: EX - EXR
-        .EX_funct3(EX_funct3),          // CHANGED
+        .EX_opcode(EX_opcode),
+        .EX_funct3(EX_funct3),
         .EX2_opcode(EX2_opcode),
         .EX2_funct3(EX2_funct3),
         .MEM_opcode(MEM_opcode),
         .MEM_funct3(MEM_funct3),
         .raw_imm(raw_imm[11:0]),
         .EXR_raw_imm(EXR_raw_imm[11:0]),
-        .EX_raw_imm(EX_raw_imm[11:0]),  // CHANGED
+        .EX_raw_imm(EX_raw_imm[11:0]),
         .EX2_raw_imm(EX2_raw_imm[11:0]),
         .EXR_jump(EXR_jump),
-        .EX_jump(EX_jump),              // CHANGED
+        .EX_jump(EX_jump),
         .EX2_jump(EX2_jump),
         .csr_write_enable(cu_csr_write_enable),
         .alu_result(alu_result[1:0]),
@@ -633,25 +647,23 @@ module RV64IM72F8SP #(
         .EX_MEM_stall(EX_MEM_stall),
         .EX_MEM_flush(EX_MEM_flush),
 
-        .hazard_ex(hazard_ex),            // NEW
+        .hazard_ex(hazard_ex),
         .hazard_ex2(hazard_ex2),
         .hazard_mem(hazard_mem),
         .hazard_wb(hazard_wb),
         .hazard_retire(hazard_retire),
 
-        .store_hazard_ex(store_hazard_ex),  // NEW
+        .store_hazard_ex(store_hazard_ex),
         .store_hazard_ex2(store_hazard_ex2),
         .store_hazard_mem(store_hazard_mem),
         .store_hazard_wb(store_hazard_wb),
         .store_hazard_wb_to_mem(store_hazard_wb_to_mem),
 
-        // EX stage (NEW - from EXR_EX register)
         .EX_imm(EX_imm),
         .EX_pc_plus_4(EX_pc_plus_4),
         .EX_csr_read_data(EX_csr_read_data),
         .EX_forward_select(EX_forward_select),
 
-        // BR/EX2 stage
         .ex2_is_load(EX2_is_load),
         .EX2_imm(EX2_imm),
         .EX2_alu_result(EX2_alu_result_final),
@@ -694,7 +706,6 @@ module RV64IM72F8SP #(
         .pth_done_flush(pth_done_flush),
         .csr_ready(csr_ready),
 
-        // Consumer: EXR stage
         .EXR_rs1(EXR_rs1),
         .EXR_rs2(EXR_rs2[4:0]),
         .EXR_alu_src_A_select(EXR_alu_src_A_select),
@@ -704,7 +715,6 @@ module RV64IM72F8SP #(
         .EXR_jump(EXR_jump),
         .exr_data_stall(exr_data_stall),
 
-        // Producer: EX stage (NEW)
         .EX_rd(EX_rd),
         .EX_opcode(EX_opcode),
         .EX_register_write_enable(EX_register_write_enable),
@@ -712,14 +722,12 @@ module RV64IM72F8SP #(
         .EX_forward_select(EX_forward_select),
         .EX_csr_write_enable(EX_csr_write_enable),
 
-        // Producer: BR/EX2 stage
         .EX2_rd(EX2_rd),
         .EX2_opcode(EX2_opcode),
         .EX2_branch(EX2_branch),
         .EX2_register_write_enable(EX2_register_write_enable),
         .ex2_is_load(EX2_is_load),
 
-        // Producer: MEM stage
         .MEM_rd(MEM_rd),
         .MEM_opcode(MEM_opcode),
         .MEM_rs2(MEM_rs2),
@@ -727,7 +735,6 @@ module RV64IM72F8SP #(
         .MEM_csr_write_enable(MEM_csr_write_enable),
         .MEM_csr_write_address(MEM_raw_imm[11:0]),
 
-        // Producer: WB stage
         .WB_rd(WB_rd),
         .WB_register_write_enable(WB_register_write_enable),
         .WB_csr_write_enable(WB_csr_write_enable),
@@ -739,14 +746,12 @@ module RV64IM72F8SP #(
         .EX2_jump(EX2_jump),
         .branch_prediction_miss(branch_prediction_miss),
 
-        // Forwarding hazards
         .hazard_ex(hazard_ex),
         .hazard_ex2(hazard_ex2),
         .hazard_mem(hazard_mem),
         .hazard_wb(hazard_wb),
         .hazard_retire(hazard_retire),
 
-        // Store hazards
         .store_hazard_ex(store_hazard_ex),
         .store_hazard_ex2(store_hazard_ex2),
         .store_hazard_mem(store_hazard_mem),
@@ -754,7 +759,6 @@ module RV64IM72F8SP #(
         .store_hazard_wb_to_mem(store_hazard_wb_to_mem),
         .load_use_hazard(load_use_hazard),
 
-        // Flush
         .IF_IO_flush(IF_IO_flush),
         .IO_ID_flush(IO_ID_flush),
         .ID_EXR_flush(ID_EXR_flush),
@@ -763,7 +767,6 @@ module RV64IM72F8SP #(
         .EX_MEM_flush(EX_MEM_flush),
         .MEM_WB_flush(MEM_WB_flush),
 
-        // Stall
         .IF_IO_stall(IF_IO_stall),
         .IO_ID_stall(IO_ID_stall),
         .ID_EXR_stall(ID_EXR_stall),
@@ -788,17 +791,6 @@ module RV64IM72F8SP #(
         .rs2(rs2),
         .rd(rd),
         .raw_imm(raw_imm)
-    );
-
-    InstructionMemory instruction_memory (
-        .clk(clk),
-        .clk_enable(clk_enable),
-        .pc_stall(pc_stall),
-        .read_stall(EX_MEM_stall),
-        .pc(pc),
-        .instruction(im_instruction),
-        .rom_address(EX2_alu_result),
-        .rom_read_data(rom_read_data)
     );
 
     ProgramCounter program_counter (
@@ -847,7 +839,7 @@ module RV64IM72F8SP #(
         .reset(reset),
         .trap_status(trap_status),
         .ID_pc(ID_pc),
-        .EX_pc(EXR_pc),                  // CHANGED: EX_pc - EXR_pc
+        .EX_pc(EXR_pc),
         .EX2_pc(EX2_pc),
         .MEM_pc(MEM_pc),
         .WB_pc(WB_pc),
@@ -876,7 +868,7 @@ module RV64IM72F8SP #(
         .IF_IO_stall(IF_IO_stall),
         .branch_estimation(branch_estimation),
         .load_use_hazard(load_use_hazard),
-        .jump(EXR_jump),                   // CHANGED: EX_jump - EXR_jump
+        .jump(EXR_jump),
         .exr_data_stall(exr_data_stall),
 
         .IF_pc(instruction_pc),
@@ -912,12 +904,11 @@ module RV64IM72F8SP #(
         .ID_valid_csr_address(ID_valid_csr_address)
     );
 
-    // ID - EXR pipeline register (was ID_EX, outputs renamed to EXR_)
     ID_EX_Register #(.XLEN(XLEN)) id_exr_register (
         .clk(clk),
         .clk_enable(clk_enable),
-        .flush(ID_EXR_flush),             // CHANGED
-        .ID_EX_stall(ID_EXR_stall),      // CHANGED
+        .flush(ID_EXR_flush),
+        .ID_EX_stall(ID_EXR_stall),
         
         .ID_pc(ID_pc),
         .ID_pc_plus_4(ID_pc_plus_4),
@@ -945,7 +936,6 @@ module RV64IM72F8SP #(
         .ID_imm(imm),
         .ID_csr_read_data(csr_read_out),
 
-        // Outputs - EXR stage (all renamed from EX_ to EXR_)
         .EX_pc(EXR_pc),
         .EX_pc_plus_4(EXR_pc_plus_4),
         .EX_branch_estimation(EXR_branch_estimation),
@@ -972,18 +962,15 @@ module RV64IM72F8SP #(
         .EX_csr_read_data(EXR_csr_read_data)
     );
 
-    // EXR - EX pipeline register (NEW)
     EXR_EX_Register #(.XLEN(XLEN)) exr_ex_register (
         .clk(clk),
         .clk_enable(clk_enable),
         .flush(EXR_EX_flush),
         .EXR_EX_stall(EXR_EX_stall),
 
-        // Resolved operands from EXR stage
         .EXR_src_A(EXR_src_A),
         .EXR_src_B(EXR_src_B),
 
-        // Pass-through
         .EXR_pc(EXR_pc),
         .EXR_pc_plus_4(EXR_pc_plus_4),
         .EXR_branch_estimation(EXR_branch_estimation),
@@ -1000,7 +987,7 @@ module RV64IM72F8SP #(
         .EXR_funct7(EXR_funct7),
         .EXR_rd(EXR_rd),
         .EXR_raw_imm(EXR_raw_imm),
-        .EXR_read_data2(EXR_read_data2_MUX),  // store-forwarded data
+        .EXR_read_data2(EXR_read_data2_MUX),
         .EXR_rs1(EXR_rs1),
         .EXR_rs2(EXR_rs2),
         .EXR_imm(EXR_imm),
@@ -1008,7 +995,6 @@ module RV64IM72F8SP #(
         .EXR_is_load(EXR_is_load),
         .EXR_forward_select(EXR_forward_select),
 
-        // Outputs - EX stage
         .EX_src_A(EX_src_A),
         .EX_src_B(EX_src_B),
         .EX_pc(EX_pc),
@@ -1036,7 +1022,6 @@ module RV64IM72F8SP #(
         .EX_forward_select(EX_forward_select)
     );
 
-    // EX - EX2/BR pipeline register (inputs now from EXR_EX register outputs)
     EX_EX2_Register #(.XLEN(XLEN)) ex_ex2_register (
         .clk(clk),
         .clk_enable(clk_enable),
@@ -1061,8 +1046,8 @@ module RV64IM72F8SP #(
         .EX_rs2(EX_rs2[4:0]),
         .EX_rd(EX_rd),
 
-        .EX_read_data1({XLEN{1'b0}}),     // No longer used in 8-stage
-        .EX_read_data2(EX_read_data2),     // Store data (forwarded in EXR)
+        .EX_read_data1({XLEN{1'b0}}),
+        .EX_read_data2(EX_read_data2),
 
         .EX_imm(EX_imm),
         .EX_raw_imm(EX_raw_imm),
@@ -1078,7 +1063,6 @@ module RV64IM72F8SP #(
         .EX_input_size_word(input_size_word),
         .EX_forward_select(EX_forward_select),
 
-        // Outputs to EX2/BR stage
         .EX2_pc(EX2_pc),
         .EX2_pc_plus_4(EX2_pc_plus_4),
         .EX2_instruction(EX2_instruction),
