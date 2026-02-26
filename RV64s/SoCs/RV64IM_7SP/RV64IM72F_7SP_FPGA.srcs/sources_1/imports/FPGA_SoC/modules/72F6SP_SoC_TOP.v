@@ -8,17 +8,32 @@ module RV64IM72F5SPSoCTOP #(
     output [7:0] led,               // LED[0]: Standby, LED[7:1]: OPCODE[6:0]
     output uart_tx_in               // UART TX pin
 );
+
+    // Clock Divider: 100MHz -> 50MHz
+    reg clk_50mhz_unbuffered;
+    wire clk_50mhz;
     wire reset = ~reset_n;
-    wire clk_cpu;
-    wire clk_locked;
     
+    BUFG clk_50mhz_bufg (
+        .I(clk_50mhz_unbuffered),
+        .O(clk_50mhz)
+    );
+    
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            clk_50mhz_unbuffered <= 1'b0;
+        end else begin
+            clk_50mhz_unbuffered <= ~clk_50mhz_unbuffered;
+        end
+    end
+
     // Internal 3-stage Reset Synchronization
     wire internal_reset;
     reg [2:0] reset_sync;
     assign internal_reset = reset_sync[2];
 
-    always @(posedge clk_cpu or posedge reset) begin
-        if (reset || !clk_locked) begin
+    always @(posedge clk_50mhz or posedge reset) begin
+        if (reset) begin
             reset_sync <= 3'b111;
         end else begin
             reset_sync <= {reset_sync[1:0], 1'b0};
@@ -30,7 +45,7 @@ module RV64IM72F5SPSoCTOP #(
     wire benchmark_start;
 
     // Button controlled benchmark execution
-    always @(posedge clk_cpu or posedge internal_reset) begin
+    always @(posedge clk_50mhz or posedge internal_reset) begin
         if (internal_reset) begin
             cpu_clk_enable <= 1'b0;
         end else begin
@@ -62,18 +77,10 @@ module RV64IM72F5SPSoCTOP #(
     // LED Output
     assign led[0] = ~cpu_clk_enable;    // Standby mode when no clk.
     assign led[7:1] = current_opcode;   // retired instruction's opcode
-    
-    clk_wiz_0  clk_gen (
-        .clk_in1(clk),
-        .clk_out1(clk_cpu),            
-        .reset(reset), 
-        
-        .locked(clk_locked)
-    );
 
     // Module instances
     UnifiedUARTController unified_uart_controller (
-        .clk(clk_cpu),
+        .clk(clk_50mhz),
         .reset(internal_reset),
         .btn_up(btn_up),
         .mmio_tx_data(mmio_uart_tx_data),
@@ -86,7 +93,7 @@ module RV64IM72F5SPSoCTOP #(
 
     // UART Transmitter; UART TX
     UARTTX uart_tx (
-        .clk(clk_cpu),
+        .clk(clk_50mhz),
         .reset(internal_reset),
         .tx_start(tx_start),
         .tx_data(tx_data),
@@ -95,7 +102,7 @@ module RV64IM72F5SPSoCTOP #(
     );
     
     MMIOInterface #(.XLEN(XLEN)) mmio_interface (
-        .clk(clk_cpu),
+        .clk(clk_50mhz),
         .clk_enable(cpu_clk_enable),
         .reset(internal_reset),
         .data_memory_write_data(MMIO_data_memory_write_data),
@@ -111,7 +118,7 @@ module RV64IM72F5SPSoCTOP #(
     
     // CPU Core with MMIO Interface
     RV64IM72F6SP #(.XLEN(XLEN)) rv64im72f_6sp (
-        .clk(clk_cpu),
+        .clk(clk_50mhz),
         .clk_enable(cpu_clk_enable),
         .reset(internal_reset),
         .UART_busy(tx_busy),

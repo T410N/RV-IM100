@@ -42,7 +42,7 @@ module InstructionMemory #(
 	end
 	
 	initial begin
-		 $readmemh("./coremark_100MHz.mem", data);
+		 $readmemh("./dhrystone_100MHz.mem", data);
 		 /*
 		// ──────────────────────────────────────────────
 		// I-타입 ALU 명령어 (9개)

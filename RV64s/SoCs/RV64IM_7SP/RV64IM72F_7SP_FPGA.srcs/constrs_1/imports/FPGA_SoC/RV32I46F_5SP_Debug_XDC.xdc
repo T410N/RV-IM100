@@ -9,6 +9,14 @@
 ##########################################################################################
 # 100MHz system clock
 set_property -dict { PACKAGE_PIN R4    IOSTANDARD LVCMOS33 } [get_ports { clk }]; #IO_L13P_T2_MRCC_34 Sch=sysclk
+create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports clk]
+
+# Generated clock for 50MHz
+create_generated_clock -name clk_50mhz -source [get_ports clk] -divide_by 2 [get_pins clk_50mhz_bufg/O]
+
+# Clock domain crossing false paths
+set_false_path -from [get_clocks clk_50mhz] -to [get_clocks sys_clk_pin]
+set_false_path -from [get_clocks sys_clk_pin] -to [get_clocks clk_50mhz]
 
 ##########################################################################################
 # Reset button (CPU_RESET)
@@ -54,10 +62,16 @@ set_property -dict { PACKAGE_PIN Y13   IOSTANDARD LVCMOS25 } [get_ports { led[7]
 ##########################################################################################
 # Timing constraints
 ##########################################################################################
+# Input delay constraints for buttons 
+set_input_delay -clock [get_clocks sys_clk_pin] -min 2.000 [get_ports {btn_*}]
+set_input_delay -clock [get_clocks sys_clk_pin] -max 8.000 [get_ports {btn_*}]
+
+# Output delay constraints for LEDs only (OLED는 false path로 처리)
+set_output_delay -clock [get_clocks sys_clk_pin] -min 2.000 [get_ports {led[*]}]
+set_output_delay -clock [get_clocks sys_clk_pin] -max 8.000 [get_ports {led[*]}]
+
+# False path constraints
 set_false_path -from [get_ports reset_n]
-set_false_path -from [get_ports btn_up]
-set_false_path -to [get_ports {led[*]}]
-set_false_path -to [get_ports uart_tx_in]
 ##########################################################################################
 # Configuration constraints
 ##########################################################################################

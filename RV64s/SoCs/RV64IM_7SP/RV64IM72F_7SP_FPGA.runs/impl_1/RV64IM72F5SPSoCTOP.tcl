@@ -118,11 +118,9 @@ OPTRACE "set parameters" START { }
   set_property parent.project_path /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP/RV64IM72F_7SP_FPGA.xpr [current_project]
   set_property ip_output_repo /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP/RV64IM72F_7SP_FPGA.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  set_property XPM_LIBRARIES XPM_CDC [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP/RV64IM72F_7SP_FPGA.runs/synth_1/RV64IM72F5SPSoCTOP.dcp
-  read_ip -quiet /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP/RV64IM72F_7SP_FPGA.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP/RV64IM72F_7SP_FPGA.srcs/constrs_1/imports/FPGA_SoC/RV32I46F_5SP_Debug_XDC.xdc
 OPTRACE "read constraints: implementation" END { }
