@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Thu Feb 26 00:39:14 2026
+| Date         : Thu Feb 26 22:53:00 2026
 | Host         : khwl-ThinkPad-X1-Carbon-Gen-13 running 64-bit Ubuntu 24.04.3 LTS
 | Command      : report_control_sets -verbose -file RV64IM72F5SPSoCTOP_control_sets_placed.rpt
 | Design       : RV64IM72F5SPSoCTOP
@@ -27,7 +27,7 @@ Table of Contents
 |    Minimum number of control sets                        |    73 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |   127 |
+| Unused register locations in slices containing registers |   131 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -40,14 +40,14 @@ Table of Contents
 |       Fanout       | Count |
 +--------------------+-------+
 | Total control sets |    73 |
-| >= 0 to < 4        |     4 |
+| >= 0 to < 4        |     3 |
 | >= 4 to < 6        |     5 |
 | >= 6 to < 8        |     0 |
 | >= 8 to < 10       |     2 |
 | >= 10 to < 12      |     0 |
 | >= 12 to < 14      |     0 |
 | >= 14 to < 16      |     0 |
-| >= 16              |    62 |
+| >= 16              |    63 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -59,93 +59,93 @@ Table of Contents
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | No           | No                    | No                     |               2 |            1 |
-| No           | No                    | Yes                    |              50 |           31 |
+| No           | No                    | Yes                    |              49 |           27 |
 | No           | Yes                   | No                     |               0 |            0 |
-| Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |            2068 |          805 |
-| Yes          | Yes                   | No                     |            2513 |         1053 |
+| Yes          | No                    | No                     |              32 |           31 |
+| Yes          | No                    | Yes                    |            2120 |          781 |
+| Yes          | Yes                   | No                     |            2274 |          884 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------+------------------------------------------------------------------+--------------------------------------------------------+------------------+----------------+--------------+
-|  Clock Signal  |                           Enable Signal                          |                    Set/Reset Signal                    | Slice Load Count | Bel Load Count | Bels / Slice |
-+----------------+------------------------------------------------------------------+--------------------------------------------------------+------------------+----------------+--------------+
-|  clk_IBUF_BUFG |                                                                  | reset                                                  |                1 |              1 |         1.00 |
-|  clk_50mhz     | uart_tx/tx_i_1_n_0                                               | internal_reset                                         |                1 |              1 |         1.00 |
-|  clk_50mhz     |                                                                  |                                                        |                1 |              2 |         2.00 |
-|  clk_50mhz     |                                                                  | reset                                                  |                2 |              3 |         1.50 |
-|  clk_50mhz     | uart_tx/bit_counter[3]_i_1__1_n_0                                | internal_reset                                         |                2 |              4 |         2.00 |
-|  clk_50mhz     | rv64im72f_6sp/alu/multiplier_word/FSM_onehot_stage[3]_i_1__0_n_0 | internal_reset                                         |                1 |              4 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/alu/multiplier_dword/FSM_onehot_stage[3]_i_1_n_0   | internal_reset                                         |                1 |              4 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/alu/divider_word/FSM_onehot_state[3]_i_1_n_0       | internal_reset                                         |                1 |              4 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/alu/divider_dword/FSM_onehot_state[3]_i_1__0_n_0   | internal_reset                                         |                2 |              4 |         2.00 |
-|  clk_50mhz     | uart_tx/shift_reg[8]_i_1_n_0                                     | internal_reset                                         |                5 |              9 |         1.80 |
-|  clk_50mhz     | mmio_interface/E[0]                                              | internal_reset                                         |                5 |              9 |         1.80 |
-|  clk_50mhz     | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg_0[0]             | internal_reset                                         |               22 |             34 |         1.55 |
-|  clk_50mhz     | rv64im72f_6sp/alu/divider_word/quotient_sign4_out                | internal_reset                                         |               14 |             34 |         2.43 |
-|  clk_50mhz     | rv64im72f_6sp/alu/multiplier_word/result_sign_s22_out            | internal_reset                                         |               12 |             37 |         3.08 |
-|  clk_50mhz     |                                                                  | internal_reset                                         |               28 |             46 |         1.64 |
-|  clk_50mhz     | rv64im72f_6sp/alu/divider_word/quotient_reg[31]_i_1_n_0          | internal_reset                                         |               26 |             64 |         2.46 |
-|  clk_50mhz     | cpu_clk_enable                                                   | rv64im72f_6sp/ex_ex2_register/SR[0]                    |               63 |             64 |         1.02 |
-|  clk_50mhz     | rv64im72f_6sp/alu/multiplier_word/prod_low[31]_i_1__0_n_0        | internal_reset                                         |               26 |             64 |         2.46 |
-|  clk_50mhz     | rv64im72f_6sp/csr_file/minstret[0]                               | internal_reset                                         |               17 |             64 |         3.76 |
-|  clk_50mhz     | rv64im72f_6sp/exception_detector/E[0]                            | internal_reset                                         |               21 |             64 |         3.05 |
-|  clk_50mhz     | rv64im72f_6sp/exception_detector/WB_csr_write_enable_reg[0]      | internal_reset                                         |               27 |             64 |         2.37 |
-|  clk_50mhz     | rv64im72f_6sp/exception_detector/cpu_clk_enable_reg[0]           | internal_reset                                         |               20 |             64 |         3.20 |
-|  clk_50mhz     | rv64im72f_6sp/id_ex_register/RDEN                                | internal_reset                                         |               24 |             64 |         2.67 |
-|  clk_50mhz     | rv64im72f_6sp/exception_detector/trapped_reg_rep_5[0]            | internal_reset                                         |               24 |             64 |         2.67 |
-|  clk_50mhz     | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg_2[0]             | internal_reset                                         |               30 |             65 |         2.17 |
-|  clk_50mhz     | rv64im72f_6sp/alu/divider_dword/quotient_sign4_out               | internal_reset                                         |               33 |             66 |         2.00 |
-|  clk_50mhz     | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg_1[0]             | internal_reset                                         |               41 |             68 |         1.66 |
-|  clk_50mhz     | rv64im72f_6sp/alu/divider_word/bit_counter[5]_i_1_n_0            | internal_reset                                         |               25 |             70 |         2.80 |
-|  clk_50mhz     | rv64im72f_6sp/alu/multiplier_dword/prod_high[63]_i_1_n_0         | internal_reset                                         |               46 |            128 |         2.78 |
-|  clk_50mhz     | rv64im72f_6sp/alu/divider_dword/quotient_reg[63]_i_1_n_0         | internal_reset                                         |               43 |            128 |         2.98 |
-|  clk_50mhz     | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg[0]               | internal_reset                                         |               51 |            129 |         2.53 |
-|  clk_50mhz     | rv64im72f_6sp/alu/divider_dword/bit_counter[6]_i_1_n_0           | internal_reset                                         |               58 |            135 |         2.33 |
-|  clk_50mhz     | rv64im72f_6sp/alu/multiplier_dword/result_sign_s22_out           | internal_reset                                         |               52 |            145 |         2.79 |
-|  clk_50mhz     | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg_5                | rv64im72f_6sp/id_ex_register/EX_jump_reg_0[0]          |               54 |            160 |         2.96 |
-|  clk_50mhz     | rv64im72f_6sp/id_ex_register/E[0]                                | rv64im72f_6sp/trap_controller/cpu_clk_enable_reg[0]    |               59 |            161 |         2.73 |
-|  clk_50mhz     | rv64im72f_6sp/mem_wb_register/p_0_in2_out                        |                                                        |               22 |            176 |         8.00 |
-|  clk_50mhz     | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[11]_rep__2_1    |                                                        |               64 |            256 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[11]_rep__1_3    |                                                        |               64 |            256 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[12]_rep_1       |                                                        |               64 |            256 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[11]_rep__1_2    |                                                        |               64 |            256 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[11]_rep__1_1    |                                                        |               64 |            256 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[11]_rep_1       |                                                        |               64 |            256 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[12]_rep__2_1    |                                                        |               64 |            256 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[12]_rep__0_1    |                                                        |               64 |            256 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[11]_rep__0_1    |                                                        |               64 |            256 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[14]_0           |                                                        |               64 |            256 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[12]_rep__2_2    |                                                        |               64 |            256 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[13]_0           |                                                        |               64 |            256 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[13]_1           |                                                        |               64 |            256 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[13]_2           |                                                        |               64 |            256 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[13]_3           |                                                        |               64 |            256 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[13]_4           |                                                        |               64 |            256 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[13]_5           |                                                        |               64 |            256 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[13]_6           |                                                        |               64 |            256 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[13]_7           |                                                        |               64 |            256 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[12]_rep__0_2    |                                                        |               64 |            256 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[14]_1           |                                                        |               64 |            256 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[14]_2           |                                                        |               64 |            256 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[14]_3           |                                                        |               64 |            256 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[14]_4           |                                                        |               64 |            256 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[14]_5           |                                                        |               64 |            256 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[15]_0           |                                                        |               64 |            256 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[15]_1           |                                                        |               64 |            256 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[15]_2           |                                                        |               64 |            256 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[15]_3           |                                                        |               64 |            256 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[12]_rep__1_3    |                                                        |               64 |            256 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[12]_rep__1_2    |                                                        |               64 |            256 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[12]_rep__1_1    |                                                        |               64 |            256 |         4.00 |
-|  clk_50mhz     | rv64im72f_6sp/io_id_register/cpu_clk_enable_reg_0                | rv64im72f_6sp/mem_wb_register/WB_pc_plus_4[63]_i_1_n_0 |              138 |            388 |         2.81 |
-|  clk_50mhz     | rv64im72f_6sp/id_ex_register/E[0]                                | rv64im72f_6sp/trap_controller/SR[0]                    |              188 |            470 |         2.50 |
-|  clk_50mhz     | cpu_clk_enable                                                   | internal_reset                                         |              175 |            478 |         2.73 |
-|  clk_50mhz     | rv64im72f_6sp/io_id_register/cpu_clk_enable_reg_0                | rv64im72f_6sp/trap_controller/MEM_memory_read0_out     |              228 |            495 |         2.17 |
-|  clk_50mhz     | rv64im72f_6sp/io_id_register/cpu_clk_enable_reg_0                | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg_6      |              323 |            775 |         2.40 |
-+----------------+------------------------------------------------------------------+--------------------------------------------------------+------------------+----------------+--------------+
++------------------------+------------------------------------------------------------------+--------------------------------------------------------+------------------+----------------+--------------+
+|      Clock Signal      |                           Enable Signal                          |                    Set/Reset Signal                    | Slice Load Count | Bel Load Count | Bels / Slice |
++------------------------+------------------------------------------------------------------+--------------------------------------------------------+------------------+----------------+--------------+
+|  clk_gen/inst/clk_out1 | uart_tx/tx_i_1_n_0                                               | internal_reset                                         |                1 |              1 |         1.00 |
+|  clk_gen/inst/clk_out1 |                                                                  |                                                        |                1 |              2 |         2.00 |
+|  clk_gen/inst/clk_out1 |                                                                  | reset                                                  |                1 |              3 |         3.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/alu/divider_dword/FSM_onehot_state[3]_i_1__0_n_0   | internal_reset                                         |                2 |              4 |         2.00 |
+|  clk_gen/inst/clk_out1 | uart_tx/bit_counter[3]_i_1__1_n_0                                | internal_reset                                         |                1 |              4 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/alu/divider_word/FSM_onehot_state[3]_i_1_n_0       | internal_reset                                         |                1 |              4 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/alu/multiplier_dword/FSM_onehot_stage[3]_i_1_n_0   | internal_reset                                         |                1 |              4 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/alu/multiplier_word/FSM_onehot_stage[3]_i_1__0_n_0 | internal_reset                                         |                1 |              4 |         4.00 |
+|  clk_gen/inst/clk_out1 | mmio_interface/E[0]                                              | internal_reset                                         |                4 |              9 |         2.25 |
+|  clk_gen/inst/clk_out1 | uart_tx/shift_reg[8]_i_1_n_0                                     | internal_reset                                         |                3 |              9 |         3.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg_7[0]             |                                                        |               31 |             32 |         1.03 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg_0[0]             | internal_reset                                         |               18 |             34 |         1.89 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/alu/divider_word/quotient_sign4_out                | internal_reset                                         |               11 |             34 |         3.09 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/alu/multiplier_word/result_sign_s22_out            | internal_reset                                         |               15 |             37 |         2.47 |
+|  clk_gen/inst/clk_out1 |                                                                  | internal_reset                                         |               26 |             46 |         1.77 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/alu/multiplier_word/prod_low[31]_i_1__0_n_0        | internal_reset                                         |               26 |             64 |         2.46 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/csr_file/minstret[0]                               | internal_reset                                         |               17 |             64 |         3.76 |
+|  clk_gen/inst/clk_out1 | cpu_clk_enable                                                   | rv64im72f_6sp/ex_ex2_register/SR[0]                    |               62 |             64 |         1.03 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/alu/divider_word/quotient_reg[31]_i_1_n_0          | internal_reset                                         |               17 |             64 |         3.76 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/exception_detector/E[0]                            | internal_reset                                         |               21 |             64 |         3.05 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg_7[0]             | internal_reset                                         |               21 |             64 |         3.05 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/exception_detector/WB_csr_write_enable_reg[0]      | internal_reset                                         |               31 |             64 |         2.06 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/exception_detector/cpu_clk_enable_reg[0]           | internal_reset                                         |               25 |             64 |         2.56 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/exception_detector/trapped_reg_rep_5[0]            | internal_reset                                         |               23 |             64 |         2.78 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg_2[0]             | internal_reset                                         |               19 |             65 |         3.42 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/alu/divider_dword/quotient_sign4_out               | internal_reset                                         |               30 |             66 |         2.20 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg_1[0]             | internal_reset                                         |               36 |             68 |         1.89 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/alu/divider_word/bit_counter[5]_i_1_n_0            | internal_reset                                         |               25 |             70 |         2.80 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/alu/multiplier_dword/prod_high[63]_i_1_n_0         | internal_reset                                         |               51 |            128 |         2.51 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/alu/divider_dword/quotient_reg[63]_i_1_n_0         | internal_reset                                         |               35 |            128 |         3.66 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg[0]               | internal_reset                                         |               61 |            129 |         2.11 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/alu/divider_dword/bit_counter[6]_i_1_n_0           | internal_reset                                         |               48 |            135 |         2.81 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/alu/multiplier_dword/result_sign_s22_out           | internal_reset                                         |               57 |            145 |         2.54 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg_5                | rv64im72f_6sp/id_ex_register/EX_jump_reg_0[0]          |               40 |            160 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/id_ex_register/E[0]                                | rv64im72f_6sp/trap_controller/cpu_clk_enable_reg[0]    |               56 |            161 |         2.88 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/mem_wb_register/p_0_in2_out                        |                                                        |               22 |            176 |         8.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[13]_3           |                                                        |               64 |            256 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[15]_3           |                                                        |               64 |            256 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[15]_2           |                                                        |               64 |            256 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[15]_1           |                                                        |               64 |            256 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[15]_0           |                                                        |               64 |            256 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[14]_5           |                                                        |               64 |            256 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[14]_4           |                                                        |               64 |            256 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[14]_3           |                                                        |               64 |            256 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[14]_1           |                                                        |               64 |            256 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[11]_rep__0_1    |                                                        |               64 |            256 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[11]_rep_1       |                                                        |               64 |            256 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[11]_rep__1_1    |                                                        |               64 |            256 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[11]_rep__1_2    |                                                        |               64 |            256 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[11]_rep__1_3    |                                                        |               64 |            256 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[11]_rep__2_1    |                                                        |               64 |            256 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[12]_rep_1       |                                                        |               64 |            256 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[12]_rep__0_1    |                                                        |               64 |            256 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[12]_rep__0_2    |                                                        |               64 |            256 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[12]_rep__1_1    |                                                        |               64 |            256 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[12]_rep__1_2    |                                                        |               64 |            256 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[12]_rep__1_3    |                                                        |               64 |            256 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[12]_rep__2_1    |                                                        |               64 |            256 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[12]_rep__2_2    |                                                        |               64 |            256 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[13]_0           |                                                        |               64 |            256 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[13]_1           |                                                        |               64 |            256 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[13]_2           |                                                        |               64 |            256 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[13]_4           |                                                        |               64 |            256 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[13]_5           |                                                        |               64 |            256 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[13]_6           |                                                        |               64 |            256 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[13]_7           |                                                        |               64 |            256 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[14]_0           |                                                        |               64 |            256 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[14]_2           |                                                        |               64 |            256 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/io_id_register/cpu_clk_enable_reg_0                | rv64im72f_6sp/mem_wb_register/WB_pc_plus_4[63]_i_1_n_0 |              141 |            388 |         2.75 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/id_ex_register/E[0]                                | rv64im72f_6sp/trap_controller/SR[0]                    |              162 |            470 |         2.90 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/io_id_register/cpu_clk_enable_reg_0                | rv64im72f_6sp/trap_controller/MEM_memory_read0_out     |              218 |            493 |         2.26 |
+|  clk_gen/inst/clk_out1 | cpu_clk_enable                                                   | internal_reset                                         |              180 |            530 |         2.94 |
+|  clk_gen/inst/clk_out1 | rv64im72f_6sp/io_id_register/cpu_clk_enable_reg_0                | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg_6      |              205 |            538 |         2.62 |
++------------------------+------------------------------------------------------------------+--------------------------------------------------------+------------------+----------------+--------------+
 
 

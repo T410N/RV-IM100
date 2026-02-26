@@ -1,0 +1,313 @@
+
+Discarded input sections
+
+ .text          0x0000000000000000        0x0 crt0.o
+ .data          0x0000000000000000        0x0 crt0.o
+ .bss           0x0000000000000000        0x0 crt0.o
+ .text          0x0000000000000000        0x0 core_list_join.o
+ .data          0x0000000000000000        0x0 core_list_join.o
+ .bss           0x0000000000000000        0x0 core_list_join.o
+ .text.copy_info
+                0x0000000000000000       0x14 core_list_join.o
+ .text.core_list_insert_new
+                0x0000000000000000       0x60 core_list_join.o
+ .text.core_list_remove
+                0x0000000000000000       0x28 core_list_join.o
+ .text.core_list_undo_remove
+                0x0000000000000000       0x20 core_list_join.o
+ .text.core_list_find
+                0x0000000000000000       0x4c core_list_join.o
+ .text.core_list_reverse
+                0x0000000000000000       0x24 core_list_join.o
+ .text          0x0000000000000000        0x0 core_main.o
+ .data          0x0000000000000000        0x0 core_main.o
+ .bss           0x0000000000000000        0x0 core_main.o
+ .rodata.str1.8
+                0x0000000000000000       0x16 core_main.o
+ .data.mem_name
+                0x0000000000000000       0x18 core_main.o
+ .text          0x0000000000000000        0x0 core_matrix.o
+ .data          0x0000000000000000        0x0 core_matrix.o
+ .bss           0x0000000000000000        0x0 core_matrix.o
+ .text.matrix_sum
+                0x0000000000000000      0x1d4 core_matrix.o
+ .text.matrix_mul_const
+                0x0000000000000000      0x318 core_matrix.o
+ .text.matrix_add_const
+                0x0000000000000000      0x210 core_matrix.o
+ .text          0x0000000000000000        0x0 core_state.o
+ .data          0x0000000000000000        0x0 core_state.o
+ .bss           0x0000000000000000        0x0 core_state.o
+ .text          0x0000000000000000        0x0 core_util.o
+ .data          0x0000000000000000        0x0 core_util.o
+ .bss           0x0000000000000000        0x0 core_util.o
+ .text.crcu8    0x0000000000000000      0x130 core_util.o
+ .text          0x0000000000000000        0x0 core_portme.o
+ .data          0x0000000000000000        0x0 core_portme.o
+ .bss           0x0000000000000000        0x0 core_portme.o
+ .text.portable_malloc
+                0x0000000000000000        0x8 core_portme.o
+ .text.portable_free
+                0x0000000000000000        0x4 core_portme.o
+ .text          0x0000000000000000        0x0 ee_printf.o
+ .data          0x0000000000000000        0x0 ee_printf.o
+ .bss           0x0000000000000000        0x0 ee_printf.o
+ .text.uart_send_char
+                0x0000000000000000       0x24 ee_printf.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+ROM              0x0000000000000000 0x0000000000010000 xr
+RAM              0x0000000010000000 0x0000000000008000 xrw
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD crt0.o
+LOAD core_list_join.o
+LOAD core_main.o
+LOAD core_matrix.o
+LOAD core_state.o
+LOAD core_util.o
+LOAD core_portme.o
+LOAD ee_printf.o
+LOAD /home/khwl/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv64im/lp64/libgcc.a
+                0x0000000000001000                __stack_size = DEFINED (__stack_size)?__stack_size:0x1000
+                0x0000000000001000                __heap_size = DEFINED (__heap_size)?__heap_size:0x1000
+
+.text           0x0000000000000000     0x5690
+ *(.text.init)
+ .text.init     0x0000000000000000       0x74 crt0.o
+                0x0000000000000000                _start
+ *(.text .text.*)
+ .text.cmp_idx  0x0000000000000074       0x54 core_list_join.o
+                0x0000000000000074                cmp_idx
+ .text.calc_func
+                0x00000000000000c8      0x134 core_list_join.o
+                0x00000000000000c8                calc_func
+ .text.cmp_complex
+                0x00000000000001fc       0x48 core_list_join.o
+                0x00000000000001fc                cmp_complex
+ .text.core_list_mergesort
+                0x0000000000000244      0x45c core_list_join.o
+                0x0000000000000244                core_list_mergesort
+ .text.core_bench_list
+                0x00000000000006a0      0x304 core_list_join.o
+                0x00000000000006a0                core_bench_list
+ .text.core_list_init
+                0x00000000000009a4      0x370 core_list_join.o
+                0x00000000000009a4                core_list_init
+ .text.iterate  0x0000000000000d14      0x244 core_main.o
+                0x0000000000000d14                iterate
+ .text.startup.main
+                0x0000000000000f58      0x7d4 core_main.o
+                0x0000000000000f58                main
+ .text.core_init_matrix
+                0x000000000000172c      0x324 core_matrix.o
+                0x000000000000172c                core_init_matrix
+ .text.matrix_mul_vect
+                0x0000000000001a50      0x168 core_matrix.o
+                0x0000000000001a50                matrix_mul_vect
+ .text.matrix_mul_matrix
+                0x0000000000001bb8      0x208 core_matrix.o
+                0x0000000000001bb8                matrix_mul_matrix
+ .text.matrix_mul_matrix_bitextract
+                0x0000000000001dc0      0x294 core_matrix.o
+                0x0000000000001dc0                matrix_mul_matrix_bitextract
+ .text.matrix_test
+                0x0000000000002054      0xb2c core_matrix.o
+                0x0000000000002054                matrix_test
+ .text.core_bench_matrix
+                0x0000000000002b80       0x3c core_matrix.o
+                0x0000000000002b80                core_bench_matrix
+ .text.core_init_state
+                0x0000000000002bbc      0x1a8 core_state.o
+                0x0000000000002bbc                core_init_state
+ .text.core_state_transition
+                0x0000000000002d64      0x2e8 core_state.o
+                0x0000000000002d64                core_state_transition
+ .text.core_bench_state
+                0x000000000000304c      0x1ac core_state.o
+                0x000000000000304c                core_bench_state
+ .text.get_seed_32
+                0x00000000000031f8       0x58 core_util.o
+                0x00000000000031f8                get_seed_32
+ .text.crcu16   0x0000000000003250      0x228 core_util.o
+                0x0000000000003250                crcu16
+ .text.crcu32   0x0000000000003478      0x420 core_util.o
+                0x0000000000003478                crcu32
+ .text.crc16    0x0000000000003898      0x22c core_util.o
+                0x0000000000003898                crc16
+ .text.check_data_types
+                0x0000000000003ac4        0x8 core_util.o
+                0x0000000000003ac4                check_data_types
+ .text.start_time
+                0x0000000000003acc        0xc core_portme.o
+                0x0000000000003acc                start_time
+ .text.stop_time
+                0x0000000000003ad8       0x10 core_portme.o
+                0x0000000000003ad8                stop_time
+ .text.get_time
+                0x0000000000003ae8       0x14 core_portme.o
+                0x0000000000003ae8                get_time
+ .text.time_in_secs
+                0x0000000000003afc       0x20 core_portme.o
+                0x0000000000003afc                time_in_secs
+ .text.portable_init
+                0x0000000000003b1c        0xc core_portme.o
+                0x0000000000003b1c                portable_init
+ .text.portable_fini
+                0x0000000000003b28        0x8 core_portme.o
+                0x0000000000003b28                portable_fini
+ .text.number   0x0000000000003b30      0x694 ee_printf.o
+ .text.ee_printf
+                0x00000000000041c4      0xa80 ee_printf.o
+                0x00000000000041c4                ee_printf
+ *(.rodata .rodata.*)
+ *fill*         0x0000000000004c44        0x4 
+ .rodata.main.str1.8
+                0x0000000000004c48      0x597 core_main.o
+                                        0x451 (size before relaxing)
+ *fill*         0x00000000000051df        0x1 
+ .rodata.state_known_crc
+                0x00000000000051e0        0xa core_main.o
+ *fill*         0x00000000000051ea        0x6 
+ .rodata.matrix_known_crc
+                0x00000000000051f0        0xa core_main.o
+ *fill*         0x00000000000051fa        0x6 
+ .rodata.list_known_crc
+                0x0000000000005200        0xa core_main.o
+ .rodata.str1.8
+                0x000000000000520a        0x0 core_state.o
+                                         0xdd (size before relaxing)
+ *fill*         0x000000000000520a        0x6 
+ .rodata.errpat
+                0x0000000000005210       0x20 core_state.o
+ .rodata.scipat
+                0x0000000000005230       0x20 core_state.o
+ .rodata.floatpat
+                0x0000000000005250       0x20 core_state.o
+ .rodata.intpat
+                0x0000000000005270       0x20 core_state.o
+ .rodata.get_seed_32
+                0x0000000000005290       0x18 core_util.o
+ .rodata        0x00000000000052a8      0x200 core_util.o
+ .rodata.number.str1.8
+                0x00000000000054a8        0x0 ee_printf.o
+                                         0x4d (size before relaxing)
+ .rodata.ee_printf.str1.8
+                0x00000000000054a8        0x0 ee_printf.o
+                                          0x7 (size before relaxing)
+ .rodata.ee_printf
+                0x00000000000054a8      0x1e4 ee_printf.o
+                0x0000000000005690                . = ALIGN (0x8)
+ *fill*         0x000000000000568c        0x4 
+
+.rela.dyn       0x0000000000005690        0x0
+ .rela.text.init
+                0x0000000000005690        0x0 crt0.o
+
+.data           0x0000000010000000        0x8 load address 0x0000000000005690
+                0x0000000010000000                __data_start = .
+ *(.data .data.*)
+ *(.sdata .sdata.*)
+ .sdata.default_num_contexts
+                0x0000000010000000        0x4 core_portme.o
+                0x0000000010000000                default_num_contexts
+ .sdata.seed3_volatile
+                0x0000000010000004        0x4 core_portme.o
+                0x0000000010000004                seed3_volatile
+                0x0000000010000008                . = ALIGN (0x8)
+                0x0000000010000008                __data_end = .
+                0x0000000000005690                __data_load = LOADADDR (.data)
+
+.bss            0x0000000010000008       0x18 load address 0x0000000000005698
+                0x0000000010000008                __bss_start = .
+ *(.bss .bss.*)
+ *(.sbss .sbss.*)
+ .sbss.stop_time_val
+                0x0000000010000008        0x4 core_portme.o
+ .sbss.start_time_val
+                0x000000001000000c        0x4 core_portme.o
+ .sbss.seed5_volatile
+                0x0000000010000010        0x4 core_portme.o
+                0x0000000010000010                seed5_volatile
+ .sbss.seed4_volatile
+                0x0000000010000014        0x4 core_portme.o
+                0x0000000010000014                seed4_volatile
+ .sbss.seed2_volatile
+                0x0000000010000018        0x4 core_portme.o
+                0x0000000010000018                seed2_volatile
+ .sbss.seed1_volatile
+                0x000000001000001c        0x4 core_portme.o
+                0x000000001000001c                seed1_volatile
+ *(COMMON)
+                0x0000000010000020                . = ALIGN (0x8)
+                0x0000000010000020                __bss_end = .
+
+.heap           0x0000000010000020     0x1000 load address 0x0000000000005698
+                0x0000000010000020                __heap_start = .
+                0x0000000010001020                . = (. + __heap_size)
+ *fill*         0x0000000010000020     0x1000 
+                0x0000000010001020                __heap_end = .
+
+.stack          0x0000000010001020     0x1000 load address 0x00000000000056a0
+                0x0000000010001020                __stack_bottom = .
+                0x0000000010002020                . = (. + __stack_size)
+ *fill*         0x0000000010001020     0x1000 
+                0x0000000010002020                __stack_top = .
+                0x0000000010000800                __global_pointer$ = MIN ((__data_start + 0x800), MAX ((__data_start + 0x800), (__bss_end - 0x800)))
+OUTPUT(coremark.elf elf64-littleriscv)
+
+.riscv.attributes
+                0x0000000000000000       0x37
+ .riscv.attributes
+                0x0000000000000000       0x35 crt0.o
+ .riscv.attributes
+                0x0000000000000035       0x33 core_list_join.o
+ .riscv.attributes
+                0x0000000000000068       0x33 core_main.o
+ .riscv.attributes
+                0x000000000000009b       0x33 core_matrix.o
+ .riscv.attributes
+                0x00000000000000ce       0x33 core_state.o
+ .riscv.attributes
+                0x0000000000000101       0x33 core_util.o
+ .riscv.attributes
+                0x0000000000000134       0x37 core_portme.o
+ .riscv.attributes
+                0x000000000000016b       0x33 ee_printf.o
+
+.comment        0x0000000000000000        0xf
+ .comment       0x0000000000000000        0xf core_list_join.o
+                                         0x10 (size before relaxing)
+ .comment       0x000000000000000f        0x0 core_main.o
+                                         0x10 (size before relaxing)
+ .comment       0x000000000000000f        0x0 core_matrix.o
+                                         0x10 (size before relaxing)
+ .comment       0x000000000000000f        0x0 core_state.o
+                                         0x10 (size before relaxing)
+ .comment       0x000000000000000f        0x0 core_util.o
+                                         0x10 (size before relaxing)
+ .comment       0x000000000000000f        0x0 core_portme.o
+                                         0x10 (size before relaxing)
+ .comment       0x000000000000000f        0x0 ee_printf.o
+                                         0x10 (size before relaxing)
+
+.note.GNU-stack
+                0x0000000000000000        0x0
+ .note.GNU-stack
+                0x0000000000000000        0x0 core_list_join.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 core_main.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 core_matrix.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 core_state.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 core_util.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 core_portme.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ee_printf.o
