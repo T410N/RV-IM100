@@ -9,7 +9,7 @@ module UARTTX (
 );
 
     // 115200 baud @ 50MHz = 434 clk
-    localparam BAUD_DIV = 434;
+    localparam BAUD_DIV = 391;
     localparam BITS = 10; // start + 8 data + stop
 
     reg [15:0] baud_counter;

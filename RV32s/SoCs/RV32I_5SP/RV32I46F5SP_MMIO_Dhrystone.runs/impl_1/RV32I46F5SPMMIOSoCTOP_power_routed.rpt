@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date             : Mon Mar  2 01:11:14 2026
-| Host             : khwl-main-pc running 64-bit Ubuntu 24.04.4 LTS
+| Date             : Mon Mar  2 04:09:00 2026
+| Host             : khwl-ThinkPad-X1-Carbon-Gen-13 running 64-bit Ubuntu 24.04.3 LTS
 | Command          : report_power -file RV32I46F5SPMMIOSoCTOP_power_routed.rpt -pb RV32I46F5SPMMIOSoCTOP_power_summary_routed.pb -rpx RV32I46F5SPMMIOSoCTOP_power_routed.rpx
 | Design           : RV32I46F5SPMMIOSoCTOP
 | Device           : xc7a200tsbg484-1
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.333        |
+| Total On-Chip Power (W)  | 0.312        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.181        |
+| Dynamic (W)              | 0.161        |
 | Device Static (W)        | 0.152        |
 | Effective TJA (C/W)      | 3.3          |
-| Max Ambient (C)          | 83.9         |
-| Junction Temperature (C) | 26.1         |
+| Max Ambient (C)          | 84.0         |
+| Junction Temperature (C) | 26.0         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,19 +52,19 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.013 |        5 |       --- |             --- |
-| Slice Logic              |     0.034 |    19248 |       --- |             --- |
-|   LUT as Logic           |     0.017 |     7825 |    133800 |            5.85 |
-|   LUT as Distributed RAM |     0.014 |     4140 |     46200 |            8.96 |
-|   F7/F8 Muxes            |     0.002 |     4622 |    133800 |            3.45 |
-|   Register               |    <0.001 |     2202 |    267600 |            0.82 |
+| Clocks                   |     0.012 |        5 |       --- |             --- |
+| Slice Logic              |     0.026 |    20812 |       --- |             --- |
+|   LUT as Logic           |     0.012 |     9497 |    133800 |            7.10 |
+|   LUT as Distributed RAM |     0.012 |     4140 |     46200 |            8.96 |
+|   F7/F8 Muxes            |     0.002 |     4619 |    133800 |            3.45 |
+|   Register               |    <0.001 |     1887 |    267600 |            0.71 |
 |   CARRY4                 |    <0.001 |      103 |     33450 |            0.31 |
 |   Others                 |     0.000 |       19 |       --- |             --- |
-| Signals                  |     0.033 |     8862 |       --- |             --- |
-| PLL                      |     0.099 |        1 |        10 |           10.00 |
+| Signals                  |     0.019 |    10492 |       --- |             --- |
+| PLL                      |     0.103 |        1 |        10 |           10.00 |
 | I/O                      |     0.002 |       12 |       285 |            4.21 |
 | Static Power             |     0.152 |          |           |                 |
-| Total                    |     0.333 |          |           |                 |
+| Total                    |     0.312 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,8 +74,8 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.120 |       0.089 |      0.031 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.081 |       0.050 |      0.031 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.097 |       0.066 |      0.031 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.082 |       0.052 |      0.031 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.005 |       0.000 |      0.005 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.006 |       0.001 |      0.005 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -131,8 +131,8 @@ Table of Contents
 | Clock              | Domain                          | Constraint (ns) |
 +--------------------+---------------------------------+-----------------+
 | clk                | clk                             |            10.0 |
-| clk_out1_clk_wiz_0 | clk_gen/inst/clk_out1_clk_wiz_0 |            20.0 |
-| clkfbout_clk_wiz_0 | clk_gen/inst/clkfbout_clk_wiz_0 |            20.0 |
+| clk_out1_clk_wiz_0 | clk_gen/inst/clk_out1_clk_wiz_0 |            22.2 |
+| clkfbout_clk_wiz_0 | clk_gen/inst/clkfbout_clk_wiz_0 |            10.0 |
 +--------------------+---------------------------------+-----------------+
 
 
@@ -145,17 +145,17 @@ Table of Contents
 +------------------------+-----------+
 | Name                   | Power (W) |
 +------------------------+-----------+
-| RV32I46F5SPMMIOSoCTOP  |     0.181 |
-|   clk_gen              |     0.100 |
-|     inst               |     0.100 |
-|   rv32i46f_5sp_mmio    |     0.079 |
-|     data_memory        |     0.034 |
-|     ex_mem_register    |     0.014 |
-|     id_ex_register     |     0.003 |
-|     if_id_register     |     0.002 |
-|     instruction_memory |     0.013 |
-|     mem_wb_register    |     0.004 |
-|     program_counter    |     0.008 |
+| RV32I46F5SPMMIOSoCTOP  |     0.161 |
+|   clk_gen              |     0.104 |
+|     inst               |     0.104 |
+|   rv32i46f_5sp_mmio    |     0.055 |
+|     data_memory        |     0.025 |
+|     ex_mem_register    |     0.006 |
+|     id_ex_register     |     0.002 |
+|     if_id_register     |     0.001 |
+|     instruction_memory |     0.011 |
+|     mem_wb_register    |     0.002 |
+|     program_counter    |     0.005 |
 +------------------------+-----------+
 
 

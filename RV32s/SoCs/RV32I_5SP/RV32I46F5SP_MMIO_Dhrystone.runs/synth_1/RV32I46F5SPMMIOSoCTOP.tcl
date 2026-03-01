@@ -56,6 +56,7 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param xicom.use_bs_reader 1
 set_param chipscope.maxJobs 4
 set_param general.usePosixSpawnForFork 1
 OPTRACE "Creating in-memory project" START { }
@@ -90,6 +91,8 @@ read_verilog {
 read_mem {
   /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/data_init.mem
   /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/dhrystone.mem
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/dhrystones/dhrystone_RV32I_45MHz.mem
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/coremarks/coremark_RV32I_45MHz.mem
 }
 read_verilog -library xil_defaultlib {
   /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/ALU.v
