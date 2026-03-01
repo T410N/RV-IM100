@@ -1,0 +1,542 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Thu Feb 26 16:44:58 2026
+# Process ID         : 737841
+# Current directory  : /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.runs/synth_1
+# Command line       : vivado -log RV64I59F5SPSoCTOP.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source RV64I59F5SPSoCTOP.tcl
+# Log file           : /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.runs/synth_1/RV64I59F5SPSoCTOP.vds
+# Journal file       : /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.runs/synth_1/vivado.jou
+# Running On         : khwl-main-pc
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.4 LTS
+# Processor Detail   : AMD Ryzen 7 5800X 8-Core Processor
+# CPU Frequency      : 3713.399 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 16652 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 20947 MB
+# Available Virtual  : 6914 MB
+#-----------------------------------------------------------
+source RV64I59F5SPSoCTOP.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/utils_1/imports/synth_1/RV64I59F5SPSoCTOP.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/utils_1/imports/synth_1/RV64I59F5SPSoCTOP.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top RV64I59F5SPSoCTOP -part xc7a200tsbg484-1 -directive PerformanceOptimized -fsm_extraction one_hot -keep_equivalent_registers -resource_sharing off -no_lc -shreg_min_size 5
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a200t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a200t'
+INFO: [Device 21-403] Loading part xc7a200tsbg484-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 737887
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2242.254 ; gain = 480.875 ; free physical = 267 ; free virtual = 5288
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'RV64I59F5SPSoCTOP' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/59F5SP_SoC_TOP.v:1]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.runs/synth_1/.Xil/Vivado-737841-khwl-main-pc/realtime/clk_wiz_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.runs/synth_1/.Xil/Vivado-737841-khwl-main-pc/realtime/clk_wiz_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'UnifiedUARTController' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Unified_UART_Controller.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'UnifiedUARTController' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Unified_UART_Controller.v:1]
+INFO: [Synth 8-6157] synthesizing module 'UARTTX' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/UART_TX.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'UARTTX' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/UART_TX.v:1]
+INFO: [Synth 8-6157] synthesizing module 'MMIOInterface' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/MMIO_Interface.v:1]
+	Parameter XLEN bound to: 64 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'MMIOInterface' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/MMIO_Interface.v:1]
+INFO: [Synth 8-6157] synthesizing module 'RV64I59F5SP' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/RV64I59F_5SP.v:4]
+	Parameter XLEN bound to: 64 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'ALU' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/ALU.v:3]
+INFO: [Synth 8-6157] synthesizing module 'ALU_WORD' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/ALU_WORD.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ALU_WORD' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/ALU_WORD.v:3]
+INFO: [Synth 8-6157] synthesizing module 'ALU_DWORD' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/ALU_DWORD.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ALU_DWORD' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/ALU_DWORD.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/ALU.v:3]
+INFO: [Synth 8-6157] synthesizing module 'ALUController' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/ALU_Controller.v:9]
+INFO: [Synth 8-226] default block is never used [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/ALU_Controller.v:38]
+INFO: [Synth 8-226] default block is never used [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/ALU_Controller.v:89]
+INFO: [Synth 8-6155] done synthesizing module 'ALUController' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/ALU_Controller.v:9]
+INFO: [Synth 8-6157] synthesizing module 'BranchLogic' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Branch_Logic.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'BranchLogic' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Branch_Logic.v:3]
+INFO: [Synth 8-6157] synthesizing module 'BranchPredictor' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Branch_Predictor.v:3]
+	Parameter XLEN bound to: 64 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'BranchPredictor' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Branch_Predictor.v:3]
+INFO: [Synth 8-6157] synthesizing module 'ByteEnableLogic' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Byte_Enable_Logic.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'ByteEnableLogic' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Byte_Enable_Logic.v:4]
+INFO: [Synth 8-6157] synthesizing module 'ControlUnit' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Control_Unit.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'ControlUnit' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Control_Unit.v:7]
+INFO: [Synth 8-6157] synthesizing module 'CSRFile' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/CSR_File.v:3]
+	Parameter XLEN bound to: 64 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'CSRFile' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/CSR_File.v:3]
+INFO: [Synth 8-6157] synthesizing module 'DataMemory' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Data_Memory.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'DataMemory' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Data_Memory.v:1]
+INFO: [Synth 8-6157] synthesizing module 'ExceptionDetector' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Exception_Detector.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ExceptionDetector' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Exception_Detector.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ForwardUnit' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Forward_Unit.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ForwardUnit' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Forward_Unit.v:3]
+INFO: [Synth 8-6157] synthesizing module 'HazardUnit' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Hazard_Unit.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'HazardUnit' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Hazard_Unit.v:5]
+INFO: [Synth 8-6157] synthesizing module 'ImmediateGenerator' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Immediate_Generator.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ImmediateGenerator' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Immediate_Generator.v:3]
+INFO: [Synth 8-6157] synthesizing module 'InstructionDecoder' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Instruction_Decoder.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'InstructionDecoder' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Instruction_Decoder.v:5]
+INFO: [Synth 8-6157] synthesizing module 'InstructionMemory' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Instruction_Memory.v:9]
+INFO: [Synth 8-3876] $readmem data file './dhrystone_RV64I_40MHz.mem' is read successfully [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Instruction_Memory.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'InstructionMemory' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Instruction_Memory.v:9]
+INFO: [Synth 8-6157] synthesizing module 'ProgramCounter' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Program_Counter.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'ProgramCounter' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Program_Counter.v:1]
+INFO: [Synth 8-6157] synthesizing module 'PCPlus4' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/PC_Plus_4.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'PCPlus4' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/PC_Plus_4.v:1]
+INFO: [Synth 8-6157] synthesizing module 'PCController' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/PC_Controller.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'PCController' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/PC_Controller.v:1]
+INFO: [Synth 8-6157] synthesizing module 'RegisterFile' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Register_File.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'RegisterFile' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Register_File.v:1]
+INFO: [Synth 8-6157] synthesizing module 'TrapController' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Trap_Controller.v:3]
+	Parameter XLEN bound to: 64 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'TrapController' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Trap_Controller.v:3]
+WARNING: [Synth 8-7071] port 'ic_clean' of module 'TrapController' is unconnected for instance 'trap_controller' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/RV64I59F_5SP.v:563]
+WARNING: [Synth 8-7023] instance 'trap_controller' of module 'TrapController' has 20 connections declared, but only 19 given [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/RV64I59F_5SP.v:563]
+INFO: [Synth 8-6157] synthesizing module 'IF_ID_Register' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/IF_ID_Register.v:1]
+	Parameter XLEN bound to: 64 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'IF_ID_Register' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/IF_ID_Register.v:1]
+INFO: [Synth 8-6157] synthesizing module 'ID_EX_Register' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/ID_EX_Register.v:1]
+	Parameter XLEN bound to: 64 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'ID_EX_Register' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/ID_EX_Register.v:1]
+INFO: [Synth 8-6157] synthesizing module 'EX_MEM_Register' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/EX_MEM_Register.v:1]
+	Parameter XLEN bound to: 64 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'EX_MEM_Register' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/EX_MEM_Register.v:1]
+INFO: [Synth 8-6157] synthesizing module 'MEM_WB_Register' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/MEM_WB_Register.v:1]
+	Parameter XLEN bound to: 64 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'MEM_WB_Register' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/MEM_WB_Register.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'RV64I59F5SP' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/RV64I59F_5SP.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'RV64I59F5SPSoCTOP' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/59F5SP_SoC_TOP.v:1]
+WARNING: [Synth 8-6014] Unused sequential element branch_prediction_reg was removed.  [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Branch_Predictor.v:35]
+WARNING: [Synth 8-6014] Unused sequential element new_word_reg was removed.  [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Data_Memory.v:46]
+WARNING: [Synth 8-7129] Port ID_pc[63] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[62] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[61] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[60] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[59] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[58] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[57] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[56] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[55] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[54] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[53] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[52] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[51] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[50] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[49] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[48] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[47] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[46] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[45] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[44] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[43] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[42] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[41] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[40] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[39] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[38] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[37] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[36] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[35] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[34] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[33] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[32] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[31] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[30] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[29] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[28] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[27] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[26] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[25] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[24] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[23] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[22] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[21] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[20] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[19] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[18] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[17] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[16] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[15] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[14] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[13] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[12] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[11] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[10] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[9] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[8] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[7] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[6] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[5] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[4] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[3] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[2] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[1] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_pc[0] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[63] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[62] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[61] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[60] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[59] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[58] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[57] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[56] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[55] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[54] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[53] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[52] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[51] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[50] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[49] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[48] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[47] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[46] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[45] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[44] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[43] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[42] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[41] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[40] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[39] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[38] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[37] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[36] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[35] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[34] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[33] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[32] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[31] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[30] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[29] in module TrapController is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WB_pc[28] in module TrapController is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2360.191 ; gain = 598.812 ; free physical = 295 ; free virtual = 5225
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2375.035 ; gain = 613.656 ; free physical = 291 ; free virtual = 5222
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2375.035 ; gain = 613.656 ; free physical = 291 ; free virtual = 5222
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2375.035 ; gain = 0.000 ; free physical = 289 ; free virtual = 5220
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clk_gen'
+Finished Parsing XDC File [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clk_gen'
+Parsing XDC File [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/constrs_1/imports/RV64I59F_5SP/RV32I46F_5SP_Debug_XDC.xdc]
+Finished Parsing XDC File [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/constrs_1/imports/RV64I59F_5SP/RV32I46F_5SP_Debug_XDC.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/constrs_1/imports/RV64I59F_5SP/RV32I46F_5SP_Debug_XDC.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/RV64I59F5SPSoCTOP_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/RV64I59F5SPSoCTOP_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2482.773 ; gain = 0.000 ; free physical = 267 ; free virtual = 5197
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2482.809 ; gain = 0.000 ; free physical = 266 ; free virtual = 5197
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2482.809 ; gain = 721.430 ; free physical = 265 ; free virtual = 5196
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a200tsbg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2490.777 ; gain = 729.398 ; free physical = 265 ; free virtual = 5195
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2490.777 ; gain = 729.398 ; free physical = 264 ; free virtual = 5195
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'trap_handle_state_reg' in module 'TrapController'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                      00000000001 |                             0000
+               READ_MEPC |                      00000000010 |                             0100
+             RETURN_MRET |                      00000000100 |                             0110
+             MEM_STANDBY |                      00000001000 |                             0111
+              WB_STANDBY |                      00000010000 |                             1000
+            RTRE_STANDBY |                      00000100000 |                             1001
+        ECALL_MEPC_WRITE |                      00001000000 |                             1010
+              WRITE_MEPC |                      00010000000 |                             0001
+            WRITE_MCAUSE |                      00100000000 |                             0010
+              READ_MTVEC |                      01000000000 |                             0011
+              GOTO_MTVEC |                      10000000000 |                             0101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'trap_handle_state_reg' using encoding 'one-hot' in module 'TrapController'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2490.777 ; gain = 729.398 ; free physical = 258 ; free virtual = 5191
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   64 Bit       Adders := 8     
+	   3 Input   64 Bit       Adders := 1     
+	   2 Input   32 Bit       Adders := 1     
+	   3 Input   32 Bit       Adders := 1     
+	   2 Input   19 Bit       Adders := 1     
+	   2 Input    9 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 1     
++---XORs : 
+	   2 Input     64 Bit         XORs := 1     
++---Registers : 
+	               64 Bit    Registers := 33    
+	               32 Bit    Registers := 4     
+	               20 Bit    Registers := 4     
+	               16 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                7 Bit    Registers := 5     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 8     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 9     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 27    
++---RAMs : 
+	             512K Bit	(8192 X 64 bit)          RAMs := 1     
+	               2K Bit	(32 X 64 bit)          RAMs := 1     
++---Muxes : 
+	   2 Input   64 Bit        Muxes := 54    
+	   4 Input   64 Bit        Muxes := 5     
+	   3 Input   64 Bit        Muxes := 3     
+	  11 Input   64 Bit        Muxes := 2     
+	   2 Input   32 Bit        Muxes := 6     
+	   2 Input   20 Bit        Muxes := 5     
+	   2 Input   19 Bit        Muxes := 2     
+	   4 Input   16 Bit        Muxes := 1     
+	   2 Input   12 Bit        Muxes := 2     
+	  17 Input   11 Bit        Muxes := 1     
+	   2 Input   10 Bit        Muxes := 2     
+	   3 Input   10 Bit        Muxes := 2     
+	  11 Input   10 Bit        Muxes := 1     
+	   2 Input    9 Bit        Muxes := 2     
+	   4 Input    8 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 4     
+	   3 Input    8 Bit        Muxes := 1     
+	   8 Input    8 Bit        Muxes := 1     
+	   5 Input    8 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 5     
+	   2 Input    6 Bit        Muxes := 2     
+	   7 Input    5 Bit        Muxes := 2     
+	   2 Input    5 Bit        Muxes := 7     
+	   2 Input    4 Bit        Muxes := 2     
+	   3 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 14    
+	   5 Input    3 Bit        Muxes := 2     
+	   3 Input    3 Bit        Muxes := 2     
+	   8 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 10    
+	   3 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 39    
+	   7 Input    1 Bit        Muxes := 1     
+	   3 Input    1 Bit        Muxes := 15    
+	  11 Input    1 Bit        Muxes := 6     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 740 (col length:100)
+BRAMs: 730 (col length: RAMB18 100 RAMB36 50)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:54 ; elapsed = 00:03:56 . Memory (MB): peak = 2802.707 ; gain = 1041.328 ; free physical = 235 ; free virtual = 4939
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------------+------------+---------------+----------------+
+|Module Name       | RTL Object | Depth x Width | Implemented As | 
++------------------+------------+---------------+----------------+
+|InstructionMemory | data       | 8192x32       | LUT            | 
+|InstructionMemory | data       | 8192x32       | LUT            | 
+|InstructionMemory | data       | 8192x32       | LUT            | 
++------------------+------------+---------------+----------------+
+
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++---------------------------+---------------+-----------+----------------------+-------------------+
+|Module Name                | RTL Object    | Inference | Size (Depth x Width) | Primitives        | 
++---------------------------+---------------+-----------+----------------------+-------------------+
+|rv64i59f_5sp/data_memory   | memory_reg    | Implied   | 8 K x 64             | RAM256X1S x 2048  | 
+|rv64i59f_5sp/register_file | registers_reg | Implied   | 32 x 64              | RAM32M x 22       | 
++---------------------------+---------------+-----------+----------------------+-------------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:58 ; elapsed = 00:03:59 . Memory (MB): peak = 2802.707 ; gain = 1041.328 ; free physical = 241 ; free virtual = 4945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:05:11 ; elapsed = 00:05:12 . Memory (MB): peak = 2931.020 ; gain = 1169.641 ; free physical = 222 ; free virtual = 4863
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping Report
++---------------------------+---------------+-----------+----------------------+-------------------+
+|Module Name                | RTL Object    | Inference | Size (Depth x Width) | Primitives        | 
++---------------------------+---------------+-----------+----------------------+-------------------+
+|rv64i59f_5sp/data_memory   | memory_reg    | Implied   | 8 K x 64             | RAM256X1S x 2048  | 
+|rv64i59f_5sp/register_file | registers_reg | Implied   | 32 x 64              | RAM32M x 22       | 
++---------------------------+---------------+-----------+----------------------+-------------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:05:38 ; elapsed = 00:05:40 . Memory (MB): peak = 3032.020 ; gain = 1270.641 ; free physical = 208 ; free virtual = 4776
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:05:41 ; elapsed = 00:05:43 . Memory (MB): peak = 3032.020 ; gain = 1270.641 ; free physical = 203 ; free virtual = 4772
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:05:41 ; elapsed = 00:05:43 . Memory (MB): peak = 3032.020 ; gain = 1270.641 ; free physical = 203 ; free virtual = 4771
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:05:41 ; elapsed = 00:05:43 . Memory (MB): peak = 3032.020 ; gain = 1270.641 ; free physical = 204 ; free virtual = 4772
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:05:41 ; elapsed = 00:05:43 . Memory (MB): peak = 3032.020 ; gain = 1270.641 ; free physical = 203 ; free virtual = 4772
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:05:41 ; elapsed = 00:05:43 . Memory (MB): peak = 3032.020 ; gain = 1270.641 ; free physical = 203 ; free virtual = 4772
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:05:41 ; elapsed = 00:05:43 . Memory (MB): peak = 3032.020 ; gain = 1270.641 ; free physical = 204 ; free virtual = 4773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |clk_wiz_0     |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |clk_wiz   |     1|
+|2     |CARRY4    |   201|
+|3     |LUT1      |    14|
+|4     |LUT2      |  1786|
+|5     |LUT3      |   767|
+|6     |LUT4      |   876|
+|7     |LUT5      |  2050|
+|8     |LUT6      |  7503|
+|9     |MUXF7     |  1376|
+|10    |MUXF8     |   103|
+|11    |RAM256X1S |  2048|
+|12    |RAM32M    |    22|
+|13    |FDCE      |  2428|
+|14    |FDPE      |    33|
+|15    |IBUF      |     2|
+|16    |OBUF      |     9|
++------+----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:05:41 ; elapsed = 00:05:43 . Memory (MB): peak = 3032.020 ; gain = 1270.641 ; free physical = 204 ; free virtual = 4773
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 252 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:05:39 ; elapsed = 00:05:41 . Memory (MB): peak = 3032.020 ; gain = 1162.867 ; free physical = 204 ; free virtual = 4772
+Synthesis Optimization Complete : Time (s): cpu = 00:05:41 ; elapsed = 00:05:43 . Memory (MB): peak = 3032.027 ; gain = 1270.641 ; free physical = 204 ; free virtual = 4772
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.11 . Memory (MB): peak = 3032.027 ; gain = 0.000 ; free physical = 373 ; free virtual = 4941
+INFO: [Netlist 29-17] Analyzing 3750 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3032.027 ; gain = 0.000 ; free physical = 364 ; free virtual = 4933
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2070 instances were transformed.
+  RAM256X1S => RAM256X1S (MUXF7(x2), MUXF8, RAMS64E(x4)): 2048 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 22 instances
+
+Synth Design complete | Checksum: df5bd841
+INFO: [Common 17-83] Releasing license: Synthesis
+89 Infos, 104 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:05:50 ; elapsed = 00:05:51 . Memory (MB): peak = 3032.055 ; gain = 1414.793 ; free physical = 361 ; free virtual = 4930
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2416.224; main = 2194.604; forked = 281.759
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4030.105; main = 3032.023; forked = 998.082
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3056.031 ; gain = 0.000 ; free physical = 357 ; free virtual = 4929
+INFO: [Common 17-1381] The checkpoint '/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.runs/synth_1/RV64I59F5SPSoCTOP.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file RV64I59F5SPSoCTOP_utilization_synth.rpt -pb RV64I59F5SPSoCTOP_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Feb 26 16:50:52 2026...

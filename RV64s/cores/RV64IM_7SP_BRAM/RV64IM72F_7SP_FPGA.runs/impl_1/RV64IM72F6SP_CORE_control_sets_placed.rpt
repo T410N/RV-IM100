@@ -1,0 +1,112 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Tue Feb 24 14:58:26 2026
+| Host         : khwl-ThinkPad-X1-Carbon-Gen-13 running 64-bit Ubuntu 24.04.3 LTS
+| Command      : report_control_sets -verbose -file RV64IM72F6SP_CORE_control_sets_placed.rpt
+| Design       : RV64IM72F6SP_CORE
+| Device       : xc7a200t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    34 |
+|    Minimum number of control sets                        |    34 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    98 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    34 |
+| >= 0 to < 4        |     1 |
+| >= 4 to < 6        |     4 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    28 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               2 |            1 |
+| No           | No                    | Yes                    |              10 |            8 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |            2045 |          765 |
+| Yes          | Yes                   | No                     |            2021 |          679 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------+----------------------------------------------------+--------------------------------------------+------------------+----------------+--------------+
+| Clock Signal |                    Enable Signal                   |              Set/Reset Signal              | Slice Load Count | Bel Load Count | Bels / Slice |
++--------------+----------------------------------------------------+--------------------------------------------+------------------+----------------+--------------+
+|  clk         |                                                    |                                            |                1 |              2 |         2.00 |
+|  clk         | alu/divider_dword/FSM_onehot_state[3]_i_1__0_n_0   | reset                                      |                3 |              4 |         1.33 |
+|  clk         | alu/multiplier_word/FSM_onehot_stage[3]_i_1__0_n_0 | reset                                      |                1 |              4 |         4.00 |
+|  clk         | alu/multiplier_dword/FSM_onehot_stage[3]_i_1_n_0   | reset                                      |                1 |              4 |         4.00 |
+|  clk         | alu/divider_word/FSM_onehot_state[3]_i_1_n_0       | reset                                      |                2 |              4 |         2.00 |
+|  clk         |                                                    | reset                                      |                8 |             10 |         1.25 |
+|  clk         | id_ex_register/clk_enable_0[0]                     | reset                                      |               15 |             34 |         2.27 |
+|  clk         | alu/divider_word/quotient_sign4_out                | reset                                      |               14 |             34 |         2.43 |
+|  clk         | alu/multiplier_word/E[0]                           | reset                                      |               17 |             37 |         2.18 |
+|  clk         | exception_detector/trapped_reg_0[0]                | reset                                      |               20 |             64 |         3.20 |
+|  clk         | exception_detector/clk_enable_3[0]                 | reset                                      |               19 |             64 |         3.37 |
+|  clk         | exception_detector/clk_enable_0[0]                 | reset                                      |               24 |             64 |         2.67 |
+|  clk         | exception_detector/WB_csr_write_enable_reg[0]      | reset                                      |               30 |             64 |         2.13 |
+|  clk         | exception_detector/E[0]                            | reset                                      |               22 |             64 |         2.91 |
+|  clk         | alu/divider_word/quotient_reg[31]_i_1_n_0          | reset                                      |               20 |             64 |         3.20 |
+|  clk         | csr_file/minstret[0]                               | reset                                      |               17 |             64 |         3.76 |
+|  clk         | alu/multiplier_word/prod_low[31]_i_1__0_n_0        | reset                                      |               23 |             64 |         2.78 |
+|  clk         | id_ex_register/clk_enable_2[0]                     | reset                                      |               22 |             65 |         2.95 |
+|  clk         | alu/divider_dword/quotient_sign4_out               | reset                                      |               38 |             66 |         1.74 |
+|  clk         | id_ex_register/clk_enable_1[0]                     | reset                                      |               39 |             68 |         1.74 |
+|  clk         | alu/divider_word/bit_counter[5]_i_1_n_0            | reset                                      |               24 |             70 |         2.92 |
+|  clk         | alu/multiplier_dword/prod_high[63]_i_1_n_0         | reset                                      |               34 |            128 |         3.76 |
+|  clk         | alu/divider_dword/quotient_reg[63]_i_1_n_0         | reset                                      |               39 |            128 |         3.28 |
+|  clk         | id_ex_register/E[0]                                | reset                                      |               59 |            129 |         2.19 |
+|  clk         | alu/divider_dword/bit_counter[6]_i_1_n_0           | reset                                      |               51 |            135 |         2.65 |
+|  clk         | alu/multiplier_dword/E[0]                          | reset                                      |               47 |            145 |         3.09 |
+|  clk         | exception_detector/clk_enable_9[0]                 | exception_detector/SR[0]                   |               31 |            160 |         5.16 |
+|  clk         | exception_detector/clk_enable_5                    | exception_detector/clk_enable_4[0]         |               49 |            161 |         3.29 |
+|  clk         | mem_wb_register/p_0_in2_out                        |                                            |               22 |            176 |         8.00 |
+|  clk         | exception_detector/clk_enable_6[0]                 | mem_wb_register/WB_instruction[31]_i_1_n_0 |              130 |            381 |         2.93 |
+|  clk         | exception_detector/clk_enable_6[0]                 | trap_controller/clk_enable_0[0]            |              125 |            391 |         3.13 |
+|  clk         | exception_detector/clk_enable_6[0]                 | exception_detector/clk_enable_2[0]         |              195 |            458 |         2.35 |
+|  clk         | exception_detector/clk_enable_5                    | trap_controller/SR[0]                      |              149 |            470 |         3.15 |
+|  clk         | clk_enable                                         | reset                                      |              184 |            478 |         2.60 |
++--------------+----------------------------------------------------+--------------------------------------------+------------------+----------------+--------------+
+
+

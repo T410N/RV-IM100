@@ -1,0 +1,1321 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Wed Feb 25 16:43:35 2026
+# Process ID         : 1206241
+# Current directory  : /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final/RV64IM72F_7SP_BRAM.runs/impl_1
+# Command line       : vivado -log RV64IM72F5SPSoCTOP.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source RV64IM72F5SPSoCTOP.tcl -notrace
+# Log file           : /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final/RV64IM72F_7SP_BRAM.runs/impl_1/RV64IM72F5SPSoCTOP.vdi
+# Journal file       : /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final/RV64IM72F_7SP_BRAM.runs/impl_1/vivado.jou
+# Running On         : khwl-ThinkPad-X1-Carbon-Gen-13
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.3 LTS
+# Processor Detail   : Intel(R) Core(TM) Ultra 7 255H
+# CPU Frequency      : 3764.798 MHz
+# CPU Physical cores : 16
+# CPU Logical cores  : 16
+# Host memory        : 33110 MB
+# Swap memory        : 8589 MB
+# Total Virtual      : 41700 MB
+# Available Virtual  : 30475 MB
+#-----------------------------------------------------------
+source RV64IM72F5SPSoCTOP.tcl -notrace
+Command: link_design -top RV64IM72F5SPSoCTOP -part xc7a200tsbg484-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7a200tsbg484-1
+INFO: [Project 1-5699] Read binary netlist with skipMacroContent - 1
+INFO: [Project 1-454] Reading design checkpoint '/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final/RV64IM72F_7SP_BRAM.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.dcp' for cell 'clk_gen'
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 1801.129 ; gain = 0.000 ; free physical = 11431 ; free virtual = 28416
+INFO: [Netlist 29-17] Analyzing 1580 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final/RV64IM72F_7SP_BRAM.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc] for cell 'clk_gen/inst'
+Finished Parsing XDC File [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final/RV64IM72F_7SP_BRAM.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc] for cell 'clk_gen/inst'
+Parsing XDC File [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final/RV64IM72F_7SP_BRAM.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'clk_gen/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final/RV64IM72F_7SP_BRAM.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:54]
+INFO: [Timing 38-2] Deriving generated clocks [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final/RV64IM72F_7SP_BRAM.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:54]
+Finished Parsing XDC File [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final/RV64IM72F_7SP_BRAM.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'clk_gen/inst'
+Parsing XDC File [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final/RV64IM72F_7SP_BRAM.srcs/constrs_1/imports/sources/RV32I46F_5SP_Debug_XDC.xdc]
+CRITICAL WARNING: [Constraints 18-1055] Clock 'sys_clk_pin' completely overrides clock 'clk', which is referenced by one or more other constraints. Any constraints that refer to the overridden clock will be ignored.
+New: create_clock -period 10.000 -name sys_clk_pin -waveform {0.000 5.000} [get_ports clk], [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final/RV64IM72F_7SP_BRAM.srcs/constrs_1/imports/sources/RV32I46F_5SP_Debug_XDC.xdc:9]
+Previous: create_clock -period 10.000 [get_ports clk], [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final/RV64IM72F_7SP_BRAM.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:53]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+Finished Parsing XDC File [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final/RV64IM72F_7SP_BRAM.srcs/constrs_1/imports/sources/RV32I46F_5SP_Debug_XDC.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2570.508 ; gain = 0.000 ; free physical = 10833 ; free virtual = 27814
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 22 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 22 instances
+
+11 Infos, 0 Warnings, 1 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2570.543 ; gain = 947.281 ; free physical = 10833 ; free virtual = 27814
+Command: opt_design -directive Explore
+INFO: [Vivado_Tcl 4-136] Directive used for opt_design is: Explore
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a200t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a200t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:00.55 ; elapsed = 00:00:00.21 . Memory (MB): peak = 2575.477 ; gain = 4.934 ; free physical = 10792 ; free virtual = 27773
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+Phase 1.1 Core Generation And Design Setup | Checksum: 134a28ef9
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2871.289 ; gain = 0.000 ; free physical = 10469 ; free virtual = 27450
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 134a28ef9
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2871.289 ; gain = 0.000 ; free physical = 10469 ; free virtual = 27450
+Phase 1 Initialization | Checksum: 134a28ef9
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2871.289 ; gain = 0.000 ; free physical = 10469 ; free virtual = 27450
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Detect if minReqCache needed
+Phase 2.1 Detect if minReqCache needed | Checksum: 134a28ef9
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2871.289 ; gain = 0.000 ; free physical = 10469 ; free virtual = 27450
+
+Phase 2.2 Timer Update
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-2] Deriving generated clocks
+Phase 2.2 Timer Update | Checksum: 134a28ef9
+
+Time (s): cpu = 00:00:00.9 ; elapsed = 00:00:00.3 . Memory (MB): peak = 2959.102 ; gain = 87.812 ; free physical = 10442 ; free virtual = 27423
+
+Phase 2.3 Timing Data Collection
+Phase 2.3 Timing Data Collection | Checksum: 134a28ef9
+
+Time (s): cpu = 00:00:00.91 ; elapsed = 00:00:00.3 . Memory (MB): peak = 2959.102 ; gain = 87.812 ; free physical = 10442 ; free virtual = 27423
+Phase 2 Timer Update And Timing Data Collection | Checksum: 134a28ef9
+
+Time (s): cpu = 00:00:00.91 ; elapsed = 00:00:00.3 . Memory (MB): peak = 2959.102 ; gain = 87.812 ; free physical = 10442 ; free virtual = 27423
+
+Phase 3 Retarget
+INFO: [Opt 31-1851] Number of loadless carry chains removed were: 0
+INFO: [Opt 31-1834] Total Chains To Be Transformed Were: 0 AND Number of Transformed insts Created are: 0
+INFO: [Opt 31-1566] Pulled 63 inverters resulting in an inversion of 1333 pins
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 1 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 3 Retarget | Checksum: 10b300da0
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.4 . Memory (MB): peak = 2959.102 ; gain = 87.812 ; free physical = 10442 ; free virtual = 27423
+Retarget | Checksum: 10b300da0
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 191 cells
+INFO: [Opt 31-1021] In phase Retarget, 1 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 4 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 4 Constant propagation | Checksum: 17348742b
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.44 . Memory (MB): peak = 2959.102 ; gain = 87.812 ; free physical = 10442 ; free virtual = 27423
+Constant propagation | Checksum: 17348742b
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 5 Sweep
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2959.102 ; gain = 0.000 ; free physical = 10442 ; free virtual = 27423
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2959.102 ; gain = 0.000 ; free physical = 10442 ; free virtual = 27423
+Phase 5 Sweep | Checksum: 1b5b5b0a1
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.49 . Memory (MB): peak = 2959.102 ; gain = 87.812 ; free physical = 10442 ; free virtual = 27423
+Sweep | Checksum: 1b5b5b0a1
+INFO: [Opt 31-389] Phase Sweep created 7 cells and removed 0 cells
+
+Phase 6 BUFG optimization
+Phase 6 BUFG optimization | Checksum: 1b5b5b0a1
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.53 . Memory (MB): peak = 2991.117 ; gain = 119.828 ; free physical = 10442 ; free virtual = 27423
+BUFG optimization | Checksum: 1b5b5b0a1
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 7 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 7 Shift Register Optimization | Checksum: 1b5b5b0a1
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.53 . Memory (MB): peak = 2991.117 ; gain = 119.828 ; free physical = 10442 ; free virtual = 27423
+Shift Register Optimization | Checksum: 1b5b5b0a1
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+INFO: [Opt 31-1555] control_set_opt supports Versal devices only, and device 7a200t is unsupported
+
+Phase 8 Post Processing Netlist
+Phase 8 Post Processing Netlist | Checksum: 1c57bc2c8
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.55 . Memory (MB): peak = 2991.117 ; gain = 119.828 ; free physical = 10442 ; free virtual = 27423
+Post Processing Netlist | Checksum: 1c57bc2c8
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+
+Phase 9 Finalization
+
+Phase 9.1 Finalizing Design Cores and Updating Shapes
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: 11a001d9e
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.62 . Memory (MB): peak = 2991.117 ; gain = 119.828 ; free physical = 10442 ; free virtual = 27423
+
+Phase 9.2 Verifying Netlist Connectivity
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10442 ; free virtual = 27423
+Phase 9.2 Verifying Netlist Connectivity | Checksum: 11a001d9e
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.63 . Memory (MB): peak = 2991.117 ; gain = 119.828 ; free physical = 10442 ; free virtual = 27423
+Phase 9 Finalization | Checksum: 11a001d9e
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.63 . Memory (MB): peak = 2991.117 ; gain = 119.828 ; free physical = 10442 ; free virtual = 27423
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               0  |             191  |                                              1  |
+|  Constant propagation         |               0  |               0  |                                              0  |
+|  Sweep                        |               7  |               0  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: 11a001d9e
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.63 . Memory (MB): peak = 2991.117 ; gain = 119.828 ; free physical = 10442 ; free virtual = 27423
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10442 ; free virtual = 27423
+INFO: [Common 17-83] Releasing license: Implementation
+36 Infos, 0 Warnings, 1 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+INFO: [Vivado 12-24828] Executing command : report_drc -file RV64IM72F5SPSoCTOP_drc_opted.rpt -pb RV64IM72F5SPSoCTOP_drc_opted.pb -rpx RV64IM72F5SPSoCTOP_drc_opted.rpx
+Command: report_drc -file RV64IM72F5SPSoCTOP_drc_opted.rpt -pb RV64IM72F5SPSoCTOP_drc_opted.pb -rpx RV64IM72F5SPSoCTOP_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final/RV64IM72F_7SP_BRAM.runs/impl_1/RV64IM72F5SPSoCTOP_drc_opted.rpt.
+report_drc completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10445 ; free virtual = 27427
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10445 ; free virtual = 27427
+Writing XDEF routing.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10445 ; free virtual = 27428
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10445 ; free virtual = 27428
+Wrote PlaceStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10445 ; free virtual = 27428
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10445 ; free virtual = 27428
+Wrote Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10445 ; free virtual = 27428
+Write Physdb Complete: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10445 ; free virtual = 27429
+INFO: [Common 17-1381] The checkpoint '/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final/RV64IM72F_7SP_BRAM.runs/impl_1/RV64IM72F5SPSoCTOP_opt.dcp' has been generated.
+Command: read_checkpoint -auto_incremental -incremental /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final/RV64IM72F_7SP_BRAM.srcs/utils_1/imports/impl_1/RV64IM72F5SPSoCTOP_routed.dcp
+INFO: [Vivado 12-9151] Incremental flow is being run with directive 'RuntimeOptimized'. This will override place_design, post-place phys_opt_design and route_design directives.
+
+Starting Incremental read checkpoint Task
+
+Phase 1 Process Reference Checkpoint Netlist
+INFO: [Netlist 29-17] Analyzing 1580 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+
+Time (s): cpu = 00:00:00.24 ; elapsed = 00:00:00.25 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10445 ; free virtual = 27429
+
+Phase 2 Initialization
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10445 ; free virtual = 27428
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10445 ; free virtual = 27428
+
+Time (s): cpu = 00:00:00.35 ; elapsed = 00:00:00.33 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10445 ; free virtual = 27428
+
+Phase 3 Replay Physical Synthesis Transforms
+INFO: [Vivado_Tcl 4-521] iPhys_opt_design summary: tried 0 changes and 0 changes are successfully applied
+
+Time (s): cpu = 00:00:00.35 ; elapsed = 00:00:00.33 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10445 ; free virtual = 27428
+
+Phase 4 Build Reuse DB
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10446 ; free virtual = 27430
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Read Netlist Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10446 ; free virtual = 27430
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10446 ; free virtual = 27430
+Read PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10446 ; free virtual = 27430
+Read placeStorage: Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.13 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10444 ; free virtual = 27428
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10444 ; free virtual = 27428
+Read Physdb Files: Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.15 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10444 ; free virtual = 27428
+Finished XDEF File Restore: Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10444 ; free virtual = 27427
+INFO: [Designutils 20-2297] Reference Design: /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final/RV64IM72F_7SP_BRAM.srcs/utils_1/imports/impl_1/RV64IM72F5SPSoCTOP_routed.dcp, Summary | WNS = 0.039 | WHS = 0.106 | State = POST_ROUTE |
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10444 ; free virtual = 27427
+
+Phase 5 Checking legality
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Read Netlist Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10444 ; free virtual = 27427
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10444 ; free virtual = 27427
+Read RouteStorage: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.09 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10443 ; free virtual = 27427
+Read Physdb Files: Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.1 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10443 ; free virtual = 27427
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.1 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10443 ; free virtual = 27427
+Phase 5 Checking legality | Checksum: 1b58ba9b0
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10444 ; free virtual = 27428
+
+Phase 6 Reporting
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Wed Feb 25 16:43:51 2026
+| Host         : khwl-ThinkPad-X1-Carbon-Gen-13 running 64-bit Ubuntu 24.04.3 LTS
+| Design       : RV64IM72F5SPSoCTOP
+| Device       : xc7a200t
+| Design State : Unknown
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Incremental Implementation Information
+
+Table of Contents
+-----------------
+1. Incremental Flow Summary
+2. Reuse Summary
+3. Reference Checkpoint Information
+4. Comparison with Reference Run
+5. Optimization Comparison With Reference Run
+5.1 iphys_opt_replay Optimizations
+5.2 QoR Suggestion Optimizations
+6. Command Comparison with Reference Run
+6.1 Reference:
+6.2 Incremental:
+7. Non Reuse Information
+
+1. Incremental Flow Summary
+---------------------------
+
++-----------------------+------------------+
+|    Flow Information   |       Value      |
++-----------------------+------------------+
+| Synthesis Flow        |          Default |
+| Auto Incremental      |              Yes |
+| Incremental Directive | RuntimeOptimized |
+| Target WNS            |              0.0 |
+| QoR Suggestions       |                0 |
++-----------------------+------------------+
+
+
+2. Reuse Summary
+----------------
+
++-------+----------------------+----------------------------+--------------------+-------+
+|  Type | Matched % (of Total) | Current Reuse % (of Total) | Fixed % (of Total) | Total |
++-------+----------------------+----------------------------+--------------------+-------+
+| Cells |               100.00 |                     100.00 |               0.07 | 15331 |
+| Nets  |               100.00 |                     100.00 |               0.00 | 11704 |
+| Pins  |                    - |                     100.00 |                  - | 71965 |
+| Ports |               100.00 |                     100.00 |             100.00 |    12 |
++-------+----------------------+----------------------------+--------------------+-------+
+
+
+3. Reference Checkpoint Information
+-----------------------------------
+
++----------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| DCP Location:  | /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final/RV64IM72F_7SP_BRAM.srcs/utils_1/imports/impl_1/RV64IM72F5SPSoCTOP_routed.dcp |
++----------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------+----------------------------+
+|         DCP Information        |            Value           |
++--------------------------------+----------------------------+
+| Vivado Version                 |                     2025.2 |
+| DCP State                      |                 POST_ROUTE |
+| Recorded WNS                   |                      0.039 |
+| Recorded WHS                   |                      0.106 |
+| Reference Speed File Version   | PRODUCTION 1.23 2018-06-13 |
+| Incremental Speed File Version | PRODUCTION 1.23 2018-06-13 |
++--------------------------------+----------------------------+
+* Recorded WNS/WHS timing numbers are estimated timing numbers. They may vary slightly from sign-off timing numbers.
+
+
+4. Comparison with Reference Run
+--------------------------------
+
++-----------------+---------------------------+---------------------------+---------------------------+
+|                 |          WNS(ns)          |  Runtime(elapsed)(hh:mm)  |    Runtime(cpu)(hh:mm)    |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|      Stage      |  Reference  | Incremental |  Reference  | Incremental |  Reference  | Incremental |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| synth_design    |             |             |       00:01 |       00:01 |       00:01 |       00:01 |
+| opt_design      |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| read_checkpoint |             |             |     < 1 min |             |     < 1 min |             |
+| place_design    |       0.048 |             |     < 1 min |             |     < 1 min |             |
+| phys_opt_design |       0.048 |             |     < 1 min |             |     < 1 min |             |
+| route_design    |       0.047 |             |     < 1 min |             |       00:01 |             |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+
+5. Optimization Comparison With Reference Run
+---------------------------------------------
+
+5.1 iphys_opt_replay Optimizations
+----------------------------------
+
++-------------------------+--------+------------+
+| iphys_opt_design replay | Reused | Not Reused |
++-------------------------+--------+------------+
+
+
+5.2 QoR Suggestion Optimizations
+--------------------------------
+
++-----------------+-------+
+| QoR Suggestions | Value |
++-----------------+-------+
+
+
+6. Command Comparison with Reference Run
+----------------------------------------
+
+6.1 Reference:
+--------------
+synth_design -directive performanceoptimized -no_lc -shreg 5 -resource_sharing off -fsm_extraction one_hot -define default::[not_specified] -verilog_define default::[not_specified] -vhdl_define default::[not_specified] -keep_equivalent_registers -top  RV64IM72F5SPSoCTOP -part  xc7a200tsbg484-1 
+opt_design -directive Explore
+read_checkpoint -directive RuntimeOptimized  -incremental -auto_incremental /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final/RV64IM72F_7SP_BRAM.srcs/utils_1/imports/impl_1/RV64IM72F5SPSoCTOP_routed.dcp
+place_design -directive Default
+phys_opt_design
+route_design -directive Default
+
+6.2 Incremental:
+----------------
+synth_design -directive performanceoptimized -no_lc -shreg 5 -resource_sharing off -fsm_extraction one_hot -define default::[not_specified] -verilog_define default::[not_specified] -vhdl_define default::[not_specified] -keep_equivalent_registers -top  RV64IM72F5SPSoCTOP -part  xc7a200tsbg484-1 
+opt_design -directive Explore
+read_checkpoint -directive RuntimeOptimized  -incremental -auto_incremental /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final/RV64IM72F_7SP_BRAM.srcs/utils_1/imports/impl_1/RV64IM72F5SPSoCTOP_routed.dcp
+
+7. Non Reuse Information
+------------------------
+
++-----------------------+------+
+|          Type         |   %  |
++-----------------------+------+
+| Non-Reused Cells      | 0.00 |
+| Partially reused nets | 0.00 |
+| Non-Reused nets       | 0.00 |
+| Non-Reused Ports      | 0.00 |
++-----------------------+------+
+
+
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10443 ; free virtual = 27427
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10449 ; free virtual = 27433
+read_checkpoint: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10449 ; free virtual = 27433
+Command: place_design -directive Explore
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a200t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a200t'
+INFO: [Common 17-83] Releasing license: Implementation
+
+Starting Incremental Placer Task
+INFO: [Vivado_Tcl 4-24] Running Incremental Placer flow for unplaced cells using reference design-checkpoint '/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final/RV64IM72F_7SP_BRAM.srcs/utils_1/imports/impl_1/RV64IM72F5SPSoCTOP_routed.dcp'.
+INFO: [Place 46-84] Incremental Directive "RuntimeOptimized" has been set. This will overwrite place_design -directive "Explore" which was called in this command.
+INFO: [Place 46-44] place_design is using directive Default with target WNS of 0 ns.
+INFO: [Place 30-281] No place-able instance is found; design doesn't contain any instance or all instances are placed
+
+Reference - Incremental Comparison Summary
+
+1. Comparison with Reference Run
+--------------------------------
+
++-----------------+---------------------------+---------------------------+---------------------------+
+|                 |          WNS(ns)          |  Runtime(elapsed)(hh:mm)  |    Runtime(cpu)(hh:mm)    |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|      Stage      |  Reference  | Incremental |  Reference  | Incremental |  Reference  | Incremental |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| synth_design    |             |             |       00:01 |       00:01 |       00:01 |       00:01 |
+| opt_design      |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| read_checkpoint |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| place_design    |       0.048 |       0.039 |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| phys_opt_design |       0.048 |             |     < 1 min |             |     < 1 min |             |
+| route_design    |       0.047 |             |     < 1 min |             |       00:01 |             |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+
+Ending Incremental Placer Task | Checksum: 1b58ba9b0
+
+Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10446 ; free virtual = 27430
+57 Infos, 0 Warnings, 1 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+INFO: [Vivado 12-24838] Running report commands "report_control_sets, report_io, report_utilization" in parallel.
+Running report generation with 3 threads.
+INFO: [Vivado 12-24828] Executing command : report_control_sets -verbose -file RV64IM72F5SPSoCTOP_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10450 ; free virtual = 27433
+INFO: [Vivado 12-24828] Executing command : report_io -file RV64IM72F5SPSoCTOP_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.1 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10425 ; free virtual = 27408
+INFO: [Vivado 12-24828] Executing command : report_utilization -file RV64IM72F5SPSoCTOP_utilization_placed.rpt -pb RV64IM72F5SPSoCTOP_utilization_placed.pb
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10440 ; free virtual = 27423
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10440 ; free virtual = 27423
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10440 ; free virtual = 27424
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.3 ; elapsed = 00:00:00.06 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10435 ; free virtual = 27425
+Wrote PlaceStorage: Time (s): cpu = 00:00:00.36 ; elapsed = 00:00:00.19 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10423 ; free virtual = 27422
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10423 ; free virtual = 27424
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10423 ; free virtual = 27424
+Write Physdb Complete: Time (s): cpu = 00:00:00.67 ; elapsed = 00:00:00.26 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10423 ; free virtual = 27424
+INFO: [Common 17-1381] The checkpoint '/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final/RV64IM72F_7SP_BRAM.runs/impl_1/RV64IM72F5SPSoCTOP_placed.dcp' has been generated.
+Command: phys_opt_design -directive Explore
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a200t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a200t'
+
+Starting Initial Update Timing Task
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.62 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10427 ; free virtual = 27416
+INFO: [Vivado_Tcl 4-1435] PhysOpt_Tcl_Interface Runtime Before Starting Physical Synthesis Task | CPU: 3.28s |  WALL: 0.62s
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10427 ; free virtual = 27416
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-673] Physical synthesis flow is being used in incremental compile flow
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.889 | TNS=-48.432 |
+Phase 1 Physical Synthesis Initialization | Checksum: a91c78fa
+
+Time (s): cpu = 00:00:00.87 ; elapsed = 00:00:00.47 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10428 ; free virtual = 27417
+INFO: [Physopt 32-673] Physical synthesis flow is being used in incremental compile flow
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.889 | TNS=-48.432 |
+
+Phase 2 DSP Register Optimization
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 2 DSP Register Optimization | Checksum: a91c78fa
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.52 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10428 ; free virtual = 27417
+
+Phase 3 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.889 | TNS=-48.432 |
+INFO: [Physopt 32-702] Processed net rv64im72f_6sp/ex_ex2_register/Q[50]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net clk_gen/inst/clk_out1_clk_wiz_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net rv64im72f_6sp/id_ex_register/div_overflow_flag_reg[53]. Critical path length was reduced through logic transformation on cell rv64im72f_6sp/id_ex_register/EX2_alu_result[53]_i_1_comp.
+INFO: [Physopt 32-735] Processed net rv64im72f_6sp/id_ex_register/EX2_alu_result[63]_i_5_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.876 | TNS=-48.187 |
+INFO: [Physopt 32-702] Processed net rv64im72f_6sp/ex_ex2_register/Q[58]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net rv64im72f_6sp/id_ex_register/div_overflow_flag_reg[61]. Critical path length was reduced through logic transformation on cell rv64im72f_6sp/id_ex_register/EX2_alu_result[61]_i_1_comp.
+INFO: [Physopt 32-735] Processed net rv64im72f_6sp/id_ex_register/EX2_alu_result[63]_i_5_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.836 | TNS=-48.140 |
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.836 | TNS=-48.140 |
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10434 ; free virtual = 27424
+Phase 3 Critical Path Optimization | Checksum: a91c78fa
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10434 ; free virtual = 27424
+
+Phase 4 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.836 | TNS=-48.140 |
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.836 | TNS=-48.140 |
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10434 ; free virtual = 27424
+Phase 4 Critical Path Optimization | Checksum: a91c78fa
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10434 ; free virtual = 27424
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10434 ; free virtual = 27424
+INFO: [Physopt 32-603] Post Physical Optimization Timing Summary | WNS=-0.836 | TNS=-48.140 |
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization   |  WNS Gain (ns)  |  TNS Gain (ns)  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  DSP Register   |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Critical Path  |          0.053  |          0.292  |            0  |              0  |                     2  |           0  |           2  |  00:00:01  |
+|  Total          |          0.053  |          0.292  |            0  |              0  |                     2  |           0  |           3  |  00:00:01  |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10434 ; free virtual = 27424
+Ending Physical Synthesis Task | Checksum: 15686f9c4
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10434 ; free virtual = 27424
+
+Reference - Incremental Comparison Summary
+
+1. Comparison with Reference Run
+--------------------------------
+
++-----------------+---------------------------+---------------------------+---------------------------+
+|                 |          WNS(ns)          |  Runtime(elapsed)(hh:mm)  |    Runtime(cpu)(hh:mm)    |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|      Stage      |  Reference  | Incremental |  Reference  | Incremental |  Reference  | Incremental |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| synth_design    |             |             |       00:01 |       00:01 |       00:01 |       00:01 |
+| opt_design      |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| read_checkpoint |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| place_design    |       0.048 |       0.039 |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| phys_opt_design |       0.048 |      -0.836 |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| route_design    |       0.047 |             |     < 1 min |             |       00:01 |             |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+
+INFO: [Common 17-83] Releasing license: Implementation
+87 Infos, 0 Warnings, 1 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10434 ; free virtual = 27424
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10434 ; free virtual = 27424
+Writing XDEF routing.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10434 ; free virtual = 27424
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.4 ; elapsed = 00:00:00.08 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10432 ; free virtual = 27428
+Wrote PlaceStorage: Time (s): cpu = 00:00:00.32 ; elapsed = 00:00:00.2 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10422 ; free virtual = 27426
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10414 ; free virtual = 27420
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10414 ; free virtual = 27420
+Write Physdb Complete: Time (s): cpu = 00:00:00.74 ; elapsed = 00:00:00.29 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10414 ; free virtual = 27420
+INFO: [Common 17-1381] The checkpoint '/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final/RV64IM72F_7SP_BRAM.runs/impl_1/RV64IM72F5SPSoCTOP_physopt.dcp' has been generated.
+Command: route_design -directive Explore -tns_cleanup
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a200t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a200t'
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+cleanRouteStorageTime (s): cpu = 00:00:00.71 ; elapsed = 00:00:00.16 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10412 ; free virtual = 27407
+INFO: [Route 72-6] Incremental Directive "RuntimeOptimized" has been set. This will overwrite route_design -directive "Explore" which was called in this command.
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+
+Starting Incremental Route Task
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: e1fd9787 ConstDB: 0 ShapeSum: edcf3 RouteDB: dcfcbc75
+Phase 1 Build RT Design | Checksum: 255ca19d2
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:19 . Memory (MB): peak = 2991.117 ; gain = 0.000 ; free physical = 10379 ; free virtual = 27374
+Post Restoration Checksum: NetGraph: 281aa48a | NumContArr: cba5ace6 | Constraints: c2a8fa9d | Timing: c2a8fa9d
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 2791246aa
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:19 . Memory (MB): peak = 3018.117 ; gain = 27.000 ; free physical = 10332 ; free virtual = 27327
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 2791246aa
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:19 . Memory (MB): peak = 3018.117 ; gain = 27.000 ; free physical = 10332 ; free virtual = 27327
+--------------------------------------------------------
+|Incremental Routing Reuse Summary                      |
+--------------------------------------------------------
+|Type                     | Count    | Percentage       |
+--------------------------------------------------------
+|Fully reused nets        |     12661|            99.91 |
+|Partially reused nets    |         7|             0.06 |
+|Non-reused nets          |         5|             0.04 |
+--------------------------------------------------------
+INFO: [Route 35-559] route_design is using directive Default with target WNS of 0.0ns
+ Number of Nodes with overlaps = 0
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 2.25128 %
+  Global Horizontal Routing Utilization  = 2.77541 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 12
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 5
+  Number of Partially Routed Nets     = 7
+  Number of Node Overlaps             = 0
+
+
+Phase 2.3 Disable Unchanged Timing Paths
+Phase 2.3 Disable Unchanged Timing Paths | Checksum: 2690be648
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:20 . Memory (MB): peak = 3086.875 ; gain = 95.758 ; free physical = 10269 ; free virtual = 27264
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: 1de031b2d
+
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:20 . Memory (MB): peak = 3086.875 ; gain = 95.758 ; free physical = 10269 ; free virtual = 27264
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.898 | TNS=-21.507| WHS=0.095  | THS=0.000  |
+
+
+Phase 2.5 Soft Constraint Pins - Fast Budgeting
+Phase 2.5 Soft Constraint Pins - Fast Budgeting | Checksum: 1f62139e0
+
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:20 . Memory (MB): peak = 3086.875 ; gain = 95.758 ; free physical = 10269 ; free virtual = 27264
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.000566859 %
+  Global Horizontal Routing Utilization  = 0.000991408 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 12
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 5
+  Number of Partially Routed Nets     = 7
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: 1f62139e0
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:20 . Memory (MB): peak = 3101.656 ; gain = 110.539 ; free physical = 10254 ; free virtual = 27248
+
+Phase 3 Global Routing
+Phase 3 Global Routing | Checksum: 1f62139e0
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:20 . Memory (MB): peak = 3101.656 ; gain = 110.539 ; free physical = 10254 ; free virtual = 27248
+
+Phase 4 Initial Routing
+
+Phase 4.1 Initial Net Routing Pass
+Phase 4.1 Initial Net Routing Pass | Checksum: 25d726528
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:21 . Memory (MB): peak = 3101.656 ; gain = 110.539 ; free physical = 10254 ; free virtual = 27248
+Phase 4 Initial Routing | Checksum: 25d726528
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:21 . Memory (MB): peak = 3101.656 ; gain = 110.539 ; free physical = 10254 ; free virtual = 27248
+
+Phase 5 Initial Route for Timing
+
+Phase 5.1 Update Timing
+Phase 5.1 Update Timing | Checksum: 191bef82b
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:21 . Memory (MB): peak = 3101.656 ; gain = 110.539 ; free physical = 10254 ; free virtual = 27248
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.895 | TNS=-21.558| WHS=N/A    | THS=N/A    |
+
+Phase 5 Initial Route for Timing | Checksum: 191bef82b
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:21 . Memory (MB): peak = 3101.656 ; gain = 110.539 ; free physical = 10254 ; free virtual = 27248
+
+Phase 6 Rip-up And Reroute
+
+Phase 6.1 Global Iteration 0
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 2
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.940 | TNS=-62.204| WHS=0.116  | THS=0.000  |
+
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.940 | TNS=-61.687| WHS=N/A    | THS=N/A    |
+
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.727 | TNS=-38.647| WHS=0.116  | THS=0.000  |
+
+Phase 6.1 Global Iteration 0 | Checksum: 1c96362da
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:22 . Memory (MB): peak = 3101.656 ; gain = 110.539 ; free physical = 10254 ; free virtual = 27248
+
+Phase 6.2 Global Iteration 1
+ Number of Nodes with overlaps = 10
+ Number of Nodes with overlaps = 17
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.727 | TNS=-39.973| WHS=0.116  | THS=0.000  |
+
+ Number of Nodes with overlaps = 10
+ Number of Nodes with overlaps = 8
+ Number of Nodes with overlaps = 3
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.932 | TNS=-56.607| WHS=-0.016 | THS=-0.035 |
+
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 7
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.849 | TNS=-53.848| WHS=-0.016 | THS=-0.035 |
+
+ Number of Nodes with overlaps = 9
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-1.511 | TNS=-99.123| WHS=-0.016 | THS=-0.035 |
+
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-1.511 | TNS=-99.123| WHS=N/A    | THS=N/A    |
+
+Phase 6.2 Global Iteration 1 | Checksum: 263fef6c5
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:23 . Memory (MB): peak = 3101.656 ; gain = 110.539 ; free physical = 10253 ; free virtual = 27248
+Phase 6 Rip-up And Reroute | Checksum: 263fef6c5
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:23 . Memory (MB): peak = 3101.656 ; gain = 110.539 ; free physical = 10253 ; free virtual = 27248
+
+Phase 7 Delay and Skew Optimization
+
+Phase 7.1 TNS Cleanup
+
+Phase 7.1.1 Delay CleanUp
+
+Phase 7.1.1.1 Update Timing
+Phase 7.1.1.1 Update Timing | Checksum: 223dc4b9d
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:23 . Memory (MB): peak = 3101.656 ; gain = 110.539 ; free physical = 10253 ; free virtual = 27247
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.858 | TNS=-49.212| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+
+Phase 7.1.1.2 Update Timing
+Phase 7.1.1.2 Update Timing | Checksum: 313ad468b
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:23 . Memory (MB): peak = 3101.656 ; gain = 110.539 ; free physical = 10253 ; free virtual = 27247
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.846 | TNS=-47.899| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+
+Phase 7.1.1.3 Update Timing
+Phase 7.1.1.3 Update Timing | Checksum: 29471dd56
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:23 . Memory (MB): peak = 3101.656 ; gain = 110.539 ; free physical = 10253 ; free virtual = 27247
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.846 | TNS=-47.899| WHS=N/A    | THS=N/A    |
+
+Phase 7.1.1 Delay CleanUp | Checksum: 349d1121e
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:23 . Memory (MB): peak = 3101.656 ; gain = 110.539 ; free physical = 10253 ; free virtual = 27247
+Phase 7.1 TNS Cleanup | Checksum: 349d1121e
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:23 . Memory (MB): peak = 3101.656 ; gain = 110.539 ; free physical = 10253 ; free virtual = 27247
+
+Phase 7.2 Clock Skew Optimization
+Phase 7.2 Clock Skew Optimization | Checksum: 349d1121e
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:23 . Memory (MB): peak = 3101.656 ; gain = 110.539 ; free physical = 10253 ; free virtual = 27247
+Phase 7 Delay and Skew Optimization | Checksum: 349d1121e
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:23 . Memory (MB): peak = 3101.656 ; gain = 110.539 ; free physical = 10253 ; free virtual = 27247
+
+Phase 8 Post Hold Fix
+
+Phase 8.1 Hold Fix Iter
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.846 | TNS=-47.899| WHS=0.249  | THS=0.000  |
+
+Phase 8.1 Hold Fix Iter | Checksum: 29133373d
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:24 . Memory (MB): peak = 3101.656 ; gain = 110.539 ; free physical = 10253 ; free virtual = 27247
+Phase 8 Post Hold Fix | Checksum: 29133373d
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:24 . Memory (MB): peak = 3101.656 ; gain = 110.539 ; free physical = 10252 ; free virtual = 27247
+
+Phase 9 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 2.2562 %
+  Global Horizontal Routing Utilization  = 2.77852 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+
+--GLOBAL Congestion:
+Utilization threshold used for congestion level computation: 0.85
+Congestion Report
+North Dir 1x1 Area, Max Cong = 81.0811%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 90.991%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+   INT_R_X19Y31 -> INT_R_X19Y31
+   INT_R_X21Y26 -> INT_R_X21Y26
+   INT_R_X23Y24 -> INT_R_X23Y24
+   INT_L_X20Y23 -> INT_L_X20Y23
+   INT_L_X22Y20 -> INT_L_X22Y20
+East Dir 2x2 Area, Max Cong = 87.5%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+   INT_L_X14Y22 -> INT_R_X15Y23
+   INT_L_X18Y22 -> INT_R_X19Y23
+   INT_L_X16Y20 -> INT_R_X17Y21
+West Dir 1x1 Area, Max Cong = 94.1176%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+   INT_R_X21Y32 -> INT_R_X21Y32
+   INT_R_X23Y30 -> INT_R_X23Y30
+   INT_R_X19Y28 -> INT_R_X19Y28
+   INT_R_X21Y28 -> INT_R_X21Y28
+   INT_L_X22Y28 -> INT_L_X22Y28
+
+------------------------------
+Reporting congestion hotspots
+------------------------------
+Direction: North
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: South
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 1 Aspect Ratio: 0.5 Sparse Ratio: 0.5
+Direction: East
+----------------
+Congested clusters found at Level 1
+Effective congestion level: 2 Aspect Ratio: 0.666667 Sparse Ratio: 1
+Direction: West
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 2 Aspect Ratio: 0.6 Sparse Ratio: 0.5625
+
+Phase 9 Route finalize | Checksum: 2381025c8
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:24 . Memory (MB): peak = 3101.656 ; gain = 110.539 ; free physical = 10252 ; free virtual = 27247
+
+Phase 10 Verifying routed nets
+
+ Verification completed successfully
+Phase 10 Verifying routed nets | Checksum: 2381025c8
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:24 . Memory (MB): peak = 3101.656 ; gain = 110.539 ; free physical = 10252 ; free virtual = 27247
+
+Phase 11 Depositing Routes
+Phase 11 Depositing Routes | Checksum: 1ce37086b
+
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:24 . Memory (MB): peak = 3101.656 ; gain = 110.539 ; free physical = 10252 ; free virtual = 27247
+
+Phase 12 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=-0.846 | TNS=-47.899| WHS=0.249  | THS=0.000  |
+
+WARNING: [Route 35-328] Router estimated timing not met.
+Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.
+Phase 12 Post Router Timing | Checksum: 1ce37086b
+
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:24 . Memory (MB): peak = 3101.656 ; gain = 110.539 ; free physical = 10252 ; free virtual = 27247
+--------------------------------------------------------
+|Incremental Routing Reuse Summary                      |
+--------------------------------------------------------
+|Type                     | Count    | Percentage       |
+--------------------------------------------------------
+|Fully reused nets        |     12536|            98.92 |
+|Partially reused nets    |         0|             0.00 |
+|Non-reused nets          |       137|             1.08 |
+--------------------------------------------------------
+INFO: [Route 35-16] Router Completed Successfully
+------------------------------------
+Incremental Router Runtime Summary: 
+------------------------------------
+   Initialization time: 24.36 Secs
+   Incremental Router time: 0 Secs
+Ending Incremental Route Task | Checksum: 162f6a611
+
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:24 . Memory (MB): peak = 3101.656 ; gain = 110.539 ; free physical = 10252 ; free virtual = 27246
+antenna Cleanup:Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3101.656 ; gain = 0.000 ; free physical = 10252 ; free virtual = 27246
+
+Reference - Incremental Comparison Summary
+
+1. Comparison with Reference Run
+--------------------------------
+
++-----------------+---------------------------+---------------------------+---------------------------+
+|                 |          WNS(ns)          |  Runtime(elapsed)(hh:mm)  |    Runtime(cpu)(hh:mm)    |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|      Stage      |  Reference  | Incremental |  Reference  | Incremental |  Reference  | Incremental |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| synth_design    |             |             |       00:01 |       00:01 |       00:01 |       00:01 |
+| opt_design      |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| read_checkpoint |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| place_design    |       0.048 |       0.039 |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| phys_opt_design |       0.048 |      -0.836 |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| route_design    |       0.047 |      -0.846 |     < 1 min |     < 1 min |       00:01 |       00:01 |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+
+INFO: [Common 17-83] Releasing license: Implementation
+113 Infos, 1 Warnings, 1 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:42 ; elapsed = 00:00:25 . Memory (MB): peak = 3101.656 ; gain = 110.539 ; free physical = 10261 ; free virtual = 27255
+INFO: [Vivado 12-24828] Executing command : report_drc -file RV64IM72F5SPSoCTOP_drc_routed.rpt -pb RV64IM72F5SPSoCTOP_drc_routed.pb -rpx RV64IM72F5SPSoCTOP_drc_routed.rpx
+Command: report_drc -file RV64IM72F5SPSoCTOP_drc_routed.rpt -pb RV64IM72F5SPSoCTOP_drc_routed.pb -rpx RV64IM72F5SPSoCTOP_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final/RV64IM72F_7SP_BRAM.runs/impl_1/RV64IM72F5SPSoCTOP_drc_routed.rpt.
+report_drc completed successfully
+INFO: [Vivado 12-24828] Executing command : report_methodology -file RV64IM72F5SPSoCTOP_methodology_drc_routed.rpt -pb RV64IM72F5SPSoCTOP_methodology_drc_routed.pb -rpx RV64IM72F5SPSoCTOP_methodology_drc_routed.rpx
+Command: report_methodology -file RV64IM72F5SPSoCTOP_methodology_drc_routed.rpt -pb RV64IM72F5SPSoCTOP_methodology_drc_routed.pb -rpx RV64IM72F5SPSoCTOP_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 8 threads
+INFO: [Vivado_Tcl 2-1520] The results of Report Methodology are in file /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final/RV64IM72F_7SP_BRAM.runs/impl_1/RV64IM72F5SPSoCTOP_methodology_drc_routed.rpt.
+report_methodology completed successfully
+INFO: [Vivado 12-24828] Executing command : report_timing_summary -max_paths 10 -routable_nets -report_unconstrained -file RV64IM72F5SPSoCTOP_timing_summary_routed.rpt -pb RV64IM72F5SPSoCTOP_timing_summary_routed.pb -rpx RV64IM72F5SPSoCTOP_timing_summary_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Vivado 12-24838] Running report commands "report_bus_skew, report_incremental_reuse, report_route_status" in parallel.
+Running report generation with 3 threads.
+INFO: [Vivado 12-24828] Executing command : report_bus_skew -warn_on_violation -file RV64IM72F5SPSoCTOP_bus_skew_routed.rpt -pb RV64IM72F5SPSoCTOP_bus_skew_routed.pb -rpx RV64IM72F5SPSoCTOP_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Vivado 12-24828] Executing command : report_route_status -file RV64IM72F5SPSoCTOP_route_status.rpt -pb RV64IM72F5SPSoCTOP_route_status.pb
+INFO: [Vivado 12-24828] Executing command : report_incremental_reuse -file RV64IM72F5SPSoCTOP_incremental_reuse_routed.rpt
+INFO: [Vivado 12-24828] Executing command : report_power -file RV64IM72F5SPSoCTOP_power_routed.rpt -pb RV64IM72F5SPSoCTOP_power_summary_routed.pb -rpx RV64IM72F5SPSoCTOP_power_routed.rpx
+Command: report_power -file RV64IM72F5SPSoCTOP_power_routed.rpt -pb RV64IM72F5SPSoCTOP_power_summary_routed.pb -rpx RV64IM72F5SPSoCTOP_power_routed.rpx
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+132 Infos, 1 Warnings, 1 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [Vivado 12-24828] Executing command : report_clock_utilization -file RV64IM72F5SPSoCTOP_clock_utilization_routed.rpt
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3174.512 ; gain = 0.000 ; free physical = 10239 ; free virtual = 27241
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3174.512 ; gain = 0.000 ; free physical = 10239 ; free virtual = 27241
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3174.512 ; gain = 0.000 ; free physical = 10239 ; free virtual = 27242
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.3 ; elapsed = 00:00:00.07 . Memory (MB): peak = 3174.512 ; gain = 0.000 ; free physical = 10240 ; free virtual = 27248
+Wrote PlaceStorage: Time (s): cpu = 00:00:00.35 ; elapsed = 00:00:00.2 . Memory (MB): peak = 3174.512 ; gain = 0.000 ; free physical = 10234 ; free virtual = 27251
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3174.512 ; gain = 0.000 ; free physical = 10230 ; free virtual = 27248
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3174.512 ; gain = 0.000 ; free physical = 10230 ; free virtual = 27249
+Write Physdb Complete: Time (s): cpu = 00:00:00.66 ; elapsed = 00:00:00.28 . Memory (MB): peak = 3174.512 ; gain = 0.000 ; free physical = 10230 ; free virtual = 27249
+INFO: [Common 17-1381] The checkpoint '/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final/RV64IM72F_7SP_BRAM.runs/impl_1/RV64IM72F5SPSoCTOP_routed.dcp' has been generated.
+Command: phys_opt_design -directive Explore
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a200t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a200t'
+INFO: [Vivado_Tcl 4-1435] PhysOpt_Tcl_Interface Runtime Before Starting Physical Synthesis Task | CPU: 0.01s |  WALL: 0.01s
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3174.512 ; gain = 0.000 ; free physical = 10222 ; free virtual = 27229
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-673] Physical synthesis flow is being used in incremental compile flow
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.837 | TNS=-47.018 | WHS=0.106 | THS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: 1a645a5ec
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:00.71 . Memory (MB): peak = 3174.512 ; gain = 0.000 ; free physical = 10219 ; free virtual = 27227
+INFO: [Physopt 32-673] Physical synthesis flow is being used in incremental compile flow
+WARNING: [Physopt 32-745] Physical Optimization has determined that the magnitude of the negative slack is too large and it is highly unlikely that slack will be improved. Post-Route Physical Optimization is most effective when WNS is above -0.5ns
+
+Phase 2 Critical Path Optimization
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.837 | TNS=-47.018 | WHS=0.106 | THS=0.000 |
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/ex_ex2_register/Q[60].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: clk_gen/inst/clk_out1_clk_wiz_0.
+INFO: [Physopt 32-710] Processed net rv64im72f_6sp/id_ex_register/div_overflow_flag_reg[63]. Critical path length was reduced through logic transformation on cell rv64im72f_6sp/id_ex_register/EX2_alu_result[63]_i_1_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -0.833. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[63]_i_5_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/ex_ex2_register/Q[51].
+INFO: [Physopt 32-710] Processed net rv64im72f_6sp/id_ex_register/div_overflow_flag_reg[54]. Critical path length was reduced through logic transformation on cell rv64im72f_6sp/id_ex_register/EX2_alu_result[54]_i_1_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -0.819. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[63]_i_5_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/ex_ex2_register/EX2_alu_result_reg[6]_rep__2_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/alu/alu_dword_result[6].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[6]_i_14_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[6]_i_26_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[8]_i_26_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[20]_i_30_n_0.
+INFO: [Physopt 32-952] Improved path group WNS = -0.817. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/src_A[20].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/ex_ex2_register/Q[58].
+INFO: [Physopt 32-710] Processed net rv64im72f_6sp/id_ex_register/div_overflow_flag_reg[61]. Critical path length was reduced through logic transformation on cell rv64im72f_6sp/id_ex_register/EX2_alu_result[61]_i_1_comp_1.
+INFO: [Physopt 32-952] Improved path group WNS = -0.811. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/alu/alu_dword_result[61].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/ex_ex2_register/Q[54].
+INFO: [Physopt 32-710] Processed net rv64im72f_6sp/id_ex_register/div_overflow_flag_reg[57]. Critical path length was reduced through logic transformation on cell rv64im72f_6sp/id_ex_register/EX2_alu_result[57]_i_1_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -0.800. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[63]_i_5_n_0.
+INFO: [Physopt 32-710] Processed net rv64im72f_6sp/id_ex_register/div_overflow_flag_reg[57]. Critical path length was reduced through logic transformation on cell rv64im72f_6sp/id_ex_register/EX2_alu_result[57]_i_1_comp_1.
+INFO: [Physopt 32-952] Improved path group WNS = -0.799. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/alu/alu_dword_result[57].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/ex_ex2_register/Q[56].
+INFO: [Physopt 32-710] Processed net rv64im72f_6sp/id_ex_register/div_overflow_flag_reg[59]. Critical path length was reduced through logic transformation on cell rv64im72f_6sp/id_ex_register/EX2_alu_result[59]_i_1_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -0.792. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/alu/alu_dword_result[59].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/ex_ex2_register/Q[44].
+INFO: [Physopt 32-710] Processed net rv64im72f_6sp/id_ex_register/div_overflow_flag_reg[47]. Critical path length was reduced through logic transformation on cell rv64im72f_6sp/id_ex_register/EX2_alu_result[47]_i_1_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -0.771. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[63]_i_5_n_0.
+INFO: [Physopt 32-710] Processed net rv64im72f_6sp/id_ex_register/EX2_alu_result[6]_i_14_n_0. Critical path length was reduced through logic transformation on cell rv64im72f_6sp/id_ex_register/EX2_alu_result[6]_i_14_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -0.740. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[6]_i_25_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/ex_ex2_register/Q[55].
+INFO: [Physopt 32-710] Processed net rv64im72f_6sp/id_ex_register/div_overflow_flag_reg[58]. Critical path length was reduced through logic transformation on cell rv64im72f_6sp/id_ex_register/EX2_alu_result[58]_i_1_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -0.730. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[63]_i_5_n_0.
+INFO: [Physopt 32-663] Processed net rv64im72f_6sp/id_ex_register/EX2_alu_result[57]_i_7_n_0.  Re-placed instance rv64im72f_6sp/id_ex_register/EX2_alu_result[57]_i_7
+INFO: [Physopt 32-952] Improved path group WNS = -0.727. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[57]_i_7_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/ex_ex2_register/Q[47].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[63]_i_5_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[63]_i_16_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[63]_i_34_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[63]_i_55_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/alu/alu_word/data1[31].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[15]_i_31_n_0.
+INFO: [Physopt 32-952] Improved path group WNS = -0.723. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/abs_B_s1[31]_i_3_0[11].
+INFO: [Physopt 32-710] Processed net rv64im72f_6sp/id_ex_register/div_overflow_flag_reg[63]. Critical path length was reduced through logic transformation on cell rv64im72f_6sp/id_ex_register/EX2_alu_result[63]_i_1_comp_1.
+INFO: [Physopt 32-952] Improved path group WNS = -0.706. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/alu/alu_dword_result[63].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/src_A[20].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/forward_unit/MEM_non_load_forward_data_reg[20]_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/ex_mem_register/MEM_alu_result_reg[0]_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/MEM_alu_result_reg[1]_1.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/rom_read_data_reg[63][9].
+INFO: [Physopt 32-663] Processed net rv64im72f_6sp/id_ex_register/prod_low_reg[6]_2.  Re-placed instance rv64im72f_6sp/id_ex_register/EX2_alu_result[6]_rep__2_i_1
+INFO: [Physopt 32-952] Improved path group WNS = -0.700. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/prod_low_reg[6]_2.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/ex_ex2_register/EX2_alu_result_reg[10]_rep__8_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/alu/alu_dword_result[10].
+INFO: [Physopt 32-952] Improved path group WNS = -0.685. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[10]_i_13_n_0.
+INFO: [Physopt 32-710] Processed net rv64im72f_6sp/id_ex_register/EX2_alu_result[15]_i_31_n_0. Critical path length was reduced through logic transformation on cell rv64im72f_6sp/id_ex_register/EX2_alu_result[15]_i_31_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -0.657. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/abs_B_s1[31]_i_3_0[11].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[7]_i_30_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/abs_B_s1[31]_i_3_0[4].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/ex_mem_register/MEM_forward_is_load_reg[5].
+INFO: [Physopt 32-710] Processed net rv64im72f_6sp/ex_mem_register/MEM_forward_is_load_reg[5]. Critical path length was reduced through logic transformation on cell rv64im72f_6sp/ex_mem_register/WB_forward_data_value[5]_i_1_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -0.639. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/ex_mem_register/WB_forward_data_value[5]_i_2_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/ex_ex2_register/Q[50].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/alu/alu_dword_result[53].
+INFO: [Physopt 32-710] Processed net rv64im72f_6sp/id_ex_register/alu/alu_dword_result[53]. Critical path length was reduced through logic transformation on cell rv64im72f_6sp/id_ex_register/EX2_alu_result[53]_i_3_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -0.625. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[53]_i_7_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[63]_i_14_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[63]_i_29_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/alu/alu_dword/data0[63].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[15]_i_53_n_0.
+INFO: [Physopt 32-710] Processed net rv64im72f_6sp/id_ex_register/EX2_alu_result[15]_i_53_n_0. Critical path length was reduced through logic transformation on cell rv64im72f_6sp/id_ex_register/EX2_alu_result[15]_i_53_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -0.616. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/abs_B_s1[31]_i_3_0[11].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/ex_ex2_register/Q[0].
+INFO: [Physopt 32-710] Processed net rv64im72f_6sp/id_ex_register/div_overflow_flag_reg[0]. Critical path length was reduced through logic transformation on cell rv64im72f_6sp/id_ex_register/EX2_alu_result[0]_i_1_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -0.604. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[0]_i_5_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[19]_i_35_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/abs_B_s1[31]_i_3_0[16].
+INFO: [Physopt 32-710] Processed net rv64im72f_6sp/id_ex_register/abs_B_s1[31]_i_3_0[16]. Critical path length was reduced through logic transformation on cell rv64im72f_6sp/id_ex_register/abs_B_s1[17]_i_2_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -0.583. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/alu_forward_source_data_b[17].
+INFO: [Physopt 32-710] Processed net rv64im72f_6sp/id_ex_register/div_overflow_flag_reg[54]. Critical path length was reduced through logic transformation on cell rv64im72f_6sp/id_ex_register/EX2_alu_result[54]_i_1_comp_1.
+INFO: [Physopt 32-952] Improved path group WNS = -0.573. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/alu/alu_dword_result[54].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/ex_ex2_register/EX2_alu_result_reg[11]_rep__15_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/alu/alu_dword_result[11].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[11]_i_14_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[11]_i_25_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[13]_i_31_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[21]_i_31_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/src_A[21].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/forward_unit/MEM_non_load_forward_data_reg[21]_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/prod_low_reg[11]_15.
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[15]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank1_reg_1.
+INFO: [Physopt 32-952] Improved path group WNS = -0.557. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[15].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[11]_i_40_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[11]_i_46_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/src_A[59].
+INFO: [Physopt 32-710] Processed net rv64im72f_6sp/src_A[59]. Critical path length was reduced through logic transformation on cell rv64im72f_6sp/dividend_reg[59]_i_1_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -0.557. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/forward_unit/alu_forward_source_data_a[26].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[3]_i_29_n_0.
+INFO: [Physopt 32-710] Processed net rv64im72f_6sp/id_ex_register/EX2_alu_result[3]_i_29_n_0. Critical path length was reduced through logic transformation on cell rv64im72f_6sp/id_ex_register/EX2_alu_result[3]_i_29_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -0.495. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/src_A[3].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/MEM_alu_result_reg[1].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/rom_read_data_reg[63][1].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[7]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank0_reg_1.
+INFO: [Physopt 32-952] Improved path group WNS = -0.476. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[7].
+INFO: [Physopt 32-663] Processed net rv64im72f_6sp/id_ex_register/alu/alu_dword_result[57].  Re-placed instance rv64im72f_6sp/id_ex_register/EX2_alu_result[57]_i_3_comp_1
+INFO: [Physopt 32-952] Improved path group WNS = -0.475. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/alu/alu_dword_result[57].
+INFO: [Physopt 32-710] Processed net rv64im72f_6sp/src_A[59]. Critical path length was reduced through logic transformation on cell rv64im72f_6sp/dividend_reg[59]_i_1_comp_1.
+INFO: [Physopt 32-952] Improved path group WNS = -0.468. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/ex_ex2_register/WB_forward_data_value_reg[59].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/rom_read_data_reg[63][33].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[39]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank4_reg_1.
+INFO: [Physopt 32-952] Improved path group WNS = -0.458. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[39].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[30]_i_33_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/ex_mem_register/MEM_forward_is_load_reg[3].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/rom_read_data_reg[35].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/MEM_alu_result_reg[2]_2.
+INFO: [Physopt 32-710] Processed net rv64im72f_6sp/data_memory/MEM_alu_result_reg[2]_2. Critical path length was reduced through logic transformation on cell rv64im72f_6sp/data_memory/WB_forward_data_value[19]_i_2_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -0.456. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/rom_read_data_reg[63][13].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/forward_unit/alu_forward_source_data_a[26]_repN.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/dividend_reg[31]_i_3_n_0.
+INFO: [Physopt 32-710] Processed net rv64im72f_6sp/dividend_reg[31]_i_3_n_0. Critical path length was reduced through logic transformation on cell rv64im72f_6sp/dividend_reg[31]_i_3_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -0.454. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX_alu_src_A_select_reg[1]_0[0].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[3]_i_31_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/div_by_zero_flag_i_9__0_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/alu_forward_source_data_b[1].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/ex_mem_register/MEM_forward_is_load_reg[1].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/ex_mem_register/WB_forward_data_value[1]_i_2_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/MEM_alu_result_reg[0]_4.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/rom_read_data_reg[63][35].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/div_overflow_flag_reg[50].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[41]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank5_reg_0.
+INFO: [Physopt 32-952] Improved path group WNS = -0.443. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[41].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/ex_ex2_register/EX2_alu_result_reg[6]_rep__14_0.
+INFO: [Physopt 32-710] Processed net rv64im72f_6sp/id_ex_register/EX2_alu_result[6]_i_26_n_0. Critical path length was reduced through logic transformation on cell rv64im72f_6sp/id_ex_register/EX2_alu_result[6]_i_26_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -0.442. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[6]_i_36_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[23]_i_43_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/src_A[39].
+INFO: [Physopt 32-710] Processed net rv64im72f_6sp/src_A[39]. Critical path length was reduced through logic transformation on cell rv64im72f_6sp/dividend_reg[39]_i_1_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -0.440. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/forward_unit/alu_forward_source_data_a[6].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/forward_unit/alu_forward_source_data_a[6]_repN.
+INFO: [Physopt 32-710] Processed net rv64im72f_6sp/dividend_reg[31]_i_3_n_0. Critical path length was reduced through logic transformation on cell rv64im72f_6sp/dividend_reg[31]_i_3_comp_1.
+INFO: [Physopt 32-952] Improved path group WNS = -0.432. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX_alu_src_A_select_reg[1]_1[0].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[15]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank1_reg_1.
+INFO: [Physopt 32-952] Improved path group WNS = -0.418. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[15].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/forward_unit/alu_forward_source_data_a[6].
+INFO: [Physopt 32-663] Processed net rv64im72f_6sp/ex_ex2_register/WB_forward_data_value_reg[39].  Re-placed instance rv64im72f_6sp/ex_ex2_register/dividend_reg[39]_i_3
+INFO: [Physopt 32-952] Improved path group WNS = -0.410. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/ex_ex2_register/WB_forward_data_value_reg[39].
+INFO: [Physopt 32-663] Processed net rv64im72f_6sp/ex_ex2_register/EX2_alu_result_reg[4]_rep__2_n_0.  Re-placed instance rv64im72f_6sp/ex_ex2_register/EX2_alu_result_reg[4]_rep__2
+INFO: [Physopt 32-952] Improved path group WNS = -0.399. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/ex_ex2_register/EX2_alu_result_reg[4]_rep__2_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[10]_i_13_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[11]_i_24_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[11]_i_39_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[15]_i_49_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[2]_i_27_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/ex_mem_register/MEM_forward_is_load_reg[4].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/ex_mem_register/WB_forward_data_value[4]_i_2_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/MEM_alu_result_reg[0]_10.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/rom_read_data_reg[63][54].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/prod_low_reg[10]_8.
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[60]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank7_reg_1.
+INFO: [Physopt 32-952] Improved path group WNS = -0.392. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[60].
+INFO: [Physopt 32-710] Processed net rv64im72f_6sp/id_ex_register/abs_B_s1[31]_i_3_0[16]. Critical path length was reduced through logic transformation on cell rv64im72f_6sp/id_ex_register/abs_B_s1[17]_i_2_comp_1.
+INFO: [Physopt 32-952] Improved path group WNS = -0.387. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/alu_forward_source_data_b[17].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/ex_mem_register/WB_forward_data_value[3]_i_2_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/MEM_alu_result_reg[0]_8.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/rom_read_data_reg[63][53].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[59]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank7_reg_0.
+INFO: [Physopt 32-952] Improved path group WNS = -0.383. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[59].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/rom_read_data_reg[5].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/MEM_alu_result_reg[2]_4.
+INFO: [Physopt 32-710] Processed net rv64im72f_6sp/data_memory/MEM_alu_result_reg[2]_4. Critical path length was reduced through logic transformation on cell rv64im72f_6sp/data_memory/WB_forward_data_value[21]_i_2_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -0.375. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/rom_read_data_reg[63][47].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/MEM_alu_result_reg[0]_9.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/rom_read_data_reg[63][14].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[20]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank2_reg_1.
+INFO: [Physopt 32-952] Improved path group WNS = -0.366. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[20].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/rom_read_data_reg[63][38].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[44]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank5_reg_1.
+INFO: [Physopt 32-952] Improved path group WNS = -0.360. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[44].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/rom_read_data_reg[63][49].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[55]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank6_reg_1.
+INFO: [Physopt 32-952] Improved path group WNS = -0.360. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[55].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/rom_read_data_reg[63][27].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[33]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank4_reg_0.
+INFO: [Physopt 32-952] Improved path group WNS = -0.359. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[33].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/MEM_alu_result_reg[0]_3.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/data_memory_read_data_muxed[1].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[1]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank0_reg_0.
+INFO: [Physopt 32-952] Improved path group WNS = -0.354. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[1].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[7]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank0_reg_1.
+INFO: [Physopt 32-952] Improved path group WNS = -0.334. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[7].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX2_alu_result[3]_i_30_n_0.
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/src_A[2].
+INFO: [Physopt 32-953] Path group WNS did not improve. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/ex_mem_register/MEM_forward_is_load_reg[2].
+INFO: [Common 17-14] Message 'Physopt 32-953' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Physopt 32-710] Processed net rv64im72f_6sp/ex_mem_register/MEM_forward_is_load_reg[2]. Critical path length was reduced through logic transformation on cell rv64im72f_6sp/ex_mem_register/WB_forward_data_value[2]_i_1_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -0.327. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/rom_read_data_reg[34].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[39]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank4_reg_1.
+INFO: [Physopt 32-952] Improved path group WNS = -0.324. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[39].
+INFO: [Physopt 32-710] Processed net rv64im72f_6sp/forward_unit/alu_forward_source_data_a[23]. Critical path length was reduced through logic transformation on cell rv64im72f_6sp/forward_unit/dividend_reg[56]_i_2_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -0.313. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/ex_ex2_register/WB_forward_data_value_reg[56].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[41]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank5_reg_0.
+INFO: [Physopt 32-952] Improved path group WNS = -0.309. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[41].
+INFO: [Physopt 32-710] Processed net rv64im72f_6sp/src_A[50]. Critical path length was reduced through logic transformation on cell rv64im72f_6sp/dividend_reg[50]_i_1_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -0.308. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/forward_unit/alu_forward_source_data_a[17].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[28]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank3_reg_1.
+INFO: [Physopt 32-952] Improved path group WNS = -0.297. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[28].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[19]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank2_reg_0.
+INFO: [Physopt 32-952] Improved path group WNS = -0.276. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[19].
+INFO: [Physopt 32-710] Processed net rv64im72f_6sp/forward_unit/alu_forward_source_data_a[6]. Critical path length was reduced through logic transformation on cell rv64im72f_6sp/forward_unit/dividend_reg[39]_i_2_comp_2.
+INFO: [Physopt 32-952] Improved path group WNS = -0.258. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/ex_ex2_register/WB_forward_data_value_reg[39].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[60]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank7_reg_1.
+INFO: [Physopt 32-952] Improved path group WNS = -0.248. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[60].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[51]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank6_reg_0.
+INFO: [Physopt 32-952] Improved path group WNS = -0.245. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[51].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[59]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank7_reg_0.
+INFO: [Physopt 32-952] Improved path group WNS = -0.234. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[59].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[20]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank2_reg_1.
+INFO: [Physopt 32-952] Improved path group WNS = -0.224. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[20].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[44]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank5_reg_1.
+INFO: [Physopt 32-952] Improved path group WNS = -0.219. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[44].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[55]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank6_reg_1.
+INFO: [Physopt 32-952] Improved path group WNS = -0.219. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[55].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[33]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank4_reg_0.
+INFO: [Physopt 32-952] Improved path group WNS = -0.218. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[33].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[1]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank0_reg_0.
+INFO: [Physopt 32-952] Improved path group WNS = -0.208. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[1].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[15]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank1_reg_1.
+INFO: [Physopt 32-952] Improved path group WNS = -0.205. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[15].
+INFO: [Physopt 32-663] Processed net rv64im72f_6sp/ex_ex2_register/WB_forward_data_value_reg[56].  Re-placed instance rv64im72f_6sp/ex_ex2_register/dividend_reg[56]_i_3_comp
+INFO: [Physopt 32-952] Improved path group WNS = -0.184. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/ex_ex2_register/WB_forward_data_value_reg[56].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[9]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank1_reg_0.
+INFO: [Physopt 32-952] Improved path group WNS = -0.167. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[9].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[28]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank3_reg_1.
+INFO: [Physopt 32-952] Improved path group WNS = -0.156. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[28].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[19]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank2_reg_0.
+INFO: [Physopt 32-952] Improved path group WNS = -0.130. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[19].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[7]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank0_reg_1.
+INFO: [Physopt 32-952] Improved path group WNS = -0.119. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[7].
+INFO: [Physopt 32-710] Processed net rv64im72f_6sp/id_ex_register/EX_rs1_reg[0]_0. Critical path length was reduced through logic transformation on cell rv64im72f_6sp/id_ex_register/dividend_reg[31]_i_13_comp.
+INFO: [Physopt 32-952] Improved path group WNS = -0.106. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/dividend_reg[31]_i_17_n_0.
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[51]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank6_reg_0.
+INFO: [Physopt 32-952] Improved path group WNS = -0.103. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[51].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[39]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank4_reg_1.
+INFO: [Physopt 32-952] Improved path group WNS = -0.091. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[39].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[25]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank3_reg_0.
+INFO: [Physopt 32-952] Improved path group WNS = -0.089. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[25].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[41]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank5_reg_0.
+INFO: [Physopt 32-952] Improved path group WNS = -0.043. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[41].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[9]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank1_reg_0.
+INFO: [Physopt 32-952] Improved path group WNS = -0.034. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[9].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[60]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank7_reg_1.
+INFO: [Physopt 32-952] Improved path group WNS = -0.026. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[60].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/id_ex_register/EX_rs1_reg[4]_0[4]. Clock skew was adjusted for instance rv64im72f_6sp/id_ex_register/EX_rs1_reg[4].
+INFO: [Physopt 32-952] Improved path group WNS = -0.021. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/id_ex_register/EX_rs1_reg[4]_0[4].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[59]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank7_reg_0.
+INFO: [Physopt 32-952] Improved path group WNS = -0.010. Path group: clk_out1_clk_wiz_0_1. Processed net: rv64im72f_6sp/data_memory/ram_read_data_reg[59].
+INFO: [Physopt 32-703] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[20]. Clock skew was adjusted for instance rv64im72f_6sp/data_memory/memory_bank2_reg_1.
+INFO: [Physopt 32-735] Processed net rv64im72f_6sp/data_memory/ram_read_data_reg[20]. Optimization improves timing on the net.
+INFO: [Physopt 32-668] Current Timing Summary | WNS=0.000 | TNS=0.000 | WHS=0.095 | THS=0.000 |
+INFO: [Physopt 32-668] Current Timing Summary | WNS=0.000 | TNS=0.000 | WHS=0.095 | THS=0.000 |
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3174.512 ; gain = 0.000 ; free physical = 10194 ; free virtual = 27203
+Phase 2 Critical Path Optimization | Checksum: 1a645a5ec
+
+Time (s): cpu = 00:04:36 ; elapsed = 00:02:03 . Memory (MB): peak = 3174.512 ; gain = 0.000 ; free physical = 10194 ; free virtual = 27203
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3174.512 ; gain = 0.000 ; free physical = 10194 ; free virtual = 27203
+INFO: [Physopt 32-669] Post Physical Optimization Timing Summary | WNS=0.000 | TNS=0.000 | WHS=0.095 | THS=0.000 |
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization   |  WNS Gain (ns)  |  TNS Gain (ns)  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Critical Path  |          0.837  |         47.018  |            0  |              0  |                    80  |           0  |           1  |  00:02:02  |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3174.512 ; gain = 0.000 ; free physical = 10194 ; free virtual = 27203
+Ending Physical Synthesis Task | Checksum: 263d42f3b
+
+Time (s): cpu = 00:04:36 ; elapsed = 00:02:03 . Memory (MB): peak = 3174.512 ; gain = 0.000 ; free physical = 10194 ; free virtual = 27203
+
+Reference - Incremental Comparison Summary
+
+1. Comparison with Reference Run
+--------------------------------
+
++-----------------+---------------------------+---------------------------+---------------------------+
+|                 |          WNS(ns)          |  Runtime(elapsed)(hh:mm)  |    Runtime(cpu)(hh:mm)    |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|      Stage      |  Reference  | Incremental |  Reference  | Incremental |  Reference  | Incremental |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| synth_design    |             |             |       00:01 |       00:01 |       00:01 |       00:01 |
+| opt_design      |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| read_checkpoint |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| place_design    |       0.048 |       0.039 |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| phys_opt_design |       0.048 |      -0.836 |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| route_design    |       0.047 |      -0.837 |     < 1 min |     < 1 min |       00:01 |       00:01 |
+| phys_opt_design |             |       0.000 |             |       00:02 |             |       00:04 |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+
+INFO: [Common 17-83] Releasing license: Implementation
+407 Infos, 2 Warnings, 1 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+phys_opt_design: Time (s): cpu = 00:04:37 ; elapsed = 00:02:03 . Memory (MB): peak = 3174.512 ; gain = 0.000 ; free physical = 10195 ; free virtual = 27203
+INFO: [Vivado 12-24828] Executing command : report_timing_summary -max_paths 10 -report_unconstrained -warn_on_violation -file RV64IM72F5SPSoCTOP_timing_summary_postroute_physopted.rpt -pb RV64IM72F5SPSoCTOP_timing_summary_postroute_physopted.pb -rpx RV64IM72F5SPSoCTOP_timing_summary_postroute_physopted.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Vivado 12-24828] Executing command : report_bus_skew -warn_on_violation -file RV64IM72F5SPSoCTOP_bus_skew_postroute_physopted.rpt -pb RV64IM72F5SPSoCTOP_bus_skew_postroute_physopted.pb -rpx RV64IM72F5SPSoCTOP_bus_skew_postroute_physopted.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3174.512 ; gain = 0.000 ; free physical = 10192 ; free virtual = 27201
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3174.512 ; gain = 0.000 ; free physical = 10192 ; free virtual = 27201
+Writing XDEF routing.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3174.512 ; gain = 0.000 ; free physical = 10191 ; free virtual = 27201
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.31 ; elapsed = 00:00:00.07 . Memory (MB): peak = 3174.512 ; gain = 0.000 ; free physical = 10187 ; free virtual = 27201
+Wrote PlaceStorage: Time (s): cpu = 00:00:00.39 ; elapsed = 00:00:00.21 . Memory (MB): peak = 3174.512 ; gain = 0.000 ; free physical = 10177 ; free virtual = 27201
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3174.512 ; gain = 0.000 ; free physical = 10177 ; free virtual = 27202
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3174.512 ; gain = 0.000 ; free physical = 10177 ; free virtual = 27202
+Write Physdb Complete: Time (s): cpu = 00:00:00.72 ; elapsed = 00:00:00.29 . Memory (MB): peak = 3174.512 ; gain = 0.000 ; free physical = 10177 ; free virtual = 27202
+INFO: [Common 17-1381] The checkpoint '/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final/RV64IM72F_7SP_BRAM.runs/impl_1/RV64IM72F5SPSoCTOP_postroute_physopt.dcp' has been generated.
+INFO: [Common 17-206] Exiting Vivado at Wed Feb 25 16:46:29 2026...

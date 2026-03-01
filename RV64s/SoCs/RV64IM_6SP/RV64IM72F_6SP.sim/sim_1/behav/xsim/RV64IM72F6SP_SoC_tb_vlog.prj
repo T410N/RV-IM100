@@ -1,0 +1,44 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../../../../../../tools/Xilinx/2025.2/data/rsb/busdef" --include "../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/headers" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/72F6SP_SoC_TOP.v" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/ALU.v" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/ALU_Controller.v" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/ALU_DWORD.v" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/ALU_WORD.v" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/Branch_Logic.v" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/Branch_Predictor.v" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/Byte_Enable_Logic.v" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/CSR_File.v" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/Control_Unit.v" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/Data_Memory.v" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/Divider_DWORD.v" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/Divider_WORD.v" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/EX_EX2_Register.v" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/EX_MEM_Register.v" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/Exception_Detector.v" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/Forward_Unit.v" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/Hazard_Unit.v" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/ID_EX_Register.v" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/IF_ID_Register.v" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/Immediate_Generator.v" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/Instruction_Decoder.v" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/Instruction_Memory.v" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/MEM_WB_Register.v" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/MMIO_Interface.v" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/Multiplier_DWORD.v" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/Multiplier_WORD.v" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/PC_Controller.v" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/PC_Plus_4.v" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/Program_Counter.v" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/RV64IM72F_6SP.v" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/Register_File.v" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/Trap_Controller.v" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/UART_TX.v" \
+"../../../../RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/Unified_UART_Controller.v" \
+"../../../../RV64IM72F_6SP.srcs/sim_1/imports/testbenches/72F6SP_SoC_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
