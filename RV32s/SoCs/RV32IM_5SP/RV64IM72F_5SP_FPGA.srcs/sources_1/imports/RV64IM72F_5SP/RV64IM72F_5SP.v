@@ -262,9 +262,9 @@ module RV64IM72F5SP #(
 
     // MMIO Interface logics
     wire mmio_uart_status_hit;
-    assign mmio_uart_status_hit = (MEM_alu_result == 64'h0000_0000_1001_0004);
+    assign mmio_uart_status_hit = (MEM_alu_result == 32'h1001_0004);
     wire [XLEN-1:0] data_memory_read_data_muxed;
-    assign data_memory_read_data_muxed = mmio_uart_status_hit ? {31'b0, UART_busy, 32'b0} : data_memory_read_data;
+    assign data_memory_read_data_muxed = mmio_uart_status_hit ? {31'b0, UART_busy} : data_memory_read_data;
 
     ALU alu (
         .clk(clk),
@@ -273,7 +273,6 @@ module RV64IM72F5SP #(
         .src_A(src_A),
         .src_B(src_B),
         .alu_op(alu_op),
-        .input_size_word(input_size_word),
         .div_start(div_start),
         .div_busy(div_busy),
         .mul_start(mul_start),
@@ -295,7 +294,6 @@ module RV64IM72F5SP #(
         .div_busy(div_busy),
         .mul_busy(mul_busy),
 
-        .input_size_word(input_size_word),
         .div_start(div_start),
         .mul_start(mul_start),
         .alu_op(alu_op)
