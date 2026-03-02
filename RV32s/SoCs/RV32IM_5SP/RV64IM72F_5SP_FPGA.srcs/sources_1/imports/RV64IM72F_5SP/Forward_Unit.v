@@ -1,7 +1,7 @@
 `include "./opcode.vh"
 
 module ForwardUnit #(
-    parameter XLEN = 64
+    parameter XLEN = 32
 )(
     // Hazard signals from Hazard Unit - ALU forwarding
     input wire [1:0] hazard_mem,

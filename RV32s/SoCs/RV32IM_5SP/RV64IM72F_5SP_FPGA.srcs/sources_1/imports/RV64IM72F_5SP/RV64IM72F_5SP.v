@@ -2,7 +2,7 @@
 `include "./rf_wd_select.vh"
 
 module RV64IM72F5SP #(
-    parameter XLEN = 64
+    parameter XLEN = 32
 )(
     input clk,
     input clk_enable,
@@ -39,7 +39,7 @@ module RV64IM72F5SP #(
     wire [2:0] funct3;
     wire [6:0] funct7;
     wire [4:0] rs1;
-    wire [5:0] rs2;
+    wire [4:0] rs2;
 	wire [4:0] rd;
     wire [19:0] raw_imm;
     
@@ -94,7 +94,7 @@ module RV64IM72F5SP #(
     wire [XLEN-1:0] data_memory_read_data;
 	wire [XLEN-1:0] byte_enable_logic_register_file_write_data;
     wire [XLEN-1:0] data_memory_write_data;
-    wire [7:0] write_mask;
+    wire [3:0] write_mask;
 
     // CSR File
     wire csr_write_enable;
@@ -149,7 +149,7 @@ module RV64IM72F5SP #(
     wire [XLEN-1:0] EX_read_data1;
     wire [XLEN-1:0] EX_read_data2;
     wire [4:0] EX_rs1;
-    wire [5:0] EX_rs2;
+    wire [4:0] EX_rs2;
     wire [XLEN-1:0] EX_imm;
     wire [XLEN-1:0] EX_csr_read_data;
 

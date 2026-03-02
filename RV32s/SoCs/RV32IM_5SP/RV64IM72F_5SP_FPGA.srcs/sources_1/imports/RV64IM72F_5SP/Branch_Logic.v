@@ -1,7 +1,7 @@
 `include "./branch_funct3.vh"
 
 module BranchLogic #(
-    parameter XLEN = 64
+    parameter XLEN = 32
 )(
     input branch,
     input branch_estimation,

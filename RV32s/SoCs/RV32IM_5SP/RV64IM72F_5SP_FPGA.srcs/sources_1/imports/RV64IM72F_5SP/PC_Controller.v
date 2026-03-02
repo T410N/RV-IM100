@@ -1,5 +1,5 @@
 module PCController #(
-	parameter XLEN = 64
+	parameter XLEN = 32
 )(
     input jump, 				// signal indicating if PC should jump
 	input branch_estimation,	// signal indicating if PC should take the branch

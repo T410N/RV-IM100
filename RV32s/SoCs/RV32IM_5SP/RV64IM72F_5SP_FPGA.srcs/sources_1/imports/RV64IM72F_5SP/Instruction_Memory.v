@@ -7,7 +7,7 @@
 `include "./csr_funct3.vh"
 
 module InstructionMemory #(
-    parameter XLEN = 64
+    parameter XLEN = 32
 )(
     input [XLEN-1:0] pc,
     output reg [31:0] instruction,
@@ -57,7 +57,7 @@ module InstructionMemory #(
 	wire rom_access = (rom_address[31:16] == 16'h0000);
     always @(*) begin
     if (rom_access) begin
-        rom_read_data = {data[{rom_address[15:3], 1'b1}], data[{rom_address[15:3], 1'b0}]};
+        rom_read_data = data[rom_address[15:3]];
     end else begin
         rom_read_data = 64'b0;
     end

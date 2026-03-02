@@ -1,7 +1,7 @@
 `include "./alu_op.vh"
 
 module Divider_WORD #(
-    parameter XLEN = 64
+    parameter XLEN = 32
 )(
     input clk,
     input clk_enable,

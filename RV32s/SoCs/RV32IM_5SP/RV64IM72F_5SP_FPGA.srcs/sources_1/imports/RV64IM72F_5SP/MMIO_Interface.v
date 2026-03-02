@@ -1,5 +1,5 @@
 module MMIOInterface #(
-    parameter XLEN = 64
+    parameter XLEN = 32
 )(
     input clk,
     input clk_enable,
@@ -15,13 +15,13 @@ module MMIOInterface #(
     output mmio_uart_status_hit
 );
 
-    localparam UART_TX_ADDR = 64'h0000_0000_1001_0000;     // Write-Only
-    localparam UART_STATUS_ADDR = 64'h0000_0000_1001_0004; // Read-Only
+    localparam UART_TX_ADDR = 32'h1001_0000;     // Write-Only
+    localparam UART_STATUS_ADDR = 32'h1001_0004; // Read-Only
 
     wire uart_tx_hit = (data_memory_address == UART_TX_ADDR);
     wire uart_stat_hit = (data_memory_address == UART_STATUS_ADDR);
     assign mmio_uart_status_hit = uart_tx_hit || uart_stat_hit;
-    assign mmio_uart_status = uart_stat_hit ? {{(XLEN-1){1'b0}}, UART_busy} : 64'h0;
+    assign mmio_uart_status = uart_stat_hit ? {{(XLEN-1){1'b0}}, UART_busy} : 32'h0;
 
     always @(posedge clk or posedge reset) begin
         if (reset) begin

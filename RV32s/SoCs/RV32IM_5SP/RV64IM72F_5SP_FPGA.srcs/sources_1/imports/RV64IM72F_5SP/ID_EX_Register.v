@@ -1,5 +1,5 @@
 module ID_EX_Register #(
-    parameter XLEN = 64
+    parameter XLEN = 32
 )(
     // pipeline register control signals
     input wire clk,
@@ -7,9 +7,6 @@ module ID_EX_Register #(
     input wire reset,
     input wire flush,
     input wire ID_EX_stall,
-
-    // signal from IF phase
-    // input wire [XLEN-1:0] IF_PC but why? What was this for?
 
     // signals from IF/ID register
     input wire [XLEN-1:0] ID_pc,
@@ -35,7 +32,7 @@ module ID_EX_Register #(
     input wire [XLEN-1:0] ID_read_data1,
     input wire [XLEN-1:0] ID_read_data2,
     input wire [4:0] ID_rs1,
-    input wire [5:0] ID_rs2,
+    input wire [4:0] ID_rs2,
     input wire [XLEN-1:0] ID_imm,
     input wire [XLEN-1:0] ID_csr_read_data,
 
@@ -62,7 +59,7 @@ module ID_EX_Register #(
     output reg [XLEN-1:0] EX_read_data1,
     output reg [XLEN-1:0] EX_read_data2,
     output reg [4:0] EX_rs1,
-    output reg [5:0] EX_rs2,
+    output reg [4:0] EX_rs2,
     output reg [XLEN-1:0] EX_imm,
     output reg [XLEN-1:0] EX_csr_read_data
 );

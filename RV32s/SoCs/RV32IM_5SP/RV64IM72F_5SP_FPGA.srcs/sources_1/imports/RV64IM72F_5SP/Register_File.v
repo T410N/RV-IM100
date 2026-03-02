@@ -1,5 +1,5 @@
 module RegisterFile # (
-    parameter XLEN = 64
+    parameter XLEN = 32
 )(
     input clk,                      // clock signal
     input clk_enable,

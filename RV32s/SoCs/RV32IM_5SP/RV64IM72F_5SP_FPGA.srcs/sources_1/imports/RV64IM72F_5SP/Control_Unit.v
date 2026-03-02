@@ -191,7 +191,7 @@ module ControlUnit (
 				memory_read = 0;
 				memory_write = 1;
 			end
-			`OPCODE_ITYPE, `OPCODE_ITYPE_WORD: begin
+			`OPCODE_ITYPE: begin
 				// No jump
 				jump = 0;
 				
@@ -219,7 +219,7 @@ module ControlUnit (
 				memory_read = 0;
 				memory_write = 0;
 			end
-			`OPCODE_RTYPE, `OPCODE_RTYPE_WORD: begin
+			`OPCODE_RTYPE: begin
 				// No jump
 				jump = 0;
 				

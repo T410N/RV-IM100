@@ -1,7 +1,7 @@
 `include "./opcode.vh"
 
 module BranchPredictor #(
-    parameter XLEN = 64
+    parameter XLEN = 32
 ) (
     input wire clk,
     input wire clk_enable,
