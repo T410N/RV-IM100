@@ -59,7 +59,7 @@ module InstructionMemory #(
     if (rom_access) begin
         rom_read_data = data[rom_address[15:3]];
     end else begin
-        rom_read_data = 64'b0;
+        rom_read_data = {XLEN{1'b0}};
     end
 end
 

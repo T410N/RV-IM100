@@ -10,7 +10,7 @@ module ImmediateGenerator #(
 	
 	always @(*) begin
 		case (opcode)
-			`OPCODE_JALR, `OPCODE_LOAD, `OPCODE_ITYPE, `OPCODE_ITYPE_WORD, `OPCODE_FENCE, `OPCODE_ENVIRONMENT: begin // I-type
+			`OPCODE_JALR, `OPCODE_LOAD, `OPCODE_ITYPE, `OPCODE_FENCE, `OPCODE_ENVIRONMENT: begin // I-type
 				imm = {{20{raw_imm[11]}}, raw_imm[11:0]};
 			end
 			`OPCODE_STORE: begin // S-Type

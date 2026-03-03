@@ -51,7 +51,7 @@ module ALU #(
         .clk(clk),
         .clk_enable(clk_enable),
         .reset(reset),
-        .mul_start(mul_start && input_size_word),
+        .mul_start(mul_start),
         .src_A(src_A[31:0]),
         .src_B(src_B[31:0]),
         .signed_A(alu_op == `ALU_OP_MULH | alu_op == `ALU_OP_MULHSU),
@@ -66,7 +66,7 @@ module ALU #(
         .clk(clk),
         .clk_enable(clk_enable),
         .reset(reset),
-        .division_start(div_start && input_size_word),
+        .division_start(div_start),
         .is_signed(alu_op == `ALU_OP_DIV || alu_op == `ALU_OP_REM),
         .dividend(src_A[31:0]),
         .divisor(src_B[31:0]),
@@ -79,26 +79,26 @@ module ALU #(
     always @(*) begin
         case (alu_op)
             `ALU_OP_MUL: begin
-                alu_result = {{32{prod_low_word[31]}}, prod_low_word};
+                alu_result = prod_low_word;
                 alu_zero = (prod_low_word == 0);
             end
             `ALU_OP_MULH, `ALU_OP_MULHSU, `ALU_OP_MULHU: begin
-                alu_result = {{32{prod_high_word[31]}}, prod_high_word};
+                alu_result = prod_high_word;
                 alu_zero = (prod_high_word == 0);
             end
 
             `ALU_OP_DIV, `ALU_OP_DIVU: begin
-                alu_result = {{32{quot_word[31]}}, quot_word};
+                alu_result = quot_word;
                 alu_zero = (quot_word == 0);
             end
 
             `ALU_OP_REM, `ALU_OP_REMU: begin
-                alu_result = {{32{rem_word[31]}}, rem_word};
+                alu_result = rem_word;
                 alu_zero = (rem_word == 0);
             end
             
             default: begin
-                alu_result = {{32{alu_word_result[31]}}, alu_word_result};
+                alu_result = alu_word_result;
                 alu_zero = alu_word_zero;
             end
         endcase

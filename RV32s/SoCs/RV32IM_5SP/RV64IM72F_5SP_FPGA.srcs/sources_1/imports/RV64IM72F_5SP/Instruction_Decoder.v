@@ -74,7 +74,7 @@ module InstructionDecoder (
 				rs2 = instruction[24:20];
 				funct7 = instruction[31:25];
 				
-				raw_imm = 32'b0;
+				raw_imm = 20'b0;
 			end
 			default: begin
 			funct3 = 3'b0;

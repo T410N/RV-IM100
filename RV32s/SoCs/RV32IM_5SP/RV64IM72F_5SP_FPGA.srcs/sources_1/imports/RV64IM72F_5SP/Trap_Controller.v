@@ -160,11 +160,11 @@ always @(*) begin
                     // write mcause code value for each trap type
                     csr_write_enable = 1'b1;
                     csr_trap_address = 12'h342; //mcause
-                    if (trap_status == `TRAP_EBREAK)    csr_trap_write_data = 64'd3;
-                    else if (trap_status == `TRAP_ECALL)    csr_trap_write_data = 64'd11;
-                    else if (trap_status == `TRAP_MISALIGNED_LOAD) csr_trap_write_data = 64'd4;
-                    else if (trap_status == `TRAP_MISALIGNED_STORE) csr_trap_write_data = 64'd6;
-                    else csr_trap_write_data = 64'd0; // TRAP_MISALIGNED_INSTRUCTION
+                    if (trap_status == `TRAP_EBREAK)    csr_trap_write_data = 32'd3;
+                    else if (trap_status == `TRAP_ECALL)    csr_trap_write_data = 32'd11;
+                    else if (trap_status == `TRAP_MISALIGNED_LOAD) csr_trap_write_data = 32'd4;
+                    else if (trap_status == `TRAP_MISALIGNED_STORE) csr_trap_write_data = 32'd6;
+                    else csr_trap_write_data = 32'd0; // TRAP_MISALIGNED_INSTRUCTION
                     
                     trap_done = 1'b0;
                     next_trap_handle_state = WRITE_MCAUSE;

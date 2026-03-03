@@ -811,14 +811,14 @@ module RV64IM72F5SP #(
         case (EX_alu_src_A_select)
             `ALU_SRC_A_RD1: alu_normal_source_a = EX_read_data1;
             `ALU_SRC_A_PC: alu_normal_source_a = EX_pc;
-            `ALU_SRC_A_RS1: alu_normal_source_a = {59'b0, EX_rs1};
+            `ALU_SRC_A_RS1: alu_normal_source_a = {27'b0, EX_rs1};
             default: alu_normal_source_a = {XLEN{1'b0}};
         endcase
 
         case (EX_alu_src_B_select)
             `ALU_SRC_B_RD2: alu_normal_source_b = EX_read_data2;
             `ALU_SRC_B_IMM: alu_normal_source_b = EX_imm;
-            `ALU_SRC_B_SHAMT: alu_normal_source_b = {58'b0, EX_imm[5:0]};
+            `ALU_SRC_B_SHAMT: alu_normal_source_b = {26'b0, EX_imm[5:0]};
             `ALU_SRC_B_CSR: alu_normal_source_b = csr_forward_data;
             default: alu_normal_source_b = {XLEN{1'b0}};
         endcase

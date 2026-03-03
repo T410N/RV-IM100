@@ -22,7 +22,7 @@ module CSRFile #(
     wire [XLEN-1:0] mimpid    = 32'h34_36_49_31;    // "46I1" ; "46" instructions RISC-V RV32"I" Revision "1".
     wire [XLEN-1:0] mhartid   = 32'h52_4B_43_30;    // "RKC0" ; "R"oad to "K"AIST "C"ore 0.
     wire [XLEN-1:0] mstatus   = 32'h00001800;    // MPP[12:11] = 11
-    wire [XLEN-1:0] misa      = 32'h40000100;    // MXL = 32; misa[31:30] = 01. RV32"I"; misa[8] = 1.
+    wire [XLEN-1:0] misa      = 32'h40001100;    // MXL = 32; misa[31:30] = 01. RV32"I"; misa[8] = 1.
 
     reg [XLEN-1:0] mtvec;
     reg [XLEN-1:0] mepc;

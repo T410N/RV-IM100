@@ -89,14 +89,14 @@ module ByteEnableLogic #(
 				end
 				default: begin
 					data_memory_write_data = {XLEN{1'b0}};
-					write_mask = 8'b0;
+					write_mask = 4'b0;
 				end
 			endcase
 		end
 		else begin
 			register_file_write_data = {XLEN{1'b0}};
 			data_memory_write_data = {XLEN{1'b0}};
-			write_mask = 8'b0;
+			write_mask = 4'b0;
 		end
     end
 
