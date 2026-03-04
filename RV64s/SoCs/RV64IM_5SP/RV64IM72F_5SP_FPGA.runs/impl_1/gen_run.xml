@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1772113545">
+<GenRun Id="impl_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1772613676">
   <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-RQS" Name="RV64IM72F5SPSoCTOP_postroute_physopted.rqs"/>
@@ -204,9 +204,18 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/RV64IM72F_5SP/headers/opcode.vh">
+    <File Path="$PSRCDIR/sources_1/imports/RV64IM72F_5SP/headers/rtype_mul_funct3.vh">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../RV64IM72F_5SP/headers/opcode.vh"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../RV64IM72F_5SP/headers/rtype_mul_funct3.vh"/>
+        <Attr Name="ImportTime" Val="1767341891"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="IsVisible" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RV64IM72F_5SP/headers/rtype_funct3.vh">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../RV64IM72F_5SP/headers/rtype_funct3.vh"/>
         <Attr Name="ImportTime" Val="1767341891"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -231,18 +240,9 @@
         <Attr Name="IsVisible" Val="1"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/RV64IM72F_5SP/headers/rtype_mul_funct3.vh">
+    <File Path="$PSRCDIR/sources_1/imports/RV64IM72F_5SP/headers/opcode.vh">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../RV64IM72F_5SP/headers/rtype_mul_funct3.vh"/>
-        <Attr Name="ImportTime" Val="1767341891"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-        <Attr Name="IsVisible" Val="1"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/RV64IM72F_5SP/headers/rtype_funct3.vh">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../RV64IM72F_5SP/headers/rtype_funct3.vh"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../RV64IM72F_5SP/headers/opcode.vh"/>
         <Attr Name="ImportTime" Val="1767341891"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -635,7 +635,9 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Performance_ExplorePostRoutePhysOpt" Flow="Vivado Implementation 2025"/>
+    <StratHandle Name="Performance_ExplorePostRoutePhysOpt" Flow="Vivado Implementation 2025">
+      <Desc>Similar to Peformance_Explore, but enables the physical optimization step (phys_opt_design) with the Explore directive after routing.</Desc>
+    </StratHandle>
     <Step Id="init_design"/>
     <Step Id="opt_design">
       <Option Id="Directive">0</Option>

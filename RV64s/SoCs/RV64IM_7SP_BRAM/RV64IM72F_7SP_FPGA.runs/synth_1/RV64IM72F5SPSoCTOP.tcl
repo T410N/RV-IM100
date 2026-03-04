@@ -162,7 +162,7 @@ read_checkpoint -auto_incremental -incremental /home/khwl/Desktop/RV-IM100/RV64s
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top RV64IM72F5SPSoCTOP -part xc7a200tsbg484-1 -flatten_hierarchy full -directive PerformanceOptimized -global_retiming on -fsm_extraction one_hot -keep_equivalent_registers -resource_sharing off -no_lc -shreg_min_size 5
+synth_design -top RV64IM72F5SPSoCTOP -part xc7a200tsbg484-1 -directive PerformanceOptimized -fsm_extraction one_hot -keep_equivalent_registers -resource_sharing off -no_lc -shreg_min_size 5
 OPTRACE "synth_design" END { }
 if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
  send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"

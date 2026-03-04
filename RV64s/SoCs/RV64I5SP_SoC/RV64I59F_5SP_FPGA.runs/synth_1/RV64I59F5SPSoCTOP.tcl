@@ -95,6 +95,8 @@ read_mem {
   /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/dhrystone.mem
   /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64s/coremark_RV64I_40MHz.mem
   /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64s/dhrystone_RV64I_40MHz.mem
+  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/coremarks/coremark_RV64IM_39.58333MHz.mem
+  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/coremarks/coremark_RV64I_39.58333MHz.mem
 }
 read_verilog -library xil_defaultlib {
   /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/ALU.v
@@ -145,8 +147,6 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 read_xdc /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/constrs_1/imports/RV64I59F_5SP/RV32I46F_5SP_Debug_XDC.xdc
 set_property used_in_implementation false [get_files /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/constrs_1/imports/RV64I59F_5SP/RV32I46F_5SP_Debug_XDC.xdc]
 
-read_xdc dont_touch.xdc
-set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 
 read_checkpoint -auto_incremental -incremental /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/utils_1/imports/synth_1/RV64I59F5SPSoCTOP.dcp

@@ -65,8 +65,10 @@ create_project -in_memory -part xc7a200tsbg484-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
+set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP/RV64IM72F_7SP_FPGA.cache/wt [current_project]
 set_property parent.project_path /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP/RV64IM72F_7SP_FPGA.xpr [current_project]
+set_property XPM_LIBRARIES XPM_CDC [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP/RV64IM72F_7SP_FPGA.cache/ip [current_project]
@@ -91,6 +93,10 @@ read_mem {
   /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/benchmarks/dhrystone.mem
   /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/benchmarks/coremark.mem
   /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/RV64s/coremark_RV64IM_50MHz.mem
+  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/benchmarks/coremarks/coremark_RV64IM_49MHz.mem
+  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/benchmarks/dhrystones/dhrystone_RV64IM_49MHz.mem
+  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/benchmarks/dhrystones/dhrystone_RV64IM_48.61111.mem
+  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/benchmarks/coremarks/coremark_RV64IM_48.61111.mem
 }
 read_verilog -library xil_defaultlib {
   /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/ALU.v
@@ -130,6 +136,11 @@ read_verilog -library xil_defaultlib {
   /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Unified_UART_Controller.v
   /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/72F6SP_SoC_TOP.v
 }
+read_ip -quiet /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP/RV64IM72F_7SP_FPGA.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xci
+set_property used_in_implementation false [get_files -all /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP/RV64IM72F_7SP_FPGA.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP/RV64IM72F_7SP_FPGA.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xdc]
+set_property used_in_implementation false [get_files -all /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP/RV64IM72F_7SP_FPGA.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0_ooc.xdc]
+
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date             : Thu Feb 26 17:12:41 2026
-| Host             : khwl-main-pc running 64-bit Ubuntu 24.04.4 LTS
+| Date             : Wed Mar  4 22:33:08 2026
+| Host             : khwl-ThinkPad-X1-Carbon-Gen-13 running 64-bit Ubuntu 24.04.3 LTS
 | Command          : report_power -file RV64I59F5SPSoCTOP_power_routed.rpt -pb RV64I59F5SPSoCTOP_power_summary_routed.pb -rpx RV64I59F5SPSoCTOP_power_routed.rpx
 | Design           : RV64I59F5SPSoCTOP
 | Device           : xc7a200tsbg484-1
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.387        |
+| Total On-Chip Power (W)  | 0.438        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.235        |
+| Dynamic (W)              | 0.285        |
 | Device Static (W)        | 0.152        |
 | Effective TJA (C/W)      | 3.3          |
-| Max Ambient (C)          | 83.7         |
-| Junction Temperature (C) | 26.3         |
+| Max Ambient (C)          | 83.6         |
+| Junction Temperature (C) | 26.4         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,19 +52,19 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.015 |        5 |       --- |             --- |
-| Slice Logic              |     0.053 |    32423 |       --- |             --- |
-|   LUT as Logic           |     0.025 |    12540 |    133800 |            9.37 |
+| Clocks                   |     0.014 |        5 |       --- |             --- |
+| Slice Logic              |     0.068 |    38291 |       --- |             --- |
+|   LUT as Logic           |     0.038 |    16432 |    133800 |           12.28 |
 |   LUT as Distributed RAM |     0.024 |     8280 |     46200 |           17.92 |
-|   F7/F8 Muxes            |     0.003 |     7623 |    133800 |            5.70 |
-|   Register               |    <0.001 |     3158 |    267600 |            1.18 |
+|   F7/F8 Muxes            |     0.005 |    10128 |    133800 |            7.57 |
+|   Register               |    <0.001 |     2863 |    267600 |            1.07 |
 |   CARRY4                 |    <0.001 |      201 |     33450 |            0.60 |
 |   Others                 |     0.000 |       22 |       --- |             --- |
-| Signals                  |     0.067 |    15588 |       --- |             --- |
-| PLL                      |     0.098 |        1 |        10 |           10.00 |
-| I/O                      |     0.001 |       12 |       285 |            4.21 |
+| Signals                  |     0.090 |    16401 |       --- |             --- |
+| PLL                      |     0.112 |        1 |        10 |           10.00 |
+| I/O                      |    <0.001 |       12 |       285 |            4.21 |
 | Static Power             |     0.152 |          |           |                 |
-| Total                    |     0.387 |          |           |                 |
+| Total                    |     0.438 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,8 +74,8 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.176 |       0.145 |      0.031 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.080 |       0.050 |      0.031 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.215 |       0.183 |      0.031 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.087 |       0.056 |      0.031 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.005 |       0.000 |      0.005 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.005 |       0.000 |      0.005 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -131,8 +131,8 @@ Table of Contents
 | Clock              | Domain                          | Constraint (ns) |
 +--------------------+---------------------------------+-----------------+
 | clk                | clk                             |            10.0 |
-| clk_out1_clk_wiz_0 | clk_gen/inst/clk_out1_clk_wiz_0 |            25.0 |
-| clkfbout_clk_wiz_0 | clk_gen/inst/clkfbout_clk_wiz_0 |            50.0 |
+| clk_out1_clk_wiz_0 | clk_gen/inst/clk_out1_clk_wiz_0 |            25.3 |
+| clkfbout_clk_wiz_0 | clk_gen/inst/clkfbout_clk_wiz_0 |            30.0 |
 +--------------------+---------------------------------+-----------------+
 
 
@@ -145,18 +145,17 @@ Table of Contents
 +------------------------+-----------+
 | Name                   | Power (W) |
 +------------------------+-----------+
-| RV64I59F5SPSoCTOP      |     0.235 |
-|   clk_gen              |     0.099 |
-|     inst               |     0.099 |
-|   rv64i59f_5sp         |     0.135 |
-|     data_memory        |     0.055 |
-|     ex_mem_register    |     0.041 |
+| RV64I59F5SPSoCTOP      |     0.285 |
+|   clk_gen              |     0.113 |
+|     inst               |     0.113 |
+|   rv64i59f_5sp         |     0.171 |
+|     data_memory        |     0.057 |
+|     ex_mem_register    |     0.071 |
 |     exception_detector |     0.001 |
 |     id_ex_register     |     0.013 |
 |     if_id_register     |     0.001 |
-|     instruction_memory |     0.012 |
 |     mem_wb_register    |     0.003 |
-|     program_counter    |     0.005 |
+|     program_counter    |     0.020 |
 +------------------------+-----------+
 
 

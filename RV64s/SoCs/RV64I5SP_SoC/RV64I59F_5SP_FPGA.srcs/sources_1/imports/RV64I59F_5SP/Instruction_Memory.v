@@ -19,7 +19,7 @@ module InstructionMemory #(
 	reg [31:0] data [0:16383];
 	
 	initial begin
-        $readmemh("./dhrystone_RV64I_40MHz.mem", data);
+        $readmemh("./coremark_RV64I_39.58333MHz.mem", data);
         // ──────────────────────────────────────────────
 		// Trap Handler 시작 주소. mtvec = 0000_1000 = 4096 ÷ 4 Byte = 1024
 		// Trap Handler 진입 시 기존 GPR의 레지스터 내용들을 별도의 메모리 Heap 구역에 store하고 수행해야하지만, 현재 단계에서는 생략함.

@@ -21,7 +21,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_5SP/RV64IM72F_5SP_FPGA.runs/synth_1'
+HD_PWD='/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_5SP/RV64IM72F_5SP_FPGA.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

@@ -194,7 +194,7 @@ OPTRACE "implement_debug_core" END { }
   } 
 OPTRACE "place_design" START { }
   set_param project.isImplRun true
-  place_design -directive ExtraNetDelay_low
+  place_design -directive Explore
   set_param project.isImplRun false
 OPTRACE "place_design" END { }
 OPTRACE "read constraints: place_design_post" START { }
@@ -226,7 +226,7 @@ set rc [catch {
 OPTRACE "read constraints: phys_opt_design" START { }
 OPTRACE "read constraints: phys_opt_design" END { }
 OPTRACE "phys_opt_design" START { }
-  phys_opt_design -directive AggressiveFanoutOpt
+  phys_opt_design -directive Explore
 OPTRACE "phys_opt_design" END { }
 OPTRACE "read constraints: phys_opt_design_post" START { }
 OPTRACE "read constraints: phys_opt_design_post" END { }
@@ -255,7 +255,7 @@ set rc [catch {
 OPTRACE "read constraints: route_design" START { }
 OPTRACE "read constraints: route_design" END { }
 OPTRACE "route_design" START { }
-  route_design -directive NoTimingRelaxation
+  route_design -directive Explore -tns_cleanup
 OPTRACE "route_design" END { }
 OPTRACE "read constraints: route_design_post" START { }
 OPTRACE "read constraints: route_design_post" END { }
@@ -291,7 +291,7 @@ set rc [catch {
   if {$tool_flow eq {SDx}} {send_msg_id {101-1} {status} {Starting optional post-route physical design optimization.} }
   create_msg_db post_route_phys_opt_design.pb
 OPTRACE "phys_opt_design" START { }
-  phys_opt_design -directive AggressiveExplore
+  phys_opt_design -directive Explore
 OPTRACE "phys_opt_design" END { }
 OPTRACE "phys_opt_design reports" START { REPORT }
   set_param project.isImplRun true

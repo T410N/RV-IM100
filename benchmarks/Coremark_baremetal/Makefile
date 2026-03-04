@@ -19,14 +19,14 @@ ASM_SRC  = crt0.S
 LDSCRIPT = linker.ld
 
 # Architecture flags - RV64IM with Zicsr extension
-ARCH_FLAGS = -march=rv64im_zicsr -mabi=lp64
+ARCH_FLAGS = -march=rv64i_zicsr -mabi=lp64
 
 # CoreMark configuration
 ITERATIONS ?= 0
 TOTAL_DATA_SIZE ?= 2000
 
 # Compiler flags string for reporting
-FLAGS_STR = "-O2 -march=rv64im_zicsr -mabi=lp64 -fno-common -funroll-loops"
+FLAGS_STR = "-O2 -march=rv64i_zicsr -mabi=lp64 -fno-common -funroll-loops"
 
 # CoreMark flags
 CM_CFLAGS  = -DITERATIONS=$(ITERATIONS)
@@ -52,7 +52,7 @@ CFLAGS  = $(ARCH_FLAGS)
 CFLAGS += $(OPT_FLAGS) $(WARN_FLAGS) $(CODE_FLAGS)
 CFLAGS += $(CM_CFLAGS)
 
-ASFLAGS = $(ARCH_FLAGS) -Wa,-march=rv64im_zicsr
+ASFLAGS = $(ARCH_FLAGS) -Wa,-march=rv64i_zicsr
 
 # Linker flags
 LDFLAGS  = $(ARCH_FLAGS)
@@ -107,7 +107,7 @@ clean:
 	rm -f *.o $(TARGET).elf $(TARGET).hex $(TARGET).bin $(TARGET).mem $(TARGET).dump $(TARGET).map
 
 help:
-	@echo "CoreMark for RV64IM"
+	@echo "CoreMark for RV64I"
 	@echo ""
 	@echo "Targets:"
 	@echo "  all      - Build ELF, HEX, and BIN files"

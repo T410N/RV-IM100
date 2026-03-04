@@ -20,7 +20,7 @@ module InstructionMemory #(
 	reg [31:0] data [0:16383];
 	
 	initial begin
-		$readmemh("./dhrystone_RV64IM_44.92754.mem", data);
+		$readmemh("./dhrystone_RV64IM_45MHz.mem", data);
 		/*
 		// ──────────────────────────────────────────────
 		// I-타입 ALU 명령어 (9개)

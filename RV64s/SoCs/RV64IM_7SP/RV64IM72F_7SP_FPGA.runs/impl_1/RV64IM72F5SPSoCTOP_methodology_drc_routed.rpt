@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Thu Feb 26 00:49:46 2026
+| Date         : Wed Mar  4 09:22:36 2026
 | Host         : khwl-ThinkPad-X1-Carbon-Gen-13 running 64-bit Ubuntu 24.04.3 LTS
 | Command      : report_methodology -file RV64IM72F5SPSoCTOP_methodology_drc_routed.rpt -pb RV64IM72F5SPSoCTOP_methodology_drc_routed.pb -rpx RV64IM72F5SPSoCTOP_methodology_drc_routed.rpx
 | Design       : RV64IM72F5SPSoCTOP
@@ -23,17 +23,14 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max checks: <unlimited>
-             Checks found: 2702
-+-----------+----------+-------------------------------------------------------------------------------------------------------+--------+
-| Rule      | Severity | Description                                                                                           | Checks |
-+-----------+----------+-------------------------------------------------------------------------------------------------------+--------+
-| DPIR-1    | Warning  | Asynchronous driver check                                                                             | 623    |
-| SYNTH-5   | Warning  | Mapped onto distributed RAM because of timing constraints                                             | 2048   |
-| SYNTH-6   | Warning  | Timing of a RAM block might be sub-optimal                                                            | 8      |
-| SYNTH-10  | Warning  | Wide multiplier                                                                                       | 20     |
-| TIMING-10 | Warning  | Missing property on synchronizer                                                                      | 1      |
-| TIMING-47 | Warning  | False path, asynchronous clock group or max delay datapath only constraint between synchronous clocks | 2      |
-+-----------+----------+-------------------------------------------------------------------------------------------------------+--------+
+             Checks found: 2691
++----------+----------+-----------------------------------------------------------+--------+
+| Rule     | Severity | Description                                               | Checks |
++----------+----------+-----------------------------------------------------------+--------+
+| DPIR-1   | Warning  | Asynchronous driver check                                 | 623    |
+| SYNTH-5  | Warning  | Mapped onto distributed RAM because of timing constraints | 2048   |
+| SYNTH-10 | Warning  | Wide multiplier                                           | 20     |
++----------+----------+-----------------------------------------------------------+--------+
 
 2. REPORT DETAILS
 -----------------
@@ -13392,46 +13389,6 @@ Mapped onto distributed RAM because of timing constraints
 The instance rv64im72f_6sp/data_memory/memory_reg_7936_8191_9_9 is implemented as distributed LUT RAM for the following reason: The timing constraints suggest that the chosen mapping will yield a better timing.
 Related violations: <none>
 
-SYNTH-6#1 Warning
-Timing of a RAM block might be sub-optimal  
-The timing for the instance rv64im72f_6sp/instruction_memory/instruction_reg_0, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
-Related violations: <none>
-
-SYNTH-6#2 Warning
-Timing of a RAM block might be sub-optimal  
-The timing for the instance rv64im72f_6sp/instruction_memory/instruction_reg_1, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
-Related violations: <none>
-
-SYNTH-6#3 Warning
-Timing of a RAM block might be sub-optimal  
-The timing for the instance rv64im72f_6sp/instruction_memory/instruction_reg_2, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
-Related violations: <none>
-
-SYNTH-6#4 Warning
-Timing of a RAM block might be sub-optimal  
-The timing for the instance rv64im72f_6sp/instruction_memory/instruction_reg_3, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
-Related violations: <none>
-
-SYNTH-6#5 Warning
-Timing of a RAM block might be sub-optimal  
-The timing for the instance rv64im72f_6sp/instruction_memory/instruction_reg_4, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
-Related violations: <none>
-
-SYNTH-6#6 Warning
-Timing of a RAM block might be sub-optimal  
-The timing for the instance rv64im72f_6sp/instruction_memory/instruction_reg_5, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
-Related violations: <none>
-
-SYNTH-6#7 Warning
-Timing of a RAM block might be sub-optimal  
-The timing for the instance rv64im72f_6sp/instruction_memory/instruction_reg_6, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
-Related violations: <none>
-
-SYNTH-6#8 Warning
-Timing of a RAM block might be sub-optimal  
-The timing for the instance rv64im72f_6sp/instruction_memory/instruction_reg_7, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
-Related violations: <none>
-
 SYNTH-10#1 Warning
 Wide multiplier  
 Detected multiplier at rv64im72f_6sp/alu/multiplier_dword/mult_AHBH of size 16x18, it is decomposed from a wide multipler into 4 DSP blocks.
@@ -13530,21 +13487,6 @@ Related violations: <none>
 SYNTH-10#20 Warning
 Wide multiplier  
 Detected multiplier at rv64im72f_6sp/alu/multiplier_word/mult_result__2 of size 18x16, it is decomposed from a wide multipler into 4 DSP blocks.
-Related violations: <none>
-
-TIMING-10#1 Warning
-Missing property on synchronizer  
-One or more logic synchronizer has been detected between 2 clock domains but the synchronizer does not have the property ASYNC_REG defined on one or both registers. It is recommended to run report_cdc for a complete and detailed CDC coverage
-Related violations: <none>
-
-TIMING-47#1 Warning
-False path, asynchronous clock group or max delay datapath only constraint between synchronous clocks  
-A False Path timing constraint is set between synchronous clocks clk_50mhz and sys_clk_pin (see constraint position 3 in the Timing Constraint window in Vivado IDE). Masking entire synchronous clock domains via  set_false_path, set_clock_groups or set_max_delay -datapath_only may result in failure in hardware.
-Related violations: <none>
-
-TIMING-47#2 Warning
-False path, asynchronous clock group or max delay datapath only constraint between synchronous clocks  
-A False Path timing constraint is set between synchronous clocks sys_clk_pin and clk_50mhz (see constraint position 4 in the Timing Constraint window in Vivado IDE). Masking entire synchronous clock domains via  set_false_path, set_clock_groups or set_max_delay -datapath_only may result in failure in hardware.
 Related violations: <none>
 
 

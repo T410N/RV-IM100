@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1772091896" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/RV64I59F5SPSoCTOP.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1772629672" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/RV64I59F5SPSoCTOP.dcp">
   <File Type="VDS-TIMING-PB" Name="RV64I59F5SPSoCTOP_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="RV64I59F5SPSoCTOP_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="RV64I59F5SPSoCTOP.dcp"/>
@@ -51,10 +51,19 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/ip/clk_wiz_0/clk_wiz_0.xci">
+    <File Path="$PSRCDIR/sources_1/imports/coremarks/coremark_RV64IM_39.58333MHz.mem">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../benchmarks/coremarks/coremark_RV64IM_39.58333MHz.mem"/>
+        <Attr Name="ImportTime" Val="1772625824"/>
         <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/coremarks/coremark_RV64I_39.58333MHz.mem">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../benchmarks/coremarks/coremark_RV64I_39.58333MHz.mem"/>
+        <Attr Name="ImportTime" Val="1772629629"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
@@ -471,7 +480,9 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Flow_PerfOptimized_high" Flow="Vivado Synthesis 2025"/>
+    <StratHandle Name="Flow_PerfOptimized_high" Flow="Vivado Synthesis 2025">
+      <Desc>Higher performance designs, resource sharing is turned off, the global fanout guide is set to a lower number, FSM extraction forced to one-hot, LUT combining is disabled, equivalent registers are preserved, SRL are inferred  with a larger threshold</Desc>
+    </StratHandle>
     <Step Id="synth_design">
       <Option Id="Directive">7</Option>
       <Option Id="FsmExtraction">1</Option>
@@ -481,4 +492,5 @@
       <Option Id="ShregMinSize">5</Option>
     </Step>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
 </GenRun>

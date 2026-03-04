@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Thu Feb 26 22:57:43 2026
-| Host         : khwl-main-pc running 64-bit Ubuntu 24.04.4 LTS
+| Date         : Wed Mar  4 17:55:57 2026
+| Host         : khwl-ThinkPad-X1-Carbon-Gen-13 running 64-bit Ubuntu 24.04.3 LTS
 | Command      : report_methodology -file RV64IM72F5SPSoCTOP_methodology_drc_routed.rpt -pb RV64IM72F5SPSoCTOP_methodology_drc_routed.pb -rpx RV64IM72F5SPSoCTOP_methodology_drc_routed.rpx
 | Design       : RV64IM72F5SPSoCTOP
 | Device       : xc7a200tsbg484-1
@@ -23,14 +23,13 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max checks: <unlimited>
-             Checks found: 2692
+             Checks found: 2691
 +----------+----------+-----------------------------------------------------------+--------+
 | Rule     | Severity | Description                                               | Checks |
 +----------+----------+-----------------------------------------------------------+--------+
 | DPIR-1   | Warning  | Asynchronous driver check                                 | 623    |
 | SYNTH-5  | Warning  | Mapped onto distributed RAM because of timing constraints | 2048   |
 | SYNTH-10 | Warning  | Wide multiplier                                           | 20     |
-| XDCC-7   | Warning  | Scoped Clock constraint overwritten on the same source    | 1      |
 +----------+----------+-----------------------------------------------------------+--------+
 
 2. REPORT DETAILS
@@ -13488,13 +13487,6 @@ Related violations: <none>
 SYNTH-10#20 Warning
 Wide multiplier  
 Detected multiplier at rv64im72f_5sp/alu/multiplier_word/mult_result__2 of size 18x16, it is decomposed from a wide multipler into 4 DSP blocks.
-Related violations: <none>
-
-XDCC-7#1 Warning
-Scoped Clock constraint overwritten on the same source  
-A new clock constraint create_clock overrides a previous scoped clock constraint defined on the same source. It is not recommended to override a scoped (typically an IP) clock constraint and could result in unexpected behaviors.
-New: create_clock -period 10.000 -name sys_clk_pin -waveform {0.000 5.000} [get_ports clk] (Source: /home/khwl/Desktop/RV-IM100/RV64s/RV64IM_5SP/RV64IM72F_5SP_FPGA.srcs/constrs_1/imports/RV64IM72F_5SP/RV32I46F_5SP_Debug_XDC.xdc (Line: 9))
-Previous: create_clock -period 10.000 [get_ports clk] (Source: /home/khwl/Desktop/RV-IM100/RV64s/RV64IM_5SP/RV64IM72F_5SP_FPGA.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc (Line: 53))
 Related violations: <none>
 
 

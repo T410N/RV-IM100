@@ -1,3 +1,9 @@
+Archive member included to satisfy reference by file (symbol)
+
+/home/khwl/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv64i/lp64/libgcc.a(muldi3.o)
+                              core_main.o (__muldi3)
+/home/khwl/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv64i/lp64/libgcc.a(div.o)
+                              core_main.o (__divdi3)
 
 Discarded input sections
 
@@ -32,7 +38,7 @@ Discarded input sections
  .text.matrix_sum
                 0x0000000000000000      0x1d4 core_matrix.o
  .text.matrix_mul_const
-                0x0000000000000000      0x318 core_matrix.o
+                0x0000000000000000      0x1d8 core_matrix.o
  .text.matrix_add_const
                 0x0000000000000000      0x210 core_matrix.o
  .text          0x0000000000000000        0x0 core_state.o
@@ -54,6 +60,10 @@ Discarded input sections
  .bss           0x0000000000000000        0x0 ee_printf.o
  .text.uart_send_char
                 0x0000000000000000       0x24 ee_printf.o
+ .data          0x0000000000000000        0x0 /home/khwl/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv64i/lp64/libgcc.a(muldi3.o)
+ .bss           0x0000000000000000        0x0 /home/khwl/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv64i/lp64/libgcc.a(muldi3.o)
+ .data          0x0000000000000000        0x0 /home/khwl/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv64i/lp64/libgcc.a(div.o)
+ .bss           0x0000000000000000        0x0 /home/khwl/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv64i/lp64/libgcc.a(div.o)
 
 Memory Configuration
 
@@ -72,11 +82,11 @@ LOAD core_state.o
 LOAD core_util.o
 LOAD core_portme.o
 LOAD ee_printf.o
-LOAD /home/khwl/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv64im/lp64/libgcc.a
+LOAD /home/khwl/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv64i/lp64/libgcc.a
                 0x0000000000001000                __stack_size = DEFINED (__stack_size)?__stack_size:0x1000
                 0x0000000000001000                __heap_size = DEFINED (__heap_size)?__heap_size:0x1000
 
-.text           0x0000000000000000     0x5690
+.text           0x0000000000000000     0x5630
  *(.text.init)
  .text.init     0x0000000000000000       0x74 crt0.o
                 0x0000000000000000                _start
@@ -96,119 +106,131 @@ LOAD /home/khwl/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv64im/lp64/libgcc.a
                 0x00000000000006a0      0x304 core_list_join.o
                 0x00000000000006a0                core_bench_list
  .text.core_list_init
-                0x00000000000009a4      0x370 core_list_join.o
+                0x00000000000009a4      0x38c core_list_join.o
                 0x00000000000009a4                core_list_init
- .text.iterate  0x0000000000000d14      0x244 core_main.o
-                0x0000000000000d14                iterate
+ .text.iterate  0x0000000000000d30      0x244 core_main.o
+                0x0000000000000d30                iterate
  .text.startup.main
-                0x0000000000000f58      0x7d4 core_main.o
-                0x0000000000000f58                main
+                0x0000000000000f74      0x818 core_main.o
+                0x0000000000000f74                main
  .text.core_init_matrix
-                0x000000000000172c      0x324 core_matrix.o
-                0x000000000000172c                core_init_matrix
+                0x000000000000178c      0x23c core_matrix.o
+                0x000000000000178c                core_init_matrix
  .text.matrix_mul_vect
-                0x0000000000001a50      0x168 core_matrix.o
-                0x0000000000001a50                matrix_mul_vect
+                0x00000000000019c8      0x1c4 core_matrix.o
+                0x00000000000019c8                matrix_mul_vect
  .text.matrix_mul_matrix
-                0x0000000000001bb8      0x208 core_matrix.o
-                0x0000000000001bb8                matrix_mul_matrix
+                0x0000000000001b8c      0x224 core_matrix.o
+                0x0000000000001b8c                matrix_mul_matrix
  .text.matrix_mul_matrix_bitextract
-                0x0000000000001dc0      0x294 core_matrix.o
-                0x0000000000001dc0                matrix_mul_matrix_bitextract
+                0x0000000000001db0      0x1c0 core_matrix.o
+                0x0000000000001db0                matrix_mul_matrix_bitextract
  .text.matrix_test
-                0x0000000000002054      0xb2c core_matrix.o
-                0x0000000000002054                matrix_test
+                0x0000000000001f70      0x9bc core_matrix.o
+                0x0000000000001f70                matrix_test
  .text.core_bench_matrix
-                0x0000000000002b80       0x3c core_matrix.o
-                0x0000000000002b80                core_bench_matrix
+                0x000000000000292c       0x3c core_matrix.o
+                0x000000000000292c                core_bench_matrix
  .text.core_init_state
-                0x0000000000002bbc      0x1a8 core_state.o
-                0x0000000000002bbc                core_init_state
+                0x0000000000002968      0x1a8 core_state.o
+                0x0000000000002968                core_init_state
  .text.core_state_transition
-                0x0000000000002d64      0x2e8 core_state.o
-                0x0000000000002d64                core_state_transition
+                0x0000000000002b10      0x2e8 core_state.o
+                0x0000000000002b10                core_state_transition
  .text.core_bench_state
-                0x000000000000304c      0x1ac core_state.o
-                0x000000000000304c                core_bench_state
+                0x0000000000002df8      0x1ac core_state.o
+                0x0000000000002df8                core_bench_state
  .text.get_seed_32
-                0x00000000000031f8       0x58 core_util.o
-                0x00000000000031f8                get_seed_32
- .text.crcu16   0x0000000000003250      0x228 core_util.o
-                0x0000000000003250                crcu16
- .text.crcu32   0x0000000000003478      0x420 core_util.o
-                0x0000000000003478                crcu32
- .text.crc16    0x0000000000003898      0x22c core_util.o
-                0x0000000000003898                crc16
+                0x0000000000002fa4       0x58 core_util.o
+                0x0000000000002fa4                get_seed_32
+ .text.crcu16   0x0000000000002ffc      0x228 core_util.o
+                0x0000000000002ffc                crcu16
+ .text.crcu32   0x0000000000003224      0x420 core_util.o
+                0x0000000000003224                crcu32
+ .text.crc16    0x0000000000003644      0x22c core_util.o
+                0x0000000000003644                crc16
  .text.check_data_types
-                0x0000000000003ac4        0x8 core_util.o
-                0x0000000000003ac4                check_data_types
+                0x0000000000003870        0x8 core_util.o
+                0x0000000000003870                check_data_types
  .text.start_time
-                0x0000000000003acc        0xc core_portme.o
-                0x0000000000003acc                start_time
+                0x0000000000003878        0xc core_portme.o
+                0x0000000000003878                start_time
  .text.stop_time
-                0x0000000000003ad8       0x10 core_portme.o
-                0x0000000000003ad8                stop_time
+                0x0000000000003884       0x10 core_portme.o
+                0x0000000000003884                stop_time
  .text.get_time
-                0x0000000000003ae8       0x14 core_portme.o
-                0x0000000000003ae8                get_time
+                0x0000000000003894       0x14 core_portme.o
+                0x0000000000003894                get_time
  .text.time_in_secs
-                0x0000000000003afc       0x20 core_portme.o
-                0x0000000000003afc                time_in_secs
+                0x00000000000038a8       0x2c core_portme.o
+                0x00000000000038a8                time_in_secs
  .text.portable_init
-                0x0000000000003b1c        0xc core_portme.o
-                0x0000000000003b1c                portable_init
+                0x00000000000038d4        0xc core_portme.o
+                0x00000000000038d4                portable_init
  .text.portable_fini
-                0x0000000000003b28        0x8 core_portme.o
-                0x0000000000003b28                portable_fini
- .text.number   0x0000000000003b30      0x694 ee_printf.o
+                0x00000000000038e0        0x8 core_portme.o
+                0x00000000000038e0                portable_fini
+ .text.number   0x00000000000038e8      0x75c ee_printf.o
  .text.ee_printf
-                0x00000000000041c4      0xa80 ee_printf.o
-                0x00000000000041c4                ee_printf
+                0x0000000000004044      0xa80 ee_printf.o
+                0x0000000000004044                ee_printf
+ .text          0x0000000000004ac4       0x24 /home/khwl/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv64i/lp64/libgcc.a(muldi3.o)
+                0x0000000000004ac4                __muldi3
+ .text          0x0000000000004ae8      0x100 /home/khwl/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv64i/lp64/libgcc.a(div.o)
+                0x0000000000004ae8                __udivsi3
+                0x0000000000004b00                __umodsi3
+                0x0000000000004b20                __divsi3
+                0x0000000000004b28                __divdi3
+                0x0000000000004b30                __udivdi3
+                0x0000000000004b30                __hidden___udivdi3
+                0x0000000000004b78                __umoddi3
+                0x0000000000004bac                __modsi3
+                0x0000000000004bac                __moddi3
  *(.rodata .rodata.*)
- *fill*         0x0000000000004c44        0x4 
+ *fill*         0x0000000000004be8        0x0 
  .rodata.main.str1.8
-                0x0000000000004c48      0x597 core_main.o
+                0x0000000000004be8      0x597 core_main.o
                                         0x451 (size before relaxing)
- *fill*         0x00000000000051df        0x1 
+ *fill*         0x000000000000517f        0x1 
  .rodata.state_known_crc
-                0x00000000000051e0        0xa core_main.o
- *fill*         0x00000000000051ea        0x6 
+                0x0000000000005180        0xa core_main.o
+ *fill*         0x000000000000518a        0x6 
  .rodata.matrix_known_crc
-                0x00000000000051f0        0xa core_main.o
- *fill*         0x00000000000051fa        0x6 
+                0x0000000000005190        0xa core_main.o
+ *fill*         0x000000000000519a        0x6 
  .rodata.list_known_crc
-                0x0000000000005200        0xa core_main.o
+                0x00000000000051a0        0xa core_main.o
  .rodata.str1.8
-                0x000000000000520a        0x0 core_state.o
+                0x00000000000051aa        0x0 core_state.o
                                          0xdd (size before relaxing)
- *fill*         0x000000000000520a        0x6 
+ *fill*         0x00000000000051aa        0x6 
  .rodata.errpat
-                0x0000000000005210       0x20 core_state.o
+                0x00000000000051b0       0x20 core_state.o
  .rodata.scipat
-                0x0000000000005230       0x20 core_state.o
+                0x00000000000051d0       0x20 core_state.o
  .rodata.floatpat
-                0x0000000000005250       0x20 core_state.o
+                0x00000000000051f0       0x20 core_state.o
  .rodata.intpat
-                0x0000000000005270       0x20 core_state.o
+                0x0000000000005210       0x20 core_state.o
  .rodata.get_seed_32
-                0x0000000000005290       0x18 core_util.o
- .rodata        0x00000000000052a8      0x200 core_util.o
+                0x0000000000005230       0x18 core_util.o
+ .rodata        0x0000000000005248      0x200 core_util.o
  .rodata.number.str1.8
-                0x00000000000054a8        0x0 ee_printf.o
+                0x0000000000005448        0x0 ee_printf.o
                                          0x4d (size before relaxing)
  .rodata.ee_printf.str1.8
-                0x00000000000054a8        0x0 ee_printf.o
+                0x0000000000005448        0x0 ee_printf.o
                                           0x7 (size before relaxing)
  .rodata.ee_printf
-                0x00000000000054a8      0x1e4 ee_printf.o
-                0x0000000000005690                . = ALIGN (0x8)
- *fill*         0x000000000000568c        0x4 
+                0x0000000000005448      0x1e4 ee_printf.o
+                0x0000000000005630                . = ALIGN (0x8)
+ *fill*         0x000000000000562c        0x4 
 
-.rela.dyn       0x0000000000005690        0x0
+.rela.dyn       0x0000000000005630        0x0
  .rela.text.init
-                0x0000000000005690        0x0 crt0.o
+                0x0000000000005630        0x0 crt0.o
 
-.data           0x0000000010000000        0x8 load address 0x0000000000005690
+.data           0x0000000010000000        0x8 load address 0x0000000000005630
                 0x0000000010000000                __data_start = .
  *(.data .data.*)
  *(.sdata .sdata.*)
@@ -220,9 +242,9 @@ LOAD /home/khwl/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv64im/lp64/libgcc.a
                 0x0000000010000004                seed3_volatile
                 0x0000000010000008                . = ALIGN (0x8)
                 0x0000000010000008                __data_end = .
-                0x0000000000005690                __data_load = LOADADDR (.data)
+                0x0000000000005630                __data_load = LOADADDR (.data)
 
-.bss            0x0000000010000008       0x18 load address 0x0000000000005698
+.bss            0x0000000010000008       0x18 load address 0x0000000000005638
                 0x0000000010000008                __bss_start = .
  *(.bss .bss.*)
  *(.sbss .sbss.*)
@@ -246,13 +268,13 @@ LOAD /home/khwl/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv64im/lp64/libgcc.a
                 0x0000000010000020                . = ALIGN (0x8)
                 0x0000000010000020                __bss_end = .
 
-.heap           0x0000000010000020     0x1000 load address 0x0000000000005698
+.heap           0x0000000010000020     0x1000 load address 0x0000000000005638
                 0x0000000010000020                __heap_start = .
                 0x0000000010001020                . = (. + __heap_size)
  *fill*         0x0000000010000020     0x1000 
                 0x0000000010001020                __heap_end = .
 
-.stack          0x0000000010001020     0x1000 load address 0x00000000000056a0
+.stack          0x0000000010001020     0x1000 load address 0x0000000000005640
                 0x0000000010001020                __stack_bottom = .
                 0x0000000010002020                . = (. + __stack_size)
  *fill*         0x0000000010001020     0x1000 
@@ -261,23 +283,27 @@ LOAD /home/khwl/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv64im/lp64/libgcc.a
 OUTPUT(coremark.elf elf64-littleriscv)
 
 .riscv.attributes
-                0x0000000000000000       0x37
+                0x0000000000000000       0x29
  .riscv.attributes
-                0x0000000000000000       0x35 crt0.o
+                0x0000000000000000       0x27 crt0.o
  .riscv.attributes
-                0x0000000000000035       0x33 core_list_join.o
+                0x0000000000000027       0x25 core_list_join.o
  .riscv.attributes
-                0x0000000000000068       0x33 core_main.o
+                0x000000000000004c       0x25 core_main.o
  .riscv.attributes
-                0x000000000000009b       0x33 core_matrix.o
+                0x0000000000000071       0x25 core_matrix.o
  .riscv.attributes
-                0x00000000000000ce       0x33 core_state.o
+                0x0000000000000096       0x25 core_state.o
  .riscv.attributes
-                0x0000000000000101       0x33 core_util.o
+                0x00000000000000bb       0x25 core_util.o
  .riscv.attributes
-                0x0000000000000134       0x37 core_portme.o
+                0x00000000000000e0       0x29 core_portme.o
  .riscv.attributes
-                0x000000000000016b       0x33 ee_printf.o
+                0x0000000000000109       0x25 ee_printf.o
+ .riscv.attributes
+                0x000000000000012e       0x1a /home/khwl/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv64i/lp64/libgcc.a(muldi3.o)
+ .riscv.attributes
+                0x0000000000000148       0x1a /home/khwl/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv64i/lp64/libgcc.a(div.o)
 
 .comment        0x0000000000000000        0xf
  .comment       0x0000000000000000        0xf core_list_join.o
@@ -311,3 +337,36 @@ OUTPUT(coremark.elf elf64-littleriscv)
                 0x0000000000000000        0x0 core_portme.o
  .note.GNU-stack
                 0x0000000000000000        0x0 ee_printf.o
+
+.debug_line     0x0000000000000000      0x246
+ .debug_line    0x0000000000000000       0x7e /home/khwl/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv64i/lp64/libgcc.a(muldi3.o)
+ .debug_line    0x000000000000007e      0x1c8 /home/khwl/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv64i/lp64/libgcc.a(div.o)
+
+.debug_line_str
+                0x0000000000000000       0x9f
+ .debug_line_str
+                0x0000000000000000       0x9f /home/khwl/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv64i/lp64/libgcc.a(muldi3.o)
+                                         0x99 (size before relaxing)
+ .debug_line_str
+                0x000000000000009f        0x0 /home/khwl/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv64i/lp64/libgcc.a(div.o)
+                                         0x96 (size before relaxing)
+
+.debug_info     0x0000000000000000       0xe6
+ .debug_info    0x0000000000000000       0x39 /home/khwl/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv64i/lp64/libgcc.a(muldi3.o)
+ .debug_info    0x0000000000000039       0xad /home/khwl/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv64i/lp64/libgcc.a(div.o)
+
+.debug_abbrev   0x0000000000000000       0x50
+ .debug_abbrev  0x0000000000000000       0x28 /home/khwl/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv64i/lp64/libgcc.a(muldi3.o)
+ .debug_abbrev  0x0000000000000028       0x28 /home/khwl/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv64i/lp64/libgcc.a(div.o)
+
+.debug_aranges  0x0000000000000000       0x60
+ .debug_aranges
+                0x0000000000000000       0x30 /home/khwl/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv64i/lp64/libgcc.a(muldi3.o)
+ .debug_aranges
+                0x0000000000000030       0x30 /home/khwl/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv64i/lp64/libgcc.a(div.o)
+
+.debug_str      0x0000000000000000      0x129
+ .debug_str     0x0000000000000000      0x129 /home/khwl/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv64i/lp64/libgcc.a(muldi3.o)
+                                         0xae (size before relaxing)
+ .debug_str     0x0000000000000129        0x0 /home/khwl/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv64i/lp64/libgcc.a(div.o)
+                                         0xf8 (size before relaxing)

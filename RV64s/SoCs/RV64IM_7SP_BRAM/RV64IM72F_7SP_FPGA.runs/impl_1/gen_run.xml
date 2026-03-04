@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1772091333">
+<GenRun Id="impl_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1772539054">
   <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-RQS" Name="RV64IM72F5SPSoCTOP_postroute_physopted.rqs"/>
@@ -662,8 +662,8 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Performance_NetDelay_low" Flow="Vivado Implementation 2025">
-      <Desc>To compensate for optimistic delay estimation, add extra delay cost to long distance and high fanout connections. low setting, least pessimistic)</Desc>
+    <StratHandle Name="Performance_ExplorePostRoutePhysOpt" Flow="Vivado Implementation 2025">
+      <Desc>Similar to Peformance_Explore, but enables the physical optimization step (phys_opt_design) with the Explore directive after routing.</Desc>
     </StratHandle>
     <Step Id="init_design"/>
     <Step Id="opt_design">
@@ -671,17 +671,18 @@
     </Step>
     <Step Id="power_opt_design"/>
     <Step Id="place_design">
-      <Option Id="Directive">3</Option>
+      <Option Id="Directive">0</Option>
     </Step>
     <Step Id="post_place_power_opt_design"/>
     <Step Id="phys_opt_design">
-      <Option Id="Directive">4</Option>
+      <Option Id="Directive">0</Option>
     </Step>
     <Step Id="route_design">
-      <Option Id="Directive">1</Option>
+      <Option Id="Directive">0</Option>
+      <Option Id="MoreOptsStr"><![CDATA[-tns_cleanup]]></Option>
     </Step>
     <Step Id="post_route_phys_opt_design" EnableStepBool="1">
-      <Option Id="Directive">1</Option>
+      <Option Id="Directive">0</Option>
     </Step>
     <Step Id="write_bitstream"/>
   </Strategy>
