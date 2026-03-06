@@ -550,7 +550,7 @@ module RV64IM72F5SP #(
         .pc(pc)
     );
 
-    PCPlus4 pc_plus_4 (
+    PCPlus4 #(.XLEN(XLEN)) pc_plus_4 (
         .pc(pc),
         .pc_plus_4(pc_plus_4_signal)
     );

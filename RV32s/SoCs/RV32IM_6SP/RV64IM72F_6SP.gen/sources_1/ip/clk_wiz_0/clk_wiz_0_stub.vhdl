@@ -2,7 +2,7 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
--- Date        : Thu Feb 26 16:59:02 2026
+-- Date        : Thu Mar  5 22:19:29 2026
 -- Host        : khwl-ThinkPad-X1-Carbon-Gen-13 running 64-bit Ubuntu 24.04.3 LTS
 -- Command     : write_vhdl -force -mode synth_stub -rename_top clk_wiz_0 -prefix
 --               clk_wiz_0_ clk_wiz_0_stub.vhdl

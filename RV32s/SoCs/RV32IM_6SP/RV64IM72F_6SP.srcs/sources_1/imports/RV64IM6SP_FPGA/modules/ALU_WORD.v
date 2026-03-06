@@ -18,6 +18,26 @@ module ALU_WORD (
             `ALU_OP_SUB: begin
                 alu_result = src_A - src_B;
             end
+            
+            `ALU_OP_AND: begin
+                alu_result = src_A & src_B;
+            end
+            
+            `ALU_OP_OR: begin
+                alu_result = src_A | src_B;
+            end
+            
+            `ALU_OP_XOR: begin
+                alu_result = src_A ^ src_B;
+            end
+            
+            `ALU_OP_SLT: begin
+                alu_result = ($signed(src_A) < $signed(src_B)) ? 32'd1 : 32'd0;
+            end
+
+            `ALU_OP_SLTU: begin
+                alu_result = (src_A < src_B) ? 32'd1 : 32'd0;
+            end
 			
 			`ALU_OP_SLL: begin
 				alu_result = src_A << src_B[4:0];
@@ -30,7 +50,11 @@ module ALU_WORD (
 			`ALU_OP_SRA: begin
 				alu_result = $signed(src_A) >>> src_B[4:0];
 			end
-			
+
+            `ALU_OP_ABJ: begin
+				alu_result = src_B & (~src_A);
+			end
+
 			`ALU_OP_NOP: begin
 				alu_result = 32'd0;
 			end

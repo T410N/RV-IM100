@@ -20,7 +20,7 @@ module InstructionMemory #(
 	reg [31:0] data [0:16383];
 	
 	initial begin
-		$readmemh("./dhrystone_RV64IM_45MHz.mem", data);
+		$readmemh("./dhrystone_RV32IM_50MHz.mem", data);
 		/*
 		// ──────────────────────────────────────────────
 		// I-타입 ALU 명령어 (9개)
@@ -515,7 +515,7 @@ module InstructionMemory #(
 	wire rom_access = (rom_address[31:16] == 16'h0000);
     always @(*) begin
     if (rom_access) begin
-        rom_read_data = data[rom_address[15:3]];
+        rom_read_data = data[rom_address[15:2]];
     end else begin
         rom_read_data = {XLEN{1'b0}};
     end

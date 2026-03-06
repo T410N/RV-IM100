@@ -19,7 +19,7 @@ module InstructionMemory #(
 	reg [31:0] data [0:16383];
 	
 	initial begin
-        $readmemh("./coremark_RV64IM_38MHz.mem", data);
+        $readmemh("./coremark_RV32IM_43MHz.mem", data);
         // ──────────────────────────────────────────────
 		// Trap Handler 시작 주소. mtvec = 0000_1000 = 4096 ÷ 4 Byte = 1024
 		// Trap Handler 진입 시 기존 GPR의 레지스터 내용들을 별도의 메모리 Heap 구역에 store하고 수행해야하지만, 현재 단계에서는 생략함.
@@ -57,7 +57,7 @@ module InstructionMemory #(
 	wire rom_access = (rom_address[31:16] == 16'h0000);
     always @(*) begin
     if (rom_access) begin
-        rom_read_data = data[rom_address[15:3]];
+        rom_read_data = data[rom_address[15:2]];
     end else begin
         rom_read_data = {XLEN{1'b0}};
     end

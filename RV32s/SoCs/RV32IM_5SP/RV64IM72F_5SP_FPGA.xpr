@@ -4,7 +4,7 @@
 <!-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.                   -->
 <!-- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.   -->
 
-<Project Product="Vivado" Version="7" Minor="71" Path="/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_5SP/RV64IM72F_5SP_FPGA.xpr">
+<Project Product="Vivado" Version="7" Minor="71" Path="/home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_5SP/RV64IM72F_5SP_FPGA.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="9d12faa2f86c4b80a24873608cce4d33"/>
@@ -66,12 +66,12 @@
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="5"/>
-    <Option Name="WTModelSimExportSim" Val="5"/>
-    <Option Name="WTQuestaExportSim" Val="5"/>
+    <Option Name="WTXSimExportSim" Val="8"/>
+    <Option Name="WTModelSimExportSim" Val="8"/>
+    <Option Name="WTQuestaExportSim" Val="8"/>
     <Option Name="WTIesExportSim" Val="0"/>
-    <Option Name="WTVcsExportSim" Val="5"/>
-    <Option Name="WTRivieraExportSim" Val="5"/>
+    <Option Name="WTVcsExportSim" Val="8"/>
+    <Option Name="WTRivieraExportSim" Val="8"/>
     <Option Name="WTActivehdlExportSim" Val="0"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
@@ -154,6 +154,54 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/imports/dhrystones/dhrystone_RV32IM_38MHz.mem">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../benchmarks/dhrystones/dhrystone_RV32IM_38MHz.mem"/>
+          <Attr Name="ImportTime" Val="1772676793"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/dhrystones/dhrystone_RV32IM_38MHz_comp.mem">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../benchmarks/dhrystones/dhrystone_RV32IM_38MHz_comp.mem"/>
+          <Attr Name="ImportTime" Val="1772685925"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/benchmarks/coremarks/coremark_RV32IM_43MHz.mem">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../benchmarks/coremarks/coremark_RV32IM_43MHz.mem"/>
+          <Attr Name="ImportTime" Val="1772707934"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/benchmarks/dhrystones/dhrystone_RV32IM_43MHz.mem">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../benchmarks/dhrystones/dhrystone_RV32IM_43MHz.mem"/>
+          <Attr Name="ImportTime" Val="1772707842"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/benchmarks/coremarks/coremark_RV32IM_42.5MHz.mem">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../benchmarks/coremarks/coremark_RV32IM_42.5MHz.mem"/>
+          <Attr Name="ImportTime" Val="1772709085"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/benchmarks/dhrystones/dhrystone_RV32IM_42.5MHz.mem">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../benchmarks/dhrystones/dhrystone_RV32IM_42.5MHz.mem"/>
+          <Attr Name="ImportTime" Val="1772709116"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/ip/clk_wiz_0/clk_wiz_0.xci">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -179,9 +227,9 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/RV64IM72F_5SP/headers/opcode.vh">
+      <File Path="$PSRCDIR/sources_1/imports/RV64IM72F_5SP/headers/rtype_funct3.vh">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../RV64IM72F_5SP/headers/opcode.vh"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../RV64IM72F_5SP/headers/rtype_funct3.vh"/>
           <Attr Name="ImportTime" Val="1767341891"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -197,15 +245,6 @@
           <Attr Name="IsVisible" Val="1"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/RV64IM72F_5SP/headers/branch_funct3.vh">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../RV64IM72F_5SP/headers/branch_funct3.vh"/>
-          <Attr Name="ImportTime" Val="1767341891"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-          <Attr Name="IsVisible" Val="1"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/imports/RV64IM72F_5SP/headers/rtype_mul_funct3.vh">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../RV64IM72F_5SP/headers/rtype_mul_funct3.vh"/>
@@ -215,9 +254,9 @@
           <Attr Name="IsVisible" Val="1"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/RV64IM72F_5SP/headers/rtype_funct3.vh">
+      <File Path="$PSRCDIR/sources_1/imports/RV64IM72F_5SP/headers/opcode.vh">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../RV64IM72F_5SP/headers/rtype_funct3.vh"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../RV64IM72F_5SP/headers/opcode.vh"/>
           <Attr Name="ImportTime" Val="1767341891"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -233,19 +272,19 @@
           <Attr Name="IsVisible" Val="1"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/imports/RV64IM72F_5SP/headers/branch_funct3.vh">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../RV64IM72F_5SP/headers/branch_funct3.vh"/>
+          <Attr Name="ImportTime" Val="1767341891"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+          <Attr Name="IsVisible" Val="1"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/imports/RV64IM72F_5SP/ALU_Controller.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../RV64IM72F_5SP/ALU_Controller.v"/>
           <Attr Name="ImportTime" Val="1768140986"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/RV64IM72F_5SP/ALU_DWORD.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../RV64IM72F_5SP/ALU_DWORD.v"/>
-          <Attr Name="ImportTime" Val="1767678977"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -314,18 +353,18 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/RV64IM72F_5SP/headers/alu_src_select.vh">
+      <File Path="$PSRCDIR/sources_1/imports/RV64IM72F_5SP/headers/rf_wd_select.vh">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../RV64IM72F_5SP/headers/alu_src_select.vh"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../RV64IM72F_5SP/headers/rf_wd_select.vh"/>
           <Attr Name="ImportTime" Val="1767341891"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
           <Attr Name="IsVisible" Val="1"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/RV64IM72F_5SP/headers/rf_wd_select.vh">
+      <File Path="$PSRCDIR/sources_1/imports/RV64IM72F_5SP/headers/alu_src_select.vh">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../RV64IM72F_5SP/headers/rf_wd_select.vh"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../RV64IM72F_5SP/headers/alu_src_select.vh"/>
           <Attr Name="ImportTime" Val="1767341891"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -345,15 +384,6 @@
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../RV64IM72F_5SP/Data_Memory.v"/>
           <Attr Name="ImportTime" Val="1767699676"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/RV64IM72F_5SP/Divider_DWORD.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../RV64IM72F_5SP/Divider_DWORD.v"/>
-          <Attr Name="ImportTime" Val="1768140802"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -476,15 +506,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/RV64IM72F_5SP/Multiplier_DWORD.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../RV64IM72F_5SP/Multiplier_DWORD.v"/>
-          <Attr Name="ImportTime" Val="1767341891"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/imports/RV64IM72F_5SP/Multiplier_WORD.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../RV64IM72F_5SP/Multiplier_WORD.v"/>
@@ -577,7 +598,7 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="RV64IM72F5SPSoCTOP"/>
+        <Option Name="TopModule" Val="RV32IM72F5SPSoCTOP"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
       </Config>
     </FileSet>
@@ -599,7 +620,7 @@
       <Filter Type="Srcs"/>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="RV64IM72F5SPSoCTOP"/>
+        <Option Name="TopModule" Val="RV32IM72F5SPSoCTOP"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="TransportPathDelay" Val="0"/>
@@ -641,6 +662,14 @@
           <Attr Name="AutoDcp" Val="1"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/utils_1/imports/impl_1/RV32IM72F5SPSoCTOP_routed.dcp">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedInSteps" Val="impl_1"/>
+          <Attr Name="AutoDcp" Val="1"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="TopAutoSet" Val="TRUE"/>
       </Config>
@@ -670,15 +699,14 @@
   <Runs Version="1" Minor="22">
     <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7a200tsbg484-1" ConstrsSet="constrs_1" Description="Higher performance designs, resource sharing is turned off, the global fanout guide is set to a lower number, FSM extraction forced to one-hot, LUT combining is disabled, equivalent registers are preserved, SRL are inferred  with a larger threshold" AutoIncrementalCheckpoint="true" IncrementalCheckpoint="$PSRCDIR/utils_1/imports/synth_1/RV64IM72F5SPSoCTOP.dcp" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Flow_PerfOptimized_high" Flow="Vivado Synthesis 2025"/>
+        <StratHandle Name="Flow_PerfOptimized_high" Flow="Vivado Synthesis 2025">
+          <Desc>Higher performance designs, resource sharing is turned off, the global fanout guide is set to a lower number, FSM extraction forced to one-hot, LUT combining is disabled, equivalent registers are preserved, SRL are inferred  with a larger threshold</Desc>
+        </StratHandle>
         <Step Id="synth_design">
           <Option Id="Directive">7</Option>
-          <Option Id="FlattenHierarchy">0</Option>
           <Option Id="FsmExtraction">1</Option>
-          <Option Id="GlobalReTiming">1</Option>
           <Option Id="KeepEquivalentRegisters">1</Option>
           <Option Id="NoCombineLuts">1</Option>
-          <Option Id="ReTiming">1</Option>
           <Option Id="ResourceSharing">2</Option>
           <Option Id="ShregMinSize">5</Option>
         </Step>
@@ -688,9 +716,11 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a200tsbg484-1" ConstrsSet="constrs_1" Description="Similar to Peformance_Explore, but enables the physical optimization step (phys_opt_design) with the Explore directive after routing." AutoIncrementalCheckpoint="true" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/impl_1" LaunchOptions="-jobs 16 " AutoRQSDir="$PSRCDIR/utils_1/imports/impl_1" ParallelReportGen="true">
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a200tsbg484-1" ConstrsSet="constrs_1" Description="Similar to Peformance_Explore, but enables the physical optimization step (phys_opt_design) with the Explore directive after routing." AutoIncrementalCheckpoint="true" IncrementalCheckpoint="$PSRCDIR/utils_1/imports/impl_1/RV32IM72F5SPSoCTOP_routed.dcp" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/impl_1" LaunchOptions="-jobs 16 " AutoRQSDir="$PSRCDIR/utils_1/imports/impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Performance_ExplorePostRoutePhysOpt" Flow="Vivado Implementation 2025"/>
+        <StratHandle Name="Performance_ExplorePostRoutePhysOpt" Flow="Vivado Implementation 2025">
+          <Desc>Similar to Peformance_Explore, but enables the physical optimization step (phys_opt_design) with the Explore directive after routing.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design">
           <Option Id="Directive">0</Option>

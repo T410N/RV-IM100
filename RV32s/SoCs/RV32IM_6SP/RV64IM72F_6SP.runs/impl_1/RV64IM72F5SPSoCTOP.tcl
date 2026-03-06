@@ -1,5 +1,5 @@
 namespace eval ::optrace {
-  variable script "/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_6SP/RV64IM72F_6SP.runs/impl_1/RV64IM72F5SPSoCTOP.tcl"
+  variable script "/home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_6SP/RV64IM72F_6SP.runs/impl_1/RV64IM72F5SPSoCTOP.tcl"
   variable category "vivado_impl"
 }
 
@@ -105,12 +105,11 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
-  set_param xicom.use_bs_reader 1
   set_param chipscope.maxJobs 4
   set_param general.usePosixSpawnForFork 1
   set_param runs.launchOptions { -jobs 16  }
   open_checkpoint RV64IM72F5SPSoCTOP_postroute_physopt.dcp
-  set_property webtalk.parent_dir /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_6SP/RV64IM72F_6SP.cache/wt [current_project]
+  set_property webtalk.parent_dir /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_6SP/RV64IM72F_6SP.cache/wt [current_project]
 set_property TOP RV64IM72F5SPSoCTOP [current_fileset]
 OPTRACE "read constraints: write_bitstream" START { }
 OPTRACE "read constraints: write_bitstream" END { }
