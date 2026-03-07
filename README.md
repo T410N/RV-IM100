@@ -63,5 +63,17 @@ Benchmarked 12 Different extension/clock-speed/architecture setups.
 - Resource Utilization: `LUT`, `FF`, `DSP`, `BRAM`, `LUTRAM`
 - Synthesized Area: `mm^2`
 
+### Benchmark Results
+
+<details>
+  #### RV64IM72F_5SP
+  <img width="1556" height="2622" alt="image" src="https://github.com/user-attachments/assets/c0c981fd-2355-4de4-bbaf-c169b4c7b12a" />
+  <img width="1556" height="966" alt="image" src="https://github.com/user-attachments/assets/d1aa85fe-f2a0-4032-8dc7-145ff3de1b79" />
+
+  - Performance
+    - 80808 DPS = 1.15 DMIPS/MHz @ 40MHz
+    - 91 Iterations/Sec = 2.33 Coremarks/MHz @ 39MHz
+</details>
+
 ## Performance Analysis
 Explanation about the timing closure process and reasoning of the impact on performance from the architectural changes.
