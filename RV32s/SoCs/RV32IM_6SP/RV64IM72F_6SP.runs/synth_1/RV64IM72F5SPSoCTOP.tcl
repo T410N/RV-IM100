@@ -56,12 +56,8 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param checkpoint.writeSynthRtdsInDcp 1
 set_param xicom.use_bs_reader 1
-set_param chipscope.maxJobs 4
 set_param general.usePosixSpawnForFork 1
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a200tsbg484-1
 
@@ -149,6 +145,8 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 read_xdc /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_6SP/RV64IM72F_6SP.srcs/constrs_1/imports/RV64IM6SP_FPGA/RV32I46F_5SP_Debug_XDC.xdc
 set_property used_in_implementation false [get_files /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_6SP/RV64IM72F_6SP.srcs/constrs_1/imports/RV64IM6SP_FPGA/RV32I46F_5SP_Debug_XDC.xdc]
 
+read_xdc dont_touch.xdc
+set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 
 read_checkpoint -auto_incremental -incremental /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_6SP/RV64IM72F_6SP.srcs/utils_1/imports/synth_1/RV64IM72F5SPSoCTOP.dcp

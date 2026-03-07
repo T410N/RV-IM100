@@ -4,7 +4,7 @@
 # Clock: 50MHz
 # Memory: ROM 64KB @ 0x00000000, RAM 32KB @ 0x10000000
 
-CROSS_COMPILE ?= riscv32-unknown-elf-
+CROSS_COMPILE ?= riscv64-unknown-elf-
 CC      = $(CROSS_COMPILE)gcc
 OBJCOPY = $(CROSS_COMPILE)objcopy
 OBJDUMP = $(CROSS_COMPILE)objdump
@@ -20,7 +20,7 @@ ASM_SRC  = crt0.S
 LDSCRIPT = linker.ld
 
 # Architecture flags - RV32I with Zicsr extension
-ARCH_FLAGS = -march=rv32i_zicsr -mabi=ilp32
+ARCH_FLAGS = -march=rv32im_zicsr -mabi=ilp32
 
 # CoreMark configuration
 # ITERATIONS: Number of benchmark iterations
@@ -32,7 +32,7 @@ ITERATIONS ?= 0
 TOTAL_DATA_SIZE ?= 2000
 
 # Compiler flags string for reporting
-FLAGS_STR = "-O2 -march=rv32i_zicsr -mabi=ilp32 -fno-common -funroll-loops"
+FLAGS_STR = "-O2 -march=rv32im_zicsr -mabi=ilp32 -fno-common -funroll-loops"
 
 # CoreMark flags
 CM_CFLAGS  = -DITERATIONS=$(ITERATIONS)
@@ -57,7 +57,7 @@ CFLAGS  = $(ARCH_FLAGS)
 CFLAGS += $(OPT_FLAGS) $(WARN_FLAGS) $(CODE_FLAGS)
 CFLAGS += $(CM_CFLAGS)
 
-ASFLAGS = $(ARCH_FLAGS) -Wa,-march=rv32i_zicsr
+ASFLAGS = $(ARCH_FLAGS) -Wa,-march=rv32im_zicsr
 
 # Linker flags
 LDFLAGS  = $(ARCH_FLAGS)

@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1772721360" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/RV64IM72F5SPSoCTOP.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1772791258" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/RV64IM72F5SPSoCTOP.dcp">
+  <File Type="VDS-TIMING-PB" Name="RV64IM72F5SPSoCTOP_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="RV64IM72F5SPSoCTOP_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="RV64IM72F5SPSoCTOP.dcp"/>
-  <File Type="RDS-RDS" Name="RV64IM72F5SPSoCTOP.vds"/>
-  <File Type="RDS-UTIL" Name="RV64IM72F5SPSoCTOP_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="RV64IM72F5SPSoCTOP_utilization_synth.pb"/>
-  <File Type="PA-TCL" Name="RV64IM72F5SPSoCTOP.tcl"/>
+  <File Type="RDS-UTIL" Name="RV64IM72F5SPSoCTOP_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="RV64IM72F5SPSoCTOP_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="RV64IM72F5SPSoCTOP.vds"/>
   <File Type="REPORTS-TCL" Name="RV64IM72F5SPSoCTOP_reports.tcl"/>
+  <File Type="PA-TCL" Name="RV64IM72F5SPSoCTOP.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/benchmarks/dhrystones/dhrystone_RV32IM_50MHz.mem">
@@ -37,6 +40,13 @@
         <Attr Name="ImportPath" Val="$PPRDIR/../../../benchmarks/dhrystones/dhrystone_RV32IM_53MHz.mem"/>
         <Attr Name="ImportTime" Val="1772721316"/>
         <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/clk_wiz_0/clk_wiz_0.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
@@ -481,5 +491,4 @@
       <Option Id="ShregMinSize">5</Option>
     </Step>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
 </GenRun>
