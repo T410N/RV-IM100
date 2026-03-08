@@ -93,7 +93,7 @@ module RV32IM72F7SP #(
     wire [XLEN-1:0] data_memory_read_data;
 	wire [XLEN-1:0] byte_enable_logic_register_file_write_data;
     wire [XLEN-1:0] data_memory_write_data;
-    wire [7:0] write_mask;
+    wire [3:0] write_mask;
     wire write_done;
 
     // CSR File
@@ -436,7 +436,7 @@ module RV32IM72F7SP #(
         .address(data_memory_address),
         .write_data(data_memory_write_data),
         .write_mask(write_mask),
-        .rom_read_data(rom_read_data),
+        .rom_read_data(rom_read_data_safe),
 
         .write_done(write_done),
         .read_data(data_memory_read_data)
@@ -965,6 +965,33 @@ module RV32IM72F7SP #(
             instruction_pc <= pc;
         end
     end
+    
+    reg [XLEN-1:0] rom_read_data_held;
+    wire [XLEN-1:0] rom_read_data_safe;
+    reg EX_EX2_stall_reg;
+    
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            EX_EX2_stall_reg <= 1'b0;
+        end
+        else if (EX_EX2_stall) begin
+            EX_EX2_stall_reg <= 1'b1;
+        end 
+        else if (!EX_EX2_stall) begin
+            EX_EX2_stall_reg <= 1'b0;
+        end
+    end
+    
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            rom_read_data_held <= {XLEN{1'b0}};
+        end
+        else if (clk_enable && !EX_EX2_stall) begin
+            rom_read_data_held <= rom_read_data;
+        end
+    end
+    
+    assign rom_read_data_safe = EX_EX2_stall_reg ? rom_read_data_held : rom_read_data;
 
     // Retire stage registers update
     always @(posedge clk or posedge reset) begin

@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.runs/synth_1/RV64IM72F5SPSoCTOP.tcl"
+  variable script "/home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.runs/synth_1/RV64IM72F5SPSoCTOP.tcl"
   variable category "vivado_synth"
 }
 
@@ -66,83 +66,85 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.cache/wt [current_project]
-set_property parent.project_path /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.xpr [current_project]
+set_property webtalk.parent_dir /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.cache/wt [current_project]
+set_property parent.project_path /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.xpr [current_project]
 set_property XPM_LIBRARIES XPM_CDC [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.cache/ip [current_project]
+set_property ip_output_repo /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog {
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/headers/alu_op.vh
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/headers/rtype_mul_funct3.vh
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/headers/itype_funct3.vh
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/headers/opcode.vh
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/headers/branch_funct3.vh
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/headers/rtype_funct3.vh
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/headers/csr_funct3.vh
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/headers/store_funct3.vh
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/headers/load_funct3.vh
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/headers/alu_src_select.vh
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/headers/rf_wd_select.vh
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/headers/trap.vh
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/headers/alu_op.vh
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/headers/itype_funct3.vh
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/headers/rtype_mul_funct3.vh
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/headers/opcode.vh
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/headers/branch_funct3.vh
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/headers/rtype_funct3.vh
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/headers/csr_funct3.vh
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/headers/store_funct3.vh
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/headers/load_funct3.vh
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/headers/rf_wd_select.vh
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/headers/alu_src_select.vh
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/headers/trap.vh
 }
 read_mem {
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/benchmarks/dhrystone.mem
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/benchmarks/coremark.mem
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/RV64s/dhrystone_RV64IM_52MHz.mem
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/RV64s/coremark_RV64IM_52MHz.mem
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/RV64s/dhrystone_RV64IM_53MHz.mem
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/RV64s/coremark_RV64IM_53MHz.mem
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/RV64s/coremark_RV64IM_54MHz.mem
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/RV64s/dhrystone_RV64IM_54MHz.mem
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/RV64s/coremark_RV64IM_55MHz.mem
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/RV64s/dhrystone_RV64IM_55MHz.mem
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/benchmarks/dhrystone.mem
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/benchmarks/coremark.mem
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/RV64s/dhrystone_RV64IM_52MHz.mem
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/RV64s/coremark_RV64IM_52MHz.mem
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/RV64s/dhrystone_RV64IM_53MHz.mem
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/RV64s/coremark_RV64IM_53MHz.mem
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/RV64s/coremark_RV64IM_54MHz.mem
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/RV64s/dhrystone_RV64IM_54MHz.mem
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/RV64s/coremark_RV64IM_55MHz.mem
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/RV64s/dhrystone_RV64IM_55MHz.mem
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/dhrystones/dhrystone_RV32IM_50MHz.mem
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/dhrystones/dhrystone_RV32IM_100MHz.mem
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/dhrystones/dhrystone_RV32IM_73MHz.mem
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/dhrystones/dhrystone_RV32IM_72MHz.mem
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/coremarks/coremark_RV32IM_72MHz.mem
 }
 read_verilog -library xil_defaultlib {
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/ALU.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/ALU_Controller.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/ALU_DWORD.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/ALU_WORD.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Branch_Logic.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Branch_Predictor.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Byte_Enable_Logic.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/CSR_File.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Control_Unit.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Data_Memory.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Divider_DWORD.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Divider_WORD.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/EX_EX2_Register.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/EX_MEM_Register.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Exception_Detector.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Forward_Unit.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Hazard_Unit.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/ID_EX_Register.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/IF_IO_Register.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/IO_ID_Register.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Immediate_Generator.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Instruction_Decoder.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Instruction_Memory.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/MEM_WB_Register.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/MMIO_Interface.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Multiplier_DWORD.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Multiplier_WORD.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/PC_Controller.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/PC_Plus_4.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Program_Counter.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Register_File.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Trap_Controller.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/UART_TX.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Unified_UART_Controller.v
-  /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/72F6SP_SoC_TOP.v
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/ALU.v
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/ALU_Controller.v
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/ALU_WORD.v
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Branch_Logic.v
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Branch_Predictor.v
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Byte_Enable_Logic.v
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/CSR_File.v
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Control_Unit.v
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Data_Memory.v
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Divider_WORD.v
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/EX_EX2_Register.v
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/EX_MEM_Register.v
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Exception_Detector.v
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Forward_Unit.v
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Hazard_Unit.v
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/ID_EX_Register.v
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/IF_IO_Register.v
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/IO_ID_Register.v
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Immediate_Generator.v
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Instruction_Decoder.v
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Instruction_Memory.v
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/MEM_WB_Register.v
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/MMIO_Interface.v
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Multiplier_WORD.v
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/PC_Controller.v
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/PC_Plus_4.v
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Program_Counter.v
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Register_File.v
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Trap_Controller.v
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/UART_TX.v
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/Unified_UART_Controller.v
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/72F6SP_SoC_TOP.v
 }
-read_ip -quiet /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
-set_property used_in_implementation false [get_files -all /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
-set_property used_in_implementation false [get_files -all /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
-set_property used_in_implementation false [get_files -all /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
+read_ip -quiet /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+set_property used_in_implementation false [get_files -all /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
+set_property used_in_implementation false [get_files -all /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -153,12 +155,12 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/constrs_1/imports/FPGA_SoC/RV32I46F_5SP_Debug_XDC.xdc
-set_property used_in_implementation false [get_files /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/constrs_1/imports/FPGA_SoC/RV32I46F_5SP_Debug_XDC.xdc]
+read_xdc /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/constrs_1/imports/FPGA_SoC/RV32I46F_5SP_Debug_XDC.xdc
+set_property used_in_implementation false [get_files /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/constrs_1/imports/FPGA_SoC/RV32I46F_5SP_Debug_XDC.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/utils_1/imports/synth_1/RV64IM72F5SPSoCTOP.dcp
+read_checkpoint -auto_incremental -incremental /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/utils_1/imports/synth_1/RV64IM72F5SPSoCTOP.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

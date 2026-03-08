@@ -34,7 +34,7 @@ module ID_EX_Register #(
     input wire [XLEN-1:0] ID_read_data1,
     input wire [XLEN-1:0] ID_read_data2,
     input wire [4:0] ID_rs1,
-    input wire [5:0] ID_rs2,
+    input wire [4:0] ID_rs2,
     input wire [XLEN-1:0] ID_imm,
     input wire [XLEN-1:0] ID_csr_read_data,
 
@@ -61,7 +61,7 @@ module ID_EX_Register #(
     output reg [XLEN-1:0] EX_read_data1,
     output reg [XLEN-1:0] EX_read_data2,
     output reg [4:0] EX_rs1,
-    output reg [5:0] EX_rs2,
+    output reg [4:0] EX_rs2,
     output reg [XLEN-1:0] EX_imm,
     output reg [XLEN-1:0] EX_csr_read_data
 );

@@ -110,7 +110,7 @@ module RV64IM72F5SPSoCTOP #(
     );
     
     // CPU Core with MMIO Interface
-    RV64IM72F6SP #(.XLEN(XLEN)) rv64im72f_6sp (
+    RV32IM72F7SP #(.XLEN(XLEN)) rv32im72f_7sp (
         .clk(clk_cpu),
         .clk_enable(cpu_clk_enable),
         .reset(internal_reset),

@@ -24,7 +24,7 @@ INC_FLAGS = -I.
 # Dhrystone flags
 DHRY_CFLAGS  = -std=gnu89
 DHRY_CFLAGS += -DTIMES -DNOENUM -DDHRY_ITERS=300000
-DHRY_CFLAGS += -DHZ=62000000
+DHRY_CFLAGS += -DHZ=72000000
 DHRY_CFLAGS += -Wno-implicit -Wno-return-type -Wno-builtin-declaration-mismatch
 
 # Optimization

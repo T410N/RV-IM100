@@ -1,7 +1,7 @@
-`include "./headers/alu_op.vh"
+`include "./alu_op.vh"
 
 module ALU #(
-    parameter XLEN = 64
+    parameter XLEN = 32
 )(
     input clk,
     input clk_enable,
@@ -51,7 +51,7 @@ module ALU #(
         .clk(clk),
         .clk_enable(clk_enable),
         .reset(reset),
-        .mul_start(mul_start && input_size_word),
+        .mul_start(mul_start),
         .src_A(src_A[31:0]),
         .src_B(src_B[31:0]),
         .signed_A(alu_op == `ALU_OP_MULH | alu_op == `ALU_OP_MULHSU),
@@ -66,7 +66,7 @@ module ALU #(
         .clk(clk),
         .clk_enable(clk_enable),
         .reset(reset),
-        .division_start(div_start && input_size_word),
+        .division_start(div_start),
         .is_signed(alu_op == `ALU_OP_DIV || alu_op == `ALU_OP_REM),
         .dividend(src_A[31:0]),
         .divisor(src_B[31:0]),

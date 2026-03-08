@@ -109,7 +109,7 @@ module ALUController (
 					default: alu_op = `ALU_OP_NOP;
 				endcase
 			end
-			`OPCODE_ITYPE, `OPCODE_ITYPE_WORD: begin
+			`OPCODE_ITYPE: begin
 				case (funct3)
 					`ITYPE_ADDI: alu_op = `ALU_OP_ADD;
 					`ITYPE_SLLI: alu_op = `ALU_OP_SLL;
@@ -129,7 +129,7 @@ module ALUController (
 					default: alu_op = `ALU_OP_NOP;
 				endcase
 			end 
-			`OPCODE_RTYPE, `OPCODE_RTYPE_WORD: begin
+			`OPCODE_RTYPE: begin
 				
 				if (funct7_0) begin // M extension operations
 					case (funct3)

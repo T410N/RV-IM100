@@ -78,7 +78,7 @@ LOAD /opt/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv32im/ilp32/libgcc.a
                 0x00001000                        __stack_size = DEFINED (__stack_size)?__stack_size:0x800
                 0x00001000                        __heap_size = DEFINED (__heap_size)?__heap_size:0x1000
 
-.text           0x00000000     0x4de8
+.text           0x00000000     0x4df0
  *(.text.init)
  .text.init     0x00000000       0x70 crt0.o
                 0x00000000                _start
@@ -151,64 +151,64 @@ LOAD /opt/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv32im/ilp32/libgcc.a
                 0x00003d74        0xc core_portme.o
                 0x00003d74                start_time
  .text.stop_time
-                0x00003d80        0xc core_portme.o
+                0x00003d80       0x10 core_portme.o
                 0x00003d80                stop_time
  .text.get_time
-                0x00003d8c       0x10 core_portme.o
-                0x00003d8c                get_time
+                0x00003d90       0x14 core_portme.o
+                0x00003d90                get_time
  .text.time_in_secs
-                0x00003d9c       0x14 core_portme.o
-                0x00003d9c                time_in_secs
+                0x00003da4       0x14 core_portme.o
+                0x00003da4                time_in_secs
  .text.portable_init
-                0x00003db0        0xc core_portme.o
-                0x00003db0                portable_init
+                0x00003db8        0xc core_portme.o
+                0x00003db8                portable_init
  .text.portable_fini
-                0x00003dbc        0x8 core_portme.o
-                0x00003dbc                portable_fini
- .text.number   0x00003dc4      0x658 ee_printf.o
+                0x00003dc4        0x8 core_portme.o
+                0x00003dc4                portable_fini
+ .text.number   0x00003dcc      0x658 ee_printf.o
  .text.ee_printf
-                0x0000441c      0x9cc ee_printf.o
-                0x0000441c                ee_printf
+                0x00004424      0x9cc ee_printf.o
+                0x00004424                ee_printf
  *(.gnu.linkonce.t.*)
 
-.rodata         0x00004de8      0x98c
+.rodata         0x00004df0      0x98c
  *(.rdata)
  *(.rodata .rodata.*)
  .rodata.main.str1.4
-                0x00004de8      0x52b core_main.o
+                0x00004df0      0x52b core_main.o
                                 0x421 (size before relaxing)
- *fill*         0x00005313        0x1 
+ *fill*         0x0000531b        0x1 
  .rodata.state_known_crc
-                0x00005314        0xa core_main.o
- *fill*         0x0000531e        0x2 
+                0x0000531c        0xa core_main.o
+ *fill*         0x00005326        0x2 
  .rodata.matrix_known_crc
-                0x00005320        0xa core_main.o
- *fill*         0x0000532a        0x2 
+                0x00005328        0xa core_main.o
+ *fill*         0x00005332        0x2 
  .rodata.list_known_crc
-                0x0000532c        0xa core_main.o
+                0x00005334        0xa core_main.o
  .rodata.str1.4
-                0x00005336        0x0 core_state.o
+                0x0000533e        0x0 core_state.o
                                  0xad (size before relaxing)
- *fill*         0x00005336        0x2 
+ *fill*         0x0000533e        0x2 
  .rodata.errpat
-                0x00005338       0x10 core_state.o
+                0x00005340       0x10 core_state.o
  .rodata.scipat
-                0x00005348       0x10 core_state.o
+                0x00005350       0x10 core_state.o
  .rodata.floatpat
-                0x00005358       0x10 core_state.o
+                0x00005360       0x10 core_state.o
  .rodata.intpat
-                0x00005368       0x10 core_state.o
+                0x00005370       0x10 core_state.o
  .rodata.get_seed_32
-                0x00005378       0x18 core_util.o
- .rodata        0x00005390      0x200 core_util.o
+                0x00005380       0x18 core_util.o
+ .rodata        0x00005398      0x200 core_util.o
  .rodata.number.str1.4
-                0x00005590        0x0 ee_printf.o
+                0x00005598        0x0 ee_printf.o
                                  0x4d (size before relaxing)
  .rodata.ee_printf.str1.4
-                0x00005590        0x0 ee_printf.o
+                0x00005598        0x0 ee_printf.o
                                   0x7 (size before relaxing)
  .rodata.ee_printf
-                0x00005590      0x1e4 ee_printf.o
+                0x00005598      0x1e4 ee_printf.o
  *(.gnu.linkonce.r.*)
  *(.srodata.cst16)
  *(.srodata.cst8)
@@ -216,16 +216,16 @@ LOAD /opt/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv32im/ilp32/libgcc.a
  *(.srodata.cst2)
  *(.srodata .srodata.*)
 
-.rela.dyn       0x00005774        0x0
+.rela.dyn       0x0000577c        0x0
  .rela.text.init
-                0x00005774        0x0 crt0.o
+                0x0000577c        0x0 crt0.o
 
 .srodata
  *(.srodata .srodata.*)
-                0x00005774                        _etext = .
+                0x0000577c                        _etext = .
                 [!provide]                        PROVIDE (etext = .)
 
-.data           0x10000000        0xc load address 0x00005774
+.data           0x10000000        0x8 load address 0x0000577c
                 0x10000000                        _data_start = .
                 0x10000000                        __DATA_BEGIN__ = .
  *(.data .data.*)
@@ -236,28 +236,28 @@ LOAD /opt/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv32im/ilp32/libgcc.a
  .sdata.default_num_contexts
                 0x10000000        0x4 core_portme.o
                 0x10000000                default_num_contexts
- .sdata.seed4_volatile
-                0x10000004        0x4 core_portme.o
-                0x10000004                seed4_volatile
  .sdata.seed3_volatile
-                0x10000008        0x4 core_portme.o
-                0x10000008                seed3_volatile
+                0x10000004        0x4 core_portme.o
+                0x10000004                seed3_volatile
  *(.sdata2 .sdata2.*)
  *(.gnu.linkonce.s.*)
-                0x1000000c                        _data_end = .
-                0x00005774                        _data_load = LOADADDR (.data)
+                0x10000008                        _data_end = .
+                0x0000577c                        _data_load = LOADADDR (.data)
 
-.bss            0x1000000c       0x14 load address 0x00005780
-                0x1000000c                        _bss_start = .
-                0x1000000c                        __BSS_START__ = .
+.bss            0x10000008       0x18 load address 0x00005784
+                0x10000008                        _bss_start = .
+                0x10000008                        __BSS_START__ = .
  *(.sbss .sbss.*)
  .sbss.stop_time_val
-                0x1000000c        0x4 core_portme.o
+                0x10000008        0x4 core_portme.o
  .sbss.start_time_val
-                0x10000010        0x4 core_portme.o
+                0x1000000c        0x4 core_portme.o
  .sbss.seed5_volatile
+                0x10000010        0x4 core_portme.o
+                0x10000010                seed5_volatile
+ .sbss.seed4_volatile
                 0x10000014        0x4 core_portme.o
-                0x10000014                seed5_volatile
+                0x10000014                seed4_volatile
  .sbss.seed2_volatile
                 0x10000018        0x4 core_portme.o
                 0x10000018                seed2_volatile
@@ -272,7 +272,7 @@ LOAD /opt/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv32im/ilp32/libgcc.a
                 0x10000020                        _bss_end = .
                 0x10000020                        __BSS_END__ = .
 
-.heap           0x10000020     0x1000 load address 0x00005780
+.heap           0x10000020     0x1000 load address 0x00005788
                 [!provide]                        PROVIDE (__heap_start = .)
                 [!provide]                        PROVIDE (_heap_start = .)
                 0x10001020                        . = (. + __heap_size)
@@ -280,7 +280,7 @@ LOAD /opt/riscv/lib/gcc/riscv64-unknown-elf/15.2.0/rv32im/ilp32/libgcc.a
                 [!provide]                        PROVIDE (__heap_end = .)
                 [!provide]                        PROVIDE (_heap_end = .)
 
-.stack          0x10001020     0x1000 load address 0x00005780
+.stack          0x10001020     0x1000 load address 0x00005790
                 [!provide]                        PROVIDE (__stack_bottom = .)
                 0x10002020                        . = (. + __stack_size)
  *fill*         0x10001020     0x1000 
