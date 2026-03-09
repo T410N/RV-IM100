@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date             : Sun Mar  8 13:29:08 2026
-| Host             : khwl-main-pc running 64-bit Ubuntu 24.04.4 LTS
+| Date             : Mon Mar  9 17:59:29 2026
+| Host             : khwl-ThinkPad-X1-Carbon-Gen-13 running 64-bit Ubuntu 24.04.4 LTS
 | Command          : report_power -file RV64IM72F5SPSoCTOP_power_routed.rpt -pb RV64IM72F5SPSoCTOP_power_summary_routed.pb -rpx RV64IM72F5SPSoCTOP_power_routed.rpx
 | Design           : RV64IM72F5SPSoCTOP
 | Device           : xc7a200tsbg484-1
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.319        |
+| Total On-Chip Power (W)  | 0.317        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.166        |
+| Dynamic (W)              | 0.165        |
 | Device Static (W)        | 0.152        |
 | Effective TJA (C/W)      | 3.3          |
 | Max Ambient (C)          | 83.9         |
@@ -52,9 +52,9 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.011 |        5 |       --- |             --- |
-| Slice Logic              |     0.004 |     5757 |       --- |             --- |
-|   LUT as Logic           |     0.003 |     3021 |    133800 |            2.26 |
+| Clocks                   |     0.010 |        5 |       --- |             --- |
+| Slice Logic              |     0.004 |     5758 |       --- |             --- |
+|   LUT as Logic           |     0.003 |     3002 |    133800 |            2.24 |
 |   CARRY4                 |    <0.001 |      188 |     33450 |            0.56 |
 |   Register               |    <0.001 |     2190 |    267600 |            0.82 |
 |   LUT as Distributed RAM |    <0.001 |       44 |     46200 |            0.10 |
@@ -66,7 +66,7 @@ Table of Contents
 | DSPs                     |    <0.001 |        4 |       740 |            0.54 |
 | I/O                      |     0.002 |       12 |       285 |            4.21 |
 | Static Power             |     0.152 |          |           |                 |
-| Total                    |     0.319 |          |           |                 |
+| Total                    |     0.317 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.091 |       0.060 |      0.031 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.090 |       0.058 |      0.031 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.087 |       0.057 |      0.031 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.005 |       0.000 |      0.005 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.006 |       0.001 |      0.005 |       NA    | Unspecified | NA         |
@@ -147,10 +147,10 @@ Table of Contents
 +------------------------+-----------+
 | Name                   | Power (W) |
 +------------------------+-----------+
-| RV64IM72F5SPSoCTOP     |     0.166 |
+| RV64IM72F5SPSoCTOP     |     0.165 |
 |   clk_gen              |     0.113 |
 |     inst               |     0.113 |
-|   rv32im72f_7sp        |     0.050 |
+|   rv32im72f_7sp        |     0.049 |
 |     alu                |     0.003 |
 |       divider_word     |     0.001 |
 |       multiplier_word  |     0.001 |
@@ -159,7 +159,6 @@ Table of Contents
 |     ex_ex2_register    |     0.002 |
 |     ex_mem_register    |     0.002 |
 |     id_ex_register     |     0.004 |
-|     if_io_register     |     0.001 |
 |     instruction_memory |     0.018 |
 |     io_id_register     |     0.002 |
 |     mem_wb_register    |     0.002 |

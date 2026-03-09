@@ -29,7 +29,7 @@ module IF_IO_Register #(
 reg flush_reg;
 reg is_load_use_hazard;
 wire is_store = (EX2_opcode == `OPCODE_STORE);
-wire is_m_extend = (ID_opcode == `OPCODE_RTYPE || ID_opcode == `OPCODE_RTYPE_WORD) && (ID_funct7 == 7'b000_0001);
+wire is_m_extend = (ID_opcode == `OPCODE_RTYPE) && (ID_funct7 == 7'b000_0001);
 
 
 always @(posedge clk) begin
@@ -66,7 +66,7 @@ always @(posedge clk) begin
             IO_instruction <= IF_instruction;
         end
 
-        if (load_use_hazard && flush_reg) begin
+        if (load_use_hazard && flush_reg && is_load_use_hazard) begin
             is_load_use_hazard <= 1'b1;
         end 
     end
