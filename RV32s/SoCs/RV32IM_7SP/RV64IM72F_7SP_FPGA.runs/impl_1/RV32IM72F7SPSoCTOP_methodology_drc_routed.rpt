@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Sat Mar  7 13:52:56 2026
-| Host         : khwl-main-pc running 64-bit Ubuntu 24.04.4 LTS
+| Date         : Mon Mar  9 19:40:14 2026
+| Host         : khwl-ThinkPad-X1-Carbon-Gen-13 running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_methodology -file RV32IM72F7SPSoCTOP_methodology_drc_routed.rpt -pb RV32IM72F7SPSoCTOP_methodology_drc_routed.pb -rpx RV32IM72F7SPSoCTOP_methodology_drc_routed.rpx
 | Design       : RV32IM72F7SPSoCTOP
 | Device       : xc7a200tsbg484-1
@@ -23,13 +23,12 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max checks: <unlimited>
-             Checks found: 1147
+             Checks found: 1139
 +----------+----------+-----------------------------------------------------------+--------+
 | Rule     | Severity | Description                                               | Checks |
 +----------+----------+-----------------------------------------------------------+--------+
 | DPIR-1   | Warning  | Asynchronous driver check                                 | 111    |
 | SYNTH-5  | Warning  | Mapped onto distributed RAM because of timing constraints | 1024   |
-| SYNTH-6  | Warning  | Timing of a RAM block might be sub-optimal                | 8      |
 | SYNTH-10 | Warning  | Wide multiplier                                           | 4      |
 +----------+----------+-----------------------------------------------------------+--------+
 
@@ -5708,46 +5707,6 @@ Related violations: <none>
 SYNTH-5#1024 Warning
 Mapped onto distributed RAM because of timing constraints  
 The instance rv32im72f_7sp/data_memory/memory_reg_7936_8191_9_9 is implemented as distributed LUT RAM for the following reason: The timing constraints suggest that the chosen mapping will yield a better timing.
-Related violations: <none>
-
-SYNTH-6#1 Warning
-Timing of a RAM block might be sub-optimal  
-The timing for the instance rv32im72f_7sp/instruction_memory/instruction_reg_0, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
-Related violations: <none>
-
-SYNTH-6#2 Warning
-Timing of a RAM block might be sub-optimal  
-The timing for the instance rv32im72f_7sp/instruction_memory/instruction_reg_1, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
-Related violations: <none>
-
-SYNTH-6#3 Warning
-Timing of a RAM block might be sub-optimal  
-The timing for the instance rv32im72f_7sp/instruction_memory/instruction_reg_2, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
-Related violations: <none>
-
-SYNTH-6#4 Warning
-Timing of a RAM block might be sub-optimal  
-The timing for the instance rv32im72f_7sp/instruction_memory/instruction_reg_3, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
-Related violations: <none>
-
-SYNTH-6#5 Warning
-Timing of a RAM block might be sub-optimal  
-The timing for the instance rv32im72f_7sp/instruction_memory/instruction_reg_4, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
-Related violations: <none>
-
-SYNTH-6#6 Warning
-Timing of a RAM block might be sub-optimal  
-The timing for the instance rv32im72f_7sp/instruction_memory/instruction_reg_5, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
-Related violations: <none>
-
-SYNTH-6#7 Warning
-Timing of a RAM block might be sub-optimal  
-The timing for the instance rv32im72f_7sp/instruction_memory/instruction_reg_6, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
-Related violations: <none>
-
-SYNTH-6#8 Warning
-Timing of a RAM block might be sub-optimal  
-The timing for the instance rv32im72f_7sp/instruction_memory/instruction_reg_7, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
 Related violations: <none>
 
 SYNTH-10#1 Warning

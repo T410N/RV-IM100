@@ -56,12 +56,11 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param synth.incrementalSynthesisCache ./.Xil/Vivado-10714-khwl-main-pc/incrSyn
-set_param checkpoint.writeSynthRtdsInDcp 1
+set_param xicom.use_bs_reader 1
 set_param chipscope.maxJobs 4
+set_param tcl.statsThreshold 360
 set_param general.usePosixSpawnForFork 1
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
+set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a200tsbg484-1
 
@@ -109,6 +108,10 @@ read_mem {
   /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/coremarks/coremark_RV32IM_60MHz.mem
   /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/coremarks/coremark_RV32IM_59MHz.mem
   /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/coremarks/coremark_RV32IM_58MHz.mem
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/coremarks/coremark_RV32IM_100MHz.mem
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/coremarks/coremark_RV32IM_66MHz.mem
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/coremarks/coremark_RV32IM_63MHz.mem
+  /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/dhrystones/dhrystone_RV32IM_61MHz.mem
 }
 read_verilog -library xil_defaultlib {
   /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/ALU.v
@@ -162,6 +165,8 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 read_xdc /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP/RV64IM72F_7SP_FPGA.srcs/constrs_1/imports/FPGA_SoC/RV32I46F_5SP_Debug_XDC.xdc
 set_property used_in_implementation false [get_files /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP/RV64IM72F_7SP_FPGA.srcs/constrs_1/imports/FPGA_SoC/RV32I46F_5SP_Debug_XDC.xdc]
 
+read_xdc dont_touch.xdc
+set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 
 read_checkpoint -auto_incremental -incremental /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP/RV64IM72F_7SP_FPGA.srcs/utils_1/imports/synth_1/RV64IM72F5SPSoCTOP.dcp

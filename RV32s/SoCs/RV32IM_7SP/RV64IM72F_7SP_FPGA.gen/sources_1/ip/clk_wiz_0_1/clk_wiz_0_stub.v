@@ -2,10 +2,10 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-// Date        : Fri Mar  6 22:41:13 2026
+// Date        : Fri Mar  6 21:43:40 2026
 // Host        : khwl-main-pc running 64-bit Ubuntu 24.04.4 LTS
-// Command     : write_verilog -force -mode synth_stub
-//               /home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_7SP/RV64IM72F_7SP_FPGA.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top clk_wiz_0 -prefix
+//               clk_wiz_0_ clk_wiz_0_stub.v
 // Design      : clk_wiz_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a200tsbg484-1

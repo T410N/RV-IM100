@@ -97,8 +97,7 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
+set_msg_config -id {Common 17-41} -limit 10000000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Write Bitstream" START { ROLLUP_AUTO }
@@ -107,9 +106,9 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
-  set_param synth.incrementalSynthesisCache ./.Xil/Vivado-10714-khwl-main-pc/incrSyn
-  set_param checkpoint.writeSynthRtdsInDcp 1
+  set_param xicom.use_bs_reader 1
   set_param chipscope.maxJobs 4
+  set_param tcl.statsThreshold 360
   set_param general.usePosixSpawnForFork 1
   set_param runs.launchOptions { -jobs 16  }
   open_checkpoint RV32IM72F7SPSoCTOP_postroute_physopt.dcp

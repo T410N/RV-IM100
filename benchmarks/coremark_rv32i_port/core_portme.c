@@ -54,7 +54,7 @@ static inline ee_u32 read_mcycle32(void) {
 /* Timer resolution and ticks per second
  * CPU runs at 50MHz, so 50,000,000 ticks per second
  */
-#define EE_TICKS_PER_SEC 72000000
+#define EE_TICKS_PER_SEC 63000000
 
 static CORETIMETYPE start_time_val, stop_time_val;
 

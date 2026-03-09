@@ -41,7 +41,7 @@ module InstructionMemory #(
 	end
 	
 	initial begin
-		 $readmemh("./coremark_RV32IM_58MHz.mem", data);
+		 $readmemh("./dhrystone_RV32IM_61MHz.mem", data);
 		 /*
 		// ──────────────────────────────────────────────
 		// I-타입 ALU 명령어 (9개)
