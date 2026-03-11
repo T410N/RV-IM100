@@ -28,7 +28,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log RV64IM72F8SPSoCTOP.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source RV64IM72F8SPSoCTOP.tcl" );
+         "-log RV32IM72F8SPSoCTOP.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source RV32IM72F8SPSoCTOP.tcl" );
 
 
 

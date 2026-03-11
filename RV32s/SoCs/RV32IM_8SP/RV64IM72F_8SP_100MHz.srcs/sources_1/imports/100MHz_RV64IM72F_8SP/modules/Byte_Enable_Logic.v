@@ -60,7 +60,7 @@ module ByteEnableLogic #(
 						
 			case (funct3)
 				`STORE_SB: begin
-					data_memory_write_data = {8{register_file_read_data[7:0]}};
+					data_memory_write_data = {4{register_file_read_data[7:0]}};
 					
 					case (address[1:0])
 						2'b00: write_mask = 4'b0001;
@@ -70,7 +70,7 @@ module ByteEnableLogic #(
 					endcase
 				end
 				`STORE_SH: begin
-					data_memory_write_data = {4{register_file_read_data[15:0]}};
+					data_memory_write_data = {2{register_file_read_data[15:0]}};
 					
 					case (address[1])
 						1'b0: write_mask = 4'b0011;

@@ -1,0 +1,110 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Wed Mar 11 16:21:04 2026
+| Host         : khwl-ThinkPad-X1-Carbon-Gen-13 running 64-bit Ubuntu 24.04.4 LTS
+| Command      : report_control_sets -verbose -file RV32IM72F8SPSoCTOP_control_sets_placed.rpt
+| Design       : RV32IM72F8SPSoCTOP
+| Device       : xc7a200t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    32 |
+|    Minimum number of control sets                        |    32 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   101 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    32 |
+| >= 0 to < 4        |     2 |
+| >= 4 to < 6        |     3 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |     1 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     2 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    22 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               6 |            4 |
+| No           | No                    | Yes                    |              48 |           24 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |              12 |            6 |
+| Yes          | No                    | Yes                    |             774 |          274 |
+| Yes          | Yes                   | No                     |            1347 |          381 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+---------------------------------------------------------------+--------------------------------------------------------------+------------------+----------------+--------------+
+|  Clock Signal  |                         Enable Signal                         |                       Set/Reset Signal                       | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+---------------------------------------------------------------+--------------------------------------------------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG | uart_tx/tx_i_1_n_0                                            | internal_reset                                               |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG |                                                               | reset                                                        |                2 |              3 |         1.50 |
+|  clk_IBUF_BUFG | uart_tx/bit_counter[3]_i_1__0_n_0                             | internal_reset                                               |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG | rv32im72f_8sp/alu/multiplier_word/FSM_onehot_stage[3]_i_1_n_0 | internal_reset                                               |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | rv32im72f_8sp/alu/divider_word/FSM_onehot_state[3]_i_1_n_0    | internal_reset                                               |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG |                                                               |                                                              |                4 |              6 |         1.50 |
+|  clk_IBUF_BUFG | uart_tx/shift_reg[8]_i_1_n_0                                  | internal_reset                                               |                3 |              9 |         3.00 |
+|  clk_IBUF_BUFG | mmio_interface/E[0]                                           | internal_reset                                               |                5 |             10 |         2.00 |
+|  clk_IBUF_BUFG | cpu_clk_enable                                                |                                                              |                6 |             12 |         2.00 |
+|  clk_IBUF_BUFG | cpu_clk_enable                                                | rv32im72f_8sp/ex_ex2_register/ID_branch_estimation0_out      |                5 |             13 |         2.60 |
+|  clk_IBUF_BUFG | rv32im72f_8sp/trap_controller/WB_raw_imm_reg[2]_0[0]          | internal_reset                                               |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG | rv32im72f_8sp/trap_controller/WB_raw_imm_reg[2][0]            | internal_reset                                               |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | rv32im72f_8sp/data_memory/instruction0                        | internal_reset                                               |                6 |             32 |         5.33 |
+|  clk_IBUF_BUFG | rv32im72f_8sp/trap_controller/E[0]                            | internal_reset                                               |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG | rv32im72f_8sp/exception_detector/cpu_clk_enable_reg[0]        | internal_reset                                               |               18 |             32 |         1.78 |
+|  clk_IBUF_BUFG | rv32im72f_8sp/trap_controller/mmio_uart_status_hit_reg0       | rv32im72f_8sp/exception_detector/MEM_WB_flush                |               22 |             33 |         1.50 |
+|  clk_IBUF_BUFG | rv32im72f_8sp/exr_ex_register/E[0]                            | internal_reset                                               |               13 |             34 |         2.62 |
+|  clk_IBUF_BUFG | rv32im72f_8sp/alu/divider_word/quotient_sign4_out             | internal_reset                                               |                9 |             34 |         3.78 |
+|  clk_IBUF_BUFG | rv32im72f_8sp/alu/multiplier_word/cpu_clk_enable_reg          | internal_reset                                               |               14 |             37 |         2.64 |
+|  clk_IBUF_BUFG |                                                               | internal_reset                                               |               22 |             45 |         2.05 |
+|  clk_IBUF_BUFG | rv32im72f_8sp/alu/multiplier_word/prod_low[31]_i_1_n_0        | internal_reset                                               |               23 |             64 |         2.78 |
+|  clk_IBUF_BUFG | rv32im72f_8sp/alu/divider_word/quotient_reg[31]_i_1_n_0       | internal_reset                                               |               20 |             64 |         3.20 |
+|  clk_IBUF_BUFG | rv32im72f_8sp/csr_file/minstret[0]                            | internal_reset                                               |               17 |             64 |         3.76 |
+|  clk_IBUF_BUFG | rv32im72f_8sp/alu/multiplier_word/result_sign_s11_out         | internal_reset                                               |               20 |             65 |         3.25 |
+|  clk_IBUF_BUFG | rv32im72f_8sp/alu/divider_word/bit_counter[5]_i_1_n_0         | internal_reset                                               |               26 |             70 |         2.69 |
+|  clk_IBUF_BUFG | rv32im72f_8sp/mem_wb_register/p_0_in2_out                     |                                                              |               11 |             88 |         8.00 |
+|  clk_IBUF_BUFG | rv32im72f_8sp/ex_ex2_register/cpu_clk_enable_reg[0]           | rv32im72f_8sp/ex_ex2_register/SR[0]                          |               22 |             96 |         4.36 |
+|  clk_IBUF_BUFG | cpu_clk_enable                                                | internal_reset                                               |               68 |            150 |         2.21 |
+|  clk_IBUF_BUFG | rv32im72f_8sp/trap_controller/mmio_uart_status_hit_reg0       | rv32im72f_8sp/ex_ex2_register/EX2_register_write_enable0_out |               78 |            266 |         3.41 |
+|  clk_IBUF_BUFG | rv32im72f_8sp/trap_controller/mmio_uart_status_hit_reg0       | rv32im72f_8sp/exception_detector/SR[0]                       |               75 |            286 |         3.81 |
+|  clk_IBUF_BUFG | rv32im72f_8sp/trap_controller/mmio_uart_status_hit_reg0       | rv32im72f_8sp/ex_ex2_register/cpu_clk_enable_reg_1[0]        |               91 |            300 |         3.30 |
+|  clk_IBUF_BUFG | rv32im72f_8sp/ex_ex2_register/E[0]                            | rv32im72f_8sp/ex_ex2_register/ID_branch_estimation0_out      |               88 |            353 |         4.01 |
++----------------+---------------------------------------------------------------+--------------------------------------------------------------+------------------+----------------+--------------+
+
+

@@ -4,7 +4,7 @@
 <!-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.                   -->
 <!-- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.   -->
 
-<Project Product="Vivado" Version="7" Minor="71" Path="/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_8SP/RV64IM72F_8SP_100MHz.xpr">
+<Project Product="Vivado" Version="7" Minor="71" Path="/home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_8SP/RV64IM72F_8SP_100MHz.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="f9114b90d35b4801a3e9d5f41a2fc5c8"/>
@@ -121,6 +121,22 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/imports/dhrystones/dhrystone_RV32IM_100MHz.mem">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../benchmarks/dhrystones/dhrystone_RV32IM_100MHz.mem"/>
+          <Attr Name="ImportTime" Val="1772880523"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/coremarks/coremark_RV32IM_100MHz.mem">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../benchmarks/coremarks/coremark_RV32IM_100MHz.mem"/>
+          <Attr Name="ImportTime" Val="1773047467"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/imports/100MHz_RV64IM72F_8SP/modules/headers/alu_op.vh">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/100MHz_RV64IM72F_8SP/modules/headers/alu_op.vh"/>
@@ -139,18 +155,9 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/100MHz_RV64IM72F_8SP/modules/headers/opcode.vh">
+      <File Path="$PSRCDIR/sources_1/imports/100MHz_RV64IM72F_8SP/modules/headers/rtype_funct3.vh">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/100MHz_RV64IM72F_8SP/modules/headers/opcode.vh"/>
-          <Attr Name="ImportTime" Val="1769526535"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-          <Attr Name="IsVisible" Val="1"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/100MHz_RV64IM72F_8SP/modules/headers/rtype_mul_funct3.vh">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/100MHz_RV64IM72F_8SP/modules/headers/rtype_mul_funct3.vh"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/100MHz_RV64IM72F_8SP/modules/headers/rtype_funct3.vh"/>
           <Attr Name="ImportTime" Val="1769526535"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -166,9 +173,18 @@
           <Attr Name="IsVisible" Val="1"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/100MHz_RV64IM72F_8SP/modules/headers/rtype_funct3.vh">
+      <File Path="$PSRCDIR/sources_1/imports/100MHz_RV64IM72F_8SP/modules/headers/rtype_mul_funct3.vh">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/100MHz_RV64IM72F_8SP/modules/headers/rtype_funct3.vh"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/100MHz_RV64IM72F_8SP/modules/headers/rtype_mul_funct3.vh"/>
+          <Attr Name="ImportTime" Val="1769526535"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+          <Attr Name="IsVisible" Val="1"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/100MHz_RV64IM72F_8SP/modules/headers/opcode.vh">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/100MHz_RV64IM72F_8SP/modules/headers/opcode.vh"/>
           <Attr Name="ImportTime" Val="1769526535"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -197,15 +213,6 @@
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/100MHz_RV64IM72F_8SP/modules/ALU_Controller.v"/>
           <Attr Name="ImportTime" Val="1769851424"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/100MHz_RV64IM72F_8SP/modules/ALU_DWORD.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/100MHz_RV64IM72F_8SP/modules/ALU_DWORD.v"/>
-          <Attr Name="ImportTime" Val="1771422352"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -305,15 +312,6 @@
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/100MHz_RV64IM72F_8SP/modules/Data_Memory.v"/>
           <Attr Name="ImportTime" Val="1771387929"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Divider_DWORD.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/100MHz_RV64IM72F_8SP/modules/Divider_DWORD.v"/>
-          <Attr Name="ImportTime" Val="1769851416"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -463,15 +461,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Multiplier_DWORD.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/100MHz_RV64IM72F_8SP/modules/Multiplier_DWORD.v"/>
-          <Attr Name="ImportTime" Val="1769526535"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Multiplier_WORD.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/100MHz_RV64IM72F_8SP/modules/Multiplier_WORD.v"/>
@@ -564,7 +553,7 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="RV64IM72F8SPSoCTOP"/>
+        <Option Name="TopModule" Val="RV32IM72F8SPSoCTOP"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
       </Config>
     </FileSet>
@@ -586,7 +575,7 @@
       <Filter Type="Srcs"/>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="RV64IM72F8SPSoCTOP"/>
+        <Option Name="TopModule" Val="RV32IM72F8SPSoCTOP"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="TransportPathDelay" Val="0"/>

@@ -33,7 +33,7 @@ module InstructionMemory #(
 	always @(posedge clk) begin
 		if (clk_enable && !read_stall) begin
 			if (rom_access) begin
-				rom_read_data <= data[rom_address[15:2]]
+				rom_read_data <= data[rom_address[15:2]];
 			end
 			else begin
 				rom_read_data <= {XLEN{1'b0}};
@@ -42,7 +42,7 @@ module InstructionMemory #(
 	end
 	
 	initial begin
-		 $readmemh("./dhrystone_100MHz.mem", data);
+		 $readmemh("./coremark_RV32IM_100MHz.mem", data);
 		// ──────────────────────────────────────────────
 		// Trap Handler 시작 주소. mtvec = 0000_1000 = 4096 ÷ 4 Byte = 1024
 		// Trap Handler 진입 시 기존 GPR의 레지스터 내용들을 별도의 메모리 Heap 구역에 store하고 수행해야하지만, 현재 단계에서는 생략함.

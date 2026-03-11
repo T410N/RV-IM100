@@ -87,7 +87,7 @@ module RV32IM72F8SP #(
     wire [XLEN-1:0] data_memory_read_data;
     wire [XLEN-1:0] byte_enable_logic_register_file_write_data;
     wire [XLEN-1:0] data_memory_write_data;
-    wire [7:0] write_mask;
+    wire [3:0] write_mask;
     wire write_done;
 
     // CSR File
@@ -397,7 +397,7 @@ module RV32IM72F8SP #(
         case (EXR_alu_src_B_select)
             `ALU_SRC_B_RD2:   EXR_normal_source_b = EXR_read_data2;
             `ALU_SRC_B_IMM:   EXR_normal_source_b = EXR_imm;
-            `ALU_SRC_B_SHAMT: EXR_normal_source_b = {26'b0, EXR_imm[5:0]};
+            `ALU_SRC_B_SHAMT: EXR_normal_source_b = {26'b0, EXR_imm[4:0]};
             `ALU_SRC_B_CSR:   EXR_normal_source_b = csr_forward_data;
             default:           EXR_normal_source_b = {XLEN{1'b0}};
         endcase
@@ -442,6 +442,8 @@ module RV32IM72F8SP #(
     wire [11:0] IO_csr_address = IO_instruction[31:20];
     wire IO_valid_csr_address = (IO_csr_address == 12'hB00) ||
                                (IO_csr_address == 12'hB02) ||
+                               (IO_csr_address == 12'hB80) ||
+                               (IO_csr_address == 12'hB82) ||
                                (IO_csr_address == 12'hF11) ||
                                (IO_csr_address == 12'hF12) ||
                                (IO_csr_address == 12'hF14) ||
