@@ -27,6 +27,16 @@ module RV32I46F5SP_CORE #(
     output wire MMIO_data_memory_write_enable
 );
 
+    // IM interface (combinational)
+    assign im_pc = pc;
+
+    // DM interface (single-cycle)
+    assign dm_address = MEM_alu_result;
+    assign dm_write_data = data_memory_write_data;
+    assign dm_write_enable = MEM_memory_write && !mmio_uart_status_hit;
+    assign dm_write_mask = write_mask;
+    assign data_memory_read_data = dm_read_data;
+
     // Program Counter and PC Plus 4
     wire [XLEN-1:0] pc;
     wire [XLEN-1:0] pc_plus_4_signal;
@@ -336,19 +346,6 @@ module RV32I46F5SP_CORE #(
         .csr_ready(csr_ready)
     );
 
-    DataMemory data_memory (
-        .clk(clk),
-        .clk_enable(clk_enable),
-        .write_enable(MEM_memory_write && !mmio_uart_status_hit),
-        .address(MEM_alu_result),
-        .write_data(data_memory_write_data),
-        .write_mask(write_mask),
-        .rom_read_data(rom_read_data),
-        .rom_address(rom_address),
-
-        .read_data(data_memory_read_data)
-    );
-
     ExceptionDetector exception_detector (
         .clk(clk),
         .clk_enable(clk_enable),
@@ -468,13 +465,6 @@ module RV32I46F5SP_CORE #(
         .rs2(rs2),
         .rd(rd),
         .raw_imm(raw_imm)
-    );
-
-    InstructionMemory instruction_memory (
-        .pc(pc),
-        .instruction(im_instruction),
-        .rom_address(rom_address),
-        .rom_read_data(rom_read_data)
     );
 
     ProgramCounter program_counter (
