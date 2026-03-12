@@ -1,6 +1,7 @@
 `include "./alu_src_select.vh"
 `include "./rf_wd_select.vh"
 `include "./alu_op.vh"
+`include "./opcode.vh"
 
 module RV32IM72F8SP #(
     parameter XLEN = 32
@@ -308,6 +309,7 @@ module RV32IM72F8SP #(
     wire EX_EX2_stall;
     wire EX_MEM_stall;
     wire MEM_WB_stall;
+    wire retire_stall;
     wire store_hazard_ex;    // NEW
     wire store_hazard_ex2;
     wire store_hazard_mem;
@@ -763,7 +765,8 @@ module RV32IM72F8SP #(
         .EXR_EX_stall(EXR_EX_stall),
         .EX_EX2_stall(EX_EX2_stall),
         .EX_MEM_stall(EX_MEM_stall),
-        .MEM_WB_stall(MEM_WB_stall)
+        .MEM_WB_stall(MEM_WB_stall),
+        .retire_stall(retire_stall)
     );
 
     ImmediateGenerator immediate_generator (
@@ -1220,15 +1223,26 @@ module RV32IM72F8SP #(
             instruction_retired <= 1'b0;
         end 
         else if (clk_enable) begin
-            retire_rd <= WB_rd;
-            retire_register_write_enable <= WB_register_write_enable;
-            retire_opcode <= WB_opcode;
-            retire_alu_result <= WB_alu_result;
-            retire_imm <= WB_imm;
-            retire_pc_plus_4 <= WB_pc_plus_4;
-            retire_csr_read_data <= WB_csr_read_data;
-            retire_byte_enable_logic_register_file_write_data <= register_file_write_data;
-
+            if (retire_stall) begin
+                retire_rd <= retire_rd;
+                retire_register_write_enable <= retire_register_write_enable;
+                retire_opcode <= retire_opcode;
+                retire_alu_result <= retire_alu_result;
+                retire_imm <= retire_imm;
+                retire_pc_plus_4 <= retire_pc_plus_4;
+                retire_csr_read_data <= retire_csr_read_data;
+                retire_byte_enable_logic_register_file_write_data <= retire_byte_enable_logic_register_file_write_data;
+            end
+            else begin
+                retire_rd <= WB_rd;
+                retire_register_write_enable <= WB_register_write_enable;
+                retire_opcode <= WB_opcode;
+                retire_alu_result <= WB_alu_result;
+                retire_imm <= WB_imm;
+                retire_pc_plus_4 <= WB_pc_plus_4;
+                retire_csr_read_data <= WB_csr_read_data;
+                retire_byte_enable_logic_register_file_write_data <= register_file_write_data;
+            end
             if (!MEM_WB_stall && !MEM_WB_flush && WB_instruction != 32'h00000013) begin
                 instruction_retired <= 1'b1;
             end 
