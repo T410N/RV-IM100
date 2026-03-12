@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1772791258" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/RV64IM72F5SPSoCTOP.dcp">
-  <File Type="VDS-TIMING-PB" Name="RV64IM72F5SPSoCTOP_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="RV64IM72F5SPSoCTOP_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="RV64IM72F5SPSoCTOP.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="RV64IM72F5SPSoCTOP_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="RV64IM72F5SPSoCTOP_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="RV64IM72F5SPSoCTOP_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="RV64IM72F5SPSoCTOP.vds"/>
-  <File Type="REPORTS-TCL" Name="RV64IM72F5SPSoCTOP_reports.tcl"/>
-  <File Type="PA-TCL" Name="RV64IM72F5SPSoCTOP.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1773302256" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/RV64IM72F5SPSoCTOP.dcp">
+  <File Type="VDS-TIMING-PB" Name="RV32IM72F6SP_CORE_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="RV32IM72F6SP_CORE_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="RV32IM72F6SP_CORE.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="RV32IM72F6SP_CORE_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="RV32IM72F6SP_CORE_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="RV32IM72F6SP_CORE_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="RV32IM72F6SP_CORE.vds"/>
+  <File Type="REPORTS-TCL" Name="RV32IM72F6SP_CORE_reports.tcl"/>
+  <File Type="PA-TCL" Name="RV32IM72F6SP_CORE.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/benchmarks/dhrystones/dhrystone_RV32IM_50MHz.mem">
@@ -43,13 +43,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/ip/clk_wiz_0/clk_wiz_0.xci">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/imports/RV64IM6SP_FPGA/modules/headers/alu_op.vh">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../Documents/RV64IM6SP_FPGA/modules/headers/alu_op.vh"/>
@@ -68,9 +61,9 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/RV64IM6SP_FPGA/modules/headers/opcode.vh">
+    <File Path="$PSRCDIR/sources_1/imports/RV64IM6SP_FPGA/modules/headers/rtype_mul_funct3.vh">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../Documents/RV64IM6SP_FPGA/modules/headers/opcode.vh"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Documents/RV64IM6SP_FPGA/modules/headers/rtype_mul_funct3.vh"/>
         <Attr Name="ImportTime" Val="1769360173"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -86,18 +79,9 @@
         <Attr Name="IsVisible" Val="1"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/RV64IM6SP_FPGA/modules/headers/branch_funct3.vh">
+    <File Path="$PSRCDIR/sources_1/imports/RV64IM6SP_FPGA/modules/headers/opcode.vh">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../Documents/RV64IM6SP_FPGA/modules/headers/branch_funct3.vh"/>
-        <Attr Name="ImportTime" Val="1769360173"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-        <Attr Name="IsVisible" Val="1"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/RV64IM6SP_FPGA/modules/headers/rtype_mul_funct3.vh">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../Documents/RV64IM6SP_FPGA/modules/headers/rtype_mul_funct3.vh"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Documents/RV64IM6SP_FPGA/modules/headers/opcode.vh"/>
         <Attr Name="ImportTime" Val="1769360173"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -116,6 +100,15 @@
     <File Path="$PSRCDIR/sources_1/imports/RV64IM6SP_FPGA/modules/headers/csr_funct3.vh">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../Documents/RV64IM6SP_FPGA/modules/headers/csr_funct3.vh"/>
+        <Attr Name="ImportTime" Val="1769360173"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="IsVisible" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RV64IM6SP_FPGA/modules/headers/branch_funct3.vh">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Documents/RV64IM6SP_FPGA/modules/headers/branch_funct3.vh"/>
         <Attr Name="ImportTime" Val="1769360173"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -221,15 +214,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/RV64IM6SP_FPGA/modules/Data_Memory.v">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../Documents/RV64IM6SP_FPGA/modules/Data_Memory.v"/>
-        <Attr Name="ImportTime" Val="1769360167"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/imports/RV64IM6SP_FPGA/modules/Divider_WORD.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../Documents/RV64IM6SP_FPGA/modules/Divider_WORD.v"/>
@@ -329,27 +313,9 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/RV64IM6SP_FPGA/modules/Instruction_Memory.v">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../Documents/RV64IM6SP_FPGA/modules/Instruction_Memory.v"/>
-        <Attr Name="ImportTime" Val="1769363220"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/imports/RV64IM6SP_FPGA/modules/MEM_WB_Register.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../Documents/RV64IM6SP_FPGA/modules/MEM_WB_Register.v"/>
-        <Attr Name="ImportTime" Val="1769360167"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/RV64IM6SP_FPGA/modules/MMIO_Interface.v">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../Documents/RV64IM6SP_FPGA/modules/MMIO_Interface.v"/>
         <Attr Name="ImportTime" Val="1769360167"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -392,15 +358,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/RV64IM6SP_FPGA/modules/RV64IM72F_6SP.v">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../Documents/RV64IM6SP_FPGA/modules/RV64IM72F_6SP.v"/>
-        <Attr Name="ImportTime" Val="1769407107"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/imports/RV64IM6SP_FPGA/modules/Register_File.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../Documents/RV64IM6SP_FPGA/modules/Register_File.v"/>
@@ -419,28 +376,10 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/RV64IM6SP_FPGA/modules/UART_TX.v">
+    <File Path="$PSRCDIR/sources_1/imports/RV64IM6SP_FPGA/modules/RV64IM72F_6SP.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../Documents/RV64IM6SP_FPGA/modules/UART_TX.v"/>
-        <Attr Name="ImportTime" Val="1769360167"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/RV64IM6SP_FPGA/modules/Unified_UART_Controller.v">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../Documents/RV64IM6SP_FPGA/modules/Unified_UART_Controller.v"/>
-        <Attr Name="ImportTime" Val="1769362761"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/RV64IM6SP_FPGA/modules/72F6SP_SoC_TOP.v">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../Documents/RV64IM6SP_FPGA/modules/72F6SP_SoC_TOP.v"/>
-        <Attr Name="ImportTime" Val="1769361839"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Documents/RV64IM6SP_FPGA/modules/RV64IM72F_6SP.v"/>
+        <Attr Name="ImportTime" Val="1769407107"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -448,7 +387,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="RV64IM72F5SPSoCTOP"/>
+      <Option Name="TopModule" Val="RV32IM72F6SP_CORE"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
@@ -486,6 +425,7 @@
       <Option Id="Directive">7</Option>
       <Option Id="FsmExtraction">1</Option>
       <Option Id="KeepEquivalentRegisters">1</Option>
+      <Option Id="MoreOptsStr"><![CDATA[-mode out_of_context]]></Option>
       <Option Id="NoCombineLuts">1</Option>
       <Option Id="ResourceSharing">2</Option>
       <Option Id="ShregMinSize">5</Option>

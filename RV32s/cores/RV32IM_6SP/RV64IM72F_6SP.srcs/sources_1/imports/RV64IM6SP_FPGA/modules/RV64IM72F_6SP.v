@@ -2,19 +2,41 @@
 `include "./rf_wd_select.vh"
 `include "./alu_op.vh"
 
-module RV64IM72F6SP #(
+module RV32IM72F6SP_CORE #(
     parameter XLEN = 32
 )(
     input clk,
     input clk_enable,
     input reset,
     input UART_busy,
-    
+
+    // Instruction Memory Interface (external, combinational)
+    output wire [XLEN-1:0] im_pc,
+    input wire [31:0] im_instruction,
+
+    // Data Memory Interface (external, single-cycle)
+    output wire [XLEN-1:0] dm_address,
+    output wire [XLEN-1:0] dm_write_data,
+    output wire dm_write_enable,
+    output wire [3:0] dm_write_mask,
+    input wire [XLEN-1:0] dm_read_data,
+
+    // SoC Interface
     output wire [31:0] retire_instruction,
     output wire [XLEN-1:0] MMIO_data_memory_write_data,
     output wire [XLEN-1:0] MMIO_data_memory_address,
     output wire MMIO_data_memory_write_enable
 );
+
+    // IM interface (combinational)
+    assign im_pc = pc;
+
+    // DM interface (single-cycle)
+    assign dm_address = MEM_alu_result;
+    assign dm_write_data = data_memory_write_data;
+    assign dm_write_enable = MEM_memory_write && !mmio_uart_status_hit;
+    assign dm_write_mask = write_mask;
+    assign data_memory_read_data = dm_read_data;
 
     // Program Counter and  PC Plus 4
     wire [XLEN-1:0] pc;
@@ -27,10 +49,6 @@ module RV64IM72F6SP #(
     reg [31:0] instruction;
     wire [XLEN-1:0] IF_imm;
     wire [6:0] IF_opcode;
-
-    // ROM bypass signals (MEM stage instruction memory access)
-    wire [XLEN-1:0] rom_address;
-    wire [XLEN-1:0] rom_read_data;
 
     assign IF_imm = {{20{instruction[31]}}, instruction[7], instruction[30:25], instruction[11:8], 1'b0};
     assign IF_opcode = (instruction[6:0]);
@@ -416,19 +434,6 @@ module RV64IM72F6SP #(
         .csr_ready(csr_ready) 
     );
 
-    DataMemory data_memory (
-        .clk(clk),
-        .clk_enable(clk_enable),
-        .write_enable(MEM_memory_write && !mmio_uart_status_hit),
-        .address(MEM_alu_result),
-        .write_data(data_memory_write_data),
-        .write_mask(write_mask),
-        .rom_read_data(rom_read_data),
-        .rom_address(rom_address),
-
-        .read_data(data_memory_read_data)
-    );
-
     ExceptionDetector exception_detector (
         .clk(clk),
         .clk_enable(clk_enable),
@@ -599,14 +604,7 @@ module RV64IM72F6SP #(
 	    .rd(rd),
 	    .raw_imm(raw_imm)
     );
-
-    InstructionMemory instruction_memory (
-        .pc(pc),
-        .instruction(im_instruction),
-        .rom_address(rom_address),
-        .rom_read_data(rom_read_data)
-    );
-
+    
     ProgramCounter program_counter (
         .clk(clk),
         .clk_enable(clk_enable),

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1773046592" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/RV64IM72F5SPSoCTOP.dcp">
-  <File Type="VDS-TIMING-PB" Name="RV64IM72F5SPSoCTOP_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="RV64IM72F5SPSoCTOP_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="RV64IM72F5SPSoCTOP.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="RV64IM72F5SPSoCTOP_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="RV64IM72F5SPSoCTOP_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="RV64IM72F5SPSoCTOP_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="RV64IM72F5SPSoCTOP.vds"/>
-  <File Type="REPORTS-TCL" Name="RV64IM72F5SPSoCTOP_reports.tcl"/>
-  <File Type="PA-TCL" Name="RV64IM72F5SPSoCTOP.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1773302863" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/RV64IM72F5SPSoCTOP.dcp">
+  <File Type="VDS-TIMING-PB" Name="RV32IM72F7SP_CORE_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="RV32IM72F7SP_CORE_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="RV32IM72F7SP_CORE.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="RV32IM72F7SP_CORE_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="RV32IM72F7SP_CORE_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="RV32IM72F7SP_CORE_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="RV32IM72F7SP_CORE.vds"/>
+  <File Type="REPORTS-TCL" Name="RV32IM72F7SP_CORE_reports.tcl"/>
+  <File Type="PA-TCL" Name="RV32IM72F7SP_CORE.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/FPGA_SoC/benchmarks/dhrystone.mem">
@@ -149,15 +149,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/FPGA_SoC/modules/headers/itype_funct3.vh">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../dirty_ima_make_rv64/FPGA_SoC/modules/headers/itype_funct3.vh"/>
-        <Attr Name="ImportTime" Val="1769526535"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-        <Attr Name="IsVisible" Val="1"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/imports/FPGA_SoC/modules/headers/rtype_mul_funct3.vh">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../../dirty_ima_make_rv64/FPGA_SoC/modules/headers/rtype_mul_funct3.vh"/>
@@ -167,9 +158,18 @@
         <Attr Name="IsVisible" Val="1"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/FPGA_SoC/modules/headers/opcode.vh">
+    <File Path="$PSRCDIR/sources_1/imports/FPGA_SoC/modules/headers/rtype_funct3.vh">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../dirty_ima_make_rv64/FPGA_SoC/modules/headers/opcode.vh"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../dirty_ima_make_rv64/FPGA_SoC/modules/headers/rtype_funct3.vh"/>
+        <Attr Name="ImportTime" Val="1769526535"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="IsVisible" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/FPGA_SoC/modules/headers/itype_funct3.vh">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../dirty_ima_make_rv64/FPGA_SoC/modules/headers/itype_funct3.vh"/>
         <Attr Name="ImportTime" Val="1769526535"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -185,9 +185,9 @@
         <Attr Name="IsVisible" Val="1"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/FPGA_SoC/modules/headers/rtype_funct3.vh">
+    <File Path="$PSRCDIR/sources_1/imports/FPGA_SoC/modules/headers/opcode.vh">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../dirty_ima_make_rv64/FPGA_SoC/modules/headers/rtype_funct3.vh"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../dirty_ima_make_rv64/FPGA_SoC/modules/headers/opcode.vh"/>
         <Attr Name="ImportTime" Val="1769526535"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -275,18 +275,18 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/FPGA_SoC/modules/headers/rf_wd_select.vh">
+    <File Path="$PSRCDIR/sources_1/imports/FPGA_SoC/modules/headers/alu_src_select.vh">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../dirty_ima_make_rv64/FPGA_SoC/modules/headers/rf_wd_select.vh"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../dirty_ima_make_rv64/FPGA_SoC/modules/headers/alu_src_select.vh"/>
         <Attr Name="ImportTime" Val="1769526535"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
         <Attr Name="IsVisible" Val="1"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/FPGA_SoC/modules/headers/alu_src_select.vh">
+    <File Path="$PSRCDIR/sources_1/imports/FPGA_SoC/modules/headers/rf_wd_select.vh">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../dirty_ima_make_rv64/FPGA_SoC/modules/headers/alu_src_select.vh"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../dirty_ima_make_rv64/FPGA_SoC/modules/headers/rf_wd_select.vh"/>
         <Attr Name="ImportTime" Val="1769526535"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -297,15 +297,6 @@
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../../dirty_ima_make_rv64/FPGA_SoC/modules/Control_Unit.v"/>
         <Attr Name="ImportTime" Val="1769790315"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/FPGA_SoC/modules/Data_Memory.v">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../dirty_ima_make_rv64/FPGA_SoC/modules/Data_Memory.v"/>
-        <Attr Name="ImportTime" Val="1769526535"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -419,28 +410,10 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/FPGA_SoC/modules/Instruction_Memory.v">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../dirty_ima_make_rv64/FPGA_SoC/modules/Instruction_Memory.v"/>
-        <Attr Name="ImportTime" Val="1769838880"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/imports/FPGA_SoC/modules/MEM_WB_Register.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../../dirty_ima_make_rv64/FPGA_SoC/modules/MEM_WB_Register.v"/>
         <Attr Name="ImportTime" Val="1769785454"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/FPGA_SoC/modules/MMIO_Interface.v">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../dirty_ima_make_rv64/FPGA_SoC/modules/MMIO_Interface.v"/>
-        <Attr Name="ImportTime" Val="1769526535"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -482,15 +455,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../dirty_ima_make_rv64/FPGA_SoC/modules/RV64IM72F_6SP.v"/>
-        <Attr Name="ImportTime" Val="1769839878"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/imports/FPGA_SoC/modules/Register_File.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../../dirty_ima_make_rv64/FPGA_SoC/modules/Register_File.v"/>
@@ -509,28 +473,10 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/FPGA_SoC/modules/UART_TX.v">
+    <File Path="$PSRCDIR/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../dirty_ima_make_rv64/FPGA_SoC/modules/UART_TX.v"/>
-        <Attr Name="ImportTime" Val="1769830147"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/FPGA_SoC/modules/Unified_UART_Controller.v">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../dirty_ima_make_rv64/FPGA_SoC/modules/Unified_UART_Controller.v"/>
-        <Attr Name="ImportTime" Val="1769526535"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/FPGA_SoC/modules/72F6SP_SoC_TOP.v">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../dirty_ima_make_rv64/FPGA_SoC/modules/72F6SP_SoC_TOP.v"/>
-        <Attr Name="ImportTime" Val="1769526535"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../dirty_ima_make_rv64/FPGA_SoC/modules/RV64IM72F_6SP.v"/>
+        <Attr Name="ImportTime" Val="1769839878"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -538,7 +484,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="RV64IM72F5SPSoCTOP"/>
+      <Option Name="TopModule" Val="RV32IM72F7SP_CORE"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
@@ -576,10 +522,10 @@
       <Option Id="Directive">7</Option>
       <Option Id="FsmExtraction">1</Option>
       <Option Id="KeepEquivalentRegisters">1</Option>
+      <Option Id="MoreOptsStr"><![CDATA[-mode out_of_context]]></Option>
       <Option Id="NoCombineLuts">1</Option>
       <Option Id="ResourceSharing">2</Option>
       <Option Id="ShregMinSize">5</Option>
     </Step>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
 </GenRun>

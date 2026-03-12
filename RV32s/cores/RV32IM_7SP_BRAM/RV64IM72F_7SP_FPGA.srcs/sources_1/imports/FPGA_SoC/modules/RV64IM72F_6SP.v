@@ -2,19 +2,51 @@
 `include "./rf_wd_select.vh"
 `include "./alu_op.vh"
 
-module RV32IM72F7SP #(
+module RV32IM72F7SP_CORE #(
     parameter XLEN = 32
 )(
     input clk,
     input clk_enable,
     input reset,
     input UART_busy,
-    
+
+    // Instruction Memory Interface (external, synchronous)
+    output wire [XLEN-1:0] im_pc,
+    output wire im_pc_stall,
+    output wire im_read_stall,
+    input wire [31:0] im_instruction,
+    output wire [XLEN-1:0] im_rom_address,
+
+    // Data Memory Interface (external, 2-cycle write)
+    output wire [XLEN-1:0] dm_address,
+    output wire [XLEN-1:0] dm_write_data,
+    output wire dm_write_enable,
+    output wire [3:0] dm_write_mask,
+    output wire dm_read_stall,
+    input wire [XLEN-1:0] dm_read_data,
+    input wire dm_write_done,
+
+    // SoC Interface
     output wire [31:0] retire_instruction,
     output wire [XLEN-1:0] MMIO_data_memory_write_data,
     output wire [XLEN-1:0] MMIO_data_memory_address,
     output wire MMIO_data_memory_write_enable
 );
+
+    // IM interface (synchronous)
+    assign im_pc = pc;
+    assign im_pc_stall = pc_stall;
+    assign im_read_stall = EX_MEM_stall;
+    assign im_rom_address = EX2_alu_result;
+
+    // DM interface (2-cycle write)
+    assign dm_address = data_memory_address;
+    assign dm_write_data = data_memory_write_data;
+    assign dm_write_enable = MEM_memory_write && !mmio_uart_status_hit;
+    assign dm_write_mask = write_mask;
+    assign dm_read_stall = EX_MEM_stall;
+    assign data_memory_read_data = dm_read_data;
+    assign write_done = dm_write_done;
 
     // Program Counter and  PC Plus 4
     wire [XLEN-1:0] pc;
@@ -27,9 +59,6 @@ module RV32IM72F7SP #(
     reg [31:0] instruction;
     wire [XLEN-1:0] IF_imm;
     wire [6:0] IF_opcode;
-
-    // ROM bypass signals (MEM stage instruction memory access)
-    wire [XLEN-1:0] rom_read_data;
 
     assign IF_imm = {{20{IO_instruction[31]}}, IO_instruction[7], IO_instruction[30:25], IO_instruction[11:8], 1'b0};
     assign IF_opcode = (IO_instruction[6:0]);
@@ -428,20 +457,6 @@ module RV32IM72F7SP #(
                                 EX2_memory_read ? EX2_alu_result : 
                                 MEM_alu_result;
 
-    DataMemory data_memory (
-        .clk(clk),
-        .clk_enable(clk_enable),
-        .read_stall(EX_MEM_stall),
-        .write_enable(MEM_memory_write && !mmio_uart_status_hit),
-        .address(data_memory_address),
-        .write_data(data_memory_write_data),
-        .write_mask(write_mask),
-        .rom_read_data(rom_read_data_safe),
-
-        .write_done(write_done),
-        .read_data(data_memory_read_data)
-    );
-
     ExceptionDetector exception_detector (
         .clk(clk),
         .clk_enable(clk_enable),
@@ -616,17 +631,6 @@ module RV32IM72F7SP #(
 	    .rs2(rs2),
 	    .rd(rd),
 	    .raw_imm(raw_imm)
-    );
-
-    InstructionMemory instruction_memory (
-        .clk(clk),
-        .clk_enable(clk_enable),
-        .pc_stall(pc_stall),
-        .read_stall(EX_MEM_stall),
-        .pc(pc),
-        .instruction(im_instruction),
-        .rom_address(EX2_alu_result),
-        .rom_read_data(rom_read_data)
     );
 
     ProgramCounter program_counter (
@@ -965,33 +969,6 @@ module RV32IM72F7SP #(
             instruction_pc <= pc;
         end
     end
-    
-    reg [XLEN-1:0] rom_read_data_held;
-    wire [XLEN-1:0] rom_read_data_safe;
-    reg EX_EX2_stall_reg;
-    
-    always @(posedge clk or posedge reset) begin
-        if (reset) begin
-            EX_EX2_stall_reg <= 1'b0;
-        end
-        else if (EX_EX2_stall) begin
-            EX_EX2_stall_reg <= 1'b1;
-        end 
-        else if (!EX_EX2_stall) begin
-            EX_EX2_stall_reg <= 1'b0;
-        end
-    end
-    
-    always @(posedge clk or posedge reset) begin
-        if (reset) begin
-            rom_read_data_held <= {XLEN{1'b0}};
-        end
-        else if (clk_enable && !EX_EX2_stall) begin
-            rom_read_data_held <= rom_read_data;
-        end
-    end
-    
-    assign rom_read_data_safe = EX_EX2_stall_reg ? rom_read_data_held : rom_read_data;
 
     // Retire stage registers update
     always @(posedge clk or posedge reset) begin
