@@ -1,0 +1,197 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Wed Mar 25 16:29:51 2026
+| Host         : khwl-ThinkPad-X1-Carbon-Gen-13 running 64-bit Ubuntu 24.04.4 LTS
+| Command      : report_control_sets -verbose -file RV64IM72F5SPSoCTOP_control_sets_placed.rpt
+| Design       : RV64IM72F5SPSoCTOP
+| Device       : xc7a200t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |   119 |
+|    Minimum number of control sets                        |    20 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |    99 |
+| Unused register locations in slices containing registers |   486 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |   119 |
+| >= 0 to < 4        |    26 |
+| >= 4 to < 6        |     9 |
+| >= 6 to < 8        |     5 |
+| >= 8 to < 10       |    12 |
+| >= 10 to < 12      |     7 |
+| >= 12 to < 14      |     6 |
+| >= 14 to < 16      |     7 |
+| >= 16              |    47 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               5 |            4 |
+| No           | No                    | Yes                    |              63 |           38 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |              21 |            8 |
+| Yes          | No                    | Yes                    |            1735 |          685 |
+| Yes          | Yes                   | No                     |            2162 |          859 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+------------------------------------------------------------------+---------------------------------------------------------------+------------------+----------------+--------------+
+|  Clock Signal  |                           Enable Signal                          |                        Set/Reset Signal                       | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+------------------------------------------------------------------+---------------------------------------------------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG |                                                                  | internal_reset                                                |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/multiplier_word/cpu_clk_enable_reg             | internal_reset_repN_4                                         |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/divider_word/FSM_onehot_state[3]_i_1_n_0       | internal_reset_repN_10                                        |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/divider_word/FSM_onehot_state[3]_i_1_n_0       | internal_reset_repN_9                                         |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/multiplier_dword/prod_high[63]_i_1_n_0         | internal_reset_repN_10                                        |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg_0[0]             | internal_reset_repN_10                                        |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg_0[0]             | internal_reset_repN                                           |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg_0[0]             | internal_reset_repN_3                                         |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg_1[0]             | internal_reset_repN_3                                         |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg_1[0]             | internal_reset_repN_11                                        |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/exception_detector/E[0]                            | internal_reset_repN                                           |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG |                                                                  | internal_reset_repN_11                                        |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/exception_detector/trapped_reg_rep_1[0]            | internal_reset_repN_7                                         |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG |                                                                  | internal_reset_repN_1                                         |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | uart_tx/shift_reg[8]_i_1_n_0                                     | internal_reset_repN_2                                         |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | uart_tx/tx_i_1_n_0                                               | internal_reset_repN_2                                         |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/exception_detector/trapped_reg_rep_1[0]            | internal_reset_repN_11                                        |                1 |              2 |         2.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/divider_word/FSM_onehot_state[3]_i_1_n_0       | internal_reset_repN_8                                         |                1 |              2 |         2.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/exception_detector/trapped_reg_rep_2[0]            | internal_reset_repN_7                                         |                1 |              2 |         2.00 |
+|  clk_IBUF_BUFG | cpu_clk_enable                                                   | internal_reset_repN_11                                        |                1 |              2 |         2.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/divider_dword/FSM_onehot_state[3]_i_1__0_n_0   | internal_reset_repN_6                                         |                1 |              2 |         2.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/divider_dword/FSM_onehot_state[3]_i_1__0_n_0   | internal_reset_repN_10                                        |                1 |              2 |         2.00 |
+|  clk_IBUF_BUFG |                                                                  | internal_reset_repN_12                                        |                1 |              2 |         2.00 |
+|  clk_IBUF_BUFG |                                                                  | internal_reset_repN_10                                        |                2 |              2 |         1.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/divider_word/quotient_sign4_out                | internal_reset_repN_8                                         |                2 |              3 |         1.50 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg[0]               | internal_reset_repN_8                                         |                2 |              3 |         1.50 |
+|  clk_IBUF_BUFG | uart_tx/bit_counter[3]_i_1__1_n_0                                | internal_reset_repN_2                                         |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg_0[0]             | internal_reset_repN_4                                         |                3 |              4 |         1.33 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/multiplier_word/FSM_onehot_stage[3]_i_1__0_n_0 | internal_reset_repN_8                                         |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/multiplier_dword/FSM_onehot_stage[3]_i_1_n_0   | internal_reset_repN_8                                         |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/divider_dword/bit_counter[6]_i_1_n_0           | internal_reset_repN_3                                         |                3 |              5 |         1.67 |
+|  clk_IBUF_BUFG |                                                                  |                                                               |                4 |              5 |         1.25 |
+|  clk_IBUF_BUFG | cpu_clk_enable                                                   | rv64im72f_6sp/alu/divider_word/EX2_register_write_enable0_out |                3 |              5 |         1.67 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/multiplier_word/prod_low[31]_i_1__0_n_0        | internal_reset_repN_5                                         |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/multiplier_dword/cpu_clk_enable_reg            | internal_reset_repN_9                                         |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG |                                                                  | internal_reset_repN                                           |                5 |              6 |         1.20 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/divider_word/quotient_sign4_out                | internal_reset_repN_5                                         |                2 |              6 |         3.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/divider_dword/quotient_reg[63]_i_1_n_0         | internal_reset_repN                                           |                4 |              6 |         1.50 |
+|  clk_IBUF_BUFG | cpu_clk_enable                                                   | internal_reset_repN                                           |                5 |              6 |         1.20 |
+|  clk_IBUF_BUFG | cpu_clk_enable                                                   | internal_reset_repN_7                                         |                6 |              7 |         1.17 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg_1[0]             | internal_reset_repN_5                                         |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/divider_dword/bit_counter[6]_i_1_n_0           | internal_reset_repN_6                                         |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg[0]               | internal_reset_repN_3                                         |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | uart_tx/shift_reg[8]_i_1_n_0                                     | internal_reset_repN_5                                         |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/divider_word/quotient_sign4_out                | internal_reset_repN_9                                         |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | cpu_clk_enable                                                   | rv64im72f_6sp/ex_ex2_register/cpu_clk_enable_reg              |                4 |              9 |         2.25 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/divider_dword/quotient_sign4_out               | internal_reset_repN_9                                         |                5 |              9 |         1.80 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/exception_detector/cpu_clk_enable_reg[0]           | internal_reset_repN                                           |                3 |              9 |         3.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg_2[0]             | internal_reset_repN_4                                         |                3 |              9 |         3.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/divider_word/quotient_reg[31]_i_1_n_0          | internal_reset_repN_8                                         |                5 |              9 |         1.80 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg[0]               | internal_reset_repN_5                                         |                4 |              9 |         2.25 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg[0]               | internal_reset_repN_10                                        |                4 |              9 |         2.25 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/divider_dword/bit_counter[6]_i_1_n_0           | internal_reset_repN_5                                         |                4 |             10 |         2.50 |
+|  clk_IBUF_BUFG | mmio_interface/E[0]                                              | internal_reset_repN_2                                         |                5 |             10 |         2.00 |
+|  clk_IBUF_BUFG |                                                                  | internal_reset_repN_5                                         |                6 |             10 |         1.67 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/multiplier_dword/cpu_clk_enable_reg            | internal_reset_repN_10                                        |                4 |             10 |         2.50 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg_1[0]             | internal_reset_repN_10                                        |                6 |             10 |         1.67 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg[0]               | internal_reset_repN_4                                         |                4 |             10 |         2.50 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/exception_detector/trapped_reg_rep_1[0]            | internal_reset_repN                                           |                2 |             11 |         5.50 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/divider_dword/quotient_reg[63]_i_1_n_0         | internal_reset_repN_6                                         |                3 |             12 |         4.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/exception_detector/trapped_reg_rep_2[0]            | internal_reset_repN                                           |                5 |             12 |         2.40 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/divider_word/bit_counter[5]_i_1_n_0            | internal_reset_repN_9                                         |                4 |             12 |         3.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/data_memory/E[0]                                   | internal_reset                                                |                5 |             13 |         2.60 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/exception_detector/trapped_reg_rep_1[0]            | internal_reset                                                |                7 |             13 |         1.86 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg_0[0]             | internal_reset_repN_5                                         |                7 |             13 |         1.86 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/exception_detector/trapped_reg_rep_2[0]            | internal_reset                                                |                7 |             14 |         2.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg_0[0]             | internal_reset_repN_9                                         |                9 |             14 |         1.56 |
+|  clk_IBUF_BUFG | cpu_clk_enable                                                   | internal_reset_repN_12                                        |                8 |             15 |         1.88 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/divider_word/bit_counter[5]_i_1_n_0            | internal_reset_repN_8                                         |                6 |             15 |         2.50 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/exception_detector/trapped_reg_rep_1[0]            | internal_reset_repN_12                                        |                5 |             15 |         3.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/exception_detector/cpu_clk_enable_reg[0]           | internal_reset_repN_12                                        |                7 |             15 |         2.14 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/multiplier_word/cpu_clk_enable_reg             | internal_reset_repN_3                                         |                8 |             15 |         1.88 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/exception_detector/E[0]                            | internal_reset                                                |                6 |             16 |         2.67 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/exception_detector/trapped_reg_rep_2[0]            | internal_reset_repN_12                                        |                5 |             16 |         3.20 |
+|  clk_IBUF_BUFG |                                                                  | reset                                                         |               10 |             16 |         1.60 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/divider_word/quotient_sign4_out                | internal_reset_repN_4                                         |                6 |             17 |         2.83 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg_1[0]             | internal_reset_repN                                           |               12 |             17 |         1.42 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg_2[0]             | internal_reset_repN_9                                         |                5 |             17 |         3.40 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/divider_word/bit_counter[5]_i_1_n_0            | internal_reset_repN_5                                         |                7 |             17 |         2.43 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/exception_detector/cpu_clk_enable_reg[0]           | internal_reset                                                |                9 |             18 |         2.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/divider_dword/quotient_sign4_out               | internal_reset_repN_10                                        |                8 |             18 |         2.25 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/exception_detector/trapped_reg_rep_2[0]            | internal_reset_repN_1                                         |               10 |             20 |         2.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/exception_detector/E[0]                            | internal_reset_repN_12                                        |                6 |             20 |         3.33 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/multiplier_word/cpu_clk_enable_reg             | internal_reset_repN_2                                         |                9 |             21 |         2.33 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/multiplier_word/prod_low[31]_i_1__0_n_0        | internal_reset_repN_4                                         |                8 |             21 |         2.62 |
+|  clk_IBUF_BUFG | cpu_clk_enable                                                   |                                                               |                8 |             21 |         2.62 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/exception_detector/cpu_clk_enable_reg[0]           | internal_reset_repN_1                                         |               11 |             22 |         2.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/exception_detector/trapped_reg_rep_1[0]            | internal_reset_repN_1                                         |               11 |             22 |         2.00 |
+|  clk_IBUF_BUFG |                                                                  | internal_reset_repN_6                                         |               11 |             24 |         2.18 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/divider_word/bit_counter[5]_i_1_n_0            | internal_reset_repN_4                                         |                7 |             26 |         3.71 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/exception_detector/E[0]                            | internal_reset_repN_1                                         |                9 |             27 |         3.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/divider_dword/bit_counter[6]_i_1_n_0           | internal_reset_repN_10                                        |                9 |             28 |         3.11 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg_1[0]             | internal_reset_repN_9                                         |               15 |             29 |         1.93 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/multiplier_dword/cpu_clk_enable_reg            | internal_reset_repN                                           |               16 |             29 |         1.81 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/multiplier_dword/cpu_clk_enable_reg            | internal_reset_repN_8                                         |                9 |             36 |         4.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/multiplier_word/prod_low[31]_i_1__0_n_0        | internal_reset_repN_2                                         |               14 |             38 |         2.71 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/divider_dword/bit_counter[6]_i_1_n_0           | internal_reset_repN                                           |               10 |             38 |         3.80 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg_2[0]             | internal_reset_repN_5                                         |               13 |             39 |         3.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/divider_dword/quotient_sign4_out               | internal_reset_repN                                           |               13 |             39 |         3.00 |
+|  clk_IBUF_BUFG | cpu_clk_enable                                                   | internal_reset                                                |               23 |             42 |         1.83 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg[0]               | internal_reset_repN                                           |               14 |             43 |         3.07 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/divider_dword/quotient_reg[63]_i_1_n_0         | internal_reset_repN_10                                        |               15 |             46 |         3.07 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/divider_dword/bit_counter[6]_i_1_n_0           | internal_reset_repN_9                                         |               18 |             46 |         2.56 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/id_ex_register/cpu_clk_enable_reg[0]               | internal_reset_repN_9                                         |               17 |             47 |         2.76 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/data_memory/E[0]                                   | internal_reset_repN_7                                         |               19 |             51 |         2.68 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/divider_word/quotient_reg[31]_i_1_n_0          | internal_reset_repN_4                                         |               17 |             55 |         3.24 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/multiplier_dword/prod_high[63]_i_1_n_0         | internal_reset_repN_6                                         |               24 |             62 |         2.58 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/divider_dword/quotient_reg[63]_i_1_n_0         | internal_reset_repN_8                                         |               16 |             64 |         4.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/divider_word/cpu_clk_enable_reg_0              | rv64im72f_6sp/ex_ex2_register/SR[0]                           |               62 |             64 |         1.03 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/csr_file/minstret[0]                               | internal_reset                                                |               17 |             64 |         3.76 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/multiplier_dword/prod_high[63]_i_1_n_0         | internal_reset_repN_8                                         |               33 |             65 |         1.97 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/multiplier_dword/cpu_clk_enable_reg            | internal_reset_repN_6                                         |               25 |             65 |         2.60 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/divider_word/cpu_clk_enable_reg_0              | rv64im72f_6sp/exception_detector/MEM_WB_flush                 |               40 |             65 |         1.62 |
+|  clk_IBUF_BUFG | cpu_clk_enable                                                   | internal_reset_repN_1                                         |               20 |             74 |         3.70 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/divider_word/cpu_clk_enable_reg_1[0]           | rv64im72f_6sp/if_io_register/IO_pc[63]_i_1_n_0                |               45 |            160 |         3.56 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/mem_wb_register/p_0_in2_out                        |                                                               |               22 |            176 |         8.00 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/divider_word/cpu_clk_enable_reg_0              | rv64im72f_6sp/exception_detector/SR[0]                        |              182 |            446 |         2.45 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/divider_word/cpu_clk_enable_reg[0]             | rv64im72f_6sp/ex_ex2_register/cpu_clk_enable_reg              |              193 |            609 |         3.16 |
+|  clk_IBUF_BUFG | rv64im72f_6sp/alu/divider_word/cpu_clk_enable_reg_0              | rv64im72f_6sp/alu/divider_word/EX2_register_write_enable0_out |              330 |            804 |         2.44 |
++----------------+------------------------------------------------------------------+---------------------------------------------------------------+------------------+----------------+--------------+
+
+
