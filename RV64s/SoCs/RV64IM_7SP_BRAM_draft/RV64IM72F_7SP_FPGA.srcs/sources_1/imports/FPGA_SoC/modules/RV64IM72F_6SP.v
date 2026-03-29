@@ -64,7 +64,7 @@ module RV64IM72F6SP #(
     wire [XLEN-1:0] branch_target_actual;
 
     // Register File
-    reg [XLEN-1:0] register_file_write_data;
+    wire [XLEN-1:0] register_file_write_data;
     
     // Register File
     wire [XLEN-1:0] read_data1;
@@ -210,7 +210,9 @@ module RV64IM72F6SP #(
     wire [XLEN-1:0] MEM_csr_read_data;
     wire [XLEN-1:0] MEM_alu_result;
     wire [XLEN-1:0] MEM_data_memory_write_data;
-
+    wire [XLEN-1:0] MEM_forward_data_value; 
+    wire [XLEN-1:0] MEM_forward_data_value_out; 
+    
     wire [XLEN-1:0] WB_pc;
     wire [XLEN-1:0] WB_pc_plus_4;
     wire [31:0] WB_instruction;
@@ -231,7 +233,8 @@ module RV64IM72F6SP #(
     wire [XLEN-1:0] WB_byte_enable_logic_register_file_write_data;
     wire [XLEN-1:0] WB_data_memory_write_data;
     wire WB_memory_write;
-
+    wire [XLEN-1:0] WB_forward_data_value; 
+    
     // Retire stage registers
     reg [4:0] retire_rd;
     reg retire_register_write_enable;
@@ -276,11 +279,15 @@ module RV64IM72F6SP #(
     wire [2:0] alu_forward_source_select_b;
     reg [XLEN-1:0] alu_normal_source_a;
     reg [XLEN-1:0] alu_normal_source_b;
+    wire [2:0] EX2_forward_select;
+    wire [XLEN-1:0] MEM_forward_data_value;
+    wire [XLEN-1:0] WB_forward_data_value;
 
     wire [XLEN-1:0] store_forward_data;
     wire store_forward_enable;
     wire [XLEN-1:0] EX_read_data2_MUX;
-    assign EX_read_data2_MUX = store_forward_enable ? store_forward_data : EX_read_data2;
+    assign EX_read_data2_MUX = store_forward_enable ? store_forward_data_muxed : EX_read_data2;
+    wire [2:0] EX2_forward_select;
     
 
     // WB->MEM store data forwarding
@@ -472,6 +479,10 @@ module RV64IM72F6SP #(
     );
 
     ForwardUnit forward_unit (
+        .clk(clk),
+        .clk_enable(clk_enable),
+        .EX_MEM_stall(EX_MEM_stall),
+        .EX_MEM_flush(EX_MEM_flush),
         .hazard_ex2(hazard_ex2),
         .hazard_mem(hazard_mem),
         .hazard_wb(hazard_wb),
@@ -479,39 +490,24 @@ module RV64IM72F6SP #(
         .EX2_alu_result(EX2_alu_result),
         .EX2_csr_read_data(EX2_csr_read_data),
         .EX2_pc_plus_4(EX2_pc_plus_4),
-        .EX2_opcode(EX2_opcode),
-        .MEM_imm(MEM_imm),
-        .MEM_alu_result(MEM_alu_result),
-        .MEM_csr_read_data(MEM_csr_read_data),
+        .EX2_forward_select(EX2_forward_select),
         .byte_enable_logic_register_file_write_data(byte_enable_logic_register_file_write_data),
-        .MEM_pc_plus_4(MEM_pc_plus_4),
-        .MEM_opcode(MEM_opcode),
-        .WB_opcode(WB_opcode),
-        .WB_imm(WB_imm),
-        .WB_alu_result(WB_alu_result),
-        .WB_csr_read_data(WB_csr_read_data),
-        .WB_byte_enable_logic_register_file_write_data(WB_byte_enable_logic_register_file_write_data),
-        .WB_pc_plus_4(WB_pc_plus_4),
-
-        .alu_forward_source_data_a(alu_forward_source_data_a),
-        .alu_forward_source_data_b(alu_forward_source_data_b),
+        .MEM_forward_data_value_out(MEM_forward_data_value_out), 
+        .WB_forward_data_value(WB_forward_data_value), 
+        .EX2_forward_data_out(EX2_forward_data),
+        .store_forward_select(store_forward_select), 
         .alu_forward_source_select_a(alu_forward_source_select_a),
         .alu_forward_source_select_b(alu_forward_source_select_b),
 
         .store_hazard_ex2(store_hazard_ex2),
         .store_hazard_mem(store_hazard_mem),
         .store_hazard_wb(store_hazard_wb),
-        .store_forward_data(store_forward_data),
         .store_forward_enable(store_forward_enable),
 
         .store_hazard_wb_to_mem(store_hazard_wb_to_mem),
         .store_wb_to_mem_forward_data(store_wb_to_mem_forward_data),
         .store_wb_to_mem_forward_enable(store_wb_to_mem_forward_enable),
 
-        .csr_hazard_mem(csr_hazard_mem),
-        .csr_hazard_wb(csr_hazard_wb),
-        .MEM_csr_write_data(MEM_alu_result),
-        .WB_csr_write_data(WB_alu_result),
         .csr_read_data(csr_read_out),
 
         .csr_forward_data(csr_forward_data)
@@ -564,8 +560,6 @@ module RV64IM72F6SP #(
         .hazard_ex2(hazard_ex2),
         .hazard_mem(hazard_mem),
         .hazard_wb(hazard_wb),
-        .csr_hazard_mem(csr_hazard_mem),
-        .csr_hazard_wb(csr_hazard_wb),
         .store_hazard_ex2(store_hazard_ex2),
         .store_hazard_mem(store_hazard_mem),
         .store_hazard_wb(store_hazard_wb),
@@ -815,8 +809,10 @@ module RV64IM72F6SP #(
         .EX_branch(EX_branch),
         .EX_branch_estimation(EX_branch_estimation),
         .EX_alu_zero(alu_zero),
+        .EX_forward_select(EX_forward_select),
 
         // outputs to EX2 stage
+        .EX2_forward_select(EX2_forward_select),
         .EX2_pc(EX2_pc),
         .EX2_pc_plus_4(EX2_pc_plus_4),
         .EX2_instruction(EX2_instruction),
@@ -921,6 +917,7 @@ module RV64IM72F6SP #(
         .MEM_byte_enable_logic_register_file_write_data(byte_enable_logic_register_file_write_data),
         .MEM_data_memory_write_data(data_memory_write_data),
         .MEM_memory_write(MEM_memory_write),
+        .MEM_forward_data_value(MEM_forward_data_value_out), 
 
         .WB_pc(WB_pc),
         .WB_pc_plus_4(WB_pc_plus_4),
@@ -937,9 +934,26 @@ module RV64IM72F6SP #(
         .WB_opcode(WB_opcode),
         .WB_byte_enable_logic_register_file_write_data(WB_byte_enable_logic_register_file_write_data),
         .WB_data_memory_write_data(WB_data_memory_write_data),
-        .WB_memory_write(WB_memory_write)
+        .WB_memory_write(WB_memory_write),
+        .WB_forward_data_value(WB_forward_data_value) 
     );
-
+    
+    wire [1:0] store_forward_select;
+    reg [XLEN-1:0] store_forward_data_muxed;
+    always @(*) begin
+        case (store_forward_select)
+            2'b01: store_forward_data_muxed = EX2_forward_data;
+            2'b10: store_forward_data_muxed = MEM_forward_data; 
+            2'b11: store_forward_data_muxed = WB_forward_data_value; 
+            default: store_forward_data_muxed = {XLEN{1'b0}}; 
+        endcase
+    end
+    
+    wire [XLEN-1:0] EX2_forward_data;
+    wire [XLEN-1:0] MEM_forward_data;
+    assign MEM_forward_data = MEM_forward_data_value_out;
+    assign register_file_write_data = WB_forward_data_value; 
+    
     // Align PC with synchronous instruction memory output
     reg [XLEN-1:0] instruction_pc;
     wire [XLEN-1:0] instruction_pc_plus_4 = instruction_pc + 4;
@@ -1016,30 +1030,31 @@ module RV64IM72F6SP #(
         if (debug_mode) instruction = dbg_instruction;
         else instruction = im_instruction;
 
-        // Register file write data selection
-        case (WB_register_file_write_data_select)
-            `RF_WD_LOAD: register_file_write_data = WB_byte_enable_logic_register_file_write_data;
-            `RF_WD_ALU: register_file_write_data = WB_alu_result;
-            `RF_WD_LUI: register_file_write_data = WB_imm;
-            `RF_WD_JUMP: register_file_write_data = WB_pc_plus_4;
-            `RF_WD_CSR: register_file_write_data = WB_csr_read_data; 
-            default: register_file_write_data = {XLEN{1'b0}};
-        endcase
-
         // ALU source A forwarding: 2'b00=normal, 2'b01=MEM, 2'b10=WB, 2'b11=Retire
         case (alu_forward_source_select_a)
-            3'b001: src_A = alu_forward_source_data_a;
-            3'b010: src_A = alu_forward_source_data_a;
-            3'b011: src_A = alu_forward_source_data_a;
+            3'b001: src_A = EX2_forward_data;
+            3'b010: src_A = MEM_forward_data;
+            3'b011: src_A = WB_forward_data_value;
             default: src_A = alu_normal_source_a;
         endcase
 
         // ALU source B forwarding: 2'b00=normal, 2'b01=MEM, 2'b10=WB, 2'b11=Retire
         case (alu_forward_source_select_b)
-            3'b001: src_B = alu_forward_source_data_b;
-            3'b010: src_B = alu_forward_source_data_b;
-            3'b011: src_B = alu_forward_source_data_b;
+            3'b001: src_B = EX2_forward_data;
+            3'b010: src_B = MEM_forward_data;
+            3'b011: src_B = WB_forward_data_value;
             default: src_B = alu_normal_source_b;
+        endcase
+    end
+       
+    reg [2:0] EX_forward_select;
+    always @(*) begin
+        case (EX_opcode)
+            `OPCODE_LUI: EX_forward_select = 3'd1;
+            `OPCODE_JAL: EX_forward_select = 3'd2;
+            `OPCODE_JALR: EX_forward_select = 3'd2;
+            `OPCODE_ENVIRONMENT: EX_forward_select = 3'd3;
+            default: EX_forward_select = 3'd0; // alu_result
         endcase
     end
 

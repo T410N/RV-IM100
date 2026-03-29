@@ -58,9 +58,7 @@ module HazardUnit (
     output reg [1:0] hazard_ex2,
     output reg [1:0] hazard_mem,
     output reg [1:0] hazard_wb,
-    output wire csr_hazard_mem,
-    output wire csr_hazard_wb,
-
+    
     // to Forward Unit - Store data forwarding
     output wire store_hazard_ex2,
     output wire store_hazard_mem,
@@ -125,8 +123,7 @@ module HazardUnit (
                                     (WB_rd == MEM_rs2);
 
     // CSR hazard detection
-    assign csr_hazard_mem = MEM_csr_write_enable && (MEM_csr_write_address == EX_imm);
-    assign csr_hazard_wb = WB_csr_write_enable && (WB_csr_write_address == EX_imm);
+    wire csr_data_hazard = (EX_csr_write_enable && MEM_csr_write_enable) || (EX_csr_write_enable && WB_csr_write_enable);
 
     always @(*) begin
         hazard_mem = 2'b00;
@@ -223,7 +220,7 @@ module HazardUnit (
             MEM_WB_stall = 1'b1;
         end
 
-        if (load_use_hazard && trap_done && csr_ready && !standby_mode && !div_start && !div_busy && !mul_start && !mul_busy && write_done) begin
+        if ((load_use_hazard || csr_data_hazard)&& trap_done && csr_ready && !standby_mode && !div_start && !div_busy && !mul_start && !mul_busy && write_done) begin
             IF_IO_stall = 1'b1;
             IO_ID_stall = 1'b1;
             ID_EX_stall = 1'b1;

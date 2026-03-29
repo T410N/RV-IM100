@@ -30,6 +30,11 @@ module EX_EX2_Register #(
     input wire EX_branch,
     input wire EX_branch_estimation,
     input wire EX_alu_zero,
+    input wire EX_jump,
+    input wire EX_is_load,
+    input wire [31:0] EX_alu_word_result,
+    input wire EX_input_size_word,
+    input wire [2:0] EX_forward_select,
 
     // signals to EX2 stage (Branch Logic)
     output reg [XLEN-1:0] EX2_pc,
@@ -53,7 +58,12 @@ module EX_EX2_Register #(
     output reg [XLEN-1:0] EX2_alu_result,
     output reg EX2_branch,
     output reg EX2_branch_estimation,
-    output reg EX2_alu_zero
+    output reg EX2_alu_zero,
+    output reg EX2_jump,
+    output reg EX2_is_load,
+    output reg [31:0] EX2_alu_word_result,
+    output reg EX2_input_size_word,
+    output reg [2:0] EX2_forward_select
 );
 
 always @(posedge clk) begin
@@ -81,6 +91,11 @@ always @(posedge clk) begin
             EX2_branch <= 1'b0;
             EX2_branch_estimation <= 1'b0;
             EX2_alu_zero <= 1'b0;
+            EX2_jump <= 1'b0;
+            EX2_is_load <= 1'b0;
+            EX2_alu_word_result <= 32'b0;
+            EX2_input_size_word <= 1'b0;
+            EX2_forward_select <= 3'b0;
         end 
         else if (!EX_EX2_stall) begin
             EX2_pc <= EX_pc;
@@ -105,6 +120,11 @@ always @(posedge clk) begin
             EX2_branch <= EX_branch;
             EX2_branch_estimation <= EX_branch_estimation;
             EX2_alu_zero <= EX_alu_zero;
+            EX2_jump <= EX_jump;
+            EX2_is_load <= EX_is_load;
+            EX2_alu_word_result <= EX_alu_word_result;
+            EX2_input_size_word <= EX_input_size_word;
+            EX2_forward_select <= EX_forward_select;
         end 
     end
 end
