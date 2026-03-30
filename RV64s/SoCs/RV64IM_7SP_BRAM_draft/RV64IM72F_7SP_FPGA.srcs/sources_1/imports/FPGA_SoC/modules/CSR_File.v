@@ -12,6 +12,7 @@ module CSRFile #(
     input [11:0] csr_write_address,       // address to write
     input [XLEN-1:0] csr_write_data,      // data to write
     input instruction_retired,
+    input wire valid_csr_address,
 
     output reg [XLEN-1:0] csr_read_out,   // data from CSR Unit
     output reg csr_ready                  // signal to stall the process while accessing the CSR until it outputs the desired value.
@@ -33,21 +34,7 @@ module CSRFile #(
     reg [XLEN-1:0] csr_read_data;
 
     wire csr_access;
-    wire valid_csr_address;
-
     assign csr_access = valid_csr_address;
-    assign valid_csr_address = (csr_read_address == 12'hB00) || // mcycle
-                               (csr_read_address == 12'hB02) || // minstret
-                               (csr_read_address == 12'hF11) || // mvendorid
-                               (csr_read_address == 12'hF12) || // marchid  
-                               (csr_read_address == 12'hF14) || // mhartid
-                               (csr_read_address == 12'h300) || // mstatus
-                               (csr_read_address == 12'h301) || // misa
-                               (csr_read_address == 12'h305) || // mtvec
-                               (csr_read_address == 12'h341) || // mepc
-                               (csr_read_address == 12'h342);   // mcause
-
-
 
     localparam [XLEN-1:0] DEFAULT_mtvec  = 64'h00006D60;
     localparam [XLEN-1:0] DEFAULT_mepc   = {XLEN{1'b0}};

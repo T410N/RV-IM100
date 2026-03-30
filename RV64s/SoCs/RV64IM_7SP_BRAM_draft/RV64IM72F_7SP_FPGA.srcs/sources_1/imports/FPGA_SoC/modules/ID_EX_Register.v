@@ -38,6 +38,11 @@ module ID_EX_Register #(
     input wire [XLEN-1:0] ID_imm,
     input wire [XLEN-1:0] ID_csr_read_data,
 
+    // Pre-computed hazard signals from ID stage
+    input wire ID_is_store,
+    input wire ID_uses_rs1,
+    input wire ID_uses_rs2,
+
     // signals to EX/MEM register
     output reg [XLEN-1:0] EX_pc,
     output reg [XLEN-1:0] EX_pc_plus_4,
@@ -51,19 +56,24 @@ module ID_EX_Register #(
     output reg EX_register_write_enable,
     output reg EX_csr_write_enable,
     output reg EX_branch,
-    output reg [1:0] EX_alu_src_A_select,
-    output reg [2:0] EX_alu_src_B_select,
+    (* MAX_FANOUT = 32 *) output reg [1:0] EX_alu_src_A_select,
+    (* MAX_FANOUT = 32 *) output reg [2:0] EX_alu_src_B_select,
     output reg [6:0] EX_opcode,
     output reg [2:0] EX_funct3,
     output reg [6:0] EX_funct7,
-    output reg [4:0] EX_rd,
+    (* MAX_FANOUT = 32 *) output reg [4:0] EX_rd,
     output reg [19:0] EX_raw_imm,
     output reg [XLEN-1:0] EX_read_data1,
     output reg [XLEN-1:0] EX_read_data2,
-    output reg [4:0] EX_rs1,
-    output reg [5:0] EX_rs2,
+    (* MAX_FANOUT = 32 *) output reg [4:0] EX_rs1,
+    (* MAX_FANOUT = 32 *) output reg [5:0] EX_rs2,
     output reg [XLEN-1:0] EX_imm,
-    output reg [XLEN-1:0] EX_csr_read_data
+    output reg [XLEN-1:0] EX_csr_read_data,
+
+    // Pre-computed hazard signals to EX stage
+    output reg EX_is_store,
+    output reg EX_uses_rs1,
+    output reg EX_uses_rs2
 );
 
 always @(posedge clk) begin
@@ -94,6 +104,10 @@ always @(posedge clk) begin
             EX_rs2 <= 5'b0;
             EX_imm <= {XLEN{1'b0}};
             EX_csr_read_data <= {XLEN{1'b0}};
+
+            EX_is_store <= 1'b0;
+            EX_uses_rs1 <= 1'b0;
+            EX_uses_rs2 <= 1'b0;
         end 
         else if (!ID_EX_stall) begin
             EX_pc <= ID_pc;
@@ -121,6 +135,10 @@ always @(posedge clk) begin
             EX_rs2 <= ID_rs2;
             EX_imm <= ID_imm;
             EX_csr_read_data <= ID_csr_read_data;
+
+            EX_is_store <= ID_is_store;
+            EX_uses_rs1 <= ID_uses_rs1;
+            EX_uses_rs2 <= ID_uses_rs2;
         end 
     end 
 end

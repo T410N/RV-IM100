@@ -17,10 +17,14 @@ module ALU #(
 
     input mul_start,
     output mul_busy,
-
+    
+    output wire [31:0] alu_word_result_out,
     output reg [XLEN-1:0] alu_result,   // ALU result
     output reg alu_zero             // zero flag
 );
+    
+    assign alu_word_result_out = alu_word_result;
+
     wire [31:0] alu_word_result;
     wire alu_word_zero;
 
@@ -171,14 +175,8 @@ module ALU #(
             end
             
             default: begin
-                if (input_size_word) begin
-                    alu_result = {{32{alu_word_result[31]}}, alu_word_result};
-                    alu_zero = alu_word_zero;
-                end
-                else begin
-                    alu_result = alu_dword_result;
-                    alu_zero = alu_dword_zero;
-                end
+                alu_result = alu_dword_result;
+                alu_zero = alu_dword_zero;
             end
         endcase
     end

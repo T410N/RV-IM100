@@ -12,8 +12,10 @@ module IO_ID_Register #(
     input wire [XLEN-1:0] IO_pc_plus_4,
     input wire [31:0] IO_instruction,
     input wire branch_estimation,
+    input wire IO_valid_csr_address,
 
     // signals to ID/EX register
+    output reg ID_valid_csr_address,
     output reg [XLEN-1:0] ID_pc,
     output reg [XLEN-1:0] ID_pc_plus_4,
     output reg [31:0] ID_instruction,
@@ -27,11 +29,13 @@ always @(posedge clk) begin
             ID_pc_plus_4 <= {XLEN{1'b0}};
             ID_instruction <= 32'h0000_0013; // ADDI x0, x0, 0 = RISC-V NOP, HINT
             ID_branch_estimation <= 1'b0;
+            ID_valid_csr_address <= 1'b0;
         end else if (!IO_ID_stall) begin
             ID_pc <= IO_pc;
             ID_pc_plus_4 <= IO_pc_plus_4;
             ID_instruction <= IO_instruction;
             ID_branch_estimation <= branch_estimation;
+            ID_valid_csr_address <= IO_valid_csr_address;
         end
     end
 end

@@ -41,7 +41,6 @@ module HazardUnit (
     input wire [11:0] WB_csr_write_address,
 
     input wire [4:0] EX_rd,
-    input wire [6:0] EX_opcode,
     input wire [4:0] EX_rs1,
     input wire [4:0] EX_rs2,
     input wire [11:0] EX_imm,
@@ -49,16 +48,21 @@ module HazardUnit (
     input wire EX_csr_write_enable,
 
     input wire EX_jump,
+    input wire EX2_jump,
     input wire branch_prediction_miss,
 
-    input wire [1:0] EX_alu_src_A_select,
-    input wire [2:0] EX_alu_src_B_select,
+    // Pre-computed signals (registered in ID_EX)
+    input wire EX_is_store,
+    input wire EX_uses_rs1,
+    input wire EX_uses_rs2,
+
+    input wire ex2_is_load,
 
     // to Forward Unit - ALU forwarding
     output reg [1:0] hazard_ex2,
     output reg [1:0] hazard_mem,
     output reg [1:0] hazard_wb,
-    
+
     // to Forward Unit - Store data forwarding
     output wire store_hazard_ex2,
     output wire store_hazard_mem,
@@ -83,32 +87,27 @@ module HazardUnit (
     output reg MEM_WB_stall
 );
 
-    // Store instruction detection
-    wire is_store = (EX_opcode == `OPCODE_STORE);
+    // Store instruction detection - MEM stage only (not on critical path)
     wire is_store_mem = (MEM_opcode == `OPCODE_STORE);
 
-    wire uses_rs1 = (EX_alu_src_A_select == `ALU_SRC_A_RD1);
-    wire uses_rs2 = (EX_alu_src_B_select == `ALU_SRC_B_RD2);
-    wire ex2_is_load = (EX2_opcode == `OPCODE_LOAD);
-
-    // Register ALU hazard detections
-    wire ex2_hazard_rs1 = uses_rs1 && EX2_register_write_enable && (EX2_rd != 5'd0) && (EX2_rd == EX_rs1);
-    wire ex2_hazard_rs2 = uses_rs2 && EX2_register_write_enable && (EX2_rd != 5'd0) && (EX2_rd == EX_rs2);
-    wire mem_hazard_rs1 = uses_rs1 && MEM_register_write_enable && (MEM_rd != 5'd0) && (MEM_rd == EX_rs1);
-    wire mem_hazard_rs2 = uses_rs2 && MEM_register_write_enable && (MEM_rd != 5'd0) && (MEM_rd == EX_rs2);
-    wire wb_hazard_rs1 = uses_rs1 && WB_register_write_enable && (WB_rd != 5'd0) && (WB_rd == EX_rs1);
-    wire wb_hazard_rs2 = uses_rs2 && WB_register_write_enable && (WB_rd != 5'd0) && (WB_rd == EX_rs2);
+    // Register ALU hazard detections (EX_is_store, EX_uses_rs1, EX_uses_rs2 are all registered)
+    wire ex2_hazard_rs1 = EX_uses_rs1 && EX2_register_write_enable && (EX2_rd != 5'd0) && (EX2_rd == EX_rs1);
+    wire ex2_hazard_rs2 = EX_uses_rs2 && EX2_register_write_enable && (EX2_rd != 5'd0) && (EX2_rd == EX_rs2);
+    wire mem_hazard_rs1 = EX_uses_rs1 && MEM_register_write_enable && (MEM_rd != 5'd0) && (MEM_rd == EX_rs1);
+    wire mem_hazard_rs2 = EX_uses_rs2 && MEM_register_write_enable && (MEM_rd != 5'd0) && (MEM_rd == EX_rs2);
+    wire wb_hazard_rs1 = EX_uses_rs1 && WB_register_write_enable && (WB_rd != 5'd0) && (WB_rd == EX_rs1);
+    wire wb_hazard_rs2 = EX_uses_rs2 && WB_register_write_enable && (WB_rd != 5'd0) && (WB_rd == EX_rs2);
 
     // Load-use hazard detections (stall needed for EX stage consumer)
-    wire load_use_hazard_rs1 = ex2_is_load && uses_rs1 && (EX2_rd != 5'd0) && (EX2_rd == EX_rs1);
-    wire load_use_hazard_rs2 = ex2_is_load && uses_rs2 && (EX2_rd != 5'd0) && (EX2_rd == EX_rs2);
-    wire load_use_hazard_store = ex2_is_load && is_store && (EX2_rd != 5'd0) && (EX2_rd == EX_rs2);
+    wire load_use_hazard_rs1 = ex2_is_load && EX_uses_rs1 && (EX2_rd != 5'd0) && (EX2_rd == EX_rs1);
+    wire load_use_hazard_rs2 = ex2_is_load && EX_uses_rs2 && (EX2_rd != 5'd0) && (EX2_rd == EX_rs2);
+    wire load_use_hazard_store = ex2_is_load && EX_is_store && (EX2_rd != 5'd0) && (EX2_rd == EX_rs2);
     assign load_use_hazard = load_use_hazard_rs1 || load_use_hazard_rs2 || load_use_hazard_store;
 
     // Store rs2 hazard detections (for store data, not ALU operand)
-    wire store_ex2_hazard_rs2 = is_store && EX2_register_write_enable && (EX2_rd != 5'd0) && (EX2_rd == EX_rs2);
-    wire store_mem_hazard_rs2 = is_store && MEM_register_write_enable && (MEM_rd != 5'd0) && (MEM_rd == EX_rs2);
-    wire store_wb_hazard_rs2 = is_store && WB_register_write_enable && (WB_rd != 5'd0) && (WB_rd == EX_rs2);
+    wire store_ex2_hazard_rs2 = EX_is_store && EX2_register_write_enable && (EX2_rd != 5'd0) && (EX2_rd == EX_rs2);
+    wire store_mem_hazard_rs2 = EX_is_store && MEM_register_write_enable && (MEM_rd != 5'd0) && (MEM_rd == EX_rs2);
+    wire store_wb_hazard_rs2 = EX_is_store && WB_register_write_enable && (WB_rd != 5'd0) && (WB_rd == EX_rs2);
 
     // Store instruction rs2 hazard detections (EX stage)
     // Priority: EX2 > MEM > WB > Retire (use masked signals for correct priority)
@@ -142,33 +141,30 @@ module HazardUnit (
         EX_MEM_stall = 1'b0;
         MEM_WB_stall = 1'b0;
 
-        // ALU forwarding hazards (priority: EX2 > MEM > WB > Retire)
+        // ALU forwarding hazards (priority: EX2 > MEM > WB)
         // For Store instructions, rs2 hazard shouldn't trigger ALUsrcB forwarding.
-        // CRITICAL FIX: Use forwarding enables (hazard_*) for priority masking, not raw signals (ex2_hazard_*)
-        // This ensures that when EX2 has a load (hazard_ex2[0]=0), lower-priority forwarding is not blocked
         hazard_ex2[0] = ex2_hazard_rs1 && !ex2_is_load;
-        hazard_ex2[1] = is_store ? 1'b0 : (ex2_hazard_rs2 && !ex2_is_load);
+        hazard_ex2[1] = EX_is_store ? 1'b0 : (ex2_hazard_rs2 && !ex2_is_load);
 
         // MEM forwarding: enabled if MEM has dependency AND EX2 is not forwarding
         hazard_mem[0] = mem_hazard_rs1 && !hazard_ex2[0];
-        hazard_mem[1] = is_store ? 1'b0 : (mem_hazard_rs2 && !hazard_ex2[1]);
+        hazard_mem[1] = EX_is_store ? 1'b0 : (mem_hazard_rs2 && !hazard_ex2[1]);
 
         // WB forwarding: enabled if WB has dependency AND neither EX2 nor MEM is forwarding
         hazard_wb[0] = wb_hazard_rs1 && !hazard_mem[0] && !hazard_ex2[0];
-        hazard_wb[1] = is_store ? 1'b0 : (wb_hazard_rs2 && !hazard_mem[1] && !hazard_ex2[1]);
+        hazard_wb[1] = EX_is_store ? 1'b0 : (wb_hazard_rs2 && !hazard_mem[1] && !hazard_ex2[1]);
 
-
-        if (trap_done && (branch_prediction_miss || EX_jump)) begin
+        if (trap_done && (branch_prediction_miss || EX2_jump)) begin
             IF_IO_flush = 1'b1;
             IO_ID_flush = 1'b1;
+            ID_EX_flush = 1'b1;
             if (branch_prediction_miss) begin
-                ID_EX_flush = 1'b1;
                 if (write_done && csr_ready && !div_start && !div_busy && !mul_start && !mul_busy) begin
                     EX_EX2_flush = 1'b1;
                 end
             end
-            else if (EX_jump && !load_use_hazard && !pth_done_flush && write_done) begin
-                ID_EX_flush = 1'b1;
+            else if (EX2_jump && !pth_done_flush && write_done) begin
+                EX_EX2_flush = 1'b1;
             end
         end
 
@@ -178,12 +174,7 @@ module HazardUnit (
             ID_EX_flush = 1'b1;
             EX_EX2_flush = 1'b1;
             EX_MEM_flush = 1'b1;
-            if (reset) begin
-                MEM_WB_flush = 1'b1;
-            end
-            else begin 
-                MEM_WB_flush = 1'b0;
-            end
+            MEM_WB_flush = 1'b1;
         end
 
         if (standby_mode) begin
@@ -220,7 +211,7 @@ module HazardUnit (
             MEM_WB_stall = 1'b1;
         end
 
-        if ((load_use_hazard || csr_data_hazard)&& trap_done && csr_ready && !standby_mode && !div_start && !div_busy && !mul_start && !mul_busy && write_done) begin
+        if ((load_use_hazard || csr_data_hazard) && trap_done && csr_ready && !standby_mode && !div_start && !div_busy && !mul_start && !mul_busy && write_done) begin
             IF_IO_stall = 1'b1;
             IO_ID_stall = 1'b1;
             ID_EX_stall = 1'b1;

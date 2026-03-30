@@ -166,6 +166,7 @@ module RV64IM72F6SP #(
     wire EX2_branch;
     wire EX2_branch_estimation;
     wire EX2_alu_zero;
+    wire EX2_jump;
     
 
     // EX_MEM_Register
@@ -267,6 +268,13 @@ module RV64IM72F6SP #(
     wire load_use_hazard;
     wire misaligned_instruction_flush;
     wire misaligned_memory_flush;
+    
+    wire EX_is_store;
+    wire EX_uses_rs1;
+    wire EX_uses_rs2;
+    wire ID_is_store = (opcode == `OPCODE_STORE);
+    wire ID_uses_rs1 = (alu_src_A_select == `ALU_SRC_A_RD1);
+    wire ID_uses_rs2 = (alu_src_B_select == `ALU_SRC_B_RD2);
 
     // Forward Unit
     wire [1:0] hazard_ex2;
@@ -288,6 +296,10 @@ module RV64IM72F6SP #(
     wire [XLEN-1:0] EX_read_data2_MUX;
     assign EX_read_data2_MUX = store_forward_enable ? store_forward_data_muxed : EX_read_data2;
     wire [2:0] EX2_forward_select;
+    
+    wire [31:0] alu_word_result_out;
+    wire [31:0] EX2_alu_word_result;
+    wire EX2_input_size_word;
     
 
     // WB->MEM store data forwarding
@@ -312,10 +324,15 @@ module RV64IM72F6SP #(
     assign MMIO_data_memory_address = MEM_alu_result;
 
     // MMIO Interface logics
-    wire mmio_uart_status_hit;
-    assign mmio_uart_status_hit = (MEM_alu_result == 64'h0000_0000_1001_0004);
+    reg mmio_uart_status_hit_reg;
+    always @(posedge clk) begin
+        if (reset)
+            mmio_uart_status_hit_reg <= 1'b0;
+        else if (clk_enable && !EX_MEM_stall)
+            mmio_uart_status_hit_reg <= (EX2_alu_result == 64'h0000_0000_1001_0004);
+    end
     wire [XLEN-1:0] data_memory_read_data_muxed;
-    assign data_memory_read_data_muxed = mmio_uart_status_hit ? {31'b0, UART_busy, 32'b0} : data_memory_read_data;
+    assign data_memory_read_data_muxed = mmio_uart_status_hit_reg ? {31'b0, UART_busy, 32'b0} : data_memory_read_data;
 
     ALU alu (
         .clk(clk),
@@ -329,7 +346,8 @@ module RV64IM72F6SP #(
         .div_busy(div_busy),
         .mul_start(mul_start),
         .mul_busy(mul_busy),
-
+        
+        .alu_word_result_out(alu_word_result_out),
         .alu_result(alu_result),
         .alu_zero(alu_zero)
     );
@@ -427,6 +445,7 @@ module RV64IM72F6SP #(
         .csr_write_address(csr_write_address),
         .csr_write_data(csr_write_data),
         .instruction_retired(instruction_retired),
+        .valid_csr_address(trapped ? 1'b1 : ID_valid_csr_address),
 
         .csr_read_out(csr_read_out),
         .csr_ready(csr_ready) 
@@ -487,7 +506,7 @@ module RV64IM72F6SP #(
         .hazard_mem(hazard_mem),
         .hazard_wb(hazard_wb),
         .EX2_imm(EX2_imm),
-        .EX2_alu_result(EX2_alu_result),
+        .EX2_alu_result(EX2_alu_result_final),
         .EX2_csr_read_data(EX2_csr_read_data),
         .EX2_pc_plus_4(EX2_pc_plus_4),
         .EX2_forward_select(EX2_forward_select),
@@ -537,6 +556,7 @@ module RV64IM72F6SP #(
         .EX2_rs2(EX2_rs2),
         .EX2_branch(EX2_branch),
         .EX2_register_write_enable(EX2_register_write_enable),
+        .ex2_is_load(EX2_is_load),
         .MEM_rd(MEM_rd),
         .MEM_opcode(MEM_opcode),
         .MEM_rs2(MEM_rs2),
@@ -550,13 +570,14 @@ module RV64IM72F6SP #(
         .EX_rs1(EX_rs1),
         .EX_rs2(EX_rs2[4:0]),
         .EX_rd(EX_rd),
-        .EX_opcode(EX_opcode),
         .EX_imm(EX_raw_imm[11:0]),
         .branch_prediction_miss(branch_prediction_miss),
         .EX_jump(EX_jump),
-        .EX_alu_src_A_select(EX_alu_src_A_select),
-        .EX_alu_src_B_select(EX_alu_src_B_select),
-
+        .EX2_jump(EX2_jump),
+        .EX_is_store(EX_is_store),
+        .EX_uses_rs1(EX_uses_rs1),
+        .EX_uses_rs2(EX_uses_rs2),
+ 
         .hazard_ex2(hazard_ex2),
         .hazard_mem(hazard_mem),
         .hazard_wb(hazard_wb),
@@ -565,7 +586,7 @@ module RV64IM72F6SP #(
         .store_hazard_wb(store_hazard_wb),
         .store_hazard_wb_to_mem(store_hazard_wb_to_mem),
         .load_use_hazard(load_use_hazard),
-
+ 
         .IF_IO_flush(IF_IO_flush),
         .IO_ID_flush(IO_ID_flush),
         .ID_EX_flush(ID_EX_flush),
@@ -623,12 +644,12 @@ module RV64IM72F6SP #(
     );
 
     PCController pc_controller (
-        .jump(EX_jump),
+        .jump(EX2_jump),
         .branch_estimation(branch_estimation),
         .branch_prediction_miss(branch_prediction_miss),
         .trapped(trapped),
 	    .pc(pc),
-        .jump_target(alu_result),
+        .jump_target(EX2_alu_result),
         .branch_target(branch_target),
         .branch_target_actual(branch_target_actual),
 	    .trap_target(trap_target),
@@ -706,11 +727,13 @@ module RV64IM72F6SP #(
         .IO_pc_plus_4(IO_pc_plus_4),
         .IO_instruction(IO_instruction),
         .branch_estimation(branch_estimation),
+        .IO_valid_csr_address(IO_valid_csr_address),
 
         .ID_pc(ID_pc),
         .ID_pc_plus_4(ID_pc_plus_4),
         .ID_instruction(ID_instruction),
-        .ID_branch_estimation(ID_branch_estimation)
+        .ID_branch_estimation(ID_branch_estimation),
+        .ID_valid_csr_address(ID_valid_csr_address)
     );
 
     ID_EX_Register #(.XLEN(XLEN)) id_ex_register (
@@ -744,6 +767,10 @@ module RV64IM72F6SP #(
         .ID_rs2(rs2),
         .ID_imm(imm),
         .ID_csr_read_data(csr_read_out),
+        
+        .ID_is_store(ID_is_store),
+        .ID_uses_rs1(ID_uses_rs1),
+        .ID_uses_rs2(ID_uses_rs2),
 
         .EX_pc(EX_pc),
         .EX_pc_plus_4(EX_pc_plus_4),
@@ -769,7 +796,11 @@ module RV64IM72F6SP #(
         .EX_rs1(EX_rs1),
         .EX_rs2(EX_rs2),
         .EX_imm(EX_imm),
-        .EX_csr_read_data(EX_csr_read_data)
+        .EX_csr_read_data(EX_csr_read_data),
+        
+        .EX_is_store(EX_is_store),
+        .EX_uses_rs1(EX_uses_rs1),
+        .EX_uses_rs2(EX_uses_rs2)
     );
     
     EX_EX2_Register #(.XLEN(XLEN)) ex_ex2_register (
@@ -810,6 +841,12 @@ module RV64IM72F6SP #(
         .EX_branch_estimation(EX_branch_estimation),
         .EX_alu_zero(alu_zero),
         .EX_forward_select(EX_forward_select),
+        .EX_jump(EX_jump),
+        
+        .EX_alu_word_result(alu_word_result_out),
+        .EX_input_size_word(input_size_word),
+        .EX2_alu_word_result(EX2_alu_word_result),
+        .EX2_input_size_word(EX2_input_size_word),
 
         // outputs to EX2 stage
         .EX2_forward_select(EX2_forward_select),
@@ -839,13 +876,15 @@ module RV64IM72F6SP #(
 
         .EX2_csr_read_data(EX2_csr_read_data),
         .EX2_alu_result(EX2_alu_result),
+        .EX2_jump(EX2_jump),
 
         .EX2_branch(EX2_branch),
         .EX2_branch_estimation(EX2_branch_estimation),
         .EX2_alu_zero(EX2_alu_zero)
     );
 
-
+    wire [XLEN-1:0] EX2_alu_result_final = EX2_input_size_word ? {{32{EX2_alu_word_result[31]}}, EX2_alu_word_result} : EX2_alu_result;
+    
     EX_MEM_Register #(.XLEN(XLEN)) ex_mem_register (
         .clk(clk),
         .clk_enable(clk_enable),
@@ -871,7 +910,7 @@ module RV64IM72F6SP #(
         .EX_imm(EX2_imm),
         .EX_csr_read_data(EX2_csr_read_data),
 
-        .EX_alu_result(EX2_alu_result),
+        .EX_alu_result(EX2_alu_result_final),
 
         .MEM_pc(MEM_pc),
         .MEM_pc_plus_4(MEM_pc_plus_4),
@@ -1057,5 +1096,17 @@ module RV64IM72F6SP #(
             default: EX_forward_select = 3'd0; // alu_result
         endcase
     end
+
+    wire [11:0] IO_csr_address = IO_instruction[31:20];
+    wire IO_valid_csr_address = (IO_csr_address == 12'hB00) || // mcycle
+                               (IO_csr_address == 12'hB02) || // minstret
+                               (IO_csr_address == 12'hF11) || // mvendorid
+                               (IO_csr_address == 12'hF12) || // marchid  
+                               (IO_csr_address == 12'hF14) || // mhartid
+                               (IO_csr_address == 12'h300) || // mstatus
+                               (IO_csr_address == 12'h301) || // misa
+                               (IO_csr_address == 12'h305) || // mtvec
+                               (IO_csr_address == 12'h341) || // mepc
+                               (IO_csr_address == 12'h342);   // mcause
 
 endmodule
