@@ -1,3 +1,4 @@
+<img width="881" height="492" alt="rv64soc" src="https://github.com/user-attachments/assets/20cc02d9-e743-4c5f-a994-3b77b55d72fe" />
 # RV-IM100
 ## Quantitive Performance Analysis on RISC-V Architecture about ISA Extension and Operating Speed Acceleration.
 <img width="900" height="512" alt="KHWL_Original_RVIM100" src="https://github.com/user-attachments/assets/01d3e2d6-57d0-4e7e-b4a3-df2cbd42651a" />
@@ -31,7 +32,7 @@ Based on MIPS 5-Stage architecture, basic_RV32s' architecture was designed, and 
 Click the image for better resoloution
 
 ### SoC Configuration
-<img width="881" height="492" alt="59F5SP" src="https://github.com/user-attachments/assets/63cae7ca-6582-493d-9461-f5cef92835c2" />
+<img width="881" height="492" alt="rv64soc" src="https://github.com/user-attachments/assets/a44829f6-e163-4c7b-b76f-4fcfec7e172c" />
 Click the image for better resoloution
 
 ## Benchmark Environment
