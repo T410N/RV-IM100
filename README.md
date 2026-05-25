@@ -27,11 +27,13 @@ This repository is about benchmarking and analyzing the results of **extended** 
 ## Architecture Diagram 
 ### Final 8-Stage Pipelined Architecture(IF-IO-ID-EXR-EX-BR(EX2)-MEM-WB)
 Based on MIPS 5-Stage architecture, basic_RV32s' architecture was designed, and extended to 8-stage originally by Hyunwoo Kang.
-![Image of 72F8SP](/docs/diagrams/RV32I46F_8SP_handmade_noMMIO_withWatermark.drawio.png)
+![Image of 72F8SP](/docs/diagrams/RV32I46F_8SP_handmade_noMMIO_withWatermark.drawio.png)  
+
 Click the image for better resoloution
 
 ### SoC Configuration
-<img width="881" height="492" alt="rv64soc drawio" src="https://github.com/user-attachments/assets/2cd12f08-c8c4-4d52-9d15-96de29993ad9" />
+<img width="881" height="492" alt="rv64soc drawio" src="https://github.com/user-attachments/assets/2cd12f08-c8c4-4d52-9d15-96de29993ad9" />  
+
 Click the image for better resoloution
 
 ## Benchmark Environment
