@@ -31,7 +31,7 @@ Based on MIPS 5-Stage architecture, basic_RV32s' architecture was designed, and 
 Click the image for better resoloution
 
 ### SoC Configuration
-<img width="881" height="492" alt="rv64soc" src="https://github.com/user-attachments/assets/a44829f6-e163-4c7b-b76f-4fcfec7e172c" />
+<img width="881" height="492" alt="rv64soc drawio" src="https://github.com/user-attachments/assets/2cd12f08-c8c4-4d52-9d15-96de29993ad9" />
 Click the image for better resoloution
 
 ## Benchmark Environment
