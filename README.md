@@ -1,4 +1,3 @@
-<img width="881" height="492" alt="rv64soc" src="https://github.com/user-attachments/assets/20cc02d9-e743-4c5f-a994-3b77b55d72fe" />
 # RV-IM100
 ## Quantitive Performance Analysis on RISC-V Architecture about ISA Extension and Operating Speed Acceleration.
 <img width="900" height="512" alt="KHWL_Original_RVIM100" src="https://github.com/user-attachments/assets/01d3e2d6-57d0-4e7e-b4a3-df2cbd42651a" />
