@@ -15,8 +15,8 @@ This repository is about benchmarking and analyzing the results of **extended** 
 - **RV32s**: Vivado ready RV32 Project files for all configurations
 - **RV64s**: Vivado ready RV64 Project files for all configurations
 - **benchmarks**: CoreMark and Dhrystone RISC-V ported source codes and `.mem` file for Synthesis
-  - **results**: Result screenshot of each benchmarks
 - **codes**: RTL only directory for all configurations
+- **docs**: block diagram of core architectures and document about architecture specifications and design logics
 
 ## Contribution
 - Show how to extend a RISC-V ISA with M-extension while using modular verilog design.
@@ -27,7 +27,7 @@ This repository is about benchmarking and analyzing the results of **extended** 
 ## Architecture Diagram 
 ### Final 8-Stage Pipelined Architecture(IF-IO-ID-EXR-EX-BR(EX2)-MEM-WB)
 Based on MIPS 5-Stage architecture, basic_RV32s' architecture was designed, and extended to 8-stage originally by Hyunwoo Kang.
-<img width="2676" height="1607" alt="RV64IM72F_8SP" src="https://github.com/user-attachments/assets/54ba627f-65c5-49fa-883e-63048430e746" />
+![Image of 72F8SP](/docs/diagrams/RV32I46F_8SP_handmade_noMMIO_withWatermark.drawio.png)
 Click the image for better resoloution
 
 ### SoC Configuration
