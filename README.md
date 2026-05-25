@@ -15,7 +15,6 @@ This repository is about benchmarking and analyzing the results of **extended** 
 - **RV32s**: Vivado ready RV32 Project files for all configurations
 - **RV64s**: Vivado ready RV64 Project files for all configurations
 - **benchmarks**: CoreMark and Dhrystone RISC-V ported source codes and `.mem` file for Synthesis
-  - **results**: Result screenshot of each benchmarks
 - **codes**: RTL only directory for all configurations
 - **docs**: block diagram of core architectures and document about architecture specifications and design logics
 
