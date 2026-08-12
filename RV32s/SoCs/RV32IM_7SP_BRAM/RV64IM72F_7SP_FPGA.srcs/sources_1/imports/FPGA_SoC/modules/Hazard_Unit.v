@@ -5,7 +5,7 @@
 module HazardUnit (
     input wire reset,
     input wire trap_done,
-    input wire csr_ready,
+    input wire csr_ready_stall,
     input wire standby_mode,
     input wire div_start,
     input wire div_busy,
@@ -180,7 +180,7 @@ module HazardUnit (
             IO_ID_flush = 1'b1;
             if (branch_prediction_miss) begin
                 ID_EX_flush = 1'b1;
-                if (write_done && csr_ready && !div_start && !div_busy && !mul_start && !mul_busy) begin
+                if (write_done && !csr_ready_stall && !div_start && !div_busy && !mul_start && !mul_busy) begin
                     EX_EX2_flush = 1'b1;
                 end
             end
@@ -211,7 +211,7 @@ module HazardUnit (
             EX_MEM_stall = 1'b0;
             MEM_WB_stall = 1'b0;
         end 
-        else if (!trap_done || !csr_ready) begin
+        else if (!trap_done || csr_ready_stall) begin
             IF_IO_stall = 1'b1;
             IO_ID_stall = 1'b1;
             ID_EX_stall = 1'b1;
@@ -237,7 +237,7 @@ module HazardUnit (
             MEM_WB_stall = 1'b1;
         end
 
-        if (load_use_hazard && trap_done && csr_ready && !standby_mode && !div_start && !div_busy && !mul_start && !mul_busy && write_done) begin
+        if (load_use_hazard && trap_done && !csr_ready_stall && !standby_mode && !div_start && !div_busy && !mul_start && !mul_busy && write_done) begin
             IF_IO_stall = 1'b1;
             IO_ID_stall = 1'b1;
             ID_EX_stall = 1'b1;

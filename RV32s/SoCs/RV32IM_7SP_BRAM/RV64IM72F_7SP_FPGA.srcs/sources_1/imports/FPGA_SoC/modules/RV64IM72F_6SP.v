@@ -1,6 +1,8 @@
 `include "./alu_src_select.vh"
 `include "./rf_wd_select.vh"
 `include "./alu_op.vh"
+`include "./csr_funct3.vh"
+`include "./opcode.vh"
 
 module RV32IM72F7SP #(
     parameter XLEN = 32
@@ -103,7 +105,16 @@ module RV32IM72F7SP #(
     reg [XLEN-1:0] csr_write_data;
     wire [XLEN-1:0] csr_read_out;
     wire csr_ready;
+    wire csr_ready_stall;
     reg instruction_retired;
+
+    // csr_ready is meaningful for pipeline stalling only while the ID-stage
+    // instruction is an actual CSR instruction. Without this qualification,
+    // a non-CSR immediate such as sw ..., 12'h300(...) is mistaken for an
+    // mstatus read and can block a simultaneous jump redirect.
+    wire ID_csr_access = (opcode == `OPCODE_ENVIRONMENT) &&
+                         (funct3 != `CSR_NONE);
+    assign csr_ready_stall = ID_csr_access && !csr_ready;
 
     // Exception_Detector
     wire trapped;
@@ -393,7 +404,7 @@ module RV32IM72F7SP #(
 	    .opcode(opcode),
 	    .funct3(funct3),
         .trap_done(trap_done),
-        .csr_ready(csr_ready),
+        .csr_ready_stall(csr_ready_stall),
         .IF_IO_stall(IF_IO_stall),
 
         .pc_stall(pc_stall),
@@ -538,7 +549,7 @@ module RV32IM72F7SP #(
         .misaligned_instruction_flush(misaligned_instruction_flush),
         .misaligned_memory_flush(misaligned_memory_flush),
         .pth_done_flush(pth_done_flush),
-        .csr_ready(csr_ready),
+        .csr_ready_stall(csr_ready_stall),
         .ID_rs1(rs1),
         .ID_rs2(rs2),
         .ID_raw_imm(raw_imm[11:0]),

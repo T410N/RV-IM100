@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/constrs_1/imports/sources/RV32I46F_5SP_Debug_XDC.xdc rfile:../../../RV64IM72F_7SP_BRAM.srcs/constrs_1/imports/sources/RV32I46F_5SP_Debug_XDC.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/constrs_1/imports/sources/RV32I46F_5SP_Debug_XDC.xdc rfile:../../../RV64IM72F_7SP_BRAM.srcs/constrs_1/imports/sources/RV32I46F_5SP_Debug_XDC.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:8 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN R4    IOSTANDARD LVCMOS33 } [get_ports { clk }];
 set_property src_info {type:XDC file:1 line:14 export:INPUT save:INPUT read:READ} [current_design]

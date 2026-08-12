@@ -19,14 +19,14 @@ ASM_SRC  = crt0.S
 LDSCRIPT = linker.ld
 
 # Architecture flags - RV64IM with Zicsr extension
-ARCH_FLAGS = -march=rv64i_zicsr -mabi=lp64
+ARCH_FLAGS = -march=rv64im_zicsr -mabi=lp64
 
 # CoreMark configuration
 ITERATIONS ?= 0
 TOTAL_DATA_SIZE ?= 2000
 
 # Compiler flags string for reporting
-FLAGS_STR = "-O2 -march=rv64i_zicsr -mabi=lp64 -fno-common -funroll-loops"
+FLAGS_STR = "-O2 -march=rv64im_zicsr -mabi=lp64 -fno-common -funroll-loops"
 
 # CoreMark flags
 CM_CFLAGS  = -DITERATIONS=$(ITERATIONS)

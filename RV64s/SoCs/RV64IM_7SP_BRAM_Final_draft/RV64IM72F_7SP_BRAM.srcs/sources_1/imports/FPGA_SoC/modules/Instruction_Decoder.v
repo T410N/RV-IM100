@@ -20,7 +20,7 @@ module InstructionDecoder (
 	
 	wire i_shift = (opcode == `OPCODE_ITYPE) && (funct3 == `ITYPE_SLLI || funct3 == `ITYPE_SRXI);
 
-	assign rs2 = i_shift ? {1'b0, instruction[25:20]} : {1'b0, instruction[24:20]}; // 6-bit shamt for RV64I shifts
+	assign rs2 = i_shift ? instruction[25:20] : {1'b0, instruction[24:20]}; // 6-bit shamt for RV64I shifts
 	assign funct7 = i_shift ? {1'b0, instruction[31:26]} : {instruction[31:25]};
 
     always @(*) begin
@@ -56,7 +56,7 @@ module InstructionDecoder (
 			end
 			
 			`OPCODE_BRANCH: begin // B-type
-				raw_imm = {instruction[31], instruction[7], instruction[30:25], instruction[11:8]};
+				raw_imm = {8'b0, instruction[31], instruction[7], instruction[30:25], instruction[11:8]};
 			end
 			
 			`OPCODE_STORE: begin // S-type

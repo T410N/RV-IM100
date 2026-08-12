@@ -7,13 +7,13 @@
   **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
   **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
   **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-  **** Start of session at: Wed Mar 25 16:25:32 2026
+  **** Start of session at: Sun Aug  2 18:25:21 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source RV64IM72F5SPSoCTOP.tcl -notrace
-Command: read_checkpoint -auto_incremental -incremental /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/utils_1/imports/synth_1/RV64IM72F5SPSoCTOP.dcp
-INFO: [Vivado 12-5825] Read reference checkpoint from /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/utils_1/imports/synth_1/RV64IM72F5SPSoCTOP.dcp for incremental synthesis
+Command: read_checkpoint -auto_incremental -incremental /home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/utils_1/imports/synth_1/RV64IM72F5SPSoCTOP.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/utils_1/imports/synth_1/RV64IM72F5SPSoCTOP.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top RV64IM72F5SPSoCTOP -part xc7a200tsbg484-1 -directive PerformanceOptimized -fsm_extraction one_hot -keep_equivalent_registers -resource_sharing off -no_lc -shreg_min_size 5
 Starting synth_design
@@ -24,132 +24,128 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 212996
+INFO: [Synth 8-7075] Helper process launched with PID 661416
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2242.262 ; gain = 482.844 ; free physical = 14601 ; free virtual = 29575
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2249.602 ; gain = 483.188 ; free physical = 1201 ; free virtual = 26613
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-11241] undeclared symbol 'ID_valid_csr_address', assumed default net type 'wire' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:437]
-INFO: [Synth 8-11241] undeclared symbol 'instruction_pc', assumed default net type 'wire' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:705]
-INFO: [Synth 8-11241] undeclared symbol 'instruction_pc_plus_4', assumed default net type 'wire' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:706]
-INFO: [Synth 8-11241] undeclared symbol 'IO_valid_csr_address', assumed default net type 'wire' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:729]
-WARNING: [Synth 8-8895] 'instruction_pc' is already implicitly declared on line 705 [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:964]
-WARNING: [Synth 8-8895] 'instruction_pc_plus_4' is already implicitly declared on line 706 [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:965]
-WARNING: [Synth 8-8895] 'IO_valid_csr_address' is already implicitly declared on line 729 [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:1070]
-WARNING: [Synth 8-6901] identifier 'IO_instruction' is used before its declaration [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:34]
-WARNING: [Synth 8-6901] identifier 'IO_instruction' is used before its declaration [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:34]
-WARNING: [Synth 8-6901] identifier 'IO_instruction' is used before its declaration [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:34]
-WARNING: [Synth 8-6901] identifier 'IO_instruction' is used before its declaration [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:34]
-WARNING: [Synth 8-6901] identifier 'IO_instruction' is used before its declaration [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:34]
-WARNING: [Synth 8-6901] identifier 'IO_instruction' is used before its declaration [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:35]
-WARNING: [Synth 8-6901] identifier 'EX_opcode' is used before its declaration [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:141]
+INFO: [Synth 8-11241] undeclared symbol 'instruction_pc', assumed default net type 'wire' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:714]
+INFO: [Synth 8-11241] undeclared symbol 'instruction_pc_plus_4', assumed default net type 'wire' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:715]
+INFO: [Synth 8-11241] undeclared symbol 'IO_valid_csr_address', assumed default net type 'wire' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:738]
+WARNING: [Synth 8-8895] 'instruction_pc' is already implicitly declared on line 714 [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:985]
+WARNING: [Synth 8-8895] 'instruction_pc_plus_4' is already implicitly declared on line 715 [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:986]
+WARNING: [Synth 8-8895] 'IO_valid_csr_address' is already implicitly declared on line 738 [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:1091]
+WARNING: [Synth 8-6901] identifier 'IO_instruction' is used before its declaration [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:34]
+WARNING: [Synth 8-6901] identifier 'IO_instruction' is used before its declaration [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:34]
+WARNING: [Synth 8-6901] identifier 'IO_instruction' is used before its declaration [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:34]
+WARNING: [Synth 8-6901] identifier 'IO_instruction' is used before its declaration [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:34]
+WARNING: [Synth 8-6901] identifier 'IO_instruction' is used before its declaration [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:34]
+WARNING: [Synth 8-6901] identifier 'IO_instruction' is used before its declaration [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:35]
+WARNING: [Synth 8-6901] identifier 'EX_opcode' is used before its declaration [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:143]
 Linter Recording Failure, recording already started!
-INFO: [Synth 8-6157] synthesizing module 'RV64IM72F5SPSoCTOP' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/72F6SP_SoC_TOP.v:1]
-INFO: [Synth 8-6157] synthesizing module 'UnifiedUARTController' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Unified_UART_Controller.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'UnifiedUARTController' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Unified_UART_Controller.v:1]
-INFO: [Synth 8-6157] synthesizing module 'UARTTX' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/UART_TX.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'UARTTX' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/UART_TX.v:1]
-INFO: [Synth 8-6157] synthesizing module 'MMIOInterface' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/MMIO_Interface.v:1]
+INFO: [Synth 8-6157] synthesizing module 'RV64IM72F5SPSoCTOP' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/72F6SP_SoC_TOP.v:1]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.runs/synth_1/.Xil/Vivado-661362-khwl-ThinkPad-X1-Carbon-Gen-13/realtime/clk_wiz_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.runs/synth_1/.Xil/Vivado-661362-khwl-ThinkPad-X1-Carbon-Gen-13/realtime/clk_wiz_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'UnifiedUARTController' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Unified_UART_Controller.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'UnifiedUARTController' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Unified_UART_Controller.v:1]
+INFO: [Synth 8-6157] synthesizing module 'UARTTX' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/UART_TX.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'UARTTX' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/UART_TX.v:1]
+INFO: [Synth 8-6157] synthesizing module 'MMIOInterface' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/MMIO_Interface.v:1]
 	Parameter XLEN bound to: 64 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'MMIOInterface' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/MMIO_Interface.v:1]
-INFO: [Synth 8-6157] synthesizing module 'RV64IM72F6SP' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'MMIOInterface' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/MMIO_Interface.v:1]
+INFO: [Synth 8-6157] synthesizing module 'RV64IM72F6SP' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:5]
 	Parameter XLEN bound to: 64 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'ALU' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/ALU.v:3]
-INFO: [Synth 8-6157] synthesizing module 'ALU_WORD' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/ALU_WORD.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'ALU_WORD' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/ALU_WORD.v:3]
-INFO: [Synth 8-6157] synthesizing module 'ALU_DWORD' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/ALU_DWORD.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'ALU_DWORD' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/ALU_DWORD.v:3]
-INFO: [Synth 8-6157] synthesizing module 'Multiplier_WORD' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Multiplier_WORD.v:6]
-INFO: [Synth 8-226] default block is never used [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Multiplier_WORD.v:58]
-INFO: [Synth 8-6155] done synthesizing module 'Multiplier_WORD' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Multiplier_WORD.v:6]
-INFO: [Synth 8-6157] synthesizing module 'Multiplier_DWORD' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Multiplier_DWORD.v:7]
-INFO: [Synth 8-226] default block is never used [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Multiplier_DWORD.v:73]
-INFO: [Synth 8-6155] done synthesizing module 'Multiplier_DWORD' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Multiplier_DWORD.v:7]
-INFO: [Synth 8-6157] synthesizing module 'Divider_WORD' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Divider_WORD.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'Divider_WORD' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Divider_WORD.v:3]
-INFO: [Synth 8-6157] synthesizing module 'Divider_DWORD' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Divider_DWORD.v:3]
+INFO: [Synth 8-6157] synthesizing module 'ALU' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/ALU.v:3]
+INFO: [Synth 8-6157] synthesizing module 'ALU_WORD' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/ALU_WORD.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ALU_WORD' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/ALU_WORD.v:3]
+INFO: [Synth 8-6157] synthesizing module 'ALU_DWORD' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/ALU_DWORD.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ALU_DWORD' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/ALU_DWORD.v:3]
+INFO: [Synth 8-6157] synthesizing module 'Multiplier_WORD' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Multiplier_WORD.v:6]
+INFO: [Synth 8-226] default block is never used [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Multiplier_WORD.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'Multiplier_WORD' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Multiplier_WORD.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Multiplier_DWORD' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Multiplier_DWORD.v:7]
+INFO: [Synth 8-226] default block is never used [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Multiplier_DWORD.v:73]
+INFO: [Synth 8-6155] done synthesizing module 'Multiplier_DWORD' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Multiplier_DWORD.v:7]
+INFO: [Synth 8-6157] synthesizing module 'Divider_WORD' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Divider_WORD.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'Divider_WORD' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Divider_WORD.v:3]
+INFO: [Synth 8-6157] synthesizing module 'Divider_DWORD' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Divider_DWORD.v:3]
 	Parameter XLEN bound to: 64 - type: integer 
-INFO: [Synth 8-226] default block is never used [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Divider_DWORD.v:72]
-INFO: [Synth 8-6155] done synthesizing module 'Divider_DWORD' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Divider_DWORD.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'ALU' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/ALU.v:3]
-INFO: [Synth 8-6157] synthesizing module 'ALUController' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/ALU_Controller.v:9]
-INFO: [Synth 8-226] default block is never used [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/ALU_Controller.v:116]
-INFO: [Synth 8-226] default block is never used [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/ALU_Controller.v:138]
-INFO: [Synth 8-226] default block is never used [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/ALU_Controller.v:152]
-INFO: [Synth 8-6155] done synthesizing module 'ALUController' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/ALU_Controller.v:9]
-INFO: [Synth 8-6157] synthesizing module 'BranchLogic' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Branch_Logic.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'BranchLogic' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Branch_Logic.v:3]
-INFO: [Synth 8-6157] synthesizing module 'BranchPredictor' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Branch_Predictor.v:3]
+INFO: [Synth 8-226] default block is never used [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Divider_DWORD.v:72]
+INFO: [Synth 8-6155] done synthesizing module 'Divider_DWORD' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Divider_DWORD.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/ALU.v:3]
+INFO: [Synth 8-6157] synthesizing module 'ALUController' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/ALU_Controller.v:9]
+INFO: [Synth 8-226] default block is never used [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/ALU_Controller.v:116]
+INFO: [Synth 8-226] default block is never used [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/ALU_Controller.v:138]
+INFO: [Synth 8-226] default block is never used [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/ALU_Controller.v:152]
+INFO: [Synth 8-6155] done synthesizing module 'ALUController' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/ALU_Controller.v:9]
+INFO: [Synth 8-6157] synthesizing module 'BranchLogic' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Branch_Logic.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'BranchLogic' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Branch_Logic.v:3]
+INFO: [Synth 8-6157] synthesizing module 'BranchPredictor' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Branch_Predictor.v:3]
 	Parameter XLEN bound to: 64 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'BranchPredictor' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Branch_Predictor.v:3]
-INFO: [Synth 8-6157] synthesizing module 'ByteEnableLogic' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Byte_Enable_Logic.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'ByteEnableLogic' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Byte_Enable_Logic.v:4]
-INFO: [Synth 8-6157] synthesizing module 'ControlUnit' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Control_Unit.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'ControlUnit' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Control_Unit.v:7]
-INFO: [Synth 8-6157] synthesizing module 'CSRFile' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/CSR_File.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'BranchPredictor' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Branch_Predictor.v:3]
+INFO: [Synth 8-6157] synthesizing module 'ByteEnableLogic' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Byte_Enable_Logic.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'ByteEnableLogic' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Byte_Enable_Logic.v:4]
+INFO: [Synth 8-6157] synthesizing module 'ControlUnit' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Control_Unit.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'ControlUnit' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Control_Unit.v:7]
+INFO: [Synth 8-6157] synthesizing module 'CSRFile' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/CSR_File.v:3]
 	Parameter XLEN bound to: 64 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'CSRFile' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/CSR_File.v:3]
-INFO: [Synth 8-6157] synthesizing module 'DataMemory' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Data_Memory.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'DataMemory' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Data_Memory.v:1]
-WARNING: [Synth 8-7071] port 'rom_address' of module 'DataMemory' is unconnected for instance 'data_memory' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:448]
-WARNING: [Synth 8-7023] instance 'data_memory' of module 'DataMemory' has 11 connections declared, but only 10 given [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:448]
-INFO: [Synth 8-6157] synthesizing module 'ExceptionDetector' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Exception_Detector.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ExceptionDetector' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Exception_Detector.v:6]
-INFO: [Synth 8-6157] synthesizing module 'ForwardUnit' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Forward_Unit.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'ForwardUnit' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Forward_Unit.v:3]
-INFO: [Synth 8-6157] synthesizing module 'HazardUnit' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Hazard_Unit.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'HazardUnit' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Hazard_Unit.v:5]
-INFO: [Synth 8-6157] synthesizing module 'ImmediateGenerator' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Immediate_Generator.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'ImmediateGenerator' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Immediate_Generator.v:3]
-INFO: [Synth 8-6157] synthesizing module 'InstructionDecoder' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Instruction_Decoder.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'InstructionDecoder' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Instruction_Decoder.v:5]
-INFO: [Synth 8-6157] synthesizing module 'InstructionMemory' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Instruction_Memory.v:10]
-INFO: [Synth 8-3876] $readmem data file './coremark_RV64IM_79.16MHz.mem' is read successfully [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Instruction_Memory.v:45]
-INFO: [Synth 8-6155] done synthesizing module 'InstructionMemory' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Instruction_Memory.v:10]
-INFO: [Synth 8-6157] synthesizing module 'ProgramCounter' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Program_Counter.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'ProgramCounter' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Program_Counter.v:1]
-INFO: [Synth 8-6157] synthesizing module 'PCPlus4' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/PC_Plus_4.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'PCPlus4' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/PC_Plus_4.v:1]
-INFO: [Synth 8-6157] synthesizing module 'PCController' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/PC_Controller.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'PCController' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/PC_Controller.v:1]
-INFO: [Synth 8-6157] synthesizing module 'RegisterFile' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Register_File.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'RegisterFile' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Register_File.v:1]
-INFO: [Synth 8-6157] synthesizing module 'TrapController' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Trap_Controller.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'CSRFile' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/CSR_File.v:3]
+INFO: [Synth 8-6157] synthesizing module 'DataMemory' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Data_Memory.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'DataMemory' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Data_Memory.v:1]
+INFO: [Synth 8-6157] synthesizing module 'ExceptionDetector' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Exception_Detector.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ExceptionDetector' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Exception_Detector.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ForwardUnit' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Forward_Unit.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ForwardUnit' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Forward_Unit.v:3]
+INFO: [Synth 8-6157] synthesizing module 'HazardUnit' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Hazard_Unit.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'HazardUnit' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Hazard_Unit.v:5]
+INFO: [Synth 8-6157] synthesizing module 'ImmediateGenerator' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Immediate_Generator.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ImmediateGenerator' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Immediate_Generator.v:3]
+INFO: [Synth 8-6157] synthesizing module 'InstructionDecoder' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Instruction_Decoder.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'InstructionDecoder' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Instruction_Decoder.v:5]
+INFO: [Synth 8-6157] synthesizing module 'InstructionMemory' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Instruction_Memory.v:10]
+INFO: [Synth 8-3876] $readmem data file './dhrystone_RV64IM_85MHz.mem' is read successfully [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Instruction_Memory.v:45]
+INFO: [Synth 8-6155] done synthesizing module 'InstructionMemory' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Instruction_Memory.v:10]
+INFO: [Synth 8-6157] synthesizing module 'ProgramCounter' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Program_Counter.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'ProgramCounter' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Program_Counter.v:1]
+INFO: [Synth 8-6157] synthesizing module 'PCPlus4' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/PC_Plus_4.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'PCPlus4' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/PC_Plus_4.v:1]
+INFO: [Synth 8-6157] synthesizing module 'PCController' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/PC_Controller.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'PCController' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/PC_Controller.v:1]
+INFO: [Synth 8-6157] synthesizing module 'RegisterFile' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Register_File.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'RegisterFile' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Register_File.v:1]
+INFO: [Synth 8-6157] synthesizing module 'TrapController' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Trap_Controller.v:3]
 	Parameter XLEN bound to: 64 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'TrapController' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Trap_Controller.v:3]
-WARNING: [Synth 8-7071] port 'ic_clean' of module 'TrapController' is unconnected for instance 'trap_controller' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:672]
-WARNING: [Synth 8-7023] instance 'trap_controller' of module 'TrapController' has 21 connections declared, but only 20 given [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:672]
-INFO: [Synth 8-6157] synthesizing module 'IF_IO_Register' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/IF_IO_Register.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'TrapController' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Trap_Controller.v:3]
+INFO: [Synth 8-6157] synthesizing module 'IF_IO_Register' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/IF_IO_Register.v:3]
 	Parameter XLEN bound to: 64 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'IF_IO_Register' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/IF_IO_Register.v:3]
-INFO: [Synth 8-6157] synthesizing module 'IO_ID_Register' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/IO_ID_Register.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'IF_IO_Register' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/IF_IO_Register.v:3]
+INFO: [Synth 8-6157] synthesizing module 'IO_ID_Register' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/IO_ID_Register.v:1]
 	Parameter XLEN bound to: 64 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'IO_ID_Register' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/IO_ID_Register.v:1]
-INFO: [Synth 8-6157] synthesizing module 'ID_EX_Register' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/ID_EX_Register.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'IO_ID_Register' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/IO_ID_Register.v:1]
+INFO: [Synth 8-6157] synthesizing module 'ID_EX_Register' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/ID_EX_Register.v:1]
 	Parameter XLEN bound to: 64 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'ID_EX_Register' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/ID_EX_Register.v:1]
-INFO: [Synth 8-6157] synthesizing module 'EX_EX2_Register' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/EX_EX2_Register.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'ID_EX_Register' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/ID_EX_Register.v:1]
+INFO: [Synth 8-6157] synthesizing module 'EX_EX2_Register' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/EX_EX2_Register.v:1]
 	Parameter XLEN bound to: 64 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'EX_EX2_Register' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/EX_EX2_Register.v:1]
-WARNING: [Synth 8-7071] port 'EX_alu_zero' of module 'EX_EX2_Register' is unconnected for instance 'ex_ex2_register' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:797]
-WARNING: [Synth 8-7071] port 'EX2_alu_zero' of module 'EX_EX2_Register' is unconnected for instance 'ex_ex2_register' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:797]
-WARNING: [Synth 8-7023] instance 'ex_ex2_register' of module 'EX_EX2_Register' has 52 connections declared, but only 50 given [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:797]
-INFO: [Synth 8-6157] synthesizing module 'EX_MEM_Register' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/EX_MEM_Register.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'EX_EX2_Register' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/EX_EX2_Register.v:1]
+INFO: [Synth 8-6157] synthesizing module 'EX_MEM_Register' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/EX_MEM_Register.v:1]
 	Parameter XLEN bound to: 64 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'EX_MEM_Register' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/EX_MEM_Register.v:1]
-INFO: [Synth 8-6157] synthesizing module 'MEM_WB_Register' [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/MEM_WB_Register.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'EX_MEM_Register' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/EX_MEM_Register.v:1]
+INFO: [Synth 8-6157] synthesizing module 'MEM_WB_Register' [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/MEM_WB_Register.v:1]
 	Parameter XLEN bound to: 64 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'MEM_WB_Register' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/MEM_WB_Register.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'RV64IM72F6SP' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'RV64IM72F5SPSoCTOP' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/72F6SP_SoC_TOP.v:1]
-WARNING: [Synth 8-6014] Unused sequential element branch_prediction_reg was removed.  [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Branch_Predictor.v:35]
-WARNING: [Synth 8-6014] Unused sequential element retire_rd_reg was removed.  [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:978]
-WARNING: [Synth 8-6014] Unused sequential element retire_register_write_enable_reg was removed.  [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:979]
-WARNING: [Synth 8-6014] Unused sequential element retire_opcode_reg was removed.  [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:980]
-WARNING: [Synth 8-6014] Unused sequential element retire_alu_result_reg was removed.  [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:981]
-WARNING: [Synth 8-6014] Unused sequential element retire_imm_reg was removed.  [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:982]
-WARNING: [Synth 8-6014] Unused sequential element retire_pc_plus_4_reg was removed.  [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:983]
-WARNING: [Synth 8-6014] Unused sequential element retire_csr_read_data_reg was removed.  [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:984]
-WARNING: [Synth 8-6014] Unused sequential element retire_byte_enable_logic_register_file_write_data_reg was removed.  [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:985]
+INFO: [Synth 8-6155] done synthesizing module 'MEM_WB_Register' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/MEM_WB_Register.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'RV64IM72F6SP' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'RV64IM72F5SPSoCTOP' (0#1) [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/72F6SP_SoC_TOP.v:1]
+WARNING: [Synth 8-6014] Unused sequential element branch_prediction_reg was removed.  [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/Branch_Predictor.v:35]
+WARNING: [Synth 8-6014] Unused sequential element retire_rd_reg was removed.  [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:999]
+WARNING: [Synth 8-6014] Unused sequential element retire_register_write_enable_reg was removed.  [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:1000]
+WARNING: [Synth 8-6014] Unused sequential element retire_opcode_reg was removed.  [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:1001]
+WARNING: [Synth 8-6014] Unused sequential element retire_alu_result_reg was removed.  [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:1002]
+WARNING: [Synth 8-6014] Unused sequential element retire_imm_reg was removed.  [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:1003]
+WARNING: [Synth 8-6014] Unused sequential element retire_pc_plus_4_reg was removed.  [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:1004]
+WARNING: [Synth 8-6014] Unused sequential element retire_csr_read_data_reg was removed.  [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:1005]
+WARNING: [Synth 8-6014] Unused sequential element retire_byte_enable_logic_register_file_write_data_reg was removed.  [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:1006]
+WARNING: [Synth 8-3848] Net csr_hazard_mem in module/entity RV64IM72F6SP does not have driver. [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:269]
+WARNING: [Synth 8-3848] Net csr_hazard_wb in module/entity RV64IM72F6SP does not have driver. [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/sources_1/imports/FPGA_SoC/modules/RV64IM72F_6SP.v:270]
 WARNING: [Synth 8-7129] Port ID_pc[63] in module TrapController is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ID_pc[62] in module TrapController is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ID_pc[61] in module TrapController is either unconnected or has no load
@@ -252,50 +248,58 @@ WARNING: [Synth 8-7129] Port EX2_pc[29] in module TrapController is either uncon
 WARNING: [Synth 8-7129] Port EX2_pc[28] in module TrapController is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2403.199 ; gain = 643.781 ; free physical = 14441 ; free virtual = 29417
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2397.539 ; gain = 631.125 ; free physical = 1041 ; free virtual = 26456
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2418.043 ; gain = 658.625 ; free physical = 14440 ; free virtual = 29416
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2412.383 ; gain = 645.969 ; free physical = 1040 ; free virtual = 26454
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2418.043 ; gain = 658.625 ; free physical = 14440 ; free virtual = 29416
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2412.383 ; gain = 645.969 ; free physical = 1040 ; free virtual = 26454
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.09 . Memory (MB): peak = 2418.043 ; gain = 0.000 ; free physical = 14449 ; free virtual = 29425
+Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2412.383 ; gain = 0.000 ; free physical = 1039 ; free virtual = 26454
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/constrs_1/imports/sources/RV32I46F_5SP_Debug_XDC.xdc]
-Finished Parsing XDC File [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/constrs_1/imports/sources/RV32I46F_5SP_Debug_XDC.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/constrs_1/imports/sources/RV32I46F_5SP_Debug_XDC.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/RV64IM72F5SPSoCTOP_propImpl.xdc].
+Parsing XDC File [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clk_gen'
+Finished Parsing XDC File [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clk_gen'
+Parsing XDC File [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/constrs_1/imports/sources/RV32I46F_5SP_Debug_XDC.xdc]
+CRITICAL WARNING: [Constraints 18-1056] Clock 'sys_clk_pin' completely overrides clock 'clk'.
+New: create_clock -period 10.000 -name sys_clk_pin -waveform {0.000 5.000} [get_ports clk], [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/constrs_1/imports/sources/RV32I46F_5SP_Debug_XDC.xdc:9]
+Previous: create_clock -period 10.000 [get_ports clk], [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc:1]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+Finished Parsing XDC File [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/constrs_1/imports/sources/RV32I46F_5SP_Debug_XDC.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.srcs/constrs_1/imports/sources/RV32I46F_5SP_Debug_XDC.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/RV64IM72F5SPSoCTOP_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/RV64IM72F5SPSoCTOP_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2526.812 ; gain = 0.000 ; free physical = 14449 ; free virtual = 29425
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2521.121 ; gain = 0.000 ; free physical = 1026 ; free virtual = 26432
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2526.848 ; gain = 0.000 ; free physical = 14457 ; free virtual = 29432
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2521.156 ; gain = 0.000 ; free physical = 1026 ; free virtual = 26431
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2526.848 ; gain = 767.430 ; free physical = 14501 ; free virtual = 29477
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2521.156 ; gain = 754.742 ; free physical = 1024 ; free virtual = 26428
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a200tsbg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2534.816 ; gain = 775.398 ; free physical = 14501 ; free virtual = 29477
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2529.125 ; gain = 762.711 ; free physical = 1024 ; free virtual = 26428
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2534.816 ; gain = 775.398 ; free physical = 14501 ; free virtual = 29477
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2529.125 ; gain = 762.711 ; free physical = 1024 ; free virtual = 26428
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'stage_reg' in module 'Multiplier_WORD'
 INFO: [Synth 8-802] inferred FSM for state register 'stage_reg' in module 'Multiplier_DWORD'
@@ -355,7 +359,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'trap_handle_state_reg' using encoding 'one-hot' in module 'TrapController'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 2534.816 ; gain = 775.398 ; free physical = 14503 ; free virtual = 29481
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2529.125 ; gain = 762.711 ; free physical = 1022 ; free virtual = 26429
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -391,7 +395,7 @@ Detailed RTL Component Info :
 	                4 Bit    Registers := 1     
 	                3 Bit    Registers := 11    
 	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 61    
+	                1 Bit    Registers := 64    
 +---Multipliers : 
 	              32x32  Multipliers := 5     
 +---RAMs : 
@@ -432,7 +436,7 @@ Detailed RTL Component Info :
 	   2 Input    4 Bit        Muxes := 4     
 	   4 Input    4 Bit        Muxes := 2     
 	   3 Input    4 Bit        Muxes := 1     
-	   2 Input    3 Bit        Muxes := 8     
+	   2 Input    3 Bit        Muxes := 9     
 	   5 Input    3 Bit        Muxes := 2     
 	   3 Input    3 Bit        Muxes := 2     
 	   8 Input    2 Bit        Muxes := 1     
@@ -619,7 +623,7 @@ WARNING: [Synth 8-3332] Sequential element (prod_ALBH_s2_reg[30]) is unused and 
 WARNING: [Synth 8-3332] Sequential element (prod_ALBH_s2_reg[29]) is unused and will be removed from module Multiplier_DWORD.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:11 ; elapsed = 00:01:11 . Memory (MB): peak = 2683.246 ; gain = 923.828 ; free physical = 14307 ; free virtual = 29299
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 2681.555 ; gain = 915.141 ; free physical = 874 ; free virtual = 26295
 ---------------------------------------------------------------------------------
  Sort Area is  mult_AHBH_0 : 0 0 : 3101 5879 : Used 1 time 100
  Sort Area is  mult_AHBH_0 : 0 1 : 2778 5879 : Used 1 time 100
@@ -649,8 +653,10 @@ ROM: Preliminary Mapping Report
 +------------------+------------+---------------+----------------+
 |Module Name       | RTL Object | Depth x Width | Implemented As | 
 +------------------+------------+---------------+----------------+
-|InstructionMemory | data       | 8192x32       | LUT            | 
-|InstructionMemory | data       | 8192x32       | LUT            | 
+|InstructionMemory | data       | 2048x32       | LUT            | 
+|InstructionMemory | data       | 2048x32       | LUT            | 
+|InstructionMemory | p_0_out    | 2048x32       | LUT            | 
+|InstructionMemory | p_0_out    | 2048x32       | LUT            | 
 +------------------+------------+---------------+----------------+
 
 
@@ -713,13 +719,13 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:18 ; elapsed = 00:01:18 . Memory (MB): peak = 2683.246 ; gain = 923.828 ; free physical = 14325 ; free virtual = 29317
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 2681.555 ; gain = 915.141 ; free physical = 876 ; free virtual = 26297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:31 ; elapsed = 00:01:31 . Memory (MB): peak = 2748.316 ; gain = 988.898 ; free physical = 14292 ; free virtual = 29279
+Finished Timing Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 2733.172 ; gain = 966.758 ; free physical = 828 ; free virtual = 26249
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -771,14 +777,8 @@ INFO: [Synth 8-7052] The timing for the instance rv64im72f_6sp/data_memory/memor
 INFO: [Synth 8-7052] The timing for the instance rv64im72f_6sp/data_memory/memory_bank7_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance rv64im72f_6sp/instruction_memory/instruction_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance rv64im72f_6sp/instruction_memory/instruction_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance rv64im72f_6sp/instruction_memory/instruction_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance rv64im72f_6sp/instruction_memory/instruction_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance rv64im72f_6sp/instruction_memory/instruction_reg_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance rv64im72f_6sp/instruction_memory/instruction_reg_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance rv64im72f_6sp/instruction_memory/instruction_reg_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance rv64im72f_6sp/instruction_memory/instruction_reg_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:37 ; elapsed = 00:01:38 . Memory (MB): peak = 2887.316 ; gain = 1127.898 ; free physical = 14150 ; free virtual = 29138
+Finished Technology Mapping : Time (s): cpu = 00:00:43 ; elapsed = 00:00:43 . Memory (MB): peak = 2870.172 ; gain = 1103.758 ; free physical = 686 ; free virtual = 26107
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -796,37 +796,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:42 ; elapsed = 00:01:42 . Memory (MB): peak = 2887.316 ; gain = 1127.898 ; free physical = 14150 ; free virtual = 29138
+Finished IO Insertion : Time (s): cpu = 00:00:45 ; elapsed = 00:00:45 . Memory (MB): peak = 2873.141 ; gain = 1106.727 ; free physical = 686 ; free virtual = 26107
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:42 ; elapsed = 00:01:42 . Memory (MB): peak = 2887.316 ; gain = 1127.898 ; free physical = 14151 ; free virtual = 29138
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:45 ; elapsed = 00:00:45 . Memory (MB): peak = 2873.141 ; gain = 1106.727 ; free physical = 686 ; free virtual = 26107
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:42 ; elapsed = 00:01:43 . Memory (MB): peak = 2887.316 ; gain = 1127.898 ; free physical = 14151 ; free virtual = 29139
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:45 ; elapsed = 00:00:45 . Memory (MB): peak = 2873.141 ; gain = 1106.727 ; free physical = 686 ; free virtual = 26107
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:42 ; elapsed = 00:01:43 . Memory (MB): peak = 2887.316 ; gain = 1127.898 ; free physical = 14151 ; free virtual = 29139
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 2873.141 ; gain = 1106.727 ; free physical = 686 ; free virtual = 26107
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:42 ; elapsed = 00:01:43 . Memory (MB): peak = 2893.254 ; gain = 1133.836 ; free physical = 14151 ; free virtual = 29139
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 2881.078 ; gain = 1114.664 ; free physical = 686 ; free virtual = 26107
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:42 ; elapsed = 00:01:43 . Memory (MB): peak = 2893.254 ; gain = 1133.836 ; free physical = 14151 ; free virtual = 29139
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 2881.078 ; gain = 1114.664 ; free physical = 686 ; free virtual = 26107
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -860,60 +860,62 @@ DSP Final Report (the ' indicates corresponding REG is set)
 
 
 Report BlackBoxes: 
-+-+--------------+----------+
-| |BlackBox name |Instances |
-+-+--------------+----------+
-+-+--------------+----------+
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |clk_wiz_0     |         1|
++------+--------------+----------+
 
 Report Cell Usage: 
 +------+---------+------+
 |      |Cell     |Count |
 +------+---------+------+
-|1     |BUFG     |     1|
-|2     |CARRY4   |   521|
+|1     |clk_wiz  |     1|
+|2     |CARRY4   |   519|
 |3     |DSP48E1  |    20|
-|5     |LUT1     |   665|
-|6     |LUT2     |   563|
-|7     |LUT3     |  1110|
-|8     |LUT4     |  1403|
-|9     |LUT5     |  5840|
-|10    |LUT6     |  3313|
-|11    |MUXF7    |  2356|
-|12    |MUXF8    |   966|
+|5     |LUT1     |   673|
+|6     |LUT2     |   704|
+|7     |LUT3     |  1104|
+|8     |LUT4     |  1305|
+|9     |LUT5     |  2658|
+|10    |LUT6     |  2505|
+|11    |MUXF7    |   655|
+|12    |MUXF8    |   252|
 |13    |RAM32M   |    22|
-|14    |RAMB36E1 |    24|
-|23    |FDCE     |  1760|
-|24    |FDPE     |    25|
-|25    |FDRE     |  2163|
-|26    |FDSE     |    18|
-|27    |IBUF     |     3|
-|28    |OBUF     |     9|
+|14    |RAMB36E1 |    18|
+|17    |FDCE     |  1760|
+|18    |FDPE     |    25|
+|19    |FDRE     |  1898|
+|20    |FDSE     |    18|
+|21    |IBUF     |     2|
+|22    |OBUF     |     9|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:42 ; elapsed = 00:01:43 . Memory (MB): peak = 2893.254 ; gain = 1133.836 ; free physical = 14151 ; free virtual = 29139
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 2881.078 ; gain = 1114.664 ; free physical = 686 ; free virtual = 26107
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 814 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:39 ; elapsed = 00:01:40 . Memory (MB): peak = 2893.254 ; gain = 1025.031 ; free physical = 14151 ; free virtual = 29139
-Synthesis Optimization Complete : Time (s): cpu = 00:01:43 ; elapsed = 00:01:43 . Memory (MB): peak = 2893.262 ; gain = 1133.836 ; free physical = 14151 ; free virtual = 29139
+Synthesis finished with 0 errors, 0 critical warnings and 853 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 2881.078 ; gain = 1005.891 ; free physical = 686 ; free virtual = 26107
+Synthesis Optimization Complete : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 2881.086 ; gain = 1114.664 ; free physical = 686 ; free virtual = 26107
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.14 . Memory (MB): peak = 2893.262 ; gain = 0.000 ; free physical = 14320 ; free virtual = 29307
-INFO: [Netlist 29-17] Analyzing 3909 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2881.086 ; gain = 0.000 ; free physical = 843 ; free virtual = 26264
+INFO: [Netlist 29-17] Analyzing 1486 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2949.281 ; gain = 0.000 ; free physical = 14320 ; free virtual = 29307
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2937.105 ; gain = 0.000 ; free physical = 835 ; free virtual = 26256
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 22 instances were transformed.
   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 22 instances
 
-Synth Design complete | Checksum: 93c89214
+Synth Design complete | Checksum: bae5c114
 INFO: [Common 17-83] Releasing license: Synthesis
-140 Infos, 226 Warnings, 0 Critical Warnings and 0 Errors encountered.
+135 Infos, 221 Warnings, 1 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:55 ; elapsed = 00:01:52 . Memory (MB): peak = 2949.316 ; gain = 1326.078 ; free physical = 14320 ; free virtual = 29307
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2257.764; main = 2037.542; forked = 280.071
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3885.402; main = 2949.285; forked = 998.082
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2973.293 ; gain = 0.000 ; free physical = 14315 ; free virtual = 29308
-INFO: [Common 17-1381] The checkpoint '/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.runs/synth_1/RV64IM72F5SPSoCTOP.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:50 ; elapsed = 00:00:49 . Memory (MB): peak = 2937.141 ; gain = 1313.906 ; free physical = 835 ; free virtual = 26256
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2106.749; main = 2036.355; forked = 281.719
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3731.254; main = 2937.109; forked = 998.078
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00 . Memory (MB): peak = 2961.117 ; gain = 0.000 ; free physical = 833 ; free virtual = 26255
+INFO: [Common 17-1381] The checkpoint '/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.runs/synth_1/RV64IM72F5SPSoCTOP.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file RV64IM72F5SPSoCTOP_utilization_synth.rpt -pb RV64IM72F5SPSoCTOP_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Mar 25 16:27:29 2026...
+INFO: [Common 17-206] Exiting Vivado at Sun Aug  2 18:26:13 2026...

@@ -4,7 +4,7 @@
 <!-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.                   -->
 <!-- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.   -->
 
-<Project Product="Vivado" Version="7" Minor="71" Path="/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.xpr">
+<Project Product="Vivado" Version="7" Minor="71" Path="/home/khwl/Desktop/KHWL_2026/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Final_draft/RV64IM72F_7SP_BRAM.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="790ebcb14bb548d9ae4776ca78b9f780"/>
@@ -162,6 +162,13 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/ip/clk_wiz_0/clk_wiz_0.xci">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/imports/FPGA_SoC/modules/headers/alu_op.vh">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../FPGA_SoC/modules/headers/alu_op.vh"/>
@@ -178,6 +185,24 @@
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/FPGA_SoC/modules/headers/rtype_mul_funct3.vh">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../FPGA_SoC/modules/headers/rtype_mul_funct3.vh"/>
+          <Attr Name="ImportTime" Val="1769526535"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+          <Attr Name="IsVisible" Val="1"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/FPGA_SoC/modules/headers/rtype_funct3.vh">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../FPGA_SoC/modules/headers/rtype_funct3.vh"/>
+          <Attr Name="ImportTime" Val="1769526535"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+          <Attr Name="IsVisible" Val="1"/>
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/imports/FPGA_SoC/modules/headers/opcode.vh">
@@ -198,27 +223,9 @@
           <Attr Name="IsVisible" Val="1"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/FPGA_SoC/modules/headers/rtype_funct3.vh">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../FPGA_SoC/modules/headers/rtype_funct3.vh"/>
-          <Attr Name="ImportTime" Val="1769526535"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-          <Attr Name="IsVisible" Val="1"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/imports/FPGA_SoC/modules/headers/branch_funct3.vh">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../FPGA_SoC/modules/headers/branch_funct3.vh"/>
-          <Attr Name="ImportTime" Val="1769526535"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-          <Attr Name="IsVisible" Val="1"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/FPGA_SoC/modules/headers/rtype_mul_funct3.vh">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../FPGA_SoC/modules/headers/rtype_mul_funct3.vh"/>
           <Attr Name="ImportTime" Val="1769526535"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -315,18 +322,18 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/FPGA_SoC/modules/headers/rf_wd_select.vh">
+      <File Path="$PSRCDIR/sources_1/imports/FPGA_SoC/modules/headers/alu_src_select.vh">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../FPGA_SoC/modules/headers/rf_wd_select.vh"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../FPGA_SoC/modules/headers/alu_src_select.vh"/>
           <Attr Name="ImportTime" Val="1769526535"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
           <Attr Name="IsVisible" Val="1"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/FPGA_SoC/modules/headers/alu_src_select.vh">
+      <File Path="$PSRCDIR/sources_1/imports/FPGA_SoC/modules/headers/rf_wd_select.vh">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../FPGA_SoC/modules/headers/alu_src_select.vh"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../FPGA_SoC/modules/headers/rf_wd_select.vh"/>
           <Attr Name="ImportTime" Val="1769526535"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -735,20 +742,6 @@
       <RQSFiles/>
     </Run>
   </Runs>
-  <MsgRule>
-    <MsgAttr Name="RuleType" Val="0"/>
-    <MsgAttr Name="Limit" Val="-1"/>
-    <MsgAttr Name="NewSeverity" Val="ANY"/>
-    <MsgAttr Name="Id" Val="17-179"/>
-    <MsgAttr Name="Severity" Val="ANY"/>
-    <MsgAttr Name="ShowRule" Val="0"/>
-    <MsgAttr Name="RuleSource" Val="4294967295"/>
-    <MsgAttr Name="StringIsRegExp" Val="0"/>
-    <MsgAttr Name="RuleId" Val="1"/>
-    <MsgAttr Name="Note" Val=""/>
-    <MsgAttr Name="Author" Val=""/>
-    <MsgAttr Name="CreatedTimestamp" Val=""/>
-  </MsgRule>
   <Board/>
   <DashboardSummary Version="1" Minor="0">
     <Dashboards>

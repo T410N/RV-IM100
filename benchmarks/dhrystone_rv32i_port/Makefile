@@ -1,4 +1,4 @@
-# Makefile for Dhrystone on RV32I46F_5SP (NO DHRYSTONE SOURCE MOD)
+# Makefile for Dhrystone on RV32IM (NO DHRYSTONE SOURCE MOD)
 
 CROSS_COMPILE ?= riscv64-unknown-elf-
 CC      = $(CROSS_COMPILE)gcc
@@ -7,6 +7,7 @@ OBJDUMP = $(CROSS_COMPILE)objdump
 SIZE    = $(CROSS_COMPILE)size
 
 TARGET = dhrystone
+CPU_FREQ_HZ ?= 100000000
 
 # Source files
 DHRY_SRC = dhry_1.c dhry_2.c
@@ -24,7 +25,7 @@ INC_FLAGS = -I.
 # Dhrystone flags
 DHRY_CFLAGS  = -std=gnu89
 DHRY_CFLAGS += -DTIMES -DNOENUM -DDHRY_ITERS=300000
-DHRY_CFLAGS += -DHZ=125000000
+DHRY_CFLAGS += -DHZ=$(CPU_FREQ_HZ)
 DHRY_CFLAGS += -Wno-implicit -Wno-return-type -Wno-builtin-declaration-mismatch
 
 # Optimization

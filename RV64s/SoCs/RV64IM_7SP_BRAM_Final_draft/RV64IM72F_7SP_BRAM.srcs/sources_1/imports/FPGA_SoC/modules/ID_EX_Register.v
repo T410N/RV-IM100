@@ -101,7 +101,7 @@ always @(posedge clk) begin
             EX_read_data1 <= {XLEN{1'b0}};
             EX_read_data2 <= {XLEN{1'b0}};
             EX_rs1 <= 5'b0;
-            EX_rs2 <= 5'b0;
+            EX_rs2 <= 6'b0;
             EX_imm <= {XLEN{1'b0}};
             EX_csr_read_data <= {XLEN{1'b0}};
 
