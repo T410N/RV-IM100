@@ -1,7 +1,7 @@
-# Makefile for CoreMark on RV32I46F_5SP
+# Makefile for CoreMark on RV32IM
 #
-# Target: RV32I (no FPU, no M extension)
-# Clock: 50MHz
+# Target: RV32IM (integer multiply/divide, no FPU)
+# Clock: 100MHz
 # Memory: ROM 64KB @ 0x00000000, RAM 32KB @ 0x10000000
 
 CROSS_COMPILE ?= riscv64-unknown-elf-
@@ -11,6 +11,7 @@ OBJDUMP = $(CROSS_COMPILE)objdump
 SIZE    = $(CROSS_COMPILE)size
 
 TARGET = coremark
+CPU_FREQ_HZ ?= 100000000
 
 # Source files
 CORE_SRC = core_list_join.c core_main.c core_matrix.c core_state.c core_util.c
@@ -36,6 +37,7 @@ FLAGS_STR = "-O2 -march=rv32im_zicsr -mabi=ilp32 -fno-common -funroll-loops"
 
 # CoreMark flags
 CM_CFLAGS  = -DITERATIONS=$(ITERATIONS)
+CM_CFLAGS += -DEE_TICKS_PER_SEC=$(CPU_FREQ_HZ)
 CM_CFLAGS += -DTOTAL_DATA_SIZE=$(TOTAL_DATA_SIZE)
 CM_CFLAGS += -DFLAGS_STR=\"$(FLAGS_STR)\"
 CM_CFLAGS += -DPERFORMANCE_RUN=1
@@ -117,7 +119,7 @@ clean:
 	rm -f *.o $(TARGET).elf $(TARGET).hex $(TARGET).bin $(TARGET).mem $(TARGET).dump $(TARGET).map
 
 help:
-	@echo "CoreMark for RV32I46F_5SP"
+	@echo "CoreMark for RV32IM"
 	@echo ""
 	@echo "Targets:"
 	@echo "  all      - Build ELF, HEX, and BIN files"
@@ -127,6 +129,7 @@ help:
 	@echo "  clean    - Remove build files"
 	@echo ""
 	@echo "Variables:"
+	@echo "  CPU_FREQ_HZ=N      - CPU clock in Hz (default: 100000000)"
 	@echo "  ITERATIONS=N       - Set iteration count (0=auto, default)"
 	@echo "  TOTAL_DATA_SIZE=N  - Data size (2000=perf, 1200=profile)"
 	@echo ""

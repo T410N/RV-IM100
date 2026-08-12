@@ -18,11 +18,11 @@ module CSRFile #(
     output reg csr_ready                  // signal to stall the process while accessing the CSR until it outputs the desired value.
     );
 
-    wire [XLEN-1:0] mvendorid = 64'h52_49_53_43_2D_4B_43_21;    // RISC-KC!
+    wire [XLEN-1:0] mvendorid = 64'h00000000_2D_4B_43_21;    // RISC-KC!
     wire [XLEN-1:0] marchid   = 64'h52_56_36_34_49_4D_37_32;    // RV64IM72
     wire [XLEN-1:0] mhartid   = 64'h42_41_4E_41_4E_41_4E_41;    // BANANANA
     wire [XLEN-1:0] mstatus   = 64'h00000000_00001800;          // MPP[12:11] = 11
-    wire [XLEN-1:0] misa      = 64'h80000000_00000080;          // MXL = 2; XLEN = 64; misa[63:62] = 10. RV32"I"; misa[8] = 1.
+    wire [XLEN-1:0] misa      = 64'h80000000_00001100;          // MXL=2 (RV64), I=bit 8, M=bit 12.
     reg [XLEN-1:0] mtvec;
     reg [XLEN-1:0] mepc;
     reg [XLEN-1:0] mcause;

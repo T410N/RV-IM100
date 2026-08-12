@@ -1,0 +1,167 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Wed Aug  5 08:16:43 2026
+| Host         : khwl-ThinkPad-X1-Carbon-Gen-13 running 64-bit Ubuntu 24.04.4 LTS
+| Command      : report_incremental_reuse -file RV64IM72F5SPSoCTOP_incremental_reuse_routed.rpt
+| Design       : RV64IM72F5SPSoCTOP
+| Device       : xc7a200t
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Incremental Implementation Information
+
+Table of Contents
+-----------------
+1. Incremental Flow Summary
+2. Reuse Summary
+3. Reference Checkpoint Information
+4. Comparison with Reference Run
+5. Optimization Comparison With Reference Run
+5.1 iphys_opt_replay Optimizations
+5.2 QoR Suggestion Optimizations
+6. Command Comparison with Reference Run
+6.1 Reference:
+6.2 Incremental:
+7. Non Reuse Information
+
+1. Incremental Flow Summary
+---------------------------
+
++-----------------------+------------------+
+|    Flow Information   |       Value      |
++-----------------------+------------------+
+| Synthesis Flow        |          Default |
+| Auto Incremental      |              Yes |
+| Incremental Directive | RuntimeOptimized |
+| Target WNS            |           -0.133 |
+| QoR Suggestions       |                0 |
++-----------------------+------------------+
+
+
+2. Reuse Summary
+----------------
+
++-------+------------------------------+------------------------------------+----------------------------+--------------------+-------+
+|  Type | Matched % (of Initial Total) | Initial Reuse % (of Initial Total) | Current Reuse % (of Total) | Fixed % (of Total) | Total |
++-------+------------------------------+------------------------------------+----------------------------+--------------------+-------+
+| Cells |                        99.98 |                              99.99 |                      99.27 |               0.05 | 20868 |
+| Nets  |                        99.99 |                              99.90 |                      78.62 |               0.00 | 12768 |
+| Pins  |                            - |                              99.97 |                      68.89 |                  - | 90136 |
+| Ports |                       100.00 |                             100.00 |                     100.00 |             100.00 |    12 |
++-------+------------------------------+------------------------------------+----------------------------+--------------------+-------+
+
+
+3. Reference Checkpoint Information
+-----------------------------------
+
++----------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| DCP Location:  | /home/khwl/Desktop/RV64IM72F_7SP_BRAM_Final_1431/RV64IM72F_7SP_BRAM_Final_1431.srcs/utils_1/imports/impl_1/RV64IM72F5SPSoCTOP_routed.dcp |
++----------------+------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------+----------------------------+
+|         DCP Information        |            Value           |
++--------------------------------+----------------------------+
+| Vivado Version                 |                     2025.2 |
+| DCP State                      |                 POST_ROUTE |
+| Recorded WNS                   |                     -0.133 |
+| Recorded WHS                   |                      0.032 |
+| Reference Speed File Version   | PRODUCTION 1.23 2018-06-13 |
+| Incremental Speed File Version | PRODUCTION 1.23 2018-06-13 |
++--------------------------------+----------------------------+
+* Recorded WNS/WHS timing numbers are estimated timing numbers. They may vary slightly from sign-off timing numbers.
+
+
+4. Comparison with Reference Run
+--------------------------------
+
++-----------------+---------------------------+---------------------------+---------------------------+
+|                 |          WNS(ns)          |  Runtime(elapsed)(hh:mm)  |    Runtime(cpu)(hh:mm)    |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|      Stage      |  Reference  | Incremental |  Reference  | Incremental |  Reference  | Incremental |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+| synth_design    |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| opt_design      |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| read_checkpoint |             |             |             |     < 1 min |             |     < 1 min |
+| place_design    |       0.351 |      -0.712 |     < 1 min |     < 1 min |       00:01 |     < 1 min |
+| phys_opt_design |       0.351 |      -0.346 |     < 1 min |     < 1 min |     < 1 min |       00:01 |
+| route_design    |      -0.133 |      -0.546 |       00:02 |       00:01 |       00:05 |       00:02 |
++-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+
+5. Optimization Comparison With Reference Run
+---------------------------------------------
+
+5.1 iphys_opt_replay Optimizations
+----------------------------------
+
++-------------------------+--------+------------+
+| iphys_opt_design replay | Reused | Not Reused |
++-------------------------+--------+------------+
+| fanout_opt              |      1 |          0 |
++-------------------------+--------+------------+
+
+
+5.2 QoR Suggestion Optimizations
+--------------------------------
+
++-------------------------------------+-------+
+|           QoR Suggestions           | Value |
++-------------------------------------+-------+
+| QoR Suggestions (Recommended)       |     0 |
+|   Suggestions Included In Reference |     0 |
+|     Yet to apply                    |     0 |
+|     Applied                         |     0 |
+|     Failed to apply                 |     0 |
+|   New Suggestions (INCR_FRIENDLY=1) |     0 |
+|     Yet to apply                    |     0 |
+|     Applied                         |     0 |
+|     Failed to apply                 |     0 |
+| QoR Suggestions (Not Recommended)   |     0 |
+|   New Suggestions (INCR_FRIENDLY=0) |     0 |
+|     Yet to apply                    |     0 |
+|     Applied                         |     0 |
+|     Failed to apply                 |     0 |
+| Disabled New Suggestions            |     0 |
++-------------------------------------+-------+
+
+
+6. Command Comparison with Reference Run
+----------------------------------------
+
+6.1 Reference:
+--------------
+synth_design -directive performanceoptimized -no_lc -shreg 5 -resource_sharing off -fsm_extraction one_hot -define default::[not_specified] -verilog_define default::[not_specified] -vhdl_define default::[not_specified] -keep_equivalent_registers -top  RV64IM72F5SPSoCTOP -part  xc7a200tsbg484-1 
+opt_design -directive Explore
+read_checkpoint -incremental -auto_incremental /home/khwl/Desktop/RV64IM72F_7SP_BRAM_Final_1431/RV64IM72F_7SP_BRAM_Final_1431.srcs/utils_1/imports/impl_1/RV64IM72F5SPSoCTOP_routed.dcp
+place_design -directive Explore
+phys_opt_design -directive Explore
+route_design -directive Explore  -tns_cleanup
+
+6.2 Incremental:
+----------------
+synth_design -directive performanceoptimized -no_lc -shreg 5 -resource_sharing off -fsm_extraction one_hot -define default::[not_specified] -verilog_define default::[not_specified] -vhdl_define default::[not_specified] -keep_equivalent_registers -top  RV64IM72F5SPSoCTOP -part  xc7a200tsbg484-1 
+opt_design -directive Explore
+read_checkpoint -directive RuntimeOptimized  -incremental -auto_incremental /home/khwl/Desktop/RV64IM72F_7SP_BRAM_Final_1431/RV64IM72F_7SP_BRAM_Final_1431.srcs/utils_1/imports/impl_1/RV64IM72F5SPSoCTOP_routed.dcp
+place_design -directive Default
+phys_opt_design
+route_design -directive Default
+
+7. Non Reuse Information
+------------------------
+
++-------------------------------+-------+
+|              Type             |   %   |
++-------------------------------+-------+
+| Non-Reused Cells              |  0.72 |
+|   Added by Tool               |  0.49 |
+|   Moved by Tool               |  0.05 |
+|   New                         |  0.01 |
+|   Discarded to improve timing |  0.17 |
+| Partially reused nets         |  0.00 |
+| Non-Reused nets               | 21.37 |
+| Non-Reused Ports              |  0.00 |
++-------------------------------+-------+
+
+

@@ -52,9 +52,11 @@ static inline ee_u32 read_mcycle32(void) {
  * ============================================================ */
 
 /* Timer resolution and ticks per second
- * CPU runs at 50MHz, so 50,000,000 ticks per second
+ * Set by CPU_FREQ_HZ in the Makefile (100 MHz by default)
  */
-#define EE_TICKS_PER_SEC 130000000
+#ifndef EE_TICKS_PER_SEC
+#define EE_TICKS_PER_SEC 100000000
+#endif
 
 static CORETIMETYPE start_time_val, stop_time_val;
 

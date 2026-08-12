@@ -1,0 +1,55 @@
+`include "./opcode.vh"
+
+module IF_IO_Register #(
+    parameter XLEN = 64   
+)(
+    // pipeline register control signals
+    input wire clk,
+    input wire clk_enable,
+    input wire flush,
+    input wire IF_IO_stall,
+    input wire branch_estimation,
+    input wire jump,
+    input wire [6:0] ID_opcode,
+    input wire [6:0] ID_funct7,
+    input wire [6:0] EX2_opcode,
+    input wire load_use_hazard,
+
+    // signals from IF phase
+    input wire [XLEN-1:0] IF_pc,
+    input wire [XLEN-1:0] IF_pc_plus_4,
+    input wire [31:0] IF_instruction,
+
+    // signals to ID/EX register
+    output reg [XLEN-1:0] IO_pc,
+    output reg [XLEN-1:0] IO_pc_plus_4,
+    output reg [31:0] IO_instruction
+);
+
+reg flush_reg;
+wire is_m_extend = (ID_opcode == `OPCODE_RTYPE || ID_opcode == `OPCODE_RTYPE_WORD) && (ID_funct7 == 7'b000_0001);
+
+
+always @(posedge clk) begin
+    if (clk_enable) begin
+        if (flush || (branch_estimation && !IF_IO_stall && !is_m_extend) || (jump && !IF_IO_stall)) begin   
+            flush_reg <= 1'b1;
+            IO_pc <= {XLEN{1'b0}};
+            IO_pc_plus_4 <= {XLEN{1'b0}};
+            IO_instruction <= 32'h0000_0013; // ADDI x0, x0, 0 = RISC-V NOP, HINT
+        end
+        else if (flush_reg && !IF_IO_stall) begin
+            flush_reg <= 1'b0;
+            IO_pc <= {XLEN{1'b0}};
+            IO_pc_plus_4 <= {XLEN{1'b0}};
+            IO_instruction <= 32'h0000_0013; // ADDI x0, x0, 0 = RISC-V NOP, HINT
+        end
+        else if (!IF_IO_stall) begin
+            IO_pc <= IF_pc;
+            IO_pc_plus_4 <= IF_pc_plus_4;
+            IO_instruction <= IF_instruction;
+        end
+    end
+end
+    
+endmodule

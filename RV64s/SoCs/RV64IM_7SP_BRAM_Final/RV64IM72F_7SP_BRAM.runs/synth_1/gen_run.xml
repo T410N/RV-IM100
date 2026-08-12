@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1772012214" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/RV64IM72F5SPSoCTOP.dcp">
-  <File Type="VDS-TIMING-PB" Name="RV64IM72F5SPSoCTOP_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="RV64IM72F5SPSoCTOP_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="RV64IM72F5SPSoCTOP.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="RV64IM72F5SPSoCTOP_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="RV64IM72F5SPSoCTOP_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="RV64IM72F5SPSoCTOP_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="RV64IM72F5SPSoCTOP.vds"/>
-  <File Type="REPORTS-TCL" Name="RV64IM72F5SPSoCTOP_reports.tcl"/>
+  <File Type="RDS-UTIL" Name="RV64IM72F5SPSoCTOP_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="RV64IM72F5SPSoCTOP_utilization_synth.pb"/>
   <File Type="PA-TCL" Name="RV64IM72F5SPSoCTOP.tcl"/>
+  <File Type="REPORTS-TCL" Name="RV64IM72F5SPSoCTOP_reports.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/FPGA_SoC/benchmarks/coremark.mem">
@@ -558,9 +555,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Flow_PerfOptimized_high" Flow="Vivado Synthesis 2025">
-      <Desc>Higher performance designs, resource sharing is turned off, the global fanout guide is set to a lower number, FSM extraction forced to one-hot, LUT combining is disabled, equivalent registers are preserved, SRL are inferred  with a larger threshold</Desc>
-    </StratHandle>
+    <StratHandle Name="Flow_PerfOptimized_high" Flow="Vivado Synthesis 2025"/>
     <Step Id="synth_design">
       <Option Id="Directive">7</Option>
       <Option Id="FsmExtraction">1</Option>

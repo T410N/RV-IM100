@@ -19,7 +19,7 @@ module RegisterFile # (
     always @(*) begin
         // Read port 1
         if (read_reg1 == 5'd0)
-            read_data1 = 32'd0;
+            read_data1 = {XLEN{1'b0}};
         else if (clk_enable && write_enable && write_reg == read_reg1)
             read_data1 = write_data;
         else
@@ -27,7 +27,7 @@ module RegisterFile # (
 
         // Read port 2
         if (read_reg2 == 5'd0)
-            read_data2 = 32'd0;
+            read_data2 = {XLEN{1'b0}};
         else if (clk_enable && write_enable && write_reg == read_reg2)
             read_data2 = write_data;
         else

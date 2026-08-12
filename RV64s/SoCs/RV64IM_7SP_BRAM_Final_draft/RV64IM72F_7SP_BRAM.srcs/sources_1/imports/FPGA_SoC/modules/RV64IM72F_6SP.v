@@ -81,6 +81,7 @@ module RV64IM72F6SP #(
     // ALU
     wire [XLEN-1:0] alu_result;
     wire alu_zero;
+    assign alu_zero = (alu_result == {XLEN{1'b0}});
 
     // Divider Unit
     wire div_start;
@@ -130,6 +131,7 @@ module RV64IM72F6SP #(
     wire [XLEN-1:0] ID_pc_plus_4;
     wire [31:0] ID_instruction;
     wire ID_branch_estimation;
+    wire ID_valid_csr_address;
 
     // ID_EX_Register
     wire [XLEN-1:0] EX_pc;
@@ -170,7 +172,6 @@ module RV64IM72F6SP #(
     wire EX2_alu_zero;
     wire EX2_jump;
 
-    assign EX2_alu_zero = (EX2_alu_result == 0);
     
 
     // EX_MEM_Register
@@ -194,6 +195,9 @@ module RV64IM72F6SP #(
     wire [5:0] EX_rs2;
     wire [XLEN-1:0] EX_imm;
     wire [XLEN-1:0] EX_csr_read_data;
+    wire EX_is_store;
+    wire EX_uses_rs1;
+    wire EX_uses_rs2;
 
     wire [XLEN-1:0] MEM_pc;
     wire [XLEN-1:0] MEM_pc_plus_4;
@@ -454,6 +458,7 @@ module RV64IM72F6SP #(
         .write_data(data_memory_write_data),
         .write_mask(write_mask),
         .rom_read_data(rom_read_data),
+        .rom_address(),
 
         .write_done(write_done),
         .read_data(data_memory_read_data)
@@ -567,19 +572,22 @@ module RV64IM72F6SP #(
         .EX_rs1(EX_rs1),
         .EX_rs2(EX_rs2[4:0]),
         .EX_rd(EX_rd),
-        .EX_opcode(EX_opcode),
+        //.EX_opcode(EX_opcode),
         .EX_imm(EX_raw_imm[11:0]),
         .branch_prediction_miss(branch_prediction_miss),
         .EX_jump(EX_jump),
         .EX2_jump(EX2_jump),
-        .EX_alu_src_A_select(EX_alu_src_A_select),
-        .EX_alu_src_B_select(EX_alu_src_B_select),
+        .EX_is_store(EX_is_store),
+        .EX_uses_rs1(EX_uses_rs1),
+        .EX_uses_rs2(EX_uses_rs2),
+        //.EX_alu_src_A_select(EX_alu_src_A_select),
+        //.EX_alu_src_B_select(EX_alu_src_B_select),
 
         .hazard_ex2(hazard_ex2),
         .hazard_mem(hazard_mem),
         .hazard_wb(hazard_wb),
-        .csr_hazard_mem(csr_hazard_mem),
-        .csr_hazard_wb(csr_hazard_wb),
+        //.csr_hazard_mem(csr_hazard_mem),
+        //.csr_hazard_wb(csr_hazard_wb),
         .store_hazard_ex2(store_hazard_ex2),
         .store_hazard_mem(store_hazard_mem),
         .store_hazard_wb(store_hazard_wb),
@@ -680,6 +688,7 @@ module RV64IM72F6SP #(
         .MEM_pc(MEM_pc),
         .WB_pc(WB_pc),
         .csr_read_data(csr_read_out),
+        .ic_clean(),
 
         .debug_mode(debug_mode),
         .trap_target(trap_target),
@@ -735,6 +744,10 @@ module RV64IM72F6SP #(
         .ID_valid_csr_address(ID_valid_csr_address)
     );
 
+    wire ID_is_store = (opcode == `OPCODE_STORE);
+    wire ID_uses_rs1 = (alu_src_A_select == `ALU_SRC_A_RD1);
+    wire ID_uses_rs2 = (alu_src_B_select == `ALU_SRC_B_RD2);
+
     ID_EX_Register #(.XLEN(XLEN)) id_ex_register (
         .clk(clk),
         .clk_enable(clk_enable),
@@ -766,6 +779,9 @@ module RV64IM72F6SP #(
         .ID_rs2(rs2),
         .ID_imm(imm),
         .ID_csr_read_data(csr_read_out),
+        .ID_is_store(ID_is_store),
+        .ID_uses_rs1(ID_uses_rs1),
+        .ID_uses_rs2(ID_uses_rs2),
 
         .EX_pc(EX_pc),
         .EX_pc_plus_4(EX_pc_plus_4),
@@ -791,7 +807,10 @@ module RV64IM72F6SP #(
         .EX_rs1(EX_rs1),
         .EX_rs2(EX_rs2),
         .EX_imm(EX_imm),
-        .EX_csr_read_data(EX_csr_read_data)
+        .EX_csr_read_data(EX_csr_read_data),
+        .EX_is_store(EX_is_store),
+        .EX_uses_rs1(EX_uses_rs1),
+        .EX_uses_rs2(EX_uses_rs2)
     );
     
     EX_EX2_Register #(.XLEN(XLEN)) ex_ex2_register (
@@ -832,6 +851,7 @@ module RV64IM72F6SP #(
         .EX_jump(EX_jump),
         .EX_branch_estimation(EX_branch_estimation),
         .EX_is_load(EX_is_load),
+        .EX_alu_zero(alu_zero),
         .EX2_is_load(EX2_is_load),
 
         // outputs to EX2 stage
@@ -864,7 +884,8 @@ module RV64IM72F6SP #(
 
         .EX2_branch(EX2_branch),
         .EX2_jump(EX2_jump),
-        .EX2_branch_estimation(EX2_branch_estimation)
+        .EX2_branch_estimation(EX2_branch_estimation),
+        .EX2_alu_zero(EX2_alu_zero)
     );
 
 
