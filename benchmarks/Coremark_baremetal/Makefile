@@ -52,7 +52,7 @@ CFLAGS  = $(ARCH_FLAGS)
 CFLAGS += $(OPT_FLAGS) $(WARN_FLAGS) $(CODE_FLAGS)
 CFLAGS += $(CM_CFLAGS)
 
-ASFLAGS = $(ARCH_FLAGS) -Wa,-march=rv64i_zicsr
+ASFLAGS = $(ARCH_FLAGS) -Wa,-march=rv64im_zicsr
 
 # Linker flags
 LDFLAGS  = $(ARCH_FLAGS)

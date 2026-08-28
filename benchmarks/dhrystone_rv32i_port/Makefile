@@ -7,7 +7,7 @@ OBJDUMP = $(CROSS_COMPILE)objdump
 SIZE    = $(CROSS_COMPILE)size
 
 TARGET = dhrystone
-CPU_FREQ_HZ ?= 100000000
+CPU_FREQ_HZ ?= 114000000
 
 # Source files
 DHRY_SRC = dhry_1.c dhry_2.c

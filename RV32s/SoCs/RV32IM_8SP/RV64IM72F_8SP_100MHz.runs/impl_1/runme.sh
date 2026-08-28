@@ -21,7 +21,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/khwl/Desktop/RV-IM100/RV32s/SoCs/RV32IM_8SP/RV64IM72F_8SP_100MHz.runs/impl_1'
+HD_PWD='/home/khwl/Desktop/KHWL_2026/RV-IM100/RV32s/SoCs/RV32IM_8SP/RV64IM72F_8SP_100MHz.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

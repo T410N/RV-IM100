@@ -55,7 +55,7 @@ static inline ee_u32 read_mcycle32(void) {
  * Set by CPU_FREQ_HZ in the Makefile (100 MHz by default)
  */
 #ifndef EE_TICKS_PER_SEC
-#define EE_TICKS_PER_SEC 100000000
+#define EE_TICKS_PER_SEC 114000000
 #endif
 
 static CORETIMETYPE start_time_val, stop_time_val;
