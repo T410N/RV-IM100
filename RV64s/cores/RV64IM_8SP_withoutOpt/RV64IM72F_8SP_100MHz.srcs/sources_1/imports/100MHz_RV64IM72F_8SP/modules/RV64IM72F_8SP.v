@@ -2,6 +2,8 @@
 `include "./rf_wd_select.vh"
 `include "./alu_op.vh"
 
+`include "./opcode.vh"
+`include "./csr_funct3.vh"
 module RV64IM72F8SP_CORE #(
     parameter XLEN = 64
 )(
@@ -316,7 +318,6 @@ module RV64IM72F8SP_CORE #(
     wire store_hazard_wb_to_mem;
     wire load_use_hazard;
     wire exr_data_stall;    // NEW
-    wire retire_stall;      // NEW: hold retire while a dependent EXR insn waits
     wire misaligned_instruction_flush;
     wire misaligned_memory_flush;
 
@@ -338,10 +339,102 @@ module RV64IM72F8SP_CORE #(
     reg [XLEN-1:0] EXR_src_A;
     reg [XLEN-1:0] EXR_src_B;
 
+    // Sticky hold for the resolved ALU operands.
+    //
+    // While EXR is stalled a producer can drain out of the one-deep retire
+    // shadow before the stalled consumer advances.  hazard_retire then
+    // deasserts, alu_forward_source_select_* falls back to 3'b000, and the mux
+    // takes EXR_read_data1 -- the register-file value sampled when the
+    // instruction was in ID, which predates the producer entirely.  The
+    // instruction therefore executes on a stale operand.
+    //
+    // Observed as a wrong divw result: the divider was handed 0x2fad74f4
+    // instead of 0x37730000 because the lui that produced it had already left
+    // the retire shadow by the cycle the divw's operand was captured.
+    //
+    // Latch the operand while a forward is still valid and reuse it until the
+    // instruction actually advances.  This mirrors EXR_store_data_hold, which
+    // solves the identical problem on the store-data path; the ALU operand
+    // path was simply never given the same treatment.
+    reg [XLEN-1:0] EXR_src_A_hold;
+    reg [XLEN-1:0] EXR_src_B_hold;
+    reg            EXR_src_A_hold_valid;
+    reg            EXR_src_B_hold_valid;
+
+    // Clear on ID_EXR_stall, not EXR_EX_stall.  ID_EXR_stall gates the
+    // EXR stage register itself, so it marks exactly how long one instruction
+    // occupies EXR; EXR_EX_stall gates the EXR->EX register and can deassert
+    // a cycle earlier, which cleared the hold while the instruction was still
+    // in EXR and let the stale latched operand through.  Observed as a store
+    // to 0x10000075 instead of 0x10000079 -- a base register one loop
+    // iteration behind.
+    wire EXR_operand_advances = !ID_EXR_stall && !ID_EXR_flush;
+
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            EXR_src_A_hold       <= {XLEN{1'b0}};
+            EXR_src_B_hold       <= {XLEN{1'b0}};
+            EXR_src_A_hold_valid <= 1'b0;
+            EXR_src_B_hold_valid <= 1'b0;
+        end
+        else if (clk_enable) begin
+            if (ID_EXR_flush || EXR_operand_advances) begin
+                EXR_src_A_hold_valid <= 1'b0;
+                EXR_src_B_hold_valid <= 1'b0;
+            end
+            else begin
+                if (alu_forward_source_select_a != 3'b000) begin
+                    EXR_src_A_hold       <= alu_forward_source_data_a;
+                    EXR_src_A_hold_valid <= 1'b1;
+                end
+                if (alu_forward_source_select_b != 3'b000) begin
+                    EXR_src_B_hold       <= alu_forward_source_data_b;
+                    EXR_src_B_hold_valid <= 1'b1;
+                end
+            end
+        end
+    end
+
     wire [XLEN-1:0] store_forward_data;
     wire store_forward_enable;
     wire [XLEN-1:0] EXR_read_data2_MUX;
-    assign EXR_read_data2_MUX = store_forward_enable ? store_forward_data : EXR_read_data2;
+    // Store data must survive an arbitrarily long EXR stall.  store_forward_*
+    // is a combinational 4-deep chain (EX > EX2 > MEM > WB) while the ALU
+    // operand chain runs one stage deeper, to retire.  Once the producer drains
+    // past WB the chain goes quiet and the naked mux fell back to the stale
+    // EXR_read_data2 latched at ID.  Latch the forwarded value instead and hold
+    // it until the store actually advances.
+    wire EXR_is_store_instr = (EXR_opcode == `OPCODE_STORE);
+
+    reg [XLEN-1:0] EXR_store_data_hold;
+    reg            EXR_store_data_hold_valid;
+
+    wire EXR_store_advances = EXR_is_store_instr && !EXR_EX_stall && !EXR_EX_flush;
+
+    wire [XLEN-1:0] EXR_store_data_resolved =
+        store_forward_enable      ? store_forward_data :
+        EXR_store_data_hold_valid ? EXR_store_data_hold :
+                                    EXR_read_data2;
+
+    assign EXR_read_data2_MUX =
+        EXR_is_store_instr ? EXR_store_data_resolved : EXR_read_data2;
+
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            EXR_store_data_hold       <= {XLEN{1'b0}};
+            EXR_store_data_hold_valid <= 1'b0;
+        end
+        else if (clk_enable) begin
+            if (ID_EXR_flush || !EXR_is_store_instr)
+                EXR_store_data_hold_valid <= 1'b0;
+            else if (EXR_store_advances)
+                EXR_store_data_hold_valid <= 1'b0;
+            else if (store_forward_enable) begin
+                EXR_store_data_hold       <= store_forward_data;
+                EXR_store_data_hold_valid <= 1'b1;
+            end
+        end
+    end
 
 
     // WB->MEM store data forwarding
@@ -691,8 +784,7 @@ module RV64IM72F8SP_CORE #(
         .EXR_EX_stall(EXR_EX_stall),
         .EX_EX2_stall(EX_EX2_stall),
         .EX_MEM_stall(EX_MEM_stall),
-        .MEM_WB_stall(MEM_WB_stall),
-        .retire_stall(retire_stall)
+        .MEM_WB_stall(MEM_WB_stall)
     );
 
 
@@ -789,6 +881,8 @@ module RV64IM72F8SP_CORE #(
         .branch_estimation(branch_estimation),
         .load_use_hazard(load_use_hazard),
         .exr_data_stall(exr_data_stall),
+        .branch_prediction_miss(branch_prediction_miss),
+        .branch_target(branch_target),
         .jump(EX_jump),
 
         .IF_pc(instruction_pc),
@@ -1134,26 +1228,14 @@ module RV64IM72F8SP_CORE #(
         else if (clk_enable) begin
             // Hold the retire stage while a dependent instruction is stalled in
             // EXR, so its producer stays inside the forwarding window.
-            if (retire_stall) begin
-                retire_rd <= retire_rd;
-                retire_register_write_enable <= retire_register_write_enable;
-                retire_opcode <= retire_opcode;
-                retire_alu_result <= retire_alu_result;
-                retire_imm <= retire_imm;
-                retire_pc_plus_4 <= retire_pc_plus_4;
-                retire_csr_read_data <= retire_csr_read_data;
-                retire_byte_enable_logic_register_file_write_data <= retire_byte_enable_logic_register_file_write_data;
-            end
-            else begin
-                retire_rd <= WB_rd;
-                retire_register_write_enable <= WB_register_write_enable;
-                retire_opcode <= WB_opcode;
-                retire_alu_result <= WB_alu_result;
-                retire_imm <= WB_imm;
-                retire_pc_plus_4 <= WB_pc_plus_4;
-                retire_csr_read_data <= WB_csr_read_data;
-                retire_byte_enable_logic_register_file_write_data <= WB_byte_enable_logic_register_file_write_data;
-            end
+            retire_rd <= WB_rd;
+            retire_register_write_enable <= WB_register_write_enable;
+            retire_opcode <= WB_opcode;
+            retire_alu_result <= WB_alu_result;
+            retire_imm <= WB_imm;
+            retire_pc_plus_4 <= WB_pc_plus_4;
+            retire_csr_read_data <= WB_csr_read_data;
+            retire_byte_enable_logic_register_file_write_data <= WB_byte_enable_logic_register_file_write_data;
 
             if (!MEM_WB_stall && !MEM_WB_flush && WB_instruction != 32'h00000013) begin
                 instruction_retired <= 1'b1;
@@ -1193,7 +1275,13 @@ module RV64IM72F8SP_CORE #(
         else begin
             csr_write_data = WB_alu_result;
             csr_write_address = WB_raw_imm[11:0];
-            csr_read_address = raw_imm[11:0];
+            // Only a real CSR instruction may present a CSR address.  raw_imm is
+            // the decoded immediate of whatever sits in ID, so a store such as
+            // sd rs2,768(rs1) would otherwise alias onto 0x300 (mstatus), drop
+            // csr_ready, raise pc_stall, and make PC_Controller discard a
+            // branch redirect issued in the same cycle.
+            csr_read_address = ((opcode == `OPCODE_ENVIRONMENT) && (funct3 != `CSR_NONE))
+                               ? raw_imm[11:0] : 12'hFFF;
         end
 
         // Debug mode instruction selection
@@ -1217,7 +1305,8 @@ module RV64IM72F8SP_CORE #(
             3'b011: EXR_src_A = alu_forward_source_data_a;
             3'b100: EXR_src_A = alu_forward_source_data_a;
             3'b101: EXR_src_A = alu_forward_source_data_a;
-            default: EXR_src_A = EXR_normal_source_a;
+            default: EXR_src_A = EXR_src_A_hold_valid
+                                 ? EXR_src_A_hold : EXR_normal_source_a;
         endcase
 
         // ALU source B forwarding: 3'b001=EX, 3'b010=EX2, 3'b011=MEM, 3'b100=WB, 3'b101=Retire
@@ -1227,7 +1316,8 @@ module RV64IM72F8SP_CORE #(
             3'b011: EXR_src_B = alu_forward_source_data_b;
             3'b100: EXR_src_B = alu_forward_source_data_b;
             3'b101: EXR_src_B = alu_forward_source_data_b;
-            default: EXR_src_B = EXR_normal_source_b;
+            default: EXR_src_B = EXR_src_B_hold_valid
+                                 ? EXR_src_B_hold : EXR_normal_source_b;
         endcase
     end
 

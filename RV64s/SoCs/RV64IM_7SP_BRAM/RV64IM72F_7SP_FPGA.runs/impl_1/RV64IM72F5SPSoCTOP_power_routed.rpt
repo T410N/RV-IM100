@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date             : Tue Mar  3 21:03:48 2026
-| Host             : khwl-ThinkPad-X1-Carbon-Gen-13 running 64-bit Ubuntu 24.04.3 LTS
+| Date             : Wed Sep  9 02:04:38 2026
+| Host             : khwl-ThinkPad-X1-Carbon-Gen-13 running 64-bit Ubuntu 24.04.4 LTS
 | Command          : report_power -file RV64IM72F5SPSoCTOP_power_routed.rpt -pb RV64IM72F5SPSoCTOP_power_summary_routed.pb -rpx RV64IM72F5SPSoCTOP_power_routed.rpx
 | Design           : RV64IM72F5SPSoCTOP
 | Device           : xc7a200tsbg484-1
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.308        |
+| Total On-Chip Power (W)  | 0.307        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.155        |
+| Dynamic (W)              | 0.154        |
 | Device Static (W)        | 0.153        |
 | Effective TJA (C/W)      | 3.3          |
 | Max Ambient (C)          | 84.0         |
@@ -52,21 +52,21 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.013 |        5 |       --- |             --- |
-| Slice Logic              |     0.010 |    15520 |       --- |             --- |
-|   LUT as Logic           |     0.008 |     8762 |    133800 |            6.55 |
+| Clocks                   |     0.012 |        5 |       --- |             --- |
+| Slice Logic              |     0.009 |    15753 |       --- |             --- |
+|   LUT as Logic           |     0.008 |     8960 |    133800 |            6.70 |
 |   CARRY4                 |    <0.001 |      545 |     33450 |            1.63 |
 |   F7/F8 Muxes            |    <0.001 |     1033 |    133800 |            0.77 |
-|   Register               |    <0.001 |     4282 |    267600 |            1.60 |
+|   Register               |    <0.001 |     4378 |    267600 |            1.64 |
 |   LUT as Distributed RAM |    <0.001 |       88 |     46200 |            0.19 |
 |   Others                 |     0.000 |       43 |       --- |             --- |
-| Signals                  |     0.015 |    12815 |       --- |             --- |
+| Signals                  |     0.014 |    12865 |       --- |             --- |
 | Block RAM                |     0.019 |       24 |       365 |            6.58 |
 | PLL                      |     0.098 |        1 |        10 |           10.00 |
 | DSPs                     |    <0.001 |       20 |       740 |            2.70 |
 | I/O                      |     0.001 |       12 |       285 |            4.21 |
 | Static Power             |     0.153 |          |           |                 |
-| Total                    |     0.308 |          |           |                 |
+| Total                    |     0.307 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.095 |       0.064 |      0.031 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.094 |       0.062 |      0.031 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.080 |       0.049 |      0.031 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.005 |       0.000 |      0.005 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.005 |       0.000 |      0.005 |       NA    | Unspecified | NA         |
@@ -147,22 +147,23 @@ Table of Contents
 +------------------------+-----------+
 | Name                   | Power (W) |
 +------------------------+-----------+
-| RV64IM72F5SPSoCTOP     |     0.155 |
+| RV64IM72F5SPSoCTOP     |     0.154 |
 |   clk_gen              |     0.098 |
 |     inst               |     0.098 |
-|   rv64im72f_6sp        |     0.056 |
+|   rv64im72f_6sp        |     0.055 |
 |     alu                |     0.006 |
 |       divider_dword    |     0.002 |
-|       multiplier_dword |     0.002 |
+|       multiplier_dword |     0.001 |
 |       multiplier_word  |     0.001 |
 |     csr_file           |     0.002 |
 |     data_memory        |     0.014 |
 |     ex_ex2_register    |     0.010 |
 |     ex_mem_register    |     0.003 |
-|     id_ex_register     |     0.007 |
+|     exception_detector |     0.001 |
+|     id_ex_register     |     0.006 |
 |     if_io_register     |     0.001 |
 |     instruction_memory |     0.006 |
-|     io_id_register     |     0.002 |
+|     io_id_register     |     0.001 |
 |     mem_wb_register    |     0.003 |
 +------------------------+-----------+
 

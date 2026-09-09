@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date             : Sat Aug  1 17:58:41 2026
+| Date             : Wed Sep  9 03:34:17 2026
 | Host             : khwl-ThinkPad-X1-Carbon-Gen-13 running 64-bit Ubuntu 24.04.4 LTS
 | Command          : report_power -file RV64IM72F5SPSoCTOP_power_routed.rpt -pb RV64IM72F5SPSoCTOP_power_summary_routed.pb -rpx RV64IM72F5SPSoCTOP_power_routed.rpx
 | Design           : RV64IM72F5SPSoCTOP
@@ -53,14 +53,14 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.011 |        5 |       --- |             --- |
-| Slice Logic              |     0.004 |     5759 |       --- |             --- |
-|   LUT as Logic           |     0.003 |     3013 |    133800 |            2.25 |
+| Slice Logic              |     0.004 |     5859 |       --- |             --- |
+|   LUT as Logic           |     0.003 |     3081 |    133800 |            2.30 |
+|   Register               |    <0.001 |     2222 |    267600 |            0.83 |
 |   CARRY4                 |    <0.001 |      188 |     33450 |            0.56 |
-|   Register               |    <0.001 |     2190 |    267600 |            0.82 |
 |   LUT as Distributed RAM |    <0.001 |       44 |     46200 |            0.10 |
 |   F7/F8 Muxes            |    <0.001 |       14 |    133800 |            0.01 |
 |   Others                 |     0.000 |       37 |       --- |             --- |
-| Signals                  |     0.008 |     5391 |       --- |             --- |
+| Signals                  |     0.008 |     5423 |       --- |             --- |
 | Block RAM                |     0.028 |       16 |       365 |            4.38 |
 | PLL                      |     0.113 |        1 |        10 |           10.00 |
 | DSPs                     |    <0.001 |        4 |       740 |            0.54 |
@@ -152,7 +152,7 @@ Table of Contents
 |     inst               |     0.113 |
 |   rv32im72f_7sp        |     0.050 |
 |     alu                |     0.003 |
-|       divider_word     |     0.001 |
+|       divider_word     |     0.002 |
 |       multiplier_word  |     0.001 |
 |     csr_file           |     0.002 |
 |     data_memory        |     0.010 |

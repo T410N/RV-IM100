@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Thu Mar 12 17:08:32 2026
-| Host         : khwl-main-pc running 64-bit Ubuntu 24.04.4 LTS
+| Date         : Tue Sep  8 13:12:39 2026
+| Host         : khwl-ThinkPad-X1-Carbon-Gen-13 running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_utilization -file RV32IM72F7SP_CORE_utilization_synth.rpt -pb RV32IM72F7SP_CORE_utilization_synth.pb
 | Design       : RV32IM72F7SP_CORE
 | Device       : xc7a200tsbg484-1
@@ -31,17 +31,17 @@ Table of Contents
 +----------------------------+------+-------+------------+-----------+-------+
 |          Site Type         | Used | Fixed | Prohibited | Available | Util% |
 +----------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*                | 3184 |     0 |          0 |    134600 |  2.37 |
-|   LUT as Logic             | 3136 |     0 |          0 |    134600 |  2.33 |
+| Slice LUTs*                | 3188 |     0 |          0 |    134600 |  2.37 |
+|   LUT as Logic             | 3140 |     0 |          0 |    134600 |  2.33 |
 |   LUT as Memory            |   48 |     0 |          0 |     46200 |  0.10 |
 |     LUT as Distributed RAM |   48 |     0 |            |           |       |
 |     LUT as Shift Register  |    0 |     0 |            |           |       |
-| Slice Registers            | 2084 |     0 |          0 |    269200 |  0.77 |
-|   Register as Flip Flop    | 2084 |     0 |          0 |    269200 |  0.77 |
+| Slice Registers            | 2116 |     0 |          0 |    269200 |  0.79 |
+|   Register as Flip Flop    | 2116 |     0 |          0 |    269200 |  0.79 |
 |   Register as Latch        |    0 |     0 |          0 |    269200 |  0.00 |
 | F7 Muxes                   |   16 |     0 |          0 |     67300 |  0.02 |
 | F8 Muxes                   |    0 |     0 |          0 |     33650 |  0.00 |
-| Unique Control Sets        |   25 |       |          0 |     33650 |  0.07 |
+| Unique Control Sets        |   26 |       |          0 |     33650 |  0.08 |
 +----------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 Warning! LUT value is adjusted to account for LUT combining.
@@ -64,7 +64,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | 10    |          Yes |           - |          Set |
 | 883   |          Yes |           - |        Reset |
 | 18    |          Yes |         Set |            - |
-| 1173  |          Yes |       Reset |            - |
+| 1205  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -157,14 +157,14 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT6     | 1283 |                 LUT |
-| FDRE     | 1173 |        Flop & Latch |
+| LUT6     | 1282 |                 LUT |
+| FDRE     | 1205 |        Flop & Latch |
 | FDCE     |  883 |        Flop & Latch |
-| LUT4     |  579 |                 LUT |
-| LUT3     |  510 |                 LUT |
-| LUT5     |  327 |                 LUT |
-| LUT2     |  294 |                 LUT |
-| LUT1     |  222 |                 LUT |
+| LUT4     |  582 |                 LUT |
+| LUT3     |  516 |                 LUT |
+| LUT5     |  324 |                 LUT |
+| LUT2     |  292 |                 LUT |
+| LUT1     |  223 |                 LUT |
 | CARRY4   |  183 |          CarryLogic |
 | RAMD32   |   68 |  Distributed Memory |
 | RAMS32   |   20 |  Distributed Memory |

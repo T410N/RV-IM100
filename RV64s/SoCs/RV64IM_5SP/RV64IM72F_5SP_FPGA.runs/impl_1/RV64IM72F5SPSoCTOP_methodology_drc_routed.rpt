@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Wed Mar  4 17:55:57 2026
-| Host         : khwl-ThinkPad-X1-Carbon-Gen-13 running 64-bit Ubuntu 24.04.3 LTS
+| Date         : Wed Sep  9 01:47:31 2026
+| Host         : khwl-ThinkPad-X1-Carbon-Gen-13 running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_methodology -file RV64IM72F5SPSoCTOP_methodology_drc_routed.rpt -pb RV64IM72F5SPSoCTOP_methodology_drc_routed.pb -rpx RV64IM72F5SPSoCTOP_methodology_drc_routed.rpx
 | Design       : RV64IM72F5SPSoCTOP
 | Device       : xc7a200tsbg484-1
@@ -23,14 +23,15 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max checks: <unlimited>
-             Checks found: 2691
-+----------+----------+-----------------------------------------------------------+--------+
-| Rule     | Severity | Description                                               | Checks |
-+----------+----------+-----------------------------------------------------------+--------+
-| DPIR-1   | Warning  | Asynchronous driver check                                 | 623    |
-| SYNTH-5  | Warning  | Mapped onto distributed RAM because of timing constraints | 2048   |
-| SYNTH-10 | Warning  | Wide multiplier                                           | 20     |
-+----------+----------+-----------------------------------------------------------+--------+
+             Checks found: 2692
++-----------+----------+-----------------------------------------------------------+--------+
+| Rule      | Severity | Description                                               | Checks |
++-----------+----------+-----------------------------------------------------------+--------+
+| DPIR-1    | Warning  | Asynchronous driver check                                 | 623    |
+| SYNTH-5   | Warning  | Mapped onto distributed RAM because of timing constraints | 2048   |
+| SYNTH-10  | Warning  | Wide multiplier                                           | 20     |
+| TIMING-16 | Warning  | Large setup violation                                     | 1      |
++-----------+----------+-----------------------------------------------------------+--------+
 
 2. REPORT DETAILS
 -----------------
@@ -13487,6 +13488,11 @@ Related violations: <none>
 SYNTH-10#20 Warning
 Wide multiplier  
 Detected multiplier at rv64im72f_5sp/alu/multiplier_word/mult_result__2 of size 18x16, it is decomposed from a wide multipler into 4 DSP blocks.
+Related violations: <none>
+
+TIMING-16#1 Warning
+Large setup violation  
+There is a large setup violation of -1.085 ns between rv64im72f_5sp/ex_mem_register/MEM_alu_result_reg[5]_replica/C (clocked by clk_out1_clk_wiz_0) and rv64im72f_5sp/program_counter/pc_reg[58]/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 

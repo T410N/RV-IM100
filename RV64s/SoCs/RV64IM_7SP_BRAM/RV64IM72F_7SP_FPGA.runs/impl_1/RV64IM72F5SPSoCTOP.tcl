@@ -1,5 +1,5 @@
 namespace eval ::optrace {
-  variable script "/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.runs/impl_1/RV64IM72F5SPSoCTOP.tcl"
+  variable script "/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.runs/impl_1/RV64IM72F5SPSoCTOP.tcl"
   variable category "vivado_impl"
 }
 
@@ -104,27 +104,26 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param xicom.use_bs_reader 1
   set_param chipscope.maxJobs 4
   set_param general.usePosixSpawnForFork 1
-  set_param runs.launchOptions { -jobs 16  }
+  set_param runs.launchOptions { -jobs 8  }
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a200tsbg484-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.cache/wt [current_project]
-  set_property parent.project_path /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.xpr [current_project]
-  set_property ip_output_repo /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.cache/ip [current_project]
+  set_property webtalk.parent_dir /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.cache/wt [current_project]
+  set_property parent.project_path /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.xpr [current_project]
+  set_property ip_output_repo /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES XPM_CDC [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.runs/synth_1/RV64IM72F5SPSoCTOP.dcp
-  read_ip -quiet /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+  add_files -quiet /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.runs/synth_1/RV64IM72F5SPSoCTOP.dcp
+  read_ip -quiet /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
 OPTRACE "read constraints: implementation" START { }
-  read_xdc /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/constrs_1/imports/FPGA_SoC/RV32I46F_5SP_Debug_XDC.xdc
+  read_xdc /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM/RV64IM72F_7SP_FPGA.srcs/constrs_1/imports/FPGA_SoC/RV32I46F_5SP_Debug_XDC.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "read constraints: implementation_pre" START { }
 OPTRACE "read constraints: implementation_pre" END { }

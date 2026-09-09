@@ -100,8 +100,7 @@ module HazardUnit (
     output reg EXR_EX_stall,            // NEW
     output reg EX_EX2_stall,
     output reg EX_MEM_stall,
-    output reg MEM_WB_stall,
-    output reg retire_stall
+    output reg MEM_WB_stall
 );
 
     // Store instruction detection
@@ -202,7 +201,6 @@ module HazardUnit (
         EX_EX2_stall = 1'b0;
         EX_MEM_stall = 1'b0;
         MEM_WB_stall = 1'b0;
-        retire_stall = 1'b0;
 
         // ALU forwarding hazards (priority: EX > EX2 > MEM > WB > Retire)
         // For Store instructions, rs2 hazard shouldn't trigger ALUsrcB forwarding.
@@ -317,9 +315,6 @@ module HazardUnit (
         // waits, its rs1 producer drains EX -> EX2 -> MEM -> WB -> retire and then
         // disappears, leaving only the stale value latched at ID.  Freeze the
         // retire stage so the producer stays visible until the consumer advances.
-        if (exr_data_stall && retire_hazard_rs1) begin
-            retire_stall = 1'b1;
-        end
     end
 
 endmodule

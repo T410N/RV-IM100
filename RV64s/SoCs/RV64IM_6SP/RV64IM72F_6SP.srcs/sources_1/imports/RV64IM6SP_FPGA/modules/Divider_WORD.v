@@ -17,6 +17,15 @@ module Divider_WORD #(
 );
     // Refined Division Algorithm 
 
+
+    // Operands are latched once, at division_start, and INITIALIZE uses the
+    // latched copies.  Previously INITIALIZE re-read the live dividend/divisor
+    // ports one cycle after the start pulse, so the divider required its
+    // operands to stay valid for two consecutive cycles.  When the pipeline
+    // moved on in that gap the divider silently computed on the next
+    // instruction's operands -- e.g. 0x10001554/0x11 = 0xF0F232 in place of
+    // 0x28/0x11 = 2.  dividend_reg already existed and was simply not used
+    // where it mattered.
     // FSM States
     localparam IDLE         = 3'b000;
     localparam INITIALIZE   = 3'b001;
@@ -35,6 +44,7 @@ module Divider_WORD #(
     reg div_by_zero_flag;
     reg div_overflow_flag;
     reg [31:0] dividend_reg;
+    reg [31:0] divisor_latch;
     
     wire [63:0] shifted_rq;
     wire [32:0] subtract_result;
@@ -71,6 +81,7 @@ module Divider_WORD #(
                 div_by_zero_flag <= div_by_zero;
                 div_overflow_flag <= div_overflow;
                 dividend_reg <= dividend;
+                divisor_latch <= divisor;
             end
             case (state)
                 IDLE: begin
@@ -87,31 +98,31 @@ module Divider_WORD #(
                     bit_counter <= 6'd32;
                     state <= CALCULATE;
                     if (is_signed) begin
-                        quotient_sign <= dividend[31] ^ divisor[31];
-                        remainder_sign <= dividend[31];
+                        quotient_sign <= dividend_reg[31] ^ divisor_latch[31];
+                        remainder_sign <= dividend_reg[31];
                         
-                        // dividend absolute value (upper 32bits are 0)
-                        if (dividend[31]) begin
-                            remainder_quotient <= {32'b0, (~dividend + 1'b1)};
+                        // dividend_reg absolute value (upper 32bits are 0)
+                        if (dividend_reg[31]) begin
+                            remainder_quotient <= {32'b0, (~dividend_reg + 1'b1)};
                         end
                         else begin
-                            remainder_quotient <= {32'b0, dividend};
+                            remainder_quotient <= {32'b0, dividend_reg};
                         end
                         
-                        // divisor absolute value
-                        if (divisor[31]) begin
-                            divisor_reg <= (~divisor + 1'b1);
+                        // divisor_latch absolute value
+                        if (divisor_latch[31]) begin
+                            divisor_reg <= (~divisor_latch + 1'b1);
                         end
                         else begin
-                            divisor_reg <= divisor;
+                            divisor_reg <= divisor_latch;
                         end
                     end
                     else begin
                         // Unsigned
                         quotient_sign <= 1'b0;
                         remainder_sign <= 1'b0;
-                        remainder_quotient <= {32'b0, dividend};
-                        divisor_reg <= divisor;
+                        remainder_quotient <= {32'b0, dividend_reg};
+                        divisor_reg <= divisor_latch;
                     end
                 end
                 // CALCULATE

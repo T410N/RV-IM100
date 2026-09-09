@@ -2,6 +2,8 @@
 `include "./rf_wd_select.vh"
 `include "./alu_op.vh"
 
+`include "./opcode.vh"
+`include "./csr_funct3.vh"
 module RV32IM72F7SP_CORE #(
     parameter XLEN = 32
 )(
@@ -1064,7 +1066,13 @@ module RV32IM72F7SP_CORE #(
         else begin
             csr_write_data = WB_alu_result;
             csr_write_address = WB_raw_imm[11:0];
-            csr_read_address = raw_imm[11:0];
+            // Only a real CSR instruction may present a CSR address.  raw_imm is
+            // the decoded immediate of whatever sits in ID, so a store such as
+            // sd rs2,768(rs1) would otherwise alias onto 0x300 (mstatus), drop
+            // csr_ready, raise pc_stall, and make PC_Controller discard a
+            // branch redirect issued in the same cycle.
+            csr_read_address = ((opcode == `OPCODE_ENVIRONMENT) && (funct3 != `CSR_NONE))
+                               ? raw_imm[11:0] : 12'hFFF;
         end
 
         // Debug mode instruction selection
@@ -1091,18 +1099,24 @@ module RV32IM72F7SP_CORE #(
     end
 
     wire [11:0] IO_csr_address = IO_instruction[31:20];
-    wire IO_valid_csr_address = (IO_csr_address == 12'hB00) || // mcycle
-                               (IO_csr_address == 12'hB02) || // minstret
-                               (IO_csr_address == 12'hB80) || // mcycleh
-                               (IO_csr_address == 12'hB82) || // minstreth
-                               (IO_csr_address == 12'hF11) || // mvendorid
-                               (IO_csr_address == 12'hF12) || // marchid  
-                               (IO_csr_address == 12'hF14) || // mhartid
-                               (IO_csr_address == 12'h300) || // mstatus
-                               (IO_csr_address == 12'h301) || // misa
-                               (IO_csr_address == 12'h305) || // mtvec
-                               (IO_csr_address == 12'h341) || // mepc
-                               (IO_csr_address == 12'h342);   // mcause
+    // Same qualification on the IO-stage path.  instruction[31:20] for an
+    // S-type is {imm[11:5], rs2}, which merely happens to miss the compare
+    // list below -- a B- or R-type landing on 0x300 would reproduce the fault.
+    wire IO_is_csr_insn = (IO_instruction[6:0] == `OPCODE_ENVIRONMENT) &&
+                          (IO_instruction[14:12] != `CSR_NONE);
+    wire IO_valid_csr_address = IO_is_csr_insn &&
+                                ((IO_csr_address == 12'hB00) || // mcycle
+                                 (IO_csr_address == 12'hB02) || // minstret
+                                 (IO_csr_address == 12'hB80) || // mcycleh
+                                 (IO_csr_address == 12'hB82) || // minstreth
+                                 (IO_csr_address == 12'hF11) || // mvendorid
+                                 (IO_csr_address == 12'hF12) || // marchid
+                                 (IO_csr_address == 12'hF14) || // mhartid
+                                 (IO_csr_address == 12'h300) || // mstatus
+                                 (IO_csr_address == 12'h301) || // misa
+                                 (IO_csr_address == 12'h305) || // mtvec
+                                 (IO_csr_address == 12'h341) || // mepc
+                                 (IO_csr_address == 12'h342));
 
     reg [2:0] EX_forward_select;
     always @(*) begin

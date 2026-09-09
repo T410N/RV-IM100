@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Wed Aug  5 08:14:13 2026
+| Date         : Wed Sep  9 09:12:48 2026
 | Host         : khwl-ThinkPad-X1-Carbon-Gen-13 running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_utilization -file RV64IM72F5SPSoCTOP_utilization_synth.rpt -pb RV64IM72F5SPSoCTOP_utilization_synth.pb
 | Design       : RV64IM72F5SPSoCTOP
@@ -31,17 +31,17 @@ Table of Contents
 +----------------------------+-------+-------+------------+-----------+-------+
 |          Site Type         |  Used | Fixed | Prohibited | Available | Util% |
 +----------------------------+-------+-------+------------+-----------+-------+
-| Slice LUTs*                | 12648 |     0 |          0 |    134600 |  9.40 |
-|   LUT as Logic             | 12560 |     0 |          0 |    134600 |  9.33 |
+| Slice LUTs*                | 12594 |     0 |          0 |    134600 |  9.36 |
+|   LUT as Logic             | 12506 |     0 |          0 |    134600 |  9.29 |
 |   LUT as Memory            |    88 |     0 |          0 |     46200 |  0.19 |
 |     LUT as Distributed RAM |    88 |     0 |            |           |       |
 |     LUT as Shift Register  |     0 |     0 |            |           |       |
-| Slice Registers            |  4073 |     0 |          0 |    269200 |  1.51 |
-|   Register as Flip Flop    |  4073 |     0 |          0 |    269200 |  1.51 |
+| Slice Registers            |  4167 |     0 |          0 |    269200 |  1.55 |
+|   Register as Flip Flop    |  4167 |     0 |          0 |    269200 |  1.55 |
 |   Register as Latch        |     0 |     0 |          0 |    269200 |  0.00 |
 | F7 Muxes                   |  2390 |     0 |          0 |     67300 |  3.55 |
 | F8 Muxes                   |   959 |     0 |          0 |     33650 |  2.85 |
-| Unique Control Sets        |    41 |       |          0 |     33650 |  0.12 |
+| Unique Control Sets        |    43 |       |          0 |     33650 |  0.13 |
 +----------------------------+-------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 Warning! LUT value is adjusted to account for LUT combining.
@@ -62,9 +62,9 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 25    |          Yes |           - |          Set |
-| 1830  |          Yes |           - |        Reset |
+| 1828  |          Yes |           - |        Reset |
 | 18    |          Yes |         Set |            - |
-| 2200  |          Yes |       Reset |            - |
+| 2296  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -158,15 +158,15 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT5     | 5713 |                 LUT |
-| LUT6     | 3333 |                 LUT |
+| LUT5     | 5648 |                 LUT |
+| LUT6     | 3339 |                 LUT |
 | MUXF7    | 2390 |               MuxFx |
-| FDRE     | 2200 |        Flop & Latch |
-| FDCE     | 1830 |        Flop & Latch |
-| LUT4     | 1284 |                 LUT |
-| LUT3     | 1108 |                 LUT |
+| FDRE     | 2296 |        Flop & Latch |
+| FDCE     | 1828 |        Flop & Latch |
+| LUT4     | 1272 |                 LUT |
+| LUT3     | 1123 |                 LUT |
 | MUXF8    |  959 |               MuxFx |
-| LUT2     |  699 |                 LUT |
+| LUT2     |  711 |                 LUT |
 | LUT1     |  674 |                 LUT |
 | CARRY4   |  519 |          CarryLogic |
 | RAMD32   |  132 |  Distributed Memory |

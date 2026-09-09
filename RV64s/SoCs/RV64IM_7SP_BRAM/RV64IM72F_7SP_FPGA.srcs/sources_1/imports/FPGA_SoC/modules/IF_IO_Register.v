@@ -66,7 +66,13 @@ always @(posedge clk) begin
             IO_instruction <= IF_instruction;
         end
 
-        if (load_use_hazard && flush_reg) begin
+        // Only schedule the extra fetch bubble when the redirect's second
+        // bubble was actually emitted this cycle.  IF_IO_stall defers that
+        // bubble by a cycle, and scheduling another one on top double-counts:
+        // the third NOP then lands after the redirect is already covered and
+        // overwrites the branch *target*, which by then is sitting in IF.
+        // Observed as a taken branch resuming one instruction past its target.
+        if (load_use_hazard && flush_reg && !IF_IO_stall) begin
             is_load_use_hazard <= 1'b1;
         end 
     end

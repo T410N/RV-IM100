@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1787739816" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/RV64IM72F8SPSoCTOP.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1788840782" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/RV64IM72F8SPSoCTOP.dcp">
   <File Type="VDS-TIMING-PB" Name="RV32IM72F8SP_CORE_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="RV32IM72F8SP_CORE_timing_summary_synth.rpt"/>
-  <File Type="PA-TCL" Name="RV32IM72F8SP_CORE.tcl"/>
   <File Type="RDS-DCP" Name="RV32IM72F8SP_CORE.dcp"/>
-  <File Type="REPORTS-TCL" Name="RV32IM72F8SP_CORE_reports.tcl"/>
-  <File Type="RDS-RDS" Name="RV32IM72F8SP_CORE.vds"/>
-  <File Type="RDS-PROPCONSTRS" Name="RV32IM72F8SP_CORE_drc_synth.rpt"/>
-  <File Type="RDS-UTIL" Name="RV32IM72F8SP_CORE_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="RV32IM72F8SP_CORE_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="RV32IM72F8SP_CORE_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="RV32IM72F8SP_CORE_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="RV32IM72F8SP_CORE.vds"/>
+  <File Type="REPORTS-TCL" Name="RV32IM72F8SP_CORE_reports.tcl"/>
+  <File Type="PA-TCL" Name="RV32IM72F8SP_CORE.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/100MHz_RV64IM72F_8SP/benchmarks/dhrystone.mem">
@@ -125,6 +125,24 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/imports/100MHz_RV64IM72F_8SP/modules/headers/rtype_funct3.vh">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/100MHz_RV64IM72F_8SP/modules/headers/rtype_funct3.vh"/>
+        <Attr Name="ImportTime" Val="1769526535"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="IsVisible" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/100MHz_RV64IM72F_8SP/modules/headers/opcode.vh">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/100MHz_RV64IM72F_8SP/modules/headers/opcode.vh"/>
+        <Attr Name="ImportTime" Val="1769526535"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="IsVisible" Val="1"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/imports/100MHz_RV64IM72F_8SP/modules/headers/rtype_mul_funct3.vh">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/100MHz_RV64IM72F_8SP/modules/headers/rtype_mul_funct3.vh"/>
@@ -143,27 +161,9 @@
         <Attr Name="IsVisible" Val="1"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/100MHz_RV64IM72F_8SP/modules/headers/rtype_funct3.vh">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/100MHz_RV64IM72F_8SP/modules/headers/rtype_funct3.vh"/>
-        <Attr Name="ImportTime" Val="1769526535"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-        <Attr Name="IsVisible" Val="1"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/imports/100MHz_RV64IM72F_8SP/modules/headers/csr_funct3.vh">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/100MHz_RV64IM72F_8SP/modules/headers/csr_funct3.vh"/>
-        <Attr Name="ImportTime" Val="1769526535"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-        <Attr Name="IsVisible" Val="1"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/100MHz_RV64IM72F_8SP/modules/headers/opcode.vh">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/100MHz_RV64IM72F_8SP/modules/headers/opcode.vh"/>
         <Attr Name="ImportTime" Val="1769526535"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -251,18 +251,18 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/100MHz_RV64IM72F_8SP/modules/headers/rf_wd_select.vh">
+    <File Path="$PSRCDIR/sources_1/imports/100MHz_RV64IM72F_8SP/modules/headers/alu_src_select.vh">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/100MHz_RV64IM72F_8SP/modules/headers/rf_wd_select.vh"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/100MHz_RV64IM72F_8SP/modules/headers/alu_src_select.vh"/>
         <Attr Name="ImportTime" Val="1769526535"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
         <Attr Name="IsVisible" Val="1"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/100MHz_RV64IM72F_8SP/modules/headers/alu_src_select.vh">
+    <File Path="$PSRCDIR/sources_1/imports/100MHz_RV64IM72F_8SP/modules/headers/rf_wd_select.vh">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/100MHz_RV64IM72F_8SP/modules/headers/alu_src_select.vh"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Desktop/100MHz_RV64IM72F_8SP/modules/headers/rf_wd_select.vh"/>
         <Attr Name="ImportTime" Val="1769526535"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -502,9 +502,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Flow_PerfOptimized_high" Flow="Vivado Synthesis 2025">
-      <Desc>Higher performance designs, resource sharing is turned off, the global fanout guide is set to a lower number, FSM extraction forced to one-hot, LUT combining is disabled, equivalent registers are preserved, SRL are inferred  with a larger threshold</Desc>
-    </StratHandle>
+    <StratHandle Name="Flow_PerfOptimized_high" Flow="Vivado Synthesis 2025"/>
     <Step Id="synth_design">
       <Option Id="Directive">7</Option>
       <Option Id="FsmExtraction">1</Option>

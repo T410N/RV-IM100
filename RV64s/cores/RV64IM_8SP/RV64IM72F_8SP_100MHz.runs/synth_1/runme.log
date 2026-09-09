@@ -7,13 +7,13 @@
   **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
   **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
   **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-  **** Start of session at: Wed Feb 25 09:44:03 2026
+  **** Start of session at: Tue Sep  8 13:22:50 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source RV64IM72F8SP_CORE.tcl -notrace
-Command: read_checkpoint -auto_incremental -incremental /home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/utils_1/imports/synth_1/RV64IM72F8SPSoCTOP.dcp
-INFO: [Vivado 12-5825] Read reference checkpoint from /home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/utils_1/imports/synth_1/RV64IM72F8SPSoCTOP.dcp for incremental synthesis
+Command: read_checkpoint -auto_incremental -incremental /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/utils_1/imports/synth_1/RV64IM72F8SPSoCTOP.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/utils_1/imports/synth_1/RV64IM72F8SPSoCTOP.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top RV64IM72F8SP_CORE -part xc7a200tsbg484-1 -directive PerformanceOptimized -fsm_extraction one_hot -keep_equivalent_registers -resource_sharing off -no_lc -shreg_min_size 5 -mode out_of_context
 Starting synth_design
@@ -22,132 +22,134 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a200
 INFO: [Device 21-403] Loading part xc7a200tsbg484-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 157531
+INFO: [Synth 8-7075] Helper process launched with PID 232261
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2241.254 ; gain = 481.844 ; free physical = 18786 ; free virtual = 32751
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2241.559 ; gain = 482.188 ; free physical = 6080 ; free virtual = 27780
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-11241] undeclared symbol 'exr_data_stall', assumed default net type 'wire' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:716]
-INFO: [Synth 8-11241] undeclared symbol 'instruction_pc', assumed default net type 'wire' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:874]
-INFO: [Synth 8-11241] undeclared symbol 'instruction_pc_plus_4', assumed default net type 'wire' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:875]
-WARNING: [Synth 8-8895] 'instruction_pc' is already implicitly declared on line 874 [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:1194]
-WARNING: [Synth 8-8895] 'instruction_pc_plus_4' is already implicitly declared on line 875 [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:1195]
-WARNING: [Synth 8-6901] identifier 'pc_stall' is used before its declaration [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:49]
-WARNING: [Synth 8-6901] identifier 'EX_MEM_stall' is used before its declaration [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:50]
-WARNING: [Synth 8-6901] identifier 'EX2_alu_result' is used before its declaration [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:51]
-WARNING: [Synth 8-6901] identifier 'IO_instruction' is used before its declaration [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:53]
-WARNING: [Synth 8-6901] identifier 'IO_instruction' is used before its declaration [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:53]
-WARNING: [Synth 8-6901] identifier 'IO_instruction' is used before its declaration [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:53]
-WARNING: [Synth 8-6901] identifier 'IO_instruction' is used before its declaration [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:53]
-WARNING: [Synth 8-6901] identifier 'IO_instruction' is used before its declaration [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:53]
-WARNING: [Synth 8-6901] identifier 'IO_instruction' is used before its declaration [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:54]
-WARNING: [Synth 8-6901] identifier 'EX2_opcode' is used before its declaration [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:100]
-WARNING: [Synth 8-6901] identifier 'EX2_instruction' is used before its declaration [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:100]
-WARNING: [Synth 8-6901] identifier 'EX2_alu_result' is used before its declaration [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:101]
-WARNING: [Synth 8-6901] identifier 'MEM_memory_write' is used before its declaration [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:123]
-WARNING: [Synth 8-6901] identifier 'MEM_alu_result' is used before its declaration [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:123]
-WARNING: [Synth 8-6901] identifier 'EX2_memory_read' is used before its declaration [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:124]
-WARNING: [Synth 8-6901] identifier 'EX2_alu_result' is used before its declaration [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:124]
-WARNING: [Synth 8-6901] identifier 'MEM_alu_result' is used before its declaration [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:125]
-WARNING: [Synth 8-6901] identifier 'MEM_memory_write' is used before its declaration [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:129]
-WARNING: [Synth 8-6901] identifier 'mmio_uart_status_hit_reg' is used before its declaration [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:129]
-WARNING: [Synth 8-6901] identifier 'EX_MEM_stall' is used before its declaration [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:131]
-INFO: [Synth 8-6157] synthesizing module 'RV64IM72F8SP_CORE' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:5]
-INFO: [Synth 8-6157] synthesizing module 'ALU' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/ALU.v:3]
-INFO: [Synth 8-6157] synthesizing module 'ALU_WORD' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/ALU_WORD.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'ALU_WORD' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/ALU_WORD.v:3]
-INFO: [Synth 8-6157] synthesizing module 'ALU_DWORD' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/ALU_DWORD.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'ALU_DWORD' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/ALU_DWORD.v:3]
-INFO: [Synth 8-6157] synthesizing module 'Multiplier_WORD' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Multiplier_WORD.v:6]
-INFO: [Synth 8-226] default block is never used [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Multiplier_WORD.v:58]
-INFO: [Synth 8-6155] done synthesizing module 'Multiplier_WORD' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Multiplier_WORD.v:6]
-INFO: [Synth 8-6157] synthesizing module 'Multiplier_DWORD' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Multiplier_DWORD.v:7]
-INFO: [Synth 8-226] default block is never used [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Multiplier_DWORD.v:73]
-INFO: [Synth 8-6155] done synthesizing module 'Multiplier_DWORD' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Multiplier_DWORD.v:7]
-INFO: [Synth 8-6157] synthesizing module 'Divider_WORD' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Divider_WORD.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'Divider_WORD' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Divider_WORD.v:3]
-INFO: [Synth 8-6157] synthesizing module 'Divider_DWORD' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Divider_DWORD.v:3]
+INFO: [Synth 8-11241] undeclared symbol 'exr_data_stall', assumed default net type 'wire' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:818]
+INFO: [Synth 8-11241] undeclared symbol 'instruction_pc', assumed default net type 'wire' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:978]
+INFO: [Synth 8-11241] undeclared symbol 'instruction_pc_plus_4', assumed default net type 'wire' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:979]
+WARNING: [Synth 8-8895] 'instruction_pc' is already implicitly declared on line 978 [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:1298]
+WARNING: [Synth 8-8895] 'instruction_pc_plus_4' is already implicitly declared on line 979 [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:1299]
+WARNING: [Synth 8-6901] identifier 'pc_stall' is used before its declaration [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:51]
+WARNING: [Synth 8-6901] identifier 'EX_MEM_stall' is used before its declaration [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:52]
+WARNING: [Synth 8-6901] identifier 'EX2_alu_result' is used before its declaration [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:53]
+WARNING: [Synth 8-6901] identifier 'IO_instruction' is used before its declaration [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:55]
+WARNING: [Synth 8-6901] identifier 'IO_instruction' is used before its declaration [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:55]
+WARNING: [Synth 8-6901] identifier 'IO_instruction' is used before its declaration [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:55]
+WARNING: [Synth 8-6901] identifier 'IO_instruction' is used before its declaration [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:55]
+WARNING: [Synth 8-6901] identifier 'IO_instruction' is used before its declaration [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:55]
+WARNING: [Synth 8-6901] identifier 'IO_instruction' is used before its declaration [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:56]
+WARNING: [Synth 8-6901] identifier 'EX2_opcode' is used before its declaration [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:102]
+WARNING: [Synth 8-6901] identifier 'EX2_instruction' is used before its declaration [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:102]
+WARNING: [Synth 8-6901] identifier 'EX2_alu_result' is used before its declaration [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:103]
+WARNING: [Synth 8-6901] identifier 'MEM_memory_write' is used before its declaration [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:125]
+WARNING: [Synth 8-6901] identifier 'MEM_alu_result' is used before its declaration [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:125]
+WARNING: [Synth 8-6901] identifier 'EX2_memory_read' is used before its declaration [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:126]
+WARNING: [Synth 8-6901] identifier 'EX2_alu_result' is used before its declaration [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:126]
+WARNING: [Synth 8-6901] identifier 'MEM_alu_result' is used before its declaration [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:127]
+WARNING: [Synth 8-6901] identifier 'MEM_memory_write' is used before its declaration [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:131]
+WARNING: [Synth 8-6901] identifier 'mmio_uart_status_hit_reg' is used before its declaration [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:131]
+WARNING: [Synth 8-6901] identifier 'EX_MEM_stall' is used before its declaration [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:133]
+INFO: [Synth 8-6157] synthesizing module 'RV64IM72F8SP_CORE' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:7]
+INFO: [Synth 8-6157] synthesizing module 'ALU' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/ALU.v:3]
+INFO: [Synth 8-6157] synthesizing module 'ALU_WORD' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/ALU_WORD.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ALU_WORD' (0#1) [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/ALU_WORD.v:3]
+INFO: [Synth 8-6157] synthesizing module 'ALU_DWORD' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/ALU_DWORD.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ALU_DWORD' (0#1) [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/ALU_DWORD.v:3]
+INFO: [Synth 8-6157] synthesizing module 'Multiplier_WORD' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Multiplier_WORD.v:6]
+INFO: [Synth 8-226] default block is never used [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Multiplier_WORD.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'Multiplier_WORD' (0#1) [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Multiplier_WORD.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Multiplier_DWORD' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Multiplier_DWORD.v:7]
+INFO: [Synth 8-226] default block is never used [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Multiplier_DWORD.v:73]
+INFO: [Synth 8-6155] done synthesizing module 'Multiplier_DWORD' (0#1) [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Multiplier_DWORD.v:7]
+INFO: [Synth 8-6157] synthesizing module 'Divider_WORD' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Divider_WORD.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'Divider_WORD' (0#1) [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Divider_WORD.v:3]
+INFO: [Synth 8-6157] synthesizing module 'Divider_DWORD' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Divider_DWORD.v:3]
 	Parameter XLEN bound to: 64 - type: integer 
-INFO: [Synth 8-226] default block is never used [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Divider_DWORD.v:72]
-INFO: [Synth 8-6155] done synthesizing module 'Divider_DWORD' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Divider_DWORD.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'ALU' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/ALU.v:3]
-INFO: [Synth 8-6157] synthesizing module 'ALUController' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/ALU_Controller.v:9]
-INFO: [Synth 8-226] default block is never used [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/ALU_Controller.v:116]
-INFO: [Synth 8-226] default block is never used [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/ALU_Controller.v:138]
-INFO: [Synth 8-226] default block is never used [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/ALU_Controller.v:152]
-INFO: [Synth 8-6155] done synthesizing module 'ALUController' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/ALU_Controller.v:9]
-INFO: [Synth 8-6157] synthesizing module 'BranchLogic' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Branch_Logic.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'BranchLogic' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Branch_Logic.v:3]
-INFO: [Synth 8-6157] synthesizing module 'BranchPredictor' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Branch_Predictor.v:3]
+INFO: [Synth 8-226] default block is never used [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Divider_DWORD.v:74]
+INFO: [Synth 8-6155] done synthesizing module 'Divider_DWORD' (0#1) [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Divider_DWORD.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (0#1) [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/ALU.v:3]
+INFO: [Synth 8-6157] synthesizing module 'ALUController' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/ALU_Controller.v:9]
+INFO: [Synth 8-226] default block is never used [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/ALU_Controller.v:116]
+INFO: [Synth 8-226] default block is never used [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/ALU_Controller.v:138]
+INFO: [Synth 8-226] default block is never used [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/ALU_Controller.v:152]
+INFO: [Synth 8-6155] done synthesizing module 'ALUController' (0#1) [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/ALU_Controller.v:9]
+INFO: [Synth 8-6157] synthesizing module 'BranchLogic' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Branch_Logic.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'BranchLogic' (0#1) [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Branch_Logic.v:3]
+INFO: [Synth 8-6157] synthesizing module 'BranchPredictor' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Branch_Predictor.v:3]
 	Parameter XLEN bound to: 64 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'BranchPredictor' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Branch_Predictor.v:3]
-INFO: [Synth 8-6157] synthesizing module 'ByteEnableLogic' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Byte_Enable_Logic.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'ByteEnableLogic' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Byte_Enable_Logic.v:4]
-INFO: [Synth 8-6157] synthesizing module 'ControlUnit' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Control_Unit.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'ControlUnit' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Control_Unit.v:7]
-INFO: [Synth 8-6157] synthesizing module 'CSRFile' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/CSR_File.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'BranchPredictor' (0#1) [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Branch_Predictor.v:3]
+INFO: [Synth 8-6157] synthesizing module 'ByteEnableLogic' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Byte_Enable_Logic.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'ByteEnableLogic' (0#1) [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Byte_Enable_Logic.v:4]
+INFO: [Synth 8-6157] synthesizing module 'ControlUnit' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Control_Unit.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'ControlUnit' (0#1) [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Control_Unit.v:7]
+INFO: [Synth 8-6157] synthesizing module 'CSRFile' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/CSR_File.v:3]
 	Parameter XLEN bound to: 64 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'CSRFile' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/CSR_File.v:3]
-INFO: [Synth 8-6157] synthesizing module 'ExceptionDetector' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Exception_Detector.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ExceptionDetector' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Exception_Detector.v:6]
-INFO: [Synth 8-6157] synthesizing module 'ForwardUnit' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Forward_Unit.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'ForwardUnit' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Forward_Unit.v:3]
-INFO: [Synth 8-6157] synthesizing module 'HazardUnit' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Hazard_Unit.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'HazardUnit' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Hazard_Unit.v:5]
-INFO: [Synth 8-6157] synthesizing module 'ImmediateGenerator' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Immediate_Generator.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'ImmediateGenerator' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Immediate_Generator.v:3]
-INFO: [Synth 8-6157] synthesizing module 'InstructionDecoder' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Instruction_Decoder.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'InstructionDecoder' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Instruction_Decoder.v:5]
-INFO: [Synth 8-6157] synthesizing module 'ProgramCounter' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Program_Counter.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'ProgramCounter' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Program_Counter.v:1]
-INFO: [Synth 8-6157] synthesizing module 'PCPlus4' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/PC_Plus_4.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'PCPlus4' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/PC_Plus_4.v:1]
-INFO: [Synth 8-6157] synthesizing module 'PCController' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/PC_Controller.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'PCController' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/PC_Controller.v:1]
-INFO: [Synth 8-6157] synthesizing module 'RegisterFile' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Register_File.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'RegisterFile' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Register_File.v:1]
-INFO: [Synth 8-6157] synthesizing module 'TrapController' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Trap_Controller.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'CSRFile' (0#1) [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/CSR_File.v:3]
+INFO: [Synth 8-6157] synthesizing module 'ExceptionDetector' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Exception_Detector.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ExceptionDetector' (0#1) [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Exception_Detector.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ForwardUnit' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Forward_Unit.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ForwardUnit' (0#1) [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Forward_Unit.v:3]
+INFO: [Synth 8-6157] synthesizing module 'HazardUnit' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Hazard_Unit.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'HazardUnit' (0#1) [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Hazard_Unit.v:5]
+INFO: [Synth 8-6157] synthesizing module 'ImmediateGenerator' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Immediate_Generator.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ImmediateGenerator' (0#1) [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Immediate_Generator.v:3]
+INFO: [Synth 8-6157] synthesizing module 'InstructionDecoder' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Instruction_Decoder.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'InstructionDecoder' (0#1) [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Instruction_Decoder.v:5]
+INFO: [Synth 8-6157] synthesizing module 'ProgramCounter' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Program_Counter.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'ProgramCounter' (0#1) [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Program_Counter.v:1]
+INFO: [Synth 8-6157] synthesizing module 'PCPlus4' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/PC_Plus_4.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'PCPlus4' (0#1) [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/PC_Plus_4.v:1]
+INFO: [Synth 8-6157] synthesizing module 'PCController' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/PC_Controller.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'PCController' (0#1) [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/PC_Controller.v:1]
+INFO: [Synth 8-6157] synthesizing module 'RegisterFile' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Register_File.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'RegisterFile' (0#1) [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Register_File.v:1]
+INFO: [Synth 8-6157] synthesizing module 'TrapController' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Trap_Controller.v:3]
 	Parameter XLEN bound to: 64 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'TrapController' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Trap_Controller.v:3]
-WARNING: [Synth 8-7071] port 'ic_clean' of module 'TrapController' is unconnected for instance 'trap_controller' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:836]
-WARNING: [Synth 8-7023] instance 'trap_controller' of module 'TrapController' has 21 connections declared, but only 20 given [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:836]
-INFO: [Synth 8-6157] synthesizing module 'IF_IO_Register' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/IF_IO_Register.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'TrapController' (0#1) [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Trap_Controller.v:3]
+WARNING: [Synth 8-7071] port 'ic_clean' of module 'TrapController' is unconnected for instance 'trap_controller' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:938]
+WARNING: [Synth 8-7023] instance 'trap_controller' of module 'TrapController' has 21 connections declared, but only 20 given [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:938]
+INFO: [Synth 8-6157] synthesizing module 'IF_IO_Register' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/IF_IO_Register.v:3]
 	Parameter XLEN bound to: 64 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'IF_IO_Register' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/IF_IO_Register.v:3]
-INFO: [Synth 8-6157] synthesizing module 'IO_ID_Register' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/IO_ID_Register.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'IF_IO_Register' (0#1) [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/IF_IO_Register.v:3]
+INFO: [Synth 8-6157] synthesizing module 'IO_ID_Register' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/IO_ID_Register.v:1]
 	Parameter XLEN bound to: 64 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'IO_ID_Register' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/IO_ID_Register.v:1]
-INFO: [Synth 8-6157] synthesizing module 'ID_EX_Register' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/ID_EX_Register.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'IO_ID_Register' (0#1) [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/IO_ID_Register.v:1]
+INFO: [Synth 8-6157] synthesizing module 'ID_EX_Register' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/ID_EX_Register.v:1]
 	Parameter XLEN bound to: 64 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'ID_EX_Register' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/ID_EX_Register.v:1]
-WARNING: [Synth 8-7071] port 'ID_is_store' of module 'ID_EX_Register' is unconnected for instance 'id_exr_register' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:907]
-WARNING: [Synth 8-7071] port 'ID_uses_rs1' of module 'ID_EX_Register' is unconnected for instance 'id_exr_register' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:907]
-WARNING: [Synth 8-7071] port 'ID_uses_rs2' of module 'ID_EX_Register' is unconnected for instance 'id_exr_register' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:907]
-WARNING: [Synth 8-7071] port 'EX_is_store' of module 'ID_EX_Register' is unconnected for instance 'id_exr_register' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:907]
-WARNING: [Synth 8-7071] port 'EX_uses_rs1' of module 'ID_EX_Register' is unconnected for instance 'id_exr_register' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:907]
-WARNING: [Synth 8-7071] port 'EX_uses_rs2' of module 'ID_EX_Register' is unconnected for instance 'id_exr_register' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:907]
-WARNING: [Synth 8-7023] instance 'id_exr_register' of module 'ID_EX_Register' has 58 connections declared, but only 52 given [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:907]
-INFO: [Synth 8-6157] synthesizing module 'EXR_EX_Register' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/EXR_EX_Register.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'ID_EX_Register' (0#1) [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/ID_EX_Register.v:1]
+WARNING: [Synth 8-7071] port 'ID_is_store' of module 'ID_EX_Register' is unconnected for instance 'id_exr_register' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:1011]
+WARNING: [Synth 8-7071] port 'ID_uses_rs1' of module 'ID_EX_Register' is unconnected for instance 'id_exr_register' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:1011]
+WARNING: [Synth 8-7071] port 'ID_uses_rs2' of module 'ID_EX_Register' is unconnected for instance 'id_exr_register' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:1011]
+WARNING: [Synth 8-7071] port 'EX_is_store' of module 'ID_EX_Register' is unconnected for instance 'id_exr_register' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:1011]
+WARNING: [Synth 8-7071] port 'EX_uses_rs1' of module 'ID_EX_Register' is unconnected for instance 'id_exr_register' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:1011]
+WARNING: [Synth 8-7071] port 'EX_uses_rs2' of module 'ID_EX_Register' is unconnected for instance 'id_exr_register' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:1011]
+WARNING: [Synth 8-7023] instance 'id_exr_register' of module 'ID_EX_Register' has 58 connections declared, but only 52 given [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:1011]
+INFO: [Synth 8-6157] synthesizing module 'EXR_EX_Register' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/EXR_EX_Register.v:1]
 	Parameter XLEN bound to: 64 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'EXR_EX_Register' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/EXR_EX_Register.v:1]
-INFO: [Synth 8-6157] synthesizing module 'EX_EX2_Register' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/EX_EX2_Register.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'EXR_EX_Register' (0#1) [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/EXR_EX_Register.v:1]
+INFO: [Synth 8-6157] synthesizing module 'EX_EX2_Register' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/EX_EX2_Register.v:1]
 	Parameter XLEN bound to: 64 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'EX_EX2_Register' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/EX_EX2_Register.v:1]
-WARNING: [Synth 8-7071] port 'EX_alu_zero' of module 'EX_EX2_Register' is unconnected for instance 'ex_ex2_register' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:1025]
-WARNING: [Synth 8-7071] port 'EX2_alu_zero' of module 'EX_EX2_Register' is unconnected for instance 'ex_ex2_register' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:1025]
-WARNING: [Synth 8-7023] instance 'ex_ex2_register' of module 'EX_EX2_Register' has 58 connections declared, but only 56 given [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:1025]
-INFO: [Synth 8-6157] synthesizing module 'EX_MEM_Register' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/EX_MEM_Register.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'EX_EX2_Register' (0#1) [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/EX_EX2_Register.v:1]
+WARNING: [Synth 8-7071] port 'EX_alu_zero' of module 'EX_EX2_Register' is unconnected for instance 'ex_ex2_register' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:1129]
+WARNING: [Synth 8-7071] port 'EX2_alu_zero' of module 'EX_EX2_Register' is unconnected for instance 'ex_ex2_register' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:1129]
+WARNING: [Synth 8-7023] instance 'ex_ex2_register' of module 'EX_EX2_Register' has 58 connections declared, but only 56 given [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:1129]
+INFO: [Synth 8-6157] synthesizing module 'EX_MEM_Register' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/EX_MEM_Register.v:1]
 	Parameter XLEN bound to: 64 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'EX_MEM_Register' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/EX_MEM_Register.v:1]
-INFO: [Synth 8-6157] synthesizing module 'MEM_WB_Register' [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/MEM_WB_Register.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'EX_MEM_Register' (0#1) [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/EX_MEM_Register.v:1]
+INFO: [Synth 8-6157] synthesizing module 'MEM_WB_Register' [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/MEM_WB_Register.v:1]
 	Parameter XLEN bound to: 64 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'MEM_WB_Register' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/MEM_WB_Register.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'RV64IM72F8SP_CORE' (0#1) [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:5]
-WARNING: [Synth 8-6014] Unused sequential element branch_prediction_reg was removed.  [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Branch_Predictor.v:35]
-WARNING: [Synth 8-6014] Unused sequential element retire_opcode_reg was removed.  [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:1209]
-WARNING: [Synth 8-6014] Unused sequential element retire_alu_result_reg was removed.  [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:1210]
-WARNING: [Synth 8-6014] Unused sequential element retire_imm_reg was removed.  [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:1211]
-WARNING: [Synth 8-6014] Unused sequential element retire_pc_plus_4_reg was removed.  [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:1212]
-WARNING: [Synth 8-6014] Unused sequential element retire_csr_read_data_reg was removed.  [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:1213]
+INFO: [Synth 8-6155] done synthesizing module 'MEM_WB_Register' (0#1) [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/MEM_WB_Register.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'RV64IM72F8SP_CORE' (0#1) [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:7]
+WARNING: [Synth 8-7137] Register divisor_latch_reg in module Divider_WORD has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Divider_WORD.v:84]
+WARNING: [Synth 8-7137] Register divisor_latch_reg in module Divider_DWORD has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Divider_DWORD.v:72]
+WARNING: [Synth 8-6014] Unused sequential element branch_prediction_reg was removed.  [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Branch_Predictor.v:35]
+WARNING: [Synth 8-6014] Unused sequential element retire_opcode_reg was removed.  [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:1313]
+WARNING: [Synth 8-6014] Unused sequential element retire_alu_result_reg was removed.  [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:1314]
+WARNING: [Synth 8-6014] Unused sequential element retire_imm_reg was removed.  [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:1315]
+WARNING: [Synth 8-6014] Unused sequential element retire_pc_plus_4_reg was removed.  [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:1316]
+WARNING: [Synth 8-6014] Unused sequential element retire_csr_read_data_reg was removed.  [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/RV64IM72F_8SP.v:1317]
 WARNING: [Synth 8-7129] Port ID_pc[63] in module TrapController is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ID_pc[62] in module TrapController is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ID_pc[61] in module TrapController is either unconnected or has no load
@@ -250,56 +252,56 @@ WARNING: [Synth 8-7129] Port EX2_pc[29] in module TrapController is either uncon
 WARNING: [Synth 8-7129] Port EX2_pc[28] in module TrapController is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2359.191 ; gain = 599.781 ; free physical = 18642 ; free virtual = 32609
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2360.496 ; gain = 601.125 ; free physical = 5787 ; free virtual = 27489
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2374.035 ; gain = 614.625 ; free physical = 18642 ; free virtual = 32609
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2372.371 ; gain = 613.000 ; free physical = 5779 ; free virtual = 27481
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2374.035 ; gain = 614.625 ; free physical = 18642 ; free virtual = 32609
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2372.371 ; gain = 613.000 ; free physical = 5779 ; free virtual = 27481
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2374.035 ; gain = 0.000 ; free physical = 18645 ; free virtual = 32612
+Netlist sorting complete. Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.09 . Memory (MB): peak = 2372.371 ; gain = 0.000 ; free physical = 5668 ; free virtual = 27370
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/constrs_1/imports/100MHz_RV64IM72F_8SP/RV64IM72F_5SP_Debug_XDC.xdc]
-Finished Parsing XDC File [/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/constrs_1/imports/100MHz_RV64IM72F_8SP/RV64IM72F_5SP_Debug_XDC.xdc]
+Parsing XDC File [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/constrs_1/imports/100MHz_RV64IM72F_8SP/RV64IM72F_5SP_Debug_XDC.xdc]
+Finished Parsing XDC File [/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/constrs_1/imports/100MHz_RV64IM72F_8SP/RV64IM72F_5SP_Debug_XDC.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2476.836 ; gain = 0.000 ; free physical = 18636 ; free virtual = 32603
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2486.109 ; gain = 0.000 ; free physical = 5254 ; free virtual = 26956
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2476.871 ; gain = 0.000 ; free physical = 18636 ; free virtual = 32603
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.31 ; elapsed = 00:00:00.09 . Memory (MB): peak = 2486.145 ; gain = 0.000 ; free physical = 5254 ; free virtual = 26956
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2476.871 ; gain = 717.461 ; free physical = 18638 ; free virtual = 32605
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:15 . Memory (MB): peak = 2486.145 ; gain = 726.773 ; free physical = 4996 ; free virtual = 26700
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a200tsbg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2484.840 ; gain = 725.430 ; free physical = 18638 ; free virtual = 32605
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:15 . Memory (MB): peak = 2494.113 ; gain = 734.742 ; free physical = 4996 ; free virtual = 26700
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2484.840 ; gain = 725.430 ; free physical = 18638 ; free virtual = 32605
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:15 . Memory (MB): peak = 2494.113 ; gain = 734.742 ; free physical = 4996 ; free virtual = 26700
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Preparing Guide Design
 ---------------------------------------------------------------------------------
-CRITICAL WARNING: [Synth 8-6895] The reference checkpoint /home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/utils_1/imports/synth_1/RV64IM72F8SPSoCTOP.dcp is not suitable for use with incremental synthesis for this design. Please regenerate the checkpoint for this design with -incremental_synth switch in the same Vivado session that synth_design has been run. Synthesis will continue with the default flow
+CRITICAL WARNING: [Synth 8-6895] The reference checkpoint /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/utils_1/imports/synth_1/RV64IM72F8SPSoCTOP.dcp is not suitable for use with incremental synthesis for this design. Please regenerate the checkpoint for this design with -incremental_synth switch in the same Vivado session that synth_design has been run. Synthesis will continue with the default flow
 ---------------------------------------------------------------------------------
-Finished Doing Graph Differ : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2484.840 ; gain = 725.430 ; free physical = 18638 ; free virtual = 32607
+Finished Doing Graph Differ : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2494.113 ; gain = 734.742 ; free physical = 4979 ; free virtual = 26685
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Preparing Guide Design : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2484.840 ; gain = 725.430 ; free physical = 18638 ; free virtual = 32607
+Finished Preparing Guide Design : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2494.113 ; gain = 734.742 ; free physical = 4979 ; free virtual = 26685
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'stage_reg' in module 'Multiplier_WORD'
 INFO: [Synth 8-802] inferred FSM for state register 'stage_reg' in module 'Multiplier_DWORD'
@@ -359,7 +361,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'trap_handle_state_reg' using encoding 'one-hot' in module 'TrapController'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2484.840 ; gain = 725.430 ; free physical = 18646 ; free virtual = 32615
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:17 . Memory (MB): peak = 2494.113 ; gain = 734.742 ; free physical = 4987 ; free virtual = 26693
 ---------------------------------------------------------------------------------
 
 
@@ -390,15 +392,15 @@ Detailed RTL Component Info :
 	   2 Input      1 Bit         XORs := 4     
 +---Registers : 
 	              128 Bit    Registers := 1     
-	               64 Bit    Registers := 62    
-	               32 Bit    Registers := 16    
+	               64 Bit    Registers := 67    
+	               32 Bit    Registers := 17    
 	               20 Bit    Registers := 5     
 	                7 Bit    Registers := 8     
 	                6 Bit    Registers := 3     
 	                5 Bit    Registers := 13    
 	                3 Bit    Registers := 13    
 	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 65    
+	                1 Bit    Registers := 69    
 +---Multipliers : 
 	              32x32  Multipliers := 5     
 +---RAMs : 
@@ -406,7 +408,7 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   2 Input  128 Bit        Muxes := 2     
 	   4 Input  128 Bit        Muxes := 1     
-	   2 Input   64 Bit        Muxes := 43    
+	   2 Input   64 Bit        Muxes := 47    
 	   4 Input   64 Bit        Muxes := 7     
 	   3 Input   64 Bit        Muxes := 5     
 	  11 Input   64 Bit        Muxes := 2     
@@ -443,9 +445,9 @@ Detailed RTL Component Info :
 	   2 Input    2 Bit        Muxes := 7     
 	   3 Input    2 Bit        Muxes := 2     
 	   4 Input    1 Bit        Muxes := 18    
-	   2 Input    1 Bit        Muxes := 49    
+	   2 Input    1 Bit        Muxes := 52    
 	   3 Input    1 Bit        Muxes := 16    
-	   5 Input    1 Bit        Muxes := 1     
+	   5 Input    1 Bit        Muxes := 2     
 	  11 Input    1 Bit        Muxes := 6     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -624,7 +626,7 @@ WARNING: [Synth 8-3332] Sequential element (prod_ALBH_s2_reg[30]) is unused and 
 WARNING: [Synth 8-3332] Sequential element (prod_ALBH_s2_reg[29]) is unused and will be removed from module Multiplier_DWORD.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 2600.684 ; gain = 841.273 ; free physical = 18596 ; free virtual = 32564
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:53 ; elapsed = 00:00:53 . Memory (MB): peak = 2620.965 ; gain = 861.594 ; free physical = 4837 ; free virtual = 26545
 ---------------------------------------------------------------------------------
  Sort Area is  mult_AHBH_0 : 0 0 : 3101 5879 : Used 1 time 100
  Sort Area is  mult_AHBH_0 : 0 1 : 2778 5879 : Used 1 time 100
@@ -693,13 +695,13 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2615.684 ; gain = 856.273 ; free physical = 18583 ; free virtual = 32552
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:59 ; elapsed = 00:01:00 . Memory (MB): peak = 2620.965 ; gain = 861.594 ; free physical = 4816 ; free virtual = 26523
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 2642.699 ; gain = 883.289 ; free physical = 18556 ; free virtual = 32525
+Finished Timing Optimization : Time (s): cpu = 00:01:04 ; elapsed = 00:01:04 . Memory (MB): peak = 2645.980 ; gain = 886.609 ; free physical = 4761 ; free virtual = 26468
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -719,7 +721,7 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2776.715 ; gain = 1017.305 ; free physical = 18427 ; free virtual = 32396
+Finished Technology Mapping : Time (s): cpu = 00:01:08 ; elapsed = 00:01:09 . Memory (MB): peak = 2769.020 ; gain = 1009.648 ; free physical = 4641 ; free virtual = 26349
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -737,37 +739,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 2818.527 ; gain = 1059.117 ; free physical = 18416 ; free virtual = 32384
+Finished IO Insertion : Time (s): cpu = 00:01:12 ; elapsed = 00:01:13 . Memory (MB): peak = 2821.832 ; gain = 1062.461 ; free physical = 4617 ; free virtual = 26324
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 2818.527 ; gain = 1059.117 ; free physical = 18416 ; free virtual = 32384
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:12 ; elapsed = 00:01:13 . Memory (MB): peak = 2821.832 ; gain = 1062.461 ; free physical = 4617 ; free virtual = 26324
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 2818.527 ; gain = 1059.117 ; free physical = 18408 ; free virtual = 32376
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:13 ; elapsed = 00:01:13 . Memory (MB): peak = 2821.832 ; gain = 1062.461 ; free physical = 4609 ; free virtual = 26316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 2818.527 ; gain = 1059.117 ; free physical = 18408 ; free virtual = 32376
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:13 ; elapsed = 00:01:13 . Memory (MB): peak = 2821.832 ; gain = 1062.461 ; free physical = 4609 ; free virtual = 26316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 2818.527 ; gain = 1059.117 ; free physical = 18408 ; free virtual = 32376
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:13 ; elapsed = 00:01:13 . Memory (MB): peak = 2821.832 ; gain = 1062.461 ; free physical = 4609 ; free virtual = 26316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 2818.527 ; gain = 1059.117 ; free physical = 18408 ; free virtual = 32376
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:13 ; elapsed = 00:01:13 . Memory (MB): peak = 2821.832 ; gain = 1062.461 ; free physical = 4609 ; free virtual = 26316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -810,47 +812,47 @@ Report Cell Usage:
 +------+--------+------+
 |      |Cell    |Count |
 +------+--------+------+
-|1     |CARRY4  |   508|
+|1     |CARRY4  |   520|
 |2     |DSP48E1 |    20|
 |4     |LUT1    |   670|
-|5     |LUT2    |   658|
+|5     |LUT2    |   665|
 |6     |LUT3    |  1093|
-|7     |LUT4    |  1193|
-|8     |LUT5    |   823|
-|9     |LUT6    |  2569|
+|7     |LUT4    |  1260|
+|8     |LUT5    |   884|
+|9     |LUT6    |  2617|
 |10    |MUXF7   |    77|
 |11    |RAM32M  |    22|
-|12    |FDCE    |  1780|
+|12    |FDCE    |  1975|
 |13    |FDPE    |    12|
-|14    |FDRE    |  2323|
+|14    |FDRE    |  2481|
 |15    |FDSE    |    21|
 +------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 2818.527 ; gain = 1059.117 ; free physical = 18408 ; free virtual = 32376
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:13 ; elapsed = 00:01:13 . Memory (MB): peak = 2821.832 ; gain = 1062.461 ; free physical = 4609 ; free virtual = 26316
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 1 critical warnings and 721 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 2818.527 ; gain = 956.281 ; free physical = 18408 ; free virtual = 32377
-Synthesis Optimization Complete : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 2818.535 ; gain = 1059.117 ; free physical = 18408 ; free virtual = 32377
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:09 ; elapsed = 00:01:10 . Memory (MB): peak = 2821.832 ; gain = 948.688 ; free physical = 4609 ; free virtual = 26316
+Synthesis Optimization Complete : Time (s): cpu = 00:01:13 ; elapsed = 00:01:14 . Memory (MB): peak = 2821.840 ; gain = 1062.461 ; free physical = 4609 ; free virtual = 26316
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2818.535 ; gain = 0.000 ; free physical = 18580 ; free virtual = 32548
-INFO: [Netlist 29-17] Analyzing 627 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.09 . Memory (MB): peak = 2821.840 ; gain = 0.000 ; free physical = 4776 ; free virtual = 26484
+INFO: [Netlist 29-17] Analyzing 639 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2818.535 ; gain = 0.000 ; free physical = 18584 ; free virtual = 32553
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2821.840 ; gain = 0.000 ; free physical = 4759 ; free virtual = 26467
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 22 instances were transformed.
   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 22 instances
 
-Synth Design complete | Checksum: 7245c55d
+Synth Design complete | Checksum: 29bcea92
 INFO: [Common 17-83] Releasing license: Synthesis
-100 Infos, 240 Warnings, 1 Critical Warnings and 0 Errors encountered.
+100 Infos, 242 Warnings, 1 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:36 ; elapsed = 00:00:35 . Memory (MB): peak = 2818.562 ; gain = 1194.332 ; free physical = 18584 ; free virtual = 32553
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2165.062; main = 1967.306; forked = 283.136
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3774.773; main = 2818.531; forked = 998.055
+synth_design: Time (s): cpu = 00:01:24 ; elapsed = 00:01:21 . Memory (MB): peak = 2821.867 ; gain = 1222.676 ; free physical = 4759 ; free virtual = 26467
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1973.857; main = 1799.965; forked = 223.424
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3767.230; main = 2821.836; forked = 998.207
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00 . Memory (MB): peak = 2842.539 ; gain = 0.000 ; free physical = 18584 ; free virtual = 32553
-INFO: [Common 17-1381] The checkpoint '/home/khwl/Desktop/RV-IM100/RV64s/RV64IM_8SP/RV64IM72F_8SP_100MHz.runs/synth_1/RV64IM72F8SP_CORE.dcp' has been generated.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2845.844 ; gain = 0.000 ; free physical = 4758 ; free virtual = 26466
+INFO: [Common 17-1381] The checkpoint '/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64IM_8SP/RV64IM72F_8SP_100MHz.runs/synth_1/RV64IM72F8SP_CORE.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file RV64IM72F8SP_CORE_utilization_synth.rpt -pb RV64IM72F8SP_CORE_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Feb 25 09:44:41 2026...
+INFO: [Common 17-206] Exiting Vivado at Tue Sep  8 13:24:16 2026...

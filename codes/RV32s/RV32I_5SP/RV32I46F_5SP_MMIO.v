@@ -1,6 +1,8 @@
 `include "./alu_src_select.vh"
 `include "./rf_wd_select.vh"
 
+`include "./opcode.vh"
+`include "./csr.vh"
 module RV32I46F5SPMMIO #(
     parameter XLEN = 32
 )(
@@ -741,7 +743,13 @@ module RV32I46F5SPMMIO #(
         end else begin
             csr_write_data = WB_alu_result;
             csr_write_address = WB_raw_imm[11:0];
-            csr_read_address = raw_imm[11:0];
+            // Only a real CSR instruction may present a CSR address.  raw_imm is
+            // the decoded immediate of whatever sits in ID, so a store such as
+            // sd rs2,768(rs1) would otherwise alias onto 0x300 (mstatus), drop
+            // csr_ready, raise pc_stall, and make PC_Controller discard a
+            // branch redirect issued in the same cycle.
+            csr_read_address = ((opcode == `OPCODE_ENVIRONMENT) && (funct3 != `CSR_NONE))
+                               ? raw_imm[11:0] : 12'hFFF;
         end
 
         // Instruction selection (debug mode vs normal)

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Wed Aug 26 18:56:11 2026
+| Date         : Wed Sep  9 03:43:45 2026
 | Host         : khwl-ThinkPad-X1-Carbon-Gen-13 running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_utilization -file RV32IM72F8SPSoCTOP_utilization_synth.rpt -pb RV32IM72F8SPSoCTOP_utilization_synth.pb
 | Design       : RV32IM72F8SPSoCTOP
@@ -31,17 +31,17 @@ Table of Contents
 +----------------------------+------+-------+------------+-----------+-------+
 |          Site Type         | Used | Fixed | Prohibited | Available | Util% |
 +----------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*                | 3384 |     0 |          0 |    134600 |  2.51 |
-|   LUT as Logic             | 3336 |     0 |          0 |    134600 |  2.48 |
+| Slice LUTs*                | 3502 |     0 |          0 |    134600 |  2.60 |
+|   LUT as Logic             | 3454 |     0 |          0 |    134600 |  2.57 |
 |   LUT as Memory            |   48 |     0 |          0 |     46200 |  0.10 |
 |     LUT as Distributed RAM |   48 |     0 |            |           |       |
 |     LUT as Shift Register  |    0 |     0 |            |           |       |
-| Slice Registers            | 2451 |     0 |          0 |    269200 |  0.91 |
-|   Register as Flip Flop    | 2451 |     0 |          0 |    269200 |  0.91 |
+| Slice Registers            | 2582 |     0 |          0 |    269200 |  0.96 |
+|   Register as Flip Flop    | 2582 |     0 |          0 |    269200 |  0.96 |
 |   Register as Latch        |    0 |     0 |          0 |    269200 |  0.00 |
 | F7 Muxes                   |   42 |     0 |          0 |     67300 |  0.06 |
 | F8 Muxes                   |    0 |     0 |          0 |     33650 |  0.00 |
-| Unique Control Sets        |   32 |       |          0 |     33650 |  0.10 |
+| Unique Control Sets        |   35 |       |          0 |     33650 |  0.10 |
 +----------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 Warning! LUT value is adjusted to account for LUT combining.
@@ -62,9 +62,9 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 23    |          Yes |           - |          Set |
-| 933   |          Yes |           - |        Reset |
+| 999   |          Yes |           - |        Reset |
 | 21    |          Yes |         Set |            - |
-| 1474  |          Yes |       Reset |            - |
+| 1539  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -158,15 +158,15 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     | 1474 |        Flop & Latch |
-| LUT6     | 1337 |                 LUT |
-| FDCE     |  933 |        Flop & Latch |
-| LUT4     |  712 |                 LUT |
-| LUT5     |  483 |                 LUT |
-| LUT3     |  403 |                 LUT |
-| LUT2     |  253 |                 LUT |
+| FDRE     | 1539 |        Flop & Latch |
+| LUT6     | 1371 |                 LUT |
+| FDCE     |  999 |        Flop & Latch |
+| LUT4     |  676 |                 LUT |
+| LUT5     |  521 |                 LUT |
+| LUT3     |  492 |                 LUT |
+| LUT2     |  246 |                 LUT |
 | LUT1     |  227 |                 LUT |
-| CARRY4   |  189 |          CarryLogic |
+| CARRY4   |  195 |          CarryLogic |
 | RAMD32   |   68 |  Distributed Memory |
 | MUXF7    |   42 |               MuxFx |
 | FDPE     |   23 |        Flop & Latch |

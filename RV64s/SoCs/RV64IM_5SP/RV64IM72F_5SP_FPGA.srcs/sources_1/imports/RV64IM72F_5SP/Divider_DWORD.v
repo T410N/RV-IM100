@@ -30,6 +30,10 @@ module Divider_DWORD #(
     reg [2*XLEN-1:0] remainder_quotient; //128-bit
     reg quotient_sign;
     reg remainder_sign;
+    reg div_by_zero_flag;
+    reg div_overflow_flag;
+    reg [XLEN-1:0] dividend_reg;
+    reg [XLEN-1:0] divisor_latch;
 
     wire [2*XLEN-1:0] shifted_rq;
     wire [XLEN:0] subtract_result;  // 65-bit subtract
@@ -39,11 +43,11 @@ module Divider_DWORD #(
 
     wire div_by_zero = (divisor == {XLEN{1'b0}});
     wire div_overflow = (is_signed && (dividend == {1'b1, {XLEN-1{1'b0}}}) && (divisor == {XLEN{1'b1}}));
-    assign quotient = (division_start && div_by_zero) ? {XLEN{1'b1}} : 
-                      (division_start && div_overflow) ? dividend : quotient_reg;
-    assign remainder = (division_start && div_by_zero) ? dividend :
-                      (division_start && div_overflow) ? {XLEN{1'b0}} : remainder_reg;
-    assign busy = (division_start && (div_by_zero || div_overflow)) ? 1'b0 : busy_reg;
+    assign quotient = (div_by_zero_flag) ? {XLEN{1'b1}} : 
+                      (div_overflow_flag) ? dividend_reg : quotient_reg;
+    assign remainder = (div_by_zero_flag) ? dividend_reg :
+                      (div_overflow_flag) ? {XLEN{1'b0}} : remainder_reg;
+    assign busy = (div_by_zero_flag || div_overflow_flag) ? 1'b0 : busy_reg;
 
     always @(posedge clk or posedge reset) begin
         if (reset) begin
@@ -56,8 +60,17 @@ module Divider_DWORD #(
             remainder_quotient <= {2*XLEN{1'b0}};
             quotient_sign <= 1'b0;
             remainder_sign <= 1'b0;
+            div_by_zero_flag <= 1'b0;
+            div_overflow_flag <= 1'b0;
+            dividend_reg <= {XLEN{1'b0}};
         end
         else if (clk_enable) begin
+            if (division_start) begin
+                div_by_zero_flag <= div_by_zero;
+                div_overflow_flag <= div_overflow;
+                dividend_reg <= dividend;
+                divisor_latch <= divisor;
+            end
             case (state)
                 IDLE: begin
                     if (division_start && !div_by_zero && !div_overflow) begin
@@ -73,28 +86,28 @@ module Divider_DWORD #(
                     bit_counter <= 7'd64;
                     state <= CALCULATE;
                     if (is_signed) begin
-                        quotient_sign <= dividend[XLEN-1] ^ divisor[XLEN-1];
-                        remainder_sign <= dividend[XLEN-1];
+                        quotient_sign <= dividend_reg[XLEN-1] ^ divisor_latch[XLEN-1];
+                        remainder_sign <= dividend_reg[XLEN-1];
 
-                        if (dividend[XLEN-1]) begin
-                            remainder_quotient <= {{XLEN{1'b0}}, (~dividend + 1'b1)};
+                        if (dividend_reg[XLEN-1]) begin
+                            remainder_quotient <= {{XLEN{1'b0}}, (~dividend_reg + 1'b1)};
                         end
                         else begin
-                            remainder_quotient <= {{XLEN{1'b0}}, dividend};
+                            remainder_quotient <= {{XLEN{1'b0}}, dividend_reg};
                         end
 
-                        if (divisor[XLEN-1]) begin
-                            divisor_reg <= (~divisor + 1'b1);
+                        if (divisor_latch[XLEN-1]) begin
+                            divisor_reg <= (~divisor_latch + 1'b1);
                         end
                         else begin
-                            divisor_reg <= divisor;
+                            divisor_reg <= divisor_latch;
                         end
                     end
                     else begin
                         quotient_sign <= 1'b0;
                         remainder_sign <= 1'b0;
-                        remainder_quotient <= {{XLEN{1'b0}}, dividend};
-                        divisor_reg <= divisor;
+                        remainder_quotient <= {{XLEN{1'b0}}, dividend_reg};
+                        divisor_reg <= divisor_latch;
                     end
                 end
                 CALCULATE: begin

@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Thu Mar 12 16:58:26 2026
-| Host         : khwl-main-pc running 64-bit Ubuntu 24.04.4 LTS
+| Date         : Tue Sep  8 13:10:52 2026
+| Host         : khwl-ThinkPad-X1-Carbon-Gen-13 running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_utilization -file RV32IM72F6SP_CORE_utilization_synth.rpt -pb RV32IM72F6SP_CORE_utilization_synth.pb
 | Design       : RV32IM72F6SP_CORE
 | Device       : xc7a200tsbg484-1
@@ -31,17 +31,17 @@ Table of Contents
 +----------------------------+------+-------+------------+-----------+-------+
 |          Site Type         | Used | Fixed | Prohibited | Available | Util% |
 +----------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*                | 3801 |     0 |          0 |    134600 |  2.82 |
-|   LUT as Logic             | 3753 |     0 |          0 |    134600 |  2.79 |
+| Slice LUTs*                | 3806 |     0 |          0 |    134600 |  2.83 |
+|   LUT as Logic             | 3758 |     0 |          0 |    134600 |  2.79 |
 |   LUT as Memory            |   48 |     0 |          0 |     46200 |  0.10 |
 |     LUT as Distributed RAM |   48 |     0 |            |           |       |
 |     LUT as Shift Register  |    0 |     0 |            |           |       |
-| Slice Registers            | 1954 |     0 |          0 |    269200 |  0.73 |
-|   Register as Flip Flop    | 1954 |     0 |          0 |    269200 |  0.73 |
+| Slice Registers            | 1986 |     0 |          0 |    269200 |  0.74 |
+|   Register as Flip Flop    | 1986 |     0 |          0 |    269200 |  0.74 |
 |   Register as Latch        |    0 |     0 |          0 |    269200 |  0.00 |
 | F7 Muxes                   |    0 |     0 |          0 |     67300 |  0.00 |
 | F8 Muxes                   |    0 |     0 |          0 |     33650 |  0.00 |
-| Unique Control Sets        |   21 |       |          0 |     33650 |  0.06 |
+| Unique Control Sets        |   22 |       |          0 |     33650 |  0.07 |
 +----------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 Warning! LUT value is adjusted to account for LUT combining.
@@ -64,7 +64,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | 25    |          Yes |           - |          Set |
 | 1929  |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 0     |          Yes |       Reset |            - |
+| 32    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -158,14 +158,15 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | FDCE     | 1929 |        Flop & Latch |
-| LUT6     | 1306 |                 LUT |
-| LUT2     |  854 |                 LUT |
-| LUT4     |  548 |                 LUT |
-| LUT3     |  494 |                 LUT |
-| LUT5     |  428 |                 LUT |
-| LUT1     |  202 |                 LUT |
+| LUT6     | 1288 |                 LUT |
+| LUT2     |  853 |                 LUT |
+| LUT4     |  549 |                 LUT |
+| LUT3     |  501 |                 LUT |
+| LUT5     |  426 |                 LUT |
+| LUT1     |  220 |                 LUT |
 | CARRY4   |  183 |          CarryLogic |
 | RAMD32   |   68 |  Distributed Memory |
+| FDRE     |   32 |        Flop & Latch |
 | FDPE     |   25 |        Flop & Latch |
 | RAMS32   |   20 |  Distributed Memory |
 | DSP48E1  |    4 |    Block Arithmetic |

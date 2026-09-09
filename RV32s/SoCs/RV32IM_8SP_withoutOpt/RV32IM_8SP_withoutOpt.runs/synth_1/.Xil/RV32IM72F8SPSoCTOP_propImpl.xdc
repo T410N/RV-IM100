@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:/home/khwl/Desktop/claude_RV-IM100/RV32IM_8SP_withoutOpt/RV32IM_8SP_withoutOpt.srcs/constrs_1/imports/constraints/RV64IM72F_5SP_Debug_XDC.xdc rfile:../../../RV32IM_8SP_withoutOpt.srcs/constrs_1/imports/constraints/RV64IM72F_5SP_Debug_XDC.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/SoCs/RV32IM_8SP_withoutOpt/RV32IM_8SP_withoutOpt.srcs/constrs_1/imports/constraints/RV64IM72F_5SP_Debug_XDC.xdc rfile:../../../RV32IM_8SP_withoutOpt.srcs/constrs_1/imports/constraints/RV64IM72F_5SP_Debug_XDC.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:8 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN R4    IOSTANDARD LVCMOS33 } [get_ports { clk }];
 set_property src_info {type:XDC file:1 line:15 export:INPUT save:INPUT read:READ} [current_design]

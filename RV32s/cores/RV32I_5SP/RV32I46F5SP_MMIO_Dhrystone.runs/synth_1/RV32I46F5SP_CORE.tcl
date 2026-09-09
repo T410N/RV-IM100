@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.runs/synth_1/RV32I46F5SP_CORE.tcl"
+  variable script "/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.runs/synth_1/RV32I46F5SP_CORE.tcl"
   variable category "vivado_synth"
 }
 
@@ -56,69 +56,63 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param synth.incrementalSynthesisCache ./.Xil/Vivado-158854-khwl-main-pc/incrSyn
-set_param checkpoint.writeSynthRtdsInDcp 1
-set_param xicom.use_bs_reader 1
-set_param chipscope.maxJobs 4
 set_param general.usePosixSpawnForFork 1
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a200tsbg484-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.cache/wt [current_project]
-set_property parent.project_path /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.xpr [current_project]
+set_property webtalk.parent_dir /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.cache/wt [current_project]
+set_property parent.project_path /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.cache/ip [current_project]
+set_property ip_output_repo /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog {
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/alu_op.vh
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/rtype.vh
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/opcode.vh
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/itype.vh
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/branch.vh
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/csr.vh
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/store.vh
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/load.vh
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/rf_wd_select.vh
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/alu_src_select.vh
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/trap.vh
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/alu_op.vh
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/rtype.vh
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/itype.vh
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/branch.vh
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/opcode.vh
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/csr.vh
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/store.vh
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/load.vh
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/rf_wd_select.vh
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/alu_src_select.vh
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/trap.vh
 }
 read_mem {
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/data_init.mem
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/dhrystone.mem
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/dhrystones/dhrystone_RV32I_45MHz.mem
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/coremarks/coremark_RV32I_45MHz.mem
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/data_init.mem
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/dhrystone.mem
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/dhrystones/dhrystone_RV32I_45MHz.mem
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/coremarks/coremark_RV32I_45MHz.mem
 }
 read_verilog -library xil_defaultlib {
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/ALU.v
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/ALU_Controller.v
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/Branch_Logic.v
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/Branch_Predictor.v
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/Byte_Enable_Logic.v
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/CSR_File.v
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/Control_Unit.v
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/EX_MEM_Register.v
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/Exception_Detector.v
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/Forward_Unit.v
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/Hazard_Unit.v
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/ID_EX_Register.v
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/IF_ID_Register.v
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/Immediate_Generator.v
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/Instruction_Decoder.v
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/MEM_WB_Register.v
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/PC_Controller.v
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/PC_Plus_4.v
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/Program_Counter.v
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/Register_File.v
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/Trap_Controller.v
-  /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/RV32I46F_5SP_MMIO.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/ALU.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/ALU_Controller.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/Branch_Logic.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/Branch_Predictor.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/Byte_Enable_Logic.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/CSR_File.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/Control_Unit.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/EX_MEM_Register.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/Exception_Detector.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/Forward_Unit.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/Hazard_Unit.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/ID_EX_Register.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/IF_ID_Register.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/Immediate_Generator.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/Instruction_Decoder.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/MEM_WB_Register.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/PC_Controller.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/PC_Plus_4.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/Program_Counter.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/Register_File.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/Trap_Controller.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/sources_1/imports/sources/RV32I46F_5SP_MMIO.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -129,12 +123,12 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/constrs_1/imports/sources/RV32I46F_5SP_Debug_XDC.xdc
-set_property used_in_implementation false [get_files /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/constrs_1/imports/sources/RV32I46F_5SP_Debug_XDC.xdc]
+read_xdc /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/constrs_1/imports/sources/RV32I46F_5SP_Debug_XDC.xdc
+set_property used_in_implementation false [get_files /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/constrs_1/imports/sources/RV32I46F_5SP_Debug_XDC.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental /home/khwl/Desktop/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/utils_1/imports/synth_1/RV32I46F5SPMMIOSoCTOP.dcp
+read_checkpoint -auto_incremental -incremental /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/cores/RV32I_5SP/RV32I46F5SP_MMIO_Dhrystone.srcs/utils_1/imports/synth_1/RV32I46F5SPMMIOSoCTOP.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

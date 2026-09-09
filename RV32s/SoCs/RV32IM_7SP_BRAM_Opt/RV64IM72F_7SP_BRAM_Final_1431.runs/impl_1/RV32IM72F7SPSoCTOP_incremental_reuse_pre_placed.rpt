@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Tue Aug 11 14:05:25 2026
+| Date         : Wed Sep  9 03:38:04 2026
 | Host         : khwl-ThinkPad-X1-Carbon-Gen-13 running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_incremental_reuse -file RV32IM72F7SPSoCTOP_incremental_reuse_pre_placed.rpt
 | Design       : RV32IM72F7SPSoCTOP
@@ -45,9 +45,9 @@ Table of Contents
 +-------+----------------------+----------------------------+--------------------+-------+
 |  Type | Matched % (of Total) | Current Reuse % (of Total) | Fixed % (of Total) | Total |
 +-------+----------------------+----------------------------+--------------------+-------+
-| Cells |                99.91 |                      99.91 |               0.24 |  4994 |
-| Nets  |                99.98 |                      99.42 |               0.00 |  4343 |
-| Pins  |                    - |                      99.73 |                  - | 23613 |
+| Cells |                99.88 |                      99.88 |               0.23 |  5088 |
+| Nets  |                99.98 |                      97.82 |               0.00 |  4374 |
+| Pins  |                    - |                      98.33 |                  - | 23714 |
 | Ports |               100.00 |                     100.00 |             100.00 |    12 |
 +-------+----------------------+----------------------------+--------------------+-------+
 
@@ -55,9 +55,9 @@ Table of Contents
 3. Reference Checkpoint Information
 -----------------------------------
 
-+----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| DCP Location:  | /home/khwl/Desktop/KHWL_2026/RV-IM100/RV32s/SoCs/RV64IM72F_7SP_BRAM_Final_1431/RV64IM72F_7SP_BRAM_Final_1431.srcs/utils_1/imports/impl_1/RV64IM72F5SPSoCTOP_routed.dcp |
-+----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| DCP Location:  | /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM_Opt/RV64IM72F_7SP_BRAM_Final_1431.srcs/utils_1/imports/impl_1/RV64IM72F5SPSoCTOP_routed.dcp |
++----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------------------+----------------------------+
@@ -65,8 +65,8 @@ Table of Contents
 +--------------------------------+----------------------------+
 | Vivado Version                 |                     2025.2 |
 | DCP State                      |                 POST_ROUTE |
-| Recorded WNS                   |                      0.179 |
-| Recorded WHS                   |                      0.075 |
+| Recorded WNS                   |                      0.092 |
+| Recorded WHS                   |                      0.035 |
 | Reference Speed File Version   | PRODUCTION 1.23 2018-06-13 |
 | Incremental Speed File Version | PRODUCTION 1.23 2018-06-13 |
 +--------------------------------+----------------------------+
@@ -81,12 +81,12 @@ Table of Contents
 +-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
 |      Stage      |  Reference  | Incremental |  Reference  | Incremental |  Reference  | Incremental |
 +-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
-| synth_design    |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
+| synth_design    |             |             |       00:01 |       00:01 |       00:01 |       00:01 |
 | opt_design      |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
-| read_checkpoint |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
-| place_design    |      -0.454 |             |     < 1 min |             |     < 1 min |             |
-| phys_opt_design |       0.002 |             |     < 1 min |             |     < 1 min |             |
-| route_design    |       0.187 |             |       00:01 |             |       00:01 |             |
+| read_checkpoint |             |             |             |     < 1 min |             |     < 1 min |
+| place_design    |      -0.279 |             |       00:01 |             |       00:02 |             |
+| phys_opt_design |       0.208 |             |       00:01 |             |       00:05 |             |
+| route_design    |       0.092 |             |       00:01 |             |       00:03 |             |
 +-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
 
@@ -99,7 +99,8 @@ Table of Contents
 +-------------------------+--------+------------+
 | iphys_opt_design replay | Reused | Not Reused |
 +-------------------------+--------+------------+
-| restruct_opt            |     20 |          0 |
+| critical_cell_opt       |      1 |          0 |
+| fanout_opt              |      1 |          0 |
 +-------------------------+--------+------------+
 
 
@@ -134,16 +135,16 @@ Table of Contents
 --------------
 synth_design -directive performanceoptimized -no_lc -shreg 5 -resource_sharing off -fsm_extraction one_hot -define default::[not_specified] -verilog_define default::[not_specified] -vhdl_define default::[not_specified] -keep_equivalent_registers -top  RV32IM72F7SPSoCTOP -part  xc7a200tsbg484-1 
 opt_design -directive Explore
-read_checkpoint -directive RuntimeOptimized  -incremental -auto_incremental /home/khwl/Desktop/KHWL_2026/RV-IM100/RV32s/SoCs/RV64IM72F_7SP_BRAM_Final_1431/RV64IM72F_7SP_BRAM_Final_1431.srcs/utils_1/imports/impl_1/RV64IM72F5SPSoCTOP_routed.dcp
-place_design -directive Default
-phys_opt_design
-route_design -directive Default
+read_checkpoint -incremental -auto_incremental /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM_Opt/RV64IM72F_7SP_BRAM_Final_1431.srcs/utils_1/imports/impl_1/RV64IM72F5SPSoCTOP_routed.dcp
+place_design -directive Explore
+phys_opt_design -directive Explore
+route_design -directive Explore  -tns_cleanup
 
 6.2 Incremental:
 ----------------
 synth_design -directive performanceoptimized -no_lc -shreg 5 -resource_sharing off -fsm_extraction one_hot -define default::[not_specified] -verilog_define default::[not_specified] -vhdl_define default::[not_specified] -keep_equivalent_registers -top  RV32IM72F7SPSoCTOP -part  xc7a200tsbg484-1 
 opt_design -directive Explore
-read_checkpoint -directive RuntimeOptimized  -incremental -auto_incremental /home/khwl/Desktop/KHWL_2026/RV-IM100/RV32s/SoCs/RV64IM72F_7SP_BRAM_Final_1431/RV64IM72F_7SP_BRAM_Final_1431.srcs/utils_1/imports/impl_1/RV64IM72F5SPSoCTOP_routed.dcp
+read_checkpoint -directive RuntimeOptimized  -incremental -auto_incremental /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM_Opt/RV64IM72F_7SP_BRAM_Final_1431.srcs/utils_1/imports/impl_1/RV64IM72F5SPSoCTOP_routed.dcp
 
 7. Non Reuse Information
 ------------------------
@@ -151,10 +152,10 @@ read_checkpoint -directive RuntimeOptimized  -incremental -auto_incremental /hom
 +-----------------------+------+
 |          Type         |   %  |
 +-----------------------+------+
-| Non-Reused Cells      | 0.08 |
-|   New                 | 0.08 |
-| Partially reused nets | 0.41 |
-| Non-Reused nets       | 0.16 |
+| Non-Reused Cells      | 0.11 |
+|   New                 | 0.11 |
+| Partially reused nets | 0.84 |
+| Non-Reused nets       | 1.32 |
 | Non-Reused Ports      | 0.00 |
 +-----------------------+------+
 

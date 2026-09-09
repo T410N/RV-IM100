@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.runs/synth_1/RV64I59F5SP.tcl"
+  variable script "/home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.runs/synth_1/RV64I59F5SP.tcl"
   variable category "vivado_synth"
 }
 
@@ -56,70 +56,65 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param synth.incrementalSynthesisCache ./.Xil/Vivado-353912-khwl-ThinkPad-X1-Carbon-Gen-13/incrSyn
-set_param checkpoint.writeSynthRtdsInDcp 1
-set_param chipscope.maxJobs 4
 set_param general.usePosixSpawnForFork 1
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a200tsbg484-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.cache/wt [current_project]
-set_property parent.project_path /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.xpr [current_project]
+set_property webtalk.parent_dir /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.cache/wt [current_project]
+set_property parent.project_path /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.cache/ip [current_project]
+set_property ip_output_repo /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog {
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/alu_op.vh
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/rtype_mul_funct3.vh
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/itype_funct3.vh
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/rtype_funct3.vh
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/opcode.vh
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/csr_funct3.vh
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/branch_funct3.vh
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/store_funct3.vh
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/load_funct3.vh
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/alu_src_select.vh
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/rf_wd_select.vh
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/trap.vh
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/alu_op.vh
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/rtype_mul_funct3.vh
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/rtype_funct3.vh
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/itype_funct3.vh
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/opcode.vh
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/branch_funct3.vh
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/csr_funct3.vh
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/store_funct3.vh
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/load_funct3.vh
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/alu_src_select.vh
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/rf_wd_select.vh
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/trap.vh
 }
 read_mem {
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/data_init.mem
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/coremark.mem
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/dhrystone.mem
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/data_init.mem
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/coremark.mem
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/dhrystone.mem
 }
 read_verilog -library xil_defaultlib {
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/ALU.v
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/ALU_Controller.v
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/ALU_DWORD.v
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/ALU_WORD.v
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Branch_Logic.v
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Branch_Predictor.v
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Byte_Enable_Logic.v
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/CSR_File.v
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Control_Unit.v
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/EX_MEM_Register.v
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Exception_Detector.v
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Forward_Unit.v
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Hazard_Unit.v
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/ID_EX_Register.v
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/IF_ID_Register.v
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Immediate_Generator.v
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Instruction_Decoder.v
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/MEM_WB_Register.v
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/PC_Controller.v
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/PC_Plus_4.v
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Program_Counter.v
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Register_File.v
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Trap_Controller.v
-  /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/RV64I59F_5SP.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/ALU.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/ALU_Controller.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/ALU_DWORD.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/ALU_WORD.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Branch_Logic.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Branch_Predictor.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Byte_Enable_Logic.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/CSR_File.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Control_Unit.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/EX_MEM_Register.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Exception_Detector.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Forward_Unit.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Hazard_Unit.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/ID_EX_Register.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/IF_ID_Register.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Immediate_Generator.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Instruction_Decoder.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/MEM_WB_Register.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/PC_Controller.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/PC_Plus_4.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Program_Counter.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Register_File.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/Trap_Controller.v
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/RV64I59F_5SP.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -130,8 +125,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/constrs_1/imports/RV64I59F_5SP/RV32I46F_5SP_Debug_XDC.xdc
-set_property used_in_implementation false [get_files /home/khwl/Desktop/RV-IM100/RV64s/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/constrs_1/imports/RV64I59F_5SP/RV32I46F_5SP_Debug_XDC.xdc]
+read_xdc /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/constrs_1/imports/RV64I59F_5SP/RV32I46F_5SP_Debug_XDC.xdc
+set_property used_in_implementation false [get_files /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/cores/RV64I_5SP/RV64I59F_5SP_FPGA.srcs/constrs_1/imports/RV64I59F_5SP/RV32I46F_5SP_Debug_XDC.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

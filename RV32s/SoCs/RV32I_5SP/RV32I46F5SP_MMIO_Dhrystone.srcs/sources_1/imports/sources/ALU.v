@@ -40,15 +40,15 @@ module ALU (
             end
             
             `ALU_OP_SLL: begin
-                alu_result = src_A << src_B;
+                alu_result = src_A << src_B[4:0];
             end
             
             `ALU_OP_SRL: begin
-                alu_result = src_A >> src_B;
+                alu_result = src_A >> src_B[4:0];
             end
             
             `ALU_OP_SRA: begin
-                alu_result = $signed(src_A) >>> src_B;
+                alu_result = $signed(src_A) >>> src_B[4:0];
             end
             
             `ALU_OP_ABJ: begin
