@@ -8,6 +8,10 @@ SIZE    = $(CROSS_COMPILE)size
 
 TARGET = dhrystone
 
+# CPU clock in Hz, compiled into the benchmark timing loop.
+# Override per build:  make CPU_FREQ_HZ=92000000 verilog
+CPU_FREQ_HZ ?= 100000000
+
 # Source files
 DHRY_SRC = dhry_1.c dhry_2.c
 BSP_SRC  = syscalls.c mini_libc.c
@@ -24,8 +28,9 @@ INC_FLAGS = -I.
 
 # Dhrystone flags
 DHRY_CFLAGS  = -std=gnu89
-DHRY_CFLAGS += -DTIMES -DNOENUM -DDHRY_ITERS=300000
-DHRY_CFLAGS += -DHZ=100000000
+DHRY_ITERS ?= 300000
+DHRY_CFLAGS += -DTIMES -DNOENUM -DDHRY_ITERS=$(DHRY_ITERS)
+DHRY_CFLAGS += -DHZ=$(CPU_FREQ_HZ)
 DHRY_CFLAGS += -Wno-implicit -Wno-return-type -Wno-builtin-declaration-mismatch
 
 # Optimization

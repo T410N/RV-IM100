@@ -56,6 +56,7 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param general.maxThreads 16
 set_param general.usePosixSpawnForFork 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a200tsbg484-1
@@ -96,6 +97,7 @@ read_mem {
   /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_5SP/RV64IM72F_5SP_FPGA.srcs/sources_1/imports/RV64s/coremark_RV64IM_40MHz.mem
   /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_5SP/RV64IM72F_5SP_FPGA.srcs/sources_1/imports/RV64s/coremark_RV64IM_39MHz.mem
   /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_5SP/RV64IM72F_5SP_FPGA.srcs/sources_1/imports/RV64s/coremark_RV64IM_38MHz.mem
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_5SP/RV64IM72F_5SP_FPGA.srcs/sources_1/imports/RV64s/dhrystone_RV64IM_37MHz.mem
 }
 read_verilog -library xil_defaultlib {
   /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_5SP/RV64IM72F_5SP_FPGA.srcs/sources_1/imports/RV64IM72F_5SP/ALU.v
@@ -150,8 +152,6 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 read_xdc /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_5SP/RV64IM72F_5SP_FPGA.srcs/constrs_1/imports/RV64IM72F_5SP/RV32I46F_5SP_Debug_XDC.xdc
 set_property used_in_implementation false [get_files /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_5SP/RV64IM72F_5SP_FPGA.srcs/constrs_1/imports/RV64IM72F_5SP/RV32I46F_5SP_Debug_XDC.xdc]
 
-read_xdc dont_touch.xdc
-set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 
 read_checkpoint -auto_incremental -incremental /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_5SP/RV64IM72F_5SP_FPGA.srcs/utils_1/imports/synth_1/RV64IM72F5SPSoCTOP.dcp

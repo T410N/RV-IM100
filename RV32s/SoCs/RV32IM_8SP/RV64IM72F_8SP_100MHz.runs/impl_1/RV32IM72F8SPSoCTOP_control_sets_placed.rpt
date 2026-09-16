@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Wed Sep  9 03:52:52 2026
+| Date         : Sun Sep 13 18:57:31 2026
 | Host         : khwl-ThinkPad-X1-Carbon-Gen-13 running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_control_sets -verbose -file RV32IM72F8SPSoCTOP_control_sets_placed.rpt
 | Design       : RV32IM72F8SPSoCTOP
@@ -58,12 +58,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               7 |            5 |
-| No           | No                    | Yes                    |              51 |           32 |
+| No           | No                    | No                     |               7 |            6 |
+| No           | No                    | Yes                    |              51 |           27 |
 | No           | Yes                   | No                     |               0 |            0 |
-| Yes          | No                    | No                     |              44 |           16 |
-| Yes          | No                    | Yes                    |             871 |          306 |
-| Yes          | Yes                   | No                     |            1378 |          359 |
+| Yes          | No                    | No                     |              44 |           13 |
+| Yes          | No                    | Yes                    |             871 |          295 |
+| Yes          | Yes                   | No                     |            1378 |          338 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -75,42 +75,42 @@ Table of Contents
 +------------------------+---------------------------------------------------------------+--------------------------------------------------------------+------------------+----------------+--------------+
 |  clk_gen/inst/clk_out1 | uart_tx/tx_i_1_n_0                                            | internal_reset                                               |                1 |              1 |         1.00 |
 |  clk_gen/inst/clk_out1 |                                                               | reset                                                        |                2 |              3 |         1.50 |
-|  clk_gen/inst/clk_out1 | uart_tx/bit_counter[3]_i_1__0_n_0                             | internal_reset                                               |                1 |              4 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv32im72f_8sp/alu/multiplier_word/FSM_onehot_stage[3]_i_1_n_0 | internal_reset                                               |                1 |              4 |         4.00 |
 |  clk_gen/inst/clk_out1 | rv32im72f_8sp/alu/divider_word/FSM_onehot_state[3]_i_1_n_0    | internal_reset                                               |                1 |              4 |         4.00 |
-|  clk_gen/inst/clk_out1 | rv32im72f_8sp/alu/multiplier_word/FSM_onehot_stage[3]_i_1_n_0 | internal_reset                                               |                2 |              4 |         2.00 |
-|  clk_gen/inst/clk_out1 |                                                               |                                                              |                5 |              7 |         1.40 |
+|  clk_gen/inst/clk_out1 | uart_tx/bit_counter[3]_i_1__0_n_0                             | internal_reset                                               |                2 |              4 |         2.00 |
+|  clk_gen/inst/clk_out1 |                                                               |                                                              |                6 |              7 |         1.17 |
 |  clk_gen/inst/clk_out1 | uart_tx/shift_reg[8]_i_1_n_0                                  | internal_reset                                               |                3 |              9 |         3.00 |
 |  clk_gen/inst/clk_out1 | mmio_interface/E[0]                                           | internal_reset                                               |                4 |             11 |         2.75 |
-|  clk_gen/inst/clk_out1 | cpu_clk_enable                                                | rv32im72f_8sp/ex_ex2_register/cpu_clk_enable_reg_5           |                4 |             12 |         3.00 |
-|  clk_gen/inst/clk_out1 | cpu_clk_enable                                                |                                                              |                7 |             12 |         1.71 |
-|  clk_gen/inst/clk_out1 | rv32im72f_8sp/trap_controller/WB_raw_imm_reg[2]_0[0]          | internal_reset                                               |               11 |             32 |         2.91 |
-|  clk_gen/inst/clk_out1 | rv32im72f_8sp/trap_controller/WB_raw_imm_reg[2][0]            | internal_reset                                               |                9 |             32 |         3.56 |
-|  clk_gen/inst/clk_out1 | rv32im72f_8sp/trap_controller/E[0]                            | internal_reset                                               |                9 |             32 |         3.56 |
+|  clk_gen/inst/clk_out1 | cpu_clk_enable                                                | rv32im72f_8sp/ex_ex2_register/cpu_clk_enable_reg_5           |                7 |             12 |         1.71 |
+|  clk_gen/inst/clk_out1 | cpu_clk_enable                                                |                                                              |                4 |             12 |         3.00 |
 |  clk_gen/inst/clk_out1 | rv32im72f_8sp/ex_ex2_register/est_target[0]                   | rv32im72f_8sp/ex_ex2_register/EX_jump_reg                    |                9 |             32 |         3.56 |
-|  clk_gen/inst/clk_out1 | rv32im72f_8sp/ex_ex2_register/cpu_clk_enable_reg_7[0]         | internal_reset                                               |                5 |             32 |         6.40 |
 |  clk_gen/inst/clk_out1 | rv32im72f_8sp/exr_ex_register/cpu_clk_enable_reg_0[0]         |                                                              |                9 |             32 |         3.56 |
-|  clk_gen/inst/clk_out1 | rv32im72f_8sp/exception_detector/cpu_clk_enable_reg_3[0]      | internal_reset                                               |               21 |             32 |         1.52 |
-|  clk_gen/inst/clk_out1 | rv32im72f_8sp/id_exr_register/cpu_clk_enable_reg[0]           | internal_reset                                               |                7 |             32 |         4.57 |
-|  clk_gen/inst/clk_out1 | rv32im72f_8sp/data_memory/instruction_pc0                     | internal_reset                                               |                5 |             32 |         6.40 |
+|  clk_gen/inst/clk_out1 | rv32im72f_8sp/trap_controller/E[0]                            | internal_reset                                               |                8 |             32 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv32im72f_8sp/data_memory/instruction_pc0                     | internal_reset                                               |                7 |             32 |         4.57 |
+|  clk_gen/inst/clk_out1 | rv32im72f_8sp/exception_detector/cpu_clk_enable_reg_3[0]      | internal_reset                                               |               17 |             32 |         1.88 |
+|  clk_gen/inst/clk_out1 | rv32im72f_8sp/trap_controller/WB_raw_imm_reg[2][0]            | internal_reset                                               |                8 |             32 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv32im72f_8sp/trap_controller/WB_raw_imm_reg[2]_0[0]          | internal_reset                                               |                7 |             32 |         4.57 |
+|  clk_gen/inst/clk_out1 | rv32im72f_8sp/ex_ex2_register/cpu_clk_enable_reg_7[0]         | internal_reset                                               |                8 |             32 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv32im72f_8sp/id_exr_register/cpu_clk_enable_reg[0]           | internal_reset                                               |               10 |             32 |         3.20 |
 |  clk_gen/inst/clk_out1 | rv32im72f_8sp/id_exr_register/cpu_clk_enable_reg_0[0]         | internal_reset                                               |               11 |             32 |         2.91 |
-|  clk_gen/inst/clk_out1 | rv32im72f_8sp/exception_detector/E[0]                         | rv32im72f_8sp/exception_detector/MEM_WB_flush                |               21 |             33 |         1.57 |
+|  clk_gen/inst/clk_out1 | rv32im72f_8sp/exception_detector/E[0]                         | rv32im72f_8sp/exception_detector/MEM_WB_flush                |               17 |             33 |         1.94 |
+|  clk_gen/inst/clk_out1 | rv32im72f_8sp/alu/divider_word/quotient_sign4_out             | internal_reset                                               |                9 |             34 |         3.78 |
 |  clk_gen/inst/clk_out1 | rv32im72f_8sp/exr_ex_register/cpu_clk_enable_reg[0]           | internal_reset                                               |               14 |             34 |         2.43 |
-|  clk_gen/inst/clk_out1 | rv32im72f_8sp/alu/divider_word/quotient_sign4_out             | internal_reset                                               |               13 |             34 |         2.62 |
-|  clk_gen/inst/clk_out1 | rv32im72f_8sp/alu/multiplier_word/cpu_clk_enable_reg          | internal_reset                                               |               10 |             37 |         3.70 |
-|  clk_gen/inst/clk_out1 |                                                               | internal_reset                                               |               30 |             48 |         1.60 |
-|  clk_gen/inst/clk_out1 | rv32im72f_8sp/alu/multiplier_word/prod_low[31]_i_1_n_0        | internal_reset                                               |               17 |             64 |         3.76 |
-|  clk_gen/inst/clk_out1 | rv32im72f_8sp/alu/divider_word/quotient_reg[31]_i_1_n_0       | internal_reset                                               |               22 |             64 |         2.91 |
+|  clk_gen/inst/clk_out1 | rv32im72f_8sp/alu/multiplier_word/cpu_clk_enable_reg          | internal_reset                                               |               13 |             37 |         2.85 |
+|  clk_gen/inst/clk_out1 |                                                               | internal_reset                                               |               25 |             48 |         1.92 |
 |  clk_gen/inst/clk_out1 | rv32im72f_8sp/csr_file/minstret[0]                            | internal_reset                                               |               17 |             64 |         3.76 |
-|  clk_gen/inst/clk_out1 | rv32im72f_8sp/alu/multiplier_word/result_sign_s11_out         | internal_reset                                               |               26 |             65 |         2.50 |
-|  clk_gen/inst/clk_out1 | rv32im72f_8sp/alu/divider_word/bit_counter[5]_i_1_n_0         | internal_reset                                               |               30 |             70 |         2.33 |
+|  clk_gen/inst/clk_out1 | rv32im72f_8sp/alu/divider_word/quotient_reg[31]_i_1_n_0       | internal_reset                                               |               21 |             64 |         3.05 |
+|  clk_gen/inst/clk_out1 | rv32im72f_8sp/alu/multiplier_word/prod_low[31]_i_1_n_0        | internal_reset                                               |               20 |             64 |         3.20 |
+|  clk_gen/inst/clk_out1 | rv32im72f_8sp/alu/multiplier_word/result_sign_s11_out         | internal_reset                                               |               23 |             65 |         2.83 |
+|  clk_gen/inst/clk_out1 | rv32im72f_8sp/alu/divider_word/bit_counter[5]_i_1_n_0         | internal_reset                                               |               26 |             70 |         2.69 |
 |  clk_gen/inst/clk_out1 | rv32im72f_8sp/mem_wb_register/p_0_in2_out                     |                                                              |               11 |             88 |         8.00 |
-|  clk_gen/inst/clk_out1 | rv32im72f_8sp/ex_ex2_register/cpu_clk_enable_reg_2[0]         | rv32im72f_8sp/ex_ex2_register/SR[0]                          |               20 |             96 |         4.80 |
-|  clk_gen/inst/clk_out1 | rv32im72f_8sp/ex_ex2_register/cpu_clk_enable_reg[0]           | rv32im72f_8sp/ex_ex2_register/cpu_clk_enable_reg_8[0]        |               21 |             98 |         4.67 |
-|  clk_gen/inst/clk_out1 | cpu_clk_enable                                                | internal_reset                                               |               67 |            150 |         2.24 |
-|  clk_gen/inst/clk_out1 | rv32im72f_8sp/ex_ex2_register/cpu_clk_enable_reg[0]           | rv32im72f_8sp/ex_ex2_register/cpu_clk_enable_reg_5           |               58 |            255 |         4.40 |
-|  clk_gen/inst/clk_out1 | rv32im72f_8sp/exception_detector/E[0]                         | rv32im72f_8sp/ex_ex2_register/EX2_register_write_enable0_out |               71 |            266 |         3.75 |
-|  clk_gen/inst/clk_out1 | rv32im72f_8sp/exception_detector/E[0]                         | rv32im72f_8sp/exception_detector/SR[0]                       |               80 |            286 |         3.58 |
-|  clk_gen/inst/clk_out1 | rv32im72f_8sp/exception_detector/E[0]                         | rv32im72f_8sp/ex_ex2_register/cpu_clk_enable_reg_6[0]        |               75 |            300 |         4.00 |
+|  clk_gen/inst/clk_out1 | rv32im72f_8sp/ex_ex2_register/cpu_clk_enable_reg_2[0]         | rv32im72f_8sp/ex_ex2_register/SR[0]                          |               16 |             96 |         6.00 |
+|  clk_gen/inst/clk_out1 | rv32im72f_8sp/ex_ex2_register/cpu_clk_enable_reg[0]           | rv32im72f_8sp/ex_ex2_register/cpu_clk_enable_reg_8[0]        |               32 |             98 |         3.06 |
+|  clk_gen/inst/clk_out1 | cpu_clk_enable                                                | internal_reset                                               |               64 |            150 |         2.34 |
+|  clk_gen/inst/clk_out1 | rv32im72f_8sp/ex_ex2_register/cpu_clk_enable_reg[0]           | rv32im72f_8sp/ex_ex2_register/cpu_clk_enable_reg_5           |               78 |            255 |         3.27 |
+|  clk_gen/inst/clk_out1 | rv32im72f_8sp/exception_detector/E[0]                         | rv32im72f_8sp/ex_ex2_register/EX2_register_write_enable0_out |               63 |            266 |         4.22 |
+|  clk_gen/inst/clk_out1 | rv32im72f_8sp/exception_detector/E[0]                         | rv32im72f_8sp/exception_detector/SR[0]                       |               64 |            286 |         4.47 |
+|  clk_gen/inst/clk_out1 | rv32im72f_8sp/exception_detector/E[0]                         | rv32im72f_8sp/ex_ex2_register/cpu_clk_enable_reg_6[0]        |               52 |            300 |         5.77 |
 +------------------------+---------------------------------------------------------------+--------------------------------------------------------------+------------------+----------------+--------------+
 
 

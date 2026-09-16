@@ -48,7 +48,9 @@ static inline ee_u32 read_mcycle32(void) {
 /* Timer resolution: 50MHz = 50,000,000 ticks per second
  * Adjust this value for your hardware clock frequency
  */
+#ifndef EE_TICKS_PER_SEC
 #define EE_TICKS_PER_SEC 100000000
+#endif
 
 static CORETIMETYPE start_time_val, stop_time_val;
 

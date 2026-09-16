@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date             : Wed Sep  9 03:42:07 2026
+| Date             : Mon Sep 14 15:52:31 2026
 | Host             : khwl-ThinkPad-X1-Carbon-Gen-13 running 64-bit Ubuntu 24.04.4 LTS
 | Command          : report_power -file RV32IM72F7SPSoCTOP_power_routed.rpt -pb RV32IM72F7SPSoCTOP_power_summary_routed.pb -rpx RV32IM72F7SPSoCTOP_power_routed.rpx
 | Design           : RV32IM72F7SPSoCTOP
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.314        |
+| Total On-Chip Power (W)  | 0.306        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.161        |
+| Dynamic (W)              | 0.153        |
 | Device Static (W)        | 0.153        |
 | Effective TJA (C/W)      | 3.3          |
 | Max Ambient (C)          | 84.0         |
@@ -53,19 +53,19 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.011 |        8 |       --- |             --- |
-| Slice Logic              |     0.003 |     5107 |       --- |             --- |
-|   LUT as Logic           |     0.002 |     2682 |    133800 |            2.00 |
+| Slice Logic              |     0.003 |     5078 |       --- |             --- |
+|   LUT as Logic           |     0.003 |     2663 |    133800 |            1.99 |
 |   CARRY4                 |    <0.001 |      186 |     33450 |            0.56 |
 |   Register               |    <0.001 |     1920 |    267600 |            0.72 |
 |   LUT as Distributed RAM |    <0.001 |       44 |     46200 |            0.10 |
 |   Others                 |     0.000 |       33 |       --- |             --- |
-| Signals                  |     0.006 |     4637 |       --- |             --- |
-| Block RAM                |     0.038 |       24 |       365 |            6.58 |
+| Signals                  |     0.006 |     4608 |       --- |             --- |
+| Block RAM                |     0.028 |       18 |       365 |            4.93 |
 | PLL                      |     0.103 |        1 |        10 |           10.00 |
 | DSPs                     |    <0.001 |        4 |       740 |            0.54 |
 | I/O                      |     0.001 |       12 |       285 |            4.21 |
 | Static Power             |     0.153 |          |           |                 |
-| Total                    |     0.314 |          |           |                 |
+| Total                    |     0.306 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,16 +75,16 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.095 |       0.064 |      0.031 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.087 |       0.056 |      0.031 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.082 |       0.052 |      0.031 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.005 |       0.000 |      0.005 |       NA    | Unspecified | NA         |
-| Vcco25    |       2.500 |     0.005 |       0.000 |      0.005 |       NA    | Unspecified | NA         |
+| Vcco25    |       2.500 |     0.006 |       0.001 |      0.005 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccbram   |       1.000 |     0.005 |       0.003 |      0.001 |       NA    | Unspecified | NA         |
+| Vccbram   |       1.000 |     0.004 |       0.002 |      0.001 |       NA    | Unspecified | NA         |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |       NA    | Unspecified | NA         |
@@ -149,19 +149,20 @@ Table of Contents
 +------------------------+-----------+
 | Name                   | Power (W) |
 +------------------------+-----------+
-| RV32IM72F7SPSoCTOP     |     0.161 |
+| RV32IM72F7SPSoCTOP     |     0.153 |
 |   clk_gen              |     0.104 |
 |     inst               |     0.104 |
-|   rv32im72f_7sp        |     0.056 |
+|   rv32im72f_7sp        |     0.047 |
 |     alu                |     0.004 |
 |       divider_word     |     0.001 |
 |       multiplier_word  |     0.002 |
 |     csr_file           |     0.002 |
-|     data_memory        |     0.020 |
+|     data_memory        |     0.023 |
 |     ex_ex2_register    |     0.003 |
 |     ex_mem_register    |     0.001 |
 |     id_ex_register     |     0.003 |
-|     instruction_memory |     0.019 |
+|     instruction_memory |     0.006 |
+|     io_id_register     |     0.001 |
 +------------------------+-----------+
 
 

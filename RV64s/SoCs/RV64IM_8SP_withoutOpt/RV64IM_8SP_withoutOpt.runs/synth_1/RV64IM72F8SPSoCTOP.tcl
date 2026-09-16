@@ -56,6 +56,7 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param general.maxThreads 16
 set_param general.usePosixSpawnForFork 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a200tsbg484-1
@@ -94,6 +95,12 @@ read_mem {
   /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_8SP_withoutOpt/RV64IM_8SP_withoutOpt.srcs/sources_1/imports/benchmarks/dhrystone.mem
   /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_8SP_withoutOpt/RV64IM_8SP_withoutOpt.srcs/sources_1/imports/Coremark_baremetal/coremark_RV64IM_97MHz.mem
   /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_8SP_withoutOpt/RV64IM_8SP_withoutOpt.srcs/sources_1/imports/Coremark_baremetal/coremark_RV64IM_96MHz.mem
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_8SP_withoutOpt/RV64IM_8SP_withoutOpt.srcs/sources_1/imports/Coremark_baremetal/dhrystone_RV64IM_92MHz.mem
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_8SP_withoutOpt/RV64IM_8SP_withoutOpt.srcs/sources_1/imports/Coremark_baremetal/coremark_RV64IM_92MHz.mem
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_8SP_withoutOpt/RV64IM_8SP_withoutOpt.srcs/sources_1/imports/Coremark_baremetal/dhrystone_RV64IM_93MHz.mem
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_8SP_withoutOpt/RV64IM_8SP_withoutOpt.srcs/sources_1/imports/Coremark_baremetal/dhrystone_RV64IM_94MHz.mem
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_8SP_withoutOpt/RV64IM_8SP_withoutOpt.srcs/sources_1/imports/Coremark_baremetal/dhrystone_RV64IM_95MHz.mem
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_8SP_withoutOpt/RV64IM_8SP_withoutOpt.srcs/sources_1/imports/Coremark_baremetal/dhrystone_RV64IM_96MHz.mem
 }
 read_verilog -library xil_defaultlib {
   /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_8SP_withoutOpt/RV64IM_8SP_withoutOpt.srcs/sources_1/imports/modules/ALU.v

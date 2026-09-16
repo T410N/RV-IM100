@@ -56,7 +56,9 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param general.maxThreads 16
 set_param general.usePosixSpawnForFork 1
+set_msg_config  -id {17-179}  -suppress 
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a200tsbg484-1
 
@@ -92,6 +94,8 @@ read_mem {
   /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/SoCs/RV32IM_6SP/RV64IM72F_6SP.srcs/sources_1/imports/benchmarks/coremarks/coremark_RV32IM_50MHz.mem
   /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/SoCs/RV32IM_6SP/RV64IM72F_6SP.srcs/sources_1/imports/dhrystones/dhrystone_RV32IM_59MHz.mem
   /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/SoCs/RV32IM_6SP/RV64IM72F_6SP.srcs/sources_1/imports/dhrystones/dhrystone_RV32IM_53MHz.mem
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/SoCs/RV32IM_6SP/RV64IM72F_6SP.srcs/sources_1/imports/benchmarks/dhrystones/dhrystone_RV32IM_51MHz.mem
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/SoCs/RV32IM_6SP/RV64IM72F_6SP.srcs/sources_1/imports/benchmarks/coremarks/dhrystone_RV32IM_51.5MHz.mem
 }
 read_verilog -library xil_defaultlib {
   /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/SoCs/RV32IM_6SP/RV64IM72F_6SP.srcs/sources_1/imports/RV64IM6SP_FPGA/modules/ALU.v
@@ -144,8 +148,6 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 read_xdc /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/SoCs/RV32IM_6SP/RV64IM72F_6SP.srcs/constrs_1/imports/RV64IM6SP_FPGA/RV32I46F_5SP_Debug_XDC.xdc
 set_property used_in_implementation false [get_files /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/SoCs/RV32IM_6SP/RV64IM72F_6SP.srcs/constrs_1/imports/RV64IM6SP_FPGA/RV32I46F_5SP_Debug_XDC.xdc]
 
-read_xdc dont_touch.xdc
-set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 
 read_checkpoint -auto_incremental -incremental /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/SoCs/RV32IM_6SP/RV64IM72F_6SP.srcs/utils_1/imports/synth_1/RV64IM72F5SPSoCTOP.dcp

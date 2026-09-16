@@ -56,6 +56,7 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param general.maxThreads 16
 set_param general.usePosixSpawnForFork 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a200tsbg484-1
@@ -95,6 +96,8 @@ read_mem {
   /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_7SP/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/benchmarks/dhrystones/dhrystone_RV64IM_49MHz.mem
   /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_7SP/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/benchmarks/dhrystones/dhrystone_RV64IM_48.61111.mem
   /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_7SP/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/benchmarks/coremarks/coremark_RV64IM_48.61111.mem
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_7SP/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/benchmarks/dhrystones/coremark_RV64IM_48MHz.mem
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_7SP/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/benchmarks/dhrystones/coremark_RV64IM_47MHz.mem
 }
 read_verilog -library xil_defaultlib {
   /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_7SP/RV64IM72F_7SP_FPGA.srcs/sources_1/imports/FPGA_SoC/modules/ALU.v

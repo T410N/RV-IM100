@@ -56,6 +56,7 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param general.maxThreads 16
 set_param general.usePosixSpawnForFork 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a200tsbg484-1
@@ -104,6 +105,7 @@ read_mem {
   /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Opt/RV64IM72F_7SP_BRAM_Final_1431/RV64IM72F_7SP_BRAM_Final_1431.srcs/sources_1/imports/dhrystones/dhrystone_RV64IM_86MHz.mem
   /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Opt/RV64IM72F_7SP_BRAM_Final_1431/RV64IM72F_7SP_BRAM_Final_1431.srcs/sources_1/imports/dhrystones/dhrystone_RV64IM_85MHz.mem
   /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Opt/RV64IM72F_7SP_BRAM_Final_1431/RV64IM72F_7SP_BRAM_Final_1431.srcs/sources_1/imports/dhrystones/dhrystone_RV64IM_84MHz.mem
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Opt/RV64IM72F_7SP_BRAM_Final_1431/RV64IM72F_7SP_BRAM_Final_1431.srcs/sources_1/imports/dhrystones/dhrystone_RV64IM_81MHz.mem
 }
 read_verilog -library xil_defaultlib {
   /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Opt/RV64IM72F_7SP_BRAM_Final_1431/RV64IM72F_7SP_BRAM_Final_1431.srcs/sources_1/imports/1.431_srcs/modules/ALU.v
