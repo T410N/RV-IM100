@@ -3,3 +3,26 @@
 # else Vivado produces (.runs, .gen, .cache, .ip_user_files, .jobs) stays
 # tracked, as it always has been.
 **/.Xil/Vivado-*/
+
+# The repository's own history, parked here while this tree is also tracked by
+# the private verification repo.  Never commit it.
+.git-public/
+
+# Working copies made by the frequency sweep: each is a throwaway clone of a
+# project, implemented at a candidate clock so the measured project is never
+# disturbed.  Regenerable, and not part of the design.
+.sweep/
+
+# Vivado design checkpoints.  Excluded for a specific reason, not only size:
+# a routed .dcp sitting under <project>.srcs/utils_1/imports/impl_1/ is picked
+# up by Vivado as an AutoIncremental reference, so implementation starts from a
+# previous routed design instead of from the sources.  That made repeated runs
+# of the same configuration disagree, and it is invisible unless you read the
+# run log.  Checkpoints are regenerable from the sources; keeping them out means
+# a clone cannot inherit the problem.
+*.dcp
+
+# Vivado binary report archives.  Same content as the .rpt text reports beside
+# them, which stay tracked and are readable and diffable.
+*.rpx
+*.pb

@@ -96,6 +96,10 @@ read_mem {
   /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64s/dhrystone_RV64I_40MHz.mem
   /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/coremarks/coremark_RV64IM_39.58333MHz.mem
   /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/coremarks/coremark_RV64I_39.58333MHz.mem
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64s/coremark_RV64I_38MHz.mem
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64s/coremark_RV64I_37MHz.mem
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64s/dhrystone_RV64I_39MHz.mem
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64s/coremark_RV64I_37.5MHz.mem
 }
 read_verilog -library xil_defaultlib {
   /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64I5SP_SoC/RV64I59F_5SP_FPGA.srcs/sources_1/imports/RV64I59F_5SP/ALU.v

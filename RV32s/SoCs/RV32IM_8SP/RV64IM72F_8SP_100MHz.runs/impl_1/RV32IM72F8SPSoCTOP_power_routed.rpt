@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date             : Wed Sep  9 03:58:15 2026
+| Date             : Sun Sep 13 18:58:53 2026
 | Host             : khwl-ThinkPad-X1-Carbon-Gen-13 running 64-bit Ubuntu 24.04.4 LTS
 | Command          : report_power -file RV32IM72F8SPSoCTOP_power_routed.rpt -pb RV32IM72F8SPSoCTOP_power_summary_routed.pb -rpx RV32IM72F8SPSoCTOP_power_routed.rpx
 | Design           : RV32IM72F8SPSoCTOP
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.322        |
+| Total On-Chip Power (W)  | 0.299        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.169        |
-| Device Static (W)        | 0.152        |
+| Dynamic (W)              | 0.163        |
+| Device Static (W)        | 0.136        |
 | Effective TJA (C/W)      | 3.3          |
-| Max Ambient (C)          | 83.9         |
-| Junction Temperature (C) | 26.1         |
+| Max Ambient (C)          | 84.0         |
+| Junction Temperature (C) | 26.0         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -53,20 +53,20 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.013 |        5 |       --- |             --- |
-| Slice Logic              |     0.004 |     5727 |       --- |             --- |
-|   LUT as Logic           |     0.004 |     2838 |    133800 |            2.12 |
+| Slice Logic              |     0.004 |     5723 |       --- |             --- |
+|   LUT as Logic           |     0.004 |     2821 |    133800 |            2.11 |
 |   CARRY4                 |    <0.001 |      192 |     33450 |            0.57 |
-|   Register               |    <0.001 |     2355 |    267600 |            0.88 |
+|   Register               |    <0.001 |     2351 |    267600 |            0.88 |
 |   LUT as Distributed RAM |    <0.001 |       44 |     46200 |            0.10 |
 |   F7/F8 Muxes            |    <0.001 |       31 |    133800 |            0.02 |
 |   Others                 |     0.000 |       34 |       --- |             --- |
-| Signals                  |     0.010 |     5100 |       --- |             --- |
-| Block RAM                |     0.038 |       16 |       365 |            4.38 |
-| PLL                      |     0.101 |        1 |        10 |           10.00 |
+| Signals                  |     0.009 |     5060 |       --- |             --- |
+| Block RAM                |     0.036 |       16 |       365 |            4.38 |
+| PLL                      |     0.098 |        1 |        10 |           10.00 |
 | DSPs                     |    <0.001 |        4 |       740 |            0.54 |
 | I/O                      |     0.002 |       12 |       285 |            4.21 |
-| Static Power             |     0.152 |          |           |                 |
-| Total                    |     0.322 |          |           |                 |
+| Static Power             |     0.136 |          |           |                 |
+| Total                    |     0.299 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,9 +76,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.104 |       0.073 |      0.031 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.081 |       0.051 |      0.031 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.005 |       0.000 |      0.005 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.100 |       0.069 |      0.031 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.080 |       0.050 |      0.031 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.006 |       0.001 |      0.005 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -133,8 +133,8 @@ Table of Contents
 | Clock              | Domain                          | Constraint (ns) |
 +--------------------+---------------------------------+-----------------+
 | clk                | clk                             |            10.0 |
-| clk_out1_clk_wiz_0 | clk_gen/inst/clk_out1_clk_wiz_0 |             8.0 |
-| clkfbout_clk_wiz_0 | clk_gen/inst/clkfbout_clk_wiz_0 |            40.0 |
+| clk_out1_clk_wiz_0 | clk_gen/inst/clk_out1_clk_wiz_0 |             8.4 |
+| clkfbout_clk_wiz_0 | clk_gen/inst/clkfbout_clk_wiz_0 |            30.0 |
 +--------------------+---------------------------------+-----------------+
 
 
@@ -147,21 +147,21 @@ Table of Contents
 +------------------------+-----------+
 | Name                   | Power (W) |
 +------------------------+-----------+
-| RV32IM72F8SPSoCTOP     |     0.169 |
-|   clk_gen              |     0.101 |
-|     inst               |     0.101 |
-|   rv32im72f_8sp        |     0.066 |
+| RV32IM72F8SPSoCTOP     |     0.163 |
+|   clk_gen              |     0.099 |
+|     inst               |     0.099 |
+|   rv32im72f_8sp        |     0.062 |
 |     alu                |     0.004 |
 |       divider_word     |     0.002 |
 |       multiplier_word  |     0.002 |
 |     csr_file           |     0.002 |
 |     data_memory        |     0.014 |
 |     ex_ex2_register    |     0.003 |
-|     ex_mem_register    |     0.002 |
+|     ex_mem_register    |     0.001 |
 |     exr_ex_register    |     0.004 |
-|     id_exr_register    |     0.003 |
+|     id_exr_register    |     0.002 |
 |     if_io_register     |     0.001 |
-|     instruction_memory |     0.024 |
+|     instruction_memory |     0.023 |
 |     io_id_register     |     0.002 |
 |     mem_wb_register    |     0.001 |
 +------------------------+-----------+

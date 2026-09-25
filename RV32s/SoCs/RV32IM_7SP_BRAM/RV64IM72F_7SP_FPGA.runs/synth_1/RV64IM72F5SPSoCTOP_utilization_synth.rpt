@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Wed Sep  9 03:27:44 2026
+| Date         : Mon Sep 14 18:05:44 2026
 | Host         : khwl-ThinkPad-X1-Carbon-Gen-13 running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_utilization -file RV64IM72F5SPSoCTOP_utilization_synth.rpt -pb RV64IM72F5SPSoCTOP_utilization_synth.pb
 | Design       : RV64IM72F5SPSoCTOP
@@ -74,9 +74,9 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +-------------------+------+-------+------------+-----------+-------+
 |     Site Type     | Used | Fixed | Prohibited | Available | Util% |
 +-------------------+------+-------+------------+-----------+-------+
-| Block RAM Tile    |   16 |     0 |          0 |       365 |  4.38 |
-|   RAMB36/FIFO*    |   16 |     0 |          0 |       365 |  4.38 |
-|     RAMB36E1 only |   16 |       |            |           |       |
+| Block RAM Tile    |   10 |     0 |          0 |       365 |  2.74 |
+|   RAMB36/FIFO*    |   10 |     0 |          0 |       365 |  2.74 |
+|     RAMB36E1 only |   10 |       |            |           |       |
 |   RAMB18          |    0 |     0 |          0 |       730 |  0.00 |
 +-------------------+------+-------+------------+-----------+-------+
 * Note: Each Block RAM Tile only has one FIFO logic available and therefore can accommodate only one FIFO36E1 or one FIFO18E1. However, if a FIFO18E1 occupies a Block RAM Tile, that tile can still accommodate a RAMB18E1
@@ -171,8 +171,8 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | FDPE     |   23 |        Flop & Latch |
 | RAMS32   |   20 |  Distributed Memory |
 | FDSE     |   18 |        Flop & Latch |
-| RAMB36E1 |   16 |        Block Memory |
 | MUXF7    |   14 |               MuxFx |
+| RAMB36E1 |   10 |        Block Memory |
 | OBUF     |    9 |                  IO |
 | DSP48E1  |    4 |    Block Arithmetic |
 | IBUF     |    2 |                  IO |

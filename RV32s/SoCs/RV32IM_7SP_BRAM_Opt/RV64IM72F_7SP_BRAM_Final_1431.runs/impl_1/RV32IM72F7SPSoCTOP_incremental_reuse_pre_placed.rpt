@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Wed Sep  9 03:38:04 2026
+| Date         : Mon Sep 14 15:51:59 2026
 | Host         : khwl-ThinkPad-X1-Carbon-Gen-13 running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_incremental_reuse -file RV32IM72F7SPSoCTOP_incremental_reuse_pre_placed.rpt
 | Design       : RV32IM72F7SPSoCTOP
@@ -32,7 +32,7 @@ Table of Contents
 |    Flow Information   |       Value      |
 +-----------------------+------------------+
 | Synthesis Flow        |          Default |
-| Auto Incremental      |              Yes |
+| Auto Incremental      |               No |
 | Incremental Directive | RuntimeOptimized |
 | Target WNS            |              0.0 |
 | QoR Suggestions       |                0 |
@@ -45,9 +45,9 @@ Table of Contents
 +-------+----------------------+----------------------------+--------------------+-------+
 |  Type | Matched % (of Total) | Current Reuse % (of Total) | Fixed % (of Total) | Total |
 +-------+----------------------+----------------------------+--------------------+-------+
-| Cells |                99.88 |                      99.88 |               0.23 |  5088 |
-| Nets  |                99.98 |                      97.82 |               0.00 |  4374 |
-| Pins  |                    - |                      98.33 |                  - | 23714 |
+| Cells |               100.00 |                     100.00 |               0.23 |  5082 |
+| Nets  |               100.00 |                      99.77 |               0.00 |  4374 |
+| Pins  |                    - |                      99.95 |                  - | 23532 |
 | Ports |               100.00 |                     100.00 |             100.00 |    12 |
 +-------+----------------------+----------------------------+--------------------+-------+
 
@@ -81,7 +81,7 @@ Table of Contents
 +-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
 |      Stage      |  Reference  | Incremental |  Reference  | Incremental |  Reference  | Incremental |
 +-----------------+-------------+-------------+-------------+-------------+-------------+-------------+
-| synth_design    |             |             |       00:01 |       00:01 |       00:01 |       00:01 |
+| synth_design    |             |             |       00:01 |     < 1 min |       00:01 |     < 1 min |
 | opt_design      |             |             |     < 1 min |     < 1 min |     < 1 min |     < 1 min |
 | read_checkpoint |             |             |             |     < 1 min |             |     < 1 min |
 | place_design    |      -0.279 |             |       00:01 |             |       00:02 |             |
@@ -144,7 +144,7 @@ route_design -directive Explore  -tns_cleanup
 ----------------
 synth_design -directive performanceoptimized -no_lc -shreg 5 -resource_sharing off -fsm_extraction one_hot -define default::[not_specified] -verilog_define default::[not_specified] -vhdl_define default::[not_specified] -keep_equivalent_registers -top  RV32IM72F7SPSoCTOP -part  xc7a200tsbg484-1 
 opt_design -directive Explore
-read_checkpoint -directive RuntimeOptimized  -incremental -auto_incremental /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM_Opt/RV64IM72F_7SP_BRAM_Final_1431.srcs/utils_1/imports/impl_1/RV64IM72F5SPSoCTOP_routed.dcp
+read_checkpoint -directive RuntimeOptimized  -incremental /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/SoCs/RV32IM_7SP_BRAM_Opt/RV64IM72F_7SP_BRAM_Final_1431.srcs/utils_1/imports/impl_1/RV64IM72F5SPSoCTOP_routed.dcp
 
 7. Non Reuse Information
 ------------------------
@@ -152,10 +152,9 @@ read_checkpoint -directive RuntimeOptimized  -incremental -auto_incremental /hom
 +-----------------------+------+
 |          Type         |   %  |
 +-----------------------+------+
-| Non-Reused Cells      | 0.11 |
-|   New                 | 0.11 |
-| Partially reused nets | 0.84 |
-| Non-Reused nets       | 1.32 |
+| Non-Reused Cells      | 0.00 |
+| Partially reused nets | 0.18 |
+| Non-Reused nets       | 0.04 |
 | Non-Reused Ports      | 0.00 |
 +-----------------------+------+
 

@@ -56,6 +56,7 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param general.maxThreads 16
 set_param general.usePosixSpawnForFork 1
 set_msg_config  -id {17-179}  -suppress 
 OPTRACE "Creating in-memory project" START { }
@@ -101,6 +102,10 @@ read_mem {
   /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/SoCs/RV32IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/dhrystones/dhrystone_RV32IM_130MHz.mem
   /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/SoCs/RV32IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/dhrystones/dhrystone_RV32IM_200MHz.mem
   /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/SoCs/RV32IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/dhrystones/dhrystone_RV32IM_125MHz.mem
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/SoCs/RV32IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/coremarks/dhrystone_RV32IM_121MHz.mem
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/SoCs/RV32IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/coremarks/coremark_RV32IM_121MHz.mem
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/SoCs/RV32IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/coremarks/coremark_RV32IM_119MHz.mem
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/SoCs/RV32IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/coremarks/dhrystone_RV32IM_119MHz.mem
 }
 read_verilog -library xil_defaultlib {
   /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV32s/SoCs/RV32IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/ALU.v

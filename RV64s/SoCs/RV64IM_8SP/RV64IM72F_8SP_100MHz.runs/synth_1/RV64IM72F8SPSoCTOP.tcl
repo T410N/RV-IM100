@@ -56,6 +56,7 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 4
 set_param general.usePosixSpawnForFork 1
 set_msg_config  -id {17-179}  -suppress 
 OPTRACE "Creating in-memory project" START { }
@@ -64,8 +65,10 @@ create_project -in_memory -part xc7a200tsbg484-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
+set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_8SP/RV64IM72F_8SP_100MHz.cache/wt [current_project]
 set_property parent.project_path /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_8SP/RV64IM72F_8SP_100MHz.xpr [current_project]
+set_property XPM_LIBRARIES XPM_CDC [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_8SP/RV64IM72F_8SP_100MHz.cache/ip [current_project]
@@ -91,6 +94,9 @@ read_mem {
   /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/benchmarks/coremark.mem
   /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/benchmarks/coremark_100MHz.mem
   /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/benchmarks/dhrystone_100MHz.mem
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/benchmarks/dhrystone_RV64IM_101MHz.mem
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/dhrystones/dhrystone_RV64IM_102MHz.mem
+  /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/benchmarks/coremarks/coremark_RV64IM_102MHz.mem
 }
 read_verilog -library xil_defaultlib {
   /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/ALU.v
@@ -131,6 +137,11 @@ read_verilog -library xil_defaultlib {
   /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/Unified_UART_Controller.v
   /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/imports/100MHz_RV64IM72F_8SP/modules/72F8SP_SoC_TOP.v
 }
+read_ip -quiet /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_8SP/RV64IM72F_8SP_100MHz.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+set_property used_in_implementation false [get_files -all /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_8SP/RV64IM72F_8SP_100MHz.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_8SP/RV64IM72F_8SP_100MHz.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
+set_property used_in_implementation false [get_files -all /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_8SP/RV64IM72F_8SP_100MHz.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
+
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

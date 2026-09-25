@@ -42,7 +42,7 @@ module InstructionMemory #(
 	end
 	
 	initial begin
-		 $readmemh("./coremark_RV32IM_90MHz.mem", data);
+		 $readmemh("./dhrystone_RV32IM_90.90909MHz.mem", data);
 	end
 
 endmodule

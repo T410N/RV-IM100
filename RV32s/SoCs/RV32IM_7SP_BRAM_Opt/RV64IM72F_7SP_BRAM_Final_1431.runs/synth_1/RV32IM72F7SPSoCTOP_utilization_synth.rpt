@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-| Date         : Wed Sep  9 03:37:37 2026
+| Date         : Mon Sep 14 15:51:44 2026
 | Host         : khwl-ThinkPad-X1-Carbon-Gen-13 running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_utilization -file RV32IM72F7SPSoCTOP_utilization_synth.rpt -pb RV32IM72F7SPSoCTOP_utilization_synth.pb
 | Design       : RV32IM72F7SPSoCTOP
@@ -74,9 +74,9 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +-------------------+------+-------+------------+-----------+-------+
 |     Site Type     | Used | Fixed | Prohibited | Available | Util% |
 +-------------------+------+-------+------------+-----------+-------+
-| Block RAM Tile    |   24 |     0 |          0 |       365 |  6.58 |
-|   RAMB36/FIFO*    |   24 |     0 |          0 |       365 |  6.58 |
-|     RAMB36E1 only |   24 |       |            |           |       |
+| Block RAM Tile    |   18 |     0 |          0 |       365 |  4.93 |
+|   RAMB36/FIFO*    |   18 |     0 |          0 |       365 |  4.93 |
+|     RAMB36E1 only |   18 |       |            |           |       |
 |   RAMB18          |    0 |     0 |          0 |       730 |  0.00 |
 +-------------------+------+-------+------------+-----------+-------+
 * Note: Each Block RAM Tile only has one FIFO logic available and therefore can accommodate only one FIFO36E1 or one FIFO18E1. However, if a FIFO18E1 occupies a Block RAM Tile, that tile can still accommodate a RAMB18E1
@@ -168,9 +168,9 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | LUT1     |  228 |                 LUT |
 | CARRY4   |  186 |          CarryLogic |
 | RAMD32   |   68 |  Distributed Memory |
-| RAMB36E1 |   24 |        Block Memory |
 | FDPE     |   23 |        Flop & Latch |
 | RAMS32   |   20 |  Distributed Memory |
+| RAMB36E1 |   18 |        Block Memory |
 | FDSE     |   18 |        Flop & Latch |
 | OBUF     |    9 |                  IO |
 | DSP48E1  |    4 |    Block Arithmetic |

@@ -2,7 +2,7 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
-// Date        : Wed Sep  9 09:10:38 2026
+// Date        : Sun Sep 13 23:40:28 2026
 // Host        : khwl-ThinkPad-X1-Carbon-Gen-13 running 64-bit Ubuntu 24.04.4 LTS
 // Command     : write_verilog -force -mode synth_stub
 //               /home/khwl/Desktop/claude_RISCOF_RV-IM100/RV-IM100/RV64s/SoCs/RV64IM_7SP_BRAM_Opt/RV64IM72F_7SP_BRAM_Final_1431/RV64IM72F_7SP_BRAM_Final_1431.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_stub.v
