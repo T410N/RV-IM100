@@ -1,4 +1,4 @@
-# RV-IM100 — reproducibility guide (TVLSI-00554-2026 revision)
+# RV-IM100
 
 Single-lineage RISC-V design-space exploration on Artix-7 XC7A200T (`xc7a200tsbg484-1`,
 Nexys Video): RV32/RV64, I/IM, 5–8 pipeline stages, 16 variants.
