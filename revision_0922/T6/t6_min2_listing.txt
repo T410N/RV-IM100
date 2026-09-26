@@ -1,0 +1,13 @@
+# t6_min2.hex - executed non-NOP instructions (address order); everything else in [0x5d30,0x6014) is NOP
+# prologue 0x000-0x1fc: pre-stores 5 data words, sets x1..x31 to the state of rv32im_s004 at pc 0x5d30, jumps to 0x5d30
+5db4: 00198993 addi s3,s3,1
+5dec: f93ddce3 bge s11,s3,0x5d84
+5f5c: 00a00993 li s3,10
+5fe0: 00a00893 li a7,10
+6010: 02ece1b3 rem gp,s9,a4
+6014: 01198463 beq s3,a7,0x601c
+601c: 100102b7 lui t0,0x10010
+6020: 00028293 mv t0,t0
+6024: 00100313 li t1,1
+6028: 0062a023 sw t1,0(t0) # 0x10010000
+602c: 739cc813 xori a6,s9,1849

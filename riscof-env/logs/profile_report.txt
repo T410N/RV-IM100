@@ -1,0 +1,114 @@
+   socs_RV32I_5SP               dhrystone  cycles=11784284    retired=10000001  CPI=1.178
+   socs_RV32I_5SP               coremark   cycles=13015844    retired=10000000  CPI=1.302
+   socs_RV32IM_5SP              dhrystone  cycles=12603054    retired=10000001  CPI=1.260
+   socs_RV32IM_5SP              coremark   cycles=13337958    retired=10000001  CPI=1.334
+   socs_RV32IM_6SP              dhrystone  cycles=13045316    retired=10000001  CPI=1.305
+   socs_RV32IM_6SP              coremark   cycles=14805298    retired=10000001  CPI=1.481
+   socs_RV32IM_7SP              dhrystone  cycles=16144624    retired=10000001  CPI=1.614
+   socs_RV32IM_7SP              coremark   cycles=17759931    retired=10000001  CPI=1.776
+   socs_RV32IM_7SP_BRAM         dhrystone  cycles=17792010    retired=10000001  CPI=1.779
+   socs_RV32IM_7SP_BRAM         coremark   cycles=18415657    retired=10000001  CPI=1.842
+   socs_RV32IM_7SP_BRAM_Opt     dhrystone  cycles=18332260    retired=10000001  CPI=1.833
+   socs_RV32IM_7SP_BRAM_Opt     coremark   cycles=18690297    retired=10000001  CPI=1.869
+   socs_RV32IM_8SP              dhrystone  cycles=21379447    retired=10000000  CPI=2.138
+   socs_RV32IM_8SP              coremark   cycles=22404374    retired=10000001  CPI=2.240
+   socs_RV32IM_8SP_withoutOpt   dhrystone  cycles=20839194    retired=10000000  CPI=2.084
+   socs_RV32IM_8SP_withoutOpt   coremark   cycles=22129713    retired=10000001  CPI=2.213
+   socs_RV64I_5SP               dhrystone  cycles=11918396    retired=10000001  CPI=1.192
+   socs_RV64I_5SP               coremark   cycles=12933217    retired=10000000  CPI=1.293
+   socs_RV64IM_5SP              dhrystone  cycles=12790556    retired=10000000  CPI=1.279
+   socs_RV64IM_5SP              coremark   cycles=12845919    retired=10000001  CPI=1.285
+   socs_RV64IM_6SP              dhrystone  cycles=13281651    retired=10000000  CPI=1.328
+   socs_RV64IM_6SP              coremark   cycles=14116173    retired=10000001  CPI=1.412
+   socs_RV64IM_7SP              dhrystone  cycles=16591053    retired=10000000  CPI=1.659
+   socs_RV64IM_7SP              coremark   cycles=16712848    retired=10000001  CPI=1.671
+   socs_RV64IM_7SP_BRAM         dhrystone  cycles=18193618    retired=10000000  CPI=1.819
+   socs_RV64IM_7SP_BRAM         coremark   cycles=17271020    retired=10000001  CPI=1.727
+   socs_RV64IM_7SP_BRAM_Opt     dhrystone  cycles=18762015    retired=10000000  CPI=1.876
+   socs_RV64IM_7SP_BRAM_Opt     coremark   cycles=17508339    retired=10000001  CPI=1.751
+   socs_RV64IM_8SP              dhrystone  cycles=21992379    retired=10000000  CPI=2.199
+   socs_RV64IM_8SP              coremark   cycles=20909384    retired=10000001  CPI=2.091
+   socs_RV64IM_8SP_withoutOpt   dhrystone  cycles=21423982    retired=10000000  CPI=2.142
+   socs_RV64IM_8SP_withoutOpt   coremark   cycles=20672026    retired=10000001  CPI=2.067
+
+=== dhrystone : CPI and instruction mix ===
+variant                         CPI    IPC    br%  mispred  miss%   ld%   st%    mul    div
+-------------------------------------------------------------------------------------------
+socs_RV32I_5SP                1.178  0.849  15.6%   343225  22.0% 19.2% 16.5%      0      0
+socs_RV32IM_5SP               1.260  0.793  14.3%   270161  18.9% 20.6% 17.7%  24544  24555
+socs_RV32IM_6SP               1.305  0.767  14.3%   270161  18.9% 20.6% 17.7%  24544  24555
+socs_RV32IM_7SP               1.614  0.619  14.3%   270161  18.9% 20.6% 17.7%  24544  24555
+socs_RV32IM_7SP_BRAM          1.779  0.562  14.3%   245618  17.2% 20.6% 17.7%  24544  24555
+socs_RV32IM_7SP_BRAM_Opt      1.833  0.545  14.3%   245618  17.2% 20.6% 17.7%  24544  24555
+socs_RV32IM_8SP               2.138  0.468  14.3%   245618  17.2% 20.6% 17.7%  24544  24555
+socs_RV32IM_8SP_withoutOpt    2.084  0.480  14.3%   245618  17.2% 20.6% 17.7%  24544  24555
+socs_RV64I_5SP                1.192  0.839  15.6%   383761  24.6% 18.2% 16.1%      0      0
+socs_RV64IM_5SP               1.279  0.782  14.2%   310048  21.8% 19.6% 17.3%  25822  25833
+socs_RV64IM_6SP               1.328  0.753  14.2%   310048  21.8% 19.6% 17.3%  25822  25833
+socs_RV64IM_7SP               1.659  0.603  14.2%   310048  21.8% 19.6% 17.3%  25822  25833
+socs_RV64IM_7SP_BRAM          1.819  0.550  14.2%   284219  20.0% 19.6% 17.3%  25822  25833
+socs_RV64IM_7SP_BRAM_Opt      1.876  0.533  14.2%   284219  20.0% 19.6% 17.3%  25822  25833
+socs_RV64IM_8SP               2.199  0.455  14.2%   284218  20.0% 19.6% 17.3%  25822  25833
+socs_RV64IM_8SP_withoutOpt    2.142  0.467  14.2%   284218  20.0% 19.6% 17.3%  25822  25833
+
+=== dhrystone : stall cycles (% of total) ===
+variant                           pc stall  front-end st   ID/EX stall  EXR/EX stall  EX/EX2 stall  EX/MEM stall  MEM/WB stall  load-use haz  divider busy  multiplier b
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+socs_RV32I_5SP                        0.0%          0.0%          0.0%          0.0%          0.0%          0.0%          0.0%          0.0%          0.0%          0.0%
+socs_RV32IM_5SP                       7.8%          7.8%          7.8%          0.0%          0.0%          7.8%          7.8%          0.0%          6.8%          0.6%
+socs_RV32IM_6SP                       8.8%          8.8%          8.8%          0.0%          7.5%          7.5%          7.5%          1.3%          6.6%          0.6%
+socs_RV32IM_7SP                       7.1%          7.1%          7.1%          0.0%          6.1%          6.1%          6.1%          1.1%          5.3%          0.5%
+socs_RV32IM_7SP_BRAM                 16.4%         16.4%         16.4%          0.0%         15.5%         15.5%         15.5%          1.2%          4.8%          0.4%
+socs_RV32IM_7SP_BRAM_Opt             16.0%         16.0%         16.0%          0.0%         15.0%         15.0%         15.0%          1.2%          4.7%          0.4%
+socs_RV32IM_8SP                      24.3%         24.3%         24.3%         12.9%         12.9%         12.9%         12.9%         17.5%          4.0%          0.3%
+socs_RV32IM_8SP_withoutOpt           24.9%         24.9%         24.9%         13.2%         13.2%         13.2%         13.2%         17.3%          4.1%          0.4%
+socs_RV64I_5SP                        0.0%          0.0%          0.0%          0.0%          0.0%          0.0%          0.0%          0.0%          0.0%          0.0%
+socs_RV64IM_5SP                       8.1%          8.1%          8.1%          0.0%          0.0%          8.1%          8.1%          0.0%          7.1%          0.6%
+socs_RV64IM_6SP                       9.1%          9.1%          9.1%          0.0%          7.8%          7.8%          7.8%          1.4%          6.8%          0.6%
+socs_RV64IM_7SP                       7.3%          7.3%          7.3%          0.0%          6.2%          6.2%          6.2%          1.1%          5.5%          0.5%
+socs_RV64IM_7SP_BRAM                 16.2%         16.2%         16.2%          0.0%         15.2%         15.2%         15.2%          1.3%          5.0%          0.4%
+socs_RV64IM_7SP_BRAM_Opt             15.7%         15.7%         15.7%          0.0%         14.7%         14.7%         14.7%          1.2%          4.8%          0.4%
+socs_RV64IM_8SP                      24.2%         24.2%         24.2%         12.6%         12.6%         12.6%         12.6%         18.0%          4.1%          0.4%
+socs_RV64IM_8SP_withoutOpt           24.9%         24.9%         24.9%         12.9%         12.9%         12.9%         12.9%         17.7%          4.2%          0.4%
+
+=== coremark : CPI and instruction mix ===
+variant                         CPI    IPC    br%  mispred  miss%   ld%   st%    mul    div
+-------------------------------------------------------------------------------------------
+socs_RV32I_5SP                1.302  0.768  27.3%  1136331  41.7%  7.8%  2.0%      0      0
+socs_RV32IM_5SP               1.334  0.750  17.6%   717542  40.8% 19.7%  5.2% 338353      1
+socs_RV32IM_6SP               1.481  0.675  17.6%   717542  40.8% 19.7%  5.2% 338353      1
+socs_RV32IM_7SP               1.776  0.563  17.6%   717543  40.8% 19.7%  5.2% 338353      1
+socs_RV32IM_7SP_BRAM          1.842  0.543  17.6%   738348  42.0% 19.7%  5.2% 338353      1
+socs_RV32IM_7SP_BRAM_Opt      1.869  0.535  17.6%   738348  42.0% 19.7%  5.2% 338353      1
+socs_RV32IM_8SP               2.240  0.446  17.6%   738560  42.0% 19.7%  5.2% 338353      1
+socs_RV32IM_8SP_withoutOpt    2.213  0.452  17.6%   738560  42.0% 19.7%  5.2% 338353      1
+socs_RV64I_5SP                1.293  0.773  26.5%  1150680  43.5%  6.3%  1.6%      0      0
+socs_RV64IM_5SP               1.285  0.778  15.2%   621622  41.0% 16.6%  4.3% 281977      1
+socs_RV64IM_6SP               1.412  0.708  15.2%   621622  41.0% 16.6%  4.3% 281977      1
+socs_RV64IM_7SP               1.671  0.598  15.2%   621622  41.0% 16.6%  4.3% 281977      1
+socs_RV64IM_7SP_BRAM          1.727  0.579  15.2%   642949  42.4% 16.6%  4.3% 281977      1
+socs_RV64IM_7SP_BRAM_Opt      1.751  0.571  15.2%   642949  42.4% 16.6%  4.3% 281977      1
+socs_RV64IM_8SP               2.091  0.478  15.2%   645525  42.6% 16.6%  4.3% 281977      1
+socs_RV64IM_8SP_withoutOpt    2.067  0.484  15.2%   645525  42.6% 16.6%  4.3% 281977      1
+
+=== coremark : stall cycles (% of total) ===
+variant                           pc stall  front-end st   ID/EX stall  EXR/EX stall  EX/EX2 stall  EX/MEM stall  MEM/WB stall  load-use haz  divider busy  multiplier b
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+socs_RV32I_5SP                        0.0%          0.0%          0.0%          0.0%          0.0%          0.0%          0.0%          0.0%          0.0%          0.0%
+socs_RV32IM_5SP                      10.1%         10.1%         10.1%          0.0%          0.0%         10.1%         10.1%          0.0%          0.0%          7.6%
+socs_RV32IM_6SP                      14.2%         14.2%         14.2%          0.0%          9.1%          9.1%          9.1%          5.1%          0.0%          6.9%
+socs_RV32IM_7SP                      11.8%         11.8%         11.8%          0.0%          7.6%          7.6%          7.6%          4.2%          0.0%          5.7%
+socs_RV32IM_7SP_BRAM                 14.3%         14.3%         14.3%          0.0%         10.2%         10.2%         10.2%          4.3%          0.0%          5.5%
+socs_RV32IM_7SP_BRAM_Opt             14.1%         14.1%         14.1%          0.0%         10.0%         10.0%         10.0%          4.2%          0.0%          5.4%
+socs_RV32IM_8SP                      23.8%         23.8%         23.8%          8.4%          8.4%          8.4%          8.4%         17.5%          0.0%          4.5%
+socs_RV32IM_8SP_withoutOpt           24.1%         24.1%         24.1%          8.5%          8.5%          8.5%          8.5%         16.9%          0.0%          4.6%
+socs_RV64I_5SP                        0.0%          0.0%          0.0%          0.0%          0.0%          0.0%          0.0%          0.0%          0.0%          0.0%
+socs_RV64IM_5SP                       8.8%          8.8%          8.8%          0.0%          0.0%          8.8%          8.8%          0.0%          0.0%          6.6%
+socs_RV64IM_6SP                      12.6%         12.6%         12.6%          0.0%          8.0%          8.0%          8.0%          4.6%          0.0%          6.0%
+socs_RV64IM_7SP                      10.6%         10.6%         10.6%          0.0%          6.7%          6.7%          6.7%          3.9%          0.0%          5.1%
+socs_RV64IM_7SP_BRAM                 12.8%         12.8%         12.8%          0.0%          9.0%          9.0%          9.0%          4.0%          0.0%          4.9%
+socs_RV64IM_7SP_BRAM_Opt             12.6%         12.6%         12.6%          0.0%          8.9%          8.9%          8.9%          3.9%          0.0%          4.8%
+socs_RV64IM_8SP                      22.5%         22.5%         22.5%          7.5%          7.5%          7.5%          7.5%         17.0%          0.0%          4.0%
+socs_RV64IM_8SP_withoutOpt           22.8%         22.8%         22.8%          7.6%          7.6%          7.6%          7.6%         16.5%          0.0%          4.1%
+
+wrote /home/khwl/Desktop/RV-IM100/riscof-env/logs/profile.csv

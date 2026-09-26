@@ -1,0 +1,109 @@
+# ---- RV-IM100: RTL, Vivado projects, verification harness and measured data ----
+# The repository is self-contained: every number in the workbooks can be
+# regenerated from here alone.  What is ignored below is regenerable output.
+
+# Vivado build output under the projects: regenerable from the sources, and the
+# routed .dcp checkpoints in particular are what silently drove incremental
+# implementation and broke reproducibility.  The .gen output products are
+# regenerated from the .xci files in <project>.srcs.
+RV-IM100_RTL/**/*.runs/
+RV-IM100_RTL/**/*.cache/
+RV-IM100_RTL/**/*.sim/
+RV-IM100_RTL/**/*.hw/
+RV-IM100_RTL/**/*.ip_user_files/
+RV-IM100_RTL/**/*.gen/
+# Vivado per-session scratch directories.  The path embeds the PID and the
+# machine hostname.
+**/.Xil/
+
+# Working copies made by the frequency sweep: each is a throwaway clone of a
+# project, implemented at a candidate clock so the measured project is never
+# disturbed.
+RV-IM100_RTL/project_files/.sweep/
+# Throwaway project copies used to test memory-configuration changes in
+# isolation.
+RV-IM100_RTL/project_files/.memtest/
+# Per-benchmark Embench project copies: regenerable from the variant's
+# CoreMark project plus build_embench_fpga.sh and the harness.
+RV-IM100_RTL/**/*_Embench_*/
+
+# Vivado design checkpoints.  Excluded for a specific reason, not only size:
+# a routed .dcp sitting under <project>.srcs/utils_1/imports/impl_1/ is picked
+# up by Vivado as an AutoIncremental reference, so implementation starts from a
+# previous routed design instead of from the sources.  That made repeated runs
+# of the same configuration disagree, and it is invisible unless you read the
+# run log.  Checkpoints are regenerable from the sources; keeping them out means
+# a clone cannot inherit the problem.
+*.dcp
+# Vivado binary report archives: same content as the .rpt text reports beside
+# them, which stay tracked and are readable and diffable.
+*.rpx
+*.pb
+
+# Regenerable simulation artifacts
+riscof-env/build/
+riscof-env/work/
+riscof-env/riscof_work/
+# (riscof-env/sim/ holds tb_sim_top.cpp -- source, tracked)
+# Verilator builds of the comparison-core throughput simulators.
+comparison_cores/throughput/build/sim_*/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Editor / OS
+*.swp
+*~
+.DS_Store
+.~lock.*#
+
+# Large binaries that should never enter history
+*.bit
+*.vcd
+*.elf
+*.o
+*.disass
+*.py.bak
+node_modules/
+# SAIF simulation artifacts: netlists, SDF, xsim snapshots and captured SAIF are
+# large and regenerable. The results/ summaries and the scripts are what matter.
+riscof-env/saif/*/netlist.v
+riscof-env/saif/*/netlist.sdf
+riscof-env/saif/*/xsim.dir/
+# kernel.saif is the MEASURED switching activity behind every power number.
+# Regenerating one takes ~30 min and is not bit-identical across tool versions,
+# so the captures are archived rather than treated as regenerable.
+# kernel.saif IS tracked; the windowed intermediates are not.
+riscof-env/saif/*/win_*.saif
+riscof-env/saif/*/w[0-9].saif
+riscof-env/saif/*/activity.saif
+riscof-env/saif/*/live.saif
+riscof-env/saif/*/*.wdb
+riscof-env/saif/*/glbl.v
+riscof-env/saif/rtl_probe/
+riscof-env/saif/*/*.log
+riscof-env/saif/*/*.tcl
+riscof-env/saif/*/*.v
+
+# Comparison cores: upstream sources are fetched, not vendored.  What matters
+# for reproducibility is the exact commit/version, the synthesis wrapper, the
+# constraint and the generator script -- all of which ARE tracked.  The upstream
+# trees, the sbt build output and the downloaded archive are not.
+comparison_cores/picorv32/
+comparison_cores/rvcorep/
+comparison_cores/rvcorep_orig/
+comparison_cores/rvcorep_orig.zip
+comparison_cores/VexRiscv/
+# SAIF re-captures (saif_v2): same policy as saif/ above. kernel.saif and the
+# power reports are the measurement and stay tracked; netlists, SDF, waveform
+# databases and xsim snapshots are large and regenerable.
+riscof-env/saif_v2/**/netlist.v
+riscof-env/saif_v2/**/netlist.sdf
+riscof-env/saif_v2/**/*.wdb
+riscof-env/saif_v2/**/xsim.dir/
+# Verilator builds of the T6 trigger-monitor and T8 stall-accounting
+# simulators: regenerable from riscof-env/scripts.
+riscof-env/build_t6/
+riscof-env/build_t8/

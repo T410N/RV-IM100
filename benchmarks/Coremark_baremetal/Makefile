@@ -19,17 +19,22 @@ ASM_SRC  = crt0.S
 LDSCRIPT = linker.ld
 
 # Architecture flags - RV64IM with Zicsr extension
-ARCH_FLAGS = -march=rv64i_zicsr -mabi=lp64
+ARCH_FLAGS = -march=rv64im_zicsr -mabi=lp64
 
 # CoreMark configuration
 ITERATIONS ?= 0
+
+# CPU clock in Hz, compiled in as EE_TICKS_PER_SEC.
+# Override per build:  make CPU_FREQ_HZ=92000000 verilog
+CPU_FREQ_HZ ?= 100000000
 TOTAL_DATA_SIZE ?= 2000
 
 # Compiler flags string for reporting
-FLAGS_STR = "-O2 -march=rv64i_zicsr -mabi=lp64 -fno-common -funroll-loops"
+FLAGS_STR = "-O2 -march=rv64im_zicsr -mabi=lp64 -fno-common -funroll-loops"
 
 # CoreMark flags
 CM_CFLAGS  = -DITERATIONS=$(ITERATIONS)
+CM_CFLAGS += -DEE_TICKS_PER_SEC=$(CPU_FREQ_HZ)
 CM_CFLAGS += -DTOTAL_DATA_SIZE=$(TOTAL_DATA_SIZE)
 CM_CFLAGS += -DFLAGS_STR=\"$(FLAGS_STR)\"
 CM_CFLAGS += -DPERFORMANCE_RUN=1
@@ -52,7 +57,7 @@ CFLAGS  = $(ARCH_FLAGS)
 CFLAGS += $(OPT_FLAGS) $(WARN_FLAGS) $(CODE_FLAGS)
 CFLAGS += $(CM_CFLAGS)
 
-ASFLAGS = $(ARCH_FLAGS) -Wa,-march=rv64i_zicsr
+ASFLAGS = $(ARCH_FLAGS) -Wa,-march=rv64im_zicsr
 
 # Linker flags
 LDFLAGS  = $(ARCH_FLAGS)

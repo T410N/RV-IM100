@@ -1,0 +1,164 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date             : Tue Sep 22 17:22:46 2026
+| Host             : khwl-ThinkPad-X1-Carbon-Gen-13 running 64-bit Ubuntu 24.04.4 LTS
+| Command          : report_power -hier all -file /home/khwl/Desktop/RV-IM100/riscof-env/saif_recost/RV32IM_7SP_coremark/power_saif_hier.rpt
+| Design           : RV32IM72F7SPSoCTOP
+| Device           : xc7a200tsbg484-1
+| Design State     : routed
+| Grade            : commercial
+| Process          : typical
+| Characterization : Production
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Power Report
+
+Table of Contents
+-----------------
+1. Summary
+1.1 On-Chip Components
+1.2 Power Supply Summary
+1.3 Confidence Level
+2. Settings
+2.1 Environment
+2.2 Clock Constraints
+3. Detailed Reports
+3.1 By Hierarchy
+
+1. Summary
+----------
+
++--------------------------+-------------------------------------------------------------------------------------------+
+| Total On-Chip Power (W)  | 0.364                                                                                     |
+| Design Power Budget (W)  | Unspecified*                                                                              |
+| Power Budget Margin (W)  | NA                                                                                        |
+| Dynamic (W)              | 0.212                                                                                     |
+| Device Static (W)        | 0.152                                                                                     |
+| Effective TJA (C/W)      | 3.3                                                                                       |
+| Max Ambient (C)          | 83.8                                                                                      |
+| Junction Temperature (C) | 26.2                                                                                      |
+| Confidence Level         | High                                                                                      |
+| Setting File             | ---                                                                                       |
+| Simulation Activity File | /home/khwl/Desktop/RV-IM100/riscof-env/saif/RV32IM_7SP_coremark/kernel.saif |
+| Design Nets Matched      | 80%   (15688/19645)                                                                       |
++--------------------------+-------------------------------------------------------------------------------------------+
+* Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
+
+
+1.1 On-Chip Components
+----------------------
+
++--------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
++--------------------------+-----------+----------+-----------+-----------------+
+| Clocks                   |     0.013 |        5 |       --- |             --- |
+| Slice Logic              |     0.030 |    18702 |       --- |             --- |
+|   LUT as Logic           |     0.027 |     6310 |    134600 |            4.69 |
+|   F7/F8 Muxes            |     0.002 |     4972 |    134600 |            3.69 |
+|   LUT as Distributed RAM |    <0.001 |     4140 |     46200 |            8.96 |
+|   Register               |    <0.001 |     2693 |    269200 |            1.00 |
+|   CARRY4                 |    <0.001 |      188 |     33650 |            0.56 |
+|   Others                 |     0.000 |       34 |       --- |             --- |
+| Signals                  |     0.055 |     8269 |       --- |             --- |
+| Block RAM                |     0.008 |        8 |       365 |            2.19 |
+| PLL                      |     0.103 |        1 |        10 |           10.00 |
+| DSPs                     |     0.000 |        4 |       740 |            0.54 |
+| I/O                      |     0.003 |       12 |       285 |            4.21 |
+| Static Power             |     0.152 |          |           |                 |
+| Total                    |     0.364 |          |           |                 |
++--------------------------+-----------+----------+-----------+-----------------+
+
+
+1.2 Power Supply Summary
+------------------------
+
++-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
+| Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
++-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
+| Vccint    |       1.000 |     0.146 |       0.115 |      0.031 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.083 |       0.052 |      0.031 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.005 |       0.000 |      0.005 |       NA    | Unspecified | NA         |
+| Vcco25    |       2.500 |     0.006 |       0.001 |      0.005 |       NA    | Unspecified | NA         |
+| Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vccbram   |       1.000 |     0.002 |       0.001 |      0.001 |       NA    | Unspecified | NA         |
+| MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |       NA    | Unspecified | NA         |
++-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
+
+
+1.3 Confidence Level
+--------------------
+
++-----------------------------+------------+------------------------------------------------+--------+
+| User Input Data             | Confidence | Details                                        | Action |
++-----------------------------+------------+------------------------------------------------+--------+
+| Design implementation state | High       | Design is routed                               |        |
+| Clock nodes activity        | High       | User specified more than 95% of clocks         |        |
+| I/O nodes activity          | High       | User specified more than 95% of inputs         |        |
+| Internal nodes activity     | High       | User specified more than 25% of internal nodes |        |
+| Device models               | High       | Device models are Production                   |        |
+|                             |            |                                                |        |
+| Overall confidence level    | High       |                                                |        |
++-----------------------------+------------+------------------------------------------------+--------+
+
+
+2. Settings
+-----------
+
+2.1 Environment
+---------------
+
++-----------------------+--------------------------+
+| Ambient Temp (C)      | 25.0                     |
+| ThetaJA (C/W)         | 3.3                      |
+| Airflow (LFM)         | 250                      |
+| Heat Sink             | medium (Medium Profile)  |
+| ThetaSA (C/W)         | 4.6                      |
+| Board Selection       | medium (10"x10")         |
+| # of Board Layers     | 12to15 (12 to 15 Layers) |
+| Board Temperature (C) | 25.0                     |
++-----------------------+--------------------------+
+
+
+2.2 Clock Constraints
+---------------------
+
++--------------------+---------------------------------+-----------------+
+| Clock              | Domain                          | Constraint (ns) |
++--------------------+---------------------------------+-----------------+
+| clk                | clk                             |            10.0 |
+| clk_out1_clk_wiz_0 | clk_gen/inst/clk_out1_clk_wiz_0 |            17.4 |
+| clkfbout_clk_wiz_0 | clk_gen/inst/clkfbout_clk_wiz_0 |            50.0 |
++--------------------+---------------------------------+-----------------+
+
+
+3. Detailed Reports
+-------------------
+
+3.1 By Hierarchy
+----------------
+
++------------------------+-----------+---------+-----------+------+--------+----------+------------+---------+-----------+--------+----------+-------+---------+------------+--------------+
+| Name                   | Power (W) | Clock # | Clock (W) | Io # | Io (W) | Signal # | Signal (W) | Logic # | Logic (W) | Bram # | Bram (W) | Dsp # | Dsp (W) | Clock IP # | Clock IP (W) |
++------------------------+-----------+---------+-----------+------+--------+----------+------------+---------+-----------+--------+----------+-------+---------+------------+--------------+
+| RV32IM72F7SPSoCTOP     |     0.212 |       5 |     0.013 |   12 |  0.003 |     8269 |      0.055 |   18702 |     0.030 |      8 |    0.008 |     4 |   0.000 |          1 |        0.103 |
+|   clk_gen              |     0.104 |       5 |    <0.001 |    1 | <0.001 |        1 |      0.000 |       2 |     0.000 |      0 |    0.000 |     0 |   0.000 |          1 |        0.103 |
+|     inst               |     0.104 |       5 |    <0.001 |    1 | <0.001 |        1 |      0.000 |       2 |     0.000 |      0 |    0.000 |     0 |   0.000 |          1 |        0.103 |
+|   rv32im72f_7sp        |     0.105 |       5 |     0.013 |    0 |  0.000 |     8163 |      0.055 |   18562 |     0.030 |      8 |    0.008 |     4 |   0.000 |          0 |        0.000 |
+|     alu                |     0.001 |       5 |    <0.001 |    0 |  0.000 |     1300 |     <0.001 |    1260 |    <0.001 |      0 |    0.000 |     4 |   0.000 |          0 |        0.000 |
+|     data_memory        |     0.009 |       5 |     0.008 |    0 |  0.000 |     1192 |     <0.001 |    7592 |     0.001 |      0 |    0.000 |     0 |   0.000 |          0 |        0.000 |
+|     ex_ex2_register    |     0.043 |       5 |    <0.001 |    0 |  0.000 |     1801 |      0.020 |    5375 |     0.022 |      0 |    0.000 |     0 |   0.000 |          0 |        0.000 |
+|     ex_mem_register    |     0.027 |       5 |    <0.001 |    0 |  0.000 |      914 |      0.024 |     950 |     0.001 |      0 |    0.000 |     0 |   0.000 |          0 |        0.000 |
+|     id_ex_register     |     0.009 |       5 |    <0.001 |    0 |  0.000 |     1046 |      0.005 |    1312 |     0.003 |      0 |    0.000 |     0 |   0.000 |          0 |        0.000 |
+|     instruction_memory |     0.008 |       5 |    <0.001 |    0 |  0.000 |       64 |     <0.001 |      34 |    <0.001 |      8 |    0.008 |     0 |   0.000 |          0 |        0.000 |
+|     io_id_register     |     0.002 |       5 |    <0.001 |    0 |  0.000 |      289 |     <0.001 |     408 |    <0.001 |      0 |    0.000 |     0 |   0.000 |          0 |        0.000 |
+|     mem_wb_register    |     0.002 |       5 |    <0.001 |    0 |  0.000 |      457 |      0.001 |     464 |    <0.001 |      0 |    0.000 |     0 |   0.000 |          0 |        0.000 |
++------------------------+-----------+---------+-----------+------+--------+----------+------------+---------+-----------+--------+----------+-------+---------+------------+--------------+
+
+

@@ -1,0 +1,75 @@
+
+****** xsim v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Tue Sep 22 22:52:30 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_ns/xsim_script.tcl
+# xsim {tb_ns} -autoloadwcfg -tclbatch {cap.tcl}
+Time resolution is 1 ps
+source cap.tcl
+## run 70 us
+run: Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:50 . Memory (MB): peak = 1510.051 ; gain = 0.000 ; free physical = 23532 ; free virtual = 36195
+## set cands [get_objects -r /tb_saif/dut/*benchmark_start*]
+## set bs ""
+## foreach c $cands { if {![string match "*_reg*" $c]} { set bs $c; break } }
+## if {$bs eq "" && [llength $cands]} { set bs [lindex $cands 0] }
+## if {$bs eq ""} { puts "NO_BENCHMARK_START"; quit }
+## add_force $bs 1 -cancel_after 100ns
+## run 30 us
+run: Time (s): cpu = 00:00:00.23 ; elapsed = 00:01:28 . Memory (MB): peak = 1518.055 ; gain = 8.004 ; free physical = 23549 ; free virtual = 36210
+## set tb [lindex [get_objects -r /tb_saif/dut/tx_busy] 0]
+## if {$tb ne ""} { add_force $tb 0; run 1000 us; remove_forces -all; puts "FASTFWD_DONE" }
+run: Time (s): cpu = 00:00:07 ; elapsed = 00:47:00 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23561 ; free virtual = 36223
+FASTFWD_DONE
+## run 100 us
+run: Time (s): cpu = 00:00:00.7 ; elapsed = 00:04:45 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23562 ; free virtual = 36224
+## set pcq /tb_saif/dut/rv64im72f_6sp/program_counter/Q
+## puts "PCOBJ $pcq"
+PCOBJ /tb_saif/dut/rv64im72f_6sp/program_counter/Q
+## set steps [expr {100 / 10}]
+## for {set try 0} {$try < 6} {incr try} {
+##     set u0 [get_value -radix dec /tb_saif/uart_chars]
+##     open_saif kernel.saif
+##     log_saif [get_objects -r /tb_saif/dut/*]
+##     for {set s 0} {$s < $steps} {incr s} {
+##         if {[catch {set pv [get_value -radix hex $pcq]}]} {set pv NA}; puts "PC t=[current_time] pc=$pv"
+##         run 10 us
+##     }
+##     if {[catch {set pv [get_value -radix hex $pcq]}]} {set pv NA}; puts "PC t=[current_time] pc=$pv"
+##     close_saif
+##     set du [expr {[get_value -radix dec /tb_saif/uart_chars] - $u0}]
+##     puts "WINDOW try=$try uart_delta=$du len=100us"
+##     if {$du <= 1} { puts "WINDOW_ACCEPTED uart_delta=$du"; break }
+##     if {$try == 5} { puts "WINDOW_BEST_EFFORT uart_delta=$du" }
+## }
+get_objects: Time (s): cpu = 00:00:41 ; elapsed = 00:00:41 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23553 ; free virtual = 36215
+PC t=1200 us pc=00000000000006e4
+run: Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:31 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23539 ; free virtual = 36201
+PC t=1210 us pc=00000000000006fc
+run: Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:31 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23534 ; free virtual = 36196
+PC t=1220 us pc=00000000000007dc
+run: Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:31 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23534 ; free virtual = 36196
+PC t=1230 us pc=00000000000006ec
+run: Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:30 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23535 ; free virtual = 36197
+PC t=1240 us pc=00000000000006f8
+run: Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:31 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23535 ; free virtual = 36197
+PC t=1250 us pc=00000000000006f8
+run: Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:30 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23534 ; free virtual = 36196
+PC t=1260 us pc=0000000000000188
+run: Time (s): cpu = 00:00:00.17 ; elapsed = 00:00:35 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23532 ; free virtual = 36195
+PC t=1270 us pc=000000000000017c
+run: Time (s): cpu = 00:00:00.17 ; elapsed = 00:00:33 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23532 ; free virtual = 36194
+PC t=1280 us pc=00000000000032d8
+run: Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:36 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23524 ; free virtual = 36186
+PC t=1290 us pc=00000000000032d0
+run: Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:34 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23533 ; free virtual = 36195
+PC t=1300 us pc=0000000000000304
+WINDOW try=0 uart_delta=0 len=100us
+WINDOW_ACCEPTED uart_delta=0
+## quit
+INFO: xsimkernel Simulation Memory Usage: 596900 KB (Peak: 640256 KB), Simulation CPU Usage: 3566110 ms
+INFO: [Common 17-206] Exiting xsim at Tue Sep 22 23:52:39 2026...

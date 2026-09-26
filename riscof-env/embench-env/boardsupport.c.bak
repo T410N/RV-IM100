@@ -1,0 +1,63 @@
+/* Embench board support for the RV-IM100 family.
+ *
+ * Timing comes from the cores' own mcycle/minstret CSRs, so the same binary
+ * measures itself identically on the FPGA and under simulation.  The upstream
+ * RISC-V examples use rdcycle (CSR 0xC00) and mcountinhibit; these cores
+ * implement neither, exposing mcycle at 0xB00 and minstret at 0xB02 and
+ * counting unconditionally, so the CSRs are read directly and differenced.
+ *
+ * start_trigger/stop_trigger also write a simulation-only control register.
+ * That lets the testbench count stall cycles over exactly the timed region
+ * instead of the whole program, so startup and verification do not pollute
+ * the CPI and stall figures.  On hardware the write lands on an address the
+ * SoC decodes as neither RAM nor ROM and is harmless.
+ *
+ * The nops around each CSR read are required: the CSR path is two cycles and
+ * is not interlocked, so a consumer placed immediately after csrr reads a
+ * stale value on the deeper pipelines.
+ */
+#include <stdint.h>
+#include <support.h>
+
+#define PROF_CTRL (*(volatile uint32_t *) 0x10011000u)
+
+volatile unsigned long long bench_cycles;
+volatile unsigned long long bench_instret;
+
+static unsigned long long c_start, i_start;
+
+static inline unsigned long long rd_mcycle (void)
+{
+  unsigned long long v;
+  __asm__ volatile ("csrr %0, 0xB00\n\t nop\n\t nop\n\t nop\n\t nop"
+                    : "=r" (v) :: "memory");
+  return v;
+}
+
+static inline unsigned long long rd_minstret (void)
+{
+  unsigned long long v;
+  __asm__ volatile ("csrr %0, 0xB02\n\t nop\n\t nop\n\t nop\n\t nop"
+                    : "=r" (v) :: "memory");
+  return v;
+}
+
+void initialise_board (void)
+{
+}
+
+void __attribute__ ((noinline)) start_trigger (void)
+{
+  PROF_CTRL = 1u;
+  c_start = rd_mcycle ();
+  i_start = rd_minstret ();
+}
+
+void __attribute__ ((noinline)) stop_trigger (void)
+{
+  unsigned long long c = rd_mcycle ();
+  unsigned long long i = rd_minstret ();
+  bench_cycles  = c - c_start;
+  bench_instret = i - i_start;
+  PROF_CTRL = 0u;
+}
