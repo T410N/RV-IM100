@@ -1,0 +1,54 @@
+
+****** xsim v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Tue Sep 22 16:31:06 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_ns/xsim_script.tcl
+# xsim {tb_ns} -autoloadwcfg -tclbatch {cap.tcl}
+Time resolution is 1 ps
+source cap.tcl
+## run 70 us
+run: Time (s): cpu = 00:00:00.2 ; elapsed = 00:01:47 . Memory (MB): peak = 1574.051 ; gain = 0.000 ; free physical = 5292 ; free virtual = 22224
+## set cands [get_objects -r /tb_saif/dut/*benchmark_start*]
+## set bs ""
+## foreach c $cands { if {![string match "*_reg*" $c]} { set bs $c; break } }
+## if {$bs eq "" && [llength $cands]} { set bs [lindex $cands 0] }
+## if {$bs eq ""} { puts "NO_BENCHMARK_START"; quit }
+## add_force $bs 1 -cancel_after 100ns
+## run 30 us
+run: Time (s): cpu = 00:00:00.36 ; elapsed = 00:03:28 . Memory (MB): peak = 1582.055 ; gain = 8.004 ; free physical = 5192 ; free virtual = 22207
+## set tb [lindex [get_objects -r /tb_saif/dut/tx_busy] 0]
+## if {$tb ne ""} { add_force $tb 0; run 1000 us; remove_forces -all; puts "FASTFWD_DONE" }
+run: Time (s): cpu = 00:00:14 ; elapsed = 01:57:45 . Memory (MB): peak = 1582.055 ; gain = 0.000 ; free physical = 6277 ; free virtual = 23257
+FASTFWD_DONE
+## run 100 us
+run: Time (s): cpu = 00:00:00.73 ; elapsed = 00:06:30 . Memory (MB): peak = 1582.055 ; gain = 0.000 ; free physical = 6323 ; free virtual = 23310
+WARNING: [Simtcl 6-168] No object found for the given pattern.
+## set pcq [lindex [get_objects -r /tb_saif/dut/*/program_counter/Q] 0]
+## puts "PCOBJ $pcq"
+PCOBJ 
+## set steps [expr {100 / 10}]
+## for {set try 0} {$try < 6} {incr try} {
+##     set u0 [get_value -radix dec /tb_saif/uart_chars]
+##     open_saif kernel.saif
+##     log_saif [get_objects -r /tb_saif/dut/*]
+##     for {set s 0} {$s < $steps} {incr s} {
+##         puts "PC t=[current_time] pc=[get_value -radix hex $pcq]"
+##         run 10 us
+##     }
+##     puts "PC t=[current_time] pc=[get_value -radix hex $pcq]"
+##     close_saif
+##     set du [expr {[get_value -radix dec /tb_saif/uart_chars] - $u0}]
+##     puts "WINDOW try=$try uart_delta=$du len=100us"
+##     if {$du <= 1} { puts "WINDOW_ACCEPTED uart_delta=$du"; break }
+##     if {$try == 5} { puts "WINDOW_BEST_EFFORT uart_delta=$du" }
+## }
+get_objects: Time (s): cpu = 00:01:21 ; elapsed = 00:01:21 . Memory (MB): peak = 1582.055 ; gain = 0.000 ; free physical = 6319 ; free virtual = 23304
+ERROR: [Simtcl 6-8] No such HDL object 
+xsim: Time (s): cpu = 00:01:38 ; elapsed = 02:10:52 . Memory (MB): peak = 1582.055 ; gain = 323.547 ; free physical = 6310 ; free virtual = 23296
+INFO: xsimkernel Simulation Memory Usage: 623776 KB (Peak: 670184 KB), Simulation CPU Usage: 7592060 ms
+INFO: [Common 17-206] Exiting xsim at Tue Sep 22 18:42:00 2026...

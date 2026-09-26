@@ -1,0 +1,1562 @@
+key,value,unit,source,note
+RV32.I_5SP.core_fmax,59.214,MHz,RV32 SoC and FPGA!J3,"post-synthesis, core only, 5 ns over-constraint"
+RV32.I_5SP.soc_fmax_dhry,45.012,MHz,RV32 SoC and FPGA!J13,"post-route, Dhrystone image, at the build PLL constraint"
+RV32.I_5SP.soc_fmax_cm,45.279,MHz,RV32 SoC and FPGA!J23,"post-route, CoreMark image, at the build PLL constraint"
+RV32.I_5SP.dhry_mhz,45.0,MHz,RV32 SoC and FPGA!E3,run clock of the Dhrystone board run
+RV32.I_5SP.cm_mhz,45.0,MHz,RV32 SoC and FPGA!H3,run clock of the CoreMark board run
+RV32.I_5SP.dhrystones_per_s,87378.0,1/s,RV32 SoC and FPGA!C3,
+RV32.I_5SP.dmips,49.73136,DMIPS,RV32 SoC and FPGA!C3,Dhrystones/s / 1757
+RV32.I_5SP.dmips_per_mhz,1.105141,DMIPS/MHz,"RV32 SoC and FPGA!C3, RV32 SoC and FPGA!E3",
+RV32.I_5SP.coremark,48.53,it/s,T3/T3_fragment_corrected_coremark.csv[RV32I_5SP],true score f*iterations/cycles; master value biased by integer-second truncation
+RV32.I_5SP.coremark_reported_master,50.0,it/s,RV32 SoC and FPGA!D3,superseded
+RV32.I_5SP.coremark_per_mhz,1.078444,CM/MHz,"T3/T3_fragment_corrected_coremark.csv[RV32I_5SP], RV32 SoC and FPGA!H3",
+RV32.I_5SP.cpi_dhrystone,1.178899,cycles/instr,T3/T3_fragment_corrected_coremark.csv[RV32I_5SP],"per-iteration, RTL simulation (== FPGA)"
+RV32.I_5SP.cpi_coremark,1.301727,cycles/instr,T3/T3_fragment_corrected_coremark.csv[RV32I_5SP],"per-iteration, RTL simulation (== FPGA)"
+RV32.I_5SP.dhrystone_cycles_per_iter,514.0,cycles,T3/T3_fragment_corrected_coremark.csv[RV32I_5SP],
+RV32.I_5SP.coremark_cycles_per_iter,927283.7,cycles,T3/T3_fragment_corrected_coremark.csv[RV32I_5SP],
+RV32.I_5SP.core_lut,2676.0,count,RV32 SoC and FPGA!T3,"core-only synthesis, memory excluded"
+RV32.I_5SP.core_ff,1194.0,count,RV32 SoC and FPGA!U3,"core-only synthesis, memory excluded"
+RV32.I_5SP.core_dsp,0.0,count,RV32 SoC and FPGA!V3,"core-only synthesis, memory excluded"
+RV32.I_5SP.soc_lut_dhry,13799.0,count,RV32 SoC and FPGA!C13,"SoC, includes memories"
+RV32.I_5SP.soc_bram_dhry,0.0,count,RV32 SoC and FPGA!F13,"SoC, includes memories"
+RV32.I_5SP.soc_lut_cm,13504.0,count,RV32 SoC and FPGA!C23,"SoC, includes memories"
+RV32.I_5SP.soc_bram_cm,0.0,count,RV32 SoC and FPGA!F23,"SoC, includes memories"
+RV32.I_5SP.soc_fmax_image_spread,0.267,MHz,RV32 SoC and FPGA!J13 vs RV32 SoC and FPGA!J23,"same RTL, Dhrystone vs CoreMark image"
+RV32.I_5SP.CM_per_W,123.49,CM/W,T4/T4_normalized_metrics.csv[RV32I_5SP],
+RV32.I_5SP.mJ_per_CM_iter,8.0981,mJ,T4/T4_normalized_metrics.csv[RV32I_5SP],
+RV32.I_5SP.CM_per_W_core_attr,359.48,CM/W,T4/T4_normalized_metrics.csv[RV32I_5SP],core_attr = dynamic - PLL - I/O
+RV32.I_5SP.mJ_per_CM_iter_core_attr,2.7818,mJ,T4/T4_normalized_metrics.csv[RV32I_5SP],core_attr = dynamic - PLL - I/O
+RV32.I_5SP.uJ_per_Dhry_iter,4.3031,uJ,T4/T4_normalized_metrics.csv[RV32I_5SP],
+RV32.I_5SP.uJ_per_Dhry_iter_core_attr,1.3619,uJ,T4/T4_normalized_metrics.csv[RV32I_5SP],core_attr = dynamic - PLL - I/O
+RV32.I_5SP.CM_per_kLUT_core,18.135,CM/kLUT,T4/T4_normalized_metrics.csv[RV32I_5SP],
+RV32.I_5SP.dmips_per_klut_core,18.584215,DMIPS/kLUT,"RV32 SoC and FPGA!C3, RV32 SoC and FPGA!T3",
+RV32.I_5SP.power_dhrystone_total,0.376,W,"T4/T4_saif_authoritative.csv[RV32I_5SP,dhrystone]","SAIF, v1 capture re-costed on final impl"
+RV32.I_5SP.power_dhrystone_dynamic,0.224,W,"T4/T4_saif_authoritative.csv[RV32I_5SP,dhrystone]",
+RV32.I_5SP.power_dhrystone_core_attr,0.119,W,"T4/T4_saif_authoritative.csv[RV32I_5SP,dhrystone]",dynamic - PLL - I/O
+RV32.I_5SP.power_dhrystone_saif_coverage,53.8,%,"T4/T4_saif_authoritative.csv[RV32I_5SP,dhrystone]",read_saif nets matched
+RV32.I_5SP.power_coremark_total,0.393,W,"T4/T4_saif_authoritative.csv[RV32I_5SP,coremark]","SAIF, v1 capture re-costed on final impl"
+RV32.I_5SP.power_coremark_dynamic,0.241,W,"T4/T4_saif_authoritative.csv[RV32I_5SP,coremark]",
+RV32.I_5SP.power_coremark_core_attr,0.135,W,"T4/T4_saif_authoritative.csv[RV32I_5SP,coremark]",dynamic - PLL - I/O
+RV32.I_5SP.power_coremark_saif_coverage,73.5,%,"T4/T4_saif_authoritative.csv[RV32I_5SP,coremark]",read_saif nets matched
+RV32.IM_5SP.core_fmax,57.998,MHz,RV32 SoC and FPGA!J4,"post-synthesis, core only, 5 ns over-constraint"
+RV32.IM_5SP.soc_fmax_dhry,43.137,MHz,RV32 SoC and FPGA!J14,"post-route, Dhrystone image, at the build PLL constraint"
+RV32.IM_5SP.soc_fmax_cm,43.128,MHz,RV32 SoC and FPGA!J24,"post-route, CoreMark image, at the build PLL constraint"
+RV32.IM_5SP.dhry_mhz,43.0,MHz,RV32 SoC and FPGA!E4,run clock of the Dhrystone board run
+RV32.IM_5SP.cm_mhz,43.0,MHz,RV32 SoC and FPGA!H4,run clock of the CoreMark board run
+RV32.IM_5SP.dhrystones_per_s,83820.0,1/s,RV32 SoC and FPGA!C4,
+RV32.IM_5SP.dmips,47.706318,DMIPS,RV32 SoC and FPGA!C4,Dhrystones/s / 1757
+RV32.IM_5SP.dmips_per_mhz,1.109449,DMIPS/MHz,"RV32 SoC and FPGA!C4, RV32 SoC and FPGA!E4",
+RV32.IM_5SP.coremark,115.22,it/s,T3/T3_fragment_corrected_coremark.csv[RV32IM_5SP],true score f*iterations/cycles; master value biased by integer-second truncation
+RV32.IM_5SP.coremark_reported_master,117.0,it/s,RV32 SoC and FPGA!D4,superseded
+RV32.IM_5SP.coremark_per_mhz,2.679535,CM/MHz,"T3/T3_fragment_corrected_coremark.csv[RV32IM_5SP], RV32 SoC and FPGA!H4",
+RV32.IM_5SP.cpi_dhrystone,1.261084,cycles/instr,T3/T3_fragment_corrected_coremark.csv[RV32IM_5SP],"per-iteration, RTL simulation (== FPGA)"
+RV32.IM_5SP.cpi_coremark,1.332971,cycles/instr,T3/T3_fragment_corrected_coremark.csv[RV32IM_5SP],"per-iteration, RTL simulation (== FPGA)"
+RV32.IM_5SP.dhrystone_cycles_per_iter,512.0,cycles,T3/T3_fragment_corrected_coremark.csv[RV32IM_5SP],
+RV32.IM_5SP.coremark_cycles_per_iter,373195.7,cycles,T3/T3_fragment_corrected_coremark.csv[RV32IM_5SP],
+RV32.IM_5SP.core_lut,3759.0,count,RV32 SoC and FPGA!T4,"core-only synthesis, memory excluded"
+RV32.IM_5SP.core_ff,1719.0,count,RV32 SoC and FPGA!U4,"core-only synthesis, memory excluded"
+RV32.IM_5SP.core_dsp,4.0,count,RV32 SoC and FPGA!V4,"core-only synthesis, memory excluded"
+RV32.IM_5SP.soc_lut_dhry,12559.0,count,RV32 SoC and FPGA!C14,"SoC, includes memories"
+RV32.IM_5SP.soc_bram_dhry,0.0,count,RV32 SoC and FPGA!F14,"SoC, includes memories"
+RV32.IM_5SP.soc_lut_cm,13983.0,count,RV32 SoC and FPGA!C24,"SoC, includes memories"
+RV32.IM_5SP.soc_bram_cm,0.0,count,RV32 SoC and FPGA!F24,"SoC, includes memories"
+RV32.IM_5SP.soc_fmax_image_spread,0.009,MHz,RV32 SoC and FPGA!J14 vs RV32 SoC and FPGA!J24,"same RTL, Dhrystone vs CoreMark image"
+RV32.IM_5SP.CM_per_W,309.73,CM/W,T4/T4_normalized_metrics.csv[RV32IM_5SP],
+RV32.IM_5SP.mJ_per_CM_iter,3.2286,mJ,T4/T4_normalized_metrics.csv[RV32IM_5SP],
+RV32.IM_5SP.CM_per_W_core_attr,976.44,CM/W,T4/T4_normalized_metrics.csv[RV32IM_5SP],core_attr = dynamic - PLL - I/O
+RV32.IM_5SP.mJ_per_CM_iter_core_attr,1.0241,mJ,T4/T4_normalized_metrics.csv[RV32IM_5SP],core_attr = dynamic - PLL - I/O
+RV32.IM_5SP.uJ_per_Dhry_iter,4.0205,uJ,T4/T4_normalized_metrics.csv[RV32IM_5SP],
+RV32.IM_5SP.uJ_per_Dhry_iter_core_attr,1.0021,uJ,T4/T4_normalized_metrics.csv[RV32IM_5SP],core_attr = dynamic - PLL - I/O
+RV32.IM_5SP.CM_per_kLUT_core,30.652,CM/kLUT,T4/T4_normalized_metrics.csv[RV32IM_5SP],
+RV32.IM_5SP.dmips_per_klut_core,12.691226,DMIPS/kLUT,"RV32 SoC and FPGA!C4, RV32 SoC and FPGA!T4",
+RV32.IM_5SP.power_dhrystone_total,0.337,W,"T4/T4_saif_authoritative.csv[RV32IM_5SP,dhrystone]","SAIF, v1 capture re-costed on final impl"
+RV32.IM_5SP.power_dhrystone_dynamic,0.186,W,"T4/T4_saif_authoritative.csv[RV32IM_5SP,dhrystone]",
+RV32.IM_5SP.power_dhrystone_core_attr,0.084,W,"T4/T4_saif_authoritative.csv[RV32IM_5SP,dhrystone]",dynamic - PLL - I/O
+RV32.IM_5SP.power_dhrystone_saif_coverage,65.8,%,"T4/T4_saif_authoritative.csv[RV32IM_5SP,dhrystone]",read_saif nets matched
+RV32.IM_5SP.power_coremark_total,0.372,W,"T4/T4_saif_authoritative.csv[RV32IM_5SP,coremark]","SAIF, v1 capture re-costed on final impl"
+RV32.IM_5SP.power_coremark_dynamic,0.22,W,"T4/T4_saif_authoritative.csv[RV32IM_5SP,coremark]",
+RV32.IM_5SP.power_coremark_core_attr,0.118,W,"T4/T4_saif_authoritative.csv[RV32IM_5SP,coremark]",dynamic - PLL - I/O
+RV32.IM_5SP.power_coremark_saif_coverage,76.1,%,"T4/T4_saif_authoritative.csv[RV32IM_5SP,coremark]",read_saif nets matched
+RV32.IM_6SP.core_fmax,68.691,MHz,RV32 SoC and FPGA!J5,"post-synthesis, core only, 5 ns over-constraint"
+RV32.IM_6SP.soc_fmax_dhry,51.52,MHz,RV32 SoC and FPGA!J15,"post-route, Dhrystone image, at the build PLL constraint"
+RV32.IM_6SP.soc_fmax_cm,50.07,MHz,RV32 SoC and FPGA!J25,"post-route, CoreMark image, at the build PLL constraint"
+RV32.IM_6SP.dhry_mhz,51.515152,MHz,RV32 SoC and FPGA!E5,run clock of the Dhrystone board run
+RV32.IM_6SP.cm_mhz,50.0,MHz,RV32 SoC and FPGA!H5,run clock of the CoreMark board run
+RV32.IM_6SP.dhrystones_per_s,97015.0,1/s,RV32 SoC and FPGA!C5,
+RV32.IM_6SP.dmips,55.216278,DMIPS,RV32 SoC and FPGA!C5,Dhrystones/s / 1757
+RV32.IM_6SP.dmips_per_mhz,1.071845,DMIPS/MHz,"RV32 SoC and FPGA!C5, RV32 SoC and FPGA!E5",
+RV32.IM_6SP.coremark,120.66,it/s,T3/T3_fragment_corrected_coremark.csv[RV32IM_6SP],true score f*iterations/cycles; master value biased by integer-second truncation
+RV32.IM_6SP.coremark_reported_master,125.0,it/s,RV32 SoC and FPGA!D5,superseded
+RV32.IM_6SP.coremark_per_mhz,2.4132,CM/MHz,"T3/T3_fragment_corrected_coremark.csv[RV32IM_6SP], RV32 SoC and FPGA!H5",
+RV32.IM_6SP.cpi_dhrystone,1.305419,cycles/instr,T3/T3_fragment_corrected_coremark.csv[RV32IM_6SP],"per-iteration, RTL simulation (== FPGA)"
+RV32.IM_6SP.cpi_coremark,1.48015,cycles/instr,T3/T3_fragment_corrected_coremark.csv[RV32IM_6SP],"per-iteration, RTL simulation (== FPGA)"
+RV32.IM_6SP.dhrystone_cycles_per_iter,530.0,cycles,T3/T3_fragment_corrected_coremark.csv[RV32IM_6SP],
+RV32.IM_6SP.coremark_cycles_per_iter,414401.9,cycles,T3/T3_fragment_corrected_coremark.csv[RV32IM_6SP],
+RV32.IM_6SP.core_lut,3806.0,count,RV32 SoC and FPGA!T5,"core-only synthesis, memory excluded"
+RV32.IM_6SP.core_ff,1986.0,count,RV32 SoC and FPGA!U5,"core-only synthesis, memory excluded"
+RV32.IM_6SP.core_dsp,4.0,count,RV32 SoC and FPGA!V5,"core-only synthesis, memory excluded"
+RV32.IM_6SP.soc_lut_dhry,14338.0,count,RV32 SoC and FPGA!C15,"SoC, includes memories"
+RV32.IM_6SP.soc_bram_dhry,0.0,count,RV32 SoC and FPGA!F15,"SoC, includes memories"
+RV32.IM_6SP.soc_lut_cm,14180.0,count,RV32 SoC and FPGA!C25,"SoC, includes memories"
+RV32.IM_6SP.soc_bram_cm,0.0,count,RV32 SoC and FPGA!F25,"SoC, includes memories"
+RV32.IM_6SP.soc_fmax_image_spread,1.45,MHz,RV32 SoC and FPGA!J15 vs RV32 SoC and FPGA!J25,"same RTL, Dhrystone vs CoreMark image"
+RV32.IM_6SP.CM_per_W,310.18,CM/W,T4/T4_normalized_metrics.csv[RV32IM_6SP],
+RV32.IM_6SP.mJ_per_CM_iter,3.2239,mJ,T4/T4_normalized_metrics.csv[RV32IM_6SP],
+RV32.IM_6SP.CM_per_W_core_attr,893.78,CM/W,T4/T4_normalized_metrics.csv[RV32IM_6SP],core_attr = dynamic - PLL - I/O
+RV32.IM_6SP.mJ_per_CM_iter_core_attr,1.1188,mJ,T4/T4_normalized_metrics.csv[RV32IM_6SP],core_attr = dynamic - PLL - I/O
+RV32.IM_6SP.uJ_per_Dhry_iter,3.9788,uJ,T4/T4_normalized_metrics.csv[RV32IM_6SP],
+RV32.IM_6SP.uJ_per_Dhry_iter_core_attr,1.1957,uJ,T4/T4_normalized_metrics.csv[RV32IM_6SP],core_attr = dynamic - PLL - I/O
+RV32.IM_6SP.CM_per_kLUT_core,31.703,CM/kLUT,T4/T4_normalized_metrics.csv[RV32IM_6SP],
+RV32.IM_6SP.dmips_per_klut_core,14.507693,DMIPS/kLUT,"RV32 SoC and FPGA!C5, RV32 SoC and FPGA!T5",
+RV32.IM_6SP.power_dhrystone_total,0.386,W,"T4/T4_saif_authoritative.csv[RV32IM_6SP,dhrystone]","SAIF, v1 capture re-costed on final impl"
+RV32.IM_6SP.power_dhrystone_dynamic,0.234,W,"T4/T4_saif_authoritative.csv[RV32IM_6SP,dhrystone]",
+RV32.IM_6SP.power_dhrystone_core_attr,0.116,W,"T4/T4_saif_authoritative.csv[RV32IM_6SP,dhrystone]",dynamic - PLL - I/O
+RV32.IM_6SP.power_dhrystone_saif_coverage,60.3,%,"T4/T4_saif_authoritative.csv[RV32IM_6SP,dhrystone]",read_saif nets matched
+RV32.IM_6SP.power_coremark_total,0.389,W,"T4/T4_saif_authoritative.csv[RV32IM_6SP,coremark]","SAIF, v1 capture re-costed on final impl"
+RV32.IM_6SP.power_coremark_dynamic,0.237,W,"T4/T4_saif_authoritative.csv[RV32IM_6SP,coremark]",
+RV32.IM_6SP.power_coremark_core_attr,0.135,W,"T4/T4_saif_authoritative.csv[RV32IM_6SP,coremark]",dynamic - PLL - I/O
+RV32.IM_6SP.power_coremark_saif_coverage,76.8,%,"T4/T4_saif_authoritative.csv[RV32IM_6SP,coremark]",read_saif nets matched
+RV32.IM_7SP.core_fmax,68.866,MHz,RV32 SoC and FPGA!J6,"post-synthesis, core only, 5 ns over-constraint"
+RV32.IM_7SP.soc_fmax_dhry,53.087,MHz,RV32 SoC and FPGA!J16,"post-route, Dhrystone image, at the build PLL constraint"
+RV32.IM_7SP.soc_fmax_cm,57.606,MHz,RV32 SoC and FPGA!J26,"post-route, CoreMark image, at the build PLL constraint"
+RV32.IM_7SP.dhry_mhz,53.0,MHz,RV32 SoC and FPGA!E6,run clock of the Dhrystone board run
+RV32.IM_7SP.cm_mhz,57.5,MHz,RV32 SoC and FPGA!H6,run clock of the CoreMark board run
+RV32.IM_7SP.dhrystones_per_s,80669.0,1/s,RV32 SoC and FPGA!C6,
+RV32.IM_7SP.dmips,45.91292,DMIPS,RV32 SoC and FPGA!C6,Dhrystones/s / 1757
+RV32.IM_7SP.dmips_per_mhz,0.866282,DMIPS/MHz,"RV32 SoC and FPGA!C6, RV32 SoC and FPGA!E6",
+RV32.IM_7SP.coremark,115.62,it/s,T3/T3_fragment_corrected_coremark.csv[RV32IM_7SP],true score f*iterations/cycles; master value biased by integer-second truncation
+RV32.IM_7SP.coremark_reported_master,117.0,it/s,RV32 SoC and FPGA!D6,superseded
+RV32.IM_7SP.coremark_per_mhz,2.010783,CM/MHz,"T3/T3_fragment_corrected_coremark.csv[RV32IM_7SP], RV32 SoC and FPGA!H6",
+RV32.IM_7SP.cpi_dhrystone,1.615764,cycles/instr,T3/T3_fragment_corrected_coremark.csv[RV32IM_7SP],"per-iteration, RTL simulation (== FPGA)"
+RV32.IM_7SP.cpi_coremark,1.776343,cycles/instr,T3/T3_fragment_corrected_coremark.csv[RV32IM_7SP],"per-iteration, RTL simulation (== FPGA)"
+RV32.IM_7SP.dhrystone_cycles_per_iter,656.0,cycles,T3/T3_fragment_corrected_coremark.csv[RV32IM_7SP],
+RV32.IM_7SP.coremark_cycles_per_iter,497328.0,cycles,T3/T3_fragment_corrected_coremark.csv[RV32IM_7SP],
+RV32.IM_7SP.core_lut,3151.0,count,RV32 SoC and FPGA!T6,"core-only synthesis, memory excluded"
+RV32.IM_7SP.core_ff,2116.0,count,RV32 SoC and FPGA!U6,"core-only synthesis, memory excluded"
+RV32.IM_7SP.core_dsp,4.0,count,RV32 SoC and FPGA!V6,"core-only synthesis, memory excluded"
+RV32.IM_7SP.soc_lut_dhry,12089.0,count,RV32 SoC and FPGA!C16,"SoC, includes memories"
+RV32.IM_7SP.soc_bram_dhry,0.0,count,RV32 SoC and FPGA!F16,"SoC, includes memories"
+RV32.IM_7SP.soc_lut_cm,10450.0,count,RV32 SoC and FPGA!C26,"SoC, includes memories"
+RV32.IM_7SP.soc_bram_cm,8.0,count,RV32 SoC and FPGA!F26,"SoC, includes memories"
+RV32.IM_7SP.soc_fmax_image_spread,4.519,MHz,RV32 SoC and FPGA!J16 vs RV32 SoC and FPGA!J26,"same RTL, Dhrystone vs CoreMark image"
+RV32.IM_7SP.CM_per_W,317.64,CM/W,T4/T4_normalized_metrics.csv[RV32IM_7SP],
+RV32.IM_7SP.mJ_per_CM_iter,3.1482,mJ,T4/T4_normalized_metrics.csv[RV32IM_7SP],
+RV32.IM_7SP.CM_per_W_core_attr,1090.75,CM/W,T4/T4_normalized_metrics.csv[RV32IM_7SP],core_attr = dynamic - PLL - I/O
+RV32.IM_7SP.mJ_per_CM_iter_core_attr,0.9168,mJ,T4/T4_normalized_metrics.csv[RV32IM_7SP],core_attr = dynamic - PLL - I/O
+RV32.IM_7SP.uJ_per_Dhry_iter,4.4379,uJ,T4/T4_normalized_metrics.csv[RV32IM_7SP],
+RV32.IM_7SP.uJ_per_Dhry_iter_core_attr,1.1405,uJ,T4/T4_normalized_metrics.csv[RV32IM_7SP],core_attr = dynamic - PLL - I/O
+RV32.IM_7SP.CM_per_kLUT_core,36.693,CM/kLUT,T4/T4_normalized_metrics.csv[RV32IM_7SP],
+RV32.IM_7SP.dmips_per_klut_core,14.570904,DMIPS/kLUT,"RV32 SoC and FPGA!C6, RV32 SoC and FPGA!T6",
+RV32.IM_7SP.power_dhrystone_total,0.358,W,"T4/T4_saif_authoritative.csv[RV32IM_7SP,dhrystone]","SAIF, v1 capture re-costed on final impl"
+RV32.IM_7SP.power_dhrystone_dynamic,0.206,W,"T4/T4_saif_authoritative.csv[RV32IM_7SP,dhrystone]",
+RV32.IM_7SP.power_dhrystone_core_attr,0.092,W,"T4/T4_saif_authoritative.csv[RV32IM_7SP,dhrystone]",dynamic - PLL - I/O
+RV32.IM_7SP.power_dhrystone_saif_coverage,62.1,%,"T4/T4_saif_authoritative.csv[RV32IM_7SP,dhrystone]",read_saif nets matched
+RV32.IM_7SP.power_coremark_total,0.364,W,"T4/T4_saif_authoritative.csv[RV32IM_7SP,coremark]","SAIF, v1 capture re-costed on final impl"
+RV32.IM_7SP.power_coremark_dynamic,0.212,W,"T4/T4_saif_authoritative.csv[RV32IM_7SP,coremark]",
+RV32.IM_7SP.power_coremark_core_attr,0.106,W,"T4/T4_saif_authoritative.csv[RV32IM_7SP,coremark]",dynamic - PLL - I/O
+RV32.IM_7SP.power_coremark_saif_coverage,79.9,%,"T4/T4_saif_authoritative.csv[RV32IM_7SP,coremark]",read_saif nets matched
+RV32.IM_7SP_BRAM.core_fmax,68.847,MHz,RV32 SoC and FPGA!J7,"post-synthesis, core only, 5 ns over-constraint"
+RV32.IM_7SP_BRAM.soc_fmax_dhry,72.475,MHz,RV32 SoC and FPGA!J17,"post-route, Dhrystone image, at the build PLL constraint"
+RV32.IM_7SP_BRAM.soc_fmax_cm,72.073,MHz,RV32 SoC and FPGA!J27,"post-route, CoreMark image, at the build PLL constraint"
+RV32.IM_7SP_BRAM.dhry_mhz,72.0,MHz,RV32 SoC and FPGA!E7,run clock of the Dhrystone board run
+RV32.IM_7SP_BRAM.cm_mhz,72.0,MHz,RV32 SoC and FPGA!H7,run clock of the CoreMark board run
+RV32.IM_7SP_BRAM.dhrystones_per_s,99447.0,1/s,RV32 SoC and FPGA!C7,
+RV32.IM_7SP_BRAM.dmips,56.600455,DMIPS,RV32 SoC and FPGA!C7,Dhrystones/s / 1757
+RV32.IM_7SP_BRAM.dmips_per_mhz,0.786117,DMIPS/MHz,"RV32 SoC and FPGA!C7, RV32 SoC and FPGA!E7",
+RV32.IM_7SP_BRAM.coremark,139.62,it/s,T3/T3_fragment_corrected_coremark.csv[RV32IM_7SP_BRAM],true score f*iterations/cycles; master value biased by integer-second truncation
+RV32.IM_7SP_BRAM.coremark_reported_master,142.0,it/s,RV32 SoC and FPGA!D7,superseded
+RV32.IM_7SP_BRAM.coremark_per_mhz,1.939167,CM/MHz,"T3/T3_fragment_corrected_coremark.csv[RV32IM_7SP_BRAM], RV32 SoC and FPGA!H7",
+RV32.IM_7SP_BRAM.cpi_dhrystone,1.780788,cycles/instr,T3/T3_fragment_corrected_coremark.csv[RV32IM_7SP_BRAM],"per-iteration, RTL simulation (== FPGA)"
+RV32.IM_7SP_BRAM.cpi_coremark,1.841929,cycles/instr,T3/T3_fragment_corrected_coremark.csv[RV32IM_7SP_BRAM],"per-iteration, RTL simulation (== FPGA)"
+RV32.IM_7SP_BRAM.dhrystone_cycles_per_iter,723.0,cycles,T3/T3_fragment_corrected_coremark.csv[RV32IM_7SP_BRAM],
+RV32.IM_7SP_BRAM.coremark_cycles_per_iter,515690.2,cycles,T3/T3_fragment_corrected_coremark.csv[RV32IM_7SP_BRAM],
+RV32.IM_7SP_BRAM.core_lut,3188.0,count,RV32 SoC and FPGA!T7,"core-only synthesis, memory excluded"
+RV32.IM_7SP_BRAM.core_ff,2116.0,count,RV32 SoC and FPGA!U7,"core-only synthesis, memory excluded"
+RV32.IM_7SP_BRAM.core_dsp,4.0,count,RV32 SoC and FPGA!V7,"core-only synthesis, memory excluded"
+RV32.IM_7SP_BRAM.soc_lut_dhry,3113.0,count,RV32 SoC and FPGA!C17,"SoC, includes memories"
+RV32.IM_7SP_BRAM.soc_bram_dhry,10.0,count,RV32 SoC and FPGA!F17,"SoC, includes memories"
+RV32.IM_7SP_BRAM.soc_lut_cm,3127.0,count,RV32 SoC and FPGA!C27,"SoC, includes memories"
+RV32.IM_7SP_BRAM.soc_bram_cm,16.0,count,RV32 SoC and FPGA!F27,"SoC, includes memories"
+RV32.IM_7SP_BRAM.soc_fmax_image_spread,0.402,MHz,RV32 SoC and FPGA!J17 vs RV32 SoC and FPGA!J27,"same RTL, Dhrystone vs CoreMark image"
+RV32.IM_7SP_BRAM.CM_per_W,416.78,CM/W,T4/T4_normalized_metrics.csv[RV32IM_7SP_BRAM],
+RV32.IM_7SP_BRAM.mJ_per_CM_iter,2.3994,mJ,T4/T4_normalized_metrics.csv[RV32IM_7SP_BRAM],
+RV32.IM_7SP_BRAM.CM_per_W_core_attr,2115.45,CM/W,T4/T4_normalized_metrics.csv[RV32IM_7SP_BRAM],core_attr = dynamic - PLL - I/O
+RV32.IM_7SP_BRAM.mJ_per_CM_iter_core_attr,0.4727,mJ,T4/T4_normalized_metrics.csv[RV32IM_7SP_BRAM],core_attr = dynamic - PLL - I/O
+RV32.IM_7SP_BRAM.uJ_per_Dhry_iter,3.1776,uJ,T4/T4_normalized_metrics.csv[RV32IM_7SP_BRAM],
+RV32.IM_7SP_BRAM.uJ_per_Dhry_iter_core_attr,0.4827,uJ,T4/T4_normalized_metrics.csv[RV32IM_7SP_BRAM],core_attr = dynamic - PLL - I/O
+RV32.IM_7SP_BRAM.CM_per_kLUT_core,43.795,CM/kLUT,T4/T4_normalized_metrics.csv[RV32IM_7SP_BRAM],
+RV32.IM_7SP_BRAM.dmips_per_klut_core,17.754221,DMIPS/kLUT,"RV32 SoC and FPGA!C7, RV32 SoC and FPGA!T7",
+RV32.IM_7SP_BRAM.power_dhrystone_total,0.316,W,"T4/T4_saif_authoritative.csv[RV32IM_7SP_BRAM,dhrystone]","SAIF, v1 capture re-costed on final impl"
+RV32.IM_7SP_BRAM.power_dhrystone_dynamic,0.163,W,"T4/T4_saif_authoritative.csv[RV32IM_7SP_BRAM,dhrystone]",
+RV32.IM_7SP_BRAM.power_dhrystone_core_attr,0.048,W,"T4/T4_saif_authoritative.csv[RV32IM_7SP_BRAM,dhrystone]",dynamic - PLL - I/O
+RV32.IM_7SP_BRAM.power_dhrystone_saif_coverage,77.5,%,"T4/T4_saif_authoritative.csv[RV32IM_7SP_BRAM,dhrystone]",read_saif nets matched
+RV32.IM_7SP_BRAM.power_coremark_total,0.335,W,"T4/T4_saif_authoritative.csv[RV32IM_7SP_BRAM,coremark]","SAIF, v1 capture re-costed on final impl"
+RV32.IM_7SP_BRAM.power_coremark_dynamic,0.182,W,"T4/T4_saif_authoritative.csv[RV32IM_7SP_BRAM,coremark]",
+RV32.IM_7SP_BRAM.power_coremark_core_attr,0.066,W,"T4/T4_saif_authoritative.csv[RV32IM_7SP_BRAM,coremark]",dynamic - PLL - I/O
+RV32.IM_7SP_BRAM.power_coremark_saif_coverage,77.5,%,"T4/T4_saif_authoritative.csv[RV32IM_7SP_BRAM,coremark]",read_saif nets matched
+RV32.IM_7SP_BRAM_Opt.core_fmax,94.277,MHz,RV32 SoC and FPGA!J8,"post-synthesis, core only, 5 ns over-constraint"
+RV32.IM_7SP_BRAM_Opt.soc_fmax_dhry,91.008,MHz,RV32 SoC and FPGA!J18,"post-route, Dhrystone image, at the build PLL constraint"
+RV32.IM_7SP_BRAM_Opt.soc_fmax_cm,92.144,MHz,RV32 SoC and FPGA!J28,"post-route, CoreMark image, at the build PLL constraint"
+RV32.IM_7SP_BRAM_Opt.dhry_mhz,90.909091,MHz,RV32 SoC and FPGA!E8,run clock of the Dhrystone board run
+RV32.IM_7SP_BRAM_Opt.cm_mhz,92.0,MHz,RV32 SoC and FPGA!H8,run clock of the CoreMark board run
+RV32.IM_7SP_BRAM_Opt.dhrystones_per_s,121862.0,1/s,RV32 SoC and FPGA!C8,
+RV32.IM_7SP_BRAM_Opt.dmips,69.357997,DMIPS,RV32 SoC and FPGA!C8,Dhrystones/s / 1757
+RV32.IM_7SP_BRAM_Opt.dmips_per_mhz,0.762938,DMIPS/MHz,"RV32 SoC and FPGA!C8, RV32 SoC and FPGA!E8",
+RV32.IM_7SP_BRAM_Opt.coremark,175.78,it/s,T3/T3_fragment_corrected_coremark.csv[RV32IM_7SP_BRAM_Opt],true score f*iterations/cycles; master value biased by integer-second truncation
+RV32.IM_7SP_BRAM_Opt.coremark_reported_master,176.0,it/s,RV32 SoC and FPGA!D8,superseded
+RV32.IM_7SP_BRAM_Opt.coremark_per_mhz,1.910652,CM/MHz,"T3/T3_fragment_corrected_coremark.csv[RV32IM_7SP_BRAM_Opt], RV32 SoC and FPGA!H8",
+RV32.IM_7SP_BRAM_Opt.cpi_dhrystone,1.834975,cycles/instr,T3/T3_fragment_corrected_coremark.csv[RV32IM_7SP_BRAM_Opt],"per-iteration, RTL simulation (== FPGA)"
+RV32.IM_7SP_BRAM_Opt.cpi_coremark,1.869445,cycles/instr,T3/T3_fragment_corrected_coremark.csv[RV32IM_7SP_BRAM_Opt],"per-iteration, RTL simulation (== FPGA)"
+RV32.IM_7SP_BRAM_Opt.dhrystone_cycles_per_iter,745.0,cycles,T3/T3_fragment_corrected_coremark.csv[RV32IM_7SP_BRAM_Opt],
+RV32.IM_7SP_BRAM_Opt.coremark_cycles_per_iter,523394.0,cycles,T3/T3_fragment_corrected_coremark.csv[RV32IM_7SP_BRAM_Opt],
+RV32.IM_7SP_BRAM_Opt.core_lut,2633.0,count,RV32 SoC and FPGA!T8,"core-only synthesis, memory excluded"
+RV32.IM_7SP_BRAM_Opt.core_ff,1847.0,count,RV32 SoC and FPGA!U8,"core-only synthesis, memory excluded"
+RV32.IM_7SP_BRAM_Opt.core_dsp,4.0,count,RV32 SoC and FPGA!V8,"core-only synthesis, memory excluded"
+RV32.IM_7SP_BRAM_Opt.soc_lut_dhry,2714.0,count,RV32 SoC and FPGA!C18,"SoC, includes memories"
+RV32.IM_7SP_BRAM_Opt.soc_bram_dhry,10.0,count,RV32 SoC and FPGA!F18,"SoC, includes memories"
+RV32.IM_7SP_BRAM_Opt.soc_lut_cm,2719.0,count,RV32 SoC and FPGA!C28,"SoC, includes memories"
+RV32.IM_7SP_BRAM_Opt.soc_bram_cm,16.0,count,RV32 SoC and FPGA!F28,"SoC, includes memories"
+RV32.IM_7SP_BRAM_Opt.soc_fmax_image_spread,1.136,MHz,RV32 SoC and FPGA!J18 vs RV32 SoC and FPGA!J28,"same RTL, Dhrystone vs CoreMark image"
+RV32.IM_7SP_BRAM_Opt.CM_per_W,544.21,CM/W,T4/T4_normalized_metrics.csv[RV32IM_7SP_BRAM_Opt],
+RV32.IM_7SP_BRAM_Opt.mJ_per_CM_iter,1.8375,mJ,T4/T4_normalized_metrics.csv[RV32IM_7SP_BRAM_Opt],
+RV32.IM_7SP_BRAM_Opt.CM_per_W_core_attr,2663.33,CM/W,T4/T4_normalized_metrics.csv[RV32IM_7SP_BRAM_Opt],core_attr = dynamic - PLL - I/O
+RV32.IM_7SP_BRAM_Opt.mJ_per_CM_iter_core_attr,0.3755,mJ,T4/T4_normalized_metrics.csv[RV32IM_7SP_BRAM_Opt],core_attr = dynamic - PLL - I/O
+RV32.IM_7SP_BRAM_Opt.uJ_per_Dhry_iter,2.6341,uJ,T4/T4_normalized_metrics.csv[RV32IM_7SP_BRAM_Opt],
+RV32.IM_7SP_BRAM_Opt.uJ_per_Dhry_iter_core_attr,0.4677,uJ,T4/T4_normalized_metrics.csv[RV32IM_7SP_BRAM_Opt],core_attr = dynamic - PLL - I/O
+RV32.IM_7SP_BRAM_Opt.CM_per_kLUT_core,66.76,CM/kLUT,T4/T4_normalized_metrics.csv[RV32IM_7SP_BRAM_Opt],
+RV32.IM_7SP_BRAM_Opt.dmips_per_klut_core,26.341814,DMIPS/kLUT,"RV32 SoC and FPGA!C8, RV32 SoC and FPGA!T8",
+RV32.IM_7SP_BRAM_Opt.power_dhrystone_total,0.321,W,"T4/T4_saif_authoritative.csv[RV32IM_7SP_BRAM_Opt,dhrystone]","SAIF, v1 capture re-costed on final impl"
+RV32.IM_7SP_BRAM_Opt.power_dhrystone_dynamic,0.169,W,"T4/T4_saif_authoritative.csv[RV32IM_7SP_BRAM_Opt,dhrystone]",
+RV32.IM_7SP_BRAM_Opt.power_dhrystone_core_attr,0.057,W,"T4/T4_saif_authoritative.csv[RV32IM_7SP_BRAM_Opt,dhrystone]",dynamic - PLL - I/O
+RV32.IM_7SP_BRAM_Opt.power_dhrystone_saif_coverage,78.6,%,"T4/T4_saif_authoritative.csv[RV32IM_7SP_BRAM_Opt,dhrystone]",read_saif nets matched
+RV32.IM_7SP_BRAM_Opt.power_coremark_total,0.323,W,"T4/T4_saif_authoritative.csv[RV32IM_7SP_BRAM_Opt,coremark]","SAIF, v1 capture re-costed on final impl"
+RV32.IM_7SP_BRAM_Opt.power_coremark_dynamic,0.171,W,"T4/T4_saif_authoritative.csv[RV32IM_7SP_BRAM_Opt,coremark]",
+RV32.IM_7SP_BRAM_Opt.power_coremark_core_attr,0.066,W,"T4/T4_saif_authoritative.csv[RV32IM_7SP_BRAM_Opt,coremark]",dynamic - PLL - I/O
+RV32.IM_7SP_BRAM_Opt.power_coremark_saif_coverage,79.2,%,"T4/T4_saif_authoritative.csv[RV32IM_7SP_BRAM_Opt,coremark]",read_saif nets matched
+RV32.IM_8SP_withoutOpt.core_fmax,98.756,MHz,RV32 SoC and FPGA!J9,"post-synthesis, core only, 5 ns over-constraint"
+RV32.IM_8SP_withoutOpt.soc_fmax_dhry,114.3,MHz,RV32 SoC and FPGA!J19,"post-route, Dhrystone image, at the build PLL constraint"
+RV32.IM_8SP_withoutOpt.soc_fmax_cm,114.3,MHz,RV32 SoC and FPGA!J29,"post-route, CoreMark image, at the build PLL constraint"
+RV32.IM_8SP_withoutOpt.dhry_mhz,114.0,MHz,RV32 SoC and FPGA!E9,run clock of the Dhrystone board run
+RV32.IM_8SP_withoutOpt.cm_mhz,114.0,MHz,RV32 SoC and FPGA!H9,run clock of the CoreMark board run
+RV32.IM_8SP_withoutOpt.dhrystones_per_s,134433.0,1/s,RV32 SoC and FPGA!C9,
+RV32.IM_8SP_withoutOpt.dmips,76.512806,DMIPS,RV32 SoC and FPGA!C9,Dhrystones/s / 1757
+RV32.IM_8SP_withoutOpt.dmips_per_mhz,0.671165,DMIPS/MHz,"RV32 SoC and FPGA!C9, RV32 SoC and FPGA!E9",
+RV32.IM_8SP_withoutOpt.coremark,183.93,it/s,T3/T3_fragment_corrected_coremark.csv[RV32IM_8SP_withoutOpt],true score f*iterations/cycles; master value biased by integer-second truncation
+RV32.IM_8SP_withoutOpt.coremark_reported_master,166.0,it/s,RV32 SoC and FPGA!D9,superseded
+RV32.IM_8SP_withoutOpt.coremark_per_mhz,1.613421,CM/MHz,"T3/T3_fragment_corrected_coremark.csv[RV32IM_8SP_withoutOpt], RV32 SoC and FPGA!H9",
+RV32.IM_8SP_withoutOpt.cpi_dhrystone,2.086207,cycles/instr,T3/T3_fragment_corrected_coremark.csv[RV32IM_8SP_withoutOpt],"per-iteration, RTL simulation (== FPGA)"
+RV32.IM_8SP_withoutOpt.cpi_coremark,2.2138,cycles/instr,T3/T3_fragment_corrected_coremark.csv[RV32IM_8SP_withoutOpt],"per-iteration, RTL simulation (== FPGA)"
+RV32.IM_8SP_withoutOpt.dhrystone_cycles_per_iter,847.0,cycles,T3/T3_fragment_corrected_coremark.csv[RV32IM_8SP_withoutOpt],
+RV32.IM_8SP_withoutOpt.coremark_cycles_per_iter,619804.0,cycles,T3/T3_fragment_corrected_coremark.csv[RV32IM_8SP_withoutOpt],
+RV32.IM_8SP_withoutOpt.core_lut,3240.0,count,RV32 SoC and FPGA!T9,"core-only synthesis, memory excluded"
+RV32.IM_8SP_withoutOpt.core_ff,2549.0,count,RV32 SoC and FPGA!U9,"core-only synthesis, memory excluded"
+RV32.IM_8SP_withoutOpt.core_dsp,4.0,count,RV32 SoC and FPGA!V9,"core-only synthesis, memory excluded"
+RV32.IM_8SP_withoutOpt.soc_lut_dhry,3332.0,count,RV32 SoC and FPGA!C19,"SoC, includes memories"
+RV32.IM_8SP_withoutOpt.soc_bram_dhry,16.0,count,RV32 SoC and FPGA!F19,"SoC, includes memories"
+RV32.IM_8SP_withoutOpt.soc_lut_cm,3332.0,count,RV32 SoC and FPGA!C29,"SoC, includes memories"
+RV32.IM_8SP_withoutOpt.soc_bram_cm,16.0,count,RV32 SoC and FPGA!F29,"SoC, includes memories"
+RV32.IM_8SP_withoutOpt.soc_fmax_image_spread,0.0,MHz,RV32 SoC and FPGA!J19 vs RV32 SoC and FPGA!J29,"same RTL, Dhrystone vs CoreMark image"
+RV32.IM_8SP_withoutOpt.CM_per_W,513.77,CM/W,T4/T4_normalized_metrics.csv[RV32IM_8SP_withoutOpt],
+RV32.IM_8SP_withoutOpt.mJ_per_CM_iter,1.9464,mJ,T4/T4_normalized_metrics.csv[RV32IM_8SP_withoutOpt],
+RV32.IM_8SP_withoutOpt.CM_per_W_core_attr,2138.72,CM/W,T4/T4_normalized_metrics.csv[RV32IM_8SP_withoutOpt],core_attr = dynamic - PLL - I/O
+RV32.IM_8SP_withoutOpt.mJ_per_CM_iter_core_attr,0.4676,mJ,T4/T4_normalized_metrics.csv[RV32IM_8SP_withoutOpt],core_attr = dynamic - PLL - I/O
+RV32.IM_8SP_withoutOpt.uJ_per_Dhry_iter,2.7523,uJ,T4/T4_normalized_metrics.csv[RV32IM_8SP_withoutOpt],
+RV32.IM_8SP_withoutOpt.uJ_per_Dhry_iter_core_attr,0.7215,uJ,T4/T4_normalized_metrics.csv[RV32IM_8SP_withoutOpt],core_attr = dynamic - PLL - I/O
+RV32.IM_8SP_withoutOpt.CM_per_kLUT_core,56.769,CM/kLUT,T4/T4_normalized_metrics.csv[RV32IM_8SP_withoutOpt],
+RV32.IM_8SP_withoutOpt.dmips_per_klut_core,23.615064,DMIPS/kLUT,"RV32 SoC and FPGA!C9, RV32 SoC and FPGA!T9",
+RV32.IM_8SP_withoutOpt.power_dhrystone_total,0.37,W,"T4/T4_saif_authoritative.csv[RV32IM_8SP_withoutOpt,dhrystone]","SAIF, v1 capture re-costed on final impl"
+RV32.IM_8SP_withoutOpt.power_dhrystone_dynamic,0.217,W,"T4/T4_saif_authoritative.csv[RV32IM_8SP_withoutOpt,dhrystone]",
+RV32.IM_8SP_withoutOpt.power_dhrystone_core_attr,0.097,W,"T4/T4_saif_authoritative.csv[RV32IM_8SP_withoutOpt,dhrystone]",dynamic - PLL - I/O
+RV32.IM_8SP_withoutOpt.power_dhrystone_saif_coverage,79.2,%,"T4/T4_saif_authoritative.csv[RV32IM_8SP_withoutOpt,dhrystone]",read_saif nets matched
+RV32.IM_8SP_withoutOpt.power_coremark_total,0.358,W,"T4/T4_saif_authoritative.csv[RV32IM_8SP_withoutOpt,coremark]","SAIF, v1 capture re-costed on final impl"
+RV32.IM_8SP_withoutOpt.power_coremark_dynamic,0.206,W,"T4/T4_saif_authoritative.csv[RV32IM_8SP_withoutOpt,coremark]",
+RV32.IM_8SP_withoutOpt.power_coremark_core_attr,0.086,W,"T4/T4_saif_authoritative.csv[RV32IM_8SP_withoutOpt,coremark]",dynamic - PLL - I/O
+RV32.IM_8SP_withoutOpt.power_coremark_saif_coverage,79.2,%,"T4/T4_saif_authoritative.csv[RV32IM_8SP_withoutOpt,coremark]",read_saif nets matched
+RV32.IM_8SP.core_fmax,105.186,MHz,RV32 SoC and FPGA!J10,"post-synthesis, core only, 5 ns over-constraint"
+RV32.IM_8SP.soc_fmax_dhry,122.179,MHz,RV32 SoC and FPGA!J20,"post-route, Dhrystone image, at the build PLL constraint"
+RV32.IM_8SP.soc_fmax_cm,122.179,MHz,RV32 SoC and FPGA!J30,"post-route, CoreMark image, at the build PLL constraint"
+RV32.IM_8SP.dhry_mhz,122.0,MHz,RV32 SoC and FPGA!E10,run clock of the Dhrystone board run
+RV32.IM_8SP.cm_mhz,122.0,MHz,RV32 SoC and FPGA!H10,run clock of the CoreMark board run
+RV32.IM_8SP.dhrystones_per_s,140229.0,1/s,RV32 SoC and FPGA!C10,
+RV32.IM_8SP.dmips,79.811611,DMIPS,RV32 SoC and FPGA!C10,Dhrystones/s / 1757
+RV32.IM_8SP.dmips_per_mhz,0.654194,DMIPS/MHz,"RV32 SoC and FPGA!C10, RV32 SoC and FPGA!E10",
+RV32.IM_8SP.coremark,194.42,it/s,T3/T3_fragment_corrected_coremark.csv[RV32IM_8SP],true score f*iterations/cycles; master value biased by integer-second truncation
+RV32.IM_8SP.coremark_reported_master,200.0,it/s,RV32 SoC and FPGA!D10,superseded
+RV32.IM_8SP.coremark_per_mhz,1.593607,CM/MHz,"T3/T3_fragment_corrected_coremark.csv[RV32IM_8SP], RV32 SoC and FPGA!H10",
+RV32.IM_8SP.cpi_dhrystone,2.140394,cycles/instr,T3/T3_fragment_corrected_coremark.csv[RV32IM_8SP],"per-iteration, RTL simulation (== FPGA)"
+RV32.IM_8SP.cpi_coremark,2.241318,cycles/instr,T3/T3_fragment_corrected_coremark.csv[RV32IM_8SP],"per-iteration, RTL simulation (== FPGA)"
+RV32.IM_8SP.dhrystone_cycles_per_iter,869.0,cycles,T3/T3_fragment_corrected_coremark.csv[RV32IM_8SP],
+RV32.IM_8SP.coremark_cycles_per_iter,627508.2,cycles,T3/T3_fragment_corrected_coremark.csv[RV32IM_8SP],
+RV32.IM_8SP.core_lut,2878.0,count,RV32 SoC and FPGA!T10,"core-only synthesis, memory excluded"
+RV32.IM_8SP.core_ff,2278.0,count,RV32 SoC and FPGA!U10,"core-only synthesis, memory excluded"
+RV32.IM_8SP.core_dsp,4.0,count,RV32 SoC and FPGA!V10,"core-only synthesis, memory excluded"
+RV32.IM_8SP.soc_lut_dhry,2869.0,count,RV32 SoC and FPGA!C20,"SoC, includes memories"
+RV32.IM_8SP.soc_bram_dhry,16.0,count,RV32 SoC and FPGA!F20,"SoC, includes memories"
+RV32.IM_8SP.soc_lut_cm,2869.0,count,RV32 SoC and FPGA!C30,"SoC, includes memories"
+RV32.IM_8SP.soc_bram_cm,16.0,count,RV32 SoC and FPGA!F30,"SoC, includes memories"
+RV32.IM_8SP.soc_fmax_image_spread,0.0,MHz,RV32 SoC and FPGA!J20 vs RV32 SoC and FPGA!J30,"same RTL, Dhrystone vs CoreMark image"
+RV32.IM_8SP.CM_per_W,571.82,CM/W,T4/T4_normalized_metrics.csv[RV32IM_8SP],
+RV32.IM_8SP.mJ_per_CM_iter,1.7488,mJ,T4/T4_normalized_metrics.csv[RV32IM_8SP],
+RV32.IM_8SP.CM_per_W_core_attr,2430.25,CM/W,T4/T4_normalized_metrics.csv[RV32IM_8SP],core_attr = dynamic - PLL - I/O
+RV32.IM_8SP.mJ_per_CM_iter_core_attr,0.4115,mJ,T4/T4_normalized_metrics.csv[RV32IM_8SP],core_attr = dynamic - PLL - I/O
+RV32.IM_8SP.uJ_per_Dhry_iter,2.5601,uJ,T4/T4_normalized_metrics.csv[RV32IM_8SP],
+RV32.IM_8SP.uJ_per_Dhry_iter_core_attr,0.6989,uJ,T4/T4_normalized_metrics.csv[RV32IM_8SP],core_attr = dynamic - PLL - I/O
+RV32.IM_8SP.CM_per_kLUT_core,67.554,CM/kLUT,T4/T4_normalized_metrics.csv[RV32IM_8SP],
+RV32.IM_8SP.dmips_per_klut_core,27.731623,DMIPS/kLUT,"RV32 SoC and FPGA!C10, RV32 SoC and FPGA!T10",
+RV32.IM_8SP.power_dhrystone_total,0.359,W,"T4/T4_saif_authoritative.csv[RV32IM_8SP,dhrystone]","SAIF, v1 capture re-costed on final impl"
+RV32.IM_8SP.power_dhrystone_dynamic,0.223,W,"T4/T4_saif_authoritative.csv[RV32IM_8SP,dhrystone]",
+RV32.IM_8SP.power_dhrystone_core_attr,0.098,W,"T4/T4_saif_authoritative.csv[RV32IM_8SP,dhrystone]",dynamic - PLL - I/O
+RV32.IM_8SP.power_dhrystone_saif_coverage,78.7,%,"T4/T4_saif_authoritative.csv[RV32IM_8SP,dhrystone]",read_saif nets matched
+RV32.IM_8SP.power_coremark_total,0.34,W,"T4/T4_saif_authoritative.csv[RV32IM_8SP,coremark]","SAIF, v1 capture re-costed on final impl"
+RV32.IM_8SP.power_coremark_dynamic,0.204,W,"T4/T4_saif_authoritative.csv[RV32IM_8SP,coremark]",
+RV32.IM_8SP.power_coremark_core_attr,0.08,W,"T4/T4_saif_authoritative.csv[RV32IM_8SP,coremark]",dynamic - PLL - I/O
+RV32.IM_8SP.power_coremark_saif_coverage,78.7,%,"T4/T4_saif_authoritative.csv[RV32IM_8SP,coremark]",read_saif nets matched
+RV64.I_5SP.core_fmax,51.277,MHz,RV64 SoC and FPGA!J3,"post-synthesis, core only, 5 ns over-constraint"
+RV64.I_5SP.soc_fmax_dhry,39.165,MHz,RV64 SoC and FPGA!J13,"post-route, Dhrystone image, at the build PLL constraint"
+RV64.I_5SP.soc_fmax_cm,37.711,MHz,RV64 SoC and FPGA!J23,"post-route, CoreMark image, at the build PLL constraint"
+RV64.I_5SP.dhry_mhz,39.0,MHz,RV64 SoC and FPGA!E3,run clock of the Dhrystone board run
+RV64.I_5SP.cm_mhz,37.5,MHz,RV64 SoC and FPGA!H3,run clock of the CoreMark board run
+RV64.I_5SP.dhrystones_per_s,78740.0,1/s,RV64 SoC and FPGA!C3,
+RV64.I_5SP.dmips,44.815026,DMIPS,RV64 SoC and FPGA!C3,Dhrystones/s / 1757
+RV64.I_5SP.dmips_per_mhz,1.149103,DMIPS/MHz,"RV64 SoC and FPGA!C3, RV64 SoC and FPGA!E3",
+RV64.I_5SP.coremark,33.54,it/s,T3/T3_fragment_corrected_coremark.csv[RV64I_5SP],true score f*iterations/cycles; master value biased by integer-second truncation
+RV64.I_5SP.coremark_reported_master,35.0,it/s,RV64 SoC and FPGA!D3,superseded
+RV64.I_5SP.coremark_per_mhz,0.8944,CM/MHz,"T3/T3_fragment_corrected_coremark.csv[RV64I_5SP], RV64 SoC and FPGA!H3",
+RV64.I_5SP.cpi_dhrystone,1.192308,cycles/instr,T3/T3_fragment_corrected_coremark.csv[RV64I_5SP],"per-iteration, RTL simulation (== FPGA)"
+RV64.I_5SP.cpi_coremark,1.293022,cycles/instr,T3/T3_fragment_corrected_coremark.csv[RV64I_5SP],"per-iteration, RTL simulation (== FPGA)"
+RV64.I_5SP.dhrystone_cycles_per_iter,496.0,cycles,T3/T3_fragment_corrected_coremark.csv[RV64I_5SP],
+RV64.I_5SP.coremark_cycles_per_iter,1118093.6,cycles,T3/T3_fragment_corrected_coremark.csv[RV64I_5SP],
+RV64.I_5SP.core_lut,5645.0,count,RV64 SoC and FPGA!T3,"core-only synthesis, memory excluded"
+RV64.I_5SP.core_ff,2332.0,count,RV64 SoC and FPGA!U3,"core-only synthesis, memory excluded"
+RV64.I_5SP.core_dsp,0.0,count,RV64 SoC and FPGA!V3,"core-only synthesis, memory excluded"
+RV64.I_5SP.soc_lut_dhry,20540.0,count,RV64 SoC and FPGA!C13,"SoC, includes memories"
+RV64.I_5SP.soc_bram_dhry,0.0,count,RV64 SoC and FPGA!F13,"SoC, includes memories"
+RV64.I_5SP.soc_lut_cm,24685.0,count,RV64 SoC and FPGA!C23,"SoC, includes memories"
+RV64.I_5SP.soc_bram_cm,0.0,count,RV64 SoC and FPGA!F23,"SoC, includes memories"
+RV64.I_5SP.soc_fmax_image_spread,1.454,MHz,RV64 SoC and FPGA!J13 vs RV64 SoC and FPGA!J23,"same RTL, Dhrystone vs CoreMark image"
+RV64.I_5SP.CM_per_W,76.23,CM/W,T4/T4_normalized_metrics.csv[RV64I_5SP],
+RV64.I_5SP.mJ_per_CM_iter,13.1187,mJ,T4/T4_normalized_metrics.csv[RV64I_5SP],
+RV64.I_5SP.CM_per_W_core_attr,178.4,CM/W,T4/T4_normalized_metrics.csv[RV64I_5SP],core_attr = dynamic - PLL - I/O
+RV64.I_5SP.mJ_per_CM_iter_core_attr,5.6052,mJ,T4/T4_normalized_metrics.csv[RV64I_5SP],core_attr = dynamic - PLL - I/O
+RV64.I_5SP.uJ_per_Dhry_iter,5.1562,uJ,T4/T4_normalized_metrics.csv[RV64I_5SP],
+RV64.I_5SP.uJ_per_Dhry_iter_core_attr,1.8415,uJ,T4/T4_normalized_metrics.csv[RV64I_5SP],core_attr = dynamic - PLL - I/O
+RV64.I_5SP.CM_per_kLUT_core,5.942,CM/kLUT,T4/T4_normalized_metrics.csv[RV64I_5SP],
+RV64.I_5SP.dmips_per_klut_core,7.938889,DMIPS/kLUT,"RV64 SoC and FPGA!C3, RV64 SoC and FPGA!T3",
+RV64.I_5SP.power_dhrystone_total,0.406,W,"T4/T4_saif_authoritative.csv[RV64I_5SP,dhrystone]","SAIF, v1 capture re-costed on final impl"
+RV64.I_5SP.power_dhrystone_dynamic,0.254,W,"T4/T4_saif_authoritative.csv[RV64I_5SP,dhrystone]",
+RV64.I_5SP.power_dhrystone_core_attr,0.145,W,"T4/T4_saif_authoritative.csv[RV64I_5SP,dhrystone]",dynamic - PLL - I/O
+RV64.I_5SP.power_dhrystone_saif_coverage,74.0,%,"T4/T4_saif_authoritative.csv[RV64I_5SP,dhrystone]",read_saif nets matched
+RV64.I_5SP.power_coremark_total,0.44,W,"T4/T4_saif_authoritative.csv[RV64I_5SP,coremark]","SAIF, v1 capture re-costed on final impl"
+RV64.I_5SP.power_coremark_dynamic,0.288,W,"T4/T4_saif_authoritative.csv[RV64I_5SP,coremark]",
+RV64.I_5SP.power_coremark_core_attr,0.188,W,"T4/T4_saif_authoritative.csv[RV64I_5SP,coremark]",dynamic - PLL - I/O
+RV64.I_5SP.power_coremark_saif_coverage,81.1,%,"T4/T4_saif_authoritative.csv[RV64I_5SP,coremark]",read_saif nets matched
+RV64.IM_5SP.core_fmax,51.159,MHz,RV64 SoC and FPGA!J4,"post-synthesis, core only, 5 ns over-constraint"
+RV64.IM_5SP.soc_fmax_dhry,37.327,MHz,RV64 SoC and FPGA!J14,"post-route, Dhrystone image, at the build PLL constraint"
+RV64.IM_5SP.soc_fmax_cm,38.058,MHz,RV64 SoC and FPGA!J24,"post-route, CoreMark image, at the build PLL constraint"
+RV64.IM_5SP.dhry_mhz,37.0,MHz,RV64 SoC and FPGA!E4,run clock of the Dhrystone board run
+RV64.IM_5SP.cm_mhz,38.0,MHz,RV64 SoC and FPGA!H4,run clock of the CoreMark board run
+RV64.IM_5SP.dhrystones_per_s,74747.0,1/s,RV64 SoC and FPGA!C4,
+RV64.IM_5SP.dmips,42.542402,DMIPS,RV64 SoC and FPGA!C4,Dhrystones/s / 1757
+RV64.IM_5SP.dmips_per_mhz,1.149795,DMIPS/MHz,"RV64 SoC and FPGA!C4, RV64 SoC and FPGA!E4",
+RV64.IM_5SP.coremark,89.12,it/s,T3/T3_fragment_corrected_coremark.csv[RV64IM_5SP],true score f*iterations/cycles; master value biased by integer-second truncation
+RV64.IM_5SP.coremark_reported_master,91.0,it/s,RV64 SoC and FPGA!D4,superseded
+RV64.IM_5SP.coremark_per_mhz,2.345263,CM/MHz,"T3/T3_fragment_corrected_coremark.csv[RV64IM_5SP], RV64 SoC and FPGA!H4",
+RV64.IM_5SP.cpi_dhrystone,1.279793,cycles/instr,T3/T3_fragment_corrected_coremark.csv[RV64IM_5SP],"per-iteration, RTL simulation (== FPGA)"
+RV64.IM_5SP.cpi_coremark,1.284845,cycles/instr,T3/T3_fragment_corrected_coremark.csv[RV64IM_5SP],"per-iteration, RTL simulation (== FPGA)"
+RV64.IM_5SP.dhrystone_cycles_per_iter,494.0,cycles,T3/T3_fragment_corrected_coremark.csv[RV64IM_5SP],
+RV64.IM_5SP.coremark_cycles_per_iter,426385.6,cycles,T3/T3_fragment_corrected_coremark.csv[RV64IM_5SP],
+RV64.IM_5SP.core_lut,8292.0,count,RV64 SoC and FPGA!T4,"core-only synthesis, memory excluded"
+RV64.IM_5SP.core_ff,3552.0,count,RV64 SoC and FPGA!U4,"core-only synthesis, memory excluded"
+RV64.IM_5SP.core_dsp,20.0,count,RV64 SoC and FPGA!V4,"core-only synthesis, memory excluded"
+RV64.IM_5SP.soc_lut_dhry,20979.0,count,RV64 SoC and FPGA!C14,"SoC, includes memories"
+RV64.IM_5SP.soc_bram_dhry,0.0,count,RV64 SoC and FPGA!F14,"SoC, includes memories"
+RV64.IM_5SP.soc_lut_cm,26460.0,count,RV64 SoC and FPGA!C24,"SoC, includes memories"
+RV64.IM_5SP.soc_bram_cm,0.0,count,RV64 SoC and FPGA!F24,"SoC, includes memories"
+RV64.IM_5SP.soc_fmax_image_spread,0.731,MHz,RV64 SoC and FPGA!J14 vs RV64 SoC and FPGA!J24,"same RTL, Dhrystone vs CoreMark image"
+RV64.IM_5SP.CM_per_W,208.71,CM/W,T4/T4_normalized_metrics.csv[RV64IM_5SP],
+RV64.IM_5SP.mJ_per_CM_iter,4.7913,mJ,T4/T4_normalized_metrics.csv[RV64IM_5SP],
+RV64.IM_5SP.CM_per_W_core_attr,533.65,CM/W,T4/T4_normalized_metrics.csv[RV64IM_5SP],core_attr = dynamic - PLL - I/O
+RV64.IM_5SP.mJ_per_CM_iter_core_attr,1.8739,mJ,T4/T4_normalized_metrics.csv[RV64IM_5SP],core_attr = dynamic - PLL - I/O
+RV64.IM_5SP.uJ_per_Dhry_iter,4.8965,uJ,T4/T4_normalized_metrics.csv[RV64IM_5SP],
+RV64.IM_5SP.uJ_per_Dhry_iter_core_attr,1.4449,uJ,T4/T4_normalized_metrics.csv[RV64IM_5SP],core_attr = dynamic - PLL - I/O
+RV64.IM_5SP.CM_per_kLUT_core,10.748,CM/kLUT,T4/T4_normalized_metrics.csv[RV64IM_5SP],
+RV64.IM_5SP.dmips_per_klut_core,5.130536,DMIPS/kLUT,"RV64 SoC and FPGA!C4, RV64 SoC and FPGA!T4",
+RV64.IM_5SP.power_dhrystone_total,0.366,W,"T4/T4_saif_authoritative.csv[RV64IM_5SP,dhrystone]","SAIF, v1 capture re-costed on final impl"
+RV64.IM_5SP.power_dhrystone_dynamic,0.214,W,"T4/T4_saif_authoritative.csv[RV64IM_5SP,dhrystone]",
+RV64.IM_5SP.power_dhrystone_core_attr,0.108,W,"T4/T4_saif_authoritative.csv[RV64IM_5SP,dhrystone]",dynamic - PLL - I/O
+RV64.IM_5SP.power_dhrystone_saif_coverage,74.5,%,"T4/T4_saif_authoritative.csv[RV64IM_5SP,dhrystone]",read_saif nets matched
+RV64.IM_5SP.power_coremark_total,0.427,W,"T4/T4_saif_authoritative.csv[RV64IM_5SP,coremark]","SAIF, v1 capture re-costed on final impl"
+RV64.IM_5SP.power_coremark_dynamic,0.274,W,"T4/T4_saif_authoritative.csv[RV64IM_5SP,coremark]",
+RV64.IM_5SP.power_coremark_core_attr,0.167,W,"T4/T4_saif_authoritative.csv[RV64IM_5SP,coremark]",dynamic - PLL - I/O
+RV64.IM_5SP.power_coremark_saif_coverage,79.2,%,"T4/T4_saif_authoritative.csv[RV64IM_5SP,coremark]",read_saif nets matched
+RV64.IM_6SP.core_fmax,64.637,MHz,RV64 SoC and FPGA!J5,"post-synthesis, core only, 5 ns over-constraint"
+RV64.IM_6SP.soc_fmax_dhry,44.324,MHz,RV64 SoC and FPGA!J15,"post-route, Dhrystone image, at the build PLL constraint"
+RV64.IM_6SP.soc_fmax_cm,45.108,MHz,RV64 SoC and FPGA!J25,"post-route, CoreMark image, at the build PLL constraint"
+RV64.IM_6SP.dhry_mhz,44.0,MHz,RV64 SoC and FPGA!E5,run clock of the Dhrystone board run
+RV64.IM_6SP.cm_mhz,45.0,MHz,RV64 SoC and FPGA!H5,run clock of the CoreMark board run
+RV64.IM_6SP.dhrystones_per_s,85603.0,1/s,RV64 SoC and FPGA!C5,
+RV64.IM_6SP.dmips,48.721116,DMIPS,RV64 SoC and FPGA!C5,Dhrystones/s / 1757
+RV64.IM_6SP.dmips_per_mhz,1.107298,DMIPS/MHz,"RV64 SoC and FPGA!C5, RV64 SoC and FPGA!E5",
+RV64.IM_6SP.coremark,96.1,it/s,T3/T3_fragment_corrected_coremark.csv[RV64IM_6SP],true score f*iterations/cycles; master value biased by integer-second truncation
+RV64.IM_6SP.coremark_reported_master,100.0,it/s,RV64 SoC and FPGA!D5,superseded
+RV64.IM_6SP.coremark_per_mhz,2.135556,CM/MHz,"T3/T3_fragment_corrected_coremark.csv[RV64IM_6SP], RV64 SoC and FPGA!H5",
+RV64.IM_6SP.cpi_dhrystone,1.329016,cycles/instr,T3/T3_fragment_corrected_coremark.csv[RV64IM_6SP],"per-iteration, RTL simulation (== FPGA)"
+RV64.IM_6SP.cpi_coremark,1.411078,cycles/instr,T3/T3_fragment_corrected_coremark.csv[RV64IM_6SP],"per-iteration, RTL simulation (== FPGA)"
+RV64.IM_6SP.dhrystone_cycles_per_iter,513.0,cycles,T3/T3_fragment_corrected_coremark.csv[RV64IM_6SP],
+RV64.IM_6SP.coremark_cycles_per_iter,468277.0,cycles,T3/T3_fragment_corrected_coremark.csv[RV64IM_6SP],
+RV64.IM_6SP.core_lut,8600.0,count,RV64 SoC and FPGA!T5,"core-only synthesis, memory excluded"
+RV64.IM_6SP.core_ff,3947.0,count,RV64 SoC and FPGA!U5,"core-only synthesis, memory excluded"
+RV64.IM_6SP.core_dsp,20.0,count,RV64 SoC and FPGA!V5,"core-only synthesis, memory excluded"
+RV64.IM_6SP.soc_lut_dhry,22553.0,count,RV64 SoC and FPGA!C15,"SoC, includes memories"
+RV64.IM_6SP.soc_bram_dhry,0.0,count,RV64 SoC and FPGA!F15,"SoC, includes memories"
+RV64.IM_6SP.soc_lut_cm,26554.0,count,RV64 SoC and FPGA!C25,"SoC, includes memories"
+RV64.IM_6SP.soc_bram_cm,0.0,count,RV64 SoC and FPGA!F25,"SoC, includes memories"
+RV64.IM_6SP.soc_fmax_image_spread,0.784,MHz,RV64 SoC and FPGA!J15 vs RV64 SoC and FPGA!J25,"same RTL, Dhrystone vs CoreMark image"
+RV64.IM_6SP.CM_per_W,224.01,CM/W,T4/T4_normalized_metrics.csv[RV64IM_6SP],
+RV64.IM_6SP.mJ_per_CM_iter,4.4641,mJ,T4/T4_normalized_metrics.csv[RV64IM_6SP],
+RV64.IM_6SP.CM_per_W_core_attr,561.99,CM/W,T4/T4_normalized_metrics.csv[RV64IM_6SP],core_attr = dynamic - PLL - I/O
+RV64.IM_6SP.mJ_per_CM_iter_core_attr,1.7794,mJ,T4/T4_normalized_metrics.csv[RV64IM_6SP],core_attr = dynamic - PLL - I/O
+RV64.IM_6SP.uJ_per_Dhry_iter,4.6026,uJ,T4/T4_normalized_metrics.csv[RV64IM_6SP],
+RV64.IM_6SP.uJ_per_Dhry_iter_core_attr,1.6238,uJ,T4/T4_normalized_metrics.csv[RV64IM_6SP],core_attr = dynamic - PLL - I/O
+RV64.IM_6SP.CM_per_kLUT_core,11.174,CM/kLUT,T4/T4_normalized_metrics.csv[RV64IM_6SP],
+RV64.IM_6SP.dmips_per_klut_core,5.665246,DMIPS/kLUT,"RV64 SoC and FPGA!C5, RV64 SoC and FPGA!T5",
+RV64.IM_6SP.power_dhrystone_total,0.394,W,"T4/T4_saif_authoritative.csv[RV64IM_6SP,dhrystone]","SAIF, v1 capture re-costed on final impl"
+RV64.IM_6SP.power_dhrystone_dynamic,0.242,W,"T4/T4_saif_authoritative.csv[RV64IM_6SP,dhrystone]",
+RV64.IM_6SP.power_dhrystone_core_attr,0.139,W,"T4/T4_saif_authoritative.csv[RV64IM_6SP,dhrystone]",dynamic - PLL - I/O
+RV64.IM_6SP.power_dhrystone_saif_coverage,73.6,%,"T4/T4_saif_authoritative.csv[RV64IM_6SP,dhrystone]",read_saif nets matched
+RV64.IM_6SP.power_coremark_total,0.429,W,"T4/T4_saif_authoritative.csv[RV64IM_6SP,coremark]","SAIF, v1 capture re-costed on final impl"
+RV64.IM_6SP.power_coremark_dynamic,0.277,W,"T4/T4_saif_authoritative.csv[RV64IM_6SP,coremark]",
+RV64.IM_6SP.power_coremark_core_attr,0.171,W,"T4/T4_saif_authoritative.csv[RV64IM_6SP,coremark]",dynamic - PLL - I/O
+RV64.IM_6SP.power_coremark_saif_coverage,79.8,%,"T4/T4_saif_authoritative.csv[RV64IM_6SP,coremark]",read_saif nets matched
+RV64.IM_7SP.core_fmax,64.637,MHz,RV64 SoC and FPGA!J6,"post-synthesis, core only, 5 ns over-constraint"
+RV64.IM_7SP.soc_fmax_dhry,48.639,MHz,RV64 SoC and FPGA!J16,"post-route, Dhrystone image, at the build PLL constraint"
+RV64.IM_7SP.soc_fmax_cm,47.374,MHz,RV64 SoC and FPGA!J26,"post-route, CoreMark image, at the build PLL constraint"
+RV64.IM_7SP.dhry_mhz,48.611111,MHz,RV64 SoC and FPGA!E6,run clock of the Dhrystone board run
+RV64.IM_7SP.cm_mhz,47.0,MHz,RV64 SoC and FPGA!H6,run clock of the CoreMark board run
+RV64.IM_7SP.dhrystones_per_s,75718.0,1/s,RV64 SoC and FPGA!C6,
+RV64.IM_7SP.dmips,43.095048,DMIPS,RV64 SoC and FPGA!C6,Dhrystones/s / 1757
+RV64.IM_7SP.dmips_per_mhz,0.886527,DMIPS/MHz,"RV64 SoC and FPGA!C6, RV64 SoC and FPGA!E6",
+RV64.IM_7SP.coremark,84.83,it/s,T3/T3_fragment_corrected_coremark.csv[RV64IM_7SP],true score f*iterations/cycles; master value biased by integer-second truncation
+RV64.IM_7SP.coremark_reported_master,91.0,it/s,RV64 SoC and FPGA!D6,superseded
+RV64.IM_7SP.coremark_per_mhz,1.804894,CM/MHz,"T3/T3_fragment_corrected_coremark.csv[RV64IM_7SP], RV64 SoC and FPGA!H6",
+RV64.IM_7SP.cpi_dhrystone,1.660622,cycles/instr,T3/T3_fragment_corrected_coremark.csv[RV64IM_7SP],"per-iteration, RTL simulation (== FPGA)"
+RV64.IM_7SP.cpi_coremark,1.669597,cycles/instr,T3/T3_fragment_corrected_coremark.csv[RV64IM_7SP],"per-iteration, RTL simulation (== FPGA)"
+RV64.IM_7SP.dhrystone_cycles_per_iter,641.0,cycles,T3/T3_fragment_corrected_coremark.csv[RV64IM_7SP],
+RV64.IM_7SP.coremark_cycles_per_iter,554070.0,cycles,T3/T3_fragment_corrected_coremark.csv[RV64IM_7SP],
+RV64.IM_7SP.core_lut,7448.0,count,RV64 SoC and FPGA!T6,"core-only synthesis, memory excluded"
+RV64.IM_7SP.core_ff,4173.0,count,RV64 SoC and FPGA!U6,"core-only synthesis, memory excluded"
+RV64.IM_7SP.core_dsp,20.0,count,RV64 SoC and FPGA!V6,"core-only synthesis, memory excluded"
+RV64.IM_7SP.soc_lut_dhry,19578.0,count,RV64 SoC and FPGA!C16,"SoC, includes memories"
+RV64.IM_7SP.soc_bram_dhry,0.0,count,RV64 SoC and FPGA!F16,"SoC, includes memories"
+RV64.IM_7SP.soc_lut_cm,21320.0,count,RV64 SoC and FPGA!C26,"SoC, includes memories"
+RV64.IM_7SP.soc_bram_cm,8.0,count,RV64 SoC and FPGA!F26,"SoC, includes memories"
+RV64.IM_7SP.soc_fmax_image_spread,1.265,MHz,RV64 SoC and FPGA!J16 vs RV64 SoC and FPGA!J26,"same RTL, Dhrystone vs CoreMark image"
+RV64.IM_7SP.CM_per_W,211.02,CM/W,T4/T4_normalized_metrics.csv[RV64IM_7SP],
+RV64.IM_7SP.mJ_per_CM_iter,4.7389,mJ,T4/T4_normalized_metrics.csv[RV64IM_7SP],
+RV64.IM_7SP.CM_per_W_core_attr,597.39,CM/W,T4/T4_normalized_metrics.csv[RV64IM_7SP],core_attr = dynamic - PLL - I/O
+RV64.IM_7SP.mJ_per_CM_iter_core_attr,1.6739,mJ,T4/T4_normalized_metrics.csv[RV64IM_7SP],core_attr = dynamic - PLL - I/O
+RV64.IM_7SP.uJ_per_Dhry_iter,4.979,uJ,T4/T4_normalized_metrics.csv[RV64IM_7SP],
+RV64.IM_7SP.uJ_per_Dhry_iter_core_attr,1.6112,uJ,T4/T4_normalized_metrics.csv[RV64IM_7SP],core_attr = dynamic - PLL - I/O
+RV64.IM_7SP.CM_per_kLUT_core,11.39,CM/kLUT,T4/T4_normalized_metrics.csv[RV64IM_7SP],
+RV64.IM_7SP.dmips_per_klut_core,5.786124,DMIPS/kLUT,"RV64 SoC and FPGA!C6, RV64 SoC and FPGA!T6",
+RV64.IM_7SP.power_dhrystone_total,0.377,W,"T4/T4_saif_authoritative.csv[RV64IM_7SP,dhrystone]","SAIF, v1 capture re-costed on final impl"
+RV64.IM_7SP.power_dhrystone_dynamic,0.225,W,"T4/T4_saif_authoritative.csv[RV64IM_7SP,dhrystone]",
+RV64.IM_7SP.power_dhrystone_core_attr,0.122,W,"T4/T4_saif_authoritative.csv[RV64IM_7SP,dhrystone]",dynamic - PLL - I/O
+RV64.IM_7SP.power_dhrystone_saif_coverage,75.4,%,"T4/T4_saif_authoritative.csv[RV64IM_7SP,dhrystone]",read_saif nets matched
+RV64.IM_7SP.power_coremark_total,0.402,W,"T4/T4_saif_authoritative.csv[RV64IM_7SP,coremark]","SAIF, v1 capture re-costed on final impl"
+RV64.IM_7SP.power_coremark_dynamic,0.249,W,"T4/T4_saif_authoritative.csv[RV64IM_7SP,coremark]",
+RV64.IM_7SP.power_coremark_core_attr,0.142,W,"T4/T4_saif_authoritative.csv[RV64IM_7SP,coremark]",dynamic - PLL - I/O
+RV64.IM_7SP.power_coremark_saif_coverage,81.3,%,"T4/T4_saif_authoritative.csv[RV64IM_7SP,coremark]",read_saif nets matched
+RV64.IM_7SP_BRAM.core_fmax,64.637,MHz,RV64 SoC and FPGA!J7,"post-synthesis, core only, 5 ns over-constraint"
+RV64.IM_7SP_BRAM.soc_fmax_dhry,58.485,MHz,RV64 SoC and FPGA!J17,"post-route, Dhrystone image, at the build PLL constraint"
+RV64.IM_7SP_BRAM.soc_fmax_cm,58.591,MHz,RV64 SoC and FPGA!J27,"post-route, CoreMark image, at the build PLL constraint"
+RV64.IM_7SP_BRAM.dhry_mhz,58.0,MHz,RV64 SoC and FPGA!E7,run clock of the Dhrystone board run
+RV64.IM_7SP_BRAM.cm_mhz,58.0,MHz,RV64 SoC and FPGA!H7,run clock of the CoreMark board run
+RV64.IM_7SP_BRAM.dhrystones_per_s,82386.0,1/s,RV64 SoC and FPGA!C7,
+RV64.IM_7SP_BRAM.dmips,46.890154,DMIPS,RV64 SoC and FPGA!C7,Dhrystones/s / 1757
+RV64.IM_7SP_BRAM.dmips_per_mhz,0.808451,DMIPS/MHz,"RV64 SoC and FPGA!C7, RV64 SoC and FPGA!E7",
+RV64.IM_7SP_BRAM.coremark,101.31,it/s,T3/T3_fragment_corrected_coremark.csv[RV64IM_7SP_BRAM],true score f*iterations/cycles; master value biased by integer-second truncation
+RV64.IM_7SP_BRAM.coremark_reported_master,105.0,it/s,RV64 SoC and FPGA!D7,superseded
+RV64.IM_7SP_BRAM.coremark_per_mhz,1.746724,CM/MHz,"T3/T3_fragment_corrected_coremark.csv[RV64IM_7SP_BRAM], RV64 SoC and FPGA!H7",
+RV64.IM_7SP_BRAM.cpi_dhrystone,1.821244,cycles/instr,T3/T3_fragment_corrected_coremark.csv[RV64IM_7SP_BRAM],"per-iteration, RTL simulation (== FPGA)"
+RV64.IM_7SP_BRAM.cpi_coremark,1.725175,cycles/instr,T3/T3_fragment_corrected_coremark.csv[RV64IM_7SP_BRAM],"per-iteration, RTL simulation (== FPGA)"
+RV64.IM_7SP_BRAM.dhrystone_cycles_per_iter,703.0,cycles,T3/T3_fragment_corrected_coremark.csv[RV64IM_7SP_BRAM],
+RV64.IM_7SP_BRAM.coremark_cycles_per_iter,572512.5,cycles,T3/T3_fragment_corrected_coremark.csv[RV64IM_7SP_BRAM],
+RV64.IM_7SP_BRAM.core_lut,7520.0,count,RV64 SoC and FPGA!T7,"core-only synthesis, memory excluded"
+RV64.IM_7SP_BRAM.core_ff,4173.0,count,RV64 SoC and FPGA!U7,"core-only synthesis, memory excluded"
+RV64.IM_7SP_BRAM.core_dsp,20.0,count,RV64 SoC and FPGA!V7,"core-only synthesis, memory excluded"
+RV64.IM_7SP_BRAM.soc_lut_dhry,9049.0,count,RV64 SoC and FPGA!C17,"SoC, includes memories"
+RV64.IM_7SP_BRAM.soc_bram_dhry,24.0,count,RV64 SoC and FPGA!F17,"SoC, includes memories"
+RV64.IM_7SP_BRAM.soc_lut_cm,12378.0,count,RV64 SoC and FPGA!C27,"SoC, includes memories"
+RV64.IM_7SP_BRAM.soc_bram_cm,24.0,count,RV64 SoC and FPGA!F27,"SoC, includes memories"
+RV64.IM_7SP_BRAM.soc_fmax_image_spread,0.106,MHz,RV64 SoC and FPGA!J17 vs RV64 SoC and FPGA!J27,"same RTL, Dhrystone vs CoreMark image"
+RV64.IM_7SP_BRAM.CM_per_W,244.12,CM/W,T4/T4_normalized_metrics.csv[RV64IM_7SP_BRAM],
+RV64.IM_7SP_BRAM.mJ_per_CM_iter,4.0963,mJ,T4/T4_normalized_metrics.csv[RV64IM_7SP_BRAM],
+RV64.IM_7SP_BRAM.CM_per_W_core_attr,713.45,CM/W,T4/T4_normalized_metrics.csv[RV64IM_7SP_BRAM],core_attr = dynamic - PLL - I/O
+RV64.IM_7SP_BRAM.mJ_per_CM_iter_core_attr,1.4016,mJ,T4/T4_normalized_metrics.csv[RV64IM_7SP_BRAM],core_attr = dynamic - PLL - I/O
+RV64.IM_7SP_BRAM.uJ_per_Dhry_iter,4.4789,uJ,T4/T4_normalized_metrics.csv[RV64IM_7SP_BRAM],
+RV64.IM_7SP_BRAM.uJ_per_Dhry_iter_core_attr,1.1652,uJ,T4/T4_normalized_metrics.csv[RV64IM_7SP_BRAM],core_attr = dynamic - PLL - I/O
+RV64.IM_7SP_BRAM.CM_per_kLUT_core,13.472,CM/kLUT,T4/T4_normalized_metrics.csv[RV64IM_7SP_BRAM],
+RV64.IM_7SP_BRAM.dmips_per_klut_core,6.235393,DMIPS/kLUT,"RV64 SoC and FPGA!C7, RV64 SoC and FPGA!T7",
+RV64.IM_7SP_BRAM.power_dhrystone_total,0.369,W,"T4/T4_saif_authoritative.csv[RV64IM_7SP_BRAM,dhrystone]","SAIF, v1 capture re-costed on final impl"
+RV64.IM_7SP_BRAM.power_dhrystone_dynamic,0.216,W,"T4/T4_saif_authoritative.csv[RV64IM_7SP_BRAM,dhrystone]",
+RV64.IM_7SP_BRAM.power_dhrystone_core_attr,0.096,W,"T4/T4_saif_authoritative.csv[RV64IM_7SP_BRAM,dhrystone]",dynamic - PLL - I/O
+RV64.IM_7SP_BRAM.power_dhrystone_saif_coverage,66.6,%,"T4/T4_saif_authoritative.csv[RV64IM_7SP_BRAM,dhrystone]",read_saif nets matched
+RV64.IM_7SP_BRAM.power_coremark_total,0.415,W,"T4/T4_saif_authoritative.csv[RV64IM_7SP_BRAM,coremark]","SAIF, v1 capture re-costed on final impl"
+RV64.IM_7SP_BRAM.power_coremark_dynamic,0.262,W,"T4/T4_saif_authoritative.csv[RV64IM_7SP_BRAM,coremark]",
+RV64.IM_7SP_BRAM.power_coremark_core_attr,0.142,W,"T4/T4_saif_authoritative.csv[RV64IM_7SP_BRAM,coremark]",dynamic - PLL - I/O
+RV64.IM_7SP_BRAM.power_coremark_saif_coverage,70.8,%,"T4/T4_saif_authoritative.csv[RV64IM_7SP_BRAM,coremark]",read_saif nets matched
+RV64.IM_7SP_BRAM_Opt.core_fmax,91.651,MHz,RV64 SoC and FPGA!J8,"post-synthesis, core only, 5 ns over-constraint"
+RV64.IM_7SP_BRAM_Opt.soc_fmax_dhry,80.992,MHz,RV64 SoC and FPGA!J18,"post-route, Dhrystone image, at the build PLL constraint"
+RV64.IM_7SP_BRAM_Opt.soc_fmax_cm,80.972,MHz,RV64 SoC and FPGA!J28,"post-route, CoreMark image, at the build PLL constraint"
+RV64.IM_7SP_BRAM_Opt.dhry_mhz,80.952381,MHz,RV64 SoC and FPGA!E8,run clock of the Dhrystone board run
+RV64.IM_7SP_BRAM_Opt.cm_mhz,80.952381,MHz,RV64 SoC and FPGA!H8,run clock of the CoreMark board run
+RV64.IM_7SP_BRAM_Opt.dhrystones_per_s,111504.0,1/s,RV64 SoC and FPGA!C8,
+RV64.IM_7SP_BRAM_Opt.dmips,63.462721,DMIPS,RV64 SoC and FPGA!C8,Dhrystones/s / 1757
+RV64.IM_7SP_BRAM_Opt.dmips_per_mhz,0.783951,DMIPS/MHz,"RV64 SoC and FPGA!C8, RV64 SoC and FPGA!E8",
+RV64.IM_7SP_BRAM_Opt.coremark,139.48,it/s,T3/T3_fragment_corrected_coremark.csv[RV64IM_7SP_BRAM_Opt],true score f*iterations/cycles; master value biased by integer-second truncation
+RV64.IM_7SP_BRAM_Opt.coremark_reported_master,142.0,it/s,RV64 SoC and FPGA!D8,superseded
+RV64.IM_7SP_BRAM_Opt.coremark_per_mhz,1.722988,CM/MHz,"T3/T3_fragment_corrected_coremark.csv[RV64IM_7SP_BRAM_Opt], RV64 SoC and FPGA!H8",
+RV64.IM_7SP_BRAM_Opt.cpi_dhrystone,1.878238,cycles/instr,T3/T3_fragment_corrected_coremark.csv[RV64IM_7SP_BRAM_Opt],"per-iteration, RTL simulation (== FPGA)"
+RV64.IM_7SP_BRAM_Opt.cpi_coremark,1.748942,cycles/instr,T3/T3_fragment_corrected_coremark.csv[RV64IM_7SP_BRAM_Opt],"per-iteration, RTL simulation (== FPGA)"
+RV64.IM_7SP_BRAM_Opt.dhrystone_cycles_per_iter,725.0,cycles,T3/T3_fragment_corrected_coremark.csv[RV64IM_7SP_BRAM_Opt],
+RV64.IM_7SP_BRAM_Opt.coremark_cycles_per_iter,580399.7,cycles,T3/T3_fragment_corrected_coremark.csv[RV64IM_7SP_BRAM_Opt],
+RV64.IM_7SP_BRAM_Opt.core_lut,6509.0,count,RV64 SoC and FPGA!T8,"core-only synthesis, memory excluded"
+RV64.IM_7SP_BRAM_Opt.core_ff,3684.0,count,RV64 SoC and FPGA!U8,"core-only synthesis, memory excluded"
+RV64.IM_7SP_BRAM_Opt.core_dsp,20.0,count,RV64 SoC and FPGA!V8,"core-only synthesis, memory excluded"
+RV64.IM_7SP_BRAM_Opt.soc_lut_dhry,8277.0,count,RV64 SoC and FPGA!C18,"SoC, includes memories"
+RV64.IM_7SP_BRAM_Opt.soc_bram_dhry,18.0,count,RV64 SoC and FPGA!F18,"SoC, includes memories"
+RV64.IM_7SP_BRAM_Opt.soc_lut_cm,12052.0,count,RV64 SoC and FPGA!C28,"SoC, includes memories"
+RV64.IM_7SP_BRAM_Opt.soc_bram_cm,24.0,count,RV64 SoC and FPGA!F28,"SoC, includes memories"
+RV64.IM_7SP_BRAM_Opt.soc_fmax_image_spread,0.02,MHz,RV64 SoC and FPGA!J18 vs RV64 SoC and FPGA!J28,"same RTL, Dhrystone vs CoreMark image"
+RV64.IM_7SP_BRAM_Opt.CM_per_W,288.78,CM/W,T4/T4_normalized_metrics.csv[RV64IM_7SP_BRAM_Opt],
+RV64.IM_7SP_BRAM_Opt.mJ_per_CM_iter,3.4629,mJ,T4/T4_normalized_metrics.csv[RV64IM_7SP_BRAM_Opt],
+RV64.IM_7SP_BRAM_Opt.CM_per_W_core_attr,664.19,CM/W,T4/T4_normalized_metrics.csv[RV64IM_7SP_BRAM_Opt],core_attr = dynamic - PLL - I/O
+RV64.IM_7SP_BRAM_Opt.mJ_per_CM_iter_core_attr,1.5056,mJ,T4/T4_normalized_metrics.csv[RV64IM_7SP_BRAM_Opt],core_attr = dynamic - PLL - I/O
+RV64.IM_7SP_BRAM_Opt.uJ_per_Dhry_iter,3.2196,uJ,T4/T4_normalized_metrics.csv[RV64IM_7SP_BRAM_Opt],
+RV64.IM_7SP_BRAM_Opt.uJ_per_Dhry_iter_core_attr,0.7623,uJ,T4/T4_normalized_metrics.csv[RV64IM_7SP_BRAM_Opt],core_attr = dynamic - PLL - I/O
+RV64.IM_7SP_BRAM_Opt.CM_per_kLUT_core,21.429,CM/kLUT,T4/T4_normalized_metrics.csv[RV64IM_7SP_BRAM_Opt],
+RV64.IM_7SP_BRAM_Opt.dmips_per_klut_core,9.749995,DMIPS/kLUT,"RV64 SoC and FPGA!C8, RV64 SoC and FPGA!T8",
+RV64.IM_7SP_BRAM_Opt.power_dhrystone_total,0.359,W,"T4/T4_saif_authoritative.csv[RV64IM_7SP_BRAM_Opt,dhrystone]","SAIF, v1 capture re-costed on final impl"
+RV64.IM_7SP_BRAM_Opt.power_dhrystone_dynamic,0.206,W,"T4/T4_saif_authoritative.csv[RV64IM_7SP_BRAM_Opt,dhrystone]",
+RV64.IM_7SP_BRAM_Opt.power_dhrystone_core_attr,0.085,W,"T4/T4_saif_authoritative.csv[RV64IM_7SP_BRAM_Opt,dhrystone]",dynamic - PLL - I/O
+RV64.IM_7SP_BRAM_Opt.power_dhrystone_saif_coverage,67.5,%,"T4/T4_saif_authoritative.csv[RV64IM_7SP_BRAM_Opt,dhrystone]",read_saif nets matched
+RV64.IM_7SP_BRAM_Opt.power_coremark_total,0.483,W,"T4/T4_saif_authoritative.csv[RV64IM_7SP_BRAM_Opt,coremark]","SAIF, v2 capture on final impl"
+RV64.IM_7SP_BRAM_Opt.power_coremark_dynamic,0.33,W,"T4/T4_saif_authoritative.csv[RV64IM_7SP_BRAM_Opt,coremark]",
+RV64.IM_7SP_BRAM_Opt.power_coremark_core_attr,0.21,W,"T4/T4_saif_authoritative.csv[RV64IM_7SP_BRAM_Opt,coremark]",dynamic - PLL - I/O
+RV64.IM_7SP_BRAM_Opt.power_coremark_saif_coverage,64.0,%,"T4/T4_saif_authoritative.csv[RV64IM_7SP_BRAM_Opt,coremark]",read_saif nets matched
+RV64.IM_8SP_withoutOpt.core_fmax,89.993,MHz,RV64 SoC and FPGA!J9,"post-synthesis, core only, 5 ns over-constraint"
+RV64.IM_8SP_withoutOpt.soc_fmax_dhry,96.687,MHz,RV64 SoC and FPGA!J19,"post-route, Dhrystone image, at the build PLL constraint"
+RV64.IM_8SP_withoutOpt.soc_fmax_cm,92.468,MHz,RV64 SoC and FPGA!J29,"post-route, CoreMark image, at the build PLL constraint"
+RV64.IM_8SP_withoutOpt.dhry_mhz,96.0,MHz,RV64 SoC and FPGA!E9,run clock of the Dhrystone board run
+RV64.IM_8SP_withoutOpt.cm_mhz,92.0,MHz,RV64 SoC and FPGA!H9,run clock of the CoreMark board run
+RV64.IM_8SP_withoutOpt.dhrystones_per_s,115802.0,1/s,RV64 SoC and FPGA!C9,
+RV64.IM_8SP_withoutOpt.dmips,65.908936,DMIPS,RV64 SoC and FPGA!C9,Dhrystones/s / 1757
+RV64.IM_8SP_withoutOpt.dmips_per_mhz,0.686551,DMIPS/MHz,"RV64 SoC and FPGA!C9, RV64 SoC and FPGA!E9",
+RV64.IM_8SP_withoutOpt.coremark,134.27,it/s,T3/T3_fragment_corrected_coremark.csv[RV64IM_8SP_withoutOpt],true score f*iterations/cycles; master value biased by integer-second truncation
+RV64.IM_8SP_withoutOpt.coremark_reported_master,142.0,it/s,RV64 SoC and FPGA!D9,superseded
+RV64.IM_8SP_withoutOpt.coremark_per_mhz,1.459457,CM/MHz,"T3/T3_fragment_corrected_coremark.csv[RV64IM_8SP_withoutOpt], RV64 SoC and FPGA!H9",
+RV64.IM_8SP_withoutOpt.cpi_dhrystone,2.145078,cycles/instr,T3/T3_fragment_corrected_coremark.csv[RV64IM_8SP_withoutOpt],"per-iteration, RTL simulation (== FPGA)"
+RV64.IM_8SP_withoutOpt.cpi_coremark,2.064686,cycles/instr,T3/T3_fragment_corrected_coremark.csv[RV64IM_8SP_withoutOpt],"per-iteration, RTL simulation (== FPGA)"
+RV64.IM_8SP_withoutOpt.dhrystone_cycles_per_iter,828.0,cycles,T3/T3_fragment_corrected_coremark.csv[RV64IM_8SP_withoutOpt],
+RV64.IM_8SP_withoutOpt.coremark_cycles_per_iter,685181.9,cycles,T3/T3_fragment_corrected_coremark.csv[RV64IM_8SP_withoutOpt],
+RV64.IM_8SP_withoutOpt.core_lut,7868.0,count,RV64 SoC and FPGA!T9,"core-only synthesis, memory excluded"
+RV64.IM_8SP_withoutOpt.core_ff,4974.0,count,RV64 SoC and FPGA!U9,"core-only synthesis, memory excluded"
+RV64.IM_8SP_withoutOpt.core_dsp,20.0,count,RV64 SoC and FPGA!V9,"core-only synthesis, memory excluded"
+RV64.IM_8SP_withoutOpt.soc_lut_dhry,9341.0,count,RV64 SoC and FPGA!C19,"SoC, includes memories"
+RV64.IM_8SP_withoutOpt.soc_bram_dhry,24.0,count,RV64 SoC and FPGA!F19,"SoC, includes memories"
+RV64.IM_8SP_withoutOpt.soc_lut_cm,12232.0,count,RV64 SoC and FPGA!C29,"SoC, includes memories"
+RV64.IM_8SP_withoutOpt.soc_bram_cm,24.0,count,RV64 SoC and FPGA!F29,"SoC, includes memories"
+RV64.IM_8SP_withoutOpt.soc_fmax_image_spread,4.219,MHz,RV64 SoC and FPGA!J19 vs RV64 SoC and FPGA!J29,"same RTL, Dhrystone vs CoreMark image"
+RV64.IM_8SP_withoutOpt.CM_per_W,260.72,CM/W,T4/T4_normalized_metrics.csv[RV64IM_8SP_withoutOpt],
+RV64.IM_8SP_withoutOpt.mJ_per_CM_iter,3.8356,mJ,T4/T4_normalized_metrics.csv[RV64IM_8SP_withoutOpt],
+RV64.IM_8SP_withoutOpt.CM_per_W_core_attr,528.62,CM/W,T4/T4_normalized_metrics.csv[RV64IM_8SP_withoutOpt],core_attr = dynamic - PLL - I/O
+RV64.IM_8SP_withoutOpt.mJ_per_CM_iter_core_attr,1.8917,mJ,T4/T4_normalized_metrics.csv[RV64IM_8SP_withoutOpt],core_attr = dynamic - PLL - I/O
+RV64.IM_8SP_withoutOpt.uJ_per_Dhry_iter,3.5405,uJ,T4/T4_normalized_metrics.csv[RV64IM_8SP_withoutOpt],
+RV64.IM_8SP_withoutOpt.uJ_per_Dhry_iter_core_attr,1.278,uJ,T4/T4_normalized_metrics.csv[RV64IM_8SP_withoutOpt],core_attr = dynamic - PLL - I/O
+RV64.IM_8SP_withoutOpt.CM_per_kLUT_core,17.065,CM/kLUT,T4/T4_normalized_metrics.csv[RV64IM_8SP_withoutOpt],
+RV64.IM_8SP_withoutOpt.dmips_per_klut_core,8.376835,DMIPS/kLUT,"RV64 SoC and FPGA!C9, RV64 SoC and FPGA!T9",
+RV64.IM_8SP_withoutOpt.power_dhrystone_total,0.41,W,"T4/T4_saif_authoritative.csv[RV64IM_8SP_withoutOpt,dhrystone]","SAIF, v1 capture re-costed on final impl"
+RV64.IM_8SP_withoutOpt.power_dhrystone_dynamic,0.257,W,"T4/T4_saif_authoritative.csv[RV64IM_8SP_withoutOpt,dhrystone]",
+RV64.IM_8SP_withoutOpt.power_dhrystone_core_attr,0.148,W,"T4/T4_saif_authoritative.csv[RV64IM_8SP_withoutOpt,dhrystone]",dynamic - PLL - I/O
+RV64.IM_8SP_withoutOpt.power_dhrystone_saif_coverage,68.8,%,"T4/T4_saif_authoritative.csv[RV64IM_8SP_withoutOpt,dhrystone]",read_saif nets matched
+RV64.IM_8SP_withoutOpt.power_coremark_total,0.515,W,"T4/T4_saif_authoritative.csv[RV64IM_8SP_withoutOpt,coremark]","SAIF, v1 capture re-costed on final impl"
+RV64.IM_8SP_withoutOpt.power_coremark_dynamic,0.361,W,"T4/T4_saif_authoritative.csv[RV64IM_8SP_withoutOpt,coremark]",
+RV64.IM_8SP_withoutOpt.power_coremark_core_attr,0.254,W,"T4/T4_saif_authoritative.csv[RV64IM_8SP_withoutOpt,coremark]",dynamic - PLL - I/O
+RV64.IM_8SP_withoutOpt.power_coremark_saif_coverage,74.4,%,"T4/T4_saif_authoritative.csv[RV64IM_8SP_withoutOpt,coremark]",read_saif nets matched
+RV64.IM_8SP.core_fmax,100.664,MHz,RV64 SoC and FPGA!J10,"post-synthesis, core only, 5 ns over-constraint"
+RV64.IM_8SP.soc_fmax_dhry,102.977,MHz,RV64 SoC and FPGA!J20,"post-route, Dhrystone image, at the build PLL constraint"
+RV64.IM_8SP.soc_fmax_cm,102.386,MHz,RV64 SoC and FPGA!J30,"post-route, CoreMark image, at the build PLL constraint"
+RV64.IM_8SP.dhry_mhz,102.0,MHz,RV64 SoC and FPGA!E10,run clock of the Dhrystone board run
+RV64.IM_8SP.cm_mhz,102.0,MHz,RV64 SoC and FPGA!H10,run clock of the CoreMark board run
+RV64.IM_8SP.dhrystones_per_s,119858.0,1/s,RV64 SoC and FPGA!C10,
+RV64.IM_8SP.dmips,68.217416,DMIPS,RV64 SoC and FPGA!C10,Dhrystones/s / 1757
+RV64.IM_8SP.dmips_per_mhz,0.668798,DMIPS/MHz,"RV64 SoC and FPGA!C10, RV64 SoC and FPGA!E10",
+RV64.IM_8SP.coremark,147.17,it/s,T3/T3_fragment_corrected_coremark.csv[RV64IM_8SP],true score f*iterations/cycles; master value biased by integer-second truncation
+RV64.IM_8SP.coremark_reported_master,153.0,it/s,RV64 SoC and FPGA!D10,superseded
+RV64.IM_8SP.coremark_per_mhz,1.442843,CM/MHz,"T3/T3_fragment_corrected_coremark.csv[RV64IM_8SP], RV64 SoC and FPGA!H10",
+RV64.IM_8SP.cpi_dhrystone,2.202073,cycles/instr,T3/T3_fragment_corrected_coremark.csv[RV64IM_8SP],"per-iteration, RTL simulation (== FPGA)"
+RV64.IM_8SP.cpi_coremark,2.088456,cycles/instr,T3/T3_fragment_corrected_coremark.csv[RV64IM_8SP],"per-iteration, RTL simulation (== FPGA)"
+RV64.IM_8SP.dhrystone_cycles_per_iter,850.0,cycles,T3/T3_fragment_corrected_coremark.csv[RV64IM_8SP],
+RV64.IM_8SP.coremark_cycles_per_iter,693070.1,cycles,T3/T3_fragment_corrected_coremark.csv[RV64IM_8SP],
+RV64.IM_8SP.core_lut,6981.0,count,RV64 SoC and FPGA!T10,"core-only synthesis, memory excluded"
+RV64.IM_8SP.core_ff,4489.0,count,RV64 SoC and FPGA!U10,"core-only synthesis, memory excluded"
+RV64.IM_8SP.core_dsp,20.0,count,RV64 SoC and FPGA!V10,"core-only synthesis, memory excluded"
+RV64.IM_8SP.soc_lut_dhry,8569.0,count,RV64 SoC and FPGA!C20,"SoC, includes memories"
+RV64.IM_8SP.soc_bram_dhry,18.0,count,RV64 SoC and FPGA!F20,"SoC, includes memories"
+RV64.IM_8SP.soc_lut_cm,12666.0,count,RV64 SoC and FPGA!C30,"SoC, includes memories"
+RV64.IM_8SP.soc_bram_cm,24.0,count,RV64 SoC and FPGA!F30,"SoC, includes memories"
+RV64.IM_8SP.soc_fmax_image_spread,0.591,MHz,RV64 SoC and FPGA!J20 vs RV64 SoC and FPGA!J30,"same RTL, Dhrystone vs CoreMark image"
+RV64.IM_8SP.CM_per_W,296.12,CM/W,T4/T4_normalized_metrics.csv[RV64IM_8SP],
+RV64.IM_8SP.mJ_per_CM_iter,3.377,mJ,T4/T4_normalized_metrics.csv[RV64IM_8SP],
+RV64.IM_8SP.CM_per_W_core_attr,639.87,CM/W,T4/T4_normalized_metrics.csv[RV64IM_8SP],core_attr = dynamic - PLL - I/O
+RV64.IM_8SP.mJ_per_CM_iter_core_attr,1.5628,mJ,T4/T4_normalized_metrics.csv[RV64IM_8SP],core_attr = dynamic - PLL - I/O
+RV64.IM_8SP.uJ_per_Dhry_iter,3.4124,uJ,T4/T4_normalized_metrics.csv[RV64IM_8SP],
+RV64.IM_8SP.uJ_per_Dhry_iter_core_attr,1.1847,uJ,T4/T4_normalized_metrics.csv[RV64IM_8SP],core_attr = dynamic - PLL - I/O
+RV64.IM_8SP.CM_per_kLUT_core,21.082,CM/kLUT,T4/T4_normalized_metrics.csv[RV64IM_8SP],
+RV64.IM_8SP.dmips_per_klut_core,9.771869,DMIPS/kLUT,"RV64 SoC and FPGA!C10, RV64 SoC and FPGA!T10",
+RV64.IM_8SP.power_dhrystone_total,0.409,W,"T4/T4_saif_authoritative.csv[RV64IM_8SP,dhrystone]","SAIF, v1 capture re-costed on final impl"
+RV64.IM_8SP.power_dhrystone_dynamic,0.255,W,"T4/T4_saif_authoritative.csv[RV64IM_8SP,dhrystone]",
+RV64.IM_8SP.power_dhrystone_core_attr,0.142,W,"T4/T4_saif_authoritative.csv[RV64IM_8SP,dhrystone]",dynamic - PLL - I/O
+RV64.IM_8SP.power_dhrystone_saif_coverage,50.2,%,"T4/T4_saif_authoritative.csv[RV64IM_8SP,dhrystone]",read_saif nets matched
+RV64.IM_8SP.power_coremark_total,0.497,W,"T4/T4_saif_authoritative.csv[RV64IM_8SP,coremark]","SAIF, v2 capture on final impl"
+RV64.IM_8SP.power_coremark_dynamic,0.343,W,"T4/T4_saif_authoritative.csv[RV64IM_8SP,coremark]",
+RV64.IM_8SP.power_coremark_core_attr,0.23,W,"T4/T4_saif_authoritative.csv[RV64IM_8SP,coremark]",dynamic - PLL - I/O
+RV64.IM_8SP.power_coremark_saif_coverage,69.3,%,"T4/T4_saif_authoritative.csv[RV64IM_8SP,coremark]",read_saif nets matched
+RV32.transition[M extension].delta_core_fmax,-2.053568,%,RV32.I_5SP -> RV32.IM_5SP,
+RV32.transition[M extension].delta_soc_fmax_dhry,-4.165556,%,RV32.I_5SP -> RV32.IM_5SP,
+RV32.transition[M extension].delta_run_mhz_dhry,-4.444444,%,RV32.I_5SP -> RV32.IM_5SP,
+RV32.transition[M extension].delta_dhrystones_per_s,-4.071963,%,RV32.I_5SP -> RV32.IM_5SP,
+RV32.transition[M extension].delta_coremark,137.420152,%,RV32.I_5SP -> RV32.IM_5SP,
+RV32.transition[M extension].delta_core_lut,40.470852,%,RV32.I_5SP -> RV32.IM_5SP,
+RV32.transition[M extension].delta_core_ff,43.969849,%,RV32.I_5SP -> RV32.IM_5SP,
+RV32.transition[M extension].delta_cpi_dhrystone,6.971306,%,RV32.I_5SP -> RV32.IM_5SP,per-iteration CPI
+RV32.transition[M extension].delta_cpi_coremark,2.400191,%,RV32.I_5SP -> RV32.IM_5SP,per-iteration CPI
+RV32.transition[M extension].breakeven_dhry_freq_ratio,0.955556,x,RV32.I_5SP -> RV32.IM_5SP,run-clock ratio
+RV32.transition[M extension].breakeven_dhry_cycles_ratio,0.996109,x,RV32.I_5SP -> RV32.IM_5SP,cycles-per-iteration ratio (includes instr-count change)
+RV32.transition[M extension].breakeven_dhry_predicted_change,-4.071181,%,RV32.I_5SP -> RV32.IM_5SP,freq ratio / cycles ratio
+RV32.transition[M extension].breakeven_dhry_measured_change,-4.071963,%,RV32.I_5SP -> RV32.IM_5SP,board Dhrystones/s
+RV32.transition[M extension].breakeven_cm_predicted_change,137.428001,%,RV32.I_5SP -> RV32.IM_5SP,freq ratio / cycles ratio
+RV32.transition[M extension].breakeven_cm_measured_change,137.420152,%,RV32.I_5SP -> RV32.IM_5SP,true CoreMark
+RV32.transition[5->6].delta_core_fmax,18.436843,%,RV32.IM_5SP -> RV32.IM_6SP,
+RV32.transition[5->6].delta_soc_fmax_dhry,19.433433,%,RV32.IM_5SP -> RV32.IM_6SP,
+RV32.transition[5->6].delta_run_mhz_dhry,19.802679,%,RV32.IM_5SP -> RV32.IM_6SP,
+RV32.transition[5->6].delta_dhrystones_per_s,15.742066,%,RV32.IM_5SP -> RV32.IM_6SP,
+RV32.transition[5->6].delta_coremark,4.721403,%,RV32.IM_5SP -> RV32.IM_6SP,
+RV32.transition[5->6].delta_core_lut,1.250333,%,RV32.IM_5SP -> RV32.IM_6SP,
+RV32.transition[5->6].delta_core_ff,15.532286,%,RV32.IM_5SP -> RV32.IM_6SP,
+RV32.transition[5->6].delta_cpi_dhrystone,3.515625,%,RV32.IM_5SP -> RV32.IM_6SP,per-iteration CPI
+RV32.transition[5->6].delta_cpi_coremark,11.041446,%,RV32.IM_5SP -> RV32.IM_6SP,per-iteration CPI
+RV32.transition[5->6].breakeven_dhry_freq_ratio,1.198027,x,RV32.IM_5SP -> RV32.IM_6SP,run-clock ratio
+RV32.transition[5->6].breakeven_dhry_cycles_ratio,1.035156,x,RV32.IM_5SP -> RV32.IM_6SP,cycles-per-iteration ratio (includes instr-count change)
+RV32.transition[5->6].breakeven_dhry_predicted_change,15.733909,%,RV32.IM_5SP -> RV32.IM_6SP,freq ratio / cycles ratio
+RV32.transition[5->6].breakeven_dhry_measured_change,15.742066,%,RV32.IM_5SP -> RV32.IM_6SP,board Dhrystones/s
+RV32.transition[5->6].breakeven_cm_predicted_change,4.716819,%,RV32.IM_5SP -> RV32.IM_6SP,freq ratio / cycles ratio
+RV32.transition[5->6].breakeven_cm_measured_change,4.721403,%,RV32.IM_5SP -> RV32.IM_6SP,true CoreMark
+"RV32.transition[6->7 (paper, IO+BRAM)].delta_core_fmax",0.227104,%,RV32.IM_6SP -> RV32.IM_7SP_BRAM,
+"RV32.transition[6->7 (paper, IO+BRAM)].delta_soc_fmax_dhry",40.673525,%,RV32.IM_6SP -> RV32.IM_7SP_BRAM,
+"RV32.transition[6->7 (paper, IO+BRAM)].delta_run_mhz_dhry",39.764705,%,RV32.IM_6SP -> RV32.IM_7SP_BRAM,
+"RV32.transition[6->7 (paper, IO+BRAM)].delta_dhrystones_per_s",2.506829,%,RV32.IM_6SP -> RV32.IM_7SP_BRAM,
+"RV32.transition[6->7 (paper, IO+BRAM)].delta_coremark",15.713575,%,RV32.IM_6SP -> RV32.IM_7SP_BRAM,
+"RV32.transition[6->7 (paper, IO+BRAM)].delta_core_lut",-16.23752,%,RV32.IM_6SP -> RV32.IM_7SP_BRAM,
+"RV32.transition[6->7 (paper, IO+BRAM)].delta_core_ff",6.545821,%,RV32.IM_6SP -> RV32.IM_7SP_BRAM,
+"RV32.transition[6->7 (paper, IO+BRAM)].delta_cpi_dhrystone",36.415094,%,RV32.IM_6SP -> RV32.IM_7SP_BRAM,per-iteration CPI
+"RV32.transition[6->7 (paper, IO+BRAM)].delta_cpi_coremark",24.442045,%,RV32.IM_6SP -> RV32.IM_7SP_BRAM,per-iteration CPI
+"RV32.transition[6->7 (paper, IO+BRAM)].breakeven_dhry_freq_ratio",1.397647,x,RV32.IM_6SP -> RV32.IM_7SP_BRAM,run-clock ratio
+"RV32.transition[6->7 (paper, IO+BRAM)].breakeven_dhry_cycles_ratio",1.364151,x,RV32.IM_6SP -> RV32.IM_7SP_BRAM,cycles-per-iteration ratio (includes instr-count change)
+"RV32.transition[6->7 (paper, IO+BRAM)].breakeven_dhry_predicted_change",2.455454,%,RV32.IM_6SP -> RV32.IM_7SP_BRAM,freq ratio / cycles ratio
+"RV32.transition[6->7 (paper, IO+BRAM)].breakeven_dhry_measured_change",2.506829,%,RV32.IM_6SP -> RV32.IM_7SP_BRAM,board Dhrystones/s
+"RV32.transition[6->7 (paper, IO+BRAM)].breakeven_cm_predicted_change",15.716517,%,RV32.IM_6SP -> RV32.IM_7SP_BRAM,freq ratio / cycles ratio
+"RV32.transition[6->7 (paper, IO+BRAM)].breakeven_cm_measured_change",15.713575,%,RV32.IM_6SP -> RV32.IM_7SP_BRAM,true CoreMark
+RV32.transition[6->7 IO stage only].delta_core_fmax,0.254764,%,RV32.IM_6SP -> RV32.IM_7SP,
+RV32.transition[6->7 IO stage only].delta_soc_fmax_dhry,3.041537,%,RV32.IM_6SP -> RV32.IM_7SP,
+RV32.transition[6->7 IO stage only].delta_run_mhz_dhry,2.882352,%,RV32.IM_6SP -> RV32.IM_7SP,
+RV32.transition[6->7 IO stage only].delta_dhrystones_per_s,-16.848941,%,RV32.IM_6SP -> RV32.IM_7SP,
+RV32.transition[6->7 IO stage only].delta_coremark,-4.177026,%,RV32.IM_6SP -> RV32.IM_7SP,
+RV32.transition[6->7 IO stage only].delta_core_lut,-17.209669,%,RV32.IM_6SP -> RV32.IM_7SP,
+RV32.transition[6->7 IO stage only].delta_core_ff,6.545821,%,RV32.IM_6SP -> RV32.IM_7SP,
+RV32.transition[6->7 IO stage only].delta_cpi_dhrystone,23.773585,%,RV32.IM_6SP -> RV32.IM_7SP,per-iteration CPI
+RV32.transition[6->7 IO stage only].delta_cpi_coremark,20.011033,%,RV32.IM_6SP -> RV32.IM_7SP,per-iteration CPI
+RV32.transition[6->7 IO stage only].breakeven_dhry_freq_ratio,1.028824,x,RV32.IM_6SP -> RV32.IM_7SP,run-clock ratio
+RV32.transition[6->7 IO stage only].breakeven_dhry_cycles_ratio,1.237736,x,RV32.IM_6SP -> RV32.IM_7SP,cycles-per-iteration ratio (includes instr-count change)
+RV32.transition[6->7 IO stage only].breakeven_dhry_predicted_change,-16.878588,%,RV32.IM_6SP -> RV32.IM_7SP,freq ratio / cycles ratio
+RV32.transition[6->7 IO stage only].breakeven_dhry_measured_change,-16.848941,%,RV32.IM_6SP -> RV32.IM_7SP,board Dhrystones/s
+RV32.transition[6->7 IO stage only].breakeven_cm_predicted_change,-4.175477,%,RV32.IM_6SP -> RV32.IM_7SP,freq ratio / cycles ratio
+RV32.transition[6->7 IO stage only].breakeven_cm_measured_change,-4.177026,%,RV32.IM_6SP -> RV32.IM_7SP,true CoreMark
+RV32.transition[7 IO -> 7 BRAM].delta_core_fmax,-0.02759,%,RV32.IM_7SP -> RV32.IM_7SP_BRAM,
+RV32.transition[7 IO -> 7 BRAM].delta_soc_fmax_dhry,36.521182,%,RV32.IM_7SP -> RV32.IM_7SP_BRAM,
+RV32.transition[7 IO -> 7 BRAM].delta_run_mhz_dhry,35.849057,%,RV32.IM_7SP -> RV32.IM_7SP_BRAM,
+RV32.transition[7 IO -> 7 BRAM].delta_dhrystones_per_s,23.277839,%,RV32.IM_7SP -> RV32.IM_7SP_BRAM,
+RV32.transition[7 IO -> 7 BRAM].delta_coremark,20.757654,%,RV32.IM_7SP -> RV32.IM_7SP_BRAM,
+RV32.transition[7 IO -> 7 BRAM].delta_core_lut,1.17423,%,RV32.IM_7SP -> RV32.IM_7SP_BRAM,
+RV32.transition[7 IO -> 7 BRAM].delta_core_ff,0.0,%,RV32.IM_7SP -> RV32.IM_7SP_BRAM,
+RV32.transition[7 IO -> 7 BRAM].delta_cpi_dhrystone,10.213415,%,RV32.IM_7SP -> RV32.IM_7SP_BRAM,per-iteration CPI
+RV32.transition[7 IO -> 7 BRAM].delta_cpi_coremark,3.692171,%,RV32.IM_7SP -> RV32.IM_7SP_BRAM,per-iteration CPI
+RV32.transition[7 IO -> 7 BRAM].breakeven_dhry_freq_ratio,1.358491,x,RV32.IM_7SP -> RV32.IM_7SP_BRAM,run-clock ratio
+RV32.transition[7 IO -> 7 BRAM].breakeven_dhry_cycles_ratio,1.102134,x,RV32.IM_7SP -> RV32.IM_7SP_BRAM,cycles-per-iteration ratio (includes instr-count change)
+RV32.transition[7 IO -> 7 BRAM].breakeven_dhry_predicted_change,23.260002,%,RV32.IM_7SP -> RV32.IM_7SP_BRAM,freq ratio / cycles ratio
+RV32.transition[7 IO -> 7 BRAM].breakeven_dhry_measured_change,23.277839,%,RV32.IM_7SP -> RV32.IM_7SP_BRAM,board Dhrystones/s
+RV32.transition[7 IO -> 7 BRAM].breakeven_cm_predicted_change,20.758771,%,RV32.IM_7SP -> RV32.IM_7SP_BRAM,freq ratio / cycles ratio
+RV32.transition[7 IO -> 7 BRAM].breakeven_cm_measured_change,20.757654,%,RV32.IM_7SP -> RV32.IM_7SP_BRAM,true CoreMark
+RV32.transition[7 -> 7 Opt].delta_core_fmax,36.936976,%,RV32.IM_7SP_BRAM -> RV32.IM_7SP_BRAM_Opt,
+RV32.transition[7 -> 7 Opt].delta_soc_fmax_dhry,25.571576,%,RV32.IM_7SP_BRAM -> RV32.IM_7SP_BRAM_Opt,
+RV32.transition[7 -> 7 Opt].delta_run_mhz_dhry,26.262626,%,RV32.IM_7SP_BRAM -> RV32.IM_7SP_BRAM_Opt,
+RV32.transition[7 -> 7 Opt].delta_dhrystones_per_s,22.539644,%,RV32.IM_7SP_BRAM -> RV32.IM_7SP_BRAM_Opt,
+RV32.transition[7 -> 7 Opt].delta_coremark,25.898868,%,RV32.IM_7SP_BRAM -> RV32.IM_7SP_BRAM_Opt,
+RV32.transition[7 -> 7 Opt].delta_core_lut,-17.409034,%,RV32.IM_7SP_BRAM -> RV32.IM_7SP_BRAM_Opt,
+RV32.transition[7 -> 7 Opt].delta_core_ff,-12.712665,%,RV32.IM_7SP_BRAM -> RV32.IM_7SP_BRAM_Opt,
+RV32.transition[7 -> 7 Opt].delta_cpi_dhrystone,3.042877,%,RV32.IM_7SP_BRAM -> RV32.IM_7SP_BRAM_Opt,per-iteration CPI
+RV32.transition[7 -> 7 Opt].delta_cpi_coremark,1.493881,%,RV32.IM_7SP_BRAM -> RV32.IM_7SP_BRAM_Opt,per-iteration CPI
+RV32.transition[7 -> 7 Opt].breakeven_dhry_freq_ratio,1.262626,x,RV32.IM_7SP_BRAM -> RV32.IM_7SP_BRAM_Opt,run-clock ratio
+RV32.transition[7 -> 7 Opt].breakeven_dhry_cycles_ratio,1.030429,x,RV32.IM_7SP_BRAM -> RV32.IM_7SP_BRAM_Opt,cycles-per-iteration ratio (includes instr-count change)
+RV32.transition[7 -> 7 Opt].breakeven_dhry_predicted_change,22.534066,%,RV32.IM_7SP_BRAM -> RV32.IM_7SP_BRAM_Opt,freq ratio / cycles ratio
+RV32.transition[7 -> 7 Opt].breakeven_dhry_measured_change,22.539644,%,RV32.IM_7SP_BRAM -> RV32.IM_7SP_BRAM_Opt,board Dhrystones/s
+RV32.transition[7 -> 7 Opt].breakeven_cm_predicted_change,25.897026,%,RV32.IM_7SP_BRAM -> RV32.IM_7SP_BRAM_Opt,freq ratio / cycles ratio
+RV32.transition[7 -> 7 Opt].breakeven_cm_measured_change,25.898868,%,RV32.IM_7SP_BRAM -> RV32.IM_7SP_BRAM_Opt,true CoreMark
+RV32.transition[7 -> 8 noOpt (EXR only)].delta_core_fmax,43.442706,%,RV32.IM_7SP_BRAM -> RV32.IM_8SP_withoutOpt,
+RV32.transition[7 -> 8 noOpt (EXR only)].delta_soc_fmax_dhry,57.709555,%,RV32.IM_7SP_BRAM -> RV32.IM_8SP_withoutOpt,
+RV32.transition[7 -> 8 noOpt (EXR only)].delta_run_mhz_dhry,58.333333,%,RV32.IM_7SP_BRAM -> RV32.IM_8SP_withoutOpt,
+RV32.transition[7 -> 8 noOpt (EXR only)].delta_dhrystones_per_s,35.180548,%,RV32.IM_7SP_BRAM -> RV32.IM_8SP_withoutOpt,
+RV32.transition[7 -> 8 noOpt (EXR only)].delta_coremark,31.736141,%,RV32.IM_7SP_BRAM -> RV32.IM_8SP_withoutOpt,
+RV32.transition[7 -> 8 noOpt (EXR only)].delta_core_lut,1.631117,%,RV32.IM_7SP_BRAM -> RV32.IM_8SP_withoutOpt,
+RV32.transition[7 -> 8 noOpt (EXR only)].delta_core_ff,20.463138,%,RV32.IM_7SP_BRAM -> RV32.IM_8SP_withoutOpt,
+RV32.transition[7 -> 8 noOpt (EXR only)].delta_cpi_dhrystone,17.150761,%,RV32.IM_7SP_BRAM -> RV32.IM_8SP_withoutOpt,per-iteration CPI
+RV32.transition[7 -> 8 noOpt (EXR only)].delta_cpi_coremark,20.189214,%,RV32.IM_7SP_BRAM -> RV32.IM_8SP_withoutOpt,per-iteration CPI
+RV32.transition[7 -> 8 noOpt (EXR only)].breakeven_dhry_freq_ratio,1.583333,x,RV32.IM_7SP_BRAM -> RV32.IM_8SP_withoutOpt,run-clock ratio
+RV32.transition[7 -> 8 noOpt (EXR only)].breakeven_dhry_cycles_ratio,1.171508,x,RV32.IM_7SP_BRAM -> RV32.IM_8SP_withoutOpt,cycles-per-iteration ratio (includes instr-count change)
+RV32.transition[7 -> 8 noOpt (EXR only)].breakeven_dhry_predicted_change,35.153483,%,RV32.IM_7SP_BRAM -> RV32.IM_8SP_withoutOpt,freq ratio / cycles ratio
+RV32.transition[7 -> 8 noOpt (EXR only)].breakeven_dhry_measured_change,35.180548,%,RV32.IM_7SP_BRAM -> RV32.IM_8SP_withoutOpt,board Dhrystones/s
+RV32.transition[7 -> 8 noOpt (EXR only)].breakeven_cm_predicted_change,31.736724,%,RV32.IM_7SP_BRAM -> RV32.IM_8SP_withoutOpt,freq ratio / cycles ratio
+RV32.transition[7 -> 8 noOpt (EXR only)].breakeven_cm_measured_change,31.736141,%,RV32.IM_7SP_BRAM -> RV32.IM_8SP_withoutOpt,true CoreMark
+RV32.transition[8 noOpt -> 8].delta_core_fmax,6.510997,%,RV32.IM_8SP_withoutOpt -> RV32.IM_8SP,
+RV32.transition[8 noOpt -> 8].delta_soc_fmax_dhry,6.893263,%,RV32.IM_8SP_withoutOpt -> RV32.IM_8SP,
+RV32.transition[8 noOpt -> 8].delta_run_mhz_dhry,7.017544,%,RV32.IM_8SP_withoutOpt -> RV32.IM_8SP,
+RV32.transition[8 noOpt -> 8].delta_dhrystones_per_s,4.311441,%,RV32.IM_8SP_withoutOpt -> RV32.IM_8SP,
+RV32.transition[8 noOpt -> 8].delta_coremark,5.703257,%,RV32.IM_8SP_withoutOpt -> RV32.IM_8SP,
+RV32.transition[8 noOpt -> 8].delta_core_lut,-11.17284,%,RV32.IM_8SP_withoutOpt -> RV32.IM_8SP,
+RV32.transition[8 noOpt -> 8].delta_core_ff,-10.63162,%,RV32.IM_8SP_withoutOpt -> RV32.IM_8SP,
+RV32.transition[8 noOpt -> 8].delta_cpi_dhrystone,2.597403,%,RV32.IM_8SP_withoutOpt -> RV32.IM_8SP,per-iteration CPI
+RV32.transition[8 noOpt -> 8].delta_cpi_coremark,1.243006,%,RV32.IM_8SP_withoutOpt -> RV32.IM_8SP,per-iteration CPI
+RV32.transition[8 noOpt -> 8].breakeven_dhry_freq_ratio,1.070175,x,RV32.IM_8SP_withoutOpt -> RV32.IM_8SP,run-clock ratio
+RV32.transition[8 noOpt -> 8].breakeven_dhry_cycles_ratio,1.025974,x,RV32.IM_8SP_withoutOpt -> RV32.IM_8SP,cycles-per-iteration ratio (includes instr-count change)
+RV32.transition[8 noOpt -> 8].breakeven_dhry_predicted_change,4.308239,%,RV32.IM_8SP_withoutOpt -> RV32.IM_8SP,freq ratio / cycles ratio
+RV32.transition[8 noOpt -> 8].breakeven_dhry_measured_change,4.311441,%,RV32.IM_8SP_withoutOpt -> RV32.IM_8SP,board Dhrystones/s
+RV32.transition[8 noOpt -> 8].breakeven_cm_predicted_change,5.703641,%,RV32.IM_8SP_withoutOpt -> RV32.IM_8SP,freq ratio / cycles ratio
+RV32.transition[8 noOpt -> 8].breakeven_cm_measured_change,5.703257,%,RV32.IM_8SP_withoutOpt -> RV32.IM_8SP,true CoreMark
+RV32.transition[7 Opt -> 8 (EXR on optimised)].delta_core_fmax,11.571221,%,RV32.IM_7SP_BRAM_Opt -> RV32.IM_8SP,
+RV32.transition[7 Opt -> 8 (EXR on optimised)].delta_soc_fmax_dhry,34.250835,%,RV32.IM_7SP_BRAM_Opt -> RV32.IM_8SP,
+RV32.transition[7 Opt -> 8 (EXR on optimised)].delta_run_mhz_dhry,34.2,%,RV32.IM_7SP_BRAM_Opt -> RV32.IM_8SP,
+RV32.transition[7 Opt -> 8 (EXR on optimised)].delta_dhrystones_per_s,15.071967,%,RV32.IM_7SP_BRAM_Opt -> RV32.IM_8SP,
+RV32.transition[7 Opt -> 8 (EXR on optimised)].delta_coremark,10.604164,%,RV32.IM_7SP_BRAM_Opt -> RV32.IM_8SP,
+RV32.transition[7 Opt -> 8 (EXR on optimised)].delta_core_lut,9.304975,%,RV32.IM_7SP_BRAM_Opt -> RV32.IM_8SP,
+RV32.transition[7 Opt -> 8 (EXR on optimised)].delta_core_ff,23.335138,%,RV32.IM_7SP_BRAM_Opt -> RV32.IM_8SP,
+RV32.transition[7 Opt -> 8 (EXR on optimised)].delta_cpi_dhrystone,16.644295,%,RV32.IM_7SP_BRAM_Opt -> RV32.IM_8SP,per-iteration CPI
+RV32.transition[7 Opt -> 8 (EXR on optimised)].delta_cpi_coremark,19.892127,%,RV32.IM_7SP_BRAM_Opt -> RV32.IM_8SP,per-iteration CPI
+RV32.transition[7 Opt -> 8 (EXR on optimised)].breakeven_dhry_freq_ratio,1.342,x,RV32.IM_7SP_BRAM_Opt -> RV32.IM_8SP,run-clock ratio
+RV32.transition[7 Opt -> 8 (EXR on optimised)].breakeven_dhry_cycles_ratio,1.166443,x,RV32.IM_7SP_BRAM_Opt -> RV32.IM_8SP,cycles-per-iteration ratio (includes instr-count change)
+RV32.transition[7 Opt -> 8 (EXR on optimised)].breakeven_dhry_predicted_change,15.050633,%,RV32.IM_7SP_BRAM_Opt -> RV32.IM_8SP,freq ratio / cycles ratio
+RV32.transition[7 Opt -> 8 (EXR on optimised)].breakeven_dhry_measured_change,15.071967,%,RV32.IM_7SP_BRAM_Opt -> RV32.IM_8SP,board Dhrystones/s
+RV32.transition[7 Opt -> 8 (EXR on optimised)].breakeven_cm_predicted_change,10.606675,%,RV32.IM_7SP_BRAM_Opt -> RV32.IM_8SP,freq ratio / cycles ratio
+RV32.transition[7 Opt -> 8 (EXR on optimised)].breakeven_cm_measured_change,10.604164,%,RV32.IM_7SP_BRAM_Opt -> RV32.IM_8SP,true CoreMark
+RV32.transition[7 -> 8 (paper)].delta_core_fmax,52.782256,%,RV32.IM_7SP_BRAM -> RV32.IM_8SP,
+RV32.transition[7 -> 8 (paper)].delta_soc_fmax_dhry,68.58089,%,RV32.IM_7SP_BRAM -> RV32.IM_8SP,
+RV32.transition[7 -> 8 (paper)].delta_run_mhz_dhry,69.444444,%,RV32.IM_7SP_BRAM -> RV32.IM_8SP,
+RV32.transition[7 -> 8 (paper)].delta_dhrystones_per_s,41.008779,%,RV32.IM_7SP_BRAM -> RV32.IM_8SP,
+RV32.transition[7 -> 8 (paper)].delta_coremark,39.249391,%,RV32.IM_7SP_BRAM -> RV32.IM_8SP,
+RV32.transition[7 -> 8 (paper)].delta_core_lut,-9.723965,%,RV32.IM_7SP_BRAM -> RV32.IM_8SP,
+RV32.transition[7 -> 8 (paper)].delta_core_ff,7.655955,%,RV32.IM_7SP_BRAM -> RV32.IM_8SP,
+RV32.transition[7 -> 8 (paper)].delta_cpi_dhrystone,20.193638,%,RV32.IM_7SP_BRAM -> RV32.IM_8SP,per-iteration CPI
+RV32.transition[7 -> 8 (paper)].delta_cpi_coremark,21.683173,%,RV32.IM_7SP_BRAM -> RV32.IM_8SP,per-iteration CPI
+RV32.transition[7 -> 8 (paper)].breakeven_dhry_freq_ratio,1.694444,x,RV32.IM_7SP_BRAM -> RV32.IM_8SP,run-clock ratio
+RV32.transition[7 -> 8 (paper)].breakeven_dhry_cycles_ratio,1.201936,x,RV32.IM_7SP_BRAM -> RV32.IM_8SP,cycles-per-iteration ratio (includes instr-count change)
+RV32.transition[7 -> 8 (paper)].breakeven_dhry_predicted_change,40.976218,%,RV32.IM_7SP_BRAM -> RV32.IM_8SP,freq ratio / cycles ratio
+RV32.transition[7 -> 8 (paper)].breakeven_dhry_measured_change,41.008779,%,RV32.IM_7SP_BRAM -> RV32.IM_8SP,board Dhrystones/s
+RV32.transition[7 -> 8 (paper)].breakeven_cm_predicted_change,39.250514,%,RV32.IM_7SP_BRAM -> RV32.IM_8SP,freq ratio / cycles ratio
+RV32.transition[7 -> 8 (paper)].breakeven_cm_measured_change,39.249391,%,RV32.IM_7SP_BRAM -> RV32.IM_8SP,true CoreMark
+RV32.transition[5 -> 8 overall].delta_core_fmax,81.361426,%,RV32.IM_5SP -> RV32.IM_8SP,
+RV32.transition[5 -> 8 overall].delta_soc_fmax_dhry,183.23481,%,RV32.IM_5SP -> RV32.IM_8SP,
+RV32.transition[5 -> 8 overall].delta_run_mhz_dhry,183.72093,%,RV32.IM_5SP -> RV32.IM_8SP,
+RV32.transition[5 -> 8 overall].delta_dhrystones_per_s,67.297781,%,RV32.IM_5SP -> RV32.IM_8SP,
+RV32.transition[5 -> 8 overall].delta_coremark,68.738066,%,RV32.IM_5SP -> RV32.IM_8SP,
+RV32.transition[5 -> 8 overall].delta_core_lut,-23.437084,%,RV32.IM_5SP -> RV32.IM_8SP,
+RV32.transition[5 -> 8 overall].delta_core_ff,32.518906,%,RV32.IM_5SP -> RV32.IM_8SP,
+RV32.transition[5 -> 8 overall].delta_cpi_dhrystone,69.726562,%,RV32.IM_5SP -> RV32.IM_8SP,per-iteration CPI
+RV32.transition[5 -> 8 overall].delta_cpi_coremark,68.144542,%,RV32.IM_5SP -> RV32.IM_8SP,per-iteration CPI
+RV32.transition[5 -> 8 overall].breakeven_dhry_freq_ratio,2.837209,x,RV32.IM_5SP -> RV32.IM_8SP,run-clock ratio
+RV32.transition[5 -> 8 overall].breakeven_dhry_cycles_ratio,1.697266,x,RV32.IM_5SP -> RV32.IM_8SP,cycles-per-iteration ratio (includes instr-count change)
+RV32.transition[5 -> 8 overall].breakeven_dhry_predicted_change,67.16354,%,RV32.IM_5SP -> RV32.IM_8SP,freq ratio / cycles ratio
+RV32.transition[5 -> 8 overall].breakeven_dhry_measured_change,67.297781,%,RV32.IM_5SP -> RV32.IM_8SP,board Dhrystones/s
+RV32.transition[5 -> 8 overall].breakeven_cm_predicted_change,68.736331,%,RV32.IM_5SP -> RV32.IM_8SP,freq ratio / cycles ratio
+RV32.transition[5 -> 8 overall].breakeven_cm_measured_change,68.738066,%,RV32.IM_5SP -> RV32.IM_8SP,true CoreMark
+RV64.transition[M extension].delta_core_fmax,-0.230123,%,RV64.I_5SP -> RV64.IM_5SP,
+RV64.transition[M extension].delta_soc_fmax_dhry,-4.692966,%,RV64.I_5SP -> RV64.IM_5SP,
+RV64.transition[M extension].delta_run_mhz_dhry,-5.128205,%,RV64.I_5SP -> RV64.IM_5SP,
+RV64.transition[M extension].delta_dhrystones_per_s,-5.07112,%,RV64.I_5SP -> RV64.IM_5SP,
+RV64.transition[M extension].delta_coremark,165.712582,%,RV64.I_5SP -> RV64.IM_5SP,
+RV64.transition[M extension].delta_core_lut,46.891054,%,RV64.I_5SP -> RV64.IM_5SP,
+RV64.transition[M extension].delta_core_ff,52.315609,%,RV64.I_5SP -> RV64.IM_5SP,
+RV64.transition[M extension].delta_cpi_dhrystone,7.337456,%,RV64.I_5SP -> RV64.IM_5SP,per-iteration CPI
+RV64.transition[M extension].delta_cpi_coremark,-0.63238,%,RV64.I_5SP -> RV64.IM_5SP,per-iteration CPI
+RV64.transition[M extension].breakeven_dhry_freq_ratio,0.948718,x,RV64.I_5SP -> RV64.IM_5SP,run-clock ratio
+RV64.transition[M extension].breakeven_dhry_cycles_ratio,0.995968,x,RV64.I_5SP -> RV64.IM_5SP,cycles-per-iteration ratio (includes instr-count change)
+RV64.transition[M extension].breakeven_dhry_predicted_change,-4.744109,%,RV64.I_5SP -> RV64.IM_5SP,freq ratio / cycles ratio
+RV64.transition[M extension].breakeven_dhry_measured_change,-5.07112,%,RV64.I_5SP -> RV64.IM_5SP,board Dhrystones/s
+RV64.transition[M extension].breakeven_cm_predicted_change,165.722275,%,RV64.I_5SP -> RV64.IM_5SP,freq ratio / cycles ratio
+RV64.transition[M extension].breakeven_cm_measured_change,165.712582,%,RV64.I_5SP -> RV64.IM_5SP,true CoreMark
+RV64.transition[5->6].delta_core_fmax,26.345316,%,RV64.IM_5SP -> RV64.IM_6SP,
+RV64.transition[5->6].delta_soc_fmax_dhry,18.745144,%,RV64.IM_5SP -> RV64.IM_6SP,
+RV64.transition[5->6].delta_run_mhz_dhry,18.918919,%,RV64.IM_5SP -> RV64.IM_6SP,
+RV64.transition[5->6].delta_dhrystones_per_s,14.52366,%,RV64.IM_5SP -> RV64.IM_6SP,
+RV64.transition[5->6].delta_coremark,7.832136,%,RV64.IM_5SP -> RV64.IM_6SP,
+RV64.transition[5->6].delta_core_lut,3.714424,%,RV64.IM_5SP -> RV64.IM_6SP,
+RV64.transition[5->6].delta_core_ff,11.120495,%,RV64.IM_5SP -> RV64.IM_6SP,
+RV64.transition[5->6].delta_cpi_dhrystone,3.846154,%,RV64.IM_5SP -> RV64.IM_6SP,per-iteration CPI
+RV64.transition[5->6].delta_cpi_coremark,9.824769,%,RV64.IM_5SP -> RV64.IM_6SP,per-iteration CPI
+RV64.transition[5->6].breakeven_dhry_freq_ratio,1.189189,x,RV64.IM_5SP -> RV64.IM_6SP,run-clock ratio
+RV64.transition[5->6].breakeven_dhry_cycles_ratio,1.038462,x,RV64.IM_5SP -> RV64.IM_6SP,cycles-per-iteration ratio (includes instr-count change)
+RV64.transition[5->6].breakeven_dhry_predicted_change,14.514515,%,RV64.IM_5SP -> RV64.IM_6SP,freq ratio / cycles ratio
+RV64.transition[5->6].breakeven_dhry_measured_change,14.52366,%,RV64.IM_5SP -> RV64.IM_6SP,board Dhrystones/s
+RV64.transition[5->6].breakeven_cm_predicted_change,7.827272,%,RV64.IM_5SP -> RV64.IM_6SP,freq ratio / cycles ratio
+RV64.transition[5->6].breakeven_cm_measured_change,7.832136,%,RV64.IM_5SP -> RV64.IM_6SP,true CoreMark
+"RV64.transition[6->7 (paper, IO+BRAM)].delta_core_fmax",0.0,%,RV64.IM_6SP -> RV64.IM_7SP_BRAM,
+"RV64.transition[6->7 (paper, IO+BRAM)].delta_soc_fmax_dhry",31.948831,%,RV64.IM_6SP -> RV64.IM_7SP_BRAM,
+"RV64.transition[6->7 (paper, IO+BRAM)].delta_run_mhz_dhry",31.818182,%,RV64.IM_6SP -> RV64.IM_7SP_BRAM,
+"RV64.transition[6->7 (paper, IO+BRAM)].delta_dhrystones_per_s",-3.758046,%,RV64.IM_6SP -> RV64.IM_7SP_BRAM,
+"RV64.transition[6->7 (paper, IO+BRAM)].delta_coremark",5.421436,%,RV64.IM_6SP -> RV64.IM_7SP_BRAM,
+"RV64.transition[6->7 (paper, IO+BRAM)].delta_core_lut",-12.55814,%,RV64.IM_6SP -> RV64.IM_7SP_BRAM,
+"RV64.transition[6->7 (paper, IO+BRAM)].delta_core_ff",5.725868,%,RV64.IM_6SP -> RV64.IM_7SP_BRAM,
+"RV64.transition[6->7 (paper, IO+BRAM)].delta_cpi_dhrystone",37.037037,%,RV64.IM_6SP -> RV64.IM_7SP_BRAM,per-iteration CPI
+"RV64.transition[6->7 (paper, IO+BRAM)].delta_cpi_coremark",22.259368,%,RV64.IM_6SP -> RV64.IM_7SP_BRAM,per-iteration CPI
+"RV64.transition[6->7 (paper, IO+BRAM)].breakeven_dhry_freq_ratio",1.318182,x,RV64.IM_6SP -> RV64.IM_7SP_BRAM,run-clock ratio
+"RV64.transition[6->7 (paper, IO+BRAM)].breakeven_dhry_cycles_ratio",1.37037,x,RV64.IM_6SP -> RV64.IM_7SP_BRAM,cycles-per-iteration ratio (includes instr-count change)
+"RV64.transition[6->7 (paper, IO+BRAM)].breakeven_dhry_predicted_change",-3.808354,%,RV64.IM_6SP -> RV64.IM_7SP_BRAM,freq ratio / cycles ratio
+"RV64.transition[6->7 (paper, IO+BRAM)].breakeven_dhry_measured_change",-3.758046,%,RV64.IM_6SP -> RV64.IM_7SP_BRAM,board Dhrystones/s
+"RV64.transition[6->7 (paper, IO+BRAM)].breakeven_cm_predicted_change",5.422506,%,RV64.IM_6SP -> RV64.IM_7SP_BRAM,freq ratio / cycles ratio
+"RV64.transition[6->7 (paper, IO+BRAM)].breakeven_cm_measured_change",5.421436,%,RV64.IM_6SP -> RV64.IM_7SP_BRAM,true CoreMark
+RV64.transition[6->7 IO stage only].delta_core_fmax,0.0,%,RV64.IM_6SP -> RV64.IM_7SP,
+RV64.transition[6->7 IO stage only].delta_soc_fmax_dhry,9.735132,%,RV64.IM_6SP -> RV64.IM_7SP,
+RV64.transition[6->7 IO stage only].delta_run_mhz_dhry,10.479798,%,RV64.IM_6SP -> RV64.IM_7SP,
+RV64.transition[6->7 IO stage only].delta_dhrystones_per_s,-11.547492,%,RV64.IM_6SP -> RV64.IM_7SP,
+RV64.transition[6->7 IO stage only].delta_coremark,-11.727367,%,RV64.IM_6SP -> RV64.IM_7SP,
+RV64.transition[6->7 IO stage only].delta_core_lut,-13.395349,%,RV64.IM_6SP -> RV64.IM_7SP,
+RV64.transition[6->7 IO stage only].delta_core_ff,5.725868,%,RV64.IM_6SP -> RV64.IM_7SP,
+RV64.transition[6->7 IO stage only].delta_cpi_dhrystone,24.951267,%,RV64.IM_6SP -> RV64.IM_7SP,per-iteration CPI
+RV64.transition[6->7 IO stage only].delta_cpi_coremark,18.320637,%,RV64.IM_6SP -> RV64.IM_7SP,per-iteration CPI
+RV64.transition[6->7 IO stage only].breakeven_dhry_freq_ratio,1.104798,x,RV64.IM_6SP -> RV64.IM_7SP,run-clock ratio
+RV64.transition[6->7 IO stage only].breakeven_dhry_cycles_ratio,1.249513,x,RV64.IM_6SP -> RV64.IM_7SP,cycles-per-iteration ratio (includes instr-count change)
+RV64.transition[6->7 IO stage only].breakeven_dhry_predicted_change,-11.581691,%,RV64.IM_6SP -> RV64.IM_7SP,freq ratio / cycles ratio
+RV64.transition[6->7 IO stage only].breakeven_dhry_measured_change,-11.547492,%,RV64.IM_6SP -> RV64.IM_7SP,board Dhrystones/s
+RV64.transition[6->7 IO stage only].breakeven_cm_predicted_change,-11.727884,%,RV64.IM_6SP -> RV64.IM_7SP,freq ratio / cycles ratio
+RV64.transition[6->7 IO stage only].breakeven_cm_measured_change,-11.727367,%,RV64.IM_6SP -> RV64.IM_7SP,true CoreMark
+RV64.transition[7 IO -> 7 BRAM].delta_core_fmax,0.0,%,RV64.IM_7SP -> RV64.IM_7SP_BRAM,
+RV64.transition[7 IO -> 7 BRAM].delta_soc_fmax_dhry,20.243015,%,RV64.IM_7SP -> RV64.IM_7SP_BRAM,
+RV64.transition[7 IO -> 7 BRAM].delta_run_mhz_dhry,19.314286,%,RV64.IM_7SP -> RV64.IM_7SP_BRAM,
+RV64.transition[7 IO -> 7 BRAM].delta_dhrystones_per_s,8.80636,%,RV64.IM_7SP -> RV64.IM_7SP_BRAM,
+RV64.transition[7 IO -> 7 BRAM].delta_coremark,19.427089,%,RV64.IM_7SP -> RV64.IM_7SP_BRAM,
+RV64.transition[7 IO -> 7 BRAM].delta_core_lut,0.966702,%,RV64.IM_7SP -> RV64.IM_7SP_BRAM,
+RV64.transition[7 IO -> 7 BRAM].delta_core_ff,0.0,%,RV64.IM_7SP -> RV64.IM_7SP_BRAM,
+RV64.transition[7 IO -> 7 BRAM].delta_cpi_dhrystone,9.672387,%,RV64.IM_7SP -> RV64.IM_7SP_BRAM,per-iteration CPI
+RV64.transition[7 IO -> 7 BRAM].delta_cpi_coremark,3.328862,%,RV64.IM_7SP -> RV64.IM_7SP_BRAM,per-iteration CPI
+RV64.transition[7 IO -> 7 BRAM].breakeven_dhry_freq_ratio,1.193143,x,RV64.IM_7SP -> RV64.IM_7SP_BRAM,run-clock ratio
+RV64.transition[7 IO -> 7 BRAM].breakeven_dhry_cycles_ratio,1.096724,x,RV64.IM_7SP -> RV64.IM_7SP_BRAM,cycles-per-iteration ratio (includes instr-count change)
+RV64.transition[7 IO -> 7 BRAM].breakeven_dhry_predicted_change,8.791546,%,RV64.IM_7SP -> RV64.IM_7SP_BRAM,freq ratio / cycles ratio
+RV64.transition[7 IO -> 7 BRAM].breakeven_dhry_measured_change,8.80636,%,RV64.IM_7SP -> RV64.IM_7SP_BRAM,board Dhrystones/s
+RV64.transition[7 IO -> 7 BRAM].breakeven_cm_predicted_change,19.429001,%,RV64.IM_7SP -> RV64.IM_7SP_BRAM,freq ratio / cycles ratio
+RV64.transition[7 IO -> 7 BRAM].breakeven_cm_measured_change,19.427089,%,RV64.IM_7SP -> RV64.IM_7SP_BRAM,true CoreMark
+RV64.transition[7 -> 7 Opt].delta_core_fmax,41.7934,%,RV64.IM_7SP_BRAM -> RV64.IM_7SP_BRAM_Opt,
+RV64.transition[7 -> 7 Opt].delta_soc_fmax_dhry,38.483372,%,RV64.IM_7SP_BRAM -> RV64.IM_7SP_BRAM_Opt,
+RV64.transition[7 -> 7 Opt].delta_run_mhz_dhry,39.573071,%,RV64.IM_7SP_BRAM -> RV64.IM_7SP_BRAM_Opt,
+RV64.transition[7 -> 7 Opt].delta_dhrystones_per_s,35.343384,%,RV64.IM_7SP_BRAM -> RV64.IM_7SP_BRAM_Opt,
+RV64.transition[7 -> 7 Opt].delta_coremark,37.676439,%,RV64.IM_7SP_BRAM -> RV64.IM_7SP_BRAM_Opt,
+RV64.transition[7 -> 7 Opt].delta_core_lut,-13.444149,%,RV64.IM_7SP_BRAM -> RV64.IM_7SP_BRAM_Opt,
+RV64.transition[7 -> 7 Opt].delta_core_ff,-11.718188,%,RV64.IM_7SP_BRAM -> RV64.IM_7SP_BRAM_Opt,
+RV64.transition[7 -> 7 Opt].delta_cpi_dhrystone,3.129445,%,RV64.IM_7SP_BRAM -> RV64.IM_7SP_BRAM_Opt,per-iteration CPI
+RV64.transition[7 -> 7 Opt].delta_cpi_coremark,1.377647,%,RV64.IM_7SP_BRAM -> RV64.IM_7SP_BRAM_Opt,per-iteration CPI
+RV64.transition[7 -> 7 Opt].breakeven_dhry_freq_ratio,1.395731,x,RV64.IM_7SP_BRAM -> RV64.IM_7SP_BRAM_Opt,run-clock ratio
+RV64.transition[7 -> 7 Opt].breakeven_dhry_cycles_ratio,1.031294,x,RV64.IM_7SP_BRAM -> RV64.IM_7SP_BRAM_Opt,cycles-per-iteration ratio (includes instr-count change)
+RV64.transition[7 -> 7 Opt].breakeven_dhry_predicted_change,35.33775,%,RV64.IM_7SP_BRAM -> RV64.IM_7SP_BRAM_Opt,freq ratio / cycles ratio
+RV64.transition[7 -> 7 Opt].breakeven_dhry_measured_change,35.343384,%,RV64.IM_7SP_BRAM -> RV64.IM_7SP_BRAM_Opt,board Dhrystones/s
+RV64.transition[7 -> 7 Opt].breakeven_cm_predicted_change,37.676377,%,RV64.IM_7SP_BRAM -> RV64.IM_7SP_BRAM_Opt,freq ratio / cycles ratio
+RV64.transition[7 -> 7 Opt].breakeven_cm_measured_change,37.676439,%,RV64.IM_7SP_BRAM -> RV64.IM_7SP_BRAM_Opt,true CoreMark
+RV64.transition[7 -> 8 noOpt (EXR only)].delta_core_fmax,39.228306,%,RV64.IM_7SP_BRAM -> RV64.IM_8SP_withoutOpt,
+RV64.transition[7 -> 8 noOpt (EXR only)].delta_soc_fmax_dhry,65.319313,%,RV64.IM_7SP_BRAM -> RV64.IM_8SP_withoutOpt,
+RV64.transition[7 -> 8 noOpt (EXR only)].delta_run_mhz_dhry,65.517241,%,RV64.IM_7SP_BRAM -> RV64.IM_8SP_withoutOpt,
+RV64.transition[7 -> 8 noOpt (EXR only)].delta_dhrystones_per_s,40.560289,%,RV64.IM_7SP_BRAM -> RV64.IM_8SP_withoutOpt,
+RV64.transition[7 -> 8 noOpt (EXR only)].delta_coremark,32.533807,%,RV64.IM_7SP_BRAM -> RV64.IM_8SP_withoutOpt,
+RV64.transition[7 -> 8 noOpt (EXR only)].delta_core_lut,4.62766,%,RV64.IM_7SP_BRAM -> RV64.IM_8SP_withoutOpt,
+RV64.transition[7 -> 8 noOpt (EXR only)].delta_core_ff,19.194824,%,RV64.IM_7SP_BRAM -> RV64.IM_8SP_withoutOpt,
+RV64.transition[7 -> 8 noOpt (EXR only)].delta_cpi_dhrystone,17.780939,%,RV64.IM_7SP_BRAM -> RV64.IM_8SP_withoutOpt,per-iteration CPI
+RV64.transition[7 -> 8 noOpt (EXR only)].delta_cpi_coremark,19.679815,%,RV64.IM_7SP_BRAM -> RV64.IM_8SP_withoutOpt,per-iteration CPI
+RV64.transition[7 -> 8 noOpt (EXR only)].breakeven_dhry_freq_ratio,1.655172,x,RV64.IM_7SP_BRAM -> RV64.IM_8SP_withoutOpt,run-clock ratio
+RV64.transition[7 -> 8 noOpt (EXR only)].breakeven_dhry_cycles_ratio,1.177809,x,RV64.IM_7SP_BRAM -> RV64.IM_8SP_withoutOpt,cycles-per-iteration ratio (includes instr-count change)
+RV64.transition[7 -> 8 noOpt (EXR only)].breakeven_dhry_predicted_change,40.529735,%,RV64.IM_7SP_BRAM -> RV64.IM_8SP_withoutOpt,freq ratio / cycles ratio
+RV64.transition[7 -> 8 noOpt (EXR only)].breakeven_dhry_measured_change,40.560289,%,RV64.IM_7SP_BRAM -> RV64.IM_8SP_withoutOpt,board Dhrystones/s
+RV64.transition[7 -> 8 noOpt (EXR only)].breakeven_cm_predicted_change,32.537546,%,RV64.IM_7SP_BRAM -> RV64.IM_8SP_withoutOpt,freq ratio / cycles ratio
+RV64.transition[7 -> 8 noOpt (EXR only)].breakeven_cm_measured_change,32.533807,%,RV64.IM_7SP_BRAM -> RV64.IM_8SP_withoutOpt,true CoreMark
+RV64.transition[8 noOpt -> 8].delta_core_fmax,11.857589,%,RV64.IM_8SP_withoutOpt -> RV64.IM_8SP,
+RV64.transition[8 noOpt -> 8].delta_soc_fmax_dhry,6.505528,%,RV64.IM_8SP_withoutOpt -> RV64.IM_8SP,
+RV64.transition[8 noOpt -> 8].delta_run_mhz_dhry,6.25,%,RV64.IM_8SP_withoutOpt -> RV64.IM_8SP,
+RV64.transition[8 noOpt -> 8].delta_dhrystones_per_s,3.50253,%,RV64.IM_8SP_withoutOpt -> RV64.IM_8SP,
+RV64.transition[8 noOpt -> 8].delta_coremark,9.607507,%,RV64.IM_8SP_withoutOpt -> RV64.IM_8SP,
+RV64.transition[8 noOpt -> 8].delta_core_lut,-11.273513,%,RV64.IM_8SP_withoutOpt -> RV64.IM_8SP,
+RV64.transition[8 noOpt -> 8].delta_core_ff,-9.750704,%,RV64.IM_8SP_withoutOpt -> RV64.IM_8SP,
+RV64.transition[8 noOpt -> 8].delta_cpi_dhrystone,2.657005,%,RV64.IM_8SP_withoutOpt -> RV64.IM_8SP,per-iteration CPI
+RV64.transition[8 noOpt -> 8].delta_cpi_coremark,1.151256,%,RV64.IM_8SP_withoutOpt -> RV64.IM_8SP,per-iteration CPI
+RV64.transition[8 noOpt -> 8].breakeven_dhry_freq_ratio,1.0625,x,RV64.IM_8SP_withoutOpt -> RV64.IM_8SP,run-clock ratio
+RV64.transition[8 noOpt -> 8].breakeven_dhry_cycles_ratio,1.02657,x,RV64.IM_8SP_withoutOpt -> RV64.IM_8SP,cycles-per-iteration ratio (includes instr-count change)
+RV64.transition[8 noOpt -> 8].breakeven_dhry_predicted_change,3.5,%,RV64.IM_8SP_withoutOpt -> RV64.IM_8SP,freq ratio / cycles ratio
+RV64.transition[8 noOpt -> 8].breakeven_dhry_measured_change,3.50253,%,RV64.IM_8SP_withoutOpt -> RV64.IM_8SP,board Dhrystones/s
+RV64.transition[8 noOpt -> 8].breakeven_cm_predicted_change,9.6077,%,RV64.IM_8SP_withoutOpt -> RV64.IM_8SP,freq ratio / cycles ratio
+RV64.transition[8 noOpt -> 8].breakeven_cm_measured_change,9.607507,%,RV64.IM_8SP_withoutOpt -> RV64.IM_8SP,true CoreMark
+RV64.transition[7 Opt -> 8 (EXR on optimised)].delta_core_fmax,9.834044,%,RV64.IM_7SP_BRAM_Opt -> RV64.IM_8SP,
+RV64.transition[7 Opt -> 8 (EXR on optimised)].delta_soc_fmax_dhry,27.144656,%,RV64.IM_7SP_BRAM_Opt -> RV64.IM_8SP,
+RV64.transition[7 Opt -> 8 (EXR on optimised)].delta_run_mhz_dhry,26.0,%,RV64.IM_7SP_BRAM_Opt -> RV64.IM_8SP,
+RV64.transition[7 Opt -> 8 (EXR on optimised)].delta_dhrystones_per_s,7.492108,%,RV64.IM_7SP_BRAM_Opt -> RV64.IM_8SP,
+RV64.transition[7 Opt -> 8 (EXR on optimised)].delta_coremark,5.513335,%,RV64.IM_7SP_BRAM_Opt -> RV64.IM_8SP,
+RV64.transition[7 Opt -> 8 (EXR on optimised)].delta_core_lut,7.251498,%,RV64.IM_7SP_BRAM_Opt -> RV64.IM_8SP,
+RV64.transition[7 Opt -> 8 (EXR on optimised)].delta_core_ff,21.851249,%,RV64.IM_7SP_BRAM_Opt -> RV64.IM_8SP,
+RV64.transition[7 Opt -> 8 (EXR on optimised)].delta_cpi_dhrystone,17.241379,%,RV64.IM_7SP_BRAM_Opt -> RV64.IM_8SP,per-iteration CPI
+RV64.transition[7 Opt -> 8 (EXR on optimised)].delta_cpi_coremark,19.412553,%,RV64.IM_7SP_BRAM_Opt -> RV64.IM_8SP,per-iteration CPI
+RV64.transition[7 Opt -> 8 (EXR on optimised)].breakeven_dhry_freq_ratio,1.26,x,RV64.IM_7SP_BRAM_Opt -> RV64.IM_8SP,run-clock ratio
+RV64.transition[7 Opt -> 8 (EXR on optimised)].breakeven_dhry_cycles_ratio,1.172414,x,RV64.IM_7SP_BRAM_Opt -> RV64.IM_8SP,cycles-per-iteration ratio (includes instr-count change)
+RV64.transition[7 Opt -> 8 (EXR on optimised)].breakeven_dhry_predicted_change,7.470588,%,RV64.IM_7SP_BRAM_Opt -> RV64.IM_8SP,freq ratio / cycles ratio
+RV64.transition[7 Opt -> 8 (EXR on optimised)].breakeven_dhry_measured_change,7.492108,%,RV64.IM_7SP_BRAM_Opt -> RV64.IM_8SP,board Dhrystones/s
+RV64.transition[7 Opt -> 8 (EXR on optimised)].breakeven_cm_predicted_change,5.516545,%,RV64.IM_7SP_BRAM_Opt -> RV64.IM_8SP,freq ratio / cycles ratio
+RV64.transition[7 Opt -> 8 (EXR on optimised)].breakeven_cm_measured_change,5.513335,%,RV64.IM_7SP_BRAM_Opt -> RV64.IM_8SP,true CoreMark
+RV64.transition[7 -> 8 (paper)].delta_core_fmax,55.737426,%,RV64.IM_7SP_BRAM -> RV64.IM_8SP,
+RV64.transition[7 -> 8 (paper)].delta_soc_fmax_dhry,76.074207,%,RV64.IM_7SP_BRAM -> RV64.IM_8SP,
+RV64.transition[7 -> 8 (paper)].delta_run_mhz_dhry,75.862069,%,RV64.IM_7SP_BRAM -> RV64.IM_8SP,
+RV64.transition[7 -> 8 (paper)].delta_dhrystones_per_s,45.483456,%,RV64.IM_7SP_BRAM -> RV64.IM_8SP,
+RV64.transition[7 -> 8 (paper)].delta_coremark,45.267002,%,RV64.IM_7SP_BRAM -> RV64.IM_8SP,
+RV64.transition[7 -> 8 (paper)].delta_core_lut,-7.167553,%,RV64.IM_7SP_BRAM -> RV64.IM_8SP,
+RV64.transition[7 -> 8 (paper)].delta_core_ff,7.57249,%,RV64.IM_7SP_BRAM -> RV64.IM_8SP,
+RV64.transition[7 -> 8 (paper)].delta_cpi_dhrystone,20.910384,%,RV64.IM_7SP_BRAM -> RV64.IM_8SP,per-iteration CPI
+RV64.transition[7 -> 8 (paper)].delta_cpi_coremark,21.057636,%,RV64.IM_7SP_BRAM -> RV64.IM_8SP,per-iteration CPI
+RV64.transition[7 -> 8 (paper)].breakeven_dhry_freq_ratio,1.758621,x,RV64.IM_7SP_BRAM -> RV64.IM_8SP,run-clock ratio
+RV64.transition[7 -> 8 (paper)].breakeven_dhry_cycles_ratio,1.209104,x,RV64.IM_7SP_BRAM -> RV64.IM_8SP,cycles-per-iteration ratio (includes instr-count change)
+RV64.transition[7 -> 8 (paper)].breakeven_dhry_predicted_change,45.448276,%,RV64.IM_7SP_BRAM -> RV64.IM_8SP,freq ratio / cycles ratio
+RV64.transition[7 -> 8 (paper)].breakeven_dhry_measured_change,45.483456,%,RV64.IM_7SP_BRAM -> RV64.IM_8SP,board Dhrystones/s
+RV64.transition[7 -> 8 (paper)].breakeven_cm_predicted_change,45.271355,%,RV64.IM_7SP_BRAM -> RV64.IM_8SP,freq ratio / cycles ratio
+RV64.transition[7 -> 8 (paper)].breakeven_cm_measured_change,45.267002,%,RV64.IM_7SP_BRAM -> RV64.IM_8SP,true CoreMark
+RV64.transition[5 -> 8 overall].delta_core_fmax,96.766942,%,RV64.IM_5SP -> RV64.IM_8SP,
+RV64.transition[5 -> 8 overall].delta_soc_fmax_dhry,175.878051,%,RV64.IM_5SP -> RV64.IM_8SP,
+RV64.transition[5 -> 8 overall].delta_run_mhz_dhry,175.675676,%,RV64.IM_5SP -> RV64.IM_8SP,
+RV64.transition[5 -> 8 overall].delta_dhrystones_per_s,60.351586,%,RV64.IM_5SP -> RV64.IM_8SP,
+RV64.transition[5 -> 8 overall].delta_coremark,65.136894,%,RV64.IM_5SP -> RV64.IM_8SP,
+RV64.transition[5 -> 8 overall].delta_core_lut,-15.81042,%,RV64.IM_5SP -> RV64.IM_8SP,
+RV64.transition[5 -> 8 overall].delta_core_ff,26.379505,%,RV64.IM_5SP -> RV64.IM_8SP,
+RV64.transition[5 -> 8 overall].delta_cpi_dhrystone,72.064777,%,RV64.IM_5SP -> RV64.IM_8SP,per-iteration CPI
+RV64.transition[5 -> 8 overall].delta_cpi_coremark,62.545381,%,RV64.IM_5SP -> RV64.IM_8SP,per-iteration CPI
+RV64.transition[5 -> 8 overall].breakeven_dhry_freq_ratio,2.756757,x,RV64.IM_5SP -> RV64.IM_8SP,run-clock ratio
+RV64.transition[5 -> 8 overall].breakeven_dhry_cycles_ratio,1.720648,x,RV64.IM_5SP -> RV64.IM_8SP,cycles-per-iteration ratio (includes instr-count change)
+RV64.transition[5 -> 8 overall].breakeven_dhry_predicted_change,60.216216,%,RV64.IM_5SP -> RV64.IM_8SP,freq ratio / cycles ratio
+RV64.transition[5 -> 8 overall].breakeven_dhry_measured_change,60.351586,%,RV64.IM_5SP -> RV64.IM_8SP,board Dhrystones/s
+RV64.transition[5 -> 8 overall].breakeven_cm_predicted_change,65.136069,%,RV64.IM_5SP -> RV64.IM_8SP,freq ratio / cycles ratio
+RV64.transition[5 -> 8 overall].breakeven_cm_measured_change,65.136894,%,RV64.IM_5SP -> RV64.IM_8SP,true CoreMark
+RV32.ablation.dhrystones_per_s.optimisations_only,22.539644,%,"RV32.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.dhry_per_s",vs 7SP_BRAM
+RV32.ablation.dhrystones_per_s.exr_only,35.180548,%,"RV32.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.dhry_per_s",vs 7SP_BRAM
+RV32.ablation.dhrystones_per_s.both,41.008779,%,"RV32.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.dhry_per_s",vs 7SP_BRAM
+RV32.ablation.dhrystones_per_s.sum_of_individual,57.720193,%,"RV32.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.dhry_per_s",
+RV32.ablation.dhrystones_per_s.product_of_individual,65.649763,%,"RV32.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.dhry_per_s",multiplicative expectation
+RV32.ablation.dhrystones_per_s.subadditivity,-16.711414,pp,"RV32.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.dhry_per_s",both - (opt + exr); negative = sub-additive
+RV32.ablation.coremark.optimisations_only,25.898868,%,"RV32.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.cm_true",vs 7SP_BRAM
+RV32.ablation.coremark.exr_only,31.736141,%,"RV32.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.cm_true",vs 7SP_BRAM
+RV32.ablation.coremark.both,39.249391,%,"RV32.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.cm_true",vs 7SP_BRAM
+RV32.ablation.coremark.sum_of_individual,57.635009,%,"RV32.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.cm_true",
+RV32.ablation.coremark.product_of_individual,65.854311,%,"RV32.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.cm_true",multiplicative expectation
+RV32.ablation.coremark.subadditivity,-18.385618,pp,"RV32.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.cm_true",both - (opt + exr); negative = sub-additive
+RV32.ablation.run_mhz.optimisations_only,26.262626,%,"RV32.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.dhry_mhz",vs 7SP_BRAM
+RV32.ablation.run_mhz.exr_only,58.333333,%,"RV32.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.dhry_mhz",vs 7SP_BRAM
+RV32.ablation.run_mhz.both,69.444444,%,"RV32.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.dhry_mhz",vs 7SP_BRAM
+RV32.ablation.run_mhz.sum_of_individual,84.59596,%,"RV32.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.dhry_mhz",
+RV32.ablation.run_mhz.product_of_individual,99.915825,%,"RV32.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.dhry_mhz",multiplicative expectation
+RV32.ablation.run_mhz.subadditivity,-15.151515,pp,"RV32.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.dhry_mhz",both - (opt + exr); negative = sub-additive
+RV32.ablation.soc_fmax.optimisations_only,25.571576,%,"RV32.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.soc_fmax_dhry",vs 7SP_BRAM
+RV32.ablation.soc_fmax.exr_only,57.709555,%,"RV32.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.soc_fmax_dhry",vs 7SP_BRAM
+RV32.ablation.soc_fmax.both,68.58089,%,"RV32.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.soc_fmax_dhry",vs 7SP_BRAM
+RV32.ablation.soc_fmax.sum_of_individual,83.281131,%,"RV32.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.soc_fmax_dhry",
+RV32.ablation.soc_fmax.product_of_individual,98.038374,%,"RV32.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.soc_fmax_dhry",multiplicative expectation
+RV32.ablation.soc_fmax.subadditivity,-14.700241,pp,"RV32.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.soc_fmax_dhry",both - (opt + exr); negative = sub-additive
+RV32.ablation.core_fmax.optimisations_only,36.936976,%,"RV32.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.core_fmax",vs 7SP_BRAM
+RV32.ablation.core_fmax.exr_only,43.442706,%,"RV32.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.core_fmax",vs 7SP_BRAM
+RV32.ablation.core_fmax.both,52.782256,%,"RV32.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.core_fmax",vs 7SP_BRAM
+RV32.ablation.core_fmax.sum_of_individual,80.379682,%,"RV32.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.core_fmax",
+RV32.ablation.core_fmax.product_of_individual,96.426105,%,"RV32.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.core_fmax",multiplicative expectation
+RV32.ablation.core_fmax.subadditivity,-27.597426,pp,"RV32.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.core_fmax",both - (opt + exr); negative = sub-additive
+RV32.ablation.cpi_dhrystone.optimisations_only,3.042877,%,RV32.IM_7SP_BRAM_Opt vs RV32.IM_7SP_BRAM,
+RV32.ablation.cpi_dhrystone.exr_only,17.150761,%,RV32.IM_8SP_withoutOpt vs RV32.IM_7SP_BRAM,
+RV32.ablation.cpi_dhrystone.both,20.193638,%,RV32.IM_8SP vs RV32.IM_7SP_BRAM,
+RV32.ablation.cpi_coremark.optimisations_only,1.493881,%,RV32.IM_7SP_BRAM_Opt vs RV32.IM_7SP_BRAM,
+RV32.ablation.cpi_coremark.exr_only,20.189214,%,RV32.IM_8SP_withoutOpt vs RV32.IM_7SP_BRAM,
+RV32.ablation.cpi_coremark.both,21.683173,%,RV32.IM_8SP vs RV32.IM_7SP_BRAM,
+RV64.ablation.dhrystones_per_s.optimisations_only,35.343384,%,"RV64.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.dhry_per_s",vs 7SP_BRAM
+RV64.ablation.dhrystones_per_s.exr_only,40.560289,%,"RV64.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.dhry_per_s",vs 7SP_BRAM
+RV64.ablation.dhrystones_per_s.both,45.483456,%,"RV64.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.dhry_per_s",vs 7SP_BRAM
+RV64.ablation.dhrystones_per_s.sum_of_individual,75.903673,%,"RV64.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.dhry_per_s",
+RV64.ablation.dhrystones_per_s.product_of_individual,90.239052,%,"RV64.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.dhry_per_s",multiplicative expectation
+RV64.ablation.dhrystones_per_s.subadditivity,-30.420217,pp,"RV64.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.dhry_per_s",both - (opt + exr); negative = sub-additive
+RV64.ablation.coremark.optimisations_only,37.676439,%,"RV64.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.cm_true",vs 7SP_BRAM
+RV64.ablation.coremark.exr_only,32.533807,%,"RV64.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.cm_true",vs 7SP_BRAM
+RV64.ablation.coremark.both,45.267002,%,"RV64.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.cm_true",vs 7SP_BRAM
+RV64.ablation.coremark.sum_of_individual,70.210246,%,"RV64.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.cm_true",
+RV64.ablation.coremark.product_of_individual,82.467826,%,"RV64.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.cm_true",multiplicative expectation
+RV64.ablation.coremark.subadditivity,-24.943244,pp,"RV64.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.cm_true",both - (opt + exr); negative = sub-additive
+RV64.ablation.run_mhz.optimisations_only,39.573071,%,"RV64.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.dhry_mhz",vs 7SP_BRAM
+RV64.ablation.run_mhz.exr_only,65.517241,%,"RV64.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.dhry_mhz",vs 7SP_BRAM
+RV64.ablation.run_mhz.both,75.862069,%,"RV64.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.dhry_mhz",vs 7SP_BRAM
+RV64.ablation.run_mhz.sum_of_individual,105.090312,%,"RV64.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.dhry_mhz",
+RV64.ablation.run_mhz.product_of_individual,131.017496,%,"RV64.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.dhry_mhz",multiplicative expectation
+RV64.ablation.run_mhz.subadditivity,-29.228243,pp,"RV64.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.dhry_mhz",both - (opt + exr); negative = sub-additive
+RV64.ablation.soc_fmax.optimisations_only,38.483372,%,"RV64.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.soc_fmax_dhry",vs 7SP_BRAM
+RV64.ablation.soc_fmax.exr_only,65.319313,%,"RV64.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.soc_fmax_dhry",vs 7SP_BRAM
+RV64.ablation.soc_fmax.both,76.074207,%,"RV64.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.soc_fmax_dhry",vs 7SP_BRAM
+RV64.ablation.soc_fmax.sum_of_individual,103.802684,%,"RV64.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.soc_fmax_dhry",
+RV64.ablation.soc_fmax.product_of_individual,128.939758,%,"RV64.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.soc_fmax_dhry",multiplicative expectation
+RV64.ablation.soc_fmax.subadditivity,-27.728477,pp,"RV64.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.soc_fmax_dhry",both - (opt + exr); negative = sub-additive
+RV64.ablation.core_fmax.optimisations_only,41.7934,%,"RV64.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.core_fmax",vs 7SP_BRAM
+RV64.ablation.core_fmax.exr_only,39.228306,%,"RV64.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.core_fmax",vs 7SP_BRAM
+RV64.ablation.core_fmax.both,55.737426,%,"RV64.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.core_fmax",vs 7SP_BRAM
+RV64.ablation.core_fmax.sum_of_individual,81.021706,%,"RV64.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.core_fmax",
+RV64.ablation.core_fmax.product_of_individual,97.416549,%,"RV64.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.core_fmax",multiplicative expectation
+RV64.ablation.core_fmax.subadditivity,-25.28428,pp,"RV64.{IM_7SP_BRAM,IM_7SP_BRAM_Opt,IM_8SP_withoutOpt,IM_8SP}.core_fmax",both - (opt + exr); negative = sub-additive
+RV64.ablation.cpi_dhrystone.optimisations_only,3.129445,%,RV64.IM_7SP_BRAM_Opt vs RV64.IM_7SP_BRAM,
+RV64.ablation.cpi_dhrystone.exr_only,17.780939,%,RV64.IM_8SP_withoutOpt vs RV64.IM_7SP_BRAM,
+RV64.ablation.cpi_dhrystone.both,20.910384,%,RV64.IM_8SP vs RV64.IM_7SP_BRAM,
+RV64.ablation.cpi_coremark.optimisations_only,1.377647,%,RV64.IM_7SP_BRAM_Opt vs RV64.IM_7SP_BRAM,
+RV64.ablation.cpi_coremark.exr_only,19.679815,%,RV64.IM_8SP_withoutOpt vs RV64.IM_7SP_BRAM,
+RV64.ablation.cpi_coremark.both,21.057636,%,RV64.IM_8SP vs RV64.IM_7SP_BRAM,
+crosswidth.I_5SP.core_lut_rv64_over_rv32,2.109492,x,RV64.I_5SP / RV32.I_5SP,
+crosswidth.I_5SP.core_ff_rv64_over_rv32,1.953099,x,RV64.I_5SP / RV32.I_5SP,
+crosswidth.I_5SP.core_fmax_rv64_over_rv32,0.865961,x,RV64.I_5SP / RV32.I_5SP,
+crosswidth.I_5SP.soc_fmax_dhry_rv64_over_rv32,0.870101,x,RV64.I_5SP / RV32.I_5SP,
+crosswidth.I_5SP.dmips_per_mhz_rv64_over_rv32,1.039779,x,RV64.I_5SP / RV32.I_5SP,
+crosswidth.I_5SP.coremark_per_mhz_rv64_over_rv32,0.829343,x,RV64.I_5SP / RV32.I_5SP,
+crosswidth.IM_5SP.core_lut_rv64_over_rv32,2.205906,x,RV64.IM_5SP / RV32.IM_5SP,
+crosswidth.IM_5SP.core_ff_rv64_over_rv32,2.066318,x,RV64.IM_5SP / RV32.IM_5SP,
+crosswidth.IM_5SP.core_dsp_rv64_over_rv32,5.0,x,RV64.IM_5SP / RV32.IM_5SP,
+crosswidth.IM_5SP.core_fmax_rv64_over_rv32,0.882082,x,RV64.IM_5SP / RV32.IM_5SP,
+crosswidth.IM_5SP.soc_fmax_dhry_rv64_over_rv32,0.865313,x,RV64.IM_5SP / RV32.IM_5SP,
+crosswidth.IM_5SP.dmips_per_mhz_rv64_over_rv32,1.036365,x,RV64.IM_5SP / RV32.IM_5SP,
+crosswidth.IM_5SP.coremark_per_mhz_rv64_over_rv32,0.87525,x,RV64.IM_5SP / RV32.IM_5SP,
+crosswidth.IM_6SP.core_lut_rv64_over_rv32,2.25959,x,RV64.IM_6SP / RV32.IM_6SP,
+crosswidth.IM_6SP.core_ff_rv64_over_rv32,1.987412,x,RV64.IM_6SP / RV32.IM_6SP,
+crosswidth.IM_6SP.core_dsp_rv64_over_rv32,5.0,x,RV64.IM_6SP / RV32.IM_6SP,
+crosswidth.IM_6SP.core_fmax_rv64_over_rv32,0.940982,x,RV64.IM_6SP / RV32.IM_6SP,
+crosswidth.IM_6SP.soc_fmax_dhry_rv64_over_rv32,0.860326,x,RV64.IM_6SP / RV32.IM_6SP,
+crosswidth.IM_6SP.dmips_per_mhz_rv64_over_rv32,1.033076,x,RV64.IM_6SP / RV32.IM_6SP,
+crosswidth.IM_6SP.coremark_per_mhz_rv64_over_rv32,0.884948,x,RV64.IM_6SP / RV32.IM_6SP,
+crosswidth.IM_7SP.core_lut_rv64_over_rv32,2.363694,x,RV64.IM_7SP / RV32.IM_7SP,
+crosswidth.IM_7SP.core_ff_rv64_over_rv32,1.972117,x,RV64.IM_7SP / RV32.IM_7SP,
+crosswidth.IM_7SP.core_dsp_rv64_over_rv32,5.0,x,RV64.IM_7SP / RV32.IM_7SP,
+crosswidth.IM_7SP.core_fmax_rv64_over_rv32,0.938591,x,RV64.IM_7SP / RV32.IM_7SP,
+crosswidth.IM_7SP.soc_fmax_dhry_rv64_over_rv32,0.916213,x,RV64.IM_7SP / RV32.IM_7SP,
+crosswidth.IM_7SP.dmips_per_mhz_rv64_over_rv32,1.02337,x,RV64.IM_7SP / RV32.IM_7SP,
+crosswidth.IM_7SP.coremark_per_mhz_rv64_over_rv32,0.897608,x,RV64.IM_7SP / RV32.IM_7SP,
+crosswidth.IM_7SP_BRAM.core_lut_rv64_over_rv32,2.358846,x,RV64.IM_7SP_BRAM / RV32.IM_7SP_BRAM,
+crosswidth.IM_7SP_BRAM.core_ff_rv64_over_rv32,1.972117,x,RV64.IM_7SP_BRAM / RV32.IM_7SP_BRAM,
+crosswidth.IM_7SP_BRAM.core_dsp_rv64_over_rv32,5.0,x,RV64.IM_7SP_BRAM / RV32.IM_7SP_BRAM,
+crosswidth.IM_7SP_BRAM.core_fmax_rv64_over_rv32,0.93885,x,RV64.IM_7SP_BRAM / RV32.IM_7SP_BRAM,
+crosswidth.IM_7SP_BRAM.soc_fmax_dhry_rv64_over_rv32,0.806968,x,RV64.IM_7SP_BRAM / RV32.IM_7SP_BRAM,
+crosswidth.IM_7SP_BRAM.dmips_per_mhz_rv64_over_rv32,1.02841,x,RV64.IM_7SP_BRAM / RV32.IM_7SP_BRAM,
+crosswidth.IM_7SP_BRAM.coremark_per_mhz_rv64_over_rv32,0.90076,x,RV64.IM_7SP_BRAM / RV32.IM_7SP_BRAM,
+crosswidth.IM_7SP_BRAM_Opt.core_lut_rv64_over_rv32,2.472085,x,RV64.IM_7SP_BRAM_Opt / RV32.IM_7SP_BRAM_Opt,
+crosswidth.IM_7SP_BRAM_Opt.core_ff_rv64_over_rv32,1.994586,x,RV64.IM_7SP_BRAM_Opt / RV32.IM_7SP_BRAM_Opt,
+crosswidth.IM_7SP_BRAM_Opt.core_dsp_rv64_over_rv32,5.0,x,RV64.IM_7SP_BRAM_Opt / RV32.IM_7SP_BRAM_Opt,
+crosswidth.IM_7SP_BRAM_Opt.core_fmax_rv64_over_rv32,0.972146,x,RV64.IM_7SP_BRAM_Opt / RV32.IM_7SP_BRAM_Opt,
+crosswidth.IM_7SP_BRAM_Opt.soc_fmax_dhry_rv64_over_rv32,0.889944,x,RV64.IM_7SP_BRAM_Opt / RV32.IM_7SP_BRAM_Opt,
+crosswidth.IM_7SP_BRAM_Opt.dmips_per_mhz_rv64_over_rv32,1.027543,x,RV64.IM_7SP_BRAM_Opt / RV32.IM_7SP_BRAM_Opt,
+crosswidth.IM_7SP_BRAM_Opt.coremark_per_mhz_rv64_over_rv32,0.90178,x,RV64.IM_7SP_BRAM_Opt / RV32.IM_7SP_BRAM_Opt,
+crosswidth.IM_8SP_withoutOpt.core_lut_rv64_over_rv32,2.428395,x,RV64.IM_8SP_withoutOpt / RV32.IM_8SP_withoutOpt,
+crosswidth.IM_8SP_withoutOpt.core_ff_rv64_over_rv32,1.951353,x,RV64.IM_8SP_withoutOpt / RV32.IM_8SP_withoutOpt,
+crosswidth.IM_8SP_withoutOpt.core_dsp_rv64_over_rv32,5.0,x,RV64.IM_8SP_withoutOpt / RV32.IM_8SP_withoutOpt,
+crosswidth.IM_8SP_withoutOpt.core_fmax_rv64_over_rv32,0.911266,x,RV64.IM_8SP_withoutOpt / RV32.IM_8SP_withoutOpt,
+crosswidth.IM_8SP_withoutOpt.soc_fmax_dhry_rv64_over_rv32,0.845906,x,RV64.IM_8SP_withoutOpt / RV32.IM_8SP_withoutOpt,
+crosswidth.IM_8SP_withoutOpt.dmips_per_mhz_rv64_over_rv32,1.022925,x,RV64.IM_8SP_withoutOpt / RV32.IM_8SP_withoutOpt,
+crosswidth.IM_8SP_withoutOpt.coremark_per_mhz_rv64_over_rv32,0.904573,x,RV64.IM_8SP_withoutOpt / RV32.IM_8SP_withoutOpt,
+crosswidth.IM_8SP.core_lut_rv64_over_rv32,2.425643,x,RV64.IM_8SP / RV32.IM_8SP,
+crosswidth.IM_8SP.core_ff_rv64_over_rv32,1.970588,x,RV64.IM_8SP / RV32.IM_8SP,
+crosswidth.IM_8SP.core_dsp_rv64_over_rv32,5.0,x,RV64.IM_8SP / RV32.IM_8SP,
+crosswidth.IM_8SP.core_fmax_rv64_over_rv32,0.957009,x,RV64.IM_8SP / RV32.IM_8SP,
+crosswidth.IM_8SP.soc_fmax_dhry_rv64_over_rv32,0.842837,x,RV64.IM_8SP / RV32.IM_8SP,
+crosswidth.IM_8SP.dmips_per_mhz_rv64_over_rv32,1.022325,x,RV64.IM_8SP / RV32.IM_8SP,
+crosswidth.IM_8SP.coremark_per_mhz_rv64_over_rv32,0.905395,x,RV64.IM_8SP / RV32.IM_8SP,
+RV32.I_5SP.embench_fpga.matmult-int.runtime_ms,711.3266,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 45 MHz build clock"
+RV32.I_5SP.embench_fpga.matmult-int.runtime_vs_IM_5SP,7.111908,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.I_5SP.embench_fpga.crc32.runtime_ms,955.673978,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 45 MHz build clock"
+RV32.I_5SP.embench_fpga.crc32.runtime_vs_IM_5SP,7.36608,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.I_5SP.embench_fpga.nettle-aes.runtime_ms,113.439889,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 45 MHz build clock"
+RV32.I_5SP.embench_fpga.nettle-aes.runtime_vs_IM_5SP,1.002104,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.I_5SP.embench_fpga.statemate.runtime_ms,81.032156,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 45 MHz build clock"
+RV32.I_5SP.embench_fpga.statemate.runtime_vs_IM_5SP,0.955556,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.I_5SP.embench_fpga.md5sum.runtime_ms,64.808489,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 45 MHz build clock"
+RV32.I_5SP.embench_fpga.md5sum.runtime_vs_IM_5SP,0.889283,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.I_5SP.embench_fpga.geomean_runtime_vs_IM_5SP,2.137402,x,geomean of the 5 ratios,measured
+RV32.IM_5SP.embench_fpga.matmult-int.runtime_ms,100.019093,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 43 MHz build clock"
+RV32.IM_5SP.embench_fpga.matmult-int.runtime_vs_IM_5SP,1.0,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_5SP.embench_fpga.crc32.runtime_ms,129.739837,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 43 MHz build clock"
+RV32.IM_5SP.embench_fpga.crc32.runtime_vs_IM_5SP,1.0,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_5SP.embench_fpga.nettle-aes.runtime_ms,113.201744,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 43 MHz build clock"
+RV32.IM_5SP.embench_fpga.nettle-aes.runtime_vs_IM_5SP,1.0,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_5SP.embench_fpga.statemate.runtime_ms,84.801093,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 43 MHz build clock"
+RV32.IM_5SP.embench_fpga.statemate.runtime_vs_IM_5SP,1.0,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_5SP.embench_fpga.md5sum.runtime_ms,72.877209,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 43 MHz build clock"
+RV32.IM_5SP.embench_fpga.md5sum.runtime_vs_IM_5SP,1.0,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_5SP.embench_fpga.geomean_runtime_vs_IM_5SP,1.0,x,geomean of the 5 ratios,measured
+RV32.IM_6SP.embench_fpga.matmult-int.runtime_ms,86.37284,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 50 MHz build clock"
+RV32.IM_6SP.embench_fpga.matmult-int.runtime_vs_IM_5SP,0.863564,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_6SP.embench_fpga.crc32.runtime_ms,111.58648,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 50 MHz build clock"
+RV32.IM_6SP.embench_fpga.crc32.runtime_vs_IM_5SP,0.860079,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_6SP.embench_fpga.nettle-aes.runtime_ms,100.20046,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 50 MHz build clock"
+RV32.IM_6SP.embench_fpga.nettle-aes.runtime_vs_IM_5SP,0.885149,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_6SP.embench_fpga.statemate.runtime_ms,77.4577,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 50 MHz build clock"
+RV32.IM_6SP.embench_fpga.statemate.runtime_vs_IM_5SP,0.913405,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_6SP.embench_fpga.md5sum.runtime_ms,63.75416,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 50 MHz build clock"
+RV32.IM_6SP.embench_fpga.md5sum.runtime_vs_IM_5SP,0.874816,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_6SP.embench_fpga.geomean_runtime_vs_IM_5SP,0.879196,x,geomean of the 5 ratios,measured
+RV32.IM_7SP.embench_fpga.matmult-int.runtime_ms,86.680649,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 57.501 MHz build clock"
+RV32.IM_7SP.embench_fpga.matmult-int.runtime_vs_IM_5SP,0.866641,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_7SP.embench_fpga.crc32.runtime_ms,115.242031,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 57.501 MHz build clock"
+RV32.IM_7SP.embench_fpga.crc32.runtime_vs_IM_5SP,0.888255,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_7SP.embench_fpga.nettle-aes.runtime_ms,91.200379,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 57.501 MHz build clock"
+RV32.IM_7SP.embench_fpga.nettle-aes.runtime_vs_IM_5SP,0.805645,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_7SP.embench_fpga.statemate.runtime_ms,76.271908,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 57.501 MHz build clock"
+RV32.IM_7SP.embench_fpga.statemate.runtime_vs_IM_5SP,0.899421,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_7SP.embench_fpga.md5sum.runtime_ms,71.040851,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 57.501 MHz build clock"
+RV32.IM_7SP.embench_fpga.md5sum.runtime_vs_IM_5SP,0.974802,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_7SP.embench_fpga.geomean_runtime_vs_IM_5SP,0.885279,x,geomean of the 5 ratios,measured
+RV32.IM_7SP_BRAM.embench_fpga.matmult-int.runtime_ms,74.799261,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 71.999 MHz build clock"
+RV32.IM_7SP_BRAM.embench_fpga.matmult-int.runtime_vs_IM_5SP,0.74785,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_7SP_BRAM.embench_fpga.crc32.runtime_ms,94.468618,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 71.999 MHz build clock"
+RV32.IM_7SP_BRAM.embench_fpga.crc32.runtime_vs_IM_5SP,0.728139,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_7SP_BRAM.embench_fpga.nettle-aes.runtime_ms,74.613731,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 71.999 MHz build clock"
+RV32.IM_7SP_BRAM.embench_fpga.nettle-aes.runtime_vs_IM_5SP,0.659122,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_7SP_BRAM.embench_fpga.statemate.runtime_ms,72.707635,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 71.999 MHz build clock"
+RV32.IM_7SP_BRAM.embench_fpga.statemate.runtime_vs_IM_5SP,0.85739,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_7SP_BRAM.embench_fpga.md5sum.runtime_ms,58.276948,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 71.999 MHz build clock"
+RV32.IM_7SP_BRAM.embench_fpga.md5sum.runtime_vs_IM_5SP,0.799659,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_7SP_BRAM.embench_fpga.geomean_runtime_vs_IM_5SP,0.755467,x,geomean of the 5 ratios,measured
+RV32.IM_7SP_BRAM_Opt.embench_fpga.matmult-int.runtime_ms,58.541152,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 92 MHz build clock"
+RV32.IM_7SP_BRAM_Opt.embench_fpga.matmult-int.runtime_vs_IM_5SP,0.5853,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_7SP_BRAM_Opt.embench_fpga.crc32.runtime_ms,77.724109,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 92 MHz build clock"
+RV32.IM_7SP_BRAM_Opt.embench_fpga.crc32.runtime_vs_IM_5SP,0.599077,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_7SP_BRAM_Opt.embench_fpga.nettle-aes.runtime_ms,58.915054,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 92 MHz build clock"
+RV32.IM_7SP_BRAM_Opt.embench_fpga.nettle-aes.runtime_vs_IM_5SP,0.520443,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_7SP_BRAM_Opt.embench_fpga.statemate.runtime_ms,57.913913,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 92 MHz build clock"
+RV32.IM_7SP_BRAM_Opt.embench_fpga.statemate.runtime_vs_IM_5SP,0.682938,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_7SP_BRAM_Opt.embench_fpga.md5sum.runtime_ms,47.281391,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 92 MHz build clock"
+RV32.IM_7SP_BRAM_Opt.embench_fpga.md5sum.runtime_vs_IM_5SP,0.648782,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_7SP_BRAM_Opt.embench_fpga.geomean_runtime_vs_IM_5SP,0.604704,x,geomean of the 5 ratios,measured
+RV32.IM_8SP_withoutOpt.embench_fpga.matmult-int.runtime_ms,50.592058,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 113.999 MHz build clock"
+RV32.IM_8SP_withoutOpt.embench_fpga.matmult-int.runtime_vs_IM_5SP,0.505824,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_8SP_withoutOpt.embench_fpga.crc32.runtime_ms,78.00757,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 113.999 MHz build clock"
+RV32.IM_8SP_withoutOpt.embench_fpga.crc32.runtime_vs_IM_5SP,0.601262,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_8SP_withoutOpt.embench_fpga.nettle-aes.runtime_ms,53.515338,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 113.999 MHz build clock"
+RV32.IM_8SP_withoutOpt.embench_fpga.nettle-aes.runtime_vs_IM_5SP,0.472743,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_8SP_withoutOpt.embench_fpga.statemate.runtime_ms,61.226537,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 113.999 MHz build clock"
+RV32.IM_8SP_withoutOpt.embench_fpga.statemate.runtime_vs_IM_5SP,0.722002,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_8SP_withoutOpt.embench_fpga.md5sum.runtime_ms,44.642181,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 113.999 MHz build clock"
+RV32.IM_8SP_withoutOpt.embench_fpga.md5sum.runtime_vs_IM_5SP,0.612567,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_8SP_withoutOpt.embench_fpga.geomean_runtime_vs_IM_5SP,0.576336,x,geomean of the 5 ratios,measured
+RV32.IM_8SP.embench_fpga.matmult-int.runtime_ms,47.277057,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 122 MHz build clock"
+RV32.IM_8SP.embench_fpga.matmult-int.runtime_vs_IM_5SP,0.47268,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_8SP.embench_fpga.crc32.runtime_ms,75.752459,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 122 MHz build clock"
+RV32.IM_8SP.embench_fpga.crc32.runtime_vs_IM_5SP,0.58388,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_8SP.embench_fpga.nettle-aes.runtime_ms,50.400074,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 122 MHz build clock"
+RV32.IM_8SP.embench_fpga.nettle-aes.runtime_vs_IM_5SP,0.445223,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_8SP.embench_fpga.statemate.runtime_ms,57.975492,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 122 MHz build clock"
+RV32.IM_8SP.embench_fpga.statemate.runtime_vs_IM_5SP,0.683664,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_8SP.embench_fpga.md5sum.runtime_ms,42.977156,ms,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,"measured, 122 MHz build clock"
+RV32.IM_8SP.embench_fpga.md5sum.runtime_vs_IM_5SP,0.58972,x,FPGA: riscof-env/logs/embench_rv32_fpga_vs_sim.csv,
+RV32.IM_8SP.embench_fpga.geomean_runtime_vs_IM_5SP,0.548266,x,geomean of the 5 ratios,measured
+RV64.I_5SP.embench_fpga.matmult-int.runtime_ms,853.17752,ms,Embench FPGA RV64!C3/I3,"FPGA, 37.5 MHz build clock"
+RV64.I_5SP.embench_fpga.matmult-int.runtime_vs_IM_5SP,7.538437,x,Embench FPGA RV64!C3/I3,
+RV64.I_5SP.embench_fpga.crc32.runtime_ms,1146.81736,ms,Embench FPGA RV64!C13/I13,"FPGA, 37.5 MHz build clock"
+RV64.I_5SP.embench_fpga.crc32.runtime_vs_IM_5SP,7.811078,x,Embench FPGA RV64!C13/I13,
+RV64.I_5SP.embench_fpga.nettle-aes.runtime_ms,147.38552,ms,Embench FPGA RV64!C23/I23,"FPGA, 37.5 MHz build clock"
+RV64.I_5SP.embench_fpga.nettle-aes.runtime_vs_IM_5SP,0.839648,x,Embench FPGA RV64!C23/I23,
+RV64.I_5SP.embench_fpga.statemate.runtime_ms,96.882907,ms,Embench FPGA RV64!C33/I33,"FPGA, 37.5 MHz build clock"
+RV64.I_5SP.embench_fpga.statemate.runtime_vs_IM_5SP,1.013333,x,Embench FPGA RV64!C33/I33,
+RV64.I_5SP.embench_fpga.md5sum.runtime_ms,78.612747,ms,Embench FPGA RV64!C43/I43,"FPGA, 37.5 MHz build clock"
+RV64.I_5SP.embench_fpga.md5sum.runtime_vs_IM_5SP,0.943755,x,Embench FPGA RV64!C43/I43,
+RV64.I_5SP.embench_fpga.geomean_runtime_vs_IM_5SP,2.162421,x,geomean of the 5 ratios,RV64 IM_5SP nettle-aes build is 30 MHz (did not close at 38)
+RV64.IM_5SP.embench_fpga.matmult-int.runtime_ms,113.176974,ms,Embench FPGA RV64!C4/I4,"FPGA, 38.0 MHz build clock"
+RV64.IM_5SP.embench_fpga.matmult-int.runtime_vs_IM_5SP,1.0,x,Embench FPGA RV64!C4/I4,
+RV64.IM_5SP.embench_fpga.crc32.runtime_ms,146.819342,ms,Embench FPGA RV64!C14/I14,"FPGA, 38.0 MHz build clock"
+RV64.IM_5SP.embench_fpga.crc32.runtime_vs_IM_5SP,1.0,x,Embench FPGA RV64!C14/I14,
+RV64.IM_5SP.embench_fpga.nettle-aes.runtime_ms,175.532433,ms,Embench FPGA RV64!C24/I24,"FPGA, 30.0 MHz build clock"
+RV64.IM_5SP.embench_fpga.nettle-aes.runtime_vs_IM_5SP,1.0,x,Embench FPGA RV64!C24/I24,
+RV64.IM_5SP.embench_fpga.statemate.runtime_ms,95.608132,ms,Embench FPGA RV64!C34/I34,"FPGA, 38.0 MHz build clock"
+RV64.IM_5SP.embench_fpga.statemate.runtime_vs_IM_5SP,1.0,x,Embench FPGA RV64!C34/I34,
+RV64.IM_5SP.embench_fpga.md5sum.runtime_ms,83.297789,ms,Embench FPGA RV64!C44/I44,"FPGA, 38.0 MHz build clock"
+RV64.IM_5SP.embench_fpga.md5sum.runtime_vs_IM_5SP,1.0,x,Embench FPGA RV64!C44/I44,
+RV64.IM_5SP.embench_fpga.geomean_runtime_vs_IM_5SP,1.0,x,geomean of the 5 ratios,RV64 IM_5SP nettle-aes build is 30 MHz (did not close at 38)
+RV64.IM_6SP.embench_fpga.matmult-int.runtime_ms,95.967733,ms,Embench FPGA RV64!C5/I5,"FPGA, 45.0 MHz build clock"
+RV64.IM_6SP.embench_fpga.matmult-int.runtime_vs_IM_5SP,0.847944,x,Embench FPGA RV64!C5/I5,
+RV64.IM_6SP.embench_fpga.crc32.runtime_ms,123.992178,ms,Embench FPGA RV64!C15/I15,"FPGA, 45.0 MHz build clock"
+RV64.IM_6SP.embench_fpga.crc32.runtime_vs_IM_5SP,0.844522,x,Embench FPGA RV64!C15/I15,
+RV64.IM_6SP.embench_fpga.nettle-aes.runtime_ms,117.739444,ms,Embench FPGA RV64!C25/I25,"FPGA, 45.0 MHz build clock"
+RV64.IM_6SP.embench_fpga.nettle-aes.runtime_vs_IM_5SP,0.670756,x,Embench FPGA RV64!C25/I25,
+RV64.IM_6SP.embench_fpga.statemate.runtime_ms,85.767756,ms,Embench FPGA RV64!C35/I35,"FPGA, 45.0 MHz build clock"
+RV64.IM_6SP.embench_fpga.statemate.runtime_vs_IM_5SP,0.897076,x,Embench FPGA RV64!C35/I35,
+RV64.IM_6SP.embench_fpga.md5sum.runtime_ms,71.5504,ms,Embench FPGA RV64!C45/I45,"FPGA, 45.0 MHz build clock"
+RV64.IM_6SP.embench_fpga.md5sum.runtime_vs_IM_5SP,0.858971,x,Embench FPGA RV64!C45/I45,
+RV64.IM_6SP.embench_fpga.geomean_runtime_vs_IM_5SP,0.819729,x,geomean of the 5 ratios,RV64 IM_5SP nettle-aes build is 30 MHz (did not close at 38)
+RV64.IM_7SP.embench_fpga.matmult-int.runtime_ms,106.045319,ms,Embench FPGA RV64!C6/I6,"FPGA, 47.0 MHz build clock"
+RV64.IM_7SP.embench_fpga.matmult-int.runtime_vs_IM_5SP,0.936987,x,Embench FPGA RV64!C6/I6,
+RV64.IM_7SP.embench_fpga.crc32.runtime_ms,140.996936,ms,Embench FPGA RV64!C16/I16,"FPGA, 47.0 MHz build clock"
+RV64.IM_7SP.embench_fpga.crc32.runtime_vs_IM_5SP,0.960343,x,Embench FPGA RV64!C16/I16,
+RV64.IM_7SP.embench_fpga.nettle-aes.runtime_ms,117.709894,ms,Embench FPGA RV64!C26/I26,"FPGA, 47.0 MHz build clock"
+RV64.IM_7SP.embench_fpga.nettle-aes.runtime_vs_IM_5SP,0.670588,x,Embench FPGA RV64!C26/I26,
+RV64.IM_7SP.embench_fpga.statemate.runtime_ms,93.029255,ms,Embench FPGA RV64!C36/I36,"FPGA, 47.0 MHz build clock"
+RV64.IM_7SP.embench_fpga.statemate.runtime_vs_IM_5SP,0.973027,x,Embench FPGA RV64!C36/I36,
+RV64.IM_7SP.embench_fpga.md5sum.runtime_ms,87.634638,ms,Embench FPGA RV64!C46/I46,"FPGA, 47.0 MHz build clock"
+RV64.IM_7SP.embench_fpga.md5sum.runtime_vs_IM_5SP,1.052064,x,Embench FPGA RV64!C46/I46,
+RV64.IM_7SP.embench_fpga.geomean_runtime_vs_IM_5SP,0.908148,x,geomean of the 5 ratios,RV64 IM_5SP nettle-aes build is 30 MHz (did not close at 38)
+RV64.IM_7SP_BRAM.embench_fpga.matmult-int.runtime_ms,92.850621,ms,Embench FPGA RV64!C7/I7,"FPGA, 58.0 MHz build clock"
+RV64.IM_7SP_BRAM.embench_fpga.matmult-int.runtime_vs_IM_5SP,0.820402,x,Embench FPGA RV64!C7/I7,
+RV64.IM_7SP_BRAM.embench_fpga.crc32.runtime_ms,117.275293,ms,Embench FPGA RV64!C17/I17,"FPGA, 58.0 MHz build clock"
+RV64.IM_7SP_BRAM.embench_fpga.crc32.runtime_vs_IM_5SP,0.798773,x,Embench FPGA RV64!C17/I17,
+RV64.IM_7SP_BRAM.embench_fpga.nettle-aes.runtime_ms,96.423638,ms,Embench FPGA RV64!C27/I27,"FPGA, 58.0 MHz build clock"
+RV64.IM_7SP_BRAM.embench_fpga.nettle-aes.runtime_vs_IM_5SP,0.549321,x,Embench FPGA RV64!C27/I27,
+RV64.IM_7SP_BRAM.embench_fpga.statemate.runtime_ms,89.452379,ms,Embench FPGA RV64!C37/I37,"FPGA, 58.0 MHz build clock"
+RV64.IM_7SP_BRAM.embench_fpga.statemate.runtime_vs_IM_5SP,0.935615,x,Embench FPGA RV64!C37/I37,
+RV64.IM_7SP_BRAM.embench_fpga.md5sum.runtime_ms,72.601914,ms,Embench FPGA RV64!C47/I47,"FPGA, 58.0 MHz build clock"
+RV64.IM_7SP_BRAM.embench_fpga.md5sum.runtime_vs_IM_5SP,0.871595,x,Embench FPGA RV64!C47/I47,
+RV64.IM_7SP_BRAM.embench_fpga.geomean_runtime_vs_IM_5SP,0.782596,x,geomean of the 5 ratios,RV64 IM_5SP nettle-aes build is 30 MHz (did not close at 38)
+RV64.IM_7SP_BRAM_Opt.embench_fpga.matmult-int.runtime_ms,66.528791,ms,Embench FPGA RV64!C8/I8,"FPGA, 80.952381 MHz build clock"
+RV64.IM_7SP_BRAM_Opt.embench_fpga.matmult-int.runtime_vs_IM_5SP,0.58783,x,Embench FPGA RV64!C8/I8,
+RV64.IM_7SP_BRAM_Opt.embench_fpga.crc32.runtime_ms,88.335302,ms,Embench FPGA RV64!C18/I18,"FPGA, 80.952381 MHz build clock"
+RV64.IM_7SP_BRAM_Opt.embench_fpga.crc32.runtime_vs_IM_5SP,0.60166,x,Embench FPGA RV64!C18/I18,
+RV64.IM_7SP_BRAM_Opt.embench_fpga.nettle-aes.runtime_ms,69.678692,ms,Embench FPGA RV64!C28/I28,"FPGA, 80.952381 MHz build clock"
+RV64.IM_7SP_BRAM_Opt.embench_fpga.nettle-aes.runtime_vs_IM_5SP,0.396956,x,Embench FPGA RV64!C28/I28,
+RV64.IM_7SP_BRAM_Opt.embench_fpga.statemate.runtime_ms,65.241503,ms,Embench FPGA RV64!C38/I38,"FPGA, 80.952381 MHz build clock"
+RV64.IM_7SP_BRAM_Opt.embench_fpga.statemate.runtime_vs_IM_5SP,0.682384,x,Embench FPGA RV64!C38/I38,
+RV64.IM_7SP_BRAM_Opt.embench_fpga.md5sum.runtime_ms,53.919736,ms,Embench FPGA RV64!C48/I48,"FPGA, 80.952381 MHz build clock"
+RV64.IM_7SP_BRAM_Opt.embench_fpga.md5sum.runtime_vs_IM_5SP,0.647313,x,Embench FPGA RV64!C48/I48,
+RV64.IM_7SP_BRAM_Opt.embench_fpga.geomean_runtime_vs_IM_5SP,0.573453,x,geomean of the 5 ratios,RV64 IM_5SP nettle-aes build is 30 MHz (did not close at 38)
+RV64.IM_8SP_withoutOpt.embench_fpga.matmult-int.runtime_ms,62.687837,ms,Embench FPGA RV64!C9/I9,"FPGA, 92.0 MHz build clock"
+RV64.IM_8SP_withoutOpt.embench_fpga.matmult-int.runtime_vs_IM_5SP,0.553892,x,Embench FPGA RV64!C9/I9,
+RV64.IM_8SP_withoutOpt.embench_fpga.crc32.runtime_ms,96.664326,ms,Embench FPGA RV64!C19/I19,"FPGA, 92.0 MHz build clock"
+RV64.IM_8SP_withoutOpt.embench_fpga.crc32.runtime_vs_IM_5SP,0.65839,x,Embench FPGA RV64!C19/I19,
+RV64.IM_8SP_withoutOpt.embench_fpga.nettle-aes.runtime_ms,69.771478,ms,Embench FPGA RV64!C29/I29,"FPGA, 92.0 MHz build clock"
+RV64.IM_8SP_withoutOpt.embench_fpga.nettle-aes.runtime_vs_IM_5SP,0.397485,x,Embench FPGA RV64!C29/I29,
+RV64.IM_8SP_withoutOpt.embench_fpga.statemate.runtime_ms,75.794533,ms,Embench FPGA RV64!C39/I39,"FPGA, 92.0 MHz build clock"
+RV64.IM_8SP_withoutOpt.embench_fpga.statemate.runtime_vs_IM_5SP,0.792762,x,Embench FPGA RV64!C39/I39,
+RV64.IM_8SP_withoutOpt.embench_fpga.md5sum.runtime_ms,56.222272,ms,Embench FPGA RV64!C49/I49,"FPGA, 92.0 MHz build clock"
+RV64.IM_8SP_withoutOpt.embench_fpga.md5sum.runtime_vs_IM_5SP,0.674955,x,Embench FPGA RV64!C49/I49,
+RV64.IM_8SP_withoutOpt.embench_fpga.geomean_runtime_vs_IM_5SP,0.599693,x,geomean of the 5 ratios,RV64 IM_5SP nettle-aes build is 30 MHz (did not close at 38)
+RV64.IM_8SP.embench_fpga.matmult-int.runtime_ms,56.545471,ms,Embench FPGA RV64!C10/I10,"FPGA, 102.0 MHz build clock"
+RV64.IM_8SP.embench_fpga.matmult-int.runtime_vs_IM_5SP,0.49962,x,Embench FPGA RV64!C10/I10,
+RV64.IM_8SP.embench_fpga.crc32.runtime_ms,90.609147,ms,Embench FPGA RV64!C20/I20,"FPGA, 102.0 MHz build clock"
+RV64.IM_8SP.embench_fpga.crc32.runtime_vs_IM_5SP,0.617147,x,Embench FPGA RV64!C20/I20,
+RV64.IM_8SP.embench_fpga.nettle-aes.runtime_ms,63.402843,ms,Embench FPGA RV64!C30/I30,"FPGA, 102.0 MHz build clock"
+RV64.IM_8SP.embench_fpga.nettle-aes.runtime_vs_IM_5SP,0.361203,x,Embench FPGA RV64!C30/I30,
+RV64.IM_8SP.embench_fpga.statemate.runtime_ms,69.277873,ms,Embench FPGA RV64!C40/I40,"FPGA, 102.0 MHz build clock"
+RV64.IM_8SP.embench_fpga.statemate.runtime_vs_IM_5SP,0.724602,x,Embench FPGA RV64!C40/I40,
+RV64.IM_8SP.embench_fpga.md5sum.runtime_ms,52.220569,ms,Embench FPGA RV64!C50/I50,"FPGA, 102.0 MHz build clock"
+RV64.IM_8SP.embench_fpga.md5sum.runtime_vs_IM_5SP,0.626914,x,Embench FPGA RV64!C50/I50,
+RV64.IM_8SP.embench_fpga.geomean_runtime_vs_IM_5SP,0.550576,x,geomean of the 5 ratios,RV64 IM_5SP nettle-aes build is 30 MHz (did not close at 38)
+RV32.I_5SP.embench_projected.aha-mont64.runtime_ms,326.248911,ms,Embench simulation!C6,PROJECTION: simulated cycles at the 45 MHz Embench build clock
+RV32.I_5SP.embench_projected.crc32.runtime_ms,955.670244,ms,Embench simulation!D6,PROJECTION: simulated cycles at the 45 MHz Embench build clock
+RV32.I_5SP.embench_projected.depthconv.runtime_ms,2877.576222,ms,Embench simulation!E6,PROJECTION: simulated cycles at the 45 MHz Embench build clock
+RV32.I_5SP.embench_projected.edn.runtime_ms,1914.981267,ms,Embench simulation!F6,PROJECTION: simulated cycles at the 45 MHz Embench build clock
+RV32.I_5SP.embench_projected.huffbench.runtime_ms,70.708222,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 45 MHz Embench build clock
+RV32.I_5SP.embench_projected.matmult-int.runtime_ms,711.326644,ms,Embench simulation!H6,PROJECTION: simulated cycles at the 45 MHz Embench build clock
+RV32.I_5SP.embench_projected.md5sum.runtime_ms,64.808533,ms,Embench simulation!I6,PROJECTION: simulated cycles at the 45 MHz Embench build clock
+RV32.I_5SP.embench_projected.nettle-aes.runtime_ms,113.439933,ms,Embench simulation!J6,PROJECTION: simulated cycles at the 45 MHz Embench build clock
+RV32.I_5SP.embench_projected.nettle-sha256.runtime_ms,104.808889,ms,Embench simulation!K6,PROJECTION: simulated cycles at the 45 MHz Embench build clock
+RV32.I_5SP.embench_projected.nsichneu.runtime_ms,51.856022,ms,Embench simulation!L6,PROJECTION: simulated cycles at the 45 MHz Embench build clock
+RV32.I_5SP.embench_projected.picojpeg.runtime_ms,119.756333,ms,Embench simulation!M6,PROJECTION: simulated cycles at the 45 MHz Embench build clock
+RV32.I_5SP.embench_projected.qrduino.runtime_ms,161.895356,ms,Embench simulation!N6,PROJECTION: simulated cycles at the 45 MHz Embench build clock
+RV32.I_5SP.embench_projected.sglib-combined.runtime_ms,100.149622,ms,Embench simulation!O6,PROJECTION: simulated cycles at the 45 MHz Embench build clock
+RV32.I_5SP.embench_projected.slre.runtime_ms,94.934022,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 45 MHz Embench build clock
+RV32.I_5SP.embench_projected.statemate.runtime_ms,81.0322,ms,Embench simulation!Q6,PROJECTION: simulated cycles at the 45 MHz Embench build clock
+RV32.I_5SP.embench_projected.tarfind.runtime_ms,315.810022,ms,Embench simulation!R6,PROJECTION: simulated cycles at the 45 MHz Embench build clock
+RV32.I_5SP.embench_projected.ud.runtime_ms,220.667956,ms,Embench simulation!S6,PROJECTION: simulated cycles at the 45 MHz Embench build clock
+RV32.I_5SP.embench_projected.wikisort.runtime_ms,62.746644,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 45 MHz Embench build clock
+RV32.I_5SP.embench_projected.xgboost.runtime_ms,84.926489,ms,Embench simulation!U6,PROJECTION: simulated cycles at the 45 MHz Embench build clock
+RV32.IM_5SP.embench_projected.aha-mont64.runtime_ms,130.746767,ms,Embench simulation!C7,PROJECTION: simulated cycles at the 43 MHz Embench build clock
+RV32.IM_5SP.embench_projected.crc32.runtime_ms,129.73593,ms,Embench simulation!D7,PROJECTION: simulated cycles at the 43 MHz Embench build clock
+RV32.IM_5SP.embench_projected.depthconv.runtime_ms,722.725,ms,Embench simulation!E7,PROJECTION: simulated cycles at the 43 MHz Embench build clock
+RV32.IM_5SP.embench_projected.edn.runtime_ms,134.788535,ms,Embench simulation!F7,PROJECTION: simulated cycles at the 43 MHz Embench build clock
+RV32.IM_5SP.embench_projected.huffbench.runtime_ms,74.838605,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 43 MHz Embench build clock
+RV32.IM_5SP.embench_projected.matmult-int.runtime_ms,100.01914,ms,Embench simulation!H7,PROJECTION: simulated cycles at the 43 MHz Embench build clock
+RV32.IM_5SP.embench_projected.md5sum.runtime_ms,72.877256,ms,Embench simulation!I7,PROJECTION: simulated cycles at the 43 MHz Embench build clock
+RV32.IM_5SP.embench_projected.nettle-aes.runtime_ms,113.201791,ms,Embench simulation!J7,PROJECTION: simulated cycles at the 43 MHz Embench build clock
+RV32.IM_5SP.embench_projected.nettle-sha256.runtime_ms,109.683721,ms,Embench simulation!K7,PROJECTION: simulated cycles at the 43 MHz Embench build clock
+RV32.IM_5SP.embench_projected.nsichneu.runtime_ms,54.26793,ms,Embench simulation!L7,PROJECTION: simulated cycles at the 43 MHz Embench build clock
+RV32.IM_5SP.embench_projected.picojpeg.runtime_ms,108.085581,ms,Embench simulation!M7,PROJECTION: simulated cycles at the 43 MHz Embench build clock
+RV32.IM_5SP.embench_projected.qrduino.runtime_ms,93.433814,ms,Embench simulation!N7,PROJECTION: simulated cycles at the 43 MHz Embench build clock
+RV32.IM_5SP.embench_projected.sglib-combined.runtime_ms,100.584535,ms,Embench simulation!O7,PROJECTION: simulated cycles at the 43 MHz Embench build clock
+RV32.IM_5SP.embench_projected.slre.runtime_ms,99.349558,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 43 MHz Embench build clock
+RV32.IM_5SP.embench_projected.statemate.runtime_ms,84.80114,ms,Embench simulation!Q7,PROJECTION: simulated cycles at the 43 MHz Embench build clock
+RV32.IM_5SP.embench_projected.tarfind.runtime_ms,62.632977,ms,Embench simulation!R7,PROJECTION: simulated cycles at the 43 MHz Embench build clock
+RV32.IM_5SP.embench_projected.ud.runtime_ms,131.801953,ms,Embench simulation!S7,PROJECTION: simulated cycles at the 43 MHz Embench build clock
+RV32.IM_5SP.embench_projected.wikisort.runtime_ms,39.550953,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 43 MHz Embench build clock
+RV32.IM_5SP.embench_projected.xgboost.runtime_ms,88.876558,ms,Embench simulation!U7,PROJECTION: simulated cycles at the 43 MHz Embench build clock
+RV32.IM_6SP.embench_projected.aha-mont64.runtime_ms,114.54736,ms,Embench simulation!C8,PROJECTION: simulated cycles at the 50 MHz Embench build clock
+RV32.IM_6SP.embench_projected.crc32.runtime_ms,111.58312,ms,Embench simulation!D8,PROJECTION: simulated cycles at the 50 MHz Embench build clock
+RV32.IM_6SP.embench_projected.depthconv.runtime_ms,658.71604,ms,Embench simulation!E8,PROJECTION: simulated cycles at the 50 MHz Embench build clock
+RV32.IM_6SP.embench_projected.edn.runtime_ms,117.58994,ms,Embench simulation!F8,PROJECTION: simulated cycles at the 50 MHz Embench build clock
+RV32.IM_6SP.embench_projected.huffbench.runtime_ms,74.54058,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 50 MHz Embench build clock
+RV32.IM_6SP.embench_projected.matmult-int.runtime_ms,86.37288,ms,Embench simulation!H8,PROJECTION: simulated cycles at the 50 MHz Embench build clock
+RV32.IM_6SP.embench_projected.md5sum.runtime_ms,63.7542,ms,Embench simulation!I8,PROJECTION: simulated cycles at the 50 MHz Embench build clock
+RV32.IM_6SP.embench_projected.nettle-aes.runtime_ms,100.2005,ms,Embench simulation!J8,PROJECTION: simulated cycles at the 50 MHz Embench build clock
+RV32.IM_6SP.embench_projected.nettle-sha256.runtime_ms,95.67674,ms,Embench simulation!K8,PROJECTION: simulated cycles at the 50 MHz Embench build clock
+RV32.IM_6SP.embench_projected.nsichneu.runtime_ms,65.22436,ms,Embench simulation!L8,PROJECTION: simulated cycles at the 50 MHz Embench build clock
+RV32.IM_6SP.embench_projected.picojpeg.runtime_ms,94.2352,ms,Embench simulation!M8,PROJECTION: simulated cycles at the 50 MHz Embench build clock
+RV32.IM_6SP.embench_projected.qrduino.runtime_ms,86.8209,ms,Embench simulation!N8,PROJECTION: simulated cycles at the 50 MHz Embench build clock
+RV32.IM_6SP.embench_projected.sglib-combined.runtime_ms,97.22246,ms,Embench simulation!O8,PROJECTION: simulated cycles at the 50 MHz Embench build clock
+RV32.IM_6SP.embench_projected.slre.runtime_ms,93.7114,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 50 MHz Embench build clock
+RV32.IM_6SP.embench_projected.statemate.runtime_ms,77.45774,ms,Embench simulation!Q8,PROJECTION: simulated cycles at the 50 MHz Embench build clock
+RV32.IM_6SP.embench_projected.tarfind.runtime_ms,54.6923,ms,Embench simulation!R8,PROJECTION: simulated cycles at the 50 MHz Embench build clock
+RV32.IM_6SP.embench_projected.ud.runtime_ms,117.38388,ms,Embench simulation!S8,PROJECTION: simulated cycles at the 50 MHz Embench build clock
+RV32.IM_6SP.embench_projected.wikisort.runtime_ms,36.2071,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 50 MHz Embench build clock
+RV32.IM_6SP.embench_projected.xgboost.runtime_ms,87.91624,ms,Embench simulation!U8,PROJECTION: simulated cycles at the 50 MHz Embench build clock
+RV32.IM_7SP.embench_projected.aha-mont64.runtime_ms,119.15758,ms,Embench simulation!C9,PROJECTION: simulated cycles at the 57.501 MHz Embench build clock
+RV32.IM_7SP.embench_projected.crc32.runtime_ms,115.239109,ms,Embench simulation!D9,PROJECTION: simulated cycles at the 57.501 MHz Embench build clock
+RV32.IM_7SP.embench_projected.depthconv.runtime_ms,659.438549,ms,Embench simulation!E9,PROJECTION: simulated cycles at the 57.501 MHz Embench build clock
+RV32.IM_7SP.embench_projected.edn.runtime_ms,114.367837,ms,Embench simulation!F9,PROJECTION: simulated cycles at the 57.501 MHz Embench build clock
+RV32.IM_7SP.embench_projected.huffbench.runtime_ms,88.054625,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 57.501 MHz Embench build clock
+RV32.IM_7SP.embench_projected.matmult-int.runtime_ms,86.680684,ms,Embench simulation!H9,PROJECTION: simulated cycles at the 57.501 MHz Embench build clock
+RV32.IM_7SP.embench_projected.md5sum.runtime_ms,71.040886,ms,Embench simulation!I9,PROJECTION: simulated cycles at the 57.501 MHz Embench build clock
+RV32.IM_7SP.embench_projected.nettle-aes.runtime_ms,91.200414,ms,Embench simulation!J9,PROJECTION: simulated cycles at the 57.501 MHz Embench build clock
+RV32.IM_7SP.embench_projected.nettle-sha256.runtime_ms,85.952018,ms,Embench simulation!K9,PROJECTION: simulated cycles at the 57.501 MHz Embench build clock
+RV32.IM_7SP.embench_projected.nsichneu.runtime_ms,62.372411,ms,Embench simulation!L9,PROJECTION: simulated cycles at the 57.501 MHz Embench build clock
+RV32.IM_7SP.embench_projected.picojpeg.runtime_ms,102.502565,ms,Embench simulation!M9,PROJECTION: simulated cycles at the 57.501 MHz Embench build clock
+RV32.IM_7SP.embench_projected.qrduino.runtime_ms,93.769239,ms,Embench simulation!N9,PROJECTION: simulated cycles at the 57.501 MHz Embench build clock
+RV32.IM_7SP.embench_projected.sglib-combined.runtime_ms,108.381993,ms,Embench simulation!O9,PROJECTION: simulated cycles at the 57.501 MHz Embench build clock
+RV32.IM_7SP.embench_projected.slre.runtime_ms,108.09579,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 57.501 MHz Embench build clock
+RV32.IM_7SP.embench_projected.statemate.runtime_ms,76.271943,ms,Embench simulation!Q9,PROJECTION: simulated cycles at the 57.501 MHz Embench build clock
+RV32.IM_7SP.embench_projected.tarfind.runtime_ms,53.338464,ms,Embench simulation!R9,PROJECTION: simulated cycles at the 57.501 MHz Embench build clock
+RV32.IM_7SP.embench_projected.ud.runtime_ms,120.200344,ms,Embench simulation!S9,PROJECTION: simulated cycles at the 57.501 MHz Embench build clock
+RV32.IM_7SP.embench_projected.wikisort.runtime_ms,41.174293,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 57.501 MHz Embench build clock
+RV32.IM_7SP.embench_projected.xgboost.runtime_ms,93.483383,ms,Embench simulation!U9,PROJECTION: simulated cycles at the 57.501 MHz Embench build clock
+RV32.IM_7SP_BRAM.embench_projected.aha-mont64.runtime_ms,96.153155,ms,Embench simulation!C10,PROJECTION: simulated cycles at the 71.999 MHz Embench build clock
+RV32.IM_7SP_BRAM.embench_projected.crc32.runtime_ms,94.465659,ms,Embench simulation!D10,PROJECTION: simulated cycles at the 71.999 MHz Embench build clock
+RV32.IM_7SP_BRAM.embench_projected.depthconv.runtime_ms,542.358283,ms,Embench simulation!E10,PROJECTION: simulated cycles at the 71.999 MHz Embench build clock
+RV32.IM_7SP_BRAM.embench_projected.edn.runtime_ms,93.232489,ms,Embench simulation!F10,PROJECTION: simulated cycles at the 71.999 MHz Embench build clock
+RV32.IM_7SP_BRAM.embench_projected.huffbench.runtime_ms,72.844998,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 71.999 MHz Embench build clock
+RV32.IM_7SP_BRAM.embench_projected.matmult-int.runtime_ms,74.798664,ms,Embench simulation!H10,PROJECTION: simulated cycles at the 71.999 MHz Embench build clock
+RV32.IM_7SP_BRAM.embench_projected.md5sum.runtime_ms,58.276351,ms,Embench simulation!I10,PROJECTION: simulated cycles at the 71.999 MHz Embench build clock
+RV32.IM_7SP_BRAM.embench_projected.nettle-aes.runtime_ms,74.613134,ms,Embench simulation!J10,PROJECTION: simulated cycles at the 71.999 MHz Embench build clock
+RV32.IM_7SP_BRAM.embench_projected.nettle-sha256.runtime_ms,70.532952,ms,Embench simulation!K10,PROJECTION: simulated cycles at the 71.999 MHz Embench build clock
+RV32.IM_7SP_BRAM.embench_projected.nsichneu.runtime_ms,49.863776,ms,Embench simulation!L10,PROJECTION: simulated cycles at the 71.999 MHz Embench build clock
+RV32.IM_7SP_BRAM.embench_projected.picojpeg.runtime_ms,87.771177,ms,Embench simulation!M10,PROJECTION: simulated cycles at the 71.999 MHz Embench build clock
+RV32.IM_7SP_BRAM.embench_projected.qrduino.runtime_ms,75.842859,ms,Embench simulation!N10,PROJECTION: simulated cycles at the 71.999 MHz Embench build clock
+RV32.IM_7SP_BRAM.embench_projected.sglib-combined.runtime_ms,91.130446,ms,Embench simulation!O10,PROJECTION: simulated cycles at the 71.999 MHz Embench build clock
+RV32.IM_7SP_BRAM.embench_projected.slre.runtime_ms,91.079071,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 71.999 MHz Embench build clock
+RV32.IM_7SP_BRAM.embench_projected.statemate.runtime_ms,72.707038,ms,Embench simulation!Q10,PROJECTION: simulated cycles at the 71.999 MHz Embench build clock
+RV32.IM_7SP_BRAM.embench_projected.tarfind.runtime_ms,45.389061,ms,Embench simulation!R10,PROJECTION: simulated cycles at the 71.999 MHz Embench build clock
+RV32.IM_7SP_BRAM.embench_projected.ud.runtime_ms,98.152766,ms,Embench simulation!S10,PROJECTION: simulated cycles at the 71.999 MHz Embench build clock
+RV32.IM_7SP_BRAM.embench_projected.wikisort.runtime_ms,35.217184,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 71.999 MHz Embench build clock
+RV32.IM_7SP_BRAM.embench_projected.xgboost.runtime_ms,75.387728,ms,Embench simulation!U10,PROJECTION: simulated cycles at the 71.999 MHz Embench build clock
+RV32.IM_7SP_BRAM_Opt.embench_projected.aha-mont64.runtime_ms,75.274957,ms,Embench simulation!C11,PROJECTION: simulated cycles at the 92 MHz Embench build clock
+RV32.IM_7SP_BRAM_Opt.embench_projected.crc32.runtime_ms,77.722261,ms,Embench simulation!D11,PROJECTION: simulated cycles at the 92 MHz Embench build clock
+RV32.IM_7SP_BRAM_Opt.embench_projected.depthconv.runtime_ms,444.508413,ms,Embench simulation!E11,PROJECTION: simulated cycles at the 92 MHz Embench build clock
+RV32.IM_7SP_BRAM_Opt.embench_projected.edn.runtime_ms,72.865,ms,Embench simulation!F11,PROJECTION: simulated cycles at the 92 MHz Embench build clock
+RV32.IM_7SP_BRAM_Opt.embench_projected.huffbench.runtime_ms,59.182109,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 92 MHz Embench build clock
+RV32.IM_7SP_BRAM_Opt.embench_projected.matmult-int.runtime_ms,58.541152,ms,Embench simulation!H11,PROJECTION: simulated cycles at the 92 MHz Embench build clock
+RV32.IM_7SP_BRAM_Opt.embench_projected.md5sum.runtime_ms,47.281391,ms,Embench simulation!I11,PROJECTION: simulated cycles at the 92 MHz Embench build clock
+RV32.IM_7SP_BRAM_Opt.embench_projected.nettle-aes.runtime_ms,58.915054,ms,Embench simulation!J11,PROJECTION: simulated cycles at the 92 MHz Embench build clock
+RV32.IM_7SP_BRAM_Opt.embench_projected.nettle-sha256.runtime_ms,55.467783,ms,Embench simulation!K11,PROJECTION: simulated cycles at the 92 MHz Embench build clock
+RV32.IM_7SP_BRAM_Opt.embench_projected.nsichneu.runtime_ms,39.05012,ms,Embench simulation!L11,PROJECTION: simulated cycles at the 92 MHz Embench build clock
+RV32.IM_7SP_BRAM_Opt.embench_projected.picojpeg.runtime_ms,71.9165,ms,Embench simulation!M11,PROJECTION: simulated cycles at the 92 MHz Embench build clock
+RV32.IM_7SP_BRAM_Opt.embench_projected.qrduino.runtime_ms,61.039957,ms,Embench simulation!N11,PROJECTION: simulated cycles at the 92 MHz Embench build clock
+RV32.IM_7SP_BRAM_Opt.embench_projected.sglib-combined.runtime_ms,73.944446,ms,Embench simulation!O11,PROJECTION: simulated cycles at the 92 MHz Embench build clock
+RV32.IM_7SP_BRAM_Opt.embench_projected.slre.runtime_ms,74.795696,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 92 MHz Embench build clock
+RV32.IM_7SP_BRAM_Opt.embench_projected.statemate.runtime_ms,57.913913,ms,Embench simulation!Q11,PROJECTION: simulated cycles at the 92 MHz Embench build clock
+RV32.IM_7SP_BRAM_Opt.embench_projected.tarfind.runtime_ms,36.455924,ms,Embench simulation!R11,PROJECTION: simulated cycles at the 92 MHz Embench build clock
+RV32.IM_7SP_BRAM_Opt.embench_projected.ud.runtime_ms,78.288761,ms,Embench simulation!S11,PROJECTION: simulated cycles at the 92 MHz Embench build clock
+RV32.IM_7SP_BRAM_Opt.embench_projected.wikisort.runtime_ms,29.193413,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 92 MHz Embench build clock
+RV32.IM_7SP_BRAM_Opt.embench_projected.xgboost.runtime_ms,59.873207,ms,Embench simulation!U11,PROJECTION: simulated cycles at the 92 MHz Embench build clock
+RV32.IM_8SP_withoutOpt.embench_projected.aha-mont64.runtime_ms,68.85985,ms,Embench simulation!C12,PROJECTION: simulated cycles at the 113.999 MHz Embench build clock
+RV32.IM_8SP_withoutOpt.embench_projected.crc32.runtime_ms,78.004588,ms,Embench simulation!D12,PROJECTION: simulated cycles at the 113.999 MHz Embench build clock
+RV32.IM_8SP_withoutOpt.embench_projected.depthconv.runtime_ms,405.958798,ms,Embench simulation!E12,PROJECTION: simulated cycles at the 113.999 MHz Embench build clock
+RV32.IM_8SP_withoutOpt.embench_projected.edn.runtime_ms,65.91135,ms,Embench simulation!F12,PROJECTION: simulated cycles at the 113.999 MHz Embench build clock
+RV32.IM_8SP_withoutOpt.embench_projected.huffbench.runtime_ms,56.674436,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 113.999 MHz Embench build clock
+RV32.IM_8SP_withoutOpt.embench_projected.matmult-int.runtime_ms,50.592058,ms,Embench simulation!H12,PROJECTION: simulated cycles at the 113.999 MHz Embench build clock
+RV32.IM_8SP_withoutOpt.embench_projected.md5sum.runtime_ms,44.642181,ms,Embench simulation!I12,PROJECTION: simulated cycles at the 113.999 MHz Embench build clock
+RV32.IM_8SP_withoutOpt.embench_projected.nettle-aes.runtime_ms,53.515338,ms,Embench simulation!J12,PROJECTION: simulated cycles at the 113.999 MHz Embench build clock
+RV32.IM_8SP_withoutOpt.embench_projected.nettle-sha256.runtime_ms,61.599391,ms,Embench simulation!K12,PROJECTION: simulated cycles at the 113.999 MHz Embench build clock
+RV32.IM_8SP_withoutOpt.embench_projected.nsichneu.runtime_ms,39.684708,ms,Embench simulation!L12,PROJECTION: simulated cycles at the 113.999 MHz Embench build clock
+RV32.IM_8SP_withoutOpt.embench_projected.picojpeg.runtime_ms,67.222949,ms,Embench simulation!M12,PROJECTION: simulated cycles at the 113.999 MHz Embench build clock
+RV32.IM_8SP_withoutOpt.embench_projected.qrduino.runtime_ms,62.487662,ms,Embench simulation!N12,PROJECTION: simulated cycles at the 113.999 MHz Embench build clock
+RV32.IM_8SP_withoutOpt.embench_projected.sglib-combined.runtime_ms,68.792919,ms,Embench simulation!O12,PROJECTION: simulated cycles at the 113.999 MHz Embench build clock
+RV32.IM_8SP_withoutOpt.embench_projected.slre.runtime_ms,68.122896,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 113.999 MHz Embench build clock
+RV32.IM_8SP_withoutOpt.embench_projected.statemate.runtime_ms,61.226537,ms,Embench simulation!Q12,PROJECTION: simulated cycles at the 113.999 MHz Embench build clock
+RV32.IM_8SP_withoutOpt.embench_projected.tarfind.runtime_ms,32.339459,ms,Embench simulation!R12,PROJECTION: simulated cycles at the 113.999 MHz Embench build clock
+RV32.IM_8SP_withoutOpt.embench_projected.ud.runtime_ms,67.69055,ms,Embench simulation!S12,PROJECTION: simulated cycles at the 113.999 MHz Embench build clock
+RV32.IM_8SP_withoutOpt.embench_projected.wikisort.runtime_ms,25.564926,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 113.999 MHz Embench build clock
+RV32.IM_8SP_withoutOpt.embench_projected.xgboost.runtime_ms,66.625313,ms,Embench simulation!U12,PROJECTION: simulated cycles at the 113.999 MHz Embench build clock
+RV32.IM_8SP.embench_projected.aha-mont64.runtime_ms,64.36327,ms,Embench simulation!C13,PROJECTION: simulated cycles at the 122 MHz Embench build clock
+RV32.IM_8SP.embench_projected.crc32.runtime_ms,75.749672,ms,Embench simulation!D13,PROJECTION: simulated cycles at the 122 MHz Embench build clock
+RV32.IM_8SP.embench_projected.depthconv.runtime_ms,394.462434,ms,Embench simulation!E13,PROJECTION: simulated cycles at the 122 MHz Embench build clock
+RV32.IM_8SP.embench_projected.edn.runtime_ms,61.408213,ms,Embench simulation!F13,PROJECTION: simulated cycles at the 122 MHz Embench build clock
+RV32.IM_8SP.embench_projected.huffbench.runtime_ms,54.597205,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 122 MHz Embench build clock
+RV32.IM_8SP.embench_projected.matmult-int.runtime_ms,47.277057,ms,Embench simulation!H13,PROJECTION: simulated cycles at the 122 MHz Embench build clock
+RV32.IM_8SP.embench_projected.md5sum.runtime_ms,42.977156,ms,Embench simulation!I13,PROJECTION: simulated cycles at the 122 MHz Embench build clock
+RV32.IM_8SP.embench_projected.nettle-aes.runtime_ms,50.400074,ms,Embench simulation!J13,PROJECTION: simulated cycles at the 122 MHz Embench build clock
+RV32.IM_8SP.embench_projected.nettle-sha256.runtime_ms,57.76232,ms,Embench simulation!K13,PROJECTION: simulated cycles at the 122 MHz Embench build clock
+RV32.IM_8SP.embench_projected.nsichneu.runtime_ms,37.102344,ms,Embench simulation!L13,PROJECTION: simulated cycles at the 122 MHz Embench build clock
+RV32.IM_8SP.embench_projected.picojpeg.runtime_ms,65.247787,ms,Embench simulation!M13,PROJECTION: simulated cycles at the 122 MHz Embench build clock
+RV32.IM_8SP.embench_projected.qrduino.runtime_ms,59.661041,ms,Embench simulation!N13,PROJECTION: simulated cycles at the 122 MHz Embench build clock
+RV32.IM_8SP.embench_projected.sglib-combined.runtime_ms,66.269959,ms,Embench simulation!O13,PROJECTION: simulated cycles at the 122 MHz Embench build clock
+RV32.IM_8SP.embench_projected.slre.runtime_ms,66.30809,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 122 MHz Embench build clock
+RV32.IM_8SP.embench_projected.statemate.runtime_ms,57.975492,ms,Embench simulation!Q13,PROJECTION: simulated cycles at the 122 MHz Embench build clock
+RV32.IM_8SP.embench_projected.tarfind.runtime_ms,30.923311,ms,Embench simulation!R13,PROJECTION: simulated cycles at the 122 MHz Embench build clock
+RV32.IM_8SP.embench_projected.ud.runtime_ms,64.363279,ms,Embench simulation!S13,PROJECTION: simulated cycles at the 122 MHz Embench build clock
+RV32.IM_8SP.embench_projected.wikisort.runtime_ms,25.119762,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 122 MHz Embench build clock
+RV32.IM_8SP.embench_projected.xgboost.runtime_ms,62.91568,ms,Embench simulation!U13,PROJECTION: simulated cycles at the 122 MHz Embench build clock
+RV64.I_5SP.embench_projected.aha-mont64.runtime_ms,175.674373,ms,Embench simulation!C14,PROJECTION: simulated cycles at the 37.5 MHz Embench build clock
+RV64.I_5SP.embench_projected.crc32.runtime_ms,1146.81736,ms,Embench simulation!D14,PROJECTION: simulated cycles at the 37.5 MHz Embench build clock
+RV64.I_5SP.embench_projected.depthconv.runtime_ms,3729.098533,ms,Embench simulation!E14,PROJECTION: simulated cycles at the 37.5 MHz Embench build clock
+RV64.I_5SP.embench_projected.edn.runtime_ms,4008.822267,ms,Embench simulation!F14,PROJECTION: simulated cycles at the 37.5 MHz Embench build clock
+RV64.I_5SP.embench_projected.huffbench.runtime_ms,92.826133,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 37.5 MHz Embench build clock
+RV64.I_5SP.embench_projected.matmult-int.runtime_ms,853.17752,ms,Embench simulation!H14,PROJECTION: simulated cycles at the 37.5 MHz Embench build clock
+RV64.I_5SP.embench_projected.md5sum.runtime_ms,78.612747,ms,Embench simulation!I14,PROJECTION: simulated cycles at the 37.5 MHz Embench build clock
+RV64.I_5SP.embench_projected.nettle-aes.runtime_ms,147.38552,ms,Embench simulation!J14,PROJECTION: simulated cycles at the 37.5 MHz Embench build clock
+RV64.I_5SP.embench_projected.nettle-sha256.runtime_ms,123.82192,ms,Embench simulation!K14,PROJECTION: simulated cycles at the 37.5 MHz Embench build clock
+RV64.I_5SP.embench_projected.nsichneu.runtime_ms,70.57112,ms,Embench simulation!L14,PROJECTION: simulated cycles at the 37.5 MHz Embench build clock
+RV64.I_5SP.embench_projected.picojpeg.runtime_ms,150.033467,ms,Embench simulation!M14,PROJECTION: simulated cycles at the 37.5 MHz Embench build clock
+RV64.I_5SP.embench_projected.qrduino.runtime_ms,195.636853,ms,Embench simulation!N14,PROJECTION: simulated cycles at the 37.5 MHz Embench build clock
+RV64.I_5SP.embench_projected.sglib-combined.runtime_ms,122.306053,ms,Embench simulation!O14,PROJECTION: simulated cycles at the 37.5 MHz Embench build clock
+RV64.I_5SP.embench_projected.slre.runtime_ms,116.862053,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 37.5 MHz Embench build clock
+RV64.I_5SP.embench_projected.statemate.runtime_ms,96.882907,ms,Embench simulation!Q14,PROJECTION: simulated cycles at the 37.5 MHz Embench build clock
+RV64.I_5SP.embench_projected.tarfind.runtime_ms,378.615787,ms,Embench simulation!R14,PROJECTION: simulated cycles at the 37.5 MHz Embench build clock
+RV64.I_5SP.embench_projected.ud.runtime_ms,281.651413,ms,Embench simulation!S14,PROJECTION: simulated cycles at the 37.5 MHz Embench build clock
+RV64.I_5SP.embench_projected.wikisort.runtime_ms,81.23448,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 37.5 MHz Embench build clock
+RV64.I_5SP.embench_projected.xgboost.runtime_ms,101.910667,ms,Embench simulation!U14,PROJECTION: simulated cycles at the 37.5 MHz Embench build clock
+RV64.IM_5SP.embench_projected.aha-mont64.runtime_ms,64.840289,ms,Embench simulation!C15,PROJECTION: simulated cycles at the 38.0 MHz Embench build clock
+RV64.IM_5SP.embench_projected.crc32.runtime_ms,146.819342,ms,Embench simulation!D15,PROJECTION: simulated cycles at the 38.0 MHz Embench build clock
+RV64.IM_5SP.embench_projected.depthconv.runtime_ms,779.130842,ms,Embench simulation!E15,PROJECTION: simulated cycles at the 38.0 MHz Embench build clock
+RV64.IM_5SP.embench_projected.edn.runtime_ms,152.207868,ms,Embench simulation!F15,PROJECTION: simulated cycles at the 38.0 MHz Embench build clock
+RV64.IM_5SP.embench_projected.huffbench.runtime_ms,92.643684,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 38.0 MHz Embench build clock
+RV64.IM_5SP.embench_projected.matmult-int.runtime_ms,113.176974,ms,Embench simulation!H15,PROJECTION: simulated cycles at the 38.0 MHz Embench build clock
+RV64.IM_5SP.embench_projected.md5sum.runtime_ms,83.297789,ms,Embench simulation!I15,PROJECTION: simulated cycles at the 38.0 MHz Embench build clock
+RV64.IM_5SP.embench_projected.nettle-aes.runtime_ms,138.578237,ms,Embench simulation!J15,PROJECTION: simulated cycles at the 38.0 MHz Embench build clock
+RV64.IM_5SP.embench_projected.nettle-sha256.runtime_ms,122.192684,ms,Embench simulation!K15,PROJECTION: simulated cycles at the 38.0 MHz Embench build clock
+RV64.IM_5SP.embench_projected.nsichneu.runtime_ms,69.642553,ms,Embench simulation!L15,PROJECTION: simulated cycles at the 38.0 MHz Embench build clock
+RV64.IM_5SP.embench_projected.picojpeg.runtime_ms,122.681579,ms,Embench simulation!M15,PROJECTION: simulated cycles at the 38.0 MHz Embench build clock
+RV64.IM_5SP.embench_projected.qrduino.runtime_ms,108.609211,ms,Embench simulation!N15,PROJECTION: simulated cycles at the 38.0 MHz Embench build clock
+RV64.IM_5SP.embench_projected.sglib-combined.runtime_ms,115.673132,ms,Embench simulation!O15,PROJECTION: simulated cycles at the 38.0 MHz Embench build clock
+RV64.IM_5SP.embench_projected.slre.runtime_ms,115.855553,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 38.0 MHz Embench build clock
+RV64.IM_5SP.embench_projected.statemate.runtime_ms,95.608132,ms,Embench simulation!Q15,PROJECTION: simulated cycles at the 38.0 MHz Embench build clock
+RV64.IM_5SP.embench_projected.tarfind.runtime_ms,70.522605,ms,Embench simulation!R15,PROJECTION: simulated cycles at the 38.0 MHz Embench build clock
+RV64.IM_5SP.embench_projected.ud.runtime_ms,187.850105,ms,Embench simulation!S15,PROJECTION: simulated cycles at the 38.0 MHz Embench build clock
+RV64.IM_5SP.embench_projected.wikisort.runtime_ms,51.309289,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 38.0 MHz Embench build clock
+RV64.IM_5SP.embench_projected.xgboost.runtime_ms,100.569737,ms,Embench simulation!U15,PROJECTION: simulated cycles at the 38.0 MHz Embench build clock
+RV64.IM_6SP.embench_projected.aha-mont64.runtime_ms,57.061644,ms,Embench simulation!C16,PROJECTION: simulated cycles at the 45.0 MHz Embench build clock
+RV64.IM_6SP.embench_projected.crc32.runtime_ms,123.992178,ms,Embench simulation!D16,PROJECTION: simulated cycles at the 45.0 MHz Embench build clock
+RV64.IM_6SP.embench_projected.depthconv.runtime_ms,710.854267,ms,Embench simulation!E16,PROJECTION: simulated cycles at the 45.0 MHz Embench build clock
+RV64.IM_6SP.embench_projected.edn.runtime_ms,130.341889,ms,Embench simulation!F16,PROJECTION: simulated cycles at the 45.0 MHz Embench build clock
+RV64.IM_6SP.embench_projected.huffbench.runtime_ms,89.906089,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 45.0 MHz Embench build clock
+RV64.IM_6SP.embench_projected.matmult-int.runtime_ms,95.967733,ms,Embench simulation!H16,PROJECTION: simulated cycles at the 45.0 MHz Embench build clock
+RV64.IM_6SP.embench_projected.md5sum.runtime_ms,71.5504,ms,Embench simulation!I16,PROJECTION: simulated cycles at the 45.0 MHz Embench build clock
+RV64.IM_6SP.embench_projected.nettle-aes.runtime_ms,117.739444,ms,Embench simulation!J16,PROJECTION: simulated cycles at the 45.0 MHz Embench build clock
+RV64.IM_6SP.embench_projected.nettle-sha256.runtime_ms,104.833467,ms,Embench simulation!K16,PROJECTION: simulated cycles at the 45.0 MHz Embench build clock
+RV64.IM_6SP.embench_projected.nsichneu.runtime_ms,79.4248,ms,Embench simulation!L16,PROJECTION: simulated cycles at the 45.0 MHz Embench build clock
+RV64.IM_6SP.embench_projected.picojpeg.runtime_ms,104.883267,ms,Embench simulation!M16,PROJECTION: simulated cycles at the 45.0 MHz Embench build clock
+RV64.IM_6SP.embench_projected.qrduino.runtime_ms,99.961733,ms,Embench simulation!N16,PROJECTION: simulated cycles at the 45.0 MHz Embench build clock
+RV64.IM_6SP.embench_projected.sglib-combined.runtime_ms,109.775733,ms,Embench simulation!O16,PROJECTION: simulated cycles at the 45.0 MHz Embench build clock
+RV64.IM_6SP.embench_projected.slre.runtime_ms,106.696,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 45.0 MHz Embench build clock
+RV64.IM_6SP.embench_projected.statemate.runtime_ms,85.767756,ms,Embench simulation!Q16,PROJECTION: simulated cycles at the 45.0 MHz Embench build clock
+RV64.IM_6SP.embench_projected.tarfind.runtime_ms,60.4724,ms,Embench simulation!R16,PROJECTION: simulated cycles at the 45.0 MHz Embench build clock
+RV64.IM_6SP.embench_projected.ud.runtime_ms,163.3098,ms,Embench simulation!S16,PROJECTION: simulated cycles at the 45.0 MHz Embench build clock
+RV64.IM_6SP.embench_projected.wikisort.runtime_ms,45.729844,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 45.0 MHz Embench build clock
+RV64.IM_6SP.embench_projected.xgboost.runtime_ms,97.683667,ms,Embench simulation!U16,PROJECTION: simulated cycles at the 45.0 MHz Embench build clock
+RV64.IM_7SP.embench_projected.aha-mont64.runtime_ms,74.417489,ms,Embench simulation!C17,PROJECTION: simulated cycles at the 47.0 MHz Embench build clock
+RV64.IM_7SP.embench_projected.crc32.runtime_ms,140.996936,ms,Embench simulation!D17,PROJECTION: simulated cycles at the 47.0 MHz Embench build clock
+RV64.IM_7SP.embench_projected.depthconv.runtime_ms,784.106553,ms,Embench simulation!E17,PROJECTION: simulated cycles at the 47.0 MHz Embench build clock
+RV64.IM_7SP.embench_projected.edn.runtime_ms,139.620277,ms,Embench simulation!F17,PROJECTION: simulated cycles at the 47.0 MHz Embench build clock
+RV64.IM_7SP.embench_projected.huffbench.runtime_ms,117.304213,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 47.0 MHz Embench build clock
+RV64.IM_7SP.embench_projected.matmult-int.runtime_ms,106.045319,ms,Embench simulation!H17,PROJECTION: simulated cycles at the 47.0 MHz Embench build clock
+RV64.IM_7SP.embench_projected.md5sum.runtime_ms,87.634638,ms,Embench simulation!I17,PROJECTION: simulated cycles at the 47.0 MHz Embench build clock
+RV64.IM_7SP.embench_projected.nettle-aes.runtime_ms,117.709894,ms,Embench simulation!J17,PROJECTION: simulated cycles at the 47.0 MHz Embench build clock
+RV64.IM_7SP.embench_projected.nettle-sha256.runtime_ms,103.338085,ms,Embench simulation!K17,PROJECTION: simulated cycles at the 47.0 MHz Embench build clock
+RV64.IM_7SP.embench_projected.nsichneu.runtime_ms,82.965404,ms,Embench simulation!L17,PROJECTION: simulated cycles at the 47.0 MHz Embench build clock
+RV64.IM_7SP.embench_projected.picojpeg.runtime_ms,125.638447,ms,Embench simulation!M17,PROJECTION: simulated cycles at the 47.0 MHz Embench build clock
+RV64.IM_7SP.embench_projected.qrduino.runtime_ms,118.84166,ms,Embench simulation!N17,PROJECTION: simulated cycles at the 47.0 MHz Embench build clock
+RV64.IM_7SP.embench_projected.sglib-combined.runtime_ms,134.077021,ms,Embench simulation!O17,PROJECTION: simulated cycles at the 47.0 MHz Embench build clock
+RV64.IM_7SP.embench_projected.slre.runtime_ms,135.21834,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 47.0 MHz Embench build clock
+RV64.IM_7SP.embench_projected.statemate.runtime_ms,93.029255,ms,Embench simulation!Q17,PROJECTION: simulated cycles at the 47.0 MHz Embench build clock
+RV64.IM_7SP.embench_projected.tarfind.runtime_ms,64.971447,ms,Embench simulation!R17,PROJECTION: simulated cycles at the 47.0 MHz Embench build clock
+RV64.IM_7SP.embench_projected.ud.runtime_ms,178.540149,ms,Embench simulation!S17,PROJECTION: simulated cycles at the 47.0 MHz Embench build clock
+RV64.IM_7SP.embench_projected.wikisort.runtime_ms,55.604489,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 47.0 MHz Embench build clock
+RV64.IM_7SP.embench_projected.xgboost.runtime_ms,114.379851,ms,Embench simulation!U17,PROJECTION: simulated cycles at the 47.0 MHz Embench build clock
+RV64.IM_7SP_BRAM.embench_projected.aha-mont64.runtime_ms,60.320414,ms,Embench simulation!C18,PROJECTION: simulated cycles at the 58.0 MHz Embench build clock
+RV64.IM_7SP_BRAM.embench_projected.crc32.runtime_ms,117.275293,ms,Embench simulation!D18,PROJECTION: simulated cycles at the 58.0 MHz Embench build clock
+RV64.IM_7SP_BRAM.embench_projected.depthconv.runtime_ms,655.884362,ms,Embench simulation!E18,PROJECTION: simulated cycles at the 58.0 MHz Embench build clock
+RV64.IM_7SP_BRAM.embench_projected.edn.runtime_ms,115.343259,ms,Embench simulation!F18,PROJECTION: simulated cycles at the 58.0 MHz Embench build clock
+RV64.IM_7SP_BRAM.embench_projected.huffbench.runtime_ms,98.414414,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 58.0 MHz Embench build clock
+RV64.IM_7SP_BRAM.embench_projected.matmult-int.runtime_ms,92.850621,ms,Embench simulation!H18,PROJECTION: simulated cycles at the 58.0 MHz Embench build clock
+RV64.IM_7SP_BRAM.embench_projected.md5sum.runtime_ms,72.601914,ms,Embench simulation!I18,PROJECTION: simulated cycles at the 58.0 MHz Embench build clock
+RV64.IM_7SP_BRAM.embench_projected.nettle-aes.runtime_ms,96.423638,ms,Embench simulation!J18,PROJECTION: simulated cycles at the 58.0 MHz Embench build clock
+RV64.IM_7SP_BRAM.embench_projected.nettle-sha256.runtime_ms,85.706707,ms,Embench simulation!K18,PROJECTION: simulated cycles at the 58.0 MHz Embench build clock
+RV64.IM_7SP_BRAM.embench_projected.nsichneu.runtime_ms,67.294466,ms,Embench simulation!L18,PROJECTION: simulated cycles at the 58.0 MHz Embench build clock
+RV64.IM_7SP_BRAM.embench_projected.picojpeg.runtime_ms,109.165879,ms,Embench simulation!M18,PROJECTION: simulated cycles at the 58.0 MHz Embench build clock
+RV64.IM_7SP_BRAM.embench_projected.qrduino.runtime_ms,97.488603,ms,Embench simulation!N18,PROJECTION: simulated cycles at the 58.0 MHz Embench build clock
+RV64.IM_7SP_BRAM.embench_projected.sglib-combined.runtime_ms,114.292552,ms,Embench simulation!O18,PROJECTION: simulated cycles at the 58.0 MHz Embench build clock
+RV64.IM_7SP_BRAM.embench_projected.slre.runtime_ms,116.029724,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 58.0 MHz Embench build clock
+RV64.IM_7SP_BRAM.embench_projected.statemate.runtime_ms,89.452379,ms,Embench simulation!Q18,PROJECTION: simulated cycles at the 58.0 MHz Embench build clock
+RV64.IM_7SP_BRAM.embench_projected.tarfind.runtime_ms,55.179621,ms,Embench simulation!R18,PROJECTION: simulated cycles at the 58.0 MHz Embench build clock
+RV64.IM_7SP_BRAM.embench_projected.ud.runtime_ms,147.418276,ms,Embench simulation!S18,PROJECTION: simulated cycles at the 58.0 MHz Embench build clock
+RV64.IM_7SP_BRAM.embench_projected.wikisort.runtime_ms,48.347224,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 58.0 MHz Embench build clock
+RV64.IM_7SP_BRAM.embench_projected.xgboost.runtime_ms,93.587793,ms,Embench simulation!U18,PROJECTION: simulated cycles at the 58.0 MHz Embench build clock
+RV64.IM_7SP_BRAM_Opt.embench_projected.aha-mont64.runtime_ms,43.713106,ms,Embench simulation!C19,PROJECTION: simulated cycles at the 80.952381 MHz Embench build clock
+RV64.IM_7SP_BRAM_Opt.embench_projected.crc32.runtime_ms,88.335302,ms,Embench simulation!D19,PROJECTION: simulated cycles at the 80.952381 MHz Embench build clock
+RV64.IM_7SP_BRAM_Opt.embench_projected.depthconv.runtime_ms,490.127548,ms,Embench simulation!E19,PROJECTION: simulated cycles at the 80.952381 MHz Embench build clock
+RV64.IM_7SP_BRAM_Opt.embench_projected.edn.runtime_ms,82.527702,ms,Embench simulation!F19,PROJECTION: simulated cycles at the 80.952381 MHz Embench build clock
+RV64.IM_7SP_BRAM_Opt.embench_projected.huffbench.runtime_ms,73.219946,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 80.952381 MHz Embench build clock
+RV64.IM_7SP_BRAM_Opt.embench_projected.matmult-int.runtime_ms,66.528791,ms,Embench simulation!H19,PROJECTION: simulated cycles at the 80.952381 MHz Embench build clock
+RV64.IM_7SP_BRAM_Opt.embench_projected.md5sum.runtime_ms,53.919736,ms,Embench simulation!I19,PROJECTION: simulated cycles at the 80.952381 MHz Embench build clock
+RV64.IM_7SP_BRAM_Opt.embench_projected.nettle-aes.runtime_ms,69.678692,ms,Embench simulation!J19,PROJECTION: simulated cycles at the 80.952381 MHz Embench build clock
+RV64.IM_7SP_BRAM_Opt.embench_projected.nettle-sha256.runtime_ms,61.662918,ms,Embench simulation!K19,PROJECTION: simulated cycles at the 80.952381 MHz Embench build clock
+RV64.IM_7SP_BRAM_Opt.embench_projected.nsichneu.runtime_ms,48.244646,ms,Embench simulation!L19,PROJECTION: simulated cycles at the 80.952381 MHz Embench build clock
+RV64.IM_7SP_BRAM_Opt.embench_projected.picojpeg.runtime_ms,81.881075,ms,Embench simulation!M19,PROJECTION: simulated cycles at the 80.952381 MHz Embench build clock
+RV64.IM_7SP_BRAM_Opt.embench_projected.qrduino.runtime_ms,71.770786,ms,Embench simulation!N19,PROJECTION: simulated cycles at the 80.952381 MHz Embench build clock
+RV64.IM_7SP_BRAM_Opt.embench_projected.sglib-combined.runtime_ms,84.739101,ms,Embench simulation!O19,PROJECTION: simulated cycles at the 80.952381 MHz Embench build clock
+RV64.IM_7SP_BRAM_Opt.embench_projected.slre.runtime_ms,86.894492,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 80.952381 MHz Embench build clock
+RV64.IM_7SP_BRAM_Opt.embench_projected.statemate.runtime_ms,65.241503,ms,Embench simulation!Q19,PROJECTION: simulated cycles at the 80.952381 MHz Embench build clock
+RV64.IM_7SP_BRAM_Opt.embench_projected.tarfind.runtime_ms,40.596298,ms,Embench simulation!R19,PROJECTION: simulated cycles at the 80.952381 MHz Embench build clock
+RV64.IM_7SP_BRAM_Opt.embench_projected.ud.runtime_ms,107.296362,ms,Embench simulation!S19,PROJECTION: simulated cycles at the 80.952381 MHz Embench build clock
+RV64.IM_7SP_BRAM_Opt.embench_projected.wikisort.runtime_ms,36.474023,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 80.952381 MHz Embench build clock
+RV64.IM_7SP_BRAM_Opt.embench_projected.xgboost.runtime_ms,68.048437,ms,Embench simulation!U19,PROJECTION: simulated cycles at the 80.952381 MHz Embench build clock
+RV64.IM_8SP_withoutOpt.embench_projected.aha-mont64.runtime_ms,46.010826,ms,Embench simulation!C20,PROJECTION: simulated cycles at the 92.0 MHz Embench build clock
+RV64.IM_8SP_withoutOpt.embench_projected.crc32.runtime_ms,96.664326,ms,Embench simulation!D20,PROJECTION: simulated cycles at the 92.0 MHz Embench build clock
+RV64.IM_8SP_withoutOpt.embench_projected.depthconv.runtime_ms,495.602467,ms,Embench simulation!E20,PROJECTION: simulated cycles at the 92.0 MHz Embench build clock
+RV64.IM_8SP_withoutOpt.embench_projected.edn.runtime_ms,81.461543,ms,Embench simulation!F20,PROJECTION: simulated cycles at the 92.0 MHz Embench build clock
+RV64.IM_8SP_withoutOpt.embench_projected.huffbench.runtime_ms,76.281457,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 92.0 MHz Embench build clock
+RV64.IM_8SP_withoutOpt.embench_projected.matmult-int.runtime_ms,62.687837,ms,Embench simulation!H20,PROJECTION: simulated cycles at the 92.0 MHz Embench build clock
+RV64.IM_8SP_withoutOpt.embench_projected.md5sum.runtime_ms,56.222272,ms,Embench simulation!I20,PROJECTION: simulated cycles at the 92.0 MHz Embench build clock
+RV64.IM_8SP_withoutOpt.embench_projected.nettle-aes.runtime_ms,69.771478,ms,Embench simulation!J20,PROJECTION: simulated cycles at the 92.0 MHz Embench build clock
+RV64.IM_8SP_withoutOpt.embench_projected.nettle-sha256.runtime_ms,75.650935,ms,Embench simulation!K20,PROJECTION: simulated cycles at the 92.0 MHz Embench build clock
+RV64.IM_8SP_withoutOpt.embench_projected.nsichneu.runtime_ms,55.976609,ms,Embench simulation!L20,PROJECTION: simulated cycles at the 92.0 MHz Embench build clock
+RV64.IM_8SP_withoutOpt.embench_projected.picojpeg.runtime_ms,83.408011,ms,Embench simulation!M20,PROJECTION: simulated cycles at the 92.0 MHz Embench build clock
+RV64.IM_8SP_withoutOpt.embench_projected.qrduino.runtime_ms,79.845467,ms,Embench simulation!N20,PROJECTION: simulated cycles at the 92.0 MHz Embench build clock
+RV64.IM_8SP_withoutOpt.embench_projected.sglib-combined.runtime_ms,86.844815,ms,Embench simulation!O20,PROJECTION: simulated cycles at the 92.0 MHz Embench build clock
+RV64.IM_8SP_withoutOpt.embench_projected.slre.runtime_ms,86.172478,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 92.0 MHz Embench build clock
+RV64.IM_8SP_withoutOpt.embench_projected.statemate.runtime_ms,75.794533,ms,Embench simulation!Q20,PROJECTION: simulated cycles at the 92.0 MHz Embench build clock
+RV64.IM_8SP_withoutOpt.embench_projected.tarfind.runtime_ms,39.691391,ms,Embench simulation!R20,PROJECTION: simulated cycles at the 92.0 MHz Embench build clock
+RV64.IM_8SP_withoutOpt.embench_projected.ud.runtime_ms,99.786391,ms,Embench simulation!S20,PROJECTION: simulated cycles at the 92.0 MHz Embench build clock
+RV64.IM_8SP_withoutOpt.embench_projected.wikisort.runtime_ms,35.116315,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 92.0 MHz Embench build clock
+RV64.IM_8SP_withoutOpt.embench_projected.xgboost.runtime_ms,81.444587,ms,Embench simulation!U20,PROJECTION: simulated cycles at the 92.0 MHz Embench build clock
+RV64.IM_8SP.embench_projected.aha-mont64.runtime_ms,41.893343,ms,Embench simulation!C21,PROJECTION: simulated cycles at the 102.0 MHz Embench build clock
+RV64.IM_8SP.embench_projected.crc32.runtime_ms,90.609147,ms,Embench simulation!D21,PROJECTION: simulated cycles at the 102.0 MHz Embench build clock
+RV64.IM_8SP.embench_projected.depthconv.runtime_ms,463.050539,ms,Embench simulation!E21,PROJECTION: simulated cycles at the 102.0 MHz Embench build clock
+RV64.IM_8SP.embench_projected.edn.runtime_ms,73.259176,ms,Embench simulation!F21,PROJECTION: simulated cycles at the 102.0 MHz Embench build clock
+RV64.IM_8SP.embench_projected.huffbench.runtime_ms,70.953098,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 102.0 MHz Embench build clock
+RV64.IM_8SP.embench_projected.matmult-int.runtime_ms,56.545471,ms,Embench simulation!H21,PROJECTION: simulated cycles at the 102.0 MHz Embench build clock
+RV64.IM_8SP.embench_projected.md5sum.runtime_ms,52.220569,ms,Embench simulation!I21,PROJECTION: simulated cycles at the 102.0 MHz Embench build clock
+RV64.IM_8SP.embench_projected.nettle-aes.runtime_ms,63.402843,ms,Embench simulation!J21,PROJECTION: simulated cycles at the 102.0 MHz Embench build clock
+RV64.IM_8SP.embench_projected.nettle-sha256.runtime_ms,68.438098,ms,Embench simulation!K21,PROJECTION: simulated cycles at the 102.0 MHz Embench build clock
+RV64.IM_8SP.embench_projected.nsichneu.runtime_ms,50.512912,ms,Embench simulation!L21,PROJECTION: simulated cycles at the 102.0 MHz Embench build clock
+RV64.IM_8SP.embench_projected.picojpeg.runtime_ms,78.141304,ms,Embench simulation!M21,PROJECTION: simulated cycles at the 102.0 MHz Embench build clock
+RV64.IM_8SP.embench_projected.qrduino.runtime_ms,73.544255,ms,Embench simulation!N21,PROJECTION: simulated cycles at the 102.0 MHz Embench build clock
+RV64.IM_8SP.embench_projected.sglib-combined.runtime_ms,80.594275,ms,Embench simulation!O21,PROJECTION: simulated cycles at the 102.0 MHz Embench build clock
+RV64.IM_8SP.embench_projected.slre.runtime_ms,80.898324,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 102.0 MHz Embench build clock
+RV64.IM_8SP.embench_projected.statemate.runtime_ms,69.277873,ms,Embench simulation!Q21,PROJECTION: simulated cycles at the 102.0 MHz Embench build clock
+RV64.IM_8SP.embench_projected.tarfind.runtime_ms,36.643,ms,Embench simulation!R21,PROJECTION: simulated cycles at the 102.0 MHz Embench build clock
+RV64.IM_8SP.embench_projected.ud.runtime_ms,91.333461,ms,Embench simulation!S21,PROJECTION: simulated cycles at the 102.0 MHz Embench build clock
+RV64.IM_8SP.embench_projected.wikisort.runtime_ms,33.129902,ms,T5 12 KB stack,PROJECTION: simulated cycles at the 102.0 MHz Embench build clock
+RV64.IM_8SP.embench_projected.xgboost.runtime_ms,74.250216,ms,Embench simulation!U21,PROJECTION: simulated cycles at the 102.0 MHz Embench build clock

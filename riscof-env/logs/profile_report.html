@@ -1,0 +1,330 @@
+<title>RV-IM100 Pipeline Profile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root {
+  --ground:#F5F7F9; --panel:#FFFFFF; --panel-2:#EEF1F5;
+  --ink:#131820; --ink-2:#48525F; --ink-3:#78838F;
+  --line:#DCE1E8; --line-2:#C6CED8;
+  --accent:#35558A; --accent-soft:#DCE5F2;
+  --warn:#A2621A; --warn-soft:#F2E4CF;
+  --good:#2C7A66;
+  --shadow:0 1px 2px rgba(19,24,32,.05), 0 8px 24px -12px rgba(19,24,32,.16);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground:#0D1117; --panel:#151B23; --panel-2:#1C242E;
+    --ink:#E3E8EF; --ink-2:#A3AEBC; --ink-3:#76818F;
+    --line:#242D38; --line-2:#33404E;
+    --accent:#7FA3D9; --accent-soft:#1E2B3F;
+    --warn:#D9A055; --warn-soft:#33281A;
+    --good:#5FB59C;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -14px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"] {
+  --ground:#0D1117; --panel:#151B23; --panel-2:#1C242E;
+  --ink:#E3E8EF; --ink-2:#A3AEBC; --ink-3:#76818F;
+  --line:#242D38; --line-2:#33404E;
+  --accent:#7FA3D9; --accent-soft:#1E2B3F;
+  --warn:#D9A055; --warn-soft:#33281A;
+  --good:#5FB59C;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -14px rgba(0,0,0,.7);
+}
+* { box-sizing:border-box; }
+body {
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:15px; line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap { max-width:1120px; margin:0 auto; padding:0 24px 96px; }
+.eyebrow {
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--ink-3); font-weight:500;
+}
+header.mast {
+  border-bottom:1px solid var(--line); margin-bottom:40px;
+  padding:56px 0 28px;
+}
+h1 {
+  font-size:clamp(30px,4.2vw,44px); line-height:1.1; margin:10px 0 14px;
+  font-weight:700; letter-spacing:-.022em; text-wrap:balance;
+}
+.sub { color:var(--ink-2); max-width:66ch; margin:0; font-size:16px; }
+.meta {
+  display:flex; flex-wrap:wrap; gap:0 28px; margin-top:24px;
+  font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--ink-2);
+}
+.meta b { color:var(--ink); font-weight:500; }
+section { margin-top:52px; }
+h2 {
+  font-size:20px; font-weight:600; letter-spacing:-.012em;
+  margin:0 0 6px; text-wrap:balance;
+}
+.lede { color:var(--ink-2); margin:0 0 20px; max-width:70ch; }
+.finding {
+  background:var(--panel); border:1px solid var(--line);
+  border-left:3px solid var(--accent);
+  border-radius:3px; padding:22px 24px; box-shadow:var(--shadow);
+  display:grid; gap:16px; grid-template-columns:minmax(0,1fr) auto; align-items:center;
+}
+@media (max-width:720px) { .finding { grid-template-columns:1fr; } }
+.finding p { margin:8px 0 0; color:var(--ink-2); max-width:62ch; }
+.finding .big {
+  font-family:"IBM Plex Mono",monospace; font-weight:600;
+  font-size:clamp(28px,5vw,40px); color:var(--warn); line-height:1;
+  white-space:nowrap; font-variant-numeric:tabular-nums;
+}
+.finding .big small { display:block; font-size:11px; letter-spacing:.11em;
+  text-transform:uppercase; color:var(--ink-3); margin-top:8px; font-weight:500; }
+.scroll { overflow-x:auto; border:1px solid var(--line); border-radius:3px;
+  background:var(--panel); box-shadow:var(--shadow); }
+table { border-collapse:collapse; width:100%; font-size:13px; }
+caption { text-align:left; padding:14px 18px 0; color:var(--ink-3);
+  font-family:"IBM Plex Mono",monospace; font-size:11px;
+  letter-spacing:.1em; text-transform:uppercase; }
+th, td { padding:7px 12px; text-align:left; white-space:nowrap; }
+thead th {
+  font-family:"IBM Plex Mono",monospace; font-size:11px; font-weight:500;
+  letter-spacing:.06em; color:var(--ink-3); text-transform:uppercase;
+  border-bottom:1px solid var(--line-2); text-align:right;
+}
+thead th:first-child { text-align:left; }
+tbody th { font-weight:500; font-size:13px;
+  font-family:"IBM Plex Mono",monospace; color:var(--ink); }
+tbody tr:not(.grp):hover { background:var(--panel-2); }
+tr.grp th {
+  font-family:"IBM Plex Mono",monospace; font-size:10px; font-weight:600;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--accent);
+  padding:16px 12px 5px; border-bottom:1px solid var(--line);
+}
+td.num { text-align:right; font-family:"IBM Plex Mono",monospace;
+  font-variant-numeric:tabular-nums; position:relative; }
+td.num .v { position:relative; }
+td.num .bar {
+  position:absolute; right:8px; top:50%; transform:translateY(-50%);
+  height:16px; width:var(--w); max-width:calc(100% - 12px);
+  background:var(--accent-soft); border-radius:2px; z-index:0;
+}
+td.num .bar.sm { height:13px; }
+td.num .bar.hot { background:var(--warn-soft); }
+td.na { color:var(--ink-3); }
+.caveats { border:1px solid var(--line-2); border-radius:3px;
+  background:var(--panel); padding:6px 24px 20px; }
+.caveats ol { margin:0; padding-left:20px; }
+.caveats li { margin:14px 0; color:var(--ink-2); max-width:74ch; }
+.caveats li b { color:var(--ink); font-weight:600; }
+code { font-family:"IBM Plex Mono",monospace; font-size:.92em;
+  background:var(--panel-2); padding:1px 5px; border-radius:2px; }
+pre { margin:0; background:var(--panel); border:1px solid var(--line);
+  border-radius:3px; padding:16px 18px; overflow-x:auto;
+  font-family:"IBM Plex Mono",monospace; font-size:12.5px;
+  line-height:1.7; color:var(--ink-2); }
+pre b { color:var(--ink); font-weight:500; }
+footer { margin-top:56px; padding-top:20px; border-top:1px solid var(--line);
+  color:var(--ink-3); font-size:12px; font-family:"IBM Plex Mono",monospace; }
+a { color:var(--accent); }
+:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+</style>
+
+<div class="wrap">
+<header class="mast">
+  <div class="eyebrow">RV-IM100 · verification data · 2026-09-06</div>
+  <h1>Pipeline profile across sixteen variants</h1>
+  <p class="sub">Cycle-accurate CPI, instruction mix, branch behaviour and stall-cycle
+  breakdown for every RV-IM100 SoC variant, measured on the same ROM images the
+  FPGA runs used. Collected for the TVLSI revision (R1.3, R2.3, R3.4, R3.5).</p>
+  <div class="meta">
+    <span><b>16</b> variants</span>
+    <span><b>2</b> benchmarks</span>
+    <span><b>10,000,000</b> retired instructions each</span>
+    <span><b>32/32</b> runs reached budget</span>
+  </div>
+</header>
+
+<section>
+  <div class="eyebrow">Headline</div>
+  <h2>Load-use stalls explain the 8-stage CPI regression</h2>
+  <div class="finding">
+    <div>
+      <p>Cycles lost to load-use hazards stay near <b>1.2%</b> from six through
+      seven stages, then jump to <b>~18%</b> at eight. That single term accounts
+      for most of the CPI increase from 1.66 to 2.20 on Dhrystone, and turns the
+      paper's execution-use-hazard argument from an inference into a measurement.</p>
+    </div>
+    <div class="big">1.2 → 18%<small>load-use stall cycles, 7SP → 8SP</small></div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Method</div>
+  <h2>How these numbers were taken</h2>
+  <p class="lede">Counters live in the simulation wrapper, never in the core, so the
+  RTL profiled here is bit-identical to the RTL that produced the Fmax, area and
+  power figures. Each variant runs the ROM image from its own Vivado project.
+  Runs stop after a fixed <em>retired-instruction</em> count rather than a fixed
+  cycle count — every variant then performs identical work and only the cycle
+  count differs, which is what makes CPI comparable across pipeline depths.</p>
+</section>
+
+<section>
+  <div class="eyebrow">Dhrystone</div>
+  <h2>CPI and instruction mix</h2>
+  <div class="scroll"><table>
+    <caption>10M retired instructions · bar scaled to CPI 2.30</caption>
+    <thead><tr><th>variant</th><th>CPI</th><th>IPC</th><th>cycles</th><th>br %</th><th>mispred</th><th>miss %</th><th>load %</th><th>mul</th></tr></thead>
+    <tbody><tr class="grp"><th colspan="9">RV32 family</th></tr>
+<tr><th scope="row">RV32I_5SP</th><td class="num"><span class="bar" style="--w:51.2%"></span><span class="v">1.178</span></td><td class="num">0.849</td><td class="num">11,784,284</td><td class="num">15.6</td><td class="num">343,225</td><td class="num">22.0</td><td class="num">19.2</td><td class="num">0</td></tr>
+<tr><th scope="row">RV32IM_5SP</th><td class="num"><span class="bar" style="--w:54.8%"></span><span class="v">1.260</span></td><td class="num">0.793</td><td class="num">12,603,054</td><td class="num">14.3</td><td class="num">270,161</td><td class="num">18.9</td><td class="num">20.6</td><td class="num">24,544</td></tr>
+<tr><th scope="row">RV32IM_6SP</th><td class="num"><span class="bar" style="--w:56.7%"></span><span class="v">1.305</span></td><td class="num">0.767</td><td class="num">13,045,316</td><td class="num">14.3</td><td class="num">270,161</td><td class="num">18.9</td><td class="num">20.6</td><td class="num">24,544</td></tr>
+<tr><th scope="row">RV32IM_7SP</th><td class="num"><span class="bar" style="--w:70.2%"></span><span class="v">1.614</span></td><td class="num">0.619</td><td class="num">16,144,624</td><td class="num">14.3</td><td class="num">270,161</td><td class="num">18.9</td><td class="num">20.6</td><td class="num">24,544</td></tr>
+<tr><th scope="row">RV32IM_7SP_BRAM</th><td class="num"><span class="bar" style="--w:77.4%"></span><span class="v">1.779</span></td><td class="num">0.562</td><td class="num">17,792,010</td><td class="num">14.3</td><td class="num">245,618</td><td class="num">17.2</td><td class="num">20.6</td><td class="num">24,544</td></tr>
+<tr><th scope="row">RV32IM_7SP_BRAM_Opt</th><td class="num"><span class="bar" style="--w:79.7%"></span><span class="v">1.833</span></td><td class="num">0.545</td><td class="num">18,332,260</td><td class="num">14.3</td><td class="num">245,618</td><td class="num">17.2</td><td class="num">20.6</td><td class="num">24,544</td></tr>
+<tr><th scope="row">RV32IM_8SP</th><td class="num"><span class="bar" style="--w:93.0%"></span><span class="v">2.138</span></td><td class="num">0.468</td><td class="num">21,379,447</td><td class="num">14.3</td><td class="num">245,618</td><td class="num">17.2</td><td class="num">20.6</td><td class="num">24,544</td></tr>
+<tr><th scope="row">RV32IM_8SP_withoutOpt</th><td class="num"><span class="bar" style="--w:90.6%"></span><span class="v">2.084</span></td><td class="num">0.480</td><td class="num">20,839,194</td><td class="num">14.3</td><td class="num">245,618</td><td class="num">17.2</td><td class="num">20.6</td><td class="num">24,544</td></tr>
+<tr class="grp"><th colspan="9">RV64 family</th></tr>
+<tr><th scope="row">RV64I_5SP</th><td class="num"><span class="bar" style="--w:51.8%"></span><span class="v">1.192</span></td><td class="num">0.839</td><td class="num">11,918,396</td><td class="num">15.6</td><td class="num">383,761</td><td class="num">24.6</td><td class="num">18.2</td><td class="num">0</td></tr>
+<tr><th scope="row">RV64IM_5SP</th><td class="num"><span class="bar" style="--w:55.6%"></span><span class="v">1.279</span></td><td class="num">0.782</td><td class="num">12,790,556</td><td class="num">14.2</td><td class="num">310,048</td><td class="num">21.8</td><td class="num">19.6</td><td class="num">25,822</td></tr>
+<tr><th scope="row">RV64IM_6SP</th><td class="num"><span class="bar" style="--w:57.7%"></span><span class="v">1.328</span></td><td class="num">0.753</td><td class="num">13,281,651</td><td class="num">14.2</td><td class="num">310,048</td><td class="num">21.8</td><td class="num">19.6</td><td class="num">25,822</td></tr>
+<tr><th scope="row">RV64IM_7SP</th><td class="num"><span class="bar" style="--w:72.1%"></span><span class="v">1.659</span></td><td class="num">0.603</td><td class="num">16,591,053</td><td class="num">14.2</td><td class="num">310,048</td><td class="num">21.8</td><td class="num">19.6</td><td class="num">25,822</td></tr>
+<tr><th scope="row">RV64IM_7SP_BRAM</th><td class="num"><span class="bar" style="--w:79.1%"></span><span class="v">1.819</span></td><td class="num">0.550</td><td class="num">18,193,618</td><td class="num">14.2</td><td class="num">284,219</td><td class="num">20.0</td><td class="num">19.6</td><td class="num">25,822</td></tr>
+<tr><th scope="row">RV64IM_7SP_BRAM_Opt</th><td class="num"><span class="bar" style="--w:81.6%"></span><span class="v">1.876</span></td><td class="num">0.533</td><td class="num">18,762,015</td><td class="num">14.2</td><td class="num">284,219</td><td class="num">20.0</td><td class="num">19.6</td><td class="num">25,822</td></tr>
+<tr><th scope="row">RV64IM_8SP</th><td class="num"><span class="bar" style="--w:95.6%"></span><span class="v">2.199</span></td><td class="num">0.455</td><td class="num">21,992,379</td><td class="num">14.2</td><td class="num">284,218</td><td class="num">20.0</td><td class="num">19.6</td><td class="num">25,822</td></tr>
+<tr><th scope="row">RV64IM_8SP_withoutOpt</th><td class="num"><span class="bar" style="--w:93.1%"></span><span class="v">2.142</span></td><td class="num">0.467</td><td class="num">21,423,982</td><td class="num">14.2</td><td class="num">284,218</td><td class="num">20.0</td><td class="num">19.6</td><td class="num">25,822</td></tr></tbody>
+  </table></div>
+</section>
+
+<section>
+  <div class="eyebrow">CoreMark</div>
+  <h2>CPI and instruction mix</h2>
+  <div class="scroll"><table>
+    <caption>10M retired instructions · bar scaled to CPI 2.30</caption>
+    <thead><tr><th>variant</th><th>CPI</th><th>IPC</th><th>cycles</th><th>br %</th><th>mispred</th><th>miss %</th><th>load %</th><th>mul</th></tr></thead>
+    <tbody><tr class="grp"><th colspan="9">RV32 family</th></tr>
+<tr><th scope="row">RV32I_5SP</th><td class="num"><span class="bar" style="--w:56.6%"></span><span class="v">1.302</span></td><td class="num">0.768</td><td class="num">13,015,844</td><td class="num">27.3</td><td class="num">1,136,331</td><td class="num">41.7</td><td class="num">7.8</td><td class="num">0</td></tr>
+<tr><th scope="row">RV32IM_5SP</th><td class="num"><span class="bar" style="--w:58.0%"></span><span class="v">1.334</span></td><td class="num">0.750</td><td class="num">13,337,958</td><td class="num">17.6</td><td class="num">717,542</td><td class="num">40.8</td><td class="num">19.7</td><td class="num">338,353</td></tr>
+<tr><th scope="row">RV32IM_6SP</th><td class="num"><span class="bar" style="--w:64.4%"></span><span class="v">1.481</span></td><td class="num">0.675</td><td class="num">14,805,298</td><td class="num">17.6</td><td class="num">717,542</td><td class="num">40.8</td><td class="num">19.7</td><td class="num">338,353</td></tr>
+<tr><th scope="row">RV32IM_7SP</th><td class="num"><span class="bar" style="--w:77.2%"></span><span class="v">1.776</span></td><td class="num">0.563</td><td class="num">17,759,931</td><td class="num">17.6</td><td class="num">717,543</td><td class="num">40.8</td><td class="num">19.7</td><td class="num">338,353</td></tr>
+<tr><th scope="row">RV32IM_7SP_BRAM</th><td class="num"><span class="bar" style="--w:80.1%"></span><span class="v">1.842</span></td><td class="num">0.543</td><td class="num">18,415,657</td><td class="num">17.6</td><td class="num">738,348</td><td class="num">42.0</td><td class="num">19.7</td><td class="num">338,353</td></tr>
+<tr><th scope="row">RV32IM_7SP_BRAM_Opt</th><td class="num"><span class="bar" style="--w:81.3%"></span><span class="v">1.869</span></td><td class="num">0.535</td><td class="num">18,690,297</td><td class="num">17.6</td><td class="num">738,348</td><td class="num">42.0</td><td class="num">19.7</td><td class="num">338,353</td></tr>
+<tr><th scope="row">RV32IM_8SP</th><td class="num"><span class="bar" style="--w:97.4%"></span><span class="v">2.240</span></td><td class="num">0.446</td><td class="num">22,404,374</td><td class="num">17.6</td><td class="num">738,560</td><td class="num">42.0</td><td class="num">19.7</td><td class="num">338,353</td></tr>
+<tr><th scope="row">RV32IM_8SP_withoutOpt</th><td class="num"><span class="bar" style="--w:96.2%"></span><span class="v">2.213</span></td><td class="num">0.452</td><td class="num">22,129,713</td><td class="num">17.6</td><td class="num">738,560</td><td class="num">42.0</td><td class="num">19.7</td><td class="num">338,353</td></tr>
+<tr class="grp"><th colspan="9">RV64 family</th></tr>
+<tr><th scope="row">RV64I_5SP</th><td class="num"><span class="bar" style="--w:56.2%"></span><span class="v">1.293</span></td><td class="num">0.773</td><td class="num">12,933,217</td><td class="num">26.5</td><td class="num">1,150,680</td><td class="num">43.5</td><td class="num">6.3</td><td class="num">0</td></tr>
+<tr><th scope="row">RV64IM_5SP</th><td class="num"><span class="bar" style="--w:55.9%"></span><span class="v">1.285</span></td><td class="num">0.778</td><td class="num">12,845,919</td><td class="num">15.2</td><td class="num">621,622</td><td class="num">41.0</td><td class="num">16.6</td><td class="num">281,977</td></tr>
+<tr><th scope="row">RV64IM_6SP</th><td class="num"><span class="bar" style="--w:61.4%"></span><span class="v">1.412</span></td><td class="num">0.708</td><td class="num">14,116,173</td><td class="num">15.2</td><td class="num">621,622</td><td class="num">41.0</td><td class="num">16.6</td><td class="num">281,977</td></tr>
+<tr><th scope="row">RV64IM_7SP</th><td class="num"><span class="bar" style="--w:72.7%"></span><span class="v">1.671</span></td><td class="num">0.598</td><td class="num">16,712,848</td><td class="num">15.2</td><td class="num">621,622</td><td class="num">41.0</td><td class="num">16.6</td><td class="num">281,977</td></tr>
+<tr><th scope="row">RV64IM_7SP_BRAM</th><td class="num"><span class="bar" style="--w:75.1%"></span><span class="v">1.727</span></td><td class="num">0.579</td><td class="num">17,271,020</td><td class="num">15.2</td><td class="num">642,949</td><td class="num">42.4</td><td class="num">16.6</td><td class="num">281,977</td></tr>
+<tr><th scope="row">RV64IM_7SP_BRAM_Opt</th><td class="num"><span class="bar" style="--w:76.1%"></span><span class="v">1.751</span></td><td class="num">0.571</td><td class="num">17,508,339</td><td class="num">15.2</td><td class="num">642,949</td><td class="num">42.4</td><td class="num">16.6</td><td class="num">281,977</td></tr>
+<tr><th scope="row">RV64IM_8SP</th><td class="num"><span class="bar" style="--w:90.9%"></span><span class="v">2.091</span></td><td class="num">0.478</td><td class="num">20,909,384</td><td class="num">15.2</td><td class="num">645,525</td><td class="num">42.6</td><td class="num">16.6</td><td class="num">281,977</td></tr>
+<tr><th scope="row">RV64IM_8SP_withoutOpt</th><td class="num"><span class="bar" style="--w:89.9%"></span><span class="v">2.067</span></td><td class="num">0.484</td><td class="num">20,672,026</td><td class="num">15.2</td><td class="num">645,525</td><td class="num">42.6</td><td class="num">16.6</td><td class="num">281,977</td></tr></tbody>
+  </table></div>
+</section>
+
+<section>
+  <div class="eyebrow">Dhrystone</div>
+  <h2>Stall cycles, percent of total</h2>
+  <p class="lede">A stall propagates backwards through the pipeline, so the pc,
+  front-end and ID/EX columns are one stall observed at several stages — they are
+  <em>not</em> additive. Stages a variant does not have read <code>n/a</code>
+  rather than zero, since zero would wrongly say "never stalled". Amber marks
+  columns at or above 10%.</p>
+  <div class="scroll"><table>
+    <caption>bar scaled to 40% of cycles</caption>
+    <thead><tr><th>variant</th><th>pc</th><th>front-end</th><th>ID/EX</th><th>EXR/EX</th><th>EX/EX2</th><th>EX/MEM</th><th>MEM/WB</th><th>load-use</th><th>div busy</th><th>mul busy</th></tr></thead>
+    <tbody><tr class="grp"><th colspan="11">RV32 family</th></tr>
+<tr><th scope="row">RV32I_5SP</th><td class="num"><span class="bar sm" style="--w:0.0%"></span><span class="v">0.0</span></td><td class="num"><span class="bar sm" style="--w:0.0%"></span><span class="v">0.0</span></td><td class="num"><span class="bar sm" style="--w:0.0%"></span><span class="v">0.0</span></td><td class="num na">n/a</td><td class="num na">n/a</td><td class="num"><span class="bar sm" style="--w:0.0%"></span><span class="v">0.0</span></td><td class="num"><span class="bar sm" style="--w:0.0%"></span><span class="v">0.0</span></td><td class="num na">n/a</td><td class="num na">n/a</td><td class="num na">n/a</td></tr>
+<tr><th scope="row">RV32IM_5SP</th><td class="num"><span class="bar sm" style="--w:19.5%"></span><span class="v">7.8</span></td><td class="num"><span class="bar sm" style="--w:19.5%"></span><span class="v">7.8</span></td><td class="num"><span class="bar sm" style="--w:19.5%"></span><span class="v">7.8</span></td><td class="num na">n/a</td><td class="num na">n/a</td><td class="num"><span class="bar sm" style="--w:19.5%"></span><span class="v">7.8</span></td><td class="num"><span class="bar sm" style="--w:19.5%"></span><span class="v">7.8</span></td><td class="num na">n/a</td><td class="num"><span class="bar sm" style="--w:17.0%"></span><span class="v">6.8</span></td><td class="num"><span class="bar sm" style="--w:1.5%"></span><span class="v">0.6</span></td></tr>
+<tr><th scope="row">RV32IM_6SP</th><td class="num"><span class="bar sm" style="--w:22.1%"></span><span class="v">8.8</span></td><td class="num"><span class="bar sm" style="--w:22.1%"></span><span class="v">8.8</span></td><td class="num"><span class="bar sm" style="--w:22.1%"></span><span class="v">8.8</span></td><td class="num na">n/a</td><td class="num"><span class="bar sm" style="--w:18.8%"></span><span class="v">7.5</span></td><td class="num"><span class="bar sm" style="--w:18.8%"></span><span class="v">7.5</span></td><td class="num"><span class="bar sm" style="--w:18.8%"></span><span class="v">7.5</span></td><td class="num"><span class="bar sm" style="--w:3.3%"></span><span class="v">1.3</span></td><td class="num"><span class="bar sm" style="--w:16.5%"></span><span class="v">6.6</span></td><td class="num"><span class="bar sm" style="--w:1.4%"></span><span class="v">0.6</span></td></tr>
+<tr><th scope="row">RV32IM_7SP</th><td class="num"><span class="bar sm" style="--w:17.9%"></span><span class="v">7.1</span></td><td class="num"><span class="bar sm" style="--w:17.9%"></span><span class="v">7.1</span></td><td class="num"><span class="bar sm" style="--w:17.9%"></span><span class="v">7.1</span></td><td class="num na">n/a</td><td class="num"><span class="bar sm" style="--w:15.2%"></span><span class="v">6.1</span></td><td class="num"><span class="bar sm" style="--w:15.2%"></span><span class="v">6.1</span></td><td class="num"><span class="bar sm" style="--w:15.2%"></span><span class="v">6.1</span></td><td class="num"><span class="bar sm" style="--w:2.7%"></span><span class="v">1.1</span></td><td class="num"><span class="bar sm" style="--w:13.3%"></span><span class="v">5.3</span></td><td class="num"><span class="bar sm" style="--w:1.1%"></span><span class="v">0.5</span></td></tr>
+<tr><th scope="row">RV32IM_7SP_BRAM</th><td class="num"><span class="bar sm hot" style="--w:41.1%"></span><span class="v">16.4</span></td><td class="num"><span class="bar sm hot" style="--w:41.1%"></span><span class="v">16.4</span></td><td class="num"><span class="bar sm hot" style="--w:41.1%"></span><span class="v">16.4</span></td><td class="num na">n/a</td><td class="num"><span class="bar sm hot" style="--w:38.7%"></span><span class="v">15.5</span></td><td class="num"><span class="bar sm hot" style="--w:38.7%"></span><span class="v">15.5</span></td><td class="num"><span class="bar sm hot" style="--w:38.7%"></span><span class="v">15.5</span></td><td class="num"><span class="bar sm" style="--w:3.1%"></span><span class="v">1.2</span></td><td class="num"><span class="bar sm" style="--w:12.1%"></span><span class="v">4.8</span></td><td class="num"><span class="bar sm" style="--w:1.0%"></span><span class="v">0.4</span></td></tr>
+<tr><th scope="row">RV32IM_7SP_BRAM_Opt</th><td class="num"><span class="bar sm hot" style="--w:39.9%"></span><span class="v">16.0</span></td><td class="num"><span class="bar sm hot" style="--w:39.9%"></span><span class="v">16.0</span></td><td class="num"><span class="bar sm hot" style="--w:39.9%"></span><span class="v">16.0</span></td><td class="num na">n/a</td><td class="num"><span class="bar sm hot" style="--w:37.5%"></span><span class="v">15.0</span></td><td class="num"><span class="bar sm hot" style="--w:37.5%"></span><span class="v">15.0</span></td><td class="num"><span class="bar sm hot" style="--w:37.5%"></span><span class="v">15.0</span></td><td class="num"><span class="bar sm" style="--w:3.0%"></span><span class="v">1.2</span></td><td class="num"><span class="bar sm" style="--w:11.7%"></span><span class="v">4.7</span></td><td class="num"><span class="bar sm" style="--w:1.0%"></span><span class="v">0.4</span></td></tr>
+<tr><th scope="row">RV32IM_8SP</th><td class="num"><span class="bar sm hot" style="--w:60.6%"></span><span class="v">24.3</span></td><td class="num"><span class="bar sm hot" style="--w:60.6%"></span><span class="v">24.3</span></td><td class="num"><span class="bar sm hot" style="--w:60.6%"></span><span class="v">24.3</span></td><td class="num"><span class="bar sm hot" style="--w:32.2%"></span><span class="v">12.9</span></td><td class="num"><span class="bar sm hot" style="--w:32.2%"></span><span class="v">12.9</span></td><td class="num"><span class="bar sm hot" style="--w:32.2%"></span><span class="v">12.9</span></td><td class="num"><span class="bar sm hot" style="--w:32.2%"></span><span class="v">12.9</span></td><td class="num"><span class="bar sm hot" style="--w:43.7%"></span><span class="v">17.5</span></td><td class="num"><span class="bar sm" style="--w:10.0%"></span><span class="v">4.0</span></td><td class="num"><span class="bar sm" style="--w:0.9%"></span><span class="v">0.3</span></td></tr>
+<tr><th scope="row">RV32IM_8SP_withoutOpt</th><td class="num"><span class="bar sm hot" style="--w:62.2%"></span><span class="v">24.9</span></td><td class="num"><span class="bar sm hot" style="--w:62.2%"></span><span class="v">24.9</span></td><td class="num"><span class="bar sm hot" style="--w:62.2%"></span><span class="v">24.9</span></td><td class="num"><span class="bar sm hot" style="--w:33.0%"></span><span class="v">13.2</span></td><td class="num"><span class="bar sm hot" style="--w:33.0%"></span><span class="v">13.2</span></td><td class="num"><span class="bar sm hot" style="--w:33.0%"></span><span class="v">13.2</span></td><td class="num"><span class="bar sm hot" style="--w:33.0%"></span><span class="v">13.2</span></td><td class="num"><span class="bar sm hot" style="--w:43.3%"></span><span class="v">17.3</span></td><td class="num"><span class="bar sm" style="--w:10.3%"></span><span class="v">4.1</span></td><td class="num"><span class="bar sm" style="--w:0.9%"></span><span class="v">0.4</span></td></tr>
+<tr class="grp"><th colspan="11">RV64 family</th></tr>
+<tr><th scope="row">RV64I_5SP</th><td class="num"><span class="bar sm" style="--w:0.0%"></span><span class="v">0.0</span></td><td class="num"><span class="bar sm" style="--w:0.0%"></span><span class="v">0.0</span></td><td class="num"><span class="bar sm" style="--w:0.0%"></span><span class="v">0.0</span></td><td class="num na">n/a</td><td class="num na">n/a</td><td class="num"><span class="bar sm" style="--w:0.0%"></span><span class="v">0.0</span></td><td class="num"><span class="bar sm" style="--w:0.0%"></span><span class="v">0.0</span></td><td class="num na">n/a</td><td class="num na">n/a</td><td class="num na">n/a</td></tr>
+<tr><th scope="row">RV64IM_5SP</th><td class="num"><span class="bar sm" style="--w:20.2%"></span><span class="v">8.1</span></td><td class="num"><span class="bar sm" style="--w:20.2%"></span><span class="v">8.1</span></td><td class="num"><span class="bar sm" style="--w:20.2%"></span><span class="v">8.1</span></td><td class="num na">n/a</td><td class="num na">n/a</td><td class="num"><span class="bar sm" style="--w:20.2%"></span><span class="v">8.1</span></td><td class="num"><span class="bar sm" style="--w:20.2%"></span><span class="v">8.1</span></td><td class="num na">n/a</td><td class="num"><span class="bar sm" style="--w:17.7%"></span><span class="v">7.1</span></td><td class="num"><span class="bar sm" style="--w:1.5%"></span><span class="v">0.6</span></td></tr>
+<tr><th scope="row">RV64IM_6SP</th><td class="num"><span class="bar sm" style="--w:22.9%"></span><span class="v">9.1</span></td><td class="num"><span class="bar sm" style="--w:22.9%"></span><span class="v">9.1</span></td><td class="num"><span class="bar sm" style="--w:22.9%"></span><span class="v">9.1</span></td><td class="num na">n/a</td><td class="num"><span class="bar sm" style="--w:19.5%"></span><span class="v">7.8</span></td><td class="num"><span class="bar sm" style="--w:19.5%"></span><span class="v">7.8</span></td><td class="num"><span class="bar sm" style="--w:19.5%"></span><span class="v">7.8</span></td><td class="num"><span class="bar sm" style="--w:3.4%"></span><span class="v">1.4</span></td><td class="num"><span class="bar sm" style="--w:17.0%"></span><span class="v">6.8</span></td><td class="num"><span class="bar sm" style="--w:1.5%"></span><span class="v">0.6</span></td></tr>
+<tr><th scope="row">RV64IM_7SP</th><td class="num"><span class="bar sm" style="--w:18.3%"></span><span class="v">7.3</span></td><td class="num"><span class="bar sm" style="--w:18.3%"></span><span class="v">7.3</span></td><td class="num"><span class="bar sm" style="--w:18.3%"></span><span class="v">7.3</span></td><td class="num na">n/a</td><td class="num"><span class="bar sm" style="--w:15.6%"></span><span class="v">6.2</span></td><td class="num"><span class="bar sm" style="--w:15.6%"></span><span class="v">6.2</span></td><td class="num"><span class="bar sm" style="--w:15.6%"></span><span class="v">6.2</span></td><td class="num"><span class="bar sm" style="--w:2.7%"></span><span class="v">1.1</span></td><td class="num"><span class="bar sm" style="--w:13.6%"></span><span class="v">5.5</span></td><td class="num"><span class="bar sm" style="--w:1.2%"></span><span class="v">0.5</span></td></tr>
+<tr><th scope="row">RV64IM_7SP_BRAM</th><td class="num"><span class="bar sm hot" style="--w:40.5%"></span><span class="v">16.2</span></td><td class="num"><span class="bar sm hot" style="--w:40.5%"></span><span class="v">16.2</span></td><td class="num"><span class="bar sm hot" style="--w:40.5%"></span><span class="v">16.2</span></td><td class="num na">n/a</td><td class="num"><span class="bar sm hot" style="--w:38.0%"></span><span class="v">15.2</span></td><td class="num"><span class="bar sm hot" style="--w:38.0%"></span><span class="v">15.2</span></td><td class="num"><span class="bar sm hot" style="--w:38.0%"></span><span class="v">15.2</span></td><td class="num"><span class="bar sm" style="--w:3.2%"></span><span class="v">1.3</span></td><td class="num"><span class="bar sm" style="--w:12.4%"></span><span class="v">5.0</span></td><td class="num"><span class="bar sm" style="--w:1.1%"></span><span class="v">0.4</span></td></tr>
+<tr><th scope="row">RV64IM_7SP_BRAM_Opt</th><td class="num"><span class="bar sm hot" style="--w:39.3%"></span><span class="v">15.7</span></td><td class="num"><span class="bar sm hot" style="--w:39.3%"></span><span class="v">15.7</span></td><td class="num"><span class="bar sm hot" style="--w:39.3%"></span><span class="v">15.7</span></td><td class="num na">n/a</td><td class="num"><span class="bar sm hot" style="--w:36.8%"></span><span class="v">14.7</span></td><td class="num"><span class="bar sm hot" style="--w:36.8%"></span><span class="v">14.7</span></td><td class="num"><span class="bar sm hot" style="--w:36.8%"></span><span class="v">14.7</span></td><td class="num"><span class="bar sm" style="--w:3.1%"></span><span class="v">1.2</span></td><td class="num"><span class="bar sm" style="--w:12.1%"></span><span class="v">4.8</span></td><td class="num"><span class="bar sm" style="--w:1.0%"></span><span class="v">0.4</span></td></tr>
+<tr><th scope="row">RV64IM_8SP</th><td class="num"><span class="bar sm hot" style="--w:60.5%"></span><span class="v">24.2</span></td><td class="num"><span class="bar sm hot" style="--w:60.5%"></span><span class="v">24.2</span></td><td class="num"><span class="bar sm hot" style="--w:60.5%"></span><span class="v">24.2</span></td><td class="num"><span class="bar sm hot" style="--w:31.4%"></span><span class="v">12.6</span></td><td class="num"><span class="bar sm hot" style="--w:31.4%"></span><span class="v">12.6</span></td><td class="num"><span class="bar sm hot" style="--w:31.4%"></span><span class="v">12.6</span></td><td class="num"><span class="bar sm hot" style="--w:31.4%"></span><span class="v">12.6</span></td><td class="num"><span class="bar sm hot" style="--w:44.9%"></span><span class="v">18.0</span></td><td class="num"><span class="bar sm" style="--w:10.3%"></span><span class="v">4.1</span></td><td class="num"><span class="bar sm" style="--w:0.9%"></span><span class="v">0.4</span></td></tr>
+<tr><th scope="row">RV64IM_8SP_withoutOpt</th><td class="num"><span class="bar sm hot" style="--w:62.1%"></span><span class="v">24.9</span></td><td class="num"><span class="bar sm hot" style="--w:62.1%"></span><span class="v">24.9</span></td><td class="num"><span class="bar sm hot" style="--w:62.1%"></span><span class="v">24.9</span></td><td class="num"><span class="bar sm hot" style="--w:32.3%"></span><span class="v">12.9</span></td><td class="num"><span class="bar sm hot" style="--w:32.3%"></span><span class="v">12.9</span></td><td class="num"><span class="bar sm hot" style="--w:32.3%"></span><span class="v">12.9</span></td><td class="num"><span class="bar sm hot" style="--w:32.3%"></span><span class="v">12.9</span></td><td class="num"><span class="bar sm hot" style="--w:44.3%"></span><span class="v">17.7</span></td><td class="num"><span class="bar sm" style="--w:10.6%"></span><span class="v">4.2</span></td><td class="num"><span class="bar sm" style="--w:0.9%"></span><span class="v">0.4</span></td></tr></tbody>
+  </table></div>
+</section>
+
+<section>
+  <div class="eyebrow">CoreMark</div>
+  <h2>Stall cycles, percent of total</h2>
+  <div class="scroll"><table>
+    <caption>bar scaled to 40% of cycles</caption>
+    <thead><tr><th>variant</th><th>pc</th><th>front-end</th><th>ID/EX</th><th>EXR/EX</th><th>EX/EX2</th><th>EX/MEM</th><th>MEM/WB</th><th>load-use</th><th>div busy</th><th>mul busy</th></tr></thead>
+    <tbody><tr class="grp"><th colspan="11">RV32 family</th></tr>
+<tr><th scope="row">RV32I_5SP</th><td class="num"><span class="bar sm" style="--w:0.0%"></span><span class="v">0.0</span></td><td class="num"><span class="bar sm" style="--w:0.0%"></span><span class="v">0.0</span></td><td class="num"><span class="bar sm" style="--w:0.0%"></span><span class="v">0.0</span></td><td class="num na">n/a</td><td class="num na">n/a</td><td class="num"><span class="bar sm" style="--w:0.0%"></span><span class="v">0.0</span></td><td class="num"><span class="bar sm" style="--w:0.0%"></span><span class="v">0.0</span></td><td class="num na">n/a</td><td class="num na">n/a</td><td class="num na">n/a</td></tr>
+<tr><th scope="row">RV32IM_5SP</th><td class="num"><span class="bar sm hot" style="--w:25.4%"></span><span class="v">10.1</span></td><td class="num"><span class="bar sm hot" style="--w:25.4%"></span><span class="v">10.1</span></td><td class="num"><span class="bar sm hot" style="--w:25.4%"></span><span class="v">10.1</span></td><td class="num na">n/a</td><td class="num na">n/a</td><td class="num"><span class="bar sm hot" style="--w:25.4%"></span><span class="v">10.1</span></td><td class="num"><span class="bar sm hot" style="--w:25.4%"></span><span class="v">10.1</span></td><td class="num na">n/a</td><td class="num"><span class="bar sm" style="--w:0.0%"></span><span class="v">0.0</span></td><td class="num"><span class="bar sm" style="--w:19.0%"></span><span class="v">7.6</span></td></tr>
+<tr><th scope="row">RV32IM_6SP</th><td class="num"><span class="bar sm hot" style="--w:35.5%"></span><span class="v">14.2</span></td><td class="num"><span class="bar sm hot" style="--w:35.5%"></span><span class="v">14.2</span></td><td class="num"><span class="bar sm hot" style="--w:35.5%"></span><span class="v">14.2</span></td><td class="num na">n/a</td><td class="num"><span class="bar sm" style="--w:22.9%"></span><span class="v">9.1</span></td><td class="num"><span class="bar sm" style="--w:22.9%"></span><span class="v">9.1</span></td><td class="num"><span class="bar sm" style="--w:22.9%"></span><span class="v">9.1</span></td><td class="num"><span class="bar sm" style="--w:12.7%"></span><span class="v">5.1</span></td><td class="num"><span class="bar sm" style="--w:0.0%"></span><span class="v">0.0</span></td><td class="num"><span class="bar sm" style="--w:17.1%"></span><span class="v">6.9</span></td></tr>
+<tr><th scope="row">RV32IM_7SP</th><td class="num"><span class="bar sm hot" style="--w:29.6%"></span><span class="v">11.8</span></td><td class="num"><span class="bar sm hot" style="--w:29.6%"></span><span class="v">11.8</span></td><td class="num"><span class="bar sm hot" style="--w:29.6%"></span><span class="v">11.8</span></td><td class="num na">n/a</td><td class="num"><span class="bar sm" style="--w:19.1%"></span><span class="v">7.6</span></td><td class="num"><span class="bar sm" style="--w:19.1%"></span><span class="v">7.6</span></td><td class="num"><span class="bar sm" style="--w:19.1%"></span><span class="v">7.6</span></td><td class="num"><span class="bar sm" style="--w:10.5%"></span><span class="v">4.2</span></td><td class="num"><span class="bar sm" style="--w:0.0%"></span><span class="v">0.0</span></td><td class="num"><span class="bar sm" style="--w:14.3%"></span><span class="v">5.7</span></td></tr>
+<tr><th scope="row">RV32IM_7SP_BRAM</th><td class="num"><span class="bar sm hot" style="--w:35.7%"></span><span class="v">14.3</span></td><td class="num"><span class="bar sm hot" style="--w:35.7%"></span><span class="v">14.3</span></td><td class="num"><span class="bar sm hot" style="--w:35.7%"></span><span class="v">14.3</span></td><td class="num na">n/a</td><td class="num"><span class="bar sm hot" style="--w:25.5%"></span><span class="v">10.2</span></td><td class="num"><span class="bar sm hot" style="--w:25.5%"></span><span class="v">10.2</span></td><td class="num"><span class="bar sm hot" style="--w:25.5%"></span><span class="v">10.2</span></td><td class="num"><span class="bar sm" style="--w:10.8%"></span><span class="v">4.3</span></td><td class="num"><span class="bar sm" style="--w:0.0%"></span><span class="v">0.0</span></td><td class="num"><span class="bar sm" style="--w:13.8%"></span><span class="v">5.5</span></td></tr>
+<tr><th scope="row">RV32IM_7SP_BRAM_Opt</th><td class="num"><span class="bar sm hot" style="--w:35.1%"></span><span class="v">14.1</span></td><td class="num"><span class="bar sm hot" style="--w:35.1%"></span><span class="v">14.1</span></td><td class="num"><span class="bar sm hot" style="--w:35.1%"></span><span class="v">14.1</span></td><td class="num na">n/a</td><td class="num"><span class="bar sm hot" style="--w:25.1%"></span><span class="v">10.0</span></td><td class="num"><span class="bar sm hot" style="--w:25.1%"></span><span class="v">10.0</span></td><td class="num"><span class="bar sm hot" style="--w:25.1%"></span><span class="v">10.0</span></td><td class="num"><span class="bar sm" style="--w:10.6%"></span><span class="v">4.2</span></td><td class="num"><span class="bar sm" style="--w:0.0%"></span><span class="v">0.0</span></td><td class="num"><span class="bar sm" style="--w:13.6%"></span><span class="v">5.4</span></td></tr>
+<tr><th scope="row">RV32IM_8SP</th><td class="num"><span class="bar sm hot" style="--w:59.4%"></span><span class="v">23.8</span></td><td class="num"><span class="bar sm hot" style="--w:59.4%"></span><span class="v">23.8</span></td><td class="num"><span class="bar sm hot" style="--w:59.4%"></span><span class="v">23.8</span></td><td class="num"><span class="bar sm" style="--w:20.9%"></span><span class="v">8.4</span></td><td class="num"><span class="bar sm" style="--w:20.9%"></span><span class="v">8.4</span></td><td class="num"><span class="bar sm" style="--w:20.9%"></span><span class="v">8.4</span></td><td class="num"><span class="bar sm" style="--w:20.9%"></span><span class="v">8.4</span></td><td class="num"><span class="bar sm hot" style="--w:43.7%"></span><span class="v">17.5</span></td><td class="num"><span class="bar sm" style="--w:0.0%"></span><span class="v">0.0</span></td><td class="num"><span class="bar sm" style="--w:11.3%"></span><span class="v">4.5</span></td></tr>
+<tr><th scope="row">RV32IM_8SP_withoutOpt</th><td class="num"><span class="bar sm hot" style="--w:60.2%"></span><span class="v">24.1</span></td><td class="num"><span class="bar sm hot" style="--w:60.2%"></span><span class="v">24.1</span></td><td class="num"><span class="bar sm hot" style="--w:60.2%"></span><span class="v">24.1</span></td><td class="num"><span class="bar sm" style="--w:21.2%"></span><span class="v">8.5</span></td><td class="num"><span class="bar sm" style="--w:21.2%"></span><span class="v">8.5</span></td><td class="num"><span class="bar sm" style="--w:21.2%"></span><span class="v">8.5</span></td><td class="num"><span class="bar sm" style="--w:21.2%"></span><span class="v">8.5</span></td><td class="num"><span class="bar sm hot" style="--w:42.4%"></span><span class="v">16.9</span></td><td class="num"><span class="bar sm" style="--w:0.0%"></span><span class="v">0.0</span></td><td class="num"><span class="bar sm" style="--w:11.5%"></span><span class="v">4.6</span></td></tr>
+<tr class="grp"><th colspan="11">RV64 family</th></tr>
+<tr><th scope="row">RV64I_5SP</th><td class="num"><span class="bar sm" style="--w:0.0%"></span><span class="v">0.0</span></td><td class="num"><span class="bar sm" style="--w:0.0%"></span><span class="v">0.0</span></td><td class="num"><span class="bar sm" style="--w:0.0%"></span><span class="v">0.0</span></td><td class="num na">n/a</td><td class="num na">n/a</td><td class="num"><span class="bar sm" style="--w:0.0%"></span><span class="v">0.0</span></td><td class="num"><span class="bar sm" style="--w:0.0%"></span><span class="v">0.0</span></td><td class="num na">n/a</td><td class="num na">n/a</td><td class="num na">n/a</td></tr>
+<tr><th scope="row">RV64IM_5SP</th><td class="num"><span class="bar sm" style="--w:22.0%"></span><span class="v">8.8</span></td><td class="num"><span class="bar sm" style="--w:22.0%"></span><span class="v">8.8</span></td><td class="num"><span class="bar sm" style="--w:22.0%"></span><span class="v">8.8</span></td><td class="num na">n/a</td><td class="num na">n/a</td><td class="num"><span class="bar sm" style="--w:22.0%"></span><span class="v">8.8</span></td><td class="num"><span class="bar sm" style="--w:22.0%"></span><span class="v">8.8</span></td><td class="num na">n/a</td><td class="num"><span class="bar sm" style="--w:0.0%"></span><span class="v">0.0</span></td><td class="num"><span class="bar sm" style="--w:16.5%"></span><span class="v">6.6</span></td></tr>
+<tr><th scope="row">RV64IM_6SP</th><td class="num"><span class="bar sm hot" style="--w:31.5%"></span><span class="v">12.6</span></td><td class="num"><span class="bar sm hot" style="--w:31.5%"></span><span class="v">12.6</span></td><td class="num"><span class="bar sm hot" style="--w:31.5%"></span><span class="v">12.6</span></td><td class="num na">n/a</td><td class="num"><span class="bar sm" style="--w:20.0%"></span><span class="v">8.0</span></td><td class="num"><span class="bar sm" style="--w:20.0%"></span><span class="v">8.0</span></td><td class="num"><span class="bar sm" style="--w:20.0%"></span><span class="v">8.0</span></td><td class="num"><span class="bar sm" style="--w:11.5%"></span><span class="v">4.6</span></td><td class="num"><span class="bar sm" style="--w:0.0%"></span><span class="v">0.0</span></td><td class="num"><span class="bar sm" style="--w:15.0%"></span><span class="v">6.0</span></td></tr>
+<tr><th scope="row">RV64IM_7SP</th><td class="num"><span class="bar sm hot" style="--w:26.6%"></span><span class="v">10.6</span></td><td class="num"><span class="bar sm hot" style="--w:26.6%"></span><span class="v">10.6</span></td><td class="num"><span class="bar sm hot" style="--w:26.6%"></span><span class="v">10.6</span></td><td class="num na">n/a</td><td class="num"><span class="bar sm" style="--w:16.9%"></span><span class="v">6.7</span></td><td class="num"><span class="bar sm" style="--w:16.9%"></span><span class="v">6.7</span></td><td class="num"><span class="bar sm" style="--w:16.9%"></span><span class="v">6.7</span></td><td class="num"><span class="bar sm" style="--w:9.7%"></span><span class="v">3.9</span></td><td class="num"><span class="bar sm" style="--w:0.0%"></span><span class="v">0.0</span></td><td class="num"><span class="bar sm" style="--w:12.7%"></span><span class="v">5.1</span></td></tr>
+<tr><th scope="row">RV64IM_7SP_BRAM</th><td class="num"><span class="bar sm hot" style="--w:32.0%"></span><span class="v">12.8</span></td><td class="num"><span class="bar sm hot" style="--w:32.0%"></span><span class="v">12.8</span></td><td class="num"><span class="bar sm hot" style="--w:32.0%"></span><span class="v">12.8</span></td><td class="num na">n/a</td><td class="num"><span class="bar sm" style="--w:22.6%"></span><span class="v">9.0</span></td><td class="num"><span class="bar sm" style="--w:22.6%"></span><span class="v">9.0</span></td><td class="num"><span class="bar sm" style="--w:22.6%"></span><span class="v">9.0</span></td><td class="num"><span class="bar sm" style="--w:9.9%"></span><span class="v">4.0</span></td><td class="num"><span class="bar sm" style="--w:0.0%"></span><span class="v">0.0</span></td><td class="num"><span class="bar sm" style="--w:12.2%"></span><span class="v">4.9</span></td></tr>
+<tr><th scope="row">RV64IM_7SP_BRAM_Opt</th><td class="num"><span class="bar sm hot" style="--w:31.6%"></span><span class="v">12.6</span></td><td class="num"><span class="bar sm hot" style="--w:31.6%"></span><span class="v">12.6</span></td><td class="num"><span class="bar sm hot" style="--w:31.6%"></span><span class="v">12.6</span></td><td class="num na">n/a</td><td class="num"><span class="bar sm" style="--w:22.3%"></span><span class="v">8.9</span></td><td class="num"><span class="bar sm" style="--w:22.3%"></span><span class="v">8.9</span></td><td class="num"><span class="bar sm" style="--w:22.3%"></span><span class="v">8.9</span></td><td class="num"><span class="bar sm" style="--w:9.8%"></span><span class="v">3.9</span></td><td class="num"><span class="bar sm" style="--w:0.0%"></span><span class="v">0.0</span></td><td class="num"><span class="bar sm" style="--w:12.1%"></span><span class="v">4.8</span></td></tr>
+<tr><th scope="row">RV64IM_8SP</th><td class="num"><span class="bar sm hot" style="--w:56.4%"></span><span class="v">22.5</span></td><td class="num"><span class="bar sm hot" style="--w:56.4%"></span><span class="v">22.5</span></td><td class="num"><span class="bar sm hot" style="--w:56.4%"></span><span class="v">22.5</span></td><td class="num"><span class="bar sm" style="--w:18.7%"></span><span class="v">7.5</span></td><td class="num"><span class="bar sm" style="--w:18.7%"></span><span class="v">7.5</span></td><td class="num"><span class="bar sm" style="--w:18.7%"></span><span class="v">7.5</span></td><td class="num"><span class="bar sm" style="--w:18.7%"></span><span class="v">7.5</span></td><td class="num"><span class="bar sm hot" style="--w:42.4%"></span><span class="v">17.0</span></td><td class="num"><span class="bar sm" style="--w:0.0%"></span><span class="v">0.0</span></td><td class="num"><span class="bar sm" style="--w:10.1%"></span><span class="v">4.0</span></td></tr>
+<tr><th scope="row">RV64IM_8SP_withoutOpt</th><td class="num"><span class="bar sm hot" style="--w:57.0%"></span><span class="v">22.8</span></td><td class="num"><span class="bar sm hot" style="--w:57.0%"></span><span class="v">22.8</span></td><td class="num"><span class="bar sm hot" style="--w:57.0%"></span><span class="v">22.8</span></td><td class="num"><span class="bar sm" style="--w:18.9%"></span><span class="v">7.6</span></td><td class="num"><span class="bar sm" style="--w:18.9%"></span><span class="v">7.6</span></td><td class="num"><span class="bar sm" style="--w:18.9%"></span><span class="v">7.6</span></td><td class="num"><span class="bar sm" style="--w:18.9%"></span><span class="v">7.6</span></td><td class="num"><span class="bar sm hot" style="--w:41.2%"></span><span class="v">16.5</span></td><td class="num"><span class="bar sm" style="--w:0.0%"></span><span class="v">0.0</span></td><td class="num"><span class="bar sm" style="--w:10.2%"></span><span class="v">4.1</span></td></tr></tbody>
+  </table></div>
+</section>
+
+<section>
+  <div class="eyebrow">Before citing these numbers</div>
+  <h2>Caveats that belong in the paper</h2>
+  <div class="caveats"><ol>
+    <li><b>NOPs are excluded from the retired count</b>, matching the cores' own
+    <code>minstret</code> definition. This shifts IPC slightly against a
+    Sail-counted instruction total, so state the definition rather than leaving
+    it implicit.</li>
+    <li><b>I-only variants run different binaries</b> from the IM variants — no
+    hardware multiply, so the compiler emits a software routine. CPI is
+    comparable within the IM family and across pipeline depth, but not directly
+    between I and IM. The pipeline-depth axis, which is the paper's main claim,
+    is unaffected.</li>
+    <li><b>These are fixed-instruction windows, not complete benchmark runs.</b>
+    The published Dhrystone and CoreMark scores still come from the FPGA runs;
+    these figures characterise microarchitectural behaviour, not final scores.</li>
+    <li><b>Stall percentages are not additive</b> across the pipeline columns,
+    for the reason given above. Summing them produces a meaningless total.</li>
+    <li><b>Mispredictions are identical across 5SP, 6SP and 7SP</b> — same binary,
+    same predictor, same branch outcomes — and rise slightly at 7SP_BRAM and 8SP,
+    where predictor state updates later relative to fetch. The designs do have a
+    branch predictor, so Reviewer 1's misprediction request applies and is
+    answered.</li>
+  </ol></div>
+</section>
+
+<section>
+  <div class="eyebrow">Reproduce</div>
+  <h2>Commands</h2>
+  <pre><b>cd riscof-env</b>
+RVIM_SOURCE=socs python3 scripts/prepare_rtl.py
+RVIM_SOURCE=socs scripts/build_sim.sh all
+python3 scripts/profile_all.py --instr 10000000
+
+<b># outputs</b>
+logs/profile.csv            per-variant counters, machine readable
+logs/profile_report.txt     the formatted tables</pre>
+</section>
+
+<footer>
+  RV-IM100 · profiling counters in <code>scripts/prepare_rtl.py</code>,
+  driver in <code>scripts/profile_all.py</code> · data in
+  <code>logs/profile.csv</code>
+</footer>
+</div>

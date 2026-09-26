@@ -1,0 +1,29 @@
+=== [1/4] re-cost dhrystone SAIF on the corrected netlist 14:40:47 ===
+>>> RV32IM_7SP_BRAM_Opt_dhrystone  14:40:47
+<<< RV32IM_7SP_BRAM_Opt_dhrystone  VECTORLESS Total On-Chip Power (W) = 0.303 VECTORLESS Dynamic (W) = 0.151 VECTORLESS Device Static (W) = 0.152 SAIF_BASED Total On-Chip Power (W) = 0.321 SAIF_BASED Dynamic (W) = 0.169 SAIF_BASED Device Static (W) = 0.152 
+    CONF 1.3 Confidence Level
+    CONF | Confidence Level         | High                                                                                                |
+=== repower finished Wed Sep 16 02:40:57 PM KST 2026 ===
+=== [2/4] re-simulate coremark SAIF at 92 MHz 14:40:57 ===
+>>> RV32IM_7SP_BRAM_Opt_coremark  RV32IM72F7SPSoCTOP  14:40:57
+    RV32IM_7SP_BRAM_Opt/coremark toggling 62.35%
+=== RV32IM_7SP_BRAM_Opt/coremark done: 0.323 W (toggling 62.35%, uart_delta 0)
+<<< RV32IM_7SP_BRAM_Opt_coremark
+    variant RV32IM_7SP_BRAM_Opt
+    bench coremark
+    toggling_pct 62.35
+    uart_delta 0
+    VECTORLESS Total On-Chip Power (W) = 0.313
+    VECTORLESS Dynamic (W) = 0.160
+    VECTORLESS Device Static (W) = 0.152
+    SAIF_BASED Total On-Chip Power (W) = 0.323
+    SAIF_BASED Dynamic (W) = 0.171
+    SAIF_BASED Device Static (W) = 0.152
+=== resim finished Wed Sep 16 02:59:34 PM KST 2026 ===
+=== [3/4] rebuild soc_final.csv and fold SAIF 14:59:34 ===
+  SAIF updated RV32IM_7SP_BRAM_Opt/coremark: dyn 0.171 W, total 0.323 W
+  SAIF updated RV32IM_7SP_BRAM_Opt/dhrystone: dyn 0.169 W, total 0.321 W
+=== [4/4] rebuild the workbook 14:59:34 ===
+wrote /home/khwl/Documents/Research_data_complete_0916-A.xlsx
+  core rows 16/16   SoC rows 32/32   SAIF 32/32
+=== DMEM FIX COMPLETE Wed Sep 16 02:59:34 PM KST 2026 ===

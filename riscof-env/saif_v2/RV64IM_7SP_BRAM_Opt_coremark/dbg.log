@@ -1,0 +1,261 @@
+
+****** xsim v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Tue Sep 22 22:37:02 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_ns/xsim_script.tcl
+# xsim {tb_ns} -autoloadwcfg -tclbatch {dbg.tcl}
+Time resolution is 1 ps
+source dbg.tcl
+## set pcq /tb_saif/dut/rv64im72f_6sp/program_counter/Q
+## run 70 us
+run: Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:50 . Memory (MB): peak = 1510.051 ; gain = 0.000 ; free physical = 23932 ; free virtual = 36398
+## set cands [get_objects -r /tb_saif/dut/*benchmark_start*]
+## set bs ""
+## foreach c $cands { if {![string match "*_reg*" $c]} { set bs $c; break } }
+## if {$bs eq "" && [llength $cands]} { set bs [lindex $cands 0] }
+## puts "BS $bs"
+BS /tb_saif/dut/unified_uart_controller/benchmark_start
+## add_force $bs 1 -cancel_after 100ns
+## foreach s {cpu_clk_enable internal_reset clk_locked} {
+##   set o [lindex [get_objects -r /tb_saif/dut/$s] 0]
+##   if {$o ne ""} { puts "SIG $s = [get_value $o]" }
+## }
+SIG cpu_clk_enable = 0
+SIG internal_reset = 0
+SIG clk_locked = 1
+## set tb [lindex [get_objects -r /tb_saif/dut/tx_busy] 0]
+## add_force $tb 0
+## for {set i 0} {$i < 115} {incr i} {
+##   run 2 us
+##   if {[catch {set pv [get_value -radix hex $pcq]}]} {set pv NA}
+##   set ce [get_value [lindex [get_objects -r /tb_saif/dut/cpu_clk_enable] 0]]
+##   puts "DBG t=[current_time] pc=$pv cpu_en=$ce"
+## }
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 8.004 ; free physical = 23930 ; free virtual = 36395
+DBG t=72 us pc=0000000000003230 cpu_en=1
+run: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23928 ; free virtual = 36393
+DBG t=74 us pc=000000000000104c cpu_en=1
+run: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23926 ; free virtual = 36391
+DBG t=76 us pc=0000000000000ad4 cpu_en=1
+run: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:07 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23921 ; free virtual = 36386
+DBG t=78 us pc=0000000000000b84 cpu_en=1
+run: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:07 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23918 ; free virtual = 36383
+DBG t=80 us pc=0000000000000c34 cpu_en=1
+run: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23911 ; free virtual = 36377
+DBG t=82 us pc=0000000000000b94 cpu_en=1
+run: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:07 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23941 ; free virtual = 36403
+DBG t=84 us pc=0000000000000c48 cpu_en=1
+run: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23939 ; free virtual = 36402
+DBG t=86 us pc=0000000000000d00 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23938 ; free virtual = 36401
+DBG t=88 us pc=0000000000000cdc cpu_en=1
+run: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23939 ; free virtual = 36401
+DBG t=90 us pc=0000000000000cdc cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23937 ; free virtual = 36399
+DBG t=92 us pc=000000000000026c cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23935 ; free virtual = 36398
+DBG t=94 us pc=0000000000000348 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23944 ; free virtual = 36406
+DBG t=96 us pc=00000000000002bc cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23945 ; free virtual = 36408
+DBG t=98 us pc=00000000000002d0 cpu_en=1
+DBG t=100 us pc=00000000000000a4 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23935 ; free virtual = 36399
+DBG t=102 us pc=000000000000031c cpu_en=1
+run: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23933 ; free virtual = 36397
+DBG t=104 us pc=00000000000002ec cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23936 ; free virtual = 36401
+DBG t=106 us pc=0000000000000370 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23938 ; free virtual = 36402
+DBG t=108 us pc=00000000000002b4 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23940 ; free virtual = 36404
+DBG t=110 us pc=00000000000002d4 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23937 ; free virtual = 36402
+DBG t=112 us pc=000000000000031c cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23908 ; free virtual = 36375
+DBG t=114 us pc=000000000000050c cpu_en=1
+DBG t=116 us pc=00000000000003c0 cpu_en=1
+DBG t=118 us pc=0000000000000308 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23898 ; free virtual = 36366
+DBG t=120 us pc=000000000000065c cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23804 ; free virtual = 36321
+DBG t=122 us pc=00000000000002cc cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23720 ; free virtual = 36276
+DBG t=124 us pc=00000000000002e8 cpu_en=1
+DBG t=126 us pc=0000000000000320 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23744 ; free virtual = 36300
+DBG t=128 us pc=00000000000002a8 cpu_en=1
+DBG t=130 us pc=00000000000000c4 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23702 ; free virtual = 36287
+DBG t=132 us pc=00000000000002b0 cpu_en=1
+run: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23716 ; free virtual = 36301
+DBG t=134 us pc=0000000000000324 cpu_en=1
+DBG t=136 us pc=00000000000000ac cpu_en=1
+run: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23715 ; free virtual = 36300
+DBG t=138 us pc=00000000000000d0 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23715 ; free virtual = 36300
+DBG t=140 us pc=00000000000000d8 cpu_en=1
+DBG t=142 us pc=000000000000029c cpu_en=1
+run: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23721 ; free virtual = 36306
+DBG t=144 us pc=0000000000000084 cpu_en=1
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23719 ; free virtual = 36303
+DBG t=146 us pc=0000000000000090 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23712 ; free virtual = 36297
+DBG t=148 us pc=0000000000000350 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23682 ; free virtual = 36267
+DBG t=150 us pc=00000000000000c0 cpu_en=1
+run: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23541 ; free virtual = 36172
+DBG t=152 us pc=00000000000000d4 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23519 ; free virtual = 36151
+DBG t=154 us pc=0000000000000324 cpu_en=1
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23530 ; free virtual = 36162
+DBG t=156 us pc=00000000000002d4 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23529 ; free virtual = 36161
+DBG t=158 us pc=0000000000000300 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23563 ; free virtual = 36197
+DBG t=160 us pc=00000000000004fc cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23555 ; free virtual = 36189
+DBG t=162 us pc=00000000000002a8 cpu_en=1
+DBG t=164 us pc=00000000000000b8 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23523 ; free virtual = 36182
+DBG t=166 us pc=00000000000000d0 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23517 ; free virtual = 36176
+DBG t=168 us pc=00000000000002b0 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23531 ; free virtual = 36189
+DBG t=170 us pc=0000000000000414 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23527 ; free virtual = 36186
+DBG t=172 us pc=0000000000000318 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23503 ; free virtual = 36163
+DBG t=174 us pc=0000000000000398 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23528 ; free virtual = 36187
+DBG t=176 us pc=00000000000002e8 cpu_en=1
+run: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23537 ; free virtual = 36196
+DBG t=178 us pc=0000000000000088 cpu_en=1
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23520 ; free virtual = 36181
+DBG t=180 us pc=0000000000000324 cpu_en=1
+run: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23521 ; free virtual = 36181
+DBG t=182 us pc=00000000000002f4 cpu_en=1
+DBG t=184 us pc=0000000000000080 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23515 ; free virtual = 36176
+DBG t=186 us pc=000000000000008c cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23507 ; free virtual = 36169
+DBG t=188 us pc=00000000000000b4 cpu_en=1
+run: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23493 ; free virtual = 36155
+DBG t=190 us pc=00000000000000d4 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23493 ; free virtual = 36155
+DBG t=192 us pc=0000000000000328 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23492 ; free virtual = 36154
+DBG t=194 us pc=00000000000002d0 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23484 ; free virtual = 36147
+DBG t=196 us pc=0000000000000374 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23502 ; free virtual = 36165
+DBG t=198 us pc=00000000000002b8 cpu_en=1
+run: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23512 ; free virtual = 36175
+DBG t=200 us pc=0000000000000098 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23514 ; free virtual = 36177
+DBG t=202 us pc=000000000000008c cpu_en=1
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23493 ; free virtual = 36156
+DBG t=204 us pc=000000000000009c cpu_en=1
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23495 ; free virtual = 36158
+DBG t=206 us pc=00000000000000b4 cpu_en=1
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23505 ; free virtual = 36168
+DBG t=208 us pc=00000000000000d4 cpu_en=1
+run: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23515 ; free virtual = 36177
+DBG t=210 us pc=0000000000000328 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23514 ; free virtual = 36177
+DBG t=212 us pc=00000000000002d0 cpu_en=1
+run: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23522 ; free virtual = 36185
+DBG t=214 us pc=0000000000000308 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23523 ; free virtual = 36185
+DBG t=216 us pc=000000000000008c cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23519 ; free virtual = 36182
+DBG t=218 us pc=00000000000000b4 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23520 ; free virtual = 36182
+DBG t=220 us pc=00000000000000d4 cpu_en=1
+run: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23518 ; free virtual = 36180
+DBG t=222 us pc=00000000000003b4 cpu_en=1
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23514 ; free virtual = 36176
+DBG t=224 us pc=00000000000002d0 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23513 ; free virtual = 36175
+DBG t=226 us pc=00000000000006b0 cpu_en=1
+DBG t=228 us pc=0000000000001770 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23508 ; free virtual = 36171
+DBG t=230 us pc=00000000000019d0 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23504 ; free virtual = 36166
+DBG t=232 us pc=00000000000018c0 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23538 ; free virtual = 36195
+DBG t=234 us pc=0000000000001974 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23546 ; free virtual = 36203
+DBG t=236 us pc=00000000000019a0 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23548 ; free virtual = 36205
+DBG t=238 us pc=00000000000018a0 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23548 ; free virtual = 36205
+DBG t=240 us pc=0000000000001950 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23549 ; free virtual = 36207
+DBG t=242 us pc=0000000000001978 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23548 ; free virtual = 36206
+DBG t=244 us pc=0000000000001874 cpu_en=1
+run: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23547 ; free virtual = 36205
+DBG t=246 us pc=000000000000192c cpu_en=1
+run: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23548 ; free virtual = 36205
+DBG t=248 us pc=000000000000195c cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23547 ; free virtual = 36204
+DBG t=250 us pc=0000000000001854 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:05 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23545 ; free virtual = 36202
+DBG t=252 us pc=0000000000001908 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23541 ; free virtual = 36199
+DBG t=254 us pc=0000000000001930 cpu_en=1
+run: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23540 ; free virtual = 36198
+DBG t=256 us pc=00000000000019e0 cpu_en=1
+run: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23559 ; free virtual = 36217
+DBG t=258 us pc=0000000000002c70 cpu_en=1
+run: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23559 ; free virtual = 36217
+DBG t=260 us pc=0000000000002d28 cpu_en=1
+run: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23556 ; free virtual = 36214
+DBG t=262 us pc=0000000000002c88 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23553 ; free virtual = 36211
+DBG t=264 us pc=0000000000002c2c cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23554 ; free virtual = 36212
+DBG t=266 us pc=0000000000002ca0 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23551 ; free virtual = 36210
+DBG t=268 us pc=0000000000002cc0 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23550 ; free virtual = 36208
+DBG t=270 us pc=0000000000002c78 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23549 ; free virtual = 36208
+DBG t=272 us pc=0000000000002c3c cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23549 ; free virtual = 36207
+DBG t=274 us pc=0000000000002c78 cpu_en=1
+run: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23565 ; free virtual = 36223
+DBG t=276 us pc=0000000000002c34 cpu_en=1
+run: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23546 ; free virtual = 36206
+DBG t=278 us pc=0000000000002ca0 cpu_en=1
+run: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23503 ; free virtual = 36167
+DBG t=280 us pc=0000000000002c30 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:07 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23497 ; free virtual = 36161
+DBG t=282 us pc=0000000000002c84 cpu_en=1
+run: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23499 ; free virtual = 36163
+DBG t=284 us pc=0000000000002c3c cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23541 ; free virtual = 36205
+DBG t=286 us pc=0000000000002c9c cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23539 ; free virtual = 36203
+DBG t=288 us pc=0000000000002c3c cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23538 ; free virtual = 36202
+DBG t=290 us pc=0000000000002cac cpu_en=1
+run: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23539 ; free virtual = 36204
+DBG t=292 us pc=0000000000002c48 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23536 ; free virtual = 36200
+DBG t=294 us pc=0000000000002ca0 cpu_en=1
+run: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23534 ; free virtual = 36198
+DBG t=296 us pc=0000000000002d30 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23533 ; free virtual = 36197
+DBG t=298 us pc=0000000000002cb4 cpu_en=1
+run: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:06 . Memory (MB): peak = 1518.055 ; gain = 0.000 ; free physical = 23529 ; free virtual = 36194
+DBG t=300 us pc=0000000000002ce4 cpu_en=1
+## quit
+INFO: xsimkernel Simulation Memory Usage: 578360 KB (Peak: 640256 KB), Simulation CPU Usage: 687510 ms
+INFO: [Common 17-206] Exiting xsim at Tue Sep 22 22:48:35 2026...

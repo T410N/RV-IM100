@@ -22,7 +22,7 @@
 # Available Virtual  : 37467 MB
 #-----------------------------------------------------------
 start_gui
-open_project /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_6SP/RV64IM72F_6SP.xpr
+open_project /home/khwl/Desktop/RV-IM100/RV-IM100_RTL/project_files/RV64s/SoCs/RV64IM_6SP/RV64IM72F_6SP.xpr
 update_compile_order -fileset sources_1
 import_files -norecurse {/home/khwl/Desktop/RV-IM100/benchmarks/dhrystone_RV64IM_44.92754.mem /home/khwl/Desktop/RV-IM100/benchmarks/coremark_RV64IM_44.92754MHz.mem}
 update_compile_order -fileset sources_1
@@ -37,19 +37,19 @@ open_hw_target
 disconnect_hw_server localhost:3121
 connect_hw_server -allow_non_jtag
 open_hw_target
-set_property PROGRAM.FILE {/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_6SP/RV64IM72F_6SP.runs/impl_1/RV64IM72F5SPSoCTOP.bit} [get_hw_devices xc7a200t_0]
+set_property PROGRAM.FILE {/home/khwl/Desktop/RV-IM100/RV-IM100_RTL/project_files/RV64s/SoCs/RV64IM_6SP/RV64IM72F_6SP.runs/impl_1/RV64IM72F5SPSoCTOP.bit} [get_hw_devices xc7a200t_0]
 current_hw_device [get_hw_devices xc7a200t_0]
 refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a200t_0] 0]
 set_property PROBES.FILE {} [get_hw_devices xc7a200t_0]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7a200t_0]
-set_property PROGRAM.FILE {/home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_6SP/RV64IM72F_6SP.runs/impl_1/RV64IM72F5SPSoCTOP.bit} [get_hw_devices xc7a200t_0]
+set_property PROGRAM.FILE {/home/khwl/Desktop/RV-IM100/RV-IM100_RTL/project_files/RV64s/SoCs/RV64IM_6SP/RV64IM72F_6SP.runs/impl_1/RV64IM72F5SPSoCTOP.bit} [get_hw_devices xc7a200t_0]
 program_hw_devices [get_hw_devices xc7a200t_0]
 refresh_hw_device [lindex [get_hw_devices xc7a200t_0] 0]
 open_run impl_1
 report_utilization -hierarchical_min_primitive_count 50 -name utilization_1
 report_power -name {power_1}
 close_project
-open_project /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_7SP/RV64IM72F_7SP_FPGA.xpr
+open_project /home/khwl/Desktop/RV-IM100/RV-IM100_RTL/project_files/RV64s/SoCs/RV64IM_7SP/RV64IM72F_7SP_FPGA.xpr
 update_compile_order -fileset sources_1
 open_run impl_1
 report_utilization -hierarchical_min_primitive_count 50 -name utilization_1
@@ -59,7 +59,7 @@ wait_on_run impl_1
 refresh_design
 report_utilization -hierarchical_min_primitive_count 50 -name utilization_1
 close_project
-open_project /home/khwl/Desktop/RV-IM100/RV64s/SoCs/RV64IM_8SP/RV64IM72F_8SP_100MHz.xpr
+open_project /home/khwl/Desktop/RV-IM100/RV-IM100_RTL/project_files/RV64s/SoCs/RV64IM_8SP/RV64IM72F_8SP_100MHz.xpr
 update_compile_order -fileset sources_1
 reset_run synth_1
 launch_runs impl_1 -jobs 16

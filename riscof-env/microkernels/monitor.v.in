@@ -1,0 +1,88 @@
+    // Retirement-bounded ROI. Markers are architectural ADDI-to-x0 hints,
+    // distinct from the NOP encoding used for injected bubbles in this RTL.
+    localparam MK_START = 32'h70100013, MK_STOP = 32'h70200013,
+               MK_DONE = 32'h70300013;
+    reg mk_active = 0, mk_checking = 0;
+    reg [63:0] mk_cycles = 0, mk_retired = 0, mk_hash = 0, mk_check_hash = 0;
+    reg [63:0] mk_branch = 0, mk_taken = 0, mk_miss = 0, mk_jump = 0;
+    // T9: a miss whose branch actually resolved taken was predicted not-taken (NT->T), and vice versa
+    reg [63:0] mk_miss_t = 0, mk_miss_nt = 0;
+    reg [63:0] mk_load = 0, mk_store = 0, mk_mul = 0, mk_div = 0;
+    reg [63:0] mk_counts [0:8];
+    reg [63:0] mk_empty [0:8];
+    integer mk_i;
+    reg [8191:0] mk_path;
+    integer mk_fd;
+    reg [31:0] mk_markers = 0;
+    initial begin
+        for (mk_i=0; mk_i<9; mk_i=mk_i+1) begin
+            mk_counts[mk_i]=0; mk_empty[mk_i]=0;
+        end
+    end
+    wire mk_real = retire_valid && retire_insn != 32'h00000013 && retire_insn != 0;
+    wire [4:0] mk_rd = (retire_rd_we && retire_rd_sig != 0) ? retire_rd_sig : 5'd0;
+    wire [63:0] mk_value = mk_rd != 0 ? 64'(retire_rd_data) : 64'd0;
+    wire [63:0] mk_token = 64'(retire_pc) ^ (64'(retire_insn)<<1) ^
+                           mk_value ^ (64'(mk_rd)<<56);
+    // Raw cause flags can overlap. Priority buckets partition *observed*
+    // cycles; they are occupancy, not additive counterfactual CPI penalties.
+    wire mk_div_wait = @DIV@;
+    wire mk_mul_wait = @MUL@;
+    wire mk_store_wait = @STORE@;
+    wire mk_load_wait = @LOAD@;
+    wire mk_exec_wait = @EXEC@;
+    wire mk_other_wait = @OTHER@;
+    wire mk_branch_accept = @BRANCH@;
+    wire mk_branch_taken = @TAKEN@;
+    wire mk_branch_miss = @MISS@;
+    wire [3:0] mk_reason = mk_div_wait ? 0 : mk_mul_wait ? 1 :
+        mk_store_wait ? 2 : mk_load_wait ? 3 : mk_exec_wait ? 4 :
+        mk_other_wait ? 5 : mk_branch_accept && mk_branch_miss ? 6 : 7;
+
+    always @(posedge clk) begin
+        if (!reset) begin
+            if (mk_real && retire_insn == MK_START) begin
+                mk_active <= 1; mk_checking <= 1; mk_markers <= mk_markers+1;
+            end else if (mk_real && retire_insn == MK_STOP) begin
+                mk_active <= 0; mk_markers <= mk_markers+1;
+            end else if (mk_real && retire_insn == MK_DONE) begin
+                mk_checking <= 0; mk_markers <= mk_markers+1;
+            end else begin
+                if (mk_checking && mk_real)
+                    mk_check_hash <= {mk_check_hash[56:0],mk_check_hash[63:57]} ^ mk_token;
+                if (mk_active) begin
+                    mk_cycles <= mk_cycles+1;
+                    mk_counts[mk_reason] <= mk_counts[mk_reason]+1;
+                    if (!mk_real) mk_empty[mk_reason] <= mk_empty[mk_reason]+1;
+                    if (mk_branch_accept) begin
+                        mk_taken <= mk_taken+64'(mk_branch_taken);
+                        mk_miss <= mk_miss+64'(mk_branch_miss);
+                        mk_miss_t <= mk_miss_t+64'(mk_branch_miss && mk_branch_taken);
+                        mk_miss_nt <= mk_miss_nt+64'(mk_branch_miss && !mk_branch_taken);
+                        mk_counts[8] <= mk_counts[8]+1;
+                    end
+                    if (mk_real) begin
+                        mk_retired <= mk_retired+1;
+                        mk_hash <= {mk_hash[56:0],mk_hash[63:57]} ^ mk_token;
+                        if (r_op == 7'h63) mk_branch <= mk_branch+1;
+                        if (r_op == 7'h6f || r_op == 7'h67) mk_jump <= mk_jump+1;
+                        if (r_op == 7'h03) mk_load <= mk_load+1;
+                        if (r_op == 7'h23) mk_store <= mk_store+1;
+                        if (r_is_m && !r_f3[2]) mk_mul <= mk_mul+1;
+                        if (r_is_m && r_f3[2]) mk_div <= mk_div+1;
+                    end
+                end
+            end
+            if (do_dump && !dumped && $value$plusargs("MICRO=%s",mk_path)) begin
+                mk_fd=$fopen(mk_path,"w");
+                $fwrite(mk_fd,"cycles %0d\nretired %0d\nroi_hash %0d\ncheck_hash %0d\nmarkers %0d\n",
+                    mk_cycles,mk_retired,mk_hash,mk_check_hash,mk_markers);
+                $fwrite(mk_fd,"branch %0d\ntaken %0d\nmispred %0d\njump %0d\nload %0d\nstore %0d\nmul %0d\ndiv %0d\n",
+                    mk_branch,mk_taken,mk_miss,mk_jump,mk_load,mk_store,mk_mul,mk_div);
+                $fwrite(mk_fd,"mispred_nt_to_t %0d\nmispred_t_to_nt %0d\n",mk_miss_t,mk_miss_nt);
+                for(mk_i=0;mk_i<9;mk_i=mk_i+1)
+                    $fwrite(mk_fd,"occupancy_%0d %0d\nempty_%0d %0d\n",mk_i,mk_counts[mk_i],mk_i,mk_empty[mk_i]);
+                $fclose(mk_fd);
+            end
+        end
+    end

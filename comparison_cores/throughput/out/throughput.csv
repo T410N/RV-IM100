@@ -1,0 +1,9 @@
+config,core,isa,memory,benchmark,status,units,roi_cycles,cycles_per_unit,metric,value,roi_instret,cpi,check,ipc
+picorv32_la,PicoRV32,RV32IM,look-ahead (picorv32 dhrystone/testbench.v),dhrystone,VALID,300000,521700093,1739.0,DMIPS/MHz,0.3273,122100024,4.2727,22 checks,0.234
+picorv32_la,PicoRV32,RV32IM,look-ahead (picorv32 dhrystone/testbench.v),coremark,VALID,300,438946309,1463154.36,CoreMark/MHz,0.6835,83984067,5.2265,crcfinal 0x5275,0.1913
+picorv32_nola,PicoRV32,RV32IM,registered ready (picorv32 dhrystone/testbench_nola.v),dhrystone,VALID,300000,699000123,2330.0,DMIPS/MHz,0.2443,122100024,5.7248,22 checks,0.1747
+picorv32_nola,PicoRV32,RV32IM,registered ready (picorv32 dhrystone/testbench_nola.v),coremark,VALID,300,540212882,1800709.61,CoreMark/MHz,0.5553,83984067,6.4323,crcfinal 0x5275,0.1555
+vexriscv,VexRiscv,RV32IM,"simple bus, response next cycle",dhrystone,VALID,300000,168900033,563.0,DMIPS/MHz,1.0109,122100024,1.3833,22 checks; instret from PicoRV32 on the same image,0.7229
+vexriscv,VexRiscv,RV32IM,"simple bus, response next cycle",coremark,VALID,300,120189816,400632.72,CoreMark/MHz,2.4961,83984067,1.4311,crcfinal 0x5275; instret from PicoRV32 on the same image,0.6988
+rvcorep,RVCoreP,RV32I,"synchronous read, as its D_SYNC_IMEM/DMEM",dhrystone,VALID,300000,138900133,463.0,DMIPS/MHz,1.2293,131100025,1.0595,22 checks,0.9438
+rvcorep,RVCoreP,RV32I,"synchronous read, as its D_SYNC_IMEM/DMEM",coremark,VALID,300,264810718,882702.39,CoreMark/MHz,1.1329,213696867,1.2392,crcfinal 0x5275,0.807
